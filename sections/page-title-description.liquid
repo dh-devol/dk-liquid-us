@@ -1,0 +1,129 @@
+{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  if template contains 'page' and page
+    assign current_title = page.title
+    assign current_description = page.content
+  elsif template contains 'collection' and collection
+    assign current_title = collection.title
+    assign current_description = collection.description
+  elsif template contains 'product' and product
+    assign current_title = product.title
+    assign current_description = product.description
+  elsif template contains 'article' and article
+    assign current_title = article.title
+    assign current_description = article.content
+  else
+    assign current_title = page_title
+    assign current_description = page_description
+  endif
+-%}
+
+<div class="page-title-description color-{{ section.settings.color_scheme }}">
+  <div class="page-width section-{{ section.id }}-padding">
+    {% liquid
+      assign display_title = current_title
+      if template contains 'page' and page.metafields.custom.custom_title != blank
+        assign display_title = page.metafields.custom.custom_title
+      endif
+    %}
+
+    {% if section.settings.show_title and display_title != blank %}
+      <h1 class="rich-text__heading rte inline-richtext h1{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ display_title }}
+      </h1>
+    {% endif %}
+    {% comment %} {% if section.settings.show_title and current_title != blank %}
+      <h1 class="rich-text__heading rte inline-richtext h1{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ current_title }}
+      </h1>
+    {% endif %} {% endcomment %}
+
+    {% if section.settings.show_description and current_description != blank %}
+      <div class="rich-text__text rte description-columns columns-{{ section.settings.description_columns }} 
+        {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ current_description }}
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Page title & description",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "default": true,
+      "label": "Show page title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "default": true,
+      "label": "Show page description"
+    },
+    {
+      "type": "range",
+      "id": "description_columns",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Description columns",
+      "default": 1
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page title & description"
+    }
+  ]
+}
+{% endschema %}

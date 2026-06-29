@@ -1,0 +1,50 @@
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="/pages/shop">Shop</a>
+
+  {% if template.name == 'product' %}
+      {% assign breadcrumb_collection = nil %}
+      {% assign breadcrumb_handle = nil %}
+      {% assign breadcrumb_field = product.metafields.custom.breadcrumbs_collection %}
+      {% if breadcrumb_field != blank %}
+        {% if breadcrumb_field.type == 'collection_reference' %}
+          {% assign breadcrumb_collection = breadcrumb_field.value %}
+        {% else %}
+          {% assign breadcrumb_handle = breadcrumb_field.value | default: breadcrumb_field | strip %}
+          {% assign breadcrumb_collection = collections[breadcrumb_handle] %}
+        {% endif %}
+      {% endif %}
+
+      {% if breadcrumb_collection != blank or collection != blank %}
+        <span> / </span>
+        {% if breadcrumb_collection != blank %}
+          <a href="{{ breadcrumb_collection.url }}">{{ breadcrumb_collection.title }}</a>
+        {% else %}
+          <a href="{{ collection.url }}">{{ collection.title }}</a>
+        {% endif %}
+      {% endif %}
+  {% endif %}
+</nav>
+
+<style>
+  .product nav.breadcrumb {
+    margin-top: 24px;
+    opacity: 0.75;
+  }
+  .product .breadcrumb a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #595959;
+  }
+  .product .breadcrumb span {
+    font-size: 14px;
+  }
+  .product .breadcrumb span {
+    margin: 0 2px;
+  }
+  @media screen and (max-width: 991px) {
+    .product nav.breadcrumb {
+      display: none;
+    }
+  }
+
+</style>

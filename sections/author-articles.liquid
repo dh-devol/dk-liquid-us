@@ -1,0 +1,348 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+
+{%- assign target_author = page.metafields.custom.author_names | default: page.author | strip -%}
+{%- assign author_bio = page.metafields.custom.author_bio -%}
+<article class="baskerville article-template">
+
+  <!-- Blog category menu -->
+  <div class="main__blog--wrapper">  
+    <div class="blog_author-name">
+      <h1>Contributor: <span>{{ target_author }}</span></h1>
+    </div>
+    <div class="blog__option-wrapper">
+      <div class="baskerville blog__title">
+        Categories
+        <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+      </div>
+      <ul class="blog__options baskerville">
+        {% assign blog_menu = menus['blog-menu'] %}
+
+        {% if blog_menu %}
+          {% for link in blog_menu.links %}
+            <li class="blog__option">
+              <a class="baskerville" href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</article>
+
+<!-- Author bio and articles -->
+<div class="author-page section-{{ section.id }}-padding">
+  <div class="author-header">
+    {% if page.metafields.custom.author_image %}
+      <div class="author-image-wrap">
+        <img src="{{ page.metafields.custom.author_image | file_url }}" alt="{{ target_author }}" class="author-image">
+      </div>
+    {% endif %}
+    <div class="author-bio rte">
+      <div class="bio-content">
+        <div class="bio-text-truncated">
+          {{ author_bio | metafield_tag | truncatewords: 124, "." }}
+        </div>
+        </div>
+        <div class="bio-text-full">
+          {{ author_bio  | metafield_tag}}
+        </div>
+      </div>
+      <button class="read-more-btn">Read more ></button>
+    </div>
+  </div>
+
+  <div class="author-articles">
+    {% assign handles = section.settings.blog_handles | split: ',' %}
+    {% assign clean_handle = handle | strip %}
+    {% comment %} {% assign blog = page.metafields.custom.blog_posts.value %} {% endcomment %}
+   {% assign blog_menu = menus['blog-menu'] %}
+    {% assign target_author = page.title
+      | downcase
+      | replace: "'", ""
+      | replace: " ", ""
+    %}
+
+
+    {% if blog_menu %}
+      {% for link in blog_menu.links %}
+        {% assign blog = blogs[link.object.handle] %}
+        {% if blog %}
+          {% paginate blog.articles by 500 %}
+            {% for article in blog.articles %}
+              {% assign article_author = article.author
+                | downcase
+                | replace: "'", ""
+                | replace: " ", ""
+              %}
+              {% if article_author == target_author %}
+                <div class="grid__item article">
+                    {% render 'article-card',
+                      blog: blog,
+                      article: article,
+                      media_aspect_ratio: 1.66,
+                      show_image: section.settings.show_image,
+                      show_date: section.settings.show_date,
+                      show_author: section.settings.show_author,
+                      show_excerpt: true
+                    %}
+                  </div>
+              {% endif %}
+            {% endfor %}
+          {% endpaginate %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+
+    <div id="load-more-container">
+  <button id="load-more" class="baskerville">
+    Load More
+  </button>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const articles = document.querySelectorAll(".lazy-article");
+  const loadMoreBtn = document.getElementById("load-more");
+
+  let visibleCount = 6;
+  const step = 6;
+
+  function updateVisibility() {
+    articles.forEach((article, index) => {
+      article.style.display = index < visibleCount ? "block" : "none";
+    });
+
+    if (visibleCount >= articles.length) {
+      loadMoreBtn.style.display = "none";
+    }
+  }
+
+  loadMoreBtn.addEventListener("click", function () {
+    visibleCount += step;
+    updateVisibility();
+  });
+
+  updateVisibility();
+});
+</script>
+
+    </div>
+  </div>
+
+<!-- Styles -->
+<style>
+  article.baskerville.article-template .main__blog--wrapper {
+    justify-content: space-between;
+    border: 0;
+    align-items: center;
+    max-width: 1074px;
+    padding: 0px 6rem;
+    margin-top: 36px;
+  }
+  .blog_author-name h1 {
+    font-family: baskerville-urw, garamond-premier-pro, Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    margin: 0;
+  }
+  .blog_author-name h1 span {
+    font-style: italic;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    font-size: 15px;
+  }
+  .author-page {
+    max-width: 1074px;
+    margin: 0 auto;
+    padding: 23px 6rem 20px;
+  }
+  .author-page .author-header {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 46.5px;
+  }
+  .author-page .author-image-wrap {
+      width: 30%;
+  }
+  .author-page .author-image {
+    height: 212.2px;
+    width: 304.2px;
+    object-fit: cover;
+    object-position: 50% 5%;
+  } 
+  .author-page .author-bio {
+    font-family: baskerville-urw, serif;
+    font-size: 16px;
+        width: 70%;
+    line-height: 1.6;
+    color: #333;
+  }
+  .author-page .bio-content {
+    margin-bottom: -4px;    
+    font-size: 13px;
+  }
+  .author-page .bio-content p:first-child {
+    margin-top:0;
+  }
+  .author-page .read-more-btn {
+    font-family: baskerville-urw, garamond-premier-pro, Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-style: italic;
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+  }
+  .author-page .read-more-btn:focus-visible {
+    outline: 0;
+    box-shadow: none;
+  }
+  .author-page .bio-text-full {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.8s ease, opacity 1.0s ease;
+    pointer-events: none;
+  }
+  .author-page .bio-text-full.expanded {
+    max-height: 1000px; /* Should be higher than expected content height */
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: -20px;
+    margin-bottom: 13px;
+  }
+  .author-page .author-articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 21px;
+  }
+  .author-page .author-articles .grid__item.article {
+    width: 100%;
+    max-width: 100%;
+  }
+  .author-page .article-card img {
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 590px) {
+    .author-page .author-image {
+      width: 100% !important;
+    }
+    .author-page .author-image-wrap {
+      width: 100% !important;
+    }
+}
+
+  @media screen and (min-width: 990px) {
+    .author-page .author-articles {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .author-page .author-header {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .author-page .bio-text-full.expanded p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @media (max-width: 768px){
+    .author-page .author-bio {
+        width: 100%;
+    }
+    .author-page .author-image-wrap {
+        width: 100%;
+    }
+    .author-page .bio-text-full.expanded {
+      max-height: max-content;
+    }
+    .author-page {
+      padding: 0 3rem;
+    }
+    .author-page .author-image {
+      height: 254px;
+      width: 364px;
+    }
+    article.baskerville.article-template .main__blog--wrapper {
+      display: block;
+      padding: 0px 3rem;
+      margin-bottom: 30px;
+    }
+    blog_author-name {
+      margin-bottom: 20px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .author-page .author-image-wrap {
+      width: min-content;
+    }
+    .author-page .author-header {
+      gap: 40px;
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const full = document.querySelector('.bio-text-full');
+    const btn = document.querySelector('.read-more-btn');
+    const fullTruncated = document.querySelector('.bio-text-truncated');
+    
+
+    full.classList.remove('expanded'); // ensure hidden initially
+    btn.textContent = 'Read more >';
+
+    btn.addEventListener('click', function () {
+      const isExpanded = full.classList.contains('expanded');
+
+      if (isExpanded) {
+        fullTruncated.classList.remove('hidden');
+        full.classList.remove('expanded'); // smoothly collapses
+        btn.textContent = 'Read more >';
+      } else {
+        fullTruncated.classList.add('hidden');
+        full.classList.add('expanded'); // smoothly expands
+        btn.textContent = '< Read less';
+      }
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Author Blog Articles",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "Show image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "Show date"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": true,
+      "label": "Show author"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Author Blog Articles",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}

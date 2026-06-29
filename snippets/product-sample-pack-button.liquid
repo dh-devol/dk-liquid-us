@@ -1,0 +1,136 @@
+      {% assign sample_product = product.metafields.custom.sample_pack_product.value %}
+                  {% if sample_product %}
+                    {% assign sample_variant = sample_product.selected_or_first_available_variant %}
+                    {%- assign _pf_cart_qty_limit = 0 -%}
+                    {%- assign _pf_cart_qty_limit_tag = '' -%}
+                    {%- assign _pf_per_item_limit = 0 -%}
+                    {%- for i in (1..5) -%}
+                      {%- assign _tag_key = 'cart_qty_limit_tag_' | append: i -%}
+                      {%- assign _type_key = 'cart_qty_limit_type_' | append: i -%}
+                      {%- assign _max_key = 'cart_qty_limit_max_' | append: i -%}
+                      {%- assign _per_item_key = 'cart_qty_limit_per_item_' | append: i -%}
+                      {%- assign _limit_tag = settings[_tag_key] -%}
+                      {%- assign _limit_type = settings[_type_key] -%}
+                      {%- assign _limit_max = settings[_max_key] | plus: 0 -%}
+                      {%- assign _limit_per_item = settings[_per_item_key] | plus: 0 -%}
+                      {%- assign _tag_match = false -%}
+                      {%- if _limit_tag != blank and sample_product.tags contains _limit_tag -%}
+                        {%- assign _tag_match = true -%}
+                      {%- endif -%}
+                      {%- assign _type_match = false -%}
+                      {%- if _limit_type != blank and sample_product.type == _limit_type -%}
+                        {%- assign _type_match = true -%}
+                      {%- endif -%}
+                      {%- if _tag_match or _type_match -%}
+                        {%- if _limit_max > 0 -%}
+                          {%- assign _pf_cart_qty_limit = _limit_max -%}
+                          {%- assign _pf_cart_qty_limit_tag = _limit_tag | default: _limit_type -%}
+                        {%- endif -%}
+                        {%- if _limit_per_item > 0 -%}
+                          {%- assign _pf_per_item_limit = _limit_per_item -%}
+                        {%- endif -%}
+                        {%- break -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                    {% comment %} {% if sample_variant.available %} {% endcomment %}
+                    <div class="sample-pack-form-wrapper">
+                      <product-form
+                        class="product-form product-form--sample"
+                        data-sample-product="{{ sample_product.id }}"
+                        {% if _pf_cart_qty_limit > 0 %}
+                          data-cart-qty-limit="{{ _pf_cart_qty_limit }}"
+                          data-cart-qty-limit-tag="{{ _pf_cart_qty_limit_tag | escape }}"
+                        {% endif %}
+                        {% if _pf_per_item_limit > 0 %}
+                          data-per-item-limit="{{ _pf_per_item_limit }}"
+                        {% endif %}
+                      >
+                        {%- form 'product',
+                          sample_product,
+                          id: 'SamplePackForm',
+                          class: 'form',
+                          novalidate: 'novalidate',
+                          data-type: 'add-to-cart-form'
+                        -%}
+                          <input type="hidden" name="id" value="{{ sample_variant.id }}">
+                          <input type="hidden" name="quantity" value="1" min="1" max="1">
+                          <input type="hidden" name="properties[_parent_url]" value="{{ product.url }}">
+                          {% if _pf_cart_qty_limit > 0 %}
+                            <input type="hidden" name="properties[_cart_qty_tag]" value="{{ _pf_cart_qty_limit_tag | escape }}">
+                          {% endif %}
+
+                          {% assign sample_in_cart = false %}
+                          {% for item in cart.items %}
+                            {% if item.product_id == sample_product.id %}
+                              {% assign sample_in_cart = true %}
+                            {% endif %}
+                          {% endfor %}
+
+                          <button
+                            type="submit"
+                            class="sample-pack-btn button button--secondary"
+                            style="width:100%"
+                            data-sample-pack-button
+                            {% if sample_in_cart %}
+                              disabled
+                            {% endif %}
+                          >
+                            <span class="button-text">
+                              {% if sample_in_cart %}
+                                Sample pack already in cart
+                              {% else %}
+                                {% if sample_variant.price > 0 %}
+                                  {{ block.settings.label }} for {{ sample_variant.price | money}}
+                                {% else %}
+                                  {{ block.settings.label }}
+                                {% endif %}
+                              {% endif %}
+                            </span>
+                            {%- render 'loading-spinner' -%}
+                          </button>
+                        {%- endform -%}
+
+                        <div class="product-form__error-message-wrapper" role="alert" hidden>
+                          <span class="svg-wrapper">{{ 'icon-error.svg' | inline_asset_content }}</span>
+                          <span class="product-form__error-message"></span>
+                        </div>
+                        {%- if product.metafields.custom.sample_info_bar.value != blank -%}
+                          <p class="sample-button-note">{{ product.metafields.custom.sample_info_bar.value }}</p>
+                        {% endif %}
+                      </product-form>
+                    </div>
+
+                    <script>
+                      (function () {
+                        const SAMPLE_PRODUCT_ID = {{ sample_product.id }};
+                        const form = document.getElementById('SamplePackForm');
+                        const button = form.querySelector('[data-sample-pack-button]');
+                        const buttonText = button.querySelector('.button-text');
+
+                        function disableButton() {
+                          button.disabled = true;
+                          button.classList.add('disabled');
+                          buttonText.textContent = 'Sample pack already in cart';
+                        }
+
+                        async function packInCart() {
+                          try {
+                            const response = await fetch('/cart.js');
+                            const cart = await response.json();
+                            return cart.items.some(item => item.product_id === SAMPLE_PRODUCT_ID);
+                          } catch (err) {
+                            return false;
+                          }
+                        }
+
+                        document.addEventListener('cart:updated', async function () {
+                          if (await packInCart()) disableButton();
+                        });
+
+                        (async () => {
+                          if (await packInCart()) disableButton();
+                        })();
+                      })();
+                    </script>
+                    {% comment %} {% endif %} {% endcomment %}
+                  {% endif %}

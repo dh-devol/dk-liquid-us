@@ -1,0 +1,525 @@
+{{ 'blog-detail.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+<div class="blog-detail color-{{ section.settings.color_scheme }} gradient">
+  <div
+    class="blog-detail_wrapper page-width section-{{ section.id }}-padding{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}
+  >
+    <div class="blog__inner-detail {% if section.settings.right_content %}flex-inner-detail{% endif %}">
+      <div class="blog__left-detail">
+      <div class="blog__option-wrapper">
+        <div class="baskerville blog__title">
+          Categories
+          <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+        </div>
+        <ul class="blog__options baskerville">
+          {% assign blog_menu = menus['blog-menu'] %}
+
+          {% if blog_menu %}
+            {% for link in blog_menu.links %}
+              <li class="blog__option">
+                <a class="baskerville" href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="blog-detail_slider_wrapper">
+        <div class="swiper mySwiper mySwiper-{{ section.id }}">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% if block.type == 'blog_slider' %}
+                {% assign article = block.settings.article %}
+                <div class="swiper-slide blog_slide">
+                  <div class="article_detail-wrapper baskerville">
+                    {% if block.settings.show_date %}
+                      {% assign day = article.published_at | date: "%-d" %}
+                      {% assign month_year = article.published_at | date: "%B %Y" %}
+                      {% assign suffix = "th" %}
+                      {% if day == "1" or day == "21" or day == "31" %}
+                        {% assign suffix = "st" %}
+                      {% elsif day == "2" or day == "22" %}
+                        {% assign suffix = "nd" %}
+                      {% elsif day == "3" or day == "23" %}
+                        {% assign suffix = "rd" %}
+                      {% endif %}
+                      <span class="date">{{ day }}{{ suffix }} {{ month_year }}</span>
+                    {% endif %}
+                    {% if block.settings.show_date and block.settings.show_author %}
+                      <span>|</span>
+                    {% endif %}
+                    {% if block.settings.show_author %}
+                      <span class="author">by {{ article.author }}</span>
+                    {% endif %}
+                  </div>
+                  {% if article.image %}
+                    <a href="{{ article.url }}" class="article_image-wrapper">
+                      <img src="{{ article | image_url }}" height="auto" width="auto" alt="{{ article.image.alt }}">
+                    </a>
+                  {% endif %}
+                  {% if block.settings.show_title %}
+                    <div class="baskerville article_title">
+                      Featured Post | <span>{{ article.title }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+     <div class="blog__article-cards-wrapper">
+      {%- assign articles_endpoint = routes.search_url | append: '?type=article&q=tag:all&view=articles-json' -%}
+      <ul
+        class="blog__posts articles-wrapper contains-card contains-card--article grid grid--peek grid--2-col-tablet grid--3-col-desktop blog-posts--source-dynamic"
+        data-articles-endpoint="{{ articles_endpoint }}"
+        role="list"
+      >
+      </ul>
+     </div>   
+    </div>
+    {% if section.settings.right_content %}  
+    <div class="blog__right-detail baskerville">
+      {% for block in section.blocks %}
+        {% if block.type == 'brand_info' %}
+          <div class="brand__info-wrapper">
+            {% if block.settings.title != blank %}
+              <h2 class="brand_title">{{ block.settings.title }}</h2>
+            {% endif %}
+            {% if block.settings.image != blank %}
+             <img src="{{ block.settings.image | image_url }}" width="auto" height="auto" alt="{{ block.settings.image.alt }}">
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="rte">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+            {% if block.settings.show_social %}
+              {%- render 'social-icons' %}
+            {% endif %}
+          </div>
+        {% endif %}  
+      {% endfor %}
+      <div class="blog_search-wrapper">
+        {% for block in section.blocks %}
+          {% if block.type == 'blog_search' %}
+          <div class="custom-search-block">
+          <p class="custom-search-label">{{ block.settings.blog_search_title }}</p>
+          <form action="/search" method="get" class="search-form" role="search">
+          <input type="hidden" name="type" value="article">
+          <input type="search" name="q" placeholder="Search" class="custom-search-input" required>
+          </form>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="blog_detail-author-wrapper">
+        {% if section.settings.author_title != blank %} 
+          <h2 class="author__title">{{ section.settings.author_title }}</h2>
+        {% endif %}
+        {% for block in section.blocks %}
+          {% if block.type == 'author' %}
+            {% assign author_page  = nil %}
+            {% assign author_name  = block.settings.title %}
+            {% assign author_image = block.settings.image %}
+            {% assign author_position = block.settings.text %}
+            {% assign author_url = block.settings.author_link %}
+
+            {% if author_url != blank %}
+              {% assign author_handle = author_url | split: '/' | last %}
+              {% assign author_page = pages[author_handle] %}
+
+              {% if author_page %}
+                {% assign author_name  = author_page.metafields.custom.author_names | default: author_name %}
+                {% assign author_image = author_page.metafields.custom.author_grayscale_image.value | default: author_page.metafields.custom.author_image.value %}
+                {% assign author_position  = author_page.metafields.custom.author_position | default: author_position %}
+              {% endif %}
+            {% endif %}
+            {% if author_page %}
+              <a href="{{ author_page.url }}" class="author__wrapper">
+            {% else %}
+              <div class="author__wrapper">
+            {% endif %}
+              {% if author_image %}
+                <div class="author__image">
+                  <img
+                    src="{{ author_image | image_url }}
+                    "alt="{{ author_name | escape }}"
+                    loading="lazy"
+                    width="185"
+                    height="185"
+                  >
+                </div>
+              {% endif %}
+              <div class="author__detail">
+                {% if author_name %}
+                  <span class="author__name">{{ author_name }}</span>
+                {% endif %}
+                {% if author_position %}
+                  <span class="author__role">{{ author_position }}</span>
+                {% endif %}
+              </div>
+            {% if author_page %}
+              </a>
+            {% else %}
+              </div>
+            {% endif %}
+
+          {% endif %}
+        {% endfor %}
+ 
+      {% if section.settings.link_title != blank %}
+        <a href="{{ section.settings.link }}" class="author__link">{{ section.settings.link_title }} ></a>
+      {% endif %}  
+      </div>
+    </div>  
+    {% endif %}  
+  </div>
+  </div>
+
+  <script>
+    (function () {
+      const list = document.querySelector('.blog__article-cards-wrapper .blog__posts[data-articles-endpoint]');
+      if (!list) return;
+      const endpoint = list.dataset.articlesEndpoint;
+      if (!endpoint) return;
+
+      const decodeHtml = (value) => {
+        if (!value) return '';
+        const textarea = document.createElement('textarea');
+        textarea.innerHTML = value;
+        return textarea.value;
+      };
+
+      const fetchPage = (page) => {
+        const url = endpoint.includes('page=')
+          ? endpoint.replace(/([?&])page=\d+/, `$1page=${page}`)
+          : `${endpoint}&page=${page}`;
+        return fetch(url)
+          .then((res) => (res.ok ? res.json() : Promise.reject(res)))
+          .then((data) => (data && Array.isArray(data.articles) ? data : null));
+      };
+
+      const PAGE_SIZE = 12;
+
+      const renderBatch = (articles, startIndex) => {
+        const slice = articles.slice(startIndex, startIndex + PAGE_SIZE);
+        slice.forEach((article, index) => {
+          const li = document.createElement('li');
+          li.className = 'blog__post grid__item article';
+          li.setAttribute('data-index', startIndex + index + 1);
+
+          const link = document.createElement('a');
+          link.className = 'article__link-wrapper';
+          link.href = article.url;
+
+          const imageWrap = document.createElement('div');
+          imageWrap.className = 'post_article-image';
+
+          if (article.image) {
+            const imageInner = document.createElement('div');
+            imageInner.className = 'post_article_image-wrapper';
+            const img = document.createElement('img');
+            img.loading = 'lazy';
+            img.src = article.image;
+            img.alt = article.image_alt || article.title || '';
+            imageInner.appendChild(img);
+            imageWrap.appendChild(imageInner);
+          }
+
+          const content = document.createElement('div');
+          content.className = 'post_article-content';
+
+          const title = document.createElement('h2');
+          title.className = 'baskerville post_article-title';
+          title.textContent = decodeHtml(article.title || '');
+
+          const desc = document.createElement('div');
+          desc.className = 'baskerville post_article-description';
+          desc.textContent = decodeHtml(article.excerpt || '');
+
+          content.appendChild(title);
+          content.appendChild(desc);
+
+          link.appendChild(imageWrap);
+          link.appendChild(content);
+          li.appendChild(link);
+          list.appendChild(li);
+        });
+      };
+
+      fetchPage(1)
+        .then((data) => {
+          if (!data) return null;
+          if (!data.pages || data.pages <= 1) return [data];
+          const pageNumbers = Array.from({ length: data.pages - 1 }, (_, i) => i + 2);
+          return Promise.all(pageNumbers.map(fetchPage)).then((pages) => [data, ...pages.filter(Boolean)]);
+        })
+        .then((pages) => {
+          if (!pages || !pages.length) return;
+          const merged = pages.flatMap((page) => page.articles || []);
+          const articles = merged
+            .filter((article) => article)
+            .sort((a, b) => new Date(b.published_at) - new Date(a.published_at));
+
+          if (!articles.length) return;
+
+          list.innerHTML = '';
+          let renderedCount = 0;
+          let isLoading = false;
+          renderBatch(articles, renderedCount);
+          renderedCount += PAGE_SIZE;
+
+          const loadMoreButton = document.createElement('button');
+          loadMoreButton.type = 'button';
+          loadMoreButton.className = 'blog__load-more';
+          loadMoreButton.textContent = 'Load More Posts';
+          list.parentNode.appendChild(loadMoreButton);
+
+          const setLoadingState = (loading) => {
+            isLoading = loading;
+            loadMoreButton.textContent = loading ? 'Loading posts...' : 'Load More Posts';
+            loadMoreButton.disabled = loading;
+            loadMoreButton.classList.toggle('is-loading', loading);
+          };
+
+          const loadNextBatch = () => {
+            if (isLoading || renderedCount >= articles.length) return;
+            setLoadingState(true);
+            renderBatch(articles, renderedCount);
+            renderedCount += PAGE_SIZE;
+            setLoadingState(false);
+
+            if (renderedCount >= articles.length) {
+              loadMoreButton.remove();
+              observer.disconnect();
+            }
+          };
+
+          loadMoreButton.addEventListener('click', loadNextBatch);
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              if (!entries.some((entry) => entry.isIntersecting)) return;
+              loadNextBatch();
+            },
+            { rootMargin: '-250px 0px' }
+          ); 
+
+          observer.observe(loadMoreButton);
+        })
+        .catch(() => {});
+    })();
+  </script>
+</div>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".mySwiper-{{ section.id }}", {
+          loop: true,
+          autoplay: {
+            delay: 6000,
+          },
+          effect: "fade",
+          speed: 2000,
+    fadeEffect: {
+      crossFade: true,
+    }
+        });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Blog detail",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "right_content",
+      "label": "Show right side content",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Author"
+    },
+    {
+      "type": "text",
+      "id": "author_title",
+      "label": "Author title",
+      "default": "AUTHORS"
+    },
+    {
+      "type": "text",
+      "id": "link_title",
+      "label": "Link title"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+  ],
+  "blocks": [
+    {
+      "type": "blog_slider",
+      "name": "Blog slider",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Article"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_date",
+          "label": "Show date",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_author",
+          "label": "Show author",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_title",
+          "label": "Show title",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "blog",
+      "name": "Blog",
+      "settings": [
+        {
+          "type": "blog",
+          "id": "blog",
+          "label": "Blog"
+        }
+      ]
+    },
+    {
+      "type": "brand_info",
+      "name": "Brand information",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Main Heading"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "label": "Show social",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "blog_search",
+      "name": "Blog search",
+      "settings": [
+        {
+          "type": "text",
+          "id": "blog_search_title",
+          "label": "Blog search title"
+        },
+      ]
+    },
+    {
+      "type": "author",
+      "name": "Author information",
+      "settings": [
+        {
+          "type": "url",
+          "id": "author_link",
+          "label": "Author Link",
+          "info": "If you link an Author Page here, the author data will be pulled automatically from that page’s metafields."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Author image"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Author title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Author text"
+        }
+      ]
+    },
+  ],
+  "presets": [
+    {
+      "name": "Blog detail"
+    }
+  ]
+}
+{% endschema %}

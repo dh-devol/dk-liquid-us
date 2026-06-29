@@ -1,0 +1,730 @@
+.custom-catalogue-products.multicolumn .title {
+  margin: 0;
+}
+
+.custom-catalogue-products.multicolumn.no-heading .title {
+  display: none;
+}
+
+.custom-catalogue-products.multicolumn .title-wrapper-with-link {
+  margin-top: 0;
+}
+.catalogues__page-wrapper .title-wrapper-with-link .collection__description p {
+    max-width: 68%;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-catalogue-products .multicolumn .title-wrapper-with-link {
+    margin-bottom: 3rem;
+  }
+  .catalogues__page-wrapper .title-wrapper-with-link .collection__description p {
+    max-width: 100%;
+}
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .custom-catalogue-products .multicolumn__title {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .custom-catalogue-products.multicolumn .page-width {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/* Full width layout - image full width, details below */
+.custom-catalogue-products .catalogue-card-full-width .multicolumn-card {
+  display: block;
+}
+.custom-catalogue-products h1.title.inline-richtext.h0:nth-child(1){
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.custom-catalogue-products .catalogue-card-full-width .multicolumn-card__image-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.custom-catalogue-products .catalogue-card-full-width .multicolumn-card__info {
+  width: 100%;
+  padding: 2.5rem 0 0 0;
+}
+
+/* Text & Image separated layout - image right, text left */
+.custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card__image-wrapper {
+  width: 50%;
+  order: 2;
+  margin: 0;
+}
+
+.custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card__info {
+  width: 50%;
+  order: 1;
+  padding: 0;
+}
+
+/* Standard layout adjustments */
+.custom-catalogue-products .catalogue-card-standard .multicolumn-card {
+  display: block;
+}
+
+.custom-catalogue-products .catalogue-card-standard .multicolumn-card__image-wrapper {
+  width: 100%;
+}
+
+/* Half width layout */
+.custom-catalogue-products .catalogue-card-half-width .multicolumn-card {
+  display: block;
+}
+
+.custom-catalogue-products .catalogue-card-half-width .multicolumn-card__image-wrapper {
+  width: 100%;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card {
+    flex-direction: column;
+  }
+  
+  .custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card__image-wrapper,
+  .custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card__info {
+    width: 100%;
+  }
+  
+  .custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card__image-wrapper {
+    order: 1;
+  }
+  
+  .custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card__info {
+    order: 2;
+  }
+}
+/* Text & Image separated layout - image right, text left */
+.custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 19px;
+}
+
+.custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__image-wrapper {
+  width: 50%;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__info {
+  width: 50%;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.custom-catalogue-products .catalogue-card-text-image-separated .media {
+  width: 100%;
+}
+
+.custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Full width layout - image full width, details below */
+.custom-catalogue-products .catalogue-card-full-width .multicolumn-card {
+  display: block;
+}
+
+.custom-catalogue-products .catalogue-card-full-width .multicolumn-card__image-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.custom-catalogue-products .catalogue-card-full-width .multicolumn-card__info {
+  width: 100%;
+  padding: 2.5rem 0 0 0;
+}
+
+/* Standard layout adjustments */
+.custom-catalogue-products .catalogue-card-standard .multicolumn-card {
+  display: block;
+}
+
+.custom-catalogue-products .catalogue-card-standard .multicolumn-card__image-wrapper {
+  width: 100%;
+}
+
+/* Half width layout */
+.custom-catalogue-products .catalogue-card-half-width .multicolumn-card {
+  display: block;
+}
+
+.custom-catalogue-products .catalogue-card-half-width .multicolumn-card__image-wrapper {
+  width: 100%;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .custom-catalogue-products .catalogues__page-wrapper {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+  }
+  .custom-catalogue-products .catalogues__page-wrapper .catalogue__list-wrapper {
+    max-width: 100%;
+  }
+  .custom-catalogue-products ul.catalogue__list {
+    position: unset !important;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card {
+    flex-direction: column !important;
+  }
+  
+  .custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__image-wrapper,
+  .custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__info {
+    width: 100% !important;
+  }
+}
+
+/* Existing catalogue products styles */
+.custom-catalogue-products .catalogue_product_dimensions {
+  display: inline-flex;
+  margin-right: 6px;
+}
+.custom-catalogue-products .catalogue_supporting_information table td strong{
+font-weight:400;
+}
+.custom-catalogue-products .catalogue_supporting_information {
+    margin-top: 15px;
+}
+.custom-catalogue-products .catalogue_supporting_information table:not([class]) {
+  box-shadow: none;
+}
+
+.custom-catalogue-products .catalogue_supporting_information table:not([class]) td,
+.custom-catalogue-products .catalogue_supporting_information table:not([class]) th {
+  border: none;
+  padding: 0;
+}
+
+.custom-catalogue-products .catalogue_supporting_information td {
+  width: 100%;
+  font-size: 16px;
+}
+
+.custom-catalogue-products .catalogue_supporting_information tr {
+  height: 24px;
+}
+
+.custom-catalogue-products .multicolumn-card__info .rte {
+  margin-top: 13px;
+}
+
+.custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card {
+  display: flex;
+  flex-direction: row-reverse; /* image right */
+  justify-content: flex-end;
+}
+.custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__info {
+  width: 50%;
+}
+.custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__image-wrapper {
+  width: 50%;
+  margin: 0;
+}
+
+.custom-catalogue-products.multicolumn .button {
+  margin-top: 1.5rem;
+}
+
+.custom-catalogue-products .multicolumn-list .multicolumn-list__item.catalogue-card-text-image-separated {
+    margin-bottom: 0px;
+}
+
+@media screen and (min-width: 750px) {
+  .custom-catalogue-products.multicolumn .button {
+    margin-top: 4rem;
+  }
+}
+
+.custom-catalogue-products .multicolumn-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  row-gap:20px;
+}
+/* .custom-catalogue-products .multicolumn-list .multicolumn-card__image-wrapper .media {
+  padding-bottom: 66.8% !important;
+} */
+
+.custom-catalogue-products .multicolumn-list .multicolumn-card-spacing {
+    margin-left: 0;
+    margin-right: 0;
+}
+.custom-catalogue-products .section-template--25460482212174__catalogue_products_rGVHd8-padding h1.title {
+    border-bottom: none;
+    border-top: none;
+    padding: 0;
+}
+
+.custom-catalogue-products .multicolumn-list__item--empty {
+  display: none;
+}
+
+.custom-catalogue-products .multicolumn-list h3 {
+  line-height: calc(1 + 0.5 / max(1, var(--font-heading-scale)));
+}
+
+.custom-catalogue-products .multicolumn-list h3,
+.custom-catalogue-products .multicolumn-list p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.custom-catalogue-products .multicolumn-card__info > :nth-child(2) {
+ /*margin-top: 1rem;*/
+}
+@media screen and (max-width: 768px) {
+  .custom-catalogue-products .multicolumn-list {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .custom-catalogue-products .multicolumn-list:not(.slider) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .custom-catalogue-products .multicolumn-list.slider {
+    padding: 0;
+  }
+
+  .custom-catalogue-products .multicolumn-list__item,
+  .custom-catalogue-products .grid--4-col-desktop .multicolumn-list__item {
+    padding-bottom: 0;
+  }
+}
+.custom-catalogue-products .multicolumn-card__info {
+  padding: 1.5rem 0;
+}
+
+.custom-catalogue-products .multicolumn-card {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.custom-catalogue-products .multicolumn-card
+  > .multicolumn-card__image-wrapper--full-width:not(
+    .multicolumn-card-spacing
+  ) {
+  border-top-left-radius: calc(
+    var(--text-boxes-radius) - var(--text-boxes-border-width)
+  );
+  border-top-right-radius: calc(
+    var(--text-boxes-radius) - var(--text-boxes-border-width)
+  );
+  overflow: hidden;
+}
+
+.custom-catalogue-products .multicolumn-card__info .link {
+  text-decoration: none;
+  font-size: inherit;
+  margin-top: 1.5rem;
+}
+
+.custom-catalogue-products .multicolumn-card__info .icon-wrap {
+  margin-left: 0.8rem;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 990px) {
+  .custom-catalogue-products .multicolumn-list__item--empty {
+    display: list-item;
+  }
+}
+
+/* custom-catalogue-products css start */
+.custom-catalogue-products .catalogue_product_dimensions {
+  display: inline-flex;
+  margin-right: 6px;
+}
+.custom-catalogue-products .catalogue-card-text-and-image-separated {
+  width: 100%;
+  max-width: 100%;
+}
+.custom-catalogue-products
+  .catalogue-card-text-and-image-separated
+  .multicolumn-card
+  .multicolumn-card__image-wrapper {
+  margin: 0;
+}
+.custom-catalogue-products
+  .catalogue-card-text-and-image-separated
+  .multicolumn-card
+  .multicolumn-card__image-wrapper
+  .media--portrait {
+  padding-bottom: 0;
+}
+.custom-catalogue-products
+  .catalogue-card-text-and-image-separated
+  .multicolumn-card
+  .multicolumn-card__image-wrapper
+  .multicolumn-card__image {
+  position: static;
+  object-fit: contain;
+  width: 100%;
+}
+.custom-catalogue-products .catalogue_supporting_information table:not([class]) {
+  box-shadow: none;
+}
+.custom-catalogue-products .catalogue_supporting_information table:not([class]) td,
+table:not([class]) th {
+  border: none;
+  padding: 0;
+}
+.custom-catalogue-products .catalogue_supporting_information td {
+  width: 100%;
+  font-size: 16px;
+}
+.custom-catalogue-products .catalogue_supporting_information tr {
+  height: 24px;
+}
+.custom-catalogue-products .multicolumn-card__info .rte {
+  margin-top: 13px;
+}
+.custom-catalogue-products .multicolumn-card__info .catalogue_product_description {
+  margin-top: 19px;
+}
+.custom-catalogue-products .catalogue-card-full-width {
+  width: 100%;
+  max-width: 100%;
+}
+.custom-catalogue-products .catalogue-card-full-width .multicolumn-card__image {
+  position: static;
+}
+.custom-catalogue-products .catalogue-card-full-width .media--portrait {
+  padding-bottom: 0;
+}
+.custom-catalogue-products .catalogue-card-text-and-image-separated .media {
+  padding-bottom: 0 !important;
+}
+.custom-catalogue-products .grid__item.catalogue-card-half-width {
+  width: calc(50% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+  max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+}
+.custom-catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.custom-catalogue-products
+  .catalogue-card-text-and-image-separated
+  .multicolumn-card__info {
+  width: 100%;
+  max-width: 50%;
+}
+@media screen and (max-width: 590px) {
+  .custom-catalogue-products .grid__item.catalogue-card-half-width {
+    width: 100%;
+    max-width: 100%;
+  }
+  .custom-catalogue-products
+    .catalogue-card-text-and-image-separated
+    .multicolumn-card {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .custom-catalogue-products
+    .catalogue-card-text-and-image-separated
+    .multicolumn-card__info {
+    width: 100%;
+    max-width: 100%;
+  }
+  .custom-catalogue-products .multicolumn-list:not(.slider) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+/* custom-catalogue-products css end */
+.custom-catalogue-products .multicolumn-list__item.force-full-width {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.custom-catalogue-products .multicolumn-list__item.force-half-width {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.custom-catalogue-products .multicolumn-list__item.force-third-width {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+}
+
+
+/* custom css start*/
+
+.page-shaker-kitchen-full-height-cabinets  .custom-catalogue-products .multicolumn-card__info {
+  padding:9px 0 0 0;
+}
+.page-shaker-kitchen-full-height-cabinets  .custom-catalogue-products .multicolumn-card__info>:nth-child(2){
+  margin-top:2px;
+}
+.page-shaker-kitchen-full-height-cabinets  .custom-catalogue-products .catalogue_supporting_information{
+  margin-top:19px;
+}
+.page-shaker-kitchen-full-height-cabinets  .catalogues__page-wrapper .catalogue__content-wrapper .page-width{
+  padding-top:0;
+}
+.page-shaker-kitchen-full-height-cabinets .custom-catalogue-products .multicolumn .title{
+padding:1em 0 4px 0;
+}
+
+ .custom-catalogue-products .catalogue_supporting_information{
+  margin-top:19px;
+ }
+.page-shaker-kitchen-base-cabinets .custom-catalogue-products.multicolumn .title{
+  padding:22px 0 !important;
+  font-size:1.2em;
+  font-weight:500;
+}
+.page-shaker-kitchen-base-cabinets .custom-catalogue-products .multicolumn-card__info ,
+.page-shaker-kitchen-wall-cupboards .custom-catalogue-products .multicolumn-card__info,
+.page-sebastian-cox-wall-cupboards .custom-catalogue-products .multicolumn-card__info,
+.page-sebastian-cox-base-cabinets .custom-catalogue-products .multicolumn-card__info
+{ 
+  padding:9px 0 28px 0;
+}
+.page-shaker-kitchen-base-cabinets .custom-catalogue-products .multicolumn-card__info>:nth-child(2){
+  margin-top:2px;
+}
+.page-shaker-kitchen-sinks-taps .title-with-rich-text .left .rich-text__text,
+.page-haberdashers-sinks-taps .title-with-rich-text .left .rich-text__text,
+.page-sebastian-cox-sinks-taps .title-with-rich-text .left .rich-text__text {
+  margin-top: 16px;
+}
+
+.page-shaker-kitchen-sinks-taps .custom-catalogue-products.multicolumn .title,
+.page-haberdashers-sinks-taps .custom-catalogue-products.multicolumn .title,
+.page-sebastian-cox-sinks-taps .custom-catalogue-products.multicolumn .title {
+  margin-bottom: 35px;
+}
+
+.page-shaker-kitchen-sinks-taps .custom-catalogue-products .multicolumn-card__info,
+.page-haberdashers-sinks-taps .custom-catalogue-products .multicolumn-card__info,
+.page-sebastian-cox-sinks-taps .custom-catalogue-products .multicolumn-card__info {
+  padding: 9px 0;
+}
+.page-shaker-kitchen-countertop-cupboards .custom-catalogue-products .multicolumn-card__info ,
+.page-shaker-kitchen-freestanding-cupboards .custom-catalogue-products .multicolumn-card__info,
+.page-shaker-kitchen-canopies .custom-catalogue-products .multicolumn-card__info,
+.page-shaker-kitchen-additions .custom-catalogue-products .multicolumn-card__info,
+.page-shaker-kitchen-fittings .custom-catalogue-products .multicolumn-card__info,
+.page-sebastian-cox-full-height-cupboards .custom-catalogue-products .multicolumn-card__info,
+.page-sebastian-cox-freestanding-cupboards .custom-catalogue-products .multicolumn-card__info,
+.page-sebastian-cox-canopies .custom-catalogue-products .multicolumn-card__info,
+.page-haberdashers-base-cabinets .custom-catalogue-products .multicolumn-card__info
+{
+  padding:9px 0 0 0;
+}
+
+.page-shaker-kitchen-countertop-cupboards .custom-catalogue-products .multicolumn-list ,  
+.page-shaker-kitchen-freestanding-cupboards .custom-catalogue-products .multicolumn-list{
+  row-gap:0;
+}
+.page-shaker-kitchen-canopies .custom-catalogue-products .multicolumn-list{
+  row-gap:49px;
+}
+.page-haberdashers-base-cabinets .custom-catalogue-products .multicolumn-list{
+  row-gap:38px;
+}
+ @media screen and (max-width: 768px){
+ .page-shaker-kitchen-canopies .custom-catalogue-products .multicolumn-list{
+  row-gap:47px;
+}
+  .page-shaker-kitchen-additions .multicolumn-list__item{
+    margin-bottom:32px;
+  }
+  .page-haberdashers-base-cabinets .custom-catalogue-products .multicolumn-list{
+  row-gap:32px;
+}
+ }
+.page-shaker-kitchen-sinks-taps .custom-catalogue-products .multicolumn-card__info>:nth-child(2) ,
+ .page-shaker-kitchen-wall-cupboards .custom-catalogue-products .multicolumn-card__info>:nth-child(2),
+ .page-shaker-kitchen-countertop-cupboards .custom-catalogue-products .multicolumn-card__info>:nth-child(2),
+ .page-shaker-kitchen-freestanding-cupboards .custom-catalogue-products .multicolumn-card__info>:nth-child(2),
+ .page-shaker-kitchen-canopies .custom-catalogue-products .multicolumn-card__info>:nth-child(2) ,
+ .page-shaker-kitchen-additions .custom-catalogue-products .multicolumn-card__info>:nth-child(2),
+ .page-shaker-kitchen-fittings  .custom-catalogue-products .multicolumn-card__info>:nth-child(2),
+ .page-haberdashers-sinks-taps .custom-catalogue-products .multicolumn-card__info > :nth-child(2),
+ .page-sebastian-cox-sinks-taps .custom-catalogue-products .multicolumn-card__info > :nth-child(2),
+ .page-sebastian-cox-wall-cupboards .custom-catalogue-products .multicolumn-card__info > :nth-child(2),
+ .page-sebastian-cox-base-cabinets  .custom-catalogue-products .multicolumn-card__info > :nth-child(2)
+ {
+  margin-top:2px;
+}
+.page-shaker-kitchen-fittings .custom-catalogue-products .multicolumn-card img{
+  margin-top:0.7em;
+}
+.page-shaker-kitchen-sinks-taps .custom-catalogue-products .catalogue_supporting_information,
+.page-haberdashers-sinks-taps .custom-catalogue-products .catalogue_supporting_information,
+.page-sebastian-cox-sinks-taps .custom-catalogue-products .catalogue_supporting_information {
+  margin-top: 13px;
+}
+
+.page-shaker-kitchen-sinks-taps .custom-catalogue-products .multicolumn-list,
+.page-haberdashers-sinks-taps .custom-catalogue-products .multicolumn-list,
+.page-sebastian-cox-sinks-taps .custom-catalogue-products .multicolumn-list {
+  row-gap: 23px;
+}
+
+.page-sebastian-cox-countertop-cupboards .custom-catalogue-products .catalogue_supporting_information{
+  margin-top:43px;
+}
+.page-sebastian-cox-knobs-handles .custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card{
+  column-gap:0;
+  justify-content:space-between;
+}
+.page-sebastian-cox-knobs-handles .catalogues__page-wrapper .custom-catalogue-products .multicolumn-list .grid__item{
+  flex:unset;
+  max-width:100%;
+}
+@media screen and (max-width: 590px) {
+.page-shaker-kitchen-fittings .custom-catalogue-products .grid .grid__item {
+    padding-right: 0px;
+}
+}
+@media screen and (min-width: 590px) and (max-width: 769px) {
+    .page-shaker-kitchen-wall-cupboards .catalogues__page-wrapper .custom-catalogue-products .multicolumn-list .grid__item ,
+    .page-sebastian-cox-wall-cupboards .catalogues__page-wrapper .custom-catalogue-products .multicolumn-list .grid__item
+    {
+        flex: 0 0 calc((100% - var(--grid-mobile-horizontal-spacing)) / 2);
+        max-width: calc((100% - var(--grid-mobile-horizontal-spacing)) / 2);
+    }
+}
+
+@media screen and (min-width: 990px) {
+   .page-shaker-kitchen-base-cabinets .title, .title-wrapper-with-link {
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width: 989px) {
+    .page-shaker-kitchen-sinks-taps .custom-catalogue-products.multicolumn .title-wrapper-with-link ,
+     .page-shaker-kitchen-fittings .custom-catalogue-products.multicolumn .title-wrapper-with-link,
+     .page-haberdashers-sinks-taps .custom-catalogue-products.multicolumn .title-wrapper-with-link,
+     .page-sebastian-cox-sinks-taps .custom-catalogue-products.multicolumn .title-wrapper-with-link{
+     margin-bottom:0;  
+    }
+}
+/*@media screen and (min-width: 768px) {
+   .page-shaker-kitchen-sinks-taps .catalogues__page-wrapper.page-width ,
+    .page-shaker-kitchen-wall-cupboards .catalogues__page-wrapper.page-width ,
+    .page-shaker-kitchen-countertop-cupboards .catalogues__page-wrapper.page-width,
+    .page-shaker-kitchen-freestanding-cupboards .catalogues__page-wrapper.page-width,
+    .page-shaker-kitchen-canopies .catalogues__page-wrapper.page-width ,
+    .page-shaker-kitchen-additions .catalogues__page-wrapper.page-width,
+    .page-shaker-kitchen-fittings .catalogues__page-wrapper.page-width,
+    .page-haberdashers-sinks-taps .catalogues__page-wrapper.page-width,
+    .page-sebastian-cox-sinks-taps .catalogues__page-wrapper.page-width,
+    .page-shaker-kitchen-base-cabinets .catalogues__page-wrapper.page-width,
+    .page-sebastian-cox-base-cabinets .catalogues__page-wrapper.page-width,
+    .page-sebastian-cox-full-height-cupboards .catalogues__page-wrapper.page-width,
+    .page-sebastian-cox-freestanding-cupboards .catalogues__page-wrapper.page-width,
+    .page-sebastian-cox-canopies .catalogues__page-wrapper.page-width,
+    .page-sebastian-cox-coloured-tints .catalogues__page-wrapper.page-width,
+    .page-haberdashers-base-cabinets .catalogues__page-wrapper.page-width
+    {
+        padding: 0 5rem !important;
+    }
+}*/
+
+
+@media screen and (min-width: 750px)  {
+   .page-shaker-kitchen-full-height-cabinets .custom-catalogue-products .grid {
+        row-gap: 0;
+        justify-content:space-between;
+    }
+    .page-shaker-kitchen-base-cabinets .custom-catalogue-products .grid,
+    .page-sebastian-cox-base-cabinets .custom-catalogue-products .grid
+     {
+        row-gap: 4px;
+        justify-content:space-between;
+    }
+    page-shaker-kitchen-countertop-cupboards  .custom-catalogue-products .grid{
+      justify-content:space-between;
+    }
+}
+ @media(min-width: 590px) and (max-width:1100px){
+   .page-shaker-kitchen-full-height-cabinets .custom-catalogue-products .grid .grid__item , 
+   .page-shaker-kitchen-base-cabinets .custom-catalogue-products .grid .grid__item,
+   .page-sebastian-cox-base-cabinets .custom-catalogue-products .grid .grid__item,
+   .page-sebastian-cox-full-height-cupboards .custom-catalogue-products .grid .grid__item,
+   .page-sebastian-cox-freestanding-cupboards .custom-catalogue-products .grid .grid__item,
+    .page-sebastian-cox-canopies .custom-catalogue-products .grid .grid__item
+   {
+    max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
+  }
+        .page-shaker-kitchen-sinks-taps .multicolumn-list .grid__item,
+        .page-haberdashers-sinks-taps .multicolumn-list .grid__item,
+        .page-sebastian-cox-sinks-taps .multicolumn-list .grid__item {
+            width: calc(50% - var(--grid-desktop-horizontal-spacing) * 2 / 3);
+        max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 2 / 3) !important;
+}
+   .page-shaker-kitchen-wall-cupboards .custom-catalogue-products .grid .grid__item,
+   .page-sebastian-cox-wall-cupboards .custom-catalogue-products .grid .grid__item{
+        width: calc(50% - var(--grid-desktop-horizontal-spacing) * 2 / 3) !important;
+        max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 2 / 3) !important;
+    }
+    .page-shaker-kitchen-countertop-cupboards  .custom-catalogue-products .grid .grid__item
+    {
+        width: calc(50% - var(--grid-desktop-horizontal-spacing) * 2 / 3) !important;
+        max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 2 / 3) !important;
+    }
+     .page-shaker-kitchen-additions .custom-catalogue-products .grid .grid__item,
+     .page-shaker-kitchen-canopies .custom-catalogue-products .grid .grid__item,
+      .page-shaker-kitchen-fittings .custom-catalogue-products .grid .grid__item,
+      
+     {
+        max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 2 / 3) !important;
+    }
+    .page-sebastian-cox-knobs-handles .custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__image-wrapper{
+  width:49% !important;
+}
+    .page-sebastian-cox-knobs-handles .custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card__info{
+        width:50% !important;
+    }
+ }
+ 
+  @media screen and (min-width: 750px) and (max-width: 989px) {
+  .page-shaker-kitchen-full-height-cabinets .custom-catalogue-products .multicolumn-list:not(.slider) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.page-shaker-kitchen-fittings .custom-catalogue-products .grid .grid__item {
+    padding-right: 14px;
+}

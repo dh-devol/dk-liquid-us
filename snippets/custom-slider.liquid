@@ -1,0 +1,113 @@
+<style>
+  /* Slider css start */
+  .product .product-gallery-swiper-outer {
+    position: relative;
+    height: 0;
+    padding-top: 125%; /* 4:5 ratio (1800/1440) */
+    max-width: 792px;
+    margin-left: 0;
+  }
+  .product .product-gallery-swiper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .product .product-gallery-swiper .product-media {
+    position: relative;
+    line-height: 0;
+  }
+  .product .product-gallery-swiper .media-caption {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 2;
+    max-width: 85%;
+    text-align: right;
+    text-shadow: 0 2px 4px rgba(0,0,0,.6);
+    pointer-events: none;
+  }
+  .product .product-gallery-swiper .swiper-pagination {
+    text-align: left;
+    margin: 0 0 10px 24px;
+  }
+  .product .product-gallery-swiper .swiper-button-prev,
+  .product .product-gallery-swiper .swiper-button-next {
+    display: block;
+    color: #fff;
+  }
+  .product .product-gallery-swiper span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #fff;
+  }
+  .product .product-gallery-swiper .swiper-slide,
+  .product .product-gallery-swiper .product-media {
+    height: 100%;
+  }
+  .product .product-gallery-swiper .product-media-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Hide non-first slides before Swiper initialises to prevent flash of stacked images */
+  .product .product-gallery-swiper:not(.swiper-initialized) .swiper-slide:not(:first-child) {
+    display: none !important;
+  }
+  @media (max-width: 430px) {
+    .product .product-gallery-swiper .swiper-pagination {
+      text-align: left;
+      margin: 0 0 7px 29px;
+    }
+  }
+  /* Slider css end */
+</style>
+
+<div class="product-gallery-swiper-outer">
+<div class="swiper product-gallery-swiper">
+  <div class="swiper-wrapper">
+    {% if product.media.size > 0 %}
+      {% for media in product.media %}
+        {% if media.media_type == 'image' %}
+          {% liquid
+            assign alt_raw = media.alt | default: media.preview_image.alt | default: ''
+            assign parts = alt_raw | split: '|'
+            assign alt_text = parts[0] | strip
+            assign caption_text = ''
+            if parts.size > 1
+              assign caption_text = parts[1] | strip
+            endif
+            if forloop.first
+              assign loading_attr = 'eager'
+            else
+              assign loading_attr = 'lazy'
+            endif
+          %}
+          <div class="swiper-slide">
+            <div class="product-media">
+              {{ media.preview_image
+                | image_url: width: 1440, height: 1800, crop: 'center'
+                | image_tag:
+                    class: 'product-media-image',
+                    loading: loading_attr,
+                    widths: '1440',
+                    alt: alt_text
+              }}
+
+              {% if caption_text != blank %}
+                <div class="media-caption">{{ caption_text }}</div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <img class="placeholder-img" src="https://cdn.shopify.com/s/files/1/0898/4012/4238/files/placeholder_660x660.jpg?v=1768830010" />
+    {% endif %}
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-pagination"></div>
+</div>
+</div>

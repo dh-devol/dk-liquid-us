@@ -1,0 +1,390 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (min-width: 591px) and (max-width: 1024px) {.grid__item {width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2); max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2); }}",
+        "@media (max-width: 590px) {.grid--2-col-tablet-down .grid__item {width: 100%; max-width: 100%; }}"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "metaobject_gallery_slider_fkGxR8": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "title_with_rich_text_mcmnQm": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_TUqtqt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Collections",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_3j9Jdm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our collections have been curated to help you find exactly what you're looking for.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TUqtqt",
+        "text_3j9Jdm"
+      ],
+      "name": "Title with richtext",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Miirec": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_JU6JWP": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-desk-lamp"
+          }
+        },
+        "product_item_keT9qC": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-library-lamp"
+          }
+        },
+        "product_item_3pQPDC": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-reading-lamp"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_JU6JWP",
+        "product_item_keT9qC",
+        "product_item_3pQPDC"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "The Grand Tour Collection",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "View all",
+        "button_link": "shopify://collections/the-grand-tour-collection",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_VU8wkP": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_T9wMnw": {
+          "type": "product_item",
+          "settings": {
+            "product": "rack-pinion-catch-heirloom-brass"
+          }
+        },
+        "product_item_7FCzDC": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-gaselier-light-tall"
+          }
+        },
+        "product_item_dgeEgM": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-ring-pull-heirloom-brass"
+          }
+        },
+        "product_item_WwyPTj": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-task-light-small"
+          }
+        },
+        "product_item_bJWfRC": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-cafe-curtain-rail-600-2-brackets-8-clips"
+          }
+        },
+        "product_item_8784At": {
+          "type": "product_item",
+          "settings": {
+            "product": "bentwood-cafe-chair"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_T9wMnw",
+        "product_item_7FCzDC",
+        "product_item_dgeEgM",
+        "product_item_WwyPTj",
+        "product_item_bJWfRC",
+        "product_item_8784At"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "The Heirloom Collection",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/heirloom-accessories",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_mKxtkd": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_cc8ykd": {
+          "type": "product_item",
+          "settings": {
+            "product": "amber-glaze-teapot"
+          }
+        },
+        "product_item_FVXiAk": {
+          "type": "product_item",
+          "settings": {
+            "product": "emerald-green-london-tiles"
+          }
+        },
+        "product_item_BbE7Ei": {
+          "type": "product_item",
+          "settings": {
+            "product": "pot-hanger"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_cc8ykd",
+        "product_item_FVXiAk",
+        "product_item_BbE7Ei"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "For the Love of Kitchens",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/for-the-love-of-kitchens",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_BAeihp": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_C9k6jC": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-narrow-pleat-large"
+          }
+        },
+        "product_item_amwmAw": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-wide-pleat-small"
+          }
+        },
+        "product_item_MqH8JJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-plain-skullcap-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_C9k6jC",
+        "product_item_amwmAw",
+        "product_item_MqH8JJ"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Porcelain Pendant Lights",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/porcelain-pendant-lights",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_xxNT4G": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_HGRDK8": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-beaker-large"
+          }
+        },
+        "product_item_QN7mbg": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-beaker-large-plugin"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_HGRDK8",
+        "product_item_QN7mbg"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/porcelain-pendant-lights",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "metaobject_gallery_slider_fkGxR8",
+    "title_with_rich_text_mcmnQm",
+    "custom_product_list_Miirec",
+    "custom_product_list_VU8wkP",
+    "custom_product_list_mKxtkd",
+    "custom_product_list_BAeihp",
+    "custom_product_list_xxNT4G"
+  ]
+}

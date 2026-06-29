@@ -1,0 +1,177 @@
+.page-metafield-content .page_description {
+    column-count: 2;
+    margin-top: 65px;
+}
+.page-metafield-content .page-collapsible {
+    width: 100%;
+    max-width: 100%;
+}
+.page-metafield-content .page-collapsible .grid__item th {
+    text-align: left;
+    font-weight: 500;
+    padding-top: 24px;
+}
+.page-metafield-content .rte table td {
+    padding-left: 0;
+    display: table;
+    width: 100%;
+    min-width: 399px;
+
+}
+.page-metafield-content .page-collapsible .title_arrow-wrapper {
+    margin-bottom: 0;
+    margin-top: 4px;
+}
+.page-metafield-content .page-collapsible .cabinet-costs {
+    width: 100%;
+}
+.page-metafield-content .page-collapsible td.ucost {
+    text-align: right;
+    display: table-cell;
+}
+.page-metafield-content .page-collapsible .accordion__content-wrapper .rte>*:first-child {
+    margin-top: 2px;
+    column-gap: 160px;
+}
+.page-metafield-content .page-collapsible .grid__item.raw_content {
+    max-width: 350px;
+}
+.page-metafield-content .page-collapsible .grid__item.table_content {
+    max-width: 470px;
+}
+.page-metafield-content .page-collapsible .grid__item.table_content p{ margin-bottom:7px;}
+.page-metafield-content .page-collapsible .grid__item.table_content ul{ margin-top:0px;}
+.page-metafield-content.card__slider-gallery .page_cupboard_costs{ margin-top: 5px; }
+.kitchen .page-metafield-content.card__slider-gallery .page_cupboard_costs {
+    font-size:1.05em;
+    margin-top:0;
+    margin-bottom: 1em;
+}
+.kitchen .page-metafield-content .page-collapsible .grid__item.table_content ul{ 
+    margin-bottom: 1.75em;
+}
+.page-metafield-content .page-collapsible p#costings-pnote {
+    font-size: 18px;
+    font-weight: 500;
+}
+.page-metafield-content .page-collapsible td.table_cost_header, .page-metafield-content .page-collapsible td.table_cost_value {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 36px;
+}
+.page-metafield-content .page-collapsible .accordion__content {
+    margin-bottom: 42px;
+}
+.page-metafield-content .page_description p:first-child {
+    margin-top: 0;
+}
+.page-metafield-content .page_cupboard_costs {
+    font-weight: 500;
+    font-size: 16px;
+}
+.page-metafield-content .title-wrapper-with-link {
+    margin-bottom: 8px;
+}
+.page-metafield-content .page-collapsible .grid__item.table_content #cabinet-totals td {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 36px;
+}
+.page-metafield-content .page_description p a {
+    text-decoration: underline;
+    color: rgb(137, 137, 137);
+}
+@media screen and (max-width:991px){
+  .page-metafield-content .title-wrapper-with-link {
+    padding: 0;
+}
+  .page-metafield-content .page_description {
+    column-count: 1;
+    margin-top: 25px;
+}
+  .page-metafield-content .page-collapsible .accordion__content {
+    margin-bottom: 20px;
+}
+}
+@media (min-width:700px) and (max-width:1080px){
+.page-metafield-content .page-collapsible .grid__item.table_content {
+    max-width: 300px;
+}
+.page-metafield-content .page-collapsible .grid__item.raw_content {
+    max-width: 200px;
+}
+}
+
+/* project page dynamic cost css start */
+.page-collapsible .accordion__content .table_content li {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; 
+}
+.kitchen .page-collapsible .accordion__content .table_content li {
+    gap: 10px;
+}
+.kitchen .page-collapsible .accordion__content .table_content li span:first-child {
+    padding: 0.1em 1em 0.1em 0;
+}
+.page-collapsible .accordion__content .table_content .total_cupboard_costs {
+    display: flex;
+    justify-content: space-between;
+}
+.page-collapsible .accordion__content .table_content ul {
+    padding-left: 0;
+}
+.page-collapsible .accordion__content .table_content ul li:first-child {
+    padding: 0;
+}
+.page-collapsible .accordion__content .table_content ul li {
+    padding: 0;
+}
+.page-collapsible .accordion__content .table_content p {
+    font-weight: 500;
+}
+.page-collapsible .accordion__content-wrapper .accordion__content.rte>*:first-child {
+    margin-top: 30px;
+}
+.page-collapsible .accordion__content .table_content .total_cupboard_costs span {
+    font-weight: 500;
+    font-size: 18px;
+}
+.page-collapsible .accordion__content .table_content .total_cupboard_costs {
+    margin-top: 35px;
+}
+.page-collapsible .accordion__content .table_content ul li span + span {
+    white-space: nowrap;
+    min-width: 88px;
+    text-align: right;
+}
+.card__slider-gallery-wrapper {
+    position: relative;
+}
+@media (max-width:768px) {
+  .page-metafield-content .card__slider-gallery-wrapper.page-width .title-wrapper-with-link {
+    max-width: 70%;
+  }
+
+  .page-metafield-content .card__slider-gallery-wrapper.page-width .page_description {
+    margin-top: 60px;
+    width: 90%;
+  }
+  .kitchen .page-metafield-content .card__slider-gallery-wrapper.page-width .page_description {
+    margin-top: 1.6em;
+    margin-bottom: 2.1em;
+  }
+}
+@media (max-width: 767px){
+    .page-metafield-content .page-collapsible p#costings-pnote {
+        margin-top: 2rem;
+    }
+    .kitchen .page-metafield-content .page-collapsible p#costings-pnote {
+        margin-top: 0;
+    }
+    .kitchen .page-metafield-content .page-collapsible .grid__item.raw_content {
+        margin-top: 2em;
+    }
+}
+/* project page dynamic cost css end */
+

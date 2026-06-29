@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "catalogue_title_with_richtext_8kQNAz": {
+      "type": "catalogue-title-with-richtext",
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": false,
+        "show_main_description": false,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "custom_page_gBAHU8": {
+      "type": "custom-page",
+      "settings": {
+        "page": "terms-conditions",
+        "show_heading": false,
+        "heading_size": "h1",
+        "two_column": true,
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "catalogue_title_with_richtext_8kQNAz",
+    "custom_page_gBAHU8",
+    "main"
+  ]
+}

@@ -1,0 +1,228 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gallery_slideshow_ECnaGy": {
+      "type": "gallery-slideshow",
+      "blocks": {
+        "slide_JyTkQR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-desktop-the-grand-tour-collection.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 100,
+            "heading": "",
+            "heading_size": "h0",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_JyTkQR"
+      ],
+      "name": "Gallery slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "show_mobile_banner": true,
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (min-width: 591px) and (max-width: 1024px) {.grid__item {width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2); max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2); }}",
+        "@media (max-width: 590px) {.grid--2-col-tablet-down .grid__item {width: 100%; max-width: 100%; }}"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "title_with_rich_text_4UtAQQ": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_cLxhDn": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Grand Tour Collection",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_BmyFqd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sophisticated, beautifully crafted and made to reflect the importance of quality and style.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_cLxhDn",
+        "text_BmyFqd"
+      ],
+      "name": "Title with richtext",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "sectionname": ""
+      }
+    },
+    "multicolumn_MAXVEG": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_iGK4pc": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>We love this remarkable time in history, a kind of prelude to the slightly less exotic ‘gap year’ of today.<br/><br/>What an experience a young gentleman would have in the late 17th to early 19th century if he was from a wealthy family. He would spend several years, after his formal education was done, travelling through Europe with his entourage. Beginning in Dover and spending considerable time in Paris and Switzerland, travelling through the Alps and onto the cultural mecca of Italy. Learning languages </p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Q7dGPP": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p>and the importance of art and culture was the goal, bringing back marble statues, paintings, and an eye for exotic design. Their newfound knowledge influenced the design of everything from houses to objects when they finally returned to the British Isles.<br/><br/>Our Grand Tour collection of lights is inspired by this fascinating time in history when unusual and unique styles merged.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_iGK4pc",
+        "column_Q7dGPP"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_product_list_Miirec": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_JU6JWP": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-desk-lamp"
+          }
+        },
+        "product_item_keT9qC": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-library-lamp"
+          }
+        },
+        "product_item_GfyJHN": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-reading-lamp"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_JU6JWP",
+        "product_item_keT9qC",
+        "product_item_GfyJHN"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "gallery_slideshow_ECnaGy",
+    "banner",
+    "product-grid",
+    "title_with_rich_text_4UtAQQ",
+    "multicolumn_MAXVEG",
+    "custom_product_list_Miirec"
+  ]
+}

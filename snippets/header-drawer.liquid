@@ -1,0 +1,245 @@
+{% comment %}
+  Renders a header drawer menu for mobile and desktop.
+
+  Usage:
+  {% render 'header-drawer' %}
+{% endcomment %}
+
+<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+  <details id="Details-menu-drawer-container" class="menu-drawer-container">
+    <summary
+      class="header__icon header__icon--menu header__icon--summary link focus-inset"
+      aria-label="{{ 'sections.header.menu' | t }}"
+    >
+      <div class="header-menu-wrapper">
+        <div class="header-menu-icon">
+        </div>
+      </div>
+    </summary>
+    <div id="menu-drawer" class="gradient menu-drawer motion-reduce">
+      <div class="menu-drawer__inner-container">
+        <div class="menu-drawer__navigation-container">
+          <nav class="menu-drawer__navigation">
+            <ul class="menu-drawer__menu has-submenu list-menu" role="list">
+              {%- for link in settings.menu.links -%}
+                <li>
+                  {%- if link.links != blank -%}
+                    <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
+                      <summary
+                        id="HeaderDrawer-{{ link.handle }}"
+                        class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
+                      >
+                        <a href="{{ link.url }}">{{ link.title | escape }}</a>
+                        <span class="svg-wrapper">
+                          {{- 'icon-arrow.svg' | inline_asset_content -}}
+                        </span>
+                        <span class="svg-wrapper">
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </span>
+                      </summary>
+                      <div
+                        id="link-{{ link.handle | escape }}"
+                        class="menu-drawer__submenu has-submenu gradient motion-reduce"
+                        tabindex="-1"
+                      >
+                        <div class="menu-drawer__inner-submenu">
+                          <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
+                            <span class="svg-wrapper">
+                              {{- 'icon-caret.svg' | inline_asset_content -}}
+                            </span>
+                            {{ link.title | escape }}
+                          </button>
+                          <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                            {%- for childlink in link.links -%}
+                              <li>
+                                {%- if childlink.links == blank -%}
+                                  <a
+                                    id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
+                                    href="{{ childlink.url }}"
+                                    class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if childlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                    {% if childlink.current %}
+                                      aria-current="page"
+                                    {% endif %}
+                                  >
+                                    {{ childlink.title | escape }}
+                                  </a>
+                                {%- else -%}
+                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}">
+                                    <summary
+                                      id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
+                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                                    >
+                                      <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                                      <span class="svg-wrapper">
+                                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                      </span>
+                                      <span class="svg-wrapper">
+                                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                                      </span>
+                                    </summary>
+                                    <div
+                                      id="childlink-{{ childlink.handle | escape }}"
+                                      class="menu-drawer__submenu has-submenu gradient motion-reduce"
+                                    >
+                                      <button
+                                        class="menu-drawer__close-button link link--text focus-inset"
+                                        aria-expanded="true"
+                                      >
+                                        <span class="svg-wrapper">
+                                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                                        </span>
+                                        {{ childlink.title | escape }}
+                                      </button>
+                                      <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                        {%- for grandchildlink in childlink.links -%}
+                                          <li>
+                                            {%- assign found_block = false -%}
+                                            {%- for block in section.blocks -%}
+                                              {%- if block.type == 'mobile_menu' and found_block == false -%}
+                                                {% assign block_title = block.settings.menutitle %}
+                                                {% assign parent_title = grandchildlink.title | handleize %}
+                                                {% assign child_title = childlink.title | handleize %}
+
+                                                {%- if block_title contains parent_title
+                                                  and block_title contains child_title
+                                                -%}
+                                                  <details id="Details-menu-drawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}">
+                                                    <summary
+                                                      id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                                      class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
+                                                    >
+                                                      <a href="{{ grandchildlink.url }}">{{ grandchildlink.title | escape }}</a>
+                                                      <span class="svg-wrapper">
+                                                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                                      </span>
+                                                      <span class="svg-wrapper">
+                                                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                                                      </span>
+                                                    </summary>
+                                                    <div
+                                                      id="grandchildlink-{{ grandchildlink.handle | escape }}"
+                                                      class="menu-drawer__submenu has-submenu gradient motion-reduce"
+                                                    >
+                                                      <button
+                                                        class="menu-drawer__close-button link link--text focus-inset"
+                                                        aria-expanded="true"
+                                                      >
+                                                        <span class="svg-wrapper">
+                                                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                                                        </span>
+                                                        {{ grandchildlink.title | escape }}
+                                                      </button>
+                                                      <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
+                                                        {%- for fourthlevel in block.settings.fourthmenu.links -%}
+                                                          <li>
+                                                            <a
+                                                              href="{{ fourthlevel.url }}"
+                                                              class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if fourthlevel.current %} menu-drawer__menu-item--active{% endif %}"
+                                                              {% if fourthlevel.current %}
+                                                                aria-current="page"
+                                                              {% endif %}
+                                                            >
+                                                              {{ fourthlevel.title | escape }}
+                                                            </a>
+                                                          </li>
+                                                        {%- endfor -%}
+                                                      </ul>
+                                                    </div>
+                                                  </details>
+                                                  {%- assign found_block = true -%}
+                                                {%- endif -%}
+                                              {%- endif -%}
+                                            {%- endfor -%}
+
+                                            {%- if found_block == false -%}
+                                              <a
+                                                id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                                href="{{ grandchildlink.url }}"
+                                                class="menu-drawer__menu-item link link--text list-menu__item focus-inset{% if grandchildlink.current %} menu-drawer__menu-item--active{% endif %}"
+                                                {% if grandchildlink.current %}
+                                                  aria-current="page"
+                                                {% endif %}
+                                              >
+                                                {{ grandchildlink.title | escape }}
+                                              </a>
+                                            {%- endif -%}
+                                          </li>
+                                        {%- endfor -%}
+                                      </ul>
+
+                                      {% for block in section.blocks %}
+                                        {% if block.type == 'mega_menu' %}
+                                          {% assign mega_block_title = block.settings.megatitle %}
+                                          {% assign menu_title = childlink.title | handleize %}
+                                          {% if mega_block_title == menu_title %}
+                                            <div class="mega__image-menu">
+                                              <div class="mega__image-menu-wrapper">
+                                               {% if block.settings.blocktitle != blank %} 
+                                                <h2 class="mega_menu--title">{{ block.settings.blocktitle }}</h2>
+                                               {% endif %}  
+                                              <ul class="grid grid--1-col-tablet-down">
+                                                <li class="grid__item">
+                                                  <a class="mega-menu_block-wrapper" href="{{ block.settings.link1 }}">
+                                                    <img src="{{ block.settings.image1 | image_url }}" height="auto" width="100%" alt="{{ block.settings.image1.alt }}">
+                                                    <div class="mega-menu_content-wrapper">
+                                                      <h3>{{ block.settings.title1 }}</h3>
+                                                      <span>{{ block.settings.text1 }}</span>
+                                                    </div>
+                                                  </a>
+                                                </li>
+                                                <li class="grid__item">
+                                                  <a class="mega-menu_block-wrapper" href="{{ block.settings.link2 }}">
+                                                    <img src="{{ block.settings.image2 | image_url }}" height="auto" width="100%" alt="{{ block.settings.image2.alt }}">
+                                                    <div class="mega-menu_content-wrapper">
+                                                      <h3>{{ block.settings.title2 }}</h3>
+                                                      <span>{{ block.settings.text2 }}</span>
+                                                    </div>
+                                                  </a>
+                                                </li>
+                                              </ul>
+                                              </div>
+                                            </div>
+                                            {% endif %}
+                                        {% endif %}
+                                      {% endfor %}
+                                    </div>
+                                  </details>
+                                {%- endif -%}
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      </div>
+                    </details>
+                  {%- else -%}
+                    <a
+                      id="HeaderDrawer-{{ link.handle }}"
+                      href="{{ link.url }}"
+                      class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"
+                      {% if link.current %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      {{ link.title | escape }}
+                    </a>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+            <div class="secondary__menu">
+              <div class="secondary_menu-wrapper">
+                <ul class="secondary__menu-item-wrapper">
+                  {% for link in settings.newmenu.links %}
+                    <li class="secondary__menu-item">
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </details>
+</header-drawer>

@@ -1,0 +1,99 @@
+{{ 'section-editorials.css' | asset_url | stylesheet_tag }}
+
+{% comment %}
+  Editorials section
+  Source: product/page metafields.custom.editorial (metaobject)
+{% endcomment %}
+
+{% assign editorial = blank %}
+{% if product and product.metafields.custom.editorial != blank %}
+  {% assign editorial = product.metafields.custom.editorial.value %}
+{% elsif collection and collection.metafields.custom.editorial != blank %}
+  {% assign editorial = collection.metafields.custom.editorial.value %}
+{% elsif page and page.metafields.custom.editorial != blank %}
+  {% assign editorial = page.metafields.custom.editorial.value %}
+{% endif %}
+
+{% if editorial != blank %}
+  <div class="editorials-section page-width">
+    {% if request.page_type == 'page' or request.page_type == 'collection' %}
+      <div class="editorials-page-separator" aria-hidden="true"><span></span></div>
+    {% endif %}
+
+    {% if editorial.title != blank %}
+      <h2 class="editorials-title">
+        {{ editorial.title }}
+      </h2>
+    {% endif %}
+
+    <div class="editorials-content">
+
+      {% for i in (1..5) %}
+
+        {% assign image_key = 'image_' | append: i %}
+        {% assign text_key  = 'text_'  | append: i %}
+
+        {% if i == 1 %}
+          {% assign link_key = 'external_link' %}
+        {% else %}
+          {% assign link_key = 'external_link_' | append: i %}
+        {% endif %}
+
+        {% assign image     = editorial[image_key] %}
+        {% assign text      = editorial[text_key] %}
+        {% assign video_url = editorial[link_key] %}
+
+        {%- if video_url != blank -%}
+          <div class="editorial-block editorial-video">
+            <div class="video-container">
+              <div class="video-wrapper">
+
+                {% if video_url contains 'vimeo' %}
+                  <iframe
+                    src="{{ video_url }}"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen>
+                  </iframe>
+
+                {% elsif video_url contains 'youtube' or video_url contains 'youtu.be' %}
+                  <iframe
+                    src="{{ video_url | replace: 'watch?v=', 'embed/' }}"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                  </iframe>
+
+                {% else %}
+                  <video controls>
+                    <source src="{{ video_url }}" type="video/mp4">
+                  </video>
+                {% endif %}
+
+              </div>
+            </div>
+          </div>
+        {%- elsif image != blank -%}
+          <div class="editorial-block editorial-images">
+            <div class="images-container one-column">
+              <div class="image-wrapper">
+                <img
+                  src="{{ image | image_url: width: 2136, height: 1280, crop: 'center' }}"
+                  alt="{{ image.alt | escape }}"
+                  loading="lazy">
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if text != blank -%}
+          <div class="editorial-block editorial-text">
+            <div class="editorial double-columns">
+              {{ text | metafield_tag }}
+            </div>
+          </div>
+        {%- endif -%}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

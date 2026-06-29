@@ -1,0 +1,272 @@
+{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+{{ 'section-title-with-rich-text.css' | asset_url | stylesheet_tag }}
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-left: {{ section.settings.padding_left | times: 0.75 | round: 0 }}px;
+    padding-right: {{ section.settings.padding_right | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .page-about .section-{{ section.id }}-padding,
+    .page-our-story .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 1.125 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 1.125 | round: 0 }}px;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-left: {{ section.settings.padding_left }}px;
+      padding-right: {{ section.settings.padding_right }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign current_price_guide = blank
+  assign current_short_description = blank
+  assign current_main_content = blank
+
+  if template contains 'page' and page
+    assign current_title = page.title
+
+    if page.metafields.custom.custom_title != blank
+      assign current_title = page.metafields.custom.custom_title.value
+    endif
+
+    # Short description from metafield
+    if page.metafields.custom.short_description.value != blank
+      assign current_short_description = page.metafields.custom.short_description | metafield_tag
+    endif
+
+    # Main content
+    assign current_main_content = page.content
+
+    # Price guide
+    if page.metafields.custom.price_guide.value != blank
+      assign current_price_guide = page.metafields.custom.price_guide | metafield_tag
+    endif
+
+  elsif template contains 'collection' and collection
+    assign current_title = collection.title
+    assign current_short_description = collection.description
+    assign current_main_content = collection.description
+
+    if collection.metafields.custom.price_guide.value != blank
+      assign current_price_guide = collection.metafields.custom.price_guide | metafield_tag
+    endif
+
+  elsif template contains 'product' and product
+    assign current_title = product.title
+    assign current_short_description = product.description
+    assign current_main_content = product.description
+
+    if product.metafields.custom.price_guide.value != blank
+      assign current_price_guide = product.metafields.custom.price_guide | metafield_tag
+    endif
+
+  elsif template contains 'article' and article
+    assign current_title = article.title
+    assign current_short_description = article.content
+    assign current_main_content = article.content
+
+    if article.metafields.custom.price_guide.value != blank
+      assign current_price_guide = article.metafields.custom.price_guide | metafield_tag
+    endif
+
+  else
+    assign current_title = page_title
+    assign current_short_description = page_description
+    assign current_main_content = page_description
+  endif
+-%}
+
+
+<div class="page-title-description color-{{ section.settings.color_scheme }}{% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}">
+  <div class="page-width section-{{ section.id }}-padding">
+
+    <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position | split: ' ' | first }} {% if section.settings.border_title %} catalogue-text-content {% endif %}">
+      <div class="rich-text__blocks {{ section.settings.content_alignment }}">
+
+        {% if section.settings.show_title  and current_title != blank %}
+          <h1 class="rich-text__heading rte inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+            {{ current_title }}
+          </h1>
+        {% endif %}
+
+        {% if section.settings.show_guide_price  and current_price_guide != blank %}
+          <div class="rich-text__text rte scroll-trigger {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+            <p>Guide price {{ current_price_guide }}</p>
+          </div>
+        {% endif %}
+
+        {% if section.settings.show_description and current_short_description != blank %}
+          <div class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+            {{ current_short_description }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.show_main_description and current_main_content != blank %}
+          <div class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+            {{ current_main_content }}
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.cookie__content p').forEach(function(p) {
+    if (p.children.length === 0 && p.textContent.trim().replace(/\u00a0/g, '') === '') {
+      p.classList.add('spacer-hidden');
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Page title & description",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "default": true,
+      "label": "Show page title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "default": true,
+      "label": "Show short description",
+      "info": "The field will display only if it has data and the display option is enabled."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_main_description",
+      "default": true,
+      "label": "Show main description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_guide_price",
+      "default": false,
+      "label": "Show guide price"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_title",
+      "default": true,
+      "label": "Title with border"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "default": "h1",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h0", "label": "H0 (Large)" },
+        { "value": "hxl", "label": "HXL" },
+        { "value": "hxxl", "label": "HXXL" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "label": "Desktop content position",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Content alignment",
+      "default": "center",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Custom CSS class"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding left",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding right",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page information"
+    }
+  ]
+}
+{% endschema %}

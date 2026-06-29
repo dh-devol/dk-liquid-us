@@ -1,0 +1,469 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gallery_slideshow_ECnaGy": {
+      "type": "gallery-slideshow",
+      "blocks": {
+        "slide_JyTkQR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/deVOL-NYC-Classic-DSC_8053_crop.jpg",
+            "mobile_image": "shopify://shop_images/DSC_8724.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 100,
+            "heading": "As seen in our Manhattan showroom",
+            "heading_size": "h0",
+            "subheading": "Brushed Charcoal Limestone",
+            "button_label": "SHOP NOW",
+            "link": "shopify://products/brushed-charcoal-limestone-600xflx22",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_3RTW9w": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/DSC_5629-2500pxx.jpg",
+            "mobile_image": "shopify://shop_images/The_Refectory_Red_Laundry_Room-295_c2763de9-a718-48fe-9310-84ca33d4b542.jpg",
+            "desktop_focal_point": 90,
+            "mobile_focal_point": 100,
+            "heading": "Rustic and handmade",
+            "heading_size": "h0",
+            "subheading": "Terracotta Tiles",
+            "button_label": "SHOP NOW",
+            "link": "shopify://products/square-terracotta-200x200x20",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_A9LUna": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Kingham16626_crop.jpg",
+            "mobile_image": "shopify://shop_images/Kingham16576.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 100,
+            "heading": "An authentic, aged look",
+            "heading_size": "h1",
+            "subheading": "Chatsworth Oak Parquet",
+            "button_label": "SHOP NOW",
+            "link": "shopify://products/chatsworth-oak-parquet-70x280",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_JyTkQR",
+        "slide_3RTW9w",
+        "slide_A9LUna"
+      ],
+      "name": "Gallery slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "show_mobile_banner": true,
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        "@media screen and (min-width: 591px) and (max-width: 1024px) {.grid__item {width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2); max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2); }}",
+        "@media (max-width: 590px) {.grid--2-col-tablet-down .grid__item {width: 100%; max-width: 100%; }}"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_Miirec": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_JU6JWP": {
+          "type": "product_item",
+          "settings": {
+            "product": "parisian-chequer-marble-406x406"
+          }
+        },
+        "product_item_keT9qC": {
+          "type": "product_item",
+          "settings": {
+            "product": "grey-tumbled-slate-600xflx13"
+          }
+        },
+        "product_item_3pQPDC": {
+          "type": "product_item",
+          "settings": {
+            "product": "brushed-charcoal-limestone-23-5-8xflx3-8"
+          }
+        },
+        "product_item_LWREdR": {
+          "type": "product_item",
+          "settings": {
+            "product": "light-jerusalem-tumbled-limestone-600x900x15"
+          }
+        },
+        "product_item_B6Krd6": {
+          "type": "product_item",
+          "settings": {
+            "product": "jaipur-brushed-limestone-500xfl"
+          }
+        },
+        "product_item_bmej4j": {
+          "type": "product_item",
+          "settings": {
+            "product": "umbrian-limestone-560xfl"
+          }
+        },
+        "product_item_iNbFhR": {
+          "type": "product_item",
+          "settings": {
+            "product": "zafar-etched-limestone-600xflx20"
+          }
+        },
+        "product_item_cY7CcH": {
+          "type": "product_item",
+          "settings": {
+            "product": "square-terracotta-200x200x20"
+          }
+        },
+        "product_item_GfyJHN": {
+          "type": "product_item",
+          "settings": {
+            "product": "parquet-terracotta-75x300"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_JU6JWP",
+        "product_item_keT9qC",
+        "product_item_3pQPDC",
+        "product_item_LWREdR",
+        "product_item_B6Krd6",
+        "product_item_bmej4j",
+        "product_item_iNbFhR",
+        "product_item_cY7CcH",
+        "product_item_GfyJHN"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_PnMQj3": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_dzccD4": {
+          "type": "product_item",
+          "settings": {
+            "product": "prestwold-oak-parquet-70x280"
+          }
+        },
+        "product_item_HNyeBq": {
+          "type": "product_item",
+          "settings": {
+            "product": "chatsworth-oak-parquet-70x280"
+          }
+        },
+        "product_item_4g6jyG": {
+          "type": "product_item",
+          "settings": {
+            "product": "chatsworth-oak-engineered-planks-200x1000-2200x20"
+          }
+        },
+        "product_item_nLikrm": {
+          "type": "product_item",
+          "settings": {
+            "product": "woburn-oak-engineered-planks-200x1000-2200x20"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_dzccD4",
+        "product_item_HNyeBq",
+        "product_item_4g6jyG",
+        "product_item_nLikrm"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_VU8wkP": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_T9wMnw": {
+          "type": "product_item",
+          "settings": {
+            "product": "adhesive-stone-tile-20kg"
+          }
+        },
+        "product_item_7FCzDC": {
+          "type": "product_item",
+          "settings": {
+            "product": "grout-limestone-10kg"
+          }
+        },
+        "product_item_dgeEgM": {
+          "type": "product_item",
+          "settings": {
+            "product": "natural-stone-sealer-spirit-based-1l"
+          }
+        },
+        "product_item_WwyPTj": {
+          "type": "product_item",
+          "settings": {
+            "product": "natural-stone-sealer-water-based-1l"
+          }
+        },
+        "product_item_bJWfRC": {
+          "type": "product_item",
+          "settings": {
+            "product": "aftercare-cleaner-stone-tile-1l"
+          }
+        },
+        "product_item_8784At": {
+          "type": "product_item",
+          "settings": {
+            "product": "intensive-cleaner-stone-tile-1l"
+          }
+        },
+        "product_item_VNJTfm": {
+          "type": "product_item",
+          "settings": {
+            "product": "residue-remover-stone-tile-1l"
+          }
+        },
+        "product_item_NkRckp": {
+          "type": "product_item",
+          "settings": {
+            "product": "multi-surface-primer-5l"
+          }
+        },
+        "product_item_BmgEq3": {
+          "type": "product_item",
+          "settings": {
+            "product": "boiled-linseed-oil-terracotta-2l"
+          }
+        },
+        "product_item_frG6hM": {
+          "type": "product_item",
+          "settings": {
+            "product": "antique-beeswax-terracotta-1l"
+          }
+        },
+        "product_item_zrFyk8": {
+          "type": "product_item",
+          "settings": {
+            "product": "clear-beeswax-terracotta-1l"
+          }
+        },
+        "product_item_r6VHLx": {
+          "type": "product_item",
+          "settings": {
+            "product": "ironwax-gloss-sealer-terracotta-1l"
+          }
+        },
+        "product_item_HjFQqD": {
+          "type": "product_item",
+          "settings": {
+            "product": "waxwash-cleaner-terracotta-1l"
+          }
+        },
+        "product_item_cwGP79": {
+          "type": "product_item",
+          "settings": {
+            "product": "floorshine-cleaner-terracotta-1l"
+          }
+        },
+        "product_item_ezJYNK": {
+          "type": "product_item",
+          "settings": {
+            "product": "wood-floor-adhesive-8kg"
+          }
+        },
+        "product_item_VWXUyb": {
+          "type": "product_item",
+          "settings": {
+            "product": "wood-floor-concrete-moisture-barrier-5kg"
+          }
+        },
+        "product_item_7qLQ8T": {
+          "type": "product_item",
+          "settings": {
+            "product": "wood-floor-hardwax-oil-classic-1l"
+          }
+        },
+        "product_item_MQGh69": {
+          "type": "product_item",
+          "settings": {
+            "product": "wood-floor-hardwax-oil-nude-1l"
+          }
+        },
+        "product_item_PgFFbK": {
+          "type": "product_item",
+          "settings": {
+            "product": "wood-floor-natural-maintenance-wax-1l"
+          }
+        },
+        "product_item_cbnPye": {
+          "type": "product_item",
+          "settings": {
+            "product": "wood-floor-cleaner-1l"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_T9wMnw",
+        "product_item_7FCzDC",
+        "product_item_dgeEgM",
+        "product_item_WwyPTj",
+        "product_item_bJWfRC",
+        "product_item_8784At",
+        "product_item_VNJTfm",
+        "product_item_NkRckp",
+        "product_item_BmgEq3",
+        "product_item_frG6hM",
+        "product_item_zrFyk8",
+        "product_item_r6VHLx",
+        "product_item_HjFQqD",
+        "product_item_cwGP79",
+        "product_item_ezJYNK",
+        "product_item_VWXUyb",
+        "product_item_7qLQ8T",
+        "product_item_MQGh69",
+        "product_item_PgFFbK",
+        "product_item_cbnPye"
+      ],
+      "custom_css": [
+        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Adhesive, Sealers & Care",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "gallery_slideshow_ECnaGy",
+    "banner",
+    "product-grid",
+    "custom_product_list_Miirec",
+    "custom_product_list_PnMQj3",
+    "custom_product_list_VU8wkP"
+  ]
+}

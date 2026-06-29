@@ -1,0 +1,62 @@
+{% comment %}
+  Renders share button.
+  Accepts:
+  - block: {Object} passes in the block information.
+  - share_link: {String} url to be added to the input the user will get/copy.
+
+  Usage:
+  {% render 'share-button',
+    block: block,
+    share_link: share_url
+  %}
+{% endcomment %}
+{% comment %} <script src="{{ 'share.js' | asset_url }}" defer="defer"></script> {% endcomment %}
+{% assign share_url = shop.url | append: article.url | url_encode %}
+{% assign share_title = article.title | url_encode %}
+
+<ul id="socialbar">
+  <li class="tw"><a href="https://twitter.com/intent/tweet?url={{ share_url }}&text={{ share_title }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+  <li class="pi"><a href="https://www.pinterest.com/pin/create/button/?url={{ share_url }}" target="_blank" rel="noopener noreferrer">Pinterest</a></li>
+  <li class="gp"><a href="https://plus.google.com/share?url={{ share_url }}" target="_blank" rel="noopener noreferrer">google+</a></li>
+  <li class="li"><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ share_url }}&title={{ share_title }}" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
+</ul>
+
+{% comment %} <share-button id="Share-{{ section.id }}" class="share-button quick-add-hidden" {{ block.shopify_attributes }}>
+  <button class="share-button__button hidden">
+    <span class="svg-wrapper">{{ 'icon-share.svg' | inline_asset_content }}</span>
+    {{ block.settings.share_label | escape }}
+  </button>
+  <details id="Details-{{ block.id }}-{{ section.id }}">
+    <summary class="share-button__button">
+      <span class="svg-wrapper">{{ 'icon-share.svg' | inline_asset_content }}</span>
+      {{ block.settings.share_label | escape }}
+    </summary>
+    <div class="share-button__fallback motion-reduce">
+      <div class="field">
+        <span id="ShareMessage-{{ section.id }}" class="share-button__message hidden" role="status"> </span>
+        <input
+          type="text"
+          class="field__input"
+          id="ShareUrl-{{ section.id }}"
+          value="{{ share_link }}"
+          placeholder="{{ 'general.share.share_url' | t }}"
+          onclick="this.select();"
+          readonly
+        >
+        <label class="field__label" for="ShareUrl-{{ section.id }}">{{ 'general.share.share_url' | t }}</label>
+      </div>
+      <button class="share-button__close hidden">
+        <span class="svg-wrapper">
+          {{- 'icon-close.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
+      </button>
+      <button class="share-button__copy">
+        <span class="svg-wrapper">
+          {{- 'icon-copy.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
+      </button>
+    </div>
+  </details>
+</share-button> {% endcomment %}

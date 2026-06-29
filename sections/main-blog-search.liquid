@@ -1,0 +1,249 @@
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+{%- paginate search.results by 12 -%}
+  <div class="main-blog page-width section-{{ section.id }}-padding blog-search-results">
+     <div class="blog-search-mobile-logo">
+      {% if section.settings.predictive_logo != blank %}
+      <img src="{{ section.settings.predictive_logo | image_url }}" width="auto" height="auto" alt="{{ section.settings.predictive_logo.alt }}">
+      {% endif %}
+    </div>
+  <div class="title__main-wrapper">  
+   <div class="title__inside-wrapper baskerville"> 
+    <span>You are looking at: </span> 
+    
+    <h1 class="baskerville title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ blog.title | escape }}
+      {{ search.terms }}
+    </h1>
+   </div> 
+    <div class="blog__option-wrapper">
+      <div class="baskerville blog__title">{% if section.settings.option_title != blank %}{{ section.settings.option_title }}{% else %}Select{% endif %}
+      <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+      </div>
+      <ul class="blog__options baskerville">
+        {% assign blog_menu = menus['blog-menu'] %}
+
+        {% if blog_menu %}
+          {% for link in blog_menu.links %}
+            <li class="blog__option">
+              <a class="baskerville" href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+
+    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+      {%- for article in search.results -%}
+        <div
+          class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          {%- render 'article-card',
+            article: article,
+            media_height: section.settings.image_height,
+            media_aspect_ratio: article.image.aspect_ratio,
+            show_image: section.settings.show_image,
+            show_date: section.settings.show_date,
+            show_author: section.settings.show_author,
+            show_excerpt: true
+          -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+   <div id="load-more-container">
+  <button class="baskerville" id="load-more" data-next-page="{{ paginate.next.url }}" {% if paginate.next == blank %}style="display:none;"{% endif %}>
+    Load More
+  </button>
+  </div>
+  </div>
+
+{%- endpaginate -%}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  let loading = false;
+  let loadMoreBtn = document.getElementById("load-more");
+
+  function fetchNextPage() {
+    if (loading || !loadMoreBtn || !loadMoreBtn.dataset.nextPage) return;
+    
+    loading = true;
+    let nextPageUrl = loadMoreBtn.dataset.nextPage;
+
+    fetch(nextPageUrl)
+      .then((response) => response.text())
+      .then((html) => {
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, "text/html");
+        
+        let newArticles = doc.querySelector(".blog-articles").innerHTML;
+        document.querySelector(".blog-articles").insertAdjacentHTML("beforeend", newArticles);
+
+        let nextPageButton = doc.getElementById("load-more");
+        if (nextPageButton) {
+          loadMoreBtn.dataset.nextPage = nextPageButton.dataset.nextPage || "";
+          if (!nextPageButton.dataset.nextPage) {
+            loadMoreBtn.textContent = "No more posts to load.";
+          }
+        }
+        loading = false;
+      })
+      .catch(() => {
+        console.error("Error loading next page");
+        loading = false;
+      });
+  }
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", fetchNextPage);
+  }
+
+  window.addEventListener("scroll", function () {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+      fetchNextPage();
+    }
+  });
+
+    
+});
+
+</script>
+
+
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "option_title",
+      "label": "Option title",
+      "default": "Categories"
+    },
+    {
+     "type": "image_picker",
+     "id": "predictive_logo",
+     "label": "Mobile Logo",
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.main-blog.settings.layout.options__1.label"
+        },
+        {
+          "value": "collage",
+          "label": "t:sections.main-blog.settings.layout.options__2.label"
+        }
+      ],
+      "default": "collage",
+      "label": "t:sections.main-blog.settings.layout.label",
+      "info": "t:sections.main-blog.settings.layout.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-blog.settings.image_height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.main-blog.settings.image_height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-blog.settings.image_height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.main-blog.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.main-blog.settings.image_height.label",
+      "info": "t:sections.main-blog.settings.image_height.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-blog.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

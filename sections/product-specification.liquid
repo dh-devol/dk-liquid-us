@@ -1,0 +1,319 @@
+{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
+{{ 'custom-collapsible-content.css' | asset_url | stylesheet_tag }}
+
+<div class="product-specification custom-collapsible-content page-width">
+  <div class="collapsible-content">
+    <div class="collapsible-content__wrapper">
+      <div class="grid grid--1-col grid--2-col-tablet collapsible-content__grid">
+        <div class="grid__item">
+          {% if product.metafields.custom.product_specification_image != blank
+            or product.metafields.custom.product_dimensions != blank
+            or product.metafields.custom.product_materials_finish != blank
+            or product.metafields.custom.product_care_maintenance != blank
+            or product.metafields.custom.product_sustainability != blank
+            or product.metafields.custom.product_documents != blank
+          %}
+            <div
+              class="specification-metafield accordion"
+            >
+              <div
+                class="class-details"
+                id="Details-{{ section.id }}"
+                {% if section.settings.open_first_collapsible_row %}
+                  open
+                {% endif %}
+              >
+                <div
+                  class="class-summary"
+                >
+                  <div class="title_arrow-wrapper">
+                    <h3 class="specification-title accordion__title inline-richtext hxl">
+                      {{ 'Product specification' }}
+                    </h3>
+                    <span class="dropdown-arrow"></span>
+                  </div>
+                </div>
+                <div class="accordion__content-wrapper">
+                  <div
+                    class="main-accordion accordion__content rte"
+                  >
+                    {% if product.metafields.custom.product_specification_image != blank %}
+                      <img
+                        src="{{ product.metafields.custom.product_specification_image | image_url: width: 800 }}"
+                        width="534"
+                        height="auto"
+                        alt="Product extra image"
+                      >
+                    {% endif %}
+                    <div class="child-accordion-wrapper">
+                      {% assign first_child_shown = false %}
+                      {% if product.metafields.custom.product_dimensions != blank %}
+                        <div
+                          class="accordion"
+                        >
+                          <div
+                            class="class-details product-dimensions"
+                            id="Details-{{ section.id }}"
+                            {% unless first_child_shown %}open{% endunless %}
+                          >
+                          {% assign first_child_shown = true %}
+                            <div
+                              class="class-summary"
+                            >
+                              <div class="title_arrow-wrapper">
+                                <h3 class="specification-title accordion__title inline-richtext hxl">
+                                  {{ 'Dimensions' }}
+                                </h3>
+                                <span class="dropdown-arrow"></span>
+                              </div>
+                            </div>
+                            <div class="accordion__content-wrapper">
+                              <div
+                                class="accordion__content rte"
+                              >
+                                {{ product.metafields.custom.product_dimensions }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                      {% if product.metafields.custom.product_materials_finish != blank %}
+                        <div
+                          class="accordion"
+                        >
+                          <div
+                            class="class-details"
+                            id="Details-{{ section.id }}"
+                            {% unless first_child_shown %}open{% endunless %}
+                          >
+                          {% assign first_child_shown = true %}
+                            <div
+                              class="class-summary"
+                            >
+                              <div class="title_arrow-wrapper">
+                                <h3 class="specification-title accordion__title inline-richtext hxl">
+                                  {{ 'Materials & Finish' }}
+                                </h3>
+                                <span class="dropdown-arrow"></span>
+                              </div>
+                            </div>
+                            <div class="accordion__content-wrapper">
+                              <div
+                                class="accordion__content rte"
+                              >
+                                {{ product.metafields.custom.product_materials_finish }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                      {% if product.metafields.custom.product_specifications != blank %}
+                        <div class="accordion">
+                          <div
+                            class="class-details product-specification"
+                            id="Details-{{ section.id }}"
+                            {% unless first_child_shown %}open{% endunless %}
+                          >
+                          {% assign first_child_shown = true %}
+                            <div class="class-summary">
+                              <div class="title_arrow-wrapper">
+                                <h3 class="specification-title accordion__title inline-richtext hxl">
+                                {{ 'Specification' }}
+                                </h3>
+                                <span class="dropdown-arrow"></span>
+                              </div>
+                            </div>
+                            <div class="accordion__content-wrapper">
+                              <div class="accordion__content rte">
+                              {{ product.metafields.custom.product_specifications }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                      {% if product.metafields.custom.product_care_maintenance != blank %}
+                        <div
+                          class="accordion"
+                        >
+                          <div
+                            class="class-details"
+                            id="Details-{{ section.id }}"
+                            {% unless first_child_shown %}open{% endunless %}
+                          >
+                          {% assign first_child_shown = true %}
+                            <div
+                              class="class-summary"
+                            >
+                              <div class="title_arrow-wrapper">
+                                <h3 class="specification-title accordion__title inline-richtext hxl">
+                                  {{ 'Care & Maintenance' }}
+                                </h3>
+                                <span class="dropdown-arrow"></span>
+                              </div>
+                            </div>
+                            <div class="accordion__content-wrapper">
+                              <div
+                                class="accordion__content rte"
+                              >
+                                {{ product.metafields.custom.product_care_maintenance }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                      {% if product.metafields.custom.product_sustainability != blank %}
+                        <div
+                          class="accordion"
+                        >
+                          <div
+                            class="class-details"
+                            id="Details-{{ section.id }}"
+                            {% unless first_child_shown %}open{% endunless %}
+                          >
+                          {% assign first_child_shown = true %}
+                            <div
+                              class="class-summary"
+                            >
+                              <div class="title_arrow-wrapper">
+                                <h3 class="specification-title accordion__title inline-richtext hxl">
+                                  {{ 'Sustainability' }}
+                                </h3>
+                                <span class="dropdown-arrow"></span>
+                              </div>
+                            </div>
+                            <div class="accordion__content-wrapper">
+                              <div
+                                class="accordion__content rte"
+                              >
+                                {{ product.metafields.custom.product_sustainability }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                      {% if product.metafields.custom.product_documents != blank %}
+                        <div
+                          class="accordion"
+                        >
+                          <div
+                            class="class-details"
+                            id="Details-{{ section.id }}"
+                            {% unless first_child_shown %}open{% endunless %}
+                          >
+                          {% assign first_child_shown = true %}
+                            <div
+                              class="class-summary"
+                            >
+                              <div class="title_arrow-wrapper">
+                                <h3 class="specification-title accordion__title inline-richtext hxl">
+                                  {{ 'Documents' }}
+                                </h3>
+                                <span class="dropdown-arrow"></span>
+                              </div>
+                            </div>
+                            <div class="accordion__content-wrapper">
+                              <div
+                                class="accordion__content rte"
+                              >
+                                {{ product.metafields.custom.product_documents }}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          <div
+            class="delivery-returns accordion"
+          >
+            <div
+              class="class-details"
+              id="Details-{{ section.id }}"
+              {% if section.settings.open_first_collapsible_row %}
+                open
+              {% endif %}
+            >
+              <div
+                class="class-summary"
+              >
+                <div class="title_arrow-wrapper">
+                  <h3 class="specification-title accordion__title inline-richtext hxl">
+                    {{ 'Delivery & Returns' }}
+                  </h3>
+                  <span class="dropdown-arrow"></span>
+                </div>
+              </div>
+              <div class="accordion__content-wrapper">
+                <div
+                  class="page-accordion accordion__content rte"
+                >
+                  <div class="product-delivery-column">
+                     <h4>Delivery</h4>
+                    {% if product.metafields.custom.delivery_text %}
+                      
+                      {{ product.metafields.custom.delivery_text }}
+                    {% else %}
+                    {{ pages['product-page-delivery'].content }}
+                    {% endif %}
+                  </div>
+                   <div class="product-returns-column"> 
+                    <h4>Returns</h4>
+                  {% if product.metafields.custom.returns_text %}
+                      {{ product.metafields.custom.returns_text }}
+                  {% else %}
+                   
+                      {{ pages['product-page-returns'].content }}
+                   
+                  {% endif %}
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- render 'meta-editorials' -%}
+{% if product.metafields.custom.product_specification_image == blank %}
+  <style>
+    .child-accordion-wrapper {
+      width: 100%;
+    }
+  </style>
+{% endif %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var wrapper = document.querySelector('.child-accordion-wrapper');
+    if (!wrapper) return;
+
+    var firstAccordion = wrapper.querySelector('.accordion');
+    if (!firstAccordion) return;
+
+    var header = firstAccordion.querySelector('.class-summary');
+    var content = firstAccordion.querySelector('.accordion__content');
+    if (!header || !content) return;
+
+    content.style.maxHeight = content.scrollHeight + 'px';
+    header.classList.add('active');
+    header.setAttribute('open', '');
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product specification",
+  "presets": [
+    {
+      "name": "Product specification",
+    }
+  ]
+}
+{% endschema %}

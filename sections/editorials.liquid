@@ -1,0 +1,150 @@
+{{ 'section-editorials.css' | asset_url | stylesheet_tag }}
+
+{% render 'meta-editorials' %}
+
+<style>
+.editorials-title {
+  text-align: left;
+  margin-bottom: 62px;
+  font-size: 24px;
+  color: #595959;
+}
+
+.editorials-page-separator {
+  border-top: 1px solid #e5e5e5;
+  margin: 16px 0 36px;
+}
+
+.editorials-section .editorials-content p a {
+    color: rgb(137, 137, 137);
+}
+
+.editorial-block {
+  /*margin-bottom: 3rem;*/
+}
+
+.images-container,
+.text-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.images-container.two-columns,
+.text-container.two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.images-container.one-column,
+.text-container.one-column {
+  grid-template-columns: 1fr;
+}
+
+.editorial.double-columns {
+  column-gap: 32px;
+  column-count: 2;
+  color: #595959;
+}
+
+.editorial.double-columns p {
+  padding: 0;
+  margin: 0 0 16px;
+  box-sizing: border-box;
+}
+
+.video-container {
+  width: 100%;
+}
+
+.video-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius:0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-caption {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+.text-wrapper {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text-wrapper p {
+  margin-bottom: 1rem;
+}
+
+.text-wrapper p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile styles - force single column for text */
+@media (max-width: 768px) {
+  .editorial.double-columns {
+    column-count: 1;
+  }
+  
+  .images-container {
+    gap: 1.5rem;
+  }
+  
+  .editorial-block {
+    /*margin-bottom: 2rem;*/
+  }
+  .editorials-section .editorials-content .editorial-block.editorial-images {
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+  .editorials-title {
+    margin-bottom: 38px;
+  }
+}
+
+@media (max-width: 480px) {  
+  .images-container.two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Editorials",
+  "tag": "section",
+  "class": "section",
+  "settings": [],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Editorials"
+    }
+  ]
+}
+{% endschema %}

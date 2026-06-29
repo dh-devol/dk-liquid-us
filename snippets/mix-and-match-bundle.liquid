@@ -1,0 +1,832 @@
+{%- comment -%}
+Mix & Match Bundle — Dropdown (block/snippet-friendly)
+
+Params (pass from a parent section/block with {% render %}):
+  root_id: string (unique)            — required
+  limit: number                       — required (e.g. 4)
+  bundle_product: product             — required (dummy "container" product)
+  fast_bundle_id: string              — optional (Fast Bundle __cartBundleId)
+  item_label_prefix: string           — optional; default "Bundle item"
+  heading, subheading, button_label: strings (optional)
+  products_list: product_list         — optional explicit child products
+  collection: collection              — optional source if p1..p7 not used
+  max_children: number                — optional, default 7 (from collection)
+  bundle_first_option: string         - first option choice
+  item_label_styling: string          - how label appears above dropdowns
+  bundle_price: boolean               - shows dynamic pricing based off bundle
+  bundle_qty: boolean                 - shows quantity field
+  add_on_styling: string              - determines how add ons appear.
+
+Behavior:
+- Renders `limit` <select> inputs. Duplicate selections => quantity > 1.
+- Adds ONE container variant to cart with properties:
+   _bundle_items (private JSON), _bundle_summary (private), __cartBundleId (optional),
+   and visible numbered properties like "Scent 1", "Scent 2", ...
+{%- endcomment -%}
+
+{%- assign _limit = limit | default: 4 -%}
+{%- assign _max = max_children | default: 7 -%}
+{%- assign _fast = fast_bundle_id | default: '' -%}
+{%- assign _btn = button_label | default: 'Add to basket ' -%}
+{%- assign _prefix = item_label_prefix | default: 'Bundle item' -%}
+{%- assign _bundle_first_option = bundle_first_option -%}
+{%- assign _item_label_styling = item_label_styling -%}
+{%- assign _bundle_price = bundle_price %}
+{%- assign _bundle_qty = bundle_qty -%}
+{%- assign _add_on_styling = add_on_styling -%}
+{%- assign _bundle_product_id = bundle_product.id -%}
+{%- assign _parent_price = bundle_product.price -%}
+{%- if bundle_product.tags contains "fixed_price_bundle" -%}
+  {% assign _bundle_price_type = "fixed" %}
+{%- elsif bundle_product.tags contains "variable_price_bundle" -%}
+  {% assign _bundle_price_type = "variable" %}
+{%- endif -%}
+
+{%- assign _bundle_variant_id = '' -%}
+{%- if bundle_product -%}
+  {%- assign _bv = bundle_product.selected_or_first_available_variant | default: bundle_product.first_available_variant | default: bundle_product.variants.first -%}
+  {%- if _bv -%}{%- assign _bundle_variant_id = _bv.id -%}{%- endif -%}
+{%- endif -%}
+
+{%- comment -%}
+Build a flat list of variant options (id, title, url, image, available).
+We include all variants of each child product, disabling sold-out ones.
+{%- endcomment -%}
+{%- assign _products_list = products_list -%}
+{%- if _products_list == blank and products_list.value -%}
+  {%- assign _products_list = products_list.value -%}
+{%- endif -%}
+{%- assign _has_explicit = false -%}
+{%- if _products_list and _products_list.size > 0 -%}{%- assign _has_explicit = true -%}{%- endif -%}
+
+{%- capture _options_json -%}
+[
+{%- assign _first = true -%}
+{%- if _has_explicit -%}
+  {%- for _p in _products_list -%}
+    {%- assign _product_obj = _p -%}
+    {%- if _product_obj.handle == blank and _p != blank -%}
+      {%- assign _product_obj = all_products[_p] -%}
+    {%- endif -%}
+    {%- if _product_obj -%}
+      {%- for v in _product_obj.variants -%}
+      {%- unless _first -%},{%- endunless -%}
+      {%- assign _first = false -%}
+      {
+        "variant_id": {{ v.id | json }},
+        "product_title": {{ _product_obj.title | json }},
+        "variant_title": {{ v.title | json }},
+        "title": {% if _p.metafields.custom.bundle_option_name.value %}
+          {{ _p.metafields.custom.bundle_option_name.value | json }}
+          {% elsif v.title == 'Default Title' %}
+          {{ _product_obj.title | json }}
+          {% else %}
+          {{ _product_obj.title | append: ' - ' | append: v.title | json }}
+          {% endif %},
+        "url": {{ _product_obj.url | append: '?variant=' | append: v.id | json }},
+        "image": {%- if v.image -%}{{ v.image | image_url: width: 360 | json }}{%- elsif _product_obj.featured_image -%}{{ _product_obj.featured_image | image_url: width: 360 | json }}{%- else -%}{{ '' | json }}{%- endif -%},
+        "available": {{ v.available | json }},
+        "price": {{  v.price }}
+      }
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- elsif collection and collection.products_count > 0 -%}
+  {%- for _p in collection.products limit: _max -%}
+    {%- for v in _p.variants -%}
+      {%- unless _first -%},{%- endunless -%}
+      {%- assign _first = false -%}
+      {
+        "variant_id": {{ v.id | json }},
+        "product_title": {{ _p.title | json }},
+        "variant_title": {{ v.title | json }},
+        "title": {% if _p.metafields.custom.bundle_option_name.value %}
+            {{ _p.metafields.custom.bundle_option_name.value | json }}
+          {% elsif v.title == 'Default Title' %}
+            {{ _p.title | json }}
+          {% else %}
+            {{ _p.title | append: ' - ' | append: v.title | json }}
+          {% endif %},
+        "url": {{ _p.url | append: '?variant=' | append: v.id | json }},
+        "image": {%- if v.image -%}{{ v.image | image_url: width: 360 | json }}{%- elsif _p.featured_image -%}{{ _p.featured_image | image_url: width: 360 | json }}{%- else -%}{{ '' | json }}{%- endif -%},
+        "available": {{ v.available | json }},
+        "price": {{  v.price }}
+      }
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endif -%}
+]
+{%- endcapture -%}
+
+<section
+  id="{{ root_id }}"
+  class="mm-bundle mm-bundle--dropdowns"
+  data-bundle-product="{{ _bundle_product_id }}"
+  data-bundle-title="{{ bundle_product.title }}"
+  data-bundle-lead-time="{{ bundle_product.metafields.custom.lead_time }}"
+  data-bundle-lead-time-days="{{ bundle_product.metafields.custom.lead_time_days }}"
+  data-bundle-variant="{{ _bundle_variant_id }}"
+  data-fast-bundle-id="{{ _fast | escape }}"
+  data-limit="{{ _limit }}"
+  data-prefix="{{ _prefix | escape }}"
+  data-options='{{ _options_json | strip_newlines | escape }}'
+  data-bundle-price-type="{{ _bundle_price_type }}"
+  data-parent-price="{{ _parent_price }}"
+>
+  <div class="mm-header">
+    {% if heading %}<h2>{{ heading }}</h2>{% endif %}
+    {% if subheading %}<p>{{ subheading }}</p>{% endif %}
+  </div>
+
+  {%- unless bundle_product -%}
+    <div class="mm-warning" style="margin:.5rem 0; padding:.75rem; border:1px solid #ffd5a8; background:#fff7ed; border-radius:8px;">
+      Select a <strong>Bundle container product (priced)</strong>. We’ll use its first available variant as the cart line.
+    </div>
+  {%- endunless -%}
+
+  {% if _item_label_styling == 'one_label' %}<button class="dropdown-accordion" open><p>{{ _prefix }}</p><span class="dropdown-arrow"></span></button>{% endif %}
+  <div class="mm-grid mm-grid--selects{% if _bundle_price  %} mm-bundle-price{% endif %}" {% if _item_label_styling == 'one_label' %}style="display:block" aria-expanded="true"{% endif %}>
+    {%- if _first -%}
+      <p>No child products provided. Select child products or pass a collection.</p>
+    {%- else -%}
+      {%- for i in (1.._limit) -%}
+        <div class="mm-select">
+          <label for="{{ root_id }}-choice-{{ i }}" {% if _item_label_styling == 'one_label' %}hidden{% endif %}>{{ _prefix }} {{ i }}</label>
+          <select id="{{ root_id }}-choice-{{ i }}" class="mm-choice {% if _item_label_styling == 'one_label' %}one-label{% endif %}" aria-label="{{ _prefix }} {{ i }}" data-styling={{ _bundle_first_option }}>
+            <option value="">— Choose —</option>
+            {# options are populated by JS from data-options #}
+          </select>
+        </div>
+      {%- endfor -%}
+    {%- endif -%}
+  </div>
+  {% assign extra = product.metafields.custom.products_add_extra_products.value | first %}
+  {% assign addon = extra.product_s.value | first %}
+  <input
+    type="hidden"
+    name="id"
+    value="{{ addon.selected_or_first_available_variant.id }}"
+    class="product-add-on product-variant-id"
+  >
+  <input
+    type="hidden"
+    name="title"
+    value="{{ addon.title }}"
+    class="product-add-on product-variant-title"
+  >
+  <input
+    type="hidden"
+    name="price"
+    value="{{ addon.price }}"
+    class="product-add-on product-variant-price"
+  > 
+
+  <div class="mm-footer quantity_buy_button-wrapper">
+    <div class="mm-hint" data-hint>Pick exactly {{ _limit }} in total.</div>
+    {% if _bundle_qty %}
+      <div
+        id="Quantity-Form-{{ section.id }}"
+        class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
+        {% # theme-check-disable %}
+        {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
+        {% # theme-check-enable %}
+        <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+          {{ 'products.product.quantity.label' | t }}
+          <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}">
+            {%- render 'loading-spinner' -%}
+          </span>
+        </label>
+        <div class="price-per-item__container">
+          <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
+            <button class="quantity__button" name="minus" type="button">
+              <span class="visually-hidden">
+                {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
+              </span>
+              <span class="svg-wrapper">
+                {{- 'icon-minus.svg' | inline_asset_content -}}
+              </span>
+            </button>
+            <input
+              class="quantity__input"
+              type="number"
+              name="quantity"
+              id="Quantity-{{ section.id }}"
+              data-cart-quantity="{{ cart_qty }}"
+              data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+              min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+              {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+              {% endif %}
+              step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+              value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+              form="{{ product_form_id }}"
+            >
+            <button class="quantity__button" name="plus" type="button">
+              <span class="visually-hidden">
+                {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
+              </span>
+              <span class="svg-wrapper">
+                {{- 'icon-plus.svg' | inline_asset_content -}}
+              </span>
+            </button>
+          </quantity-input>
+        </div>
+        <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
+          {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
+            <span class="divider">
+              {{-
+                'products.product.quantity.multiples_of'
+                | t: quantity: product.selected_or_first_available_variant.quantity_rule.increment
+              -}}
+            </span>
+          {%- endif -%}
+          {%- if product.selected_or_first_available_variant.quantity_rule.min > 1 -%}
+            <span class="divider">
+              {{-
+                'products.product.quantity.minimum_of'
+                | t: quantity: product.selected_or_first_available_variant.quantity_rule.min
+              -}}
+            </span>
+          {%- endif -%}
+          {%- if product.selected_or_first_available_variant.quantity_rule.max != null -%}
+            <span class="divider">
+              {{-
+                'products.product.quantity.maximum_of'
+                | t: quantity: product.selected_or_first_available_variant.quantity_rule.max
+              -}}
+            </span>
+          {%- endif -%}
+        </div>
+        {%- if product.quantity_price_breaks_configured? -%}
+          <volume-pricing class="parent-display" id="Volume-{{ section.id }}">
+            {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
+              <span class="caption-large">{{ 'products.product.volume_pricing.title' | t }}</span>
+              <ul class="list-unstyled">
+                <li>
+                  <span>{{ product.selected_or_first_available_variant.quantity_rule.min }}+</span>
+                  {%- assign price = product.selected_or_first_available_variant.price | money -%}
+                  <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}">
+                    {{- 'sections.quick_order_list.each' | t: money: price -}}
+                  </span>
+                </li>
+                {%- for price_break in product.selected_or_first_available_variant.quantity_price_breaks -%}
+                  {%- assign price_break_price = price_break.price | money -%}
+                  <li class="{%- if forloop.index >= 3 -%}show-more-item hidden{%- endif -%}">
+                    <span>
+                      {{- price_break.minimum_quantity -}}
+                      <span aria-hidden="true">+</span></span
+                    >
+                    <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: price_break_price }}">
+                      {{- 'sections.quick_order_list.each' | t: money: price_break_price -}}
+                    </span>
+                  </li>
+                {%- endfor -%}
+              </ul>
+              {%- if product.selected_or_first_available_variant.quantity_price_breaks.size >= 3 -%}
+                <show-more-button>
+                  <button
+                    class="button-show-more link underlined-link"
+                    id="Show-More-{{ section.id }}"
+                    type="button"
+                  >
+                    <span class="label-show-more label-text"
+                      ><span aria-hidden="true">+ </span>{{ 'products.facets.show_more' | t }}
+                    </span>
+                  </button>
+                </show-more-button>
+              {%- endif -%}
+            {%- endif -%}
+          </volume-pricing>
+        {%- endif -%}
+      </div>
+    {% endif %}
+    <button class="mm-add-btn product-form__submit button button--full-width button--primary" type="button" data-add disabled>
+      {{ _btn }}
+    </button>
+    <div class="mm-error" data-error style="display:none;color:#b00020;margin-left:12px;"></div>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.getElementById({{ root_id | json }});
+      if (!root) return;
+
+      const LIMIT = Number(root.dataset.limit || 4);
+      const FAST_BUNDLE_ID = root.dataset.fastBundleId || '';
+      const PREFIX = root.dataset.prefix || 'Bundle item';
+      const OPTIONS = (() => {
+        try { return JSON.parse(root.dataset.options || '[]'); } catch(_) { return []; }
+      })();
+
+      const bundleVariantId = Number(root.dataset.bundleVariant);
+      const bundleProductId = Number(root.dataset.bundleProduct);
+      const bundleLeadTime = String(root.dataset.bundleLeadTime);
+      const bundleLeadTimeDays = String(root.dataset.bundleLeadTimeDays);
+      const bundleProductTitle = String(root.dataset.bundleTitle);
+      const parentPrice = Number(root.dataset.parentPrice);
+
+      const bundlePriceType = root.dataset.bundlePriceType;
+
+      const addonId = root.querySelector('input.product-add-on.product-variant-id');
+      const addonTitle = root.querySelector('input.product-add-on.product-variant-title');
+      const addonPrice = root.querySelector('input.product-add-on.product-variant-price');
+
+      const addBtn = root.querySelector('[data-add]');
+      const hintEl = root.querySelector('[data-hint]');
+      const errEl = document.getElementById('cart-popup-container');
+      const errElDiv = errEl.querySelector('#cart-notification');
+      const errElText = errEl.querySelector('.added-message');
+      const choiceEls = Array.from(root.querySelectorAll('.mm-choice'));
+      const choiceStyling = root.querySelector('[data-styling]');
+      const accordianBtn = root.querySelector('.dropdown-accordion');
+      const selectDiv = root.querySelector('.mm-grid');
+      const qtyWrapper = root.querySelector('.quantity__input');
+
+      const normalizeTitle = (raw) => {
+        const str = String(raw || '');
+        const parts = str.split('-');
+        return parts[parts.length - 1].trim();
+      };
+
+      // Populate dropdowns
+      function renderOptions(select) {
+        select.innerHTML = '<option value="">— Choose —</option>';
+        if (choiceStyling.dataset?.styling != 'choose') {
+          select.innerHTML = '';
+        }
+        OPTIONS.forEach(opt => {
+          const o = document.createElement('option');
+          o.value = String(opt.variant_id);
+          const title = opt.title;
+          const fullTitle = normalizeTitle(opt.product_title);
+          const price = Number(opt.price);
+          o.textContent = title;
+          if (!opt.available) {
+            o.disabled = true;
+            o.textContent += ' — Sold out';
+          }
+          o.dataset.url = opt.url || '';
+          o.dataset.image = opt.image || '';
+          o.dataset.title = fullTitle || '';
+          o.dataset.price = price;
+          select.appendChild(o);
+        });
+        if (choiceStyling.dataset?.styling == 'none') {
+          const none = document.createElement('option');
+          none.value = 'none';
+          none.textContent = 'None';
+          none.dataset.price = 0;
+          select.appendChild(none);
+        }
+      }
+      choiceEls.forEach(renderOptions);
+
+      function showError(msg){
+        if (!errEl) return;
+        errElText.textContent = msg;
+        errEl.classList.add("show");
+        errElDiv.classList.add("active", "animate")
+        setTimeout(() => { errEl.classList.remove("show"); }, 5000);
+        console.error('[Mix&Match]', msg);
+      }
+
+      function updateState() {
+        const filled = choiceEls.filter(s => s.value).length;
+        addBtn.disabled = (filled !== LIMIT);
+        hintEl.textContent = filled === LIMIT
+          ? 'Looks good — ' + LIMIT + ' selected.'
+          : `Pick exactly ${LIMIT} (you’ve picked ${filled}).`;
+        updatePrice();
+      }
+      choiceEls.forEach(s => s.addEventListener('change', updateState));
+      updateState();
+
+      function collectSelections() {
+        const byId = new Map();
+        choiceEls.forEach(s => {
+          let vid = Number(s.value || 0);
+          if (isNaN(vid)) {
+            vid = s.value;
+          } 
+          const opt = s.selectedOptions[0];
+          const meta = {
+            variant_id: vid,
+            title: normalizeTitle(opt?.textContent || opt?.dataset?.title || ''),
+            url: opt?.dataset?.url || '',
+            image: opt?.dataset?.image || '',
+            price: Number(opt?.dataset?.price || '')
+          };
+          if (!byId.has(vid)) byId.set(vid, { ...meta, qty: 1 });
+          else if (vid == "none") byId.get(vid).qty += 1;
+          else byId.get(vid).qty += 1;
+        });
+        return Array.from(byId.values());
+      }
+
+      function collectAddons() {
+        const vid = Number(addonId.value || 0);
+
+        if (!vid) return [];
+
+        return [{
+          variant_id: vid,
+          title: addonTitle.value,
+          qty: 1,
+          price: Number(addonPrice.value),
+        }];
+      }
+
+      {% comment %} dropdown accordian logic used on some bundles - check template for  {% endcomment %}
+      function accordianAnimation () {
+        accordianBtn.toggleAttribute("open");
+        if (selectDiv.style.display === "block") {
+          selectDiv.style.display = "none";
+          selectDiv.setAttribute(aria-expanded, "false");
+        } else {
+          selectDiv.style.display = "block";
+          selectDiv.setAttribute(aria-expanded, "true");
+        }
+      }
+      if (accordianBtn) {
+        accordianBtn.addEventListener("click", accordianAnimation);
+      }
+
+      function updatePrice() {
+        if (!selectDiv.classList.contains("mm-bundle-price")) return;
+
+        const priceDiv = document.querySelector(".price__container");
+        const priceSpan = priceDiv.querySelector(".price-item--regular");
+        const selections = collectSelections();
+        const addon = collectAddons();
+
+
+        let sBundlePrice = parentPrice;
+        selections.forEach(s => {
+          if (s.qty > 1) {
+            s.price *= s.qty;
+          }
+          sBundlePrice += s.price;
+        })
+        if (addon.length > 0) {
+          sBundlePrice += addon[0].price;
+        }
+
+        bundlePrice = sBundlePrice / 100;
+
+        priceSpan.innerHTML = Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(bundlePrice);
+        return bundlePrice;
+      }
+
+      function createGroupId(selections, addon) {
+        if (bundlePriceType == "fixed") {
+          return bundleVariantId;
+        }
+
+        const selectionIds = [
+          ...selections.map(s => s.variant_id)
+        ].sort((a, b) => a - b).join("-");
+        const addonIds = [
+          ...addon.map(a => a.variant_id)
+        ].sort((a, b) => a - b).join("-");
+
+        let groupId = `${bundleProductId}`;
+        if (selectionIds) {
+          groupId = groupId.concat("-", selectionIds);
+        }
+        if (addonIds) {
+          groupId = groupId.concat("-", addonIds);
+        }
+
+        return groupId;
+      }
+
+      async function addToCart() {
+        if (!bundleVariantId) {
+          showError('Bundle container variant ID is missing.');
+          return;
+        }
+
+        const quantity = Number(qtyWrapper?.value || 1);
+
+        const compressed = collectSelections();
+        const addon = collectAddons();
+
+        const sum = compressed.reduce((s, x) => s + x.qty, 0);
+        if (sum !== LIMIT) {
+          showError(`Please pick exactly ${LIMIT}. You picked ${sum}.`);
+          return;
+        }       
+
+        let product_cart_text;
+        if (bundleProductTitle.includes("Jelly") || bundleProductTitle.includes("Dolly")) {
+          product_cart_text = bundleProductTitle.split(" - ")[1];
+        } else {
+          product_cart_text = bundleProductTitle;
+        }
+
+        const group_id = createGroupId(compressed, addon);
+
+        let items = [];
+
+        if (bundlePriceType == "variable") {
+          console.log("variable");
+
+          items.push({
+            id: bundleVariantId,
+            quantity,
+            properties: {
+              _group_id: group_id,
+              _bundle_parent: "true",
+              _cart_text: product_cart_text,
+              lead_time: bundleLeadTime,
+              _lead_time_days: bundleLeadTimeDays
+            }
+          });
+
+          let i = 0;
+          compressed.forEach(c => {
+            i += 1;
+            if(c.variant_id != "none") {
+              items.push({
+                id: c.variant_id,
+                quantity: c.qty,
+                properties: {
+                  _group_id: group_id,
+                  _bundle_child: "true",
+                  _bundle_sort: `${i}`,
+                  _bundle_summary: `${c.title} (× ${c.qty})`,
+                  _bundle_base_qty: String(c.qty)
+                }
+              });
+            }
+          });
+        } else if (bundlePriceType == "fixed") {
+          console.log("fixed");
+
+          const props = {
+            _bundle_items: JSON.stringify(compressed),
+            _bundle_summary: compressed.map(x => `${x.title} (× ${x.qty})`).join(' • '),
+            __cartBundleId: FAST_BUNDLE_ID || undefined
+          };
+
+          compressed.forEach((x, i) => {
+            props[`${PREFIX} ${i + 1}`] = `${x.title} (× ${x.qty})`;
+          });
+
+          items.push(
+            {
+              id: bundleVariantId,
+              quantity,
+              properties: props
+            }
+          );
+        } else {
+          console.error("Assign a bundlePriceType on the product");
+          showError(e.message || 'Sorry, something went wrong adding the bundle.');
+        }
+
+        if (addon.length) {
+          const addon_title = addon[0].title;
+          let addon_cart_text;
+          if (addon_title.includes("Gang")) {
+            addon_cart_text = addon_title.split(" - ")[0];
+          } else {
+            addon_cart_text = addon_title;
+          }
+          
+          items.push({
+            id: addon[0].variant_id,
+            quantity,
+            properties: {
+              "_Added as add-on": "true",
+              "_group_id": group_id,
+              "_addon_sort": "0",
+              "_addon_summary": addon_cart_text
+            }
+          });
+        }
+
+        try {
+          const res = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            credentials: 'same-origin',
+            body: JSON.stringify({
+              items
+            })
+          });
+
+          let data = {};
+
+          try {
+            data = await res.json();
+          } catch (err) {
+            console.error('JSON parse failed:', err);
+          }
+          if (!res.ok) {
+            const msg = data.description || data.message || JSON.stringify(data.errors) || 'Add to cart failed.';
+            throw new Error(msg);
+          }
+
+          // ✅ Refresh minicart/popup
+          await refreshMiniCart();
+
+          // ✅ Update the popup’s “added-message” span
+          updateCartPopupTitle(data);
+          openCartUI();
+
+          document.documentElement.dispatchEvent(new CustomEvent('cart:refresh'));
+          document.documentElement.dispatchEvent(new CustomEvent('cart:open'));
+
+        } catch (e) {
+          showError(e.message || 'Sorry, something went wrong adding the bundle.');
+        }
+      }
+
+      addBtn.addEventListener('click', addToCart);
+
+      /* ---------- HELPERS ---------- */
+
+      function updateCartPopupTitle(items) {
+        if (!items) return;
+
+        const item = items.items[0];
+        const title = item.product_title || item.title || '';
+        const msg = document.querySelector('#cart-notification .added-message');
+        if (!msg) return;
+
+        const esc = s => String(s).replace(/[&<>"']/g, m => (
+          {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]
+        ));
+
+        const suffix = msg.textContent.match(/has been added.*$/)?.[0] || 'has been added.';
+
+        msg.innerHTML = `${esc(title)} has been added`;
+      }
+
+      async function refreshMiniCart() {
+        const sectionIds = ['cart-drawer', 'cart-icon-bubble', 'cart-notification'];
+        const params = new URLSearchParams();
+        params.set('sections', sectionIds.join(','));
+        const res = await fetch(`${window.location.pathname}?${params.toString()}`, {
+          headers: { 'X-Requested-With': 'XMLHttpRequest' },
+          credentials: 'same-origin'
+        });
+        if (!res.ok) throw new Error(`Sections request failed: ${res.status}`);
+        const json = await res.json();
+
+        sectionIds.forEach((id) => {
+          const html = json[id];
+          if (!html) return;
+
+          const container = document.getElementById('cart-icon-bubble');
+          if (container) {
+            const tmp = document.createElement('a');
+            tmp.innerHTML = html;
+
+            const newBubble = tmp.querySelector('.cart-count-bubble');
+            const currentBubble = document.querySelector('.cart-count-bubble');
+
+            if ( newBubble && currentBubble) {
+              currentBubble.replaceWith(newBubble);
+            }
+          }
+
+          if (id === 'cart-drawer') {
+            const drawer = document.querySelector('#CartDrawer, cart-drawer');
+            if (drawer) {
+              const tmp = document.createElement('div');
+              tmp.innerHTML = html;
+              const fresh = tmp.querySelector('#CartDrawer') || tmp.firstElementChild;
+              if (fresh) drawer.innerHTML = fresh.innerHTML || html;
+            }
+          }
+        });
+      }
+
+      function openCartUI() {
+        const elDrawer = document.querySelector('cart-drawer, #CartDrawer');
+        if (elDrawer) {
+          if (typeof elDrawer.open === 'function') { elDrawer.open(); return; }
+          elDrawer.setAttribute('open', '');
+          elDrawer.classList.add('is-open', 'active', 'open');
+        }
+
+        const notif = document.querySelector('cart-notification, #CartNotification, #cart-popup-container');
+        if (notif) {
+          notif.style.display = 'block';
+          notif.classList.add('show', 'active', 'open');
+          const inner = notif.querySelector('.cart-notification');
+          if (inner) inner.classList.add('active');
+          return;
+        }
+
+        if (window.CartDrawer?.open) { window.CartDrawer.open(); return; }
+        if (window.theme?.CartDrawer?.open) { window.theme.CartDrawer.open(); return; }
+
+        const triggers = document.querySelectorAll(
+          '[data-cart-drawer-toggle],[data-drawer-open="cart"],[data-action="open-cart"],.js-open-cart'
+        );
+        for (const t of triggers) { t.click(); return; }
+      }
+    })();
+  </script>
+
+  <style>
+    .mm-hint {
+      display:none;
+    }
+    #{{ root_id }}.mm-bundle .mm-grid--selects {
+      /*display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));*/
+      margin: 16px 0 8px;
+    }
+    #{{ root_id }}.mm-bundle .mm-select {
+      /*border: 1px solid rgba(0,0,0,.1);*/
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+      display: grid;
+    }
+    .product__info-container #mm-bundle-.mm-bundle .mm-select {
+      padding: 0;
+    }
+    #{{ root_id }}.mm-bundle .mm-select label { font-weight: 600; }
+    #{{ root_id }}.mm-bundle .mm-footer { display:flex; align-items:center; gap:16px; margin-top: 8px; }
+    #{{ root_id }}.mm-bundle .mm-add-btn { padding: 10px 16px; border: none; background: #27333f; color:#fff; cursor:pointer; }
+    #{{ root_id }}.mm-bundle .mm-add-btn[disabled] { opacity:.5; cursor:not-allowed; }
+    
+    .product__info-container #mm-bundle-.mm-bundle .mm-select label {
+      font-size: 14.4px;
+    }
+    .product__info-container #mm-bundle-.mm-bundle .mm-select .mm-choice {
+      margin: 4px 0 15px;
+    }
+
+    /* accordian styling for one label on bundle dropdowns */
+    .product__info-container #mm-bundle-.mm-bundle .mm-select .one-label {
+      margin: 0 0 10px;
+    }
+    .dropdown-accordion {
+      background-color: inherit;
+      color: #898989;
+      cursor: pointer;
+      padding: 0 0 0.5rem;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.4s;
+    }
+    #mm-bundle-.mm-bundle .mm-grid.mm-grid--selects[aria-expanded] {
+      margin: 10px 0;
+    }
+
+    /* dropdown arrow */
+    .dropdown-accordion span.dropdown-arrow {
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 8px solid #898989;
+      transition: 0.3s;
+      margin-top: 0.3em;
+      display: inline-block;
+    }
+    .dropdown-accordion p {
+      display: inline;
+      font-family: var(--font-body-family);
+      font-size: 14.4px;
+      font-weight: 600;
+    }
+    .dropdown-accordion p {
+      border-bottom: solid 1px rgba(0,0,0,0.2);
+    }
+    .dropdown-accordion[open] p {
+      border-bottom: none;
+    }
+    .dropdown-accordion[open] span.dropdown-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* button styling when qty field shown */
+    .product-form__quantity + .mm-add-btn {
+      margin: 1.5em 0 0;
+    }
+
+    /* add on styling */
+    .mm-bundle #custom-select-wrapper {
+      margin: 0;
+    }
+    p.checkbox-addon-heading {
+      font-family: var(--font-body-family);
+      font-size: .9em;
+      font-weight: 400;
+      color: #898989;
+      margin-bottom: 0;
+    }
+
+  </style>
+</section>

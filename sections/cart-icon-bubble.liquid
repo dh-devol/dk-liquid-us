@@ -1,0 +1,29 @@
+{%- liquid
+  assign display_count = 0
+  for item in cart.items
+    if item.product.metafields.custom.unit_area_m2 != blank
+      assign display_count = display_count | plus: 1
+    else
+      assign display_count = display_count | plus: item.quantity
+    endif
+  endfor
+-%}
+
+{% if cart == empty %}
+  <span class="svg-wrapper">{{ 'icon-cart-empty.svg' | inline_asset_content }}</span>
+{% else %}
+  <span class="svg-wrapper">{{ 'icon-cart.svg' | inline_asset_content }}</span>
+{% endif %}
+
+<span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+
+<div class="cart-count-bubble{% if display_count == 0 %} cart-count-bubble--empty{% endif %}">
+  {%- if display_count > 0 -%}
+    <span class="small-hide medium-hide">(</span>
+    <span aria-hidden="true">{{ display_count }}</span>
+    <span class="small-hide medium-hide">)</span>
+  {%- endif -%}
+  <span class="visually-hidden">
+    {{ 'sections.header.cart_count' | t: count: display_count }}
+  </span>
+</div>

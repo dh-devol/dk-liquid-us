@@ -1,0 +1,304 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-cart-items.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- unless settings.cart_type == 'drawer' -%}
+  <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+{%- endunless -%}
+
+<script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
+
+<cart-items class="gradient color-{{ section.settings.color_scheme }} isolate{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
+  <div class="cart_page-container page-width">
+    <div class="title-wrapper-with-link">
+      <h1 class="hxl title title--primary">{{ 'sections.cart.title' | t }}</h1>
+      {% comment %}
+      <a href="{{ routes.all_products_collection_url }}" class="underlined-link">
+        {{- 'general.continue_shopping' | t -}}
+      </a>
+      {% endcomment %}
+    </div>
+
+    <div class="cart__warnings">
+      <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
+      <a href="/pages/shop" class="button">Return to Shop</a>
+    </div>
+
+    <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
+      <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
+        <div class="js-contents">
+          {%- if cart != empty -%}
+          {%- comment -%}--- Cart grouping: Flooring / Flooring Support / Accessories ---{%- endcomment -%}
+              {%- assign _flooring_type = settings.flooring_product_type | default: 'Flooring' -%}
+              {%- assign _support_type = settings.flooring_support_product_type | default: 'Flooring Support' -%}
+              {%- assign _weight_threshold_g = settings.flooring_support_weight_threshold | default: 30 | times: 1000 -%}
+
+              {%- assign has_flooring_products = false -%}
+              {%- assign has_flooring_support = false -%}
+              {%- assign flooring_support_weight_g = 0 -%}
+              {%- for item in cart.items -%}
+                {%- if item.product.type == _flooring_type -%}
+                  {%- assign has_flooring_products = true -%}
+                {%- elsif item.product.type == _support_type -%}
+                  {%- assign has_flooring_support = true -%}
+                  {%- assign line_weight_g = item.grams | times: item.quantity -%}
+                  {%- assign flooring_support_weight_g = flooring_support_weight_g | plus: line_weight_g -%}
+                {%- endif -%}
+              {%- endfor -%}
+
+              {%- comment -%}Flooring Support grouped with flooring when real flooring exists OR combined weight exceeds threshold{%- endcomment -%}
+              {%- assign flooring_support_as_flooring = false -%}
+              {%- if has_flooring_support -%}
+                {%- if has_flooring_products or flooring_support_weight_g > _weight_threshold_g -%}
+                  {%- assign flooring_support_as_flooring = true -%}
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- comment -%}has_flooring drives datepicker, access restrictions, delivery text, checkout gating{%- endcomment -%}
+              {%- assign has_flooring = false -%}
+              {%- if has_flooring_products or flooring_support_weight_g > _weight_threshold_g -%}
+                {%- assign has_flooring = true -%}
+              {%- endif -%}
+
+              {%- assign has_accessories = false -%}
+              {%- for item in cart.items -%}
+                {%- if item.product.type == _flooring_type -%}
+                {%- elsif item.product.type == _support_type and flooring_support_as_flooring -%}
+                {%- else -%}
+                  {%- assign has_accessories = true -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+            <table class="cart-items all_product-items">
+              <caption class="visually-hidden">
+                {{ 'sections.cart.title' | t }}
+              </caption>
+              {%- if has_accessories -%}
+              <thead>
+                <tr>
+                  <th class="group_heading" colspan="2" scope="col">
+                    {{ section.settings.accessories_title }}
+                  </th>
+                 
+                  <th class="small-hide medium-hide large-up-hide right " colspan="1" scope="col">
+                    {{ 'sections.cart.headings.total' | t }}
+                  </th>
+                  <th class="cart-items__price" colspan="1" scope="col">
+                    Cost
+                  </th>
+                  <th
+                    class="cart-items__heading--wide cart-items__heading--quantity small-hide "
+                    colspan="1"
+                    scope="col"
+                  >
+                    {{ 'sections.cart.headings.quantity' | t }}
+                  </th>
+                  <th class="right " colspan="1" scope="col">
+                    Total
+                  </th>
+                </tr>
+              </thead>
+               {% endif %}
+                <tbody>
+                {%- if has_accessories -%}
+                    {%- for item in cart.items reversed -%}
+                      {%- if item.product.type == _flooring_type -%}
+                      {%- elsif item.product.type == _support_type and flooring_support_as_flooring -%}
+                      {%- else -%}
+                        {% render 'cart-item-detail', item:item %}
+                      {%- endif -%}
+                    {%- endfor -%}
+
+                {%- endif -%}
+                </tbody>
+            </table>
+          
+            <table class="cart-items flooring_product-items">
+              <caption class="visually-hidden">
+                {{ 'sections.cart.title' | t }}
+              </caption>
+              {%- if has_flooring -%}
+              <thead>
+                <tr>
+                  
+                  <th class="group_heading" colspan="2" scope="col">
+                    {{ section.settings.flooring_title }}
+                  </th>
+                  
+                  <th class="small-hide medium-hide large-up-hide right " colspan="1" scope="col">
+                    {{ 'sections.cart.headings.total' | t }}
+                  </th>
+                  <th class="cart-items__price" colspan="1" scope="col">
+                    Cost
+                  </th>
+                  <th
+                    class="cart-items__heading--wide cart-items__heading--quantity small-hide "
+                    colspan="1"
+                    scope="col"
+                  >
+                    {{ 'sections.cart.headings.quantity' | t }}
+                  </th>
+                  <th class="right " colspan="1" scope="col">
+                    Total
+                  </th>
+                </tr>
+              </thead>
+              {% endif %}
+              <tbody>
+                     {%- if has_flooring -%}
+                      {%- for item in cart.items -%}
+                        {%- if item.product.type == _flooring_type -%}
+                          {% render 'cart-item-detail', item:item %}
+                        {%- elsif item.product.type == _support_type and flooring_support_as_flooring -%}
+                          {% render 'cart-item-detail', item:item %}
+                        {%- endif -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                </tbody>
+            </table>
+          
+          {%- endif -%}
+        </div>
+      </div>
+
+      <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+      <p
+        class="visually-hidden"
+        id="shopping-cart-line-item-status"
+        aria-live="polite"
+        aria-hidden="true"
+        role="status"
+      >
+        {{ 'accessibility.loading' | t }}
+      </p>
+    </form>
+  </div>
+</cart-items>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const container = document.querySelector('.cart_custom-descrption-wrapper');
+    const containerNofloor = document.querySelector('.cart_custom-descrption-wrapper.no_flooring');
+    const checkoutButton = document.querySelector('.cart__checkout-button.button'); 
+
+    function checkFlooringItems() {
+      const tbody = document.querySelector('.flooring_product-items tbody');
+      if (!tbody) return;
+
+      const hasFlooringItems = tbody.children.length > 0;
+      if (hasFlooringItems) {
+        container?.classList.remove('no_flooring');
+        checkoutButton.setAttribute('disabled', true);
+      } else {
+        container?.classList.add('no_flooring');
+        checkoutButton.removeAttribute('disabled');
+      }
+    }
+   checkFlooringItems();
+
+    let currentTbody = document.querySelector('.flooring_product-items tbody');
+
+    const observerConfig = { childList: true, subtree: false };
+
+    function observeTbody(tbody) {
+      if (!tbody) return;
+
+      const observer = new MutationObserver(function () {
+        checkFlooringItems();
+      });
+
+      observer.observe(tbody, observerConfig);
+    }
+
+    observeTbody(currentTbody);
+
+    setInterval(function () {
+      const newTbody = document.querySelector('.flooring_product-items tbody');
+      if (newTbody !== currentTbody) {
+        currentTbody = newTbody;
+        checkFlooringItems();
+        observeTbody(currentTbody);
+      }
+    }, 500);
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-items.name",
+  "class": "main_cart-items-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Flooring"
+    },
+    {
+      "type": "text",
+      "id": "flooring_title",
+      "label": "Title"
+    },
+    {
+      "type": "header",
+      "content": "Accessories"
+    },
+    {
+      "type": "text",
+      "id": "accessories_title",
+      "label": "Title"
+    },
+    {
+      "type": "header",
+      "content": "Color"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,130 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "blog_detail_section_CgE4BU": {
+      "type": "blog-detail-section",
+      "blocks": {
+        "blog_slider_WyXyiB": {
+          "type": "blog_slider",
+          "settings": {
+            "article": "front-page-kitchens/why-everyone-wants-a-pantry",
+            "show_date": true,
+            "show_author": true,
+            "show_title": true
+          }
+        },
+        "blog_slider_CgFUki": {
+          "type": "blog_slider",
+          "settings": {
+            "article": "front-page-kitchens/do-i-need-a-kitchen-island",
+            "show_date": true,
+            "show_author": true,
+            "show_title": true
+          }
+        },
+        "blog_slider_GH4N4X": {
+          "type": "blog_slider",
+          "settings": {
+            "article": "design-make-front-page/the-best-bathroom-washstand-chosen-by-industry-experts",
+            "show_date": true,
+            "show_author": true,
+            "show_title": true
+          }
+        },
+        "blog_78NHyk": {
+          "type": "blog",
+          "settings": {
+            "blog": "front-page-kitchens"
+          }
+        },
+        "brand_info_DdkKrH": {
+          "type": "brand_info",
+          "settings": {
+            "title": "",
+            "image": "shopify://shop_images/devol-journal.svg",
+            "text": "<p>Welcome to our journal. Here you’ll find a rich collection of short stories, design tips and curious bits of insight and inspiration - all photographed and put together by our team of designers and makers.</p><p>We hope that you enjoy exploring our vast archive of entries and continue to keep up to date with our ever-growing new content.</p>",
+            "show_social": true
+          }
+        },
+        "blog_search_h67bpE": {
+          "type": "blog_search",
+          "settings": {
+            "blog_search_title": "WHAT FLOATS YOUR BOAT?"
+          }
+        },
+        "author_FwzDHx": {
+          "type": "author",
+          "settings": {
+            "author_link": "shopify://pages/paul-oleary",
+            "title": "",
+            "text": ""
+          }
+        },
+        "author_aVbKNX": {
+          "type": "author",
+          "settings": {
+            "author_link": "shopify://pages/helen-parker",
+            "title": "",
+            "text": ""
+          }
+        },
+        "author_LCTjph": {
+          "type": "author",
+          "settings": {
+            "author_link": "shopify://pages/zoe-parker",
+            "title": "",
+            "text": ""
+          }
+        },
+        "author_fiiYmd": {
+          "type": "author",
+          "settings": {
+            "author_link": "shopify://pages/ben-creed",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "blog_slider_WyXyiB",
+        "blog_slider_CgFUki",
+        "blog_slider_GH4N4X",
+        "blog_78NHyk",
+        "brand_info_DdkKrH",
+        "blog_search_h67bpE",
+        "author_FwzDHx",
+        "author_aVbKNX",
+        "author_LCTjph",
+        "author_fiiYmd"
+      ],
+      "settings": {
+        "right_content": true,
+        "author_title": "AUTHORS",
+        "link_title": "",
+        "link": "#",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blog_detail_section_CgE4BU"
+  ]
+}

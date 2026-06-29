@@ -1,0 +1,547 @@
+{{ 'section-catalogue-products.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-title-with-rich-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .catalogues__page-wrapper .catalogue__content-wrapper .custom-catalogue-products .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .title-with-rich-text .rich-text__text {
+    margin-left: 0;
+    margin-top: 20px; 
+  }
+
+{%- endstyle -%}
+
+{%- liquid
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+    assign show_mobile_slider = true
+  endif
+  
+  # Set columns based on catalogue_card_layout
+  case section.settings.catalogue_card_layout
+    when 'standard'
+      assign columns_desktop = section.settings.standard_columns | plus: 0
+    when 'full_width'
+      assign columns_desktop = 1
+    when 'text-image-separated'
+      assign columns_desktop = 1
+    when 'half_width'
+      assign columns_desktop = 2
+    else
+      assign columns_desktop = 3
+  endcase
+
+  assign ctx_handle = ''
+  if request.page_type == 'page'
+    assign ctx_handle = page.handle
+  elsif request.page_type == 'collection'
+    assign ctx_handle = collection.handle
+  elsif request.page_type == 'product'
+    assign ctx_handle = product.handle
+  endif
+
+  assign ctx_handles = ''
+  if ctx_handle != blank
+    assign ctx_handles = ctx_handle
+  endif
+-%}
+
+<div class="custom-catalogue-products multicolumn color-{{ section.settings.color_scheme }} gradient {% if section.settings.title == blank %} no-heading{% endif %}">
+  <div
+    class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}
+  >
+    {% assign selected_collection = collections[section.settings.catalogue_collection] %}
+    {%- liquid
+      if selected_collection and selected_collection.handle != blank and selected_collection.handle != ctx_handle
+        if ctx_handles == blank
+          assign ctx_handles = selected_collection.handle
+        else
+          assign ctx_handles = ctx_handles | append: ',' | append: selected_collection.handle
+        endif
+      endif
+    -%}
+
+    <div class="title-with-rich-text isolate {% if section.settings.collection_title_border %} catalogue-text-content{% endif %}">
+      <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %}">
+          <div class="rich-text__blocks {{ section.settings.content_alignment }}">
+
+            {%- if selected_collection and section.settings.show_collection_title -%}
+              {% assign heading_class = 'rte inline-richtext' %}
+
+              {%- case section.settings.heading_size -%}
+                {%- when 'h1' -%}
+                  {% assign heading_class = heading_class | append: ' rich-text__heading h1 scroll-trigger animate--fade-in' %}
+                {%- when 'h2' -%}
+                  {% assign heading_class = heading_class | append: ' h1 scroll-trigger animate--fade-in' %}
+                {%- when 'h0' -%}
+                  {% assign heading_class = heading_class | append: ' h0 scroll-trigger animate--fade-in' %}
+                {%- when 'hxl' -%}
+                  {% assign heading_class = heading_class | append: ' hxl scroll-trigger animate--fade-in' %}
+                {%- when 'hxxl' -%}
+                  {% assign heading_class = heading_class | append: ' hxxl scroll-trigger animate--fade-in' %}
+              {%- endcase -%}
+
+              <h1 class="{{ heading_class }}">
+                {% if selected_collection.metafields.custom.custom_title != blank %}
+                  {{ selected_collection.metafields.custom.custom_title }}
+                {% else %}
+                  {{ selected_collection.title }}
+                {% endif %}
+              </h1>
+
+            {%- endif -%}
+
+
+            {%- if selected_collection
+              and section.settings.show_collection_description
+              and selected_collection.description != blank
+            -%}
+              <div class="rich-text__text rte">
+                {{ selected_collection.description }}
+              </div>
+            {%- endif -%}
+
+          </div>
+      </div>
+    </div>
+
+
+    <slider-component class="slider-mobile-gutter">
+      <ul
+        class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}"
+        id="Slider-{{ section.id }}"
+        role="list"
+      >
+        {% if selected_collection %}
+          {% for product in selected_collection.products limit: section.settings.products_to_show %}
+            {%- liquid
+              # Use catalogue_product_teasers (single ref) first, then fall back to product_teasers (list)
+              assign teaser_obj = nil
+
+              # Try catalogue_product_teasers first (single metaobject reference)
+              if product != blank and product.metafields.custom.catalogue_product_teasers != blank and ctx_handles != blank
+                assign cat_teaser = product.metafields.custom.catalogue_product_teasers.value
+                if cat_teaser != blank
+                  assign handles = cat_teaser.page_handle | split: ','
+                  for handle in handles
+                    assign normalized_handle = handle | strip | downcase
+                    assign ctx_list = ctx_handles | split: ','
+                    for ctx in ctx_list
+                      assign normalized_ctx = ctx | strip | downcase
+                      if normalized_handle == normalized_ctx
+                        assign teaser_obj = cat_teaser
+                        break
+                      endif
+                    endfor
+                    if teaser_obj != nil
+                      break
+                    endif
+                  endfor
+                endif
+              endif
+
+              # Fall back to product_teasers (list of metaobject references)
+              if teaser_obj == nil and product != blank and product.metafields.custom.product_teasers != blank and ctx_handles != blank
+                for teaser in product.metafields.custom.product_teasers.value
+                  assign handles = teaser.page_handle | split: ','
+                  for handle in handles
+                    assign normalized_handle = handle | strip | downcase
+                    assign ctx_list = ctx_handles | split: ','
+                    for ctx in ctx_list
+                      assign normalized_ctx = ctx | strip | downcase
+                      if normalized_handle == normalized_ctx
+                        assign teaser_obj = teaser
+                        break
+                      endif
+                    endfor
+                    if teaser_obj != nil
+                      break
+                    endif
+                  endfor
+                  if teaser_obj != nil
+                    break
+                  endif
+                endfor
+              endif
+
+              assign teaser_title = teaser_obj.teaser_title | default: product.title
+              assign teaser_primary = teaser_obj.thumbnail_image_1
+
+              assign catalogue_image = product.metafields.custom.catalogue_image.value
+              assign card_image = teaser_primary | default: catalogue_image | default: product.featured_image
+              assign primary_alt = teaser_title | default: product.featured_image.alt
+
+              assign highest_ratio = 0
+              if card_image != blank and card_image.aspect_ratio > highest_ratio
+                assign highest_ratio = card_image.aspect_ratio
+              endif
+
+              # Determine the card layout class
+              assign card_layout_class = section.settings.catalogue_card_layout | handleize
+            -%}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} catalogue-card-{{ card_layout_class }}"
+              {{ block.shopify_attributes }}
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              <div class="multicolumn-card content-container">
+                {%- if card_image != blank -%}
+                  {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
+                    {% assign spaced_image = true %}
+                  {% endif %}
+                  <div class="multicolumn-card__image-wrapper{% if section.settings.catalogue_card_layout == 'full_width' or card_layout_class == 'full-width' %} multicolumn-card__image-wrapper--full-width{% endif %}{% if spaced_image %} multicolumn-card-spacing{% endif %}">
+                    <div
+                      class="media media--transparent media--{{ section.settings.image_ratio }}"
+                      {% if section.settings.image_ratio == 'custom' %}
+                        style="padding-bottom: {{ section.settings.custom_image_padding_bottom }}%;"
+                      {% elsif section.settings.image_ratio == 'adapt' and highest_ratio > 0 %}
+                        style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                      {% endif %}
+                    >
+                      {%- liquid
+                        assign number_of_columns = columns_desktop
+                        assign number_of_columns_mobile = section.settings.columns_mobile
+                        assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                        assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                        assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                        # Always use full width for images now
+                        assign image_width = 1
+                      -%}
+                      {% capture sizes %}
+                        (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
+                        (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
+                        calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
+                      {% endcapture %}
+                      {{
+                        card_image
+                        | image_url: width: 3200
+                        | image_tag:
+                          widths: '1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+                          sizes: sizes,
+                          class: 'multicolumn-card__image',
+                          alt: primary_alt
+                      }}
+                    </div>
+                  </div>
+                {%- endif -%}
+                <div class="multicolumn-card__info">
+                  {%- if product.title != blank -%}
+                    <h3 class="inline-richtext">{{ product.title }}</h3>
+                  {%- endif -%}
+                  {% if product.metafields.custom.dimensions_alternative_or_suffix != blank %}
+                    <div class="catalogue_dimensions_alter_or_suf">
+                      {{ product.metafields.custom.dimensions_alternative_or_suffix }}
+                    </div>
+                  {% endif %}
+                  {% if product.metafields.custom.product_width != blank %}
+                    <div class="catalogue_product_width">
+                      {{ product.metafields.custom.product_width }}
+                    </div>
+                  {% endif %}
+                  {% if section.settings.hide_price != false and product.price > 0 %}
+                    <div class="rte">{{ product.price | money }}
+                    {% if product.metafields.custom.catalog_price_suffix != blank %}
+                      <div class="catalogue_product_dimensions">{{ product.metafields.custom.catalog_price_suffix }}</div>
+                    {% endif %}
+                    </div>
+                  {% endif %}
+                  
+                  {% if product.metafields.custom.supporting_informations != blank %}
+                    <div class="catalogue_supporting_information">
+                      {{ product.metafields.custom.supporting_informations }}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </li>
+          {%- endfor -%}
+        {%- endif -%}
+      </ul>
+
+      {%- if show_mobile_slider -%}
+        <div class="slider-buttons large-up-hide">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+          </button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
+          </button>
+        </div>
+      {%- endif -%}
+    </slider-component>
+    <div class="center{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
+      {% if section.settings.button_label != blank and selected_collection %}
+        {% assign products_limit = section.settings.products_to_show | plus: 0 %}
+        {% assign collection_count = selected_collection.products_count | default: 0 %}
+        {% if collection_count > products_limit %}
+          <a
+            class="button button--primary"
+            {% if section.settings.button_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.button_link }}"
+            {% endif %}
+          >
+            {{ section.settings.button_label | escape }}
+          </a>
+        {% endif %}
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Catalogue products",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_collection_title",
+      "default": true,
+      "label": "Show collection title"
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_title_border",
+      "default": false,
+      "label": "Title with border"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "Show collection description"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "H2" },
+        { "value": "h1", "label": "H1" },
+        { "value": "h0", "label": "H0" },
+        { "value": "hxl", "label": "HXL" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "collection",
+      "id": "catalogue_collection",
+      "label": "Catalogue Collection"
+    },
+    {
+      "type": "select",
+      "id": "catalogue_card_layout",
+      "options": [
+        {
+          "value": "standard",
+          "label": "Standard (Multiple columns)"
+        },
+        {
+          "value": "full_width",
+          "label": "Full width (Single column)"
+        },
+        {
+          "value": "text-image-separated",
+          "label": "Text & Image separated"
+        },
+        {
+          "value": "half_width",
+          "label": "Half width (Two columns)"
+        }
+      ],
+      "default": "standard",
+      "label": "Card layout"
+    },
+    {
+      "type": "select",
+      "id": "standard_columns",
+      "options": [
+        {
+          "value": "3",
+          "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
+        }
+      ],
+      "default": "3",
+      "label": "Standard layout columns",
+      "visible_if": "{{ section.settings.catalogue_card_layout == 'standard' }}"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "default": 3,
+      "label": "Maximum products to show"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "t:sections.multicolumn.settings.button_label.default",
+      "label": "t:sections.multicolumn.settings.button_label.label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.multicolumn.settings.button_link.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_bottom",
+      "label": "Show bottom border"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.multicolumn.settings.product_card.heading"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.multicolumn.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.multicolumn.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.multicolumn.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.multicolumn.settings.image_ratio.label"
+    },
+    {
+      "type": "range",
+      "id": "custom_image_padding_bottom",
+      "min": 10,
+      "max": 150,
+      "step": 2,
+      "default": 50,
+      "unit": "%",
+      "label": "Custom image height (as % of width)",
+      "visible_if": "{{ section.settings.image_ratio == 'custom' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_price",
+      "label": "Show Product Price",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.multicolumn.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.multicolumn.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.multicolumn.settings.columns_mobile.options__2.label"
+        }
+      ],
+      "default": "1",
+      "label": "t:sections.multicolumn.settings.columns_mobile.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "t:sections.multicolumn.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Catalogue products"
+    }
+  ]
+}
+{% endschema %}

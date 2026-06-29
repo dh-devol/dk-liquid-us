@@ -1,0 +1,244 @@
+@media screen and (max-width: 749px) {
+  .articles-wrapper .article {
+    width: 100%;
+  }
+}
+
+.article {
+  display: flex;
+  align-items: center;
+}
+
+.article.grid__item {
+  padding: 0;
+}
+
+.grid--peek .article-card {
+  box-sizing: border-box;
+}
+
+.article-card__image-wrapper > a {
+  display: block;
+}
+
+.article-card__title {
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.article-card__title a:after {
+  bottom: 0;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.article-card__link.link {
+  padding: 0;
+}
+
+.article-card__link {
+  text-underline-offset: 0.3rem;
+}
+
+.article-card .card__heading {
+  margin-bottom: 0.6rem;
+}
+
+.blog-articles .article-card .card__information,
+.blog__posts .article-card .card__information {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.article-card__info {
+  padding-top: 0.4rem;
+}
+
+.article-card__footer {
+  letter-spacing: 0.1rem;
+  font-size: 1.4rem;
+}
+
+.article-card__footer:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.article-card__footer:last-child {
+  margin-top: auto;
+}
+
+.article-card__excerpt {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.article-card__link:not(:only-child) {
+  margin-right: 3rem;
+}
+
+@media screen and (min-width: 990px) {
+  .article-card__link:not(:only-child) {
+    margin-right: 4rem;
+  }
+  .article-card-wrapper .card--standard > .card__content .card__information {
+    padding-bottom: 0;
+  }
+  .article-card .article-card__excerpt {
+    margin-bottom: 16.5px;
+  }
+}
+
+.article-card__image--small .ratio::before {
+  padding-bottom: 11rem;
+}
+
+.article-card__image--medium .ratio::before {
+  padding-bottom: 22rem;
+}
+
+.article-card__image--large .ratio::before {
+  padding-bottom: 33rem;
+}
+
+@media screen and (min-width: 750px) {
+  .article-card__image--small .ratio::before {
+    padding-bottom: 14.3rem;
+  }
+
+  .article-card__image--medium .ratio::before {
+    padding-bottom: 21.9rem;
+  }
+
+  .article-card__image--large .ratio::before {
+    padding-bottom: 27.5rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .article-card__image--small .ratio::before {
+    padding-bottom: 17.7rem;
+  }
+
+  .article-card__image--medium .ratio::before {
+    padding-bottom: 30.7rem;
+  }
+
+  .article-card__image--large .ratio::before {
+    padding-bottom: 40.7rem;
+  }
+}
+
+/* check for flexbox gap in older Safari versions */
+@supports not (inset: 10px) {
+  .articles-wrapper.grid {
+    margin: 0 0 5rem 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .articles-wrapper.grid {
+      margin-bottom: 7rem;
+    }
+  }
+}
+
+
+/* custom css */
+.article-card .card__heading{
+  font-size:15px;
+  text-transform:uppercase;
+   color: #4D4D4C;
+  text-align:center;
+  margin-top:8px;
+}
+.article-card .card__heading a:hover{
+  text-decoration:none;
+}
+.article-card .article-card__excerpt{
+  font-size:15px;
+  color: #4D4D4C;
+  text-align:center;
+  font-weight:400;
+  line-height:20.8px;
+  -webkit-font-smoothing: auto;
+
+}
+.article-card .article-card__info{
+  text-align:center;
+  font-size: 13px;
+  color: #4D4D4C;
+}
+
+/*blog search page css*/
+
+.blog-search-results .article-card .article-card__info{
+  display:none;
+}
+.blog-search-results .article-card .card__heading{
+    font-size: 15px;
+    line-height:20.8px;
+    font-weight:300;
+    -webkit-font-smoothing: auto;
+}
+.blog-search-results {    
+  max-width: 955px !important;
+  padding-left: 0;
+  padding-right: 0;
+}
+.blog-search-mobile-logo{
+   max-width:270px;
+   margin-top:15px;
+   margin-bottom:15px;
+}
+.blog-search-mobile-logo img{ width:100%;}
+@media (max-width:1280px){
+ .blog-search-results {    
+  padding-left: 30px;
+  padding-right: 30px;
+} 
+}
+@media screen and (min-width: 990px) {
+.blog-search-results .article-card__image--medium .ratio:before {
+        padding-bottom: 21.2rem;
+}
+}
+@media (max-width: 991px) {
+     .blog-search-results .blog-articles .card__inner {
+        height: 30vw;
+    }
+   
+} 
+@media (min-width:600px){
+  .blog-search-mobile-logo{
+    display:none;
+  }
+}
+@media (max-width:575px){
+   .blog-search-results .blog-articles .card__inner {
+    height:237px;
+    width:340px;
+    margin:0 auto;
+   }
+   .blog-search-results .article-card .card__heading {
+    font-size: 15px;
+    line-height:21px;
+}
+  .blog-search-results .title__main-wrapper{
+    gap:30px;
+  }
+}
+@media (max-width:399px){
+   .blog-search-results .blog-articles .card__inner {
+    height:auto;
+    aspect-ratio: 14 / 9.8;
+    width:100%;
+   }
+   .article-card__image--medium .ratio:before{
+    padding-bottom:0;
+   }
+}

@@ -1,0 +1,127 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "catalogue_title_with_richtext_BU9bBR": {
+      "type": "catalogue-title-with-richtext",
+      "custom_css": [
+        ".catalogue-text-content .rich-text__text {margin-top: 16px;}"
+      ],
+      "settings": {
+        "show_title": true,
+        "show_description": false,
+        "show_main_description": false,
+        "show_guide_price": false,
+        "border_title": true,
+        "heading_size": "h1",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "catalogue_multicolumn_TfwjVb": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_QhJdVa": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>The colours we have chosen for our Sebastian Cox cupboards were developed in our Leicestershire workshops. We use water-based stains that soak into the beech wood and enhance the natural colour of the timber. After staining, it\u2019s rubbed back and a water-based lacquer is applied, which helps to protect the timber. The darker stains give a consistent colour to the finish whereas the lighter stains allow more of the natural colour of the beech to show through.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dKqyzA": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_QhJdVa",
+        "column_dKqyzA"
+      ],
+      "custom_css": [
+        ".multicolumn-list__item {margin-bottom: 0.7em;}",
+        "@media screen and (max-width: 768px) {.grid {row-gap: 0; display: flex; flex-direction: column; } .description_above--image {margin-bottom: 0; } .description_above--image p {margin-bottom: 0; } .multicolumn-list__item {margin-bottom: 0; } .multicolumn-list .grid__item {max-width: 100%; } .page-width {padding-bottom: 33px; }}",
+        "@media (min-width:769px){.description_above--image p{column-count: 2; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 24,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "image_banner_bqeYr6": {
+      "type": "image-banner",
+      "custom_css": [
+        "@media screen and (max-width: 590px) {.banner {margin-bottom: 10px; }}"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/SebCox-Colours-DSC_2566-Landscape_0.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "catalogue_title_with_richtext_BU9bBR",
+    "catalogue_multicolumn_TfwjVb",
+    "image_banner_bqeYr6"
+  ]
+}

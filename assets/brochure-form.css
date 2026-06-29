@@ -1,0 +1,119 @@
+.brochure-form .contact {
+    max-width: 550px;
+    margin: 0 auto;
+}
+h2.form-status.form-status-list.form__message {
+    background: #27333f;
+    color: #fff;
+    padding: 0px 26px;
+    width: max-content;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 5px;
+}
+.page-brochure .brochure-form.contact-form-with-details .contact .form-status-list p {
+    margin: 10px 0;
+}
+.brochure-form .title {
+    text-align: center;
+}
+.brochure-form .contact__fields .common-field {
+    max-width: 50%;
+    width: 100%;
+}
+.brochure-form .contact__fields .email {
+    max-width: 70%;
+    width: 100%;
+}
+.brochure-form .contact__fields .about-us {
+    max-width: 60%;
+    width: 100%;
+}
+.brochure-form .contact__fields .description {
+    font-style: italic;
+    font-size: 15px;
+    float: left;
+    opacity: 0.6;
+    display: inline-block;
+    width: 50%;
+}
+.brochure-form .contact__button button.button {
+    min-height: auto;
+    min-width: auto;
+    padding: 8px 12px;
+}
+.brochure-form .contact__button {
+    display: block;
+}
+.brochure-form.contact-form-with-details p {
+    margin-bottom: 32px;
+}
+.page-brochure .brochure-form.contact-form-with-details p {
+    margin-bottom: 28px;
+}
+.brochure-form.contact-form-with-details .contact p {
+    margin-bottom: 18px;
+}
+.page-brochure .brochure-form.contact-form-with-details .contact p {
+    margin-bottom: 5px;
+}
+.brochure-form .webform-component--where-did-you-hear-about-us {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.brochure-form .address_finder {
+    color: #595959;
+}
+.brochure-form .search-bar {
+    max-width: 100%;
+    max-height: 34px;
+    padding: 6px 13px;
+}
+.brochure-form .contact__fields .form-item {
+    margin-bottom: 16px;
+}
+.brochure-form .form-item-submitted-consent-1 input[type=checkbox] {
+    height: 20px;
+    max-width: 100% !important;
+    width: 4%;
+    border-radius: 0;
+}
+.brochure-form label.option.field__label {
+    letter-spacing: 0;
+}
+.brochure-form .contact__fields .form-item-submitted-consent-1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.brochure-form a#manual {
+    margin-top: -10px;
+    font-size: 14.4px;
+}
+.page-brochure .brochure-form a#manual {
+    margin-top: -10px;
+}
+.brochure-form .search-bar::placeholder {
+    opacity: 1;
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .brochure-form .title{
+        text-align: left;
+    }
+    .brochure-form .contact{
+        max-width: 100%
+    }
+}
+
+@media screen and (max-width: 749px) {
+  .page-brochure .brochure-form.contact-form-with-details h2.title.contact_header {
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+
+  .page-brochure .brochure-form.contact-form-with-details h2.title.contact_header p {
+    margin: 0;
+  }
+}

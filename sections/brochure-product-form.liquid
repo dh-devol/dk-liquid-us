@@ -1,0 +1,114 @@
+{%- style -%}
+  .brochure-buy {
+    text-align: center;
+  }
+  .brochure-buy .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .brochure-buy .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .brochure-buy__heading {
+    margin: 0 0 0.4em;
+  }
+  .brochure-buy__subtext {
+    margin: 0 0 1.5em;
+    opacity: 0.7;
+  }
+  .brochure-buy__button {
+    display: inline-block;
+    min-width: 280px;
+  }
+{%- endstyle -%}
+
+<div class="brochure-buy color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    <p class="brochure-buy__heading h3">
+      {{ section.settings.heading_prefix | default: 'Order your printed brochure for' }} {{ product.price | money }}
+    </p>
+    {% if section.settings.subtext != blank %}
+      <p class="brochure-buy__subtext">
+        {{ section.settings.subtext }}
+      </p>
+    {% endif %}
+
+    {%- form 'product', product, id: 'BrochureProductForm', novalidate: 'novalidate' -%}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <button
+        type="submit"
+        name="add"
+        class="button button--primary brochure-buy__button"
+        {% if product.selected_or_first_available_variant.available == false %}
+          disabled
+        {% endif %}
+      >
+        {% if product.selected_or_first_available_variant.available %}
+          {{ section.settings.button_label | default: 'Add to basket' }}
+        {% else %}
+          {{ 'products.product.sold_out' | t }}
+        {% endif %}
+      </button>
+    {%- endform -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Brochure buy button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading prefix (price appended automatically)",
+      "default": "Order your printed brochure for"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Free delivery to US  |  $35 delivery to Canada"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Add to basket"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    }
+  ],
+  "templates": ["product"]
+}
+{% endschema %}

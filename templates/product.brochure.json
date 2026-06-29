@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "brochure_header": {
+      "type": "brochure-product-header",
+      "settings": {
+        "heading_size": "hxxl",
+        "color_scheme": "scheme-2",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "flipbook_brochure": {
+      "type": "flipbook-brochure",
+      "settings": {
+        "account_name": "devol-kitchens",
+        "catalog_name": "the-devol-brochure-summer-2025",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "brochure_buy_button": {
+      "type": "brochure-product-form",
+      "settings": {
+        "heading_prefix": "Order your printed brochure for",
+        "subtext": "Free delivery to US  |  $35 delivery to Canada",
+        "button_label": "Add to basket",
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "brochure_header",
+    "flipbook_brochure",
+    "brochure_buy_button"
+  ]
+}

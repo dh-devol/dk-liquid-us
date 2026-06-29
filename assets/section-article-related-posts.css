@@ -1,0 +1,23 @@
+.article-related-posts .page-width {
+  max-width: 960px;
+  padding:0 30px;
+}
+
+.article-related-posts__title {
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin-bottom: 3rem;
+  font-size:15px;
+}
+
+.article-related-posts__grid {
+  row-gap: 2.4rem;
+}
+
+.article-related-posts__grid .article-card__info {
+  text-align: center;
+}
+
+.article-related-posts__grid .card__heading {
+  text-align: center;
+}

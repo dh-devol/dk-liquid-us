@@ -1,0 +1,312 @@
+{{ 'section-thumb-slider.css' | asset_url | stylesheet_tag }}
+
+{%- assign desktop_images = page.metafields.custom.images.value -%}
+{%- assign mobile_images  = page.metafields.custom.mobile_images.value -%}
+{%- assign first_mobile_img = mobile_images | first -%}
+{%- if first_mobile_img -%}
+  {%- assign mobile_ratio = first_mobile_img.height | times: 100.0 | divided_by: first_mobile_img.width -%}
+{%- else -%}
+  {%- assign mobile_ratio = 125 -%}
+{%- endif -%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: 0;
+    }
+  }
+
+  /* Pre-init: hide non-first slides, show first at full width */
+  .metafield-gallery-swiper-{{ section.id }}:not(.swiper-initialized) {
+    overflow: hidden;
+  }
+  .metafield-gallery-swiper-{{ section.id }}:not(.swiper-initialized) .swiper-wrapper {
+    display: block;
+  }
+  .metafield-gallery-swiper-{{ section.id }}:not(.swiper-initialized) .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+  .metafield-gallery-swiper-{{ section.id }}:not(.swiper-initialized) .swiper-slide:not(:first-child) {
+    display: none !important;
+  }
+
+  /* Mobile: full-width override for page-width constraint */
+  @media screen and (max-width: 749px) {
+    .page-metafield-gallery .slideshow-thumbnail-gallery-wrapper {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .metafield-gallery-swiper-{{ section.id }} {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-top: {{ mobile_ratio }}%;
+    }
+    .metafield-gallery-swiper-{{ section.id }} .swiper-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    /* Hide everything on mobile until Swiper fully initializes */
+    .metafield-gallery-swiper-{{ section.id }}:not(.swiper-initialized) .swiper-wrapper {
+      visibility: hidden;
+    }
+  }
+{%- endstyle -%}
+
+{% if desktop_images %}
+<div class="showroom-description-page">
+<div class="page-metafield-gallery slideshow-thumbnail-gallery {{ section.settings.sectionname }} color-{{ section.settings.color_scheme }} gradient">
+  <div
+    class="slideshow-thumbnail-gallery-wrapper page-width section-{{ section.id }}-padding {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}
+  >
+    <div class="thumbnail__gallery">
+      <div class="metafield-gallery-swiper swiper metafield-gallery-swiper-{{ section.id }}">
+        <div class="swiper-wrapper">
+          {% for image in desktop_images %}
+            <div class="swiper-slide">
+              <img
+                src="{{ image | image_url: width: 1920 }}"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+                alt="{{ image.alt }}"
+                loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}"
+                draggable="false"
+              >
+            </div>
+          {% endfor %}
+        </div>
+
+        {%- comment -%} Full mobile slide set — swapped in by JS on mobile {%- endcomment -%}
+        {% if mobile_images and mobile_images.size > 0 %}
+          <script type="text/html" class="metafield-gallery-mobile-slides">
+            {% for image in mobile_images %}
+              <div class="swiper-slide">
+                <img
+                  src="{{ image | image_url: width: image.width }}"
+                  width="{{ image.width }}"
+                  height="{{ image.height }}"
+                  alt="{{ image.alt }}"
+                  loading="{% if forloop.index <= 2 %}eager{% else %}lazy{% endif %}"
+                  draggable="false"
+                >
+              </div>
+            {% endfor %}
+          </script>
+        {% endif %}
+
+        {%- comment -%} Desktop navigation arrows {%- endcomment -%}
+        <a class="metafield-gallery-prev small-hide" aria-label="Previous slide">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </a>
+        <a class="metafield-gallery-next small-hide" aria-label="Next slide">
+          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </a>
+
+        {%- comment -%} Mobile pagination dots {%- endcomment -%}
+        {% if page.metafields.custom.breakdown_costs.value != blank %}
+          <div class="swiper-pagination medium-hide large-up-hide"></div>
+        {% endif %}
+      </div>
+
+      {%- comment -%} Desktop thumbnail strip {%- endcomment -%}
+      <div class="slider__thumbs-wrapper small-hide">
+        <div class="page-thumbs-inner">
+          {% for image in desktop_images %}
+            <div class="slide__thumb--wrapper">
+              <img
+                class="slide__thumb{% if forloop.first %} active{% endif %}"
+                src="{{ image | image_url: height: 124 }}"
+                width="auto"
+                height="62"
+                loading="lazy"
+                alt="{{ image.alt }}"
+                data-slide-index="{{ forloop.index0 }}"
+              >
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var container = document.querySelector('.metafield-gallery-swiper-{{ section.id }}');
+    if (!container) return;
+
+    var isMobile = window.matchMedia('(max-width: 749px)').matches;
+
+    /* On mobile, swap in mobile-specific slides from the hidden script tag */
+    var mobileData = container.querySelector('script.metafield-gallery-mobile-slides');
+    if (isMobile && mobileData) {
+      var wrapper = container.querySelector('.swiper-wrapper');
+      wrapper.innerHTML = mobileData.textContent;
+    }
+    if (mobileData) mobileData.remove();
+
+    var swiperConfig = {
+      slidesPerView: 1,
+      loop: true,
+    };
+
+    if (isMobile) {
+      swiperConfig.pagination = {
+        el: '.metafield-gallery-swiper-{{ section.id }} .swiper-pagination',
+        clickable: true,
+      };
+    } else {
+      swiperConfig.effect = 'fade';
+      swiperConfig.fadeEffect = { crossFade: true };
+      swiperConfig.speed = 750;
+      swiperConfig.navigation = {
+        nextEl: '.metafield-gallery-swiper-{{ section.id }} .metafield-gallery-next',
+        prevEl: '.metafield-gallery-swiper-{{ section.id }} .metafield-gallery-prev',
+      };
+    }
+
+    var swiper = new Swiper('.metafield-gallery-swiper-{{ section.id }}', swiperConfig);
+
+    /* Position arrow icons 105px outside the image edges */
+    if (!isMobile) {
+      var prevIcon = container.querySelector('.metafield-gallery-prev .icon');
+      var nextIcon = container.querySelector('.metafield-gallery-next .icon');
+      var resizeTimer;
+
+      function positionArrows() {
+        var img = container.querySelector('.swiper-slide-active img');
+        if (!img || !img.naturalWidth) return;
+        var containerRect = container.getBoundingClientRect();
+        var imgRect = img.getBoundingClientRect();
+        var imgLeft = imgRect.left - containerRect.left;
+        var imgRight = containerRect.right - imgRect.right;
+        var prevPos = imgLeft - 105;
+        var nextPos = imgRight - 105;
+        prevIcon.style.left = Math.max(0, prevPos) + 'px';
+        nextIcon.style.right = Math.max(0, nextPos) + 'px';
+        /* Hide icon when it would go outside the viewport */
+        prevIcon.style.visibility = (containerRect.left + prevPos) < 0 ? 'hidden' : 'visible';
+        nextIcon.style.visibility = (containerRect.right - nextPos) > window.innerWidth ? 'hidden' : 'visible';
+      }
+
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(positionArrows, 150);
+      });
+
+      /* Initial positioning — wait for first image to load */
+      var firstImg = container.querySelector('.swiper-slide-active img');
+      if (firstImg && firstImg.complete) {
+        positionArrows();
+      } else if (firstImg) {
+        firstImg.addEventListener('load', positionArrows);
+      }
+    }
+
+    /* Thumbnail clicks */
+    var thumbs = container.closest('.thumbnail__gallery').querySelectorAll('.slide__thumb');
+    thumbs.forEach(function(thumb) {
+      thumb.addEventListener('click', function() {
+        var index = parseInt(this.getAttribute('data-slide-index'), 10);
+        swiper.slideToLoop(index);
+      });
+    });
+
+    /* Sync active thumbnail on slide change + preload nearby slides */
+    swiper.on('slideChange', function() {
+      var realIndex = swiper.realIndex;
+      thumbs.forEach(function(thumb, i) {
+        thumb.classList.toggle('active', i === realIndex);
+      });
+      /* Scroll active thumb into view */
+      if (thumbs[realIndex]) {
+        thumbs[realIndex].scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+      }
+      /* Preload nearby slides so they're ready when navigated to */
+      var slides = swiper.slides;
+      var current = swiper.activeIndex;
+      var total = slides.length;
+      for (var offset = -1; offset <= 2; offset++) {
+        var idx = ((current + offset) % total + total) % total;
+        var img = slides[idx] && slides[idx].querySelector('img[loading="lazy"]');
+        if (img) img.loading = 'eager';
+      }
+    });
+  });
+})();
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Page metafield gallery",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "For developer use"
+    },
+    {
+      "type": "text",
+      "id": "sectionname",
+      "label": "Do not edit"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page metafield gallery"
+    }
+  ]
+}
+{% endschema %}

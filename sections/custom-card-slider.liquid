@@ -1,0 +1,309 @@
+{{ 'custom-card-slider.css' | asset_url | stylesheet_tag }}
+
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="card__slider-gallery {{ section.settings.sectionname }} color-{{ section.settings.color_scheme }} gradient">
+  <div class="card__slider-gallery-wrapper page-width section-{{ section.id }}-padding {% if section.settings.show_bottom_border %}bottom__section-border{% endif %}{% if section.settings.show_top_border %} top__section-border{% endif %} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+     {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}>
+     {%- unless section.settings.title == blank -%}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin card-slider__title">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+    {%- endunless -%}
+    <div class="card_swiper__slider-wrapper">
+     <div class="swiper mySwiper mySwiper-{{ section.id }}">
+
+      {% assign online_features = metaobjects.press_online_features.values %}
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const onlineFeatures = [
+            {% for feature in online_features %}
+              {
+                title: {{ feature.title | json }},
+                url: "{{ feature.url }}",
+                date: {{ feature.date | json }},
+                sort_by_date: "{{ feature.sort_by_date }}",
+                image: {{ feature.image | image_url | json }}
+              }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+          ];
+          
+          function formatDateAsMonthYear(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long' };
+            return date.toLocaleDateString('en-US', options);
+          }
+          
+          onlineFeatures.sort((a, b) => 
+            new Date(b.sort_by_date) - new Date(a.sort_by_date)
+          );
+
+          const swiperWrapper = document.querySelector('.card__slider-gallery .swiper-wrapper.custom-swiper-wrapper');
+          
+          if (!swiperWrapper) {
+            console.error('Swiper wrapper not found');
+            return;
+          }
+
+          onlineFeatures.forEach(feature => {
+            console.log(feature);
+
+            const slide = document.createElement('div');
+            slide.classList.add('swiper-slide', 'slide__content');
+            
+            const formattedDate = feature.sort_by_date ? formatDateAsMonthYear(feature.sort_by_date) : feature.date;
+
+            slide.innerHTML = `
+              ${feature.title ? `
+                <h4 class="h1 w-five">
+                  ${feature.url 
+                    ? `<a href="${feature.url}" target="_blank">${feature.title}</a>` 
+                    : feature.title}
+                </h4>
+              ` : ''}
+
+              ${feature.image ? `
+                <a href="${feature.url || '#'}" 
+                  class="card__image-wrapper" 
+                  target="_blank">
+                  <img 
+                    src="${feature.image}" 
+                    class="card__image"
+                    alt="${feature.title || ''}"
+                    height="100%" 
+                    width="100%"
+                  >
+                </a>
+              ` : ''}
+
+              ${formattedDate ? `
+                <div class="card__text w-five">
+                  ${formattedDate}
+                </div>
+              ` : ''}
+            `;
+
+            swiperWrapper.appendChild(slide);
+          });
+        });
+      </script>
+
+      {% if online_features != blank %}
+        <div class="swiper-wrapper custom-swiper-wrapper">
+          {% comment %} {% for feature in online_features %}
+            <div class="swiper-slide slide__content">
+
+              {% if feature.title %}
+                <h4 class="h1 w-five">
+                  {% if feature.url %}
+                    <a
+                      href="{{ feature.url }}"
+                      target="_blank"
+                    >
+                      {{ feature.title }}
+                    </a>
+                  {% else %}
+                    {{ feature.title }}
+                  {% endif %}
+                </h4>
+              {% endif %}
+
+
+              {% if feature.image != blank %}
+                <a
+                  href="{{ feature.url }}"
+                  class="card__image-wrapper"
+                  target="_blank"
+                >
+                  <img
+                    src="{{ feature.image | image_url }}"
+                    class="card__image"
+                    alt="{{ feature.image.alt }}"
+                    height="100%"
+                    width="100%"
+                  >
+                </a>
+              {% endif %}
+
+              {% if feature.date != blank %}
+                <div class="card__text w-five">
+                  {{ feature.date }}
+                </div>
+              {% endif %}
+
+            </div>
+          {% endfor %} {% endcomment %}
+        </div>
+      {% endif %}
+
+      </div>
+       
+       <div class="swiper-button-next mySwiper-{{ section.id }}"></div>
+      <div class="swiper-button-prev mySwiper-{{ section.id }}"></div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var swiperContainer = document.querySelector(".mySwiper-{{ section.id }}");
+  if (!swiperContainer) return;
+
+  var slideCount = swiperContainer.querySelectorAll(".swiper-slide").length;
+
+  var swiper = new Swiper(swiperContainer, {
+    loop: slideCount > 5,
+    navigation: {
+      nextEl: ".swiper-button-next.mySwiper-{{ section.id }}",
+      prevEl: ".swiper-button-prev.mySwiper-{{ section.id }}",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.5,
+        slidesPerGroup: 1,
+        centeredSlides: true,
+        spaceBetween: 10,
+      },
+      600: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        centeredSlides: false,
+        spaceBetween: 10,
+      },
+      1200: {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+        centeredSlides: false,
+      },
+    },
+  });
+});
+</script>
+    
+{% schema %}
+{
+  "name": "Custom card slider",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "t:sections.multicolumn.settings.title.default",
+      "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_border",
+      "label": "Show top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_border",
+      "label": "Show bottom border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "redirect_to_new_page",
+      "label": "Redirect link to new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "For developer use"
+    },
+    {
+      "type": "text",
+      "id": "sectionname",
+      "label": "Do not edit"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom card slider"
+    }
+  ]
+}
+{% endschema %}

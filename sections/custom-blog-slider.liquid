@@ -1,0 +1,248 @@
+{{ 'custom-card-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- comment -%}
+  Determine which blog to use:
+  - If a blog is selected in the setting, use that
+  - Otherwise, fall back to the 'press-coverage' blog handle
+{%- endcomment -%}
+{%- if section.settings.blog != blank -%}
+  {%- assign press_blog = section.settings.blog -%}
+{%- else -%}
+  {%- assign press_blog = blogs['press-coverage'] -%}
+{%- endif -%}
+
+{%- if press_blog != blank and press_blog.articles_count > 0 -%}
+  {% paginate press_blog.articles by 250 %}
+    <div class="card__slider-gallery {{ section.settings.sectionname }} color-{{ section.settings.color_scheme }} gradient press-page-swiper">
+      <div
+        class="card__slider-gallery-wrapper page-width section-{{ section.id }}-padding {% if section.settings.show_bottom_border %}bottom__section-border{% endif %}{% if section.settings.show_top_border %} top__section-border{% endif %} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+        {% if settings.animations_reveal_on_scroll %}
+          data-cascade
+        {% endif %}
+      >
+        {%- unless section.settings.title == blank -%}
+          <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin card-slider__title">
+            <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+              {{ section.settings.title }}
+            </h2>
+          </div>
+        {%- endunless -%}
+
+        <div class="card_swiper__slider-wrapper">
+          <div class="swiper mySwiper mySwiper-{{ section.id }}">
+            <div class="swiper-wrapper">
+              {%- comment -%}
+                Group articles into slides of 5 items each
+              {%- endcomment -%}
+              {% assign sorted_articles = press_blog.articles | sort: 'published_at' | reverse %}
+              {%- for article in sorted_articles -%}
+                {%- assign index0 = forloop.index0 -%}
+                {%- assign mod = index0 | modulo: 5 -%}
+
+
+                <div class="swiper-slide slide__content">
+                  {%- if article.title != blank -%}
+                    <h4 class="h1 w-five">
+                      <a
+                        href="{{ article.url }}"
+                        {% if section.settings.redirect_to_new_page %}target="_blank"{% endif %}
+                      >
+                        {{ article.title | split: ' - ' | first }}
+                      </a>
+                    </h4>
+                  {%- endif -%}
+
+                  {%- if article.image != blank -%}
+                    <a
+                      href="{{ article.url }}"
+                      class="card__image-wrapper"
+                      {% if section.settings.redirect_to_new_page %}target="_blank"{% endif %}
+                    >
+                      <img
+                        src="{{ article.image | image_url: width: 200 }}"
+                        class="card__image"
+                        alt="{{ article.image.alt | default: article.title }}"
+                        loading="lazy"
+                        width="175"
+                        height="233"
+                      >
+                    </a>
+                  {%- endif -%}
+
+                  {%- assign press_date = article.metafields.custom['press_coverage_publish_date'] -%}
+                  {%- if press_date != blank -%}
+                    <div class="card__text w-five">
+                      {{ press_date }}
+                    </div>
+                  {%- else -%}
+                    <div class="card__text w-five">
+                      {{ article.published_at | date: "%B %Y" }}
+                    </div>
+                  {%- endif -%}
+                </div>
+
+              {%- endfor -%}
+            </div>
+          </div>
+
+          <div class="swiper-button-next mySwiper-{{ section.id }}"></div>
+          <div class="swiper-button-prev mySwiper-{{ section.id }}"></div>
+        </div>
+      </div>
+    </div>
+  {% endpaginate %}
+{%- endif -%}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var swiperContainer = document.querySelector(".mySwiper-{{ section.id }}");
+  if (!swiperContainer) return;
+
+  var slideCount = swiperContainer.querySelectorAll(".swiper-slide").length;
+
+  var swiper = new Swiper(swiperContainer, {
+    loop: slideCount > 5,
+    navigation: {
+      nextEl: ".swiper-button-next.mySwiper-{{ section.id }}",
+      prevEl: ".swiper-button-prev.mySwiper-{{ section.id }}",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.5,
+        slidesPerGroup: 1,
+        centeredSlides: true,
+        spaceBetween: 10,
+      },
+      600: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        centeredSlides: false,
+        spaceBetween: 10,
+      },
+      1200: {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+        centeredSlides: false,
+      },
+    },
+  });
+});
+</script>
+
+
+
+
+{% schema %}
+{
+  "name": "Custom blog slider",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog",
+      "info": "Select the press coverage blog. If left empty, defaults to the 'press-coverage' blog handle."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Press Coverage",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        { "value": "h2", "label": "t:sections.all.heading_size.options__1.label" },
+        { "value": "h1", "label": "t:sections.all.heading_size.options__2.label" },
+        { "value": "h0", "label": "t:sections.all.heading_size.options__3.label" },
+        { "value": "hxl", "label": "t:sections.all.heading_size.options__4.label" },
+        { "value": "hxxl", "label": "t:sections.all.heading_size.options__5.label" }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_top_border",
+      "label": "Show top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_bottom_border",
+      "label": "Show bottom border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "redirect_to_new_page",
+      "label": "Open article links in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "For developer use"
+    },
+    {
+      "type": "text",
+      "id": "sectionname",
+      "label": "Do not edit"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Custom blog slider"
+    }
+  ]
+}
+{% endschema %}

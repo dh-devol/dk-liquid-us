@@ -1,0 +1,508 @@
+{% assign tile_type = product.metafields.custom.flooring_tile_type.value | downcase %}
+{%- assign show_add_to_cart = show_add_to_cart | default: true -%}
+{% assign pack_size = product.metafields.custom.flooring_pack_size.value | default: 1 %}
+{% assign unit_area_value = product.metafields.custom.unit_area_m2.value %}
+{% assign unit_area_m2 = unit_area_value | default: 0.01 | times: 10.7639 %}
+{% assign qty_step = 1 %}
+{% if tile_type == 'fixed pack' %}
+  {% assign qty_step = pack_size %}
+{% endif %}
+{% assign qty_input_value = product.metafields.custom.number_of_tile_for_coverage_1m2 %}
+{% if tile_type == 'fixed tile' or tile_type == 'fixed pack' %}
+  {% assign qty_input_value = product.selected_or_first_available_variant.quantity_rule.min | default: 1 %}
+{% endif %}
+{% assign coverage_input_value = 10 %}
+{% if tile_type == 'fixed tile' or tile_type == 'fixed pack' %}
+  {% if unit_area_value != blank %}
+    {% assign coverage_input_value = unit_area_m2 | times: qty_input_value | round: 2 %}
+  {% endif %}
+{% endif %}
+{% if unit_area_value != blank %}
+  {%- assign calculator_type = '' -%}
+  {%- if product.metafields.custom.calculator_status -%}
+    {%- assign calculator_type = 'tile' -%}
+  {%- elsif tile_type != 'free length' and tile_type != 'variable pack' -%}
+    {%- assign calculator_type = 'flooring' -%}
+  {%- endif -%}
+  <div
+    class="quantity_coverage-main-wrapper{% if tile_type == blank %} quantity-coverage--no-type{% endif %}"
+    {% if calculator_type != '' %}
+      data-calculator="{{ calculator_type }}"
+    {% endif %}
+  >
+    <div class="quantity_coverage-wrapper {{ tile_type }}">
+      {% if tile_type != 'free length' and tile_type != 'variable pack' %}
+        {% assign show_coverage = true %}
+      {% else %}
+        {% assign show_coverage = false %}
+      {% endif %}
+      {% assign is_fixed_tile_or_pack = false %}
+      {% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}
+        {% assign is_fixed_tile_or_pack = true %}
+      {% endif %}
+      {% if tile_type == 'free length' %}
+        <div class="coverage_main-wrapper coverage-ft2-input-wrapper">
+          <label for="CoverageFt2-{{ section.id }}" class="coverage__label form__label">Coverage (ft<sup>2</sup>)*</label>
+          <div class="coverage-wrapper">
+            <button class="quantity__button tcalc-btn" type="button" id="CoverageFt2Minus-{{ section.id }}" aria-label="Decrease ft² coverage">
+              <span class="svg-wrapper">{{- 'icon-minus.svg' | inline_asset_content -}}</span>
+            </button>
+            <input
+              class="coverage__input"
+              type="number"
+              min="0"
+              step="0.01"
+              id="CoverageFt2-{{ section.id }}"
+              value="{{ qty_input_value | default: 1 | times: 10.7639 | round: 2 }}"
+            >
+            <button class="quantity__button tcalc-btn" type="button" id="CoverageFt2Plus-{{ section.id }}" aria-label="Increase ft² coverage">
+              <span class="svg-wrapper">{{- 'icon-plus.svg' | inline_asset_content -}}</span>
+            </button>
+          </div>
+        </div>
+      {% endif %}
+      {% if show_coverage and is_fixed_tile_or_pack %}
+        <div class="coverage_main-wrapper">
+          <label for="Coverage-{{ section.id }}" class="coverage__label form__label">Coverage (ft<sup>2</sup>)*</label>
+          <div class="coverage-wrapper">
+            <button class="quantity__button tcalc-btn tcalc-btn--cov-minus" type="button" aria-label="Decrease coverage">
+              <span class="svg-wrapper">
+                {{- 'icon-minus.svg' | inline_asset_content -}}
+              </span>
+            </button>
+            <input
+              class="coverage__input"
+              type="number"
+              min="0"
+              value="{{ coverage_input_value }}"
+              step="any"
+              name="quantity"
+              id="Coverage-{{ section.id }}"
+            >
+            <button class="quantity__button tcalc-btn tcalc-btn--cov-plus" type="button" aria-label="Increase coverage">
+              <span class="svg-wrapper">
+                {{- 'icon-plus.svg' | inline_asset_content -}}
+              </span>
+            </button>
+          </div>
+        </div>
+      {% endif %}
+
+      <div
+        id="Quantity-Form-{{ section.id }}"
+        class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
+        {% # theme-check-disable %}
+        {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
+
+        <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+          {% if tile_type == 'free length' %}
+            Coverage (m<sup>2</sup>)*
+          {% elsif tile_type == 'variable pack' %}
+            Coverage (ft<sup>2</sup>)*
+          {% else %}
+            Tile Quantity
+          {% endif %}
+
+          <span class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %}">
+            {%- render 'loading-spinner' -%}
+            <span
+              >(
+              {{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}}
+              )</span
+            >
+          </span>
+        </label>
+        <div class="price-per-item__container">
+          {% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}
+            <input
+              type="hidden"
+              name="properties[_qty-step]"
+              value="{{ qty_step }}"
+              form="{{ product_form_id }}"
+            >
+          {% endif %}
+          <quantity-input
+            class="quantity"
+            data-url="{{ product.url }}"
+            data-section="{{ section.id }}"
+          >
+            {% if tile_type == 'free length' or tile_type == 'variable pack' %}
+            <button class="quantity__button" name="minus" type="button">
+              <span class="visually-hidden">
+                {{-
+                  'products.product.quantity.decrease'
+                  | t: product: item.product.title
+                  | escape
+                -}}
+              </span>
+              <span class="svg-wrapper">
+                {{- 'icon-minus.svg' | inline_asset_content -}}
+              </span>
+            </button>
+            {% endif %}
+            <input
+              class="quantity__input"
+              type="number"
+              name="quantity"
+              id="Quantity-{{ section.id }}"
+              data-cart-quantity="{{ cart_qty }}"
+              data-min="{% if tile_type == 'fixed pack' %}{{ qty_step }}{% elsif tile_type == 'fixed tile' %}1{% else %}{{ product.selected_or_first_available_variant.quantity_rule.min }}{% endif %}"
+              min="{% if tile_type == 'fixed pack' %}{{ qty_step }}{% elsif tile_type == 'fixed tile' %}1{% else %}{{ product.selected_or_first_available_variant.quantity_rule.min }}{% endif %}"
+              {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+              {% endif %}
+              step="{% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}{{ qty_step }}{% else %}{{ product.selected_or_first_available_variant.quantity_rule.increment }}{% endif %}"
+              value="{{ qty_input_value | default: 1 }}"
+              form="{{ product_form_id }}"
+            >
+            {% if tile_type == 'free length' or tile_type == 'variable pack' %}
+            <button class="quantity__button" name="plus" type="button">
+              <span class="visually-hidden">
+                {{-
+                  'products.product.quantity.increase'
+                  | t: product: item.product.title
+                  | escape
+                -}}
+              </span>
+              <span class="svg-wrapper">
+                {{- 'icon-plus.svg' | inline_asset_content -}}
+              </span>
+            </button>
+            {% endif %}
+          </quantity-input>
+          {% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}
+            <div class="tcalc-qty-buttons">
+              <button class="quantity__button tcalc-btn tcalc-btn--qty-minus" type="button" aria-label="Decrease quantity">
+                <span class="svg-wrapper">
+                  {{- 'icon-minus.svg' | inline_asset_content -}}
+                </span>
+              </button>
+              <button class="quantity__button tcalc-btn tcalc-btn--qty-plus" type="button" aria-label="Increase quantity">
+                <span class="svg-wrapper">
+                  {{- 'icon-plus.svg' | inline_asset_content -}}
+                </span>
+              </button>
+            </div>
+          {% endif %}
+          {% if tile_type == 'free length' or tile_type == 'variable pack' %}
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var sectionId = {{ section.id | json }};
+              var isFreeLength = {{ tile_type | json }} === 'free length';
+              var M2_TO_FT2 = 10.7639;
+
+              var quantityInput = document.getElementById('Quantity-' + sectionId);
+              var ft2Input = document.getElementById('CoverageFt2-' + sectionId);
+              var ft2MinusBtn = document.getElementById('CoverageFt2Minus-' + sectionId);
+              var ft2PlusBtn = document.getElementById('CoverageFt2Plus-' + sectionId);
+              var totalPriceEl = document.getElementById('TotalPrice');
+
+              var calc = window.tileCalculator || {};
+              var unitPriceCents = Number(calc.price) || 0;
+              var moneyFormat = calc.moneyFormat || '$';
+
+              function formatPrice(cents) {
+                var amount = (cents / 100).toFixed(2);
+                return (moneyFormat || '$')
+                  .replace(/\{\{amount_no_decimals_with_comma_separator\}\}/g, Math.round(cents / 100))
+                  .replace(/\{\{amount_no_decimals\}\}/g, Math.round(cents / 100))
+                  .replace(/\{\{amount_with_comma_separator\}\}/g, amount)
+                  .replace(/\{\{amount\}\}/g, amount);
+              }
+
+              function updateTotal() {
+                if (!quantityInput || !totalPriceEl) return;
+                var qty = parseFloat(quantityInput.value);
+                if (isNaN(qty) || qty < 1) qty = 1;
+                totalPriceEl.textContent = formatPrice(unitPriceCents * qty);
+              }
+
+              function syncFt2FromM2() {
+                if (!isFreeLength || !ft2Input || !quantityInput) return;
+                var m2 = parseFloat(quantityInput.value);
+                if (isNaN(m2) || m2 < 1) m2 = 1;
+                ft2Input.value = (m2 * M2_TO_FT2).toFixed(2);
+              }
+
+              function syncM2FromFt2() {
+                if (!isFreeLength || !ft2Input || !quantityInput) return;
+                var ft2 = parseFloat(ft2Input.value);
+                if (isNaN(ft2) || ft2 <= 0) ft2 = M2_TO_FT2;
+                var m2 = Math.max(1, Math.ceil(ft2 / M2_TO_FT2));
+                quantityInput.value = m2;
+                ft2Input.value = (m2 * M2_TO_FT2).toFixed(2);
+                quantityInput.dispatchEvent(new Event('input', { bubbles: true }));
+              }
+
+              if (quantityInput) {
+                quantityInput.addEventListener('input', function () {
+                  syncFt2FromM2();
+                  updateTotal();
+                });
+              }
+
+              if (ft2Input) {
+                ft2Input.addEventListener('change', syncM2FromFt2);
+              }
+
+              if (ft2MinusBtn) {
+                ft2MinusBtn.addEventListener('click', function () {
+                  var m2 = Math.max(1, parseInt(quantityInput.value, 10) || 1);
+                  m2 = Math.max(1, m2 - 1);
+                  quantityInput.value = m2;
+                  ft2Input.value = (m2 * M2_TO_FT2).toFixed(2);
+                  updateTotal();
+                });
+              }
+
+              if (ft2PlusBtn) {
+                ft2PlusBtn.addEventListener('click', function () {
+                  var m2 = Math.max(1, parseInt(quantityInput.value, 10) || 1);
+                  m2 = m2 + 1;
+                  quantityInput.value = m2;
+                  ft2Input.value = (m2 * M2_TO_FT2).toFixed(2);
+                  updateTotal();
+                });
+              }
+
+              // Existing m² +/- buttons (inside quantity-input custom element, name="minus"/"plus")
+              var quantityEl = quantityInput && quantityInput.closest('quantity-input');
+              if (quantityEl) {
+                quantityEl.querySelectorAll('.quantity__button[name="minus"], .quantity__button[name="plus"]').forEach(function (btn) {
+                  btn.addEventListener('click', function () {
+                    setTimeout(function () {
+                      syncFt2FromM2();
+                      updateTotal();
+                    }, 50);
+                  });
+                });
+              }
+
+              syncFt2FromM2();
+              updateTotal();
+            });
+          </script>
+          {% endif %}
+          {%- liquid
+            assign volume_pricing_array = product.selected_or_first_available_variant.quantity_price_breaks | sort: 'quantity' | reverse
+            assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.min
+            if cart_qty > 0
+              assign current_qty_for_volume_pricing = cart_qty | plus: product.selected_or_first_available_variant.quantity_rule.increment
+            endif
+          -%}
+          {%- if product.quantity_price_breaks_configured? -%}
+            <price-per-item
+              id="Price-Per-Item-{{ section.id }}"
+              data-section-id="{{ section.id }}"
+              data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+            >
+              {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
+                {%- assign variant_price_compare = product.selected_or_first_available_variant.compare_at_price -%}
+                <div class="price-per-item">
+                  {%- if variant_price_compare -%}
+                    <dl class="price-per-item--current">
+                      <dt class="visually-hidden">
+                        {{ 'products.product.price.regular_price' | t }}
+                      </dt>
+                      <dd>
+                        <s class="variant-item__old-price">
+                          {{ variant_price_compare | money }}
+                        </s>
+                      </dd>
+                    </dl>
+                  {%- endif -%}
+                  {%- if current_qty_for_volume_pricing < volume_pricing_array.last.minimum_quantity -%}
+                    {%- assign variant_price = product.selected_or_first_available_variant.price
+                      | money
+                    -%}
+                    <span class="price-per-item--current">
+                      {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
+                    </span>
+                  {%- else -%}
+                    {%- for price_break in volume_pricing_array -%}
+                      {%- if current_qty_for_volume_pricing >= price_break.minimum_quantity -%}
+                        {%- assign price_break_price = price_break.price | money -%}
+                        <span class="price-per-item--current">
+                          {{- 'products.product.volume_pricing.price_at_each' | t: price: price_break_price -}}
+                        </span>
+                        {%- break -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endif -%}
+                </div>
+              {%- else -%}
+                {%- assign variant_price = product.selected_or_first_available_variant.price | money -%}
+                {%- assign variant_price_compare = product.selected_or_first_available_variant.compare_at_price -%}
+                <div class="price-per-item">
+                  {%- if variant_price_compare -%}
+                    <dl class="price-per-item--current">
+                      <dt class="visually-hidden">
+                        {{ 'products.product.price.regular_price' | t }}
+                      </dt>
+                      <dd>
+                        <s class="variant-item__old-price">
+                          {{ variant_price_compare | money }}
+                        </s>
+                      </dd>
+                      <dt class="visually-hidden">
+                        {{ 'products.product.price.sale_price' | t }}
+                      </dt>
+                      <dd>
+                        <span class="price-per-item--current">
+                          {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
+                        </span>
+                      </dd>
+                    </dl>
+                  {%- else -%}
+                    <span class="price-per-item--current">
+                      {{- 'products.product.volume_pricing.price_at_each' | t: price: variant_price -}}
+                    </span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </price-per-item>
+          {%- endif -%}
+        </div>
+
+        <div class="quantity__rules caption" id="Quantity-Rules-{{ section.id }}">
+          {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
+            <span class="divider">
+              {{-
+                'products.product.quantity.multiples_of'
+                | t: quantity: product.selected_or_first_available_variant.quantity_rule.increment
+              -}}
+            </span>
+          {%- endif -%}
+          {%- if product.selected_or_first_available_variant.quantity_rule.min > 1 -%}
+            <span class="divider">
+              {{-
+                'products.product.quantity.minimum_of'
+                | t: quantity: product.selected_or_first_available_variant.quantity_rule.min
+              -}}
+            </span>
+          {%- endif -%}
+          {%- if product.selected_or_first_available_variant.quantity_rule.max != null -%}
+            <span class="divider">
+              {{-
+                'products.product.quantity.maximum_of'
+                | t: quantity: product.selected_or_first_available_variant.quantity_rule.max
+              -}}
+            </span>
+          {%- endif -%}
+        </div>
+        {%- if product.quantity_price_breaks_configured? -%}
+          <volume-pricing class="parent-display" id="Volume-{{ section.id }}">
+            {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
+              <span class="caption-large">{{ 'products.product.volume_pricing.title' | t }}</span>
+              <ul class="list-unstyled">
+                <li>
+                  <span>{{ product.selected_or_first_available_variant.quantity_rule.min }}+</span>
+                  {%- assign price = product.selected_or_first_available_variant.price | money -%}
+                  <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: variant_price }}">
+                    {{- 'sections.quick_order_list.each' | t: money: price -}}
+                  </span>
+                </li>
+                {%- for price_break in product.selected_or_first_available_variant.quantity_price_breaks -%}
+                  {%- assign price_break_price = price_break.price | money -%}
+                  <li class="{%- if forloop.index >= 3 -%}show-more-item hidden{%- endif -%}">
+                    <span>
+                      {{- price_break.minimum_quantity -}}
+                      <span aria-hidden="true">+</span></span
+                    >
+                    <span data-text="{{ 'products.product.volume_pricing.price_at_each' | t: price: price_break_price }}">
+                      {{- 'sections.quick_order_list.each' | t: money: price_break_price -}}
+                    </span>
+                  </li>
+                {%- endfor -%}
+              </ul>
+              {%- if product.selected_or_first_available_variant.quantity_price_breaks.size >= 3 -%}
+                <show-more-button>
+                  <button
+                    class="button-show-more link underlined-link"
+                    id="Show-More-{{ section.id }}"
+                    type="button"
+                  >
+                    <span class="label-show-more label-text"
+                      ><span aria-hidden="true">+ </span>{{ 'products.facets.show_more' | t }}
+                    </span>
+                  </button>
+                </show-more-button>
+              {%- endif -%}
+            {%- endif -%}
+          </volume-pricing>
+        {%- endif -%}
+      </div>
+      {% if show_coverage and tile_type != 'fixed pack' and tile_type != 'fixed tile' %}
+        <div class="coverage_main-wrapper">
+          <label for="Coverage-{{ section.id }}" class="coverage__label form__label">{% if tile_type == 'linear' %}Linear Feet*{% else %}Coverage (ft<sup>2</sup>)*{% endif %}</label>
+          <div class="coverage-wrapper">
+            <input
+              class="coverage__input"
+              type="number"
+              min="{% if tile_type == 'linear' %}1{% else %}0{% endif %}"
+              value="{% if tile_type == 'fixed tile' %}{{ coverage_input_value }}{% else %}10{% endif %}"
+              step="{% if tile_type == 'fixed tile' %}any{% elsif tile_type == blank or tile_type == 'linear' %}1{% else %}{{ unit_area_m2 }}{% endif %}"
+              name="coverage"
+              id="Coverage-{{ section.id }}"
+            >
+          </div>
+        </div>
+      {% endif %}
+      <div class="total_price-wrapper">
+        <span for="TotalPrice" class="total-price__label form__label"> Subtotal </span>
+        <span id="TotalPrice">{{ product.price | money}}</span>
+      </div>
+    </div>
+    {% if product.metafields.custom.flooring_calculator_text.value != blank %}
+      <div class="coverage_note-wrapper offcut">
+        <div class="rte">
+          <p>{{ product.metafields.custom.flooring_calculator_text.value }}</p>
+        </div>
+      </div>
+    {%- endif -%}
+    {% if show_add_to_cart %}
+      <div class="quantity_buy_button-wrapper">
+        {% render 'product-add-to-cart',
+          block: block,
+          product: product,
+          product_form_id: product_form_id,
+          section_id: section.id,
+          show_pickup_availability: show_pickup_availability
+        %}
+      </div>
+    {% endif %}
+  </div>
+
+  <script>
+    window.tileCalculator = {
+      price: {{ product.price | json }}, // product price in cents
+      tileWidth: {{ product.metafields.custom.tile_width.value | default: 0 | json }},
+      tileLength: {{ product.metafields.custom.tile_length.value | default: 0 | json }},
+      tileBundle: {{ product.metafields.custom.flooring_tile_type.value | json }},
+      tileStep: {{ product.metafields.custom.tile_step.value | default: 1 | json }},
+      packSize: {{ product.metafields.custom.flooring_pack_size.value | default: 1 | json }},
+      unitAreaM2: {{ product.metafields.custom.unit_area_m2.value | default: 0 | times: 10.7639 | json }},
+      unitAreaSet: {{ unit_area_value | json }},
+      tilesPerM2: {{ product.metafields.custom.number_of_tile_for_coverage_1m2.value | default: 0 | json }},
+      moneyFormat: {{ shop.money_format | json }} // Shopify money format
+    };
+  </script>
+  {% assign tile_type = product.metafields.custom.flooring_tile_type | downcase %}
+
+  {%- if product.metafields.custom.calculator_status -%}
+    <script src="{{ 'tile_calculator_single.js' | asset_url }}" defer="defer" id="tile-calculator-script"></script>
+  {% else %}
+    {% unless tile_type == 'free length' or tile_type == 'variable pack' %}
+      <script src="{{ 'flooring_calculator_single.js' | asset_url }}" defer="defer" id="flooring-calculator-script"></script>
+      <style>
+        .coverage_main-wrapper {
+          order: -1;
+        }
+      </style>
+    {% endunless %}
+  {% endif %}
+{% endif %}

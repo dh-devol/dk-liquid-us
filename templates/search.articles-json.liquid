@@ -1,0 +1,23 @@
+{%- layout none -%}
+{%- paginate search.results by 250 -%}
+{
+  "articles": [
+    {%- for item in search.results -%}
+      {%- if item.object_type == 'article' -%}
+        {
+          "id": {{ item.id | json }},
+          "title": {{ item.title | strip_html | escape | json }},
+          "url": {{ item.url | json }},
+          "blog_handle": {{ item.blog.handle | json }},
+          "published_at": {{ item.published_at | date: "%Y-%m-%dT%H:%M:%S%z" | json }},
+          "excerpt": {{ item.excerpt_or_content | strip_html | truncatewords: 30 | json }},
+          "image": {%- if item.image -%}{{ item.image | image_url: width: 900 | json }}{%- else -%}null{%- endif -%},
+          "image_alt": {%- if item.image and item.image.alt != blank -%}{{ item.image.alt | escape | json }}{%- else -%}null{%- endif -%}
+        }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endif -%}
+    {%- endfor -%}
+  ],
+  "page": {{ paginate.current_page | json }},
+  "pages": {{ paginate.pages | json }}
+}
+{%- endpaginate -%}

@@ -1,0 +1,264 @@
+{%- assign section_id = section_id | default: section.id -%}
+{%- comment -%}Resolve cart quantity limit for this product from theme settings{%- endcomment -%}
+{%- assign _pf_cart_qty_limit = 0 -%}
+{%- assign _pf_cart_qty_limit_tag = '' -%}
+{%- assign _pf_per_item_limit = 0 -%}
+{%- for i in (1..5) -%}
+  {%- assign _tag_key = 'cart_qty_limit_tag_' | append: i -%}
+  {%- assign _type_key = 'cart_qty_limit_type_' | append: i -%}
+  {%- assign _max_key = 'cart_qty_limit_max_' | append: i -%}
+  {%- assign _per_item_key = 'cart_qty_limit_per_item_' | append: i -%}
+  {%- assign _limit_tag = settings[_tag_key] -%}
+  {%- assign _limit_type = settings[_type_key] -%}
+  {%- assign _limit_max = settings[_max_key] | plus: 0 -%}
+  {%- assign _limit_per_item = settings[_per_item_key] | plus: 0 -%}
+  {%- assign _tag_match = false -%}
+  {%- if _limit_tag != blank and product.tags contains _limit_tag -%}
+    {%- assign _tag_match = true -%}
+  {%- endif -%}
+  {%- assign _type_match = false -%}
+  {%- if _limit_type != blank and product.type == _limit_type -%}
+    {%- assign _type_match = true -%}
+  {%- endif -%}
+  {%- if _tag_match or _type_match -%}
+    {%- if _limit_max > 0 -%}
+      {%- assign _pf_cart_qty_limit = _limit_max -%}
+      {%- assign _pf_cart_qty_limit_tag = _limit_tag | default: _limit_type -%}
+    {%- endif -%}
+    {%- if _limit_per_item > 0 -%}
+      {%- assign _pf_per_item_limit = _limit_per_item -%}
+    {%- endif -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+<div id="bb-custom-builder"></div>
+<div {{ block.shopify_attributes }} class="add-to-cart-wrapper">
+  {%- if product != blank -%}
+    {%- liquid
+      assign gift_card_recipient_feature_active = false
+      if block.settings.show_gift_card_recipient and product.gift_card?
+        assign gift_card_recipient_feature_active = true
+      endif
+
+      assign show_dynamic_checkout = false
+      if block.settings.show_dynamic_checkout and gift_card_recipient_feature_active == false
+        assign show_dynamic_checkout = true
+      endif
+    -%}
+
+    <product-form
+      class="product-form"
+      data-hide-errors="{{ gift_card_recipient_feature_active }}"
+      data-section-id="{{ section.id }}"
+      {% if _pf_cart_qty_limit > 0 %}
+        data-cart-qty-limit="{{ _pf_cart_qty_limit }}"
+        data-cart-qty-limit-tag="{{ _pf_cart_qty_limit_tag | escape }}"
+      {% endif %}
+      {% if _pf_per_item_limit > 0 %}
+        data-per-item-limit="{{ _pf_per_item_limit }}"
+      {% endif %}
+    >
+      <div class="product-form__error-message-wrapper" role="alert" hidden>
+        <span class="svg-wrapper">
+          {{- 'icon-error.svg' | inline_asset_content -}}
+        </span>
+        <span class="product-form__error-message"></span>
+      </div>
+
+      {%- form 'product',
+        product,
+        id: product_form_id,
+        class: 'form',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      -%}
+        {% assign extras = product.metafields.custom.products_add_extra_products.value %}
+
+        {% if extras != blank %}
+          {% for item in extras %}
+            {% if item.product_title != blank %}
+              <p class="checbox-addon-heading">{{ item.product_title }}</p>
+            {% else %}
+              <p class="checbox-addon-heading">Optional extras:</p>
+            {% endif %}
+
+            <div class="checkbox-products-wrapper">
+              {% for p in item.product_s.value %}
+                {% if p.title %}
+                  {% assign variant = p.selected_or_first_available_variant %}
+                  {% assign display_title = p.title %}
+                  {% if display_title contains ' - ' %}
+                    {% assign title_parts = display_title | split: ' - ' %}
+                    {% assign display_title = title_parts | last | strip %}
+                  {% endif %}
+                  <label class="checkbox-product-item">
+                    <input
+                      type="checkbox"
+                      class="brass-checkbox"
+                      value="{{ variant.id }}"
+                      data-available="{{ p.available }}"
+                      data-price="{{ variant.price }}"
+                    >
+                    <span> {{ display_title }}{% if item.show_price %} ({{ variant.price | money }}){% endif %} </span>
+                  </label>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        {% comment %} Brass addon prices for Fast Bundles restyle heading {% endcomment %}
+        {%- assign brass_products = product.metafields.custom.select_brass_products.value -%}
+        {% if brass_products != blank %}
+          <script>
+            window.__brassAddonPrices = {
+              {%- for brass_product in brass_products -%}
+                {%- assign brass_variant = brass_product.selected_or_first_available_variant -%}
+                {%- assign position = brass_product.title | split: '-' | last | strip | downcase -%}
+                "{{ position }}": "{{ brass_variant.price | money }}"{% unless forloop.last %},{% endunless %}
+              {%- endfor -%}
+            };
+          </script>
+        {% endif %}
+
+        {% if product.metafields.custom.lead_time != blank %}
+          <input
+            id="lead_time"
+            value="{{ product.metafields.custom.lead_time }}"
+            type="hidden"
+            name="properties[Lead time]"
+          >
+        {% endif %}
+        {% if product.metafields.custom.lead_time_days != blank %}
+          <input
+            type="hidden"
+            name="properties[_lead_time_days]"
+            value="{{ product.metafields.custom.lead_time_days }}"
+          >
+          <input
+            type="hidden"
+            name="properties[_Promise Date]"
+            class="js-promise-date-input"
+            data-lead-days="{{ product.metafields.custom.lead_time_days }}"
+            value=""
+          >
+        {% endif %}
+        {% if _pf_cart_qty_limit > 0 %}
+          <input type="hidden" name="properties[_cart_qty_tag]" value="{{ _pf_cart_qty_limit_tag | escape }}">
+        {% endif %}
+        {% if product.metafields.custom.cart_text != blank %}
+          <input
+            id="cart_text"
+            value="{{ product.metafields.custom.cart_text }}"
+            type="hidden"
+            name="properties[Cart Text]"
+          >
+        {% endif %}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          {% if product.selected_or_first_available_variant.available == false
+            or quantity_rule_soldout
+            or product.selected_or_first_available_variant == null
+          %}
+            disabled
+          {% endif %}
+          class="product-variant-id"
+        >
+
+        {%- if gift_card_recipient_feature_active -%}
+          {%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
+        {%- endif -%}
+
+        <div class="product-form__buttons">
+          {%- liquid
+            assign check_against_inventory = true
+            if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
+              assign check_against_inventory = false
+            endif
+            if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
+              assign quantity_rule_soldout = true
+            endif
+          -%}
+          <button
+            id="ProductSubmitButton-{{ section_id }}"
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            {% if product.selected_or_first_available_variant.available == false
+              or quantity_rule_soldout
+              or product.selected_or_first_available_variant == null
+            %}
+              disabled
+            {% endif %}
+          >
+            <span>
+              {%- if product.selected_or_first_available_variant == null -%}
+                {{ 'products.product.unavailable' | t }}
+              {%- elsif product.selected_or_first_available_variant.available == false
+                or quantity_rule_soldout
+              -%}
+                {{ 'products.product.sold_out' | t }}
+              {%- else -%}
+                {{ 'products.product.add_to_cart' | t }}
+              {%- endif -%}
+            </span>
+            {%- render 'loading-spinner' -%}
+          </button>
+        </div>
+      {%- endform -%}
+      {% comment %}
+        Extra products are handled in product-form.js to avoid full page reloads.
+      {% endcomment %}
+    </product-form>
+  {%- else -%}
+    <div class="product-form">
+      <div class="product-form__buttons form">
+        <button
+          type="submit"
+          name="add"
+          class="product-form__submit button button--full-width button--primary"
+          disabled
+        >
+          {{ 'products.product.sold_out' | t }}
+        </button>
+      </div>
+    </div>
+  {%- endif -%}
+
+  {%- if show_pickup_availability -%}
+    {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
+
+    {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities
+      | where: 'pick_up_enabled', true
+    -%}
+
+    <pickup-availability
+      class="product__pickup-availabilities quick-add-hidden"
+      {% if product.selected_or_first_available_variant.available and pick_up_availabilities.size > 0 %}
+        available
+      {% endif %}
+      data-root-url="{{ routes.root_url }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      data-has-only-default-variant="{{ product.has_only_default_variant }}"
+      data-product-page-color-scheme="gradient color-{{ section.settings.color_scheme }}"
+    >
+      <template>
+        <pickup-availability-preview class="pickup-availability-preview">
+          <span class="svg-wrapper">
+            {{- 'icon-unavailable.svg' | inline_asset_content -}}
+          </span>
+          <div class="pickup-availability-info">
+            <p class="caption-large">{{ 'products.product.pickup_availability.unavailable' | t }}</p>
+            <button class="pickup-availability-button link link--text underlined-link">
+              {{ 'products.product.pickup_availability.refresh' | t }}
+            </button>
+          </div>
+        </pickup-availability-preview>
+      </template>
+    </pickup-availability>
+
+    <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
+</div>

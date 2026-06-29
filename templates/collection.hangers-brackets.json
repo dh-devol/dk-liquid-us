@@ -1,0 +1,364 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gallery_slideshow_rEnppV": {
+      "type": "gallery-slideshow",
+      "blocks": {
+        "slide_wN6hzJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Stoke_Newington-070-crop3_0_1.jpg",
+            "heading": "Individually aged by hand",
+            "heading_size": "h0",
+            "subheading": "Brass Hanging Rails",
+            "button_label": "SHOP NOW",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_7chP9t": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Bath-Showroom-Green-Room-54_crop2_0.jpg",
+            "heading": "Gloriously simple",
+            "heading_size": "h0",
+            "subheading": "Café Curtain Rails",
+            "button_label": "SHOP NOW",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_AjTMNm": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/TheRiversideApt-Barnes-235_0_0.jpg",
+            "heading": "A utilitarian design",
+            "heading_size": "h0",
+            "subheading": "Classic Shelf Brackets",
+            "button_label": "STEP INSIDE",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wN6hzJ",
+        "slide_7chP9t",
+        "slide_AjTMNm"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_HUwCn4": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_h9gtwP": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-hanging-rail-1200-3-brackets-10-hooks"
+          }
+        },
+        "product_item_T6rYCx": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-caf-c-curtain-rail-600mm-rail-with-2-brackets-8-clips"
+          }
+        },
+        "product_item_tFzKGK": {
+          "type": "product_item",
+          "settings": {
+            "product": "pot-hanger"
+          }
+        },
+        "product_item_D9nJNq": {
+          "type": "product_item",
+          "settings": {
+            "product": "13-iron-hook-rack"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_h9gtwP",
+        "product_item_T6rYCx",
+        "product_item_tFzKGK",
+        "product_item_D9nJNq"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Hangers & Hooks",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_d4w7dA": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_wHQXRc": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-s-hooks"
+          }
+        },
+        "product_item_eayifJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-beam-hook-large"
+          }
+        },
+        "product_item_QDregg": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-wall-hook-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_wHQXRc",
+        "product_item_eayifJ",
+        "product_item_QDregg"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_LUKAjp": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_eCaMxi": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-hook-square-backplate-small"
+          }
+        },
+        "product_item_ERzYGV": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-hook-elephant-backplate-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_eCaMxi",
+        "product_item_ERzYGV"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Ut9TiA": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_eYYXTM": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-aged-brass-large"
+          }
+        },
+        "product_item_VBpMRW": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-heirloom-brass-small"
+          }
+        },
+        "product_item_HFbhMG": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-cast-iron-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_eYYXTM",
+        "product_item_VBpMRW",
+        "product_item_HFbhMG"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Shelf Brackets",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_myf6gK": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_xRJyPb": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-shelf-bracket"
+          }
+        },
+        "product_item_Ckf8dP": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-shelf-bracket-diamond-bar"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_xRJyPb",
+        "product_item_Ckf8dP"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "gallery_slideshow_rEnppV",
+    "banner",
+    "product-grid",
+    "custom_product_list_HUwCn4",
+    "custom_product_list_d4w7dA",
+    "custom_product_list_LUKAjp",
+    "custom_product_list_Ut9TiA",
+    "custom_product_list_myf6gK"
+  ]
+}

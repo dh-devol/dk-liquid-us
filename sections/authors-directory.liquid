@@ -1,0 +1,216 @@
+{% comment %}
+  Authors (auto, Storefront API) — with pagination (Shopify-valid schema)
+  Fetches all blogs & their articles via Storefront API (2025-10) and paginates.
+{% endcomment %}
+
+{% assign show_images = section.settings.show_images %}
+{% assign truncate_chars = section.settings.truncate_chars | default: 180 %}
+{% assign blogs_page_size = section.settings.blogs_page_size | default: 50 %}
+{% assign articles_page_size = section.settings.articles_page_size | default: 100 %}
+{% assign max_blogs = section.settings.max_blogs | default: 500 %}
+{% assign max_articles_per_blog = section.settings.max_articles_per_blog | default: 2000 %}
+{% assign max_total_articles = section.settings.max_total_articles | default: 20000 %}
+
+<section
+  class="author-filter-api"
+  data-blogs-page-size="{{ blogs_page_size }}"
+  data-articles-page-size="{{ articles_page_size }}"
+  data-max-blogs="{{ max_blogs }}"
+  data-max-articles-per-blog="{{ max_articles_per_blog }}"
+  data-max-total-articles="{{ max_total_articles }}"
+  data-truncate-chars="{{ truncate_chars }}"
+>
+  <div class="page-width">
+    <h1 class="h2">Author</h1>
+
+    {% if section.settings.storefront_token == blank %}
+      <p><strong>Missing Storefront API token.</strong> In the theme editor, open this section and paste your Storefront access token.</p>
+    {% else %}
+      <div id="authorResults"><p>Loading articles…</p></div>
+    {% endif %}
+  </div>
+
+  <style>
+    .author-articles-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
+    .article-card { border:1px solid #eee; border-radius:.75rem; padding:1rem; background:#fff; }
+    .article-title { margin:0 0 .25rem; font-size:1.05rem; }
+    .article-meta { font-size:.9rem; opacity:.8; margin-bottom:.6rem; }
+    .article-image img { width:100%; height:auto; border-radius:.5rem; display:block; }
+    .muted { opacity:.7; }
+  </style>
+
+  {% if section.settings.storefront_token != blank %}
+  <script>
+  (function(){
+    var token = {{ section.settings.storefront_token | json }};
+    var root = document.currentScript.closest('section');
+    var mount = document.getElementById('authorResults');
+
+    var blogsPageSize = parseInt(root.dataset.blogsPageSize || '50', 10);
+    var articlesPageSize = parseInt(root.dataset.articlesPageSize || '100', 10);
+    var maxBlogs = parseInt(root.dataset.maxBlogs || '500', 10);
+    var maxPerBlog = parseInt(root.dataset.maxArticlesPerBlog || '2000', 10);
+    var maxTotal = parseInt(root.dataset.maxTotalArticles || '20000', 10);
+    var maxChars = parseInt(root.dataset.truncateChars || '180', 10);
+
+    function qp(k){ return new URLSearchParams(location.search).get(k); }
+    var targetHandle = (qp('author') || '').toLowerCase().trim();
+
+    function handleize(str){
+      return (str||'').toLowerCase().trim()
+        .replace(/&/g,'and').replace(/@/g,'at')
+        .replace(/['"]/g,'').replace(/[^a-z0-9]+/g,'-')
+        .replace(/^-+|-+$/g,'');
+    }
+    function stripHtml(s){ return String(s||'').replace(/<[^>]*>/g,''); }
+    function truncate(s, n){ if(!s) return ''; return s.length<=n ? s : s.slice(0, n-1) + '…'; }
+    function fmtDate(iso){ try { return new Date(iso).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'}) } catch(e){ return '' } }
+
+    var BLOGS_Q = `
+      query Blogs($first:Int!, $after:String) {
+        blogs(first:$first, after:$after) {
+          edges { cursor node { title handle } }
+          pageInfo { hasNextPage endCursor }
+        }
+      }`;
+
+    var ARTICLES_Q = `
+      query BlogArticles($handle:String!, $first:Int!, $after:String) {
+        blog(handle:$handle) {
+          handle
+          title
+          articles(first:$first, after:$after) {
+            edges {
+              cursor
+              node {
+                title
+                handle
+                excerpt
+                content
+                publishedAt
+                onlineStoreUrl
+                image { url altText }
+                blog { title handle }
+                metafield(namespace:"custom", key:"author") { value }
+              }
+            }
+            pageInfo { hasNextPage endCursor }
+          }
+        }
+      }`;
+
+    function sf(q, vars){
+      return fetch('/api/2025-10/graphql.json', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Shopify-Storefront-Access-Token': token
+        },
+        body: JSON.stringify({ query: q, variables: vars })
+      }).then(r => r.json());
+    }
+
+    async function fetchAllBlogs(){
+      var blogs = [], after = null;
+      while (true) {
+        var res = await sf(BLOGS_Q, { first: blogsPageSize, after: after });
+        if (!res || res.errors) throw new Error('Blogs query failed');
+        var data = res.data.blogs;
+        blogs.push(...data.edges.map(e => e.node));
+        if (blogs.length >= maxBlogs || !data.pageInfo.hasNextPage) break;
+        after = data.pageInfo.endCursor;
+      }
+      return blogs.slice(0, maxBlogs);
+    }
+
+    async function fetchAllArticlesForBlog(handle){
+      var out = [], after = null;
+      while (true) {
+        var res = await sf(ARTICLES_Q, { handle, first: articlesPageSize, after });
+        if (!res || res.errors) throw new Error('Articles query failed for blog: ' + handle);
+        var blog = res.data.blog;
+        if (!blog) break;
+        blog.articles.edges.forEach(function(e){
+          var art = e.node;
+          var name = (art.metafield && art.metafield.value) || '';
+          var h = handleize(name);
+          if (targetHandle && h !== targetHandle) return;
+          var blogHandle = (art.blog && art.blog.handle) || handle;
+          var href = art.onlineStoreUrl || ('/blogs/' + blogHandle + '/' + art.handle);
+          out.push({
+            title: art.title,
+            url: href,
+            blogTitle: art.blog.title || blog.title,
+            publishedAt: art.publishedAt,
+            image: art.image && art.image.url,
+            imageAlt: (art.image && art.image.altText) || art.title,
+            authorName: name,
+            snippet: stripHtml(art.excerpt || art.content || '')
+          });
+        });
+        if (out.length >= maxPerBlog) break;
+        var pi = blog.articles.pageInfo;
+        if (!pi.hasNextPage) break;
+        after = pi.endCursor;
+      }
+      return out;
+    }
+
+    (async function(){
+      try {
+        var blogs = await fetchAllBlogs();
+        var all = [];
+        for (var b of blogs) {
+          if (all.length >= maxTotal) break;
+          var arts = await fetchAllArticlesForBlog(b.handle);
+          all.push(...arts);
+          if (all.length >= maxTotal) break;
+        }
+
+        if (!all.length) {
+          mount.innerHTML = '<p class="muted">No articles found' + (targetHandle ? ' for this author.' : '.') + '</p>';
+          return;
+        }
+
+        all.sort((a,b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+        var heading = targetHandle ? ('Articles by ' + (all[0].authorName || targetHandle)) : 'All Articles';
+        var html = '<h2 class="h3">' + heading + '</h2><div class="author-articles-grid">';
+        all.forEach(function(a){
+          html += '<article class="article-card">';
+          html += '<h3 class="article-title"><a href="'+a.url+'">'+a.title+'</a></h3>';
+          html += '<div class="article-meta"><time datetime="'+a.publishedAt+'">'+fmtDate(a.publishedAt)+'</time><span aria-hidden="true"> · </span><span class="article-blog">'+a.blogTitle+'</span></div>';
+          {% if show_images %}
+          if (a.image) html += '<a href="'+a.url+'" class="article-image"><img src="'+a.image+'" alt="'+(a.imageAlt||'')+'"></a>';
+          {% endif %}
+          html += '<p class="article-excerpt">'+ truncate(a.snippet, maxChars) +'</p>';
+          html += '<a class="button button--secondary" href="'+a.url+'">Read more</a>';
+          html += '</article>';
+        });
+        html += '</div>';
+        mount.innerHTML = html;
+      } catch(e) {
+        console.error(e);
+        mount.innerHTML = '<p class="muted">Error loading articles.</p>';
+      }
+    })();
+  })();
+  </script>
+  {% endif %}
+
+  {% schema %}
+  {
+    "name": "Authors (auto, API)",
+    "settings": [
+      { "type": "text", "id": "storefront_token", "label": "Storefront API token (public)" },
+      { "type": "range", "id": "blogs_page_size", "label": "Blogs per API call", "default": 50, "min": 10, "max": 250, "step": 10 },
+      { "type": "range", "id": "articles_page_size", "label": "Articles per API call", "default": 100, "min": 10, "max": 250, "step": 10 },
+      { "type": "range", "id": "max_blogs", "label": "Max blogs to scan", "default": 500, "min": 50, "max": 500, "step": 50 },
+      { "type": "range", "id": "max_articles_per_blog", "label": "Max articles per blog", "default": 2000, "min": 500, "max": 2000, "step": 500 },
+      { "type": "range", "id": "max_total_articles", "label": "Max total articles", "default": 1000, "min": 500, "max": 1500, "step": 500 },
+      { "type": "checkbox", "id": "show_images", "label": "Show article images", "default": true },
+      { "type": "range", "id": "truncate_chars", "label": "Excerpt truncate length", "default": 180, "min": 60, "max": 600, "step": 20 }
+    ],
+    "presets": [{ "name": "Authors (auto, API)" }]
+  }
+  {% endschema %}
+</section>

@@ -1,0 +1,112 @@
+.restock-rocket-wrapper-inline {
+    margin-top: 0 !important;
+}
+
+.restock-rocket-wrapper-inline #formContainer-Inline {
+    box-shadow:none !important; 
+    border: none !important; 
+    padding: 0 !important; 
+    min-height:unset !important; 
+    border-radius: 0px !important;
+}
+
+.form-Content-Container {
+    display: grid; 
+    grid-template-columns: auto 30%; 
+    column-gap: 10px;
+}
+
+#form-Header-Container, #form-Product-Name, #form-Success-Content {
+    display: none !important;
+}
+
+#form-Header-Container {
+    order: 1 !important;
+}
+
+#form-Description {
+    margin-bottom: 0 !important; 
+    margin-top: 0 !important;
+}
+
+#form-Product-Name {
+    order: 3 !important;
+}
+
+#form-Name-Container {
+    order: 4 !important;
+}
+
+#form-Error-Message {
+    order: 5 !important;
+}
+
+div:has(#form-Email-Container) {
+    order: 6 !important;
+}
+
+#form-Email {
+    padding: 10px !important;
+}
+
+#form-Email-Container > #form-Email, #form-Consent-Checkmark {
+    border: 1px solid #bfbfbf !important;
+}
+
+.product__inventory:has(~ #restock-rocket-inline-container) {
+    display: none;
+}
+
+#form-Email, #form-Button {
+    border-radius: 0px !important; 
+    height: 39px !important;
+}
+
+#form-Email{
+    font-size: 15px !important;
+}
+
+#form-Button {
+    order: 7 !important; 
+    margin-top: 10px !important;
+    font-size: 14.4px;
+}
+
+#form-Consent-Container {
+    color: rgb(137, 137, 137) !important; 
+    order: 8 !important; 
+    margin-top: 15px !important;
+}
+
+#form-Consent-Container #form-Consent-Checkmark:after {
+    border-color: rgb(48, 59, 67);
+    border-width: 0 1px 1px 0;
+    left: 7px;
+    top: 3px;
+}
+
+#form-Terms {
+    order: 9 !important;
+}
+
+#form-Header-Container, #form-Description, #form-Product-Name, #form-Name-Container, #form-Consent-Container, #form-Terms, #form-Error-Message {
+    grid-column: 1 / span 2 !important;
+}
+
+#form-Consent-Checkmark {
+    background-color: rgb(255, 255, 255) !important; 
+    width: 20px !important; 
+    height: 20px !important;
+}
+
+#form-Error-Message {
+    border-left: none;
+    font-size: 14px;
+    padding: 0;
+}
+
+/* notification */
+#message-notification .cart-notification {
+  transform: none;
+  visibility: visible;
+}

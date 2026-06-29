@@ -1,0 +1,136 @@
+.contact-form-with-details .page-width {
+    max-width: 85%;
+    width: 92%;
+    margin: 0 auto;
+}
+.contact-form-with-details a {
+    text-decoration: none;
+    color: #595959;
+    cursor: pointer;
+}
+.contact-form-with-details p {
+    margin-bottom: 24px;
+}
+.contact-form-with-details .contact_content * {
+    max-width: 80%;
+}
+.contact-form-with-details .contact h2.title p {
+    margin-top: 18px;
+    line-height: 1.4;
+}
+.contact-form-with-details h2.title {
+    margin-bottom: 22px;
+}
+.contact-form-with-details .contact__fields {
+    display: flex;
+    flex-direction: column;
+}
+.contact-form-with-details .first-last-name-wrapper {
+    display: flex;
+    gap: 24px;
+}
+.contact-form-with-details .field__label {
+    position: static;
+    font-size: 14px;
+    letter-spacing: 0;
+}
+.contact-form-with-details .field {
+    flex-direction: column;
+}
+.contact-form-with-details .field:before, .field:after{
+  content:none;
+}
+.contact-form-with-details .field__input {
+    border: 1px solid #bfbfbf;
+    height: 36px;
+    margin-top: 5px;
+    padding: 1.2rem 10px;
+}
+.page-brochure .page-brochure .brochure-form a#manual{
+    margin-top: 0px;
+}
+.form-success-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.form-success-container a.button.button--secondary.form-success-btn {
+    padding: 5px 32px 8px 32px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    min-height: auto;
+}
+form:has(.form-success-container:not(:empty)) .contact__fields, form:has(.form-success-container:not(:empty)) .contact__button {
+    display: none;
+}
+.contact-form-with-details .field__input:not(:placeholder-shown) {
+    padding: 6px 13px;
+}
+.contact-form-with-details .contact__button {
+    display: grid;
+}
+.contact-form-with-details .contact__button button.button {
+    background-color: #27333f;
+    color: #fff;
+    cursor: pointer;
+}
+.contact-form-with-details .text-area {
+    height: 200px;
+    padding: 10px;
+    color: #898989;
+    font-size: 15px;
+    border: 1px solid #bfbfbf;
+}
+.contact-form-with-details .text-area::placeholder {
+    opacity: 1;
+}
+.contact-form-with-details .country-select {
+    appearance: none;
+    background-image: url(https://cdn.shopify.com/s/files/1/0898/4012/4238/files/svgviewer-output.svg?v=1740052027);
+    background-repeat: no-repeat;
+    margin-bottom: 0.75em;
+    background-size: 7px auto;
+    background-position: center right 1em;
+    margin-bottom: 0;
+}
+@media (max-width:1440px){
+    .contact-form-with-details .page-width {
+        max-width:100%;
+    }
+}
+
+@media screen and (max-width:991px){
+  .contact-form-with-details .page-width {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+.contact-form-with-details-wrapper .grid__item {
+    width: 100%;
+    max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+}
+  .contact-form-with-details .contact_content * {
+    max-width: 100%;
+}
+}
+@media screen and (max-width:767px){
+ .contact-form-with-details-wrapper .grid__item {
+    width: 100%;
+    max-width: 100%;
+}
+    
+}
+
+@media screen and (max-width: 767px) {
+  .page-brochure .contact-form-with-details .page-width {
+    width: 92%;
+    max-width: 88%;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 90px;
+  }
+}

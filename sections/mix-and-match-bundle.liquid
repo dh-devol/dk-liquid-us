@@ -1,0 +1,343 @@
+{% comment %}
+Mix & Match Bundle (BAP / Cart Transform friendly)
+- Choose a "Bundle container product (priced)" via product picker (dummy bundle product)
+- Shopper picks any combination across child products (up to 7 blocks) to sum to `limit`
+- Adds ONE bundle container variant to cart with properties:
+  - __cartBundleId (optional, Fast Bundle ID) — lets Fast Bundle split at checkout
+  - _bundle_items: JSON [{variant_id, title, qty, url, image}] — private; for cart rendering
+  - _bundle_summary: "Title × qty • Title × qty" — private; cart fallback
+  - Bundle item 1/2/...: "Title × qty" — public; shows as rows at checkout
+{% endcomment %}
+
+{%- assign limit = section.settings.limit | default: 4 -%}
+
+{%- comment -%}
+Safely derive the container variant id now and store it on the root element as a data- attribute.
+If no product is selected, data-bundle-variant will be empty.
+{%- endcomment -%}
+{%- assign bundle_variant_id = '' -%}
+{%- if section.settings.bundle_product -%}
+  {%- assign _bp = section.settings.bundle_product -%}
+  {%- assign _bv = _bp.selected_or_first_available_variant | default: _bp.first_available_variant | default: _bp.variants.first -%}
+  {%- if _bv -%}{%- assign bundle_variant_id = _bv.id -%}{%- endif -%}
+{%- endif -%}
+
+<section
+  id="mm-bundle-{{ section.id }}"
+  class="mm-bundle"
+  data-bundle-variant="{{ bundle_variant_id }}"
+  data-fast-bundle-id="{{ section.settings.fast_bundle_id | escape }}"
+  data-limit="{{ limit }}"
+>
+  <div class="mm-header">
+    {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+    {% if section.settings.subheading != blank %}<p>{{ section.settings.subheading }}</p>{% endif %}
+  </div>
+
+  {%- unless section.settings.bundle_product -%}
+    <div class="mm-warning" style="margin:.5rem 0; padding:.75rem; border:1px solid #ffd5a8; background:#fff7ed; border-radius:8px;">
+      Select a <strong>Bundle container product (priced)</strong> in this section’s settings. We’ll use its first available variant as the cart line.
+    </div>
+  {%- endunless -%}
+
+  <div class="mm-grid">
+    {%- if section.blocks.size == 0 -%}
+      <p>No options configured yet. Add up to 7 child products in the section settings.</p>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      {%- assign p = block.settings.product -%}
+      {%- if p == blank -%}{% continue %}{% endif -%}
+
+      {%- capture variants_json -%}
+        [
+          {%- for v in p.variants -%}
+            {
+              "id": {{ v.id | json }},
+              "title": {{ v.title | json }},
+              "available": {{ v.available | json }},
+              "price": {{ v.price | json }},
+              "url": {{ p.url | append: '?variant=' | append: v.id | json }},
+              "image": {%- if v.image -%}{{ v.image | image_url: width: 360 | json }}{%- else -%}{{ p.featured_image | image_url: width: 360 | json }}{%- endif -%}
+            }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        ]
+      {%- endcapture -%}
+
+      <div class="mm-card"
+           data-title="{{ p.title | escape }}"
+           data-product-url="{{ p.url }}"
+           data-variants='{{ variants_json | strip_newlines | escape }}'>
+        <div class="mm-media">
+          {%- if p.featured_image -%}
+            <img src="{{ p.featured_image | image_url: width: 360 }}" alt="{{ p.title | escape }}" loading="lazy">
+          {%- endif -%}
+        </div>
+
+        <div class="mm-info">
+          <div class="mm-title">{{ p.title }}</div>
+
+          {%- if p.has_only_default_variant == false -%}
+            <label class="mm-variant-label">Variant</label>
+            <select class="mm-variant-select" aria-label="Variant for {{ p.title | escape }}">
+              {%- for v in p.variants -%}
+                <option value="{{ v.id }}"
+                        data-url="{{ p.url | append: '?variant=' | append: v.id }}"
+                        data-image="{% if v.image %}{{ v.image | image_url: width: 360 }}{% else %}{{ p.featured_image | image_url: width: 360 }}{% endif %}"
+                        {% unless v.available %}disabled{% endunless %}>
+                  {{ v.title }}{% unless v.available %} — Sold out{% endunless %}
+                </option>
+              {%- endfor -%}
+            </select>
+          {%- else -%}
+            {%- assign v = p.selected_or_first_available_variant | default: p.first_available_variant | default: p.variants.first -%}
+            <input type="hidden" class="mm-variant-select"
+                   value="{{ v.id }}"
+                   data-url="{{ p.url | append: '?variant=' | append: v.id }}"
+                   data-image="{% if v.image %}{{ v.image | image_url: width: 360 }}{% else %}{{ p.featured_image | image_url: width: 360 }}{% endif %}">
+          {%- endif -%}
+
+          <div class="mm-qty">
+            <label>Qty</label>
+            <input class="mm-qty-input" type="number" min="0" max="{{ limit }}" value="0"
+                   aria-label="Quantity for {{ p.title | escape }}">
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="mm-footer">
+    <div class="mm-hint" data-hint>Pick exactly {{ limit }} in total.</div>
+    <button class="mm-add-btn .button--full-width" type="button" data-add disabled>
+      {{ section.settings.button_label | default: 'Add to basket' }}
+    </button>
+    <div class="mm-error" data-error style="display:none;color:#b00020;margin-left:12px;"></div>
+  </div>
+
+  <script>
+  (() => {
+    const root = document.getElementById('mm-bundle-{{ section.id }}');
+    if (!root) return;
+
+    const LIMIT = Number(root.dataset.limit || 4);
+    const FAST_BUNDLE_ID = root.dataset.fastBundleId || '';
+    const REDIRECT_TO_CART = {{ section.settings.redirect_to_cart | json }};
+
+    const qtyInputs = root.querySelectorAll('.mm-qty-input');
+    const addBtn = root.querySelector('[data-add]');
+    const hintEl = root.querySelector('[data-hint]');
+    const errEl = root.querySelector('[data-error]');
+
+    function showError(msg){
+      if (!errEl) return;
+      errEl.textContent = msg;
+      errEl.style.display = 'inline';
+      setTimeout(() => { errEl.style.display = 'none'; }, 5000);
+      console.error('[Mix&Match]', msg);
+    }
+
+    function clampPerInput(input) {
+      const v = Math.max(0, Math.min(LIMIT, Number(input.value || 0)));
+      if (v != input.value) input.value = v;
+    }
+
+    function totalQty() {
+      let t = 0; qtyInputs.forEach(i => t += Number(i.value || 0)); return t;
+    }
+
+    function updateState() {
+      const t = totalQty();
+      addBtn.disabled = (t !== LIMIT);
+      hintEl.textContent = t === LIMIT
+        ? 'Looks good — ' + LIMIT + ' selected.'
+        : `Pick exactly ${LIMIT} (you’ve picked ${t}).`;
+    }
+    qtyInputs.forEach(i => i.addEventListener('input', () => { clampPerInput(i); updateState(); }));
+    updateState();
+
+    function collectSelections() {
+      const cards = root.querySelectorAll('.mm-card');
+      const items = [];
+      cards.forEach(card => {
+        const qty = Number(card.querySelector('.mm-qty-input').value || 0);
+        if (qty <= 0) return;
+        const selector = card.querySelector('.mm-variant-select');
+        if (!selector || !selector.value) return;
+        const variantId = Number(selector.value);
+        const variantUrl = selector.dataset.url || (card.dataset.productUrl + '?variant=' + variantId);
+        const variantImage = selector.dataset.image || (card.querySelector('img') ? card.querySelector('img').src : null);
+        items.push({
+          variant_id: variantId,
+          title: card.dataset.title,
+          qty: qty,
+          url: variantUrl,
+          image: variantImage
+        });
+      });
+      return items;
+    }
+
+    async function addToCart() {
+      const bundleVariantId = Number(root.dataset.bundleVariant || 0);
+      if (!bundleVariantId) {
+        showError('Bundle container variant ID is missing. Pick a “Bundle container product (priced)” in the section settings.');
+        return;
+      }
+
+      const selections = collectSelections();
+      const sum = selections.reduce((s, x) => s + x.qty, 0);
+      if (sum !== LIMIT) {
+        showError(`Please pick exactly ${LIMIT}. You picked ${sum}.`);
+        return;
+      }
+
+      // --- Dedupe selections (roll up qty by variant) ---
+      const byId = new Map();
+      for (const x of selections) {
+        const k = x.variant_id;
+        if (!byId.has(k)) byId.set(k, { ...x });
+        else byId.get(k).qty += x.qty;
+      }
+      const compressed = Array.from(byId.values());
+
+      // --- Build properties (NO public "Bundle items") ---
+      const props = {
+        _bundle_items: JSON.stringify(compressed),                               // private JSON for cart rendering
+        _bundle_summary: compressed.map(x => `${x.title} × ${x.qty}`).join(' • '), // private fallback
+        __cartBundleId: FAST_BUNDLE_ID || undefined
+      };
+      // Numbered rows for checkout
+      compressed.forEach((x, i) => {
+        props[`Scent ${i + 1}`] = `${x.title} (× ${x.qty})`;
+      });
+
+      try {
+        const res = await fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          credentials: 'same-origin',
+          body: JSON.stringify({
+            id: bundleVariantId,
+            quantity: 1,
+            properties: props
+          })
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok) {
+          const msg = (data && (data.description || data.message || data.errors)) || 'Add to cart failed.';
+          throw new Error(typeof msg === 'string' ? msg : JSON.stringify(msg));
+        }
+
+        // --- Optional: sanitize legacy "Bundle items" if Shopify merged with an old line ---
+        try {
+          const cart = await fetch('/cart.js', { credentials: 'same-origin' }).then(r => r.json());
+          const updates = cart.items
+            .filter(i => i && i.properties && (i.properties.__cartBundleId || i.properties._bundle_items))
+            .map(i => {
+              const keep = {};
+              Object.keys(i.properties).forEach(k => {
+                if (k[0] === '_' || k === '__cartBundleId' || k.indexOf('Scent ') === 0) {
+                  keep[k] = i.properties[k];
+                }
+              });
+              return fetch('/cart/change.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ id: i.key, properties: keep })
+              });
+            });
+          await Promise.all(updates);
+        } catch(e) {
+          // non-fatal
+        }
+
+        // Success UX hooks
+        document.dispatchEvent(new CustomEvent('mm:bundle-added', { detail: { selections: compressed, line: data } }));
+        if (REDIRECT_TO_CART) {
+          window.location.href = '/cart';
+        } else if (window.Shopify && window.Shopify.theme && window.Shopify.theme.sections) {
+          // You can trigger your drawer refresh here if desired:
+          // document.documentElement.dispatchEvent(new CustomEvent('cart:refresh'));
+        }
+      } catch (e) {
+        showError(e.message || 'Sorry, something went wrong adding the bundle.');
+      }
+    }
+
+    addBtn.addEventListener('click', addToCart);
+  })();
+  </script>
+
+  <style>
+    #mm-bundle-{{ section.id }} .mm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 16px 0 8px;
+    }
+    #mm-bundle-{{ section.id }} .mm-card {
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 12px;
+      padding: 12px;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+    #mm-bundle-{{ section.id }} .mm-media img {
+      width: 80px; height: 80px; object-fit: cover; border-radius: 10px;
+    }
+    #mm-bundle-{{ section.id }} .mm-title { font-weight: 600; }
+    #mm-bundle-{{ section.id }} .mm-variant-label { display:block; margin-top:6px; font-size: .9rem; opacity:.8; }
+    #mm-bundle-{{ section.id }} .mm-variant-select { margin-top:4px; width:100%; }
+    #mm-bundle-{{ section.id }} .mm-qty { margin-top: 8px; display:flex; gap:8px; align-items:center; }
+    #mm-bundle-{{ section.id }} .mm-qty input { width: 64px; }
+    #mm-bundle-{{ section.id }} .mm-footer { display:flex; align-items:center; gap:16px; margin-top: 8px; }
+    #mm-bundle-{{ section.id }} .mm-add-btn { padding: 10px 16px; border-radius: 10px; border: none; background: #111; color:#fff; cursor:pointer; }
+    #mm-bundle-{{ section.id }} .mm-add-btn[disabled] { opacity:.5; cursor:not-allowed; }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Mix & Match Bundle (BAP)",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Build your bundle" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Pick any 4 items from the options below." },
+    { "type": "number", "id": "limit", "label": "Total items required", "default": 4 },
+    {
+      "type": "product",
+      "id": "bundle_product",
+      "label": "Bundle container product (priced)",
+      "info": "Select the dummy bundle product that represents the bundle in cart."
+    },
+    {
+      "type": "text",
+      "id": "fast_bundle_id",
+      "label": "Fast Bundle ID (optional)",
+      "info": "Set __cartBundleId so Fast Bundle's Cart Transform can expand the bundle at checkout."
+    },
+    { "type": "checkbox", "id": "redirect_to_cart", "label": "Redirect to cart after adding", "default": true },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Add bundle to cart" }
+  ],
+  "blocks": [
+    {
+      "type": "child",
+      "name": "Child product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Child product" }
+      ]
+    }
+  ],
+  "max_blocks": 7,
+  "presets": [
+    { "name": "Mix & Match Bundle (BAP)", "category": "Bundles" }
+  ]
+}
+{% endschema %}

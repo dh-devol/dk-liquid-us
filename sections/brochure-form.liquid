@@ -1,0 +1,469 @@
+{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+{{ 'custom-contact-accessory.css' | asset_url | stylesheet_tag }}
+{{ 'brochure-form.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="brochure-form contact-form-with-details">
+  <div class="page-width page-width--narrow section-{{ section.id }}-padding">
+    <div class="contact-form-with-details-wrapper color-{{ section.settings.color_scheme }} gradient">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="title contact_header w-five title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+          {{ section.settings.heading }}
+        </h2>
+      {%- else -%}
+        <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
+      {%- endif -%}
+      <div class="contact">
+        {%- if section.settings.header_description != blank -%}
+          <p class="header_description w-five">{{ section.settings.header_description }}</p>
+        {% endif %}
+        {%- liquid
+          assign contact_form_class = 'isolate'
+          if settings.animations_reveal_on_scroll
+            assign contact_form_class = 'isolate scroll-trigger animate--fade-in'
+          endif
+        -%}
+        {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
+          {%- if form.posted_successfully? -%}
+            <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+              <p>We're received your request for a brochure.</p>
+            </h2>
+          {%- elsif form.errors -%}
+            <div class="form__message">
+              <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+                {{- 'icon-error.svg' | inline_asset_content -}}
+                {{ 'templates.contact.form.error_heading' | t }}
+              </h2>
+            </div>
+          {%- endif -%}
+
+          <div class="contact__fields">
+            <div class="field form-item webform-component--first-name">
+              <label class="field__label" for="ContactForm-first-name">First Name</label>
+              <input
+                required="required"
+                type="text"
+                id="ContactForm-first-name"
+                name="contact[first_name]"
+                value=""
+                size="20"
+                maxlength="128"
+                class="field__input common-field form-text required"
+              >
+            </div>
+
+            <div class="field form-item webform-component--last-name">
+              <label class="field__label" for="ContactForm-last-name">Last Name</label>
+              <input
+                required="required"
+                type="text"
+                id="ContactForm-last-name"
+                name="contact[last_name]"
+                value=""
+                size="20"
+                maxlength="128"
+                class="field__input common-field form-text required"
+              >
+            </div>
+
+            <div class="field form-item webform-component--email">
+              <label class="field__label" for="ContactForm-email">Email</label>
+              <input
+                required="required"
+                type="email"
+                id="ContactForm-email"
+                name="contact[email]"
+                value=""
+                size="30"
+                maxlength="128"
+                class="field__input email form-text required"
+              >
+            </div>
+
+            <div class="field form-item webform-component--telephone">
+              <label class="field__label" for="ContactForm-telephone">Telephone</label>
+              <input
+                required="required"
+                type="text"
+                id="ContactForm-telephone"
+                name="contact[telephone]"
+                value=""
+                size="20"
+                maxlength="128"
+                class="field__input common-field form-text required"
+                data-gtm-form-interact-field-id="0"
+              >
+            </div>
+
+            <div class="field form-item webform-component-select webform-component--where-did-you-hear-about-us">
+              <label class="field__label" for="ContactForm-where-did-you-hear-about-us"
+                >Where did you hear about us?
+              </label>
+              <div class="description">- Optional</div>
+
+              <select
+                id="ContactForm-where-did-you-hear-about-us"
+                name="contact[where_did_you_hear_about_us]"
+                class="form-select field__input about-us country-select"
+              >
+                <option value="" selected="selected">- None -</option>
+                <option value="TV">TV: Magnolia Network</option>
+                <option value="local_magazine">Local Magazine</option>
+                <option value="25_beautiful_homes">- 25 Beautiful Homes</option>
+                <option value="AGA_living">- AGA Living</option>
+                <option value="bath_life">- Bath Life</option>
+                <option value="BBC_homes_and_antiques">- BBC Homes &amp; Antiques</option>
+                <option value="beautiful_kitchens">- Beautiful Kitchens</option>
+                <option value="build_it_and_home_improvements">- Build it &amp; Home Improvements</option>
+                <option value="Cereal">- Cereal</option>
+                <option value="country_homes_and_interiors">- Country Homes &amp; Interiors</option>
+                <option value="country_life">- Country Life</option>
+                <option value="country_living">- Country Living</option>
+                <option value="country_living_Modern_Rustic">- Country Living Modern Rustic</option>
+                <option value="country_and_town_house">- Country &amp; Town House</option>
+                <option value="designer_kitchen_bathroom">- Designer Kitchen &amp; Bathroom</option>
+                <option value="essential_kitchens_and_bathrooms">- Essential Kitchen Bathroom Bedroom</option>
+                <option value="elle_decoration">- Elle Decoration</option>
+                <option value="elle_decoration_country">- Elle Decoration Country</option>
+                <option value="english_home">- English Home</option>
+                <option value="enki">- Enki</option>
+                <option value="fx_magazine">- FX Magazine</option>
+                <option value="good_homes">- Good Homes</option>
+                <option value="grand_designs">- Grand Designs</option>
+                <option value="home_cuisines_and_bains">- Home Cuisines &amp; Bains</option>
+                <option value="homebuilding_and_renovating">- Homebuilding &amp; Renovating</option>
+                <option value="home_style">- Home Style</option>
+                <option value="homes_and_gardens">- Homes and Gardens</option>
+                <option value="homes_and_antiques">- Homes &amp; Antiques</option>
+                <option value="homes_and_interiors_scotland">- Homes &amp; Interiors Scotland</option>
+                <option value="house_and_garden">- House &amp; Garden</option>
+                <option value="house_beautiful">- House Beautiful</option>
+                <option value="ideal_homes">- Ideal Homes</option>
+                <option value="kitchens_bedrooms_and_bathrooms">- Kitchens Bedrooms &amp; Bathrooms</option>
+                <option value="living_etc">- Living Etc</option>
+                <option value="London_Life">- London Life</option>
+                <option value="period_homes_and_interiors">- Period Homes and Interiors</option>
+                <option value="period_living">- Period Living</option>
+                <option value="real_homes">- Real Homes</option>
+                <option value="roundabout">- Roundabout</option>
+                <option value="self_build_and_design">- Self Build &amp; Design</option>
+                <option value="the_simple_things">- The Simple Things</option>
+                <option value="the_world_of_interiors">- The World of Interiors</option>
+                <option value="traditional_homes_and_interiors">- Traditional Homes &amp; Interiors</option>
+                <option value="utopia_kitchen_bathroom">- Utopia Kitchen &amp; Bathroom</option>
+                <option value="wallpaper">- Wallpaper*</option>
+                <option value="warehouse_home">- Warehouse Home</option>
+                <option value="your_dream_kitchen">- Your Dream Kitchen</option>
+                <option value="The_Resident">- The Resident</option>
+                <option value="Metro">- Metro</option>
+                <option value="The_Sunday_Times">- The Sunday Times</option>
+                <option value="The_Telegraph">- The Telegraph</option>
+                <option value="The_Times">- The Times</option>
+                <option value="google_search">Google Search</option>
+                <option value="other_web_search">Other Web Search</option>
+                <option value="recommendation">Recommendation</option>
+                <option value="google_plus">- Google+</option>
+                <option value="facebook">- Facebook</option>
+                <option value="houzz">- Houzz</option>
+                <option value="instagram">- Instagram</option>
+                <option value="pinterest">- Pinterest</option>
+                <option value="threads">- Threads</option>
+                <option value="tumblr">- Tumblr</option>
+                <option value="twitter">- Twitter</option>
+                <option value="youtube">- YouTube</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <label class="field__label w-six address_finder">Address Finder</label>
+            <input
+              type="text"
+              id="search-bar"
+              class="field__input form-item search-bar"
+              placeholder="Start with post/zip code or street"
+            >
+            <a id="manual">Click here to enter your address manually &gt;</a>
+            <span id="addr" style="display: none;">
+              <div class="form-item webform-component--address-line-1">
+                <label class="field__label" for="ContactForm-address-line-1">Address Line 1</label>
+                <input
+                  required="required"
+                  type="text"
+                  id="ContactForm-address-line-1"
+                  name="contact[address_line_1]"
+                  value=""
+                  size="60"
+                  maxlength="128"
+                  class="field__input form-text required"
+                >
+              </div>
+              <div class="form-item webform-component--address-line-2">
+                <label class="field__label" for="ContactForm-address-line-2">Address Line 2 </label>
+                <input
+                  type="text"
+                  id="ContactForm-address-line-2"
+                  name="contact[address_line_2]"
+                  value=""
+                  size="60"
+                  maxlength="128"
+                  class="field__input form-text"
+                >
+              </div>
+
+              <div class="form-item webform-component--address-line-3">
+                <label class="field__label" for="ContactForm-address-line-3">Address Line 3 </label>
+                <input
+                  type="text"
+                  id="ContactForm-address-line-3"
+                  name="contact[address_line_3]"
+                  value=""
+                  size="60"
+                  maxlength="128"
+                  class="field__input form-text"
+                >
+              </div>
+              <div class="form-item webform-component--town-city">
+                <label class="field__label" for="ContactForm-town-city"
+                  >Town/City <span class="form-required" title="This field is required.">*</span></label
+                >
+                <input
+                  required="required"
+                  type="text"
+                  id="ContactForm-town-city"
+                  name="contact[town_city]"
+                  value=""
+                  size="60"
+                  maxlength="128"
+                  class="field__input form-text required"
+                >
+              </div>
+              <div class="form-item webform-component--county">
+                <label class="field__label" for="ContactForm-county">County </label>
+                <input
+                  type="text"
+                  id="ContactForm-county"
+                  name="contact[county]"
+                  value=""
+                  size="60"
+                  maxlength="128"
+                  class="field__input form-text"
+                >
+              </div>
+              <div class="form-item webform-component--postcode">
+                <label class="field__label" for="ContactForm-postcode"
+                  >Postcode <span class="form-required" title="This field is required.">*</span></label
+                >
+                <input
+                  required="required"
+                  type="text"
+                  id="ContactForm-postcode"
+                  name="contact[postcode]"
+                  value=""
+                  size="60"
+                  maxlength="128"
+                  class="field__input form-text required"
+                >
+              </div>
+              <div class="form-item webform-component-select webform-component--country2">
+                <label class="field__label" for="ContactForm-country2"
+                  >Country <span class="form-required" title="This field is required.">*</span></label
+                >
+                <select
+                  required="required"
+                  id="ContactForm-country2"
+                  name="contact[country2]"
+                  class="field__input form-select country-select required"
+                >
+                  <option value="GB" selected="selected">United Kingdom</option>
+                  <option value="AT">Austria</option>
+                  <option value="BE">Belgium</option>
+                  <option value="DK">Denmark</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IT">Italy</option>
+                  <option value="IM">Isle of Man</option>
+                  <option value="UK">Jersey</option>
+                  <option value="MC">Monaco</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="PT">Portugal</option>
+                  <option value="ES">Spain</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                </select>
+              </div>
+              <div class="form-item webform-component-checkboxes webform-component--consent">
+                <label class="field__label" for="ContactForm-consent-1">Consent </label>
+                <div id="ContactForm-consent" class="form-checkboxes">
+                  <div class="form-item form-type-checkbox form-item-submitted-consent-1">
+                    <input
+                      type="checkbox"
+                      id="ContactForm-consent-1"
+                      name="contact[consent][1]"
+                      value="yes"
+                      class="form-checkbox"
+                    >
+                    <label class="option field__label" for="ContactForm-consent-1"
+                      >I’d like to receive interiors inspiration and occasional updates and offers from deVOL
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="contact__button">
+                <button type="submit" class="button">Submit</button>
+              </div>
+            </span>
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    new clickToAddress({
+        accessToken: '02523-304df-dd0c8-02714',
+        dom: {
+          search:   'search-bar',
+          town:     'ContactForm-town-city',
+          postcode: 'ContactForm-postcode',
+          county:   'ContactForm-county',
+          country:  'ContactForm-country2',
+          line_1:   'ContactForm-address-line-1',
+          line_2:   'ContactForm-address-line-2'
+        },
+        domMode: 'id',
+        countryMatchWith: 'iso_2',
+        enabledCountries: [
+          'GB',
+          'AT',
+          'BE',
+          'DK',
+          'FR',
+          'DE',
+          'IE',
+          'UK',
+          'IM',
+          'IT',
+          'MC',
+          'NL',
+          'PT',
+          'ES',
+          'JE',
+          'SE',
+          'CH'
+        ],
+        onResultSelected: function(c2a, elements, address){
+          const addr = document.getElementById("addr");
+          const manualDiv = document.getElementById("manual");
+          addr.style.display = "block";
+          manualDiv.style.display = "none";
+        },
+    });
+  };
+  document.getElementById("manual").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("addr").style.display = "inline";
+    this.style.display = "none";
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Brochure form",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "default": "t:sections.contact-form.settings.title.default",
+      "label": "t:sections.contact-form.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "text",
+      "id": "header_description",
+      "label": "Description"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brochure form"
+    }
+  ]
+}
+{% endschema %}

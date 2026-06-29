@@ -1,0 +1,239 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb_PY8FH4": {
+          "type": "breadcrumb",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "inventory_DNJrea": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": false
+          }
+        },
+        "metafield_product_VgECqt": {
+          "type": "metafield_product",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_buy_button_fKpjca": {
+          "type": "quantity_buy_button",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "sample_pack_button_nDFiVt": {
+          "type": "sample-pack-button",
+          "settings": {
+            "label": "Add sample pack"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb_PY8FH4",
+        "title",
+        "price",
+        "inventory_DNJrea",
+        "metafield_product_VgECqt",
+        "variant_picker",
+        "quantity_buy_button_fKpjca",
+        "buy_buttons",
+        "sample_pack_button_nDFiVt",
+        "quantity_selector",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-2",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "custom_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "product_specification_3eHTJm": {
+      "type": "product-specification",
+      "name": "Product specification",
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "related_YecHET": {
+      "type": "related",
+      "blocks": {
+        "product_selector_n6GQmg": {
+          "type": "product_selector",
+          "settings": {
+            "product": "boho-handle-aged-brass"
+          }
+        },
+        "product_selector_jYr3a7": {
+          "type": "product_selector",
+          "settings": {
+            "product": "cream-subway-tiles"
+          }
+        }
+      },
+      "block_order": [
+        "product_selector_n6GQmg",
+        "product_selector_jYr3a7"
+      ],
+      "name": "Related - Handmade Tiles",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "section_title": "Handmade Tiles",
+        "target_all_products": true,
+        "columns": 2,
+        "product_1": "emerald-green-london-tiles-sample-pack",
+        "product_2": "emerald-green-london-tiles",
+        "product_3": "furniture-paint-clerkenwell-blue-sample",
+        "product_4": "aged-brass-basin-mixer-tap",
+        "product_5": "13-iron-hook-rack",
+        "product_6": "17-iron-hook-rack",
+        "product_7": "27-iron-hook-rack",
+        "product_8": "boho-handle-aged-brass",
+        "product_9": "",
+        "product_10": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_badge": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "target_collection": ""
+      }
+    },
+    "related_XxP6YT": {
+      "type": "related",
+      "blocks": {
+        "product_selector_hxFhCV": {
+          "type": "product_selector",
+          "settings": {
+            "product": "13-iron-hook-rack"
+          }
+        },
+        "product_selector_QVFALn": {
+          "type": "product_selector",
+          "settings": {
+            "product": "additional-brass-screws"
+          }
+        }
+      },
+      "block_order": [
+        "product_selector_hxFhCV",
+        "product_selector_QVFALn"
+      ],
+      "custom_css": [
+        "h2 {padding-top: 20px; border-top: solid 1px #e5e5e5;}"
+      ],
+      "name": "Related - Lace Market Tiles",
+      "settings": {
+        "color_scheme": "",
+        "section_title": "Lace Market Tiles",
+        "target_all_products": true,
+        "columns": 4,
+        "product_1": "",
+        "product_2": "",
+        "product_3": "",
+        "product_4": "",
+        "product_5": "",
+        "product_6": "",
+        "product_7": "",
+        "product_8": "",
+        "product_9": "",
+        "product_10": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_badge": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "target_collection": "lighting"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_specification_3eHTJm",
+    "related-products",
+    "related_YecHET",
+    "related_XxP6YT"
+  ]
+}

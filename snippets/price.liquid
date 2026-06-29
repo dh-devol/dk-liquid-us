@@ -1,0 +1,278 @@
+{% comment %}
+  Renders product price (regular, sale)
+
+  Accepts:
+  - product: {Object} Product Liquid object (optional)
+  - placeholder: {Boolean}
+  - use_variant: {Boolean} Use selected or first variant price
+  - show_badges: {Boolean} Show Sale/Sold Out badges
+  - price_class: {String} Extra class on wrapper
+  - show_compare_at_price: {Boolean} Show compare-at price
+{% endcomment %}
+{%- liquid
+  # -------------------------------
+  # Setup
+  # -------------------------------
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  elsif placeholder
+    assign target = null
+  else
+    assign target = product
+  endif
+
+  assign price_min = product.price_min
+  assign price_max = product.price_max
+
+  assign compare_at_price = 0
+  if target
+    assign compare_at_price = target.compare_at_price
+  endif
+
+  assign available = false
+  if target
+    assign available = target.available
+  endif
+  assign force_plp = force_plp | default: false
+  # Are we on a PDP?
+  assign is_pdp = false
+  if template.name == 'product' and force_plp != true
+    assign is_pdp = true
+  endif
+
+  # We will set these in each branch:
+  assign price = 0
+  assign money_price = ''
+  assign money_price_min = price_min | money
+  assign money_price_max = price_max | money
+  assign show_from = false
+
+  # -------------------------------
+  # PDP (leave original behavior)
+  # -------------------------------
+  if is_pdp
+    assign price = target.price | default: 1999
+
+    assign money_price = price | money
+    assign money_price_min = price_min | money
+    assign money_price_max = price_max | money
+
+    if settings.currency_code_enabled
+      assign money_price = price | money
+      assign money_price_min = price_min | money
+      assign money_price_max = price_max | money
+    endif
+
+    # Original Dawn behavior: "From" only when product-level and price varies
+    if target == product and product.price_varies
+      assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+    elsif product.metafields.custom.from.value == true
+      assign money_price = 'from ' | append: money_price
+    endif
+
+  # -------------------------------
+  # PLP and everywhere else
+  # -------------------------------
+  else
+    # Look for a product-list metafield of linked "swatch" products and use the lowest linked price
+    assign has_swatch_products = false
+    assign swatch_min_price = nil
+    assign swatch_max_price = nil
+
+    if product.metafields.custom.swatch_product and product.metafields.custom.swatch_product.value
+      assign has_swatch_products = true
+      assign swatch_products = product.metafields.custom.swatch_product.value
+
+      # Use absolute lowest/highest linked price_min (including 0)
+      for sp in swatch_products
+        assign candidate = sp.price_min
+        if swatch_min_price == nil or candidate < swatch_min_price
+          assign swatch_min_price = candidate
+        endif
+        if swatch_max_price == nil or candidate > swatch_max_price
+          assign swatch_max_price = candidate
+        endif
+      endfor
+    endif
+
+    assign available_variants_count = 0
+
+    # Fallback: lowest non-zero price among this product's variants
+    assign min_nonzero_variant_price = 0
+    for v in product.variants
+      if v.price > 0
+        if min_nonzero_variant_price == 0 or v.price < min_nonzero_variant_price
+          assign min_nonzero_variant_price = v.price
+        endif
+      endif
+      
+      if v.available
+        assign available_variants_count = available_variants_count | plus: 1
+      endif
+    endfor
+
+    # Decide numeric price to display on PLP
+    if has_swatch_products
+      assign price = swatch_min_price | default: price_min | default: 1999
+      if swatch_max_price != nil and swatch_max_price != swatch_min_price
+        assign show_from = true
+      else
+        assign show_from = false
+      endif
+    else
+      if min_nonzero_variant_price > 0
+        assign price = min_nonzero_variant_price
+      else
+        assign price = product.price | default: price_min | default: 1999
+      endif
+
+      # Preserve Dawn-ish "From" logic if the base product varies or is 0-priced
+      if target == product
+        if product.price_varies
+          assign show_from = true
+        elsif product.price == 0
+          assign show_from = true
+        endif
+      endif
+    endif
+
+    unless has_swatch_products
+      if available_variants_count < 2
+        assign show_from = false
+      endif
+    endunless
+
+    # Format monies for PLP
+    assign money_price = price | money
+    assign money_swatch_min = swatch_min_price | money
+    assign money_price_min_nonzero = min_nonzero_variant_price | money
+    assign money_price_min = price_min | money
+    assign money_price_max = price_max | money
+
+    if settings.currency_code_enabled
+      assign money_price = price | money
+      assign money_swatch_min = swatch_min_price | money
+      assign money_price_min_nonzero = min_nonzero_variant_price | money
+      assign money_price_min = price_min | money
+      assign money_price_max = price_max | money
+    endif
+
+    # Force "From" text where applicable
+    if show_from
+      if has_swatch_products
+        assign money_price = 'products.product.price.from_price_html' | t: price: money_swatch_min
+      else
+        if min_nonzero_variant_price > 0
+          assign money_price = 'products.product.price.from_price_html' | t: price: money_price_min_nonzero
+        else
+          assign money_price = 'products.product.price.from_price_html' | t: price: money_price_min
+        endif
+      endif
+    endif
+  endif
+-%}
+
+{%- unless target == null and placeholder == null -%}
+  <div
+    class="
+      price
+      {%- if price_class %} {{ price_class }}{% endif -%}
+      {%- if available == false %} price--sold-out{% endif -%}
+      {%- if compare_at_price > price and product.quantity_price_breaks_configured? != true %} price--on-sale{% endif -%}
+      {%- if compare_at_price > price and product.quantity_price_breaks_configured? %} volume-pricing--sale-badge{% endif -%}
+      {%- if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif -%}
+      {%- if show_badges %} price--show-badge{% endif -%}
+    "
+  >
+    <div class="price__container">
+      {%- comment -%}
+        - .price__regular: when not on sale
+        - .price__sale: when a variant is on sale
+      {%- endcomment -%}
+
+      <div class="price__regular">
+        {%- if product.quantity_price_breaks_configured? -%}
+          {%- if show_compare_at_price and compare_at_price -%}
+            {%- unless product.price_varies == false and product.compare_at_price_varies -%}
+              <span class="visually-hidden visually-hidden--inline">
+                {{- 'products.product.price.regular_price' | t -}}
+              </span>
+              <span>
+                <s class="price-item price-item--regular variant-item__old-price">
+                  {%- if settings.currency_code_enabled -%}
+                    {{ compare_at_price | money }}
+                  {%- else -%}
+                    {{ compare_at_price | money}}
+                  {%- endif -%}
+                </s>
+              </span>
+            {%- endunless -%}
+          {%- endif -%}
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          <span class="price-item price-item--regular">
+            {{-
+              'products.product.volume_pricing.price_range'
+              | t: minimum: money_price_min, maximum: money_price_max
+            -}}
+          </span>
+        {%- else -%}
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          <span class="price-item price-item--regular">
+            {{ money_price }}
+            {%- assign area_raw = product.metafields.custom.unit_area_m2.value -%}
+            {%- assign area = area_raw | times: 1.0 -%}
+
+            {%- if product.template_suffix == 'handmade-tiles' -%}
+              per tile
+            {%- elsif area and area > 0 -%}
+              per ft²
+            {%- endif -%}
+
+          </span>
+        {%- endif -%}
+
+        
+      </div>
+
+      <div class="price__sale">
+        {%- unless product.price_varies == false and product.compare_at_price_varies -%}
+          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
+          <span>
+            <s class="price-item price-item--regular">
+              {%- if settings.currency_code_enabled -%}
+                {{ compare_at_price | money }}
+              {%- else -%}
+                {{ compare_at_price | money}}
+              {%- endif -%}
+            </s>
+          </span>
+        {%- endunless -%}
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+        <span class="price-item price-item--sale price-item--last">
+          {{ money_price }}
+        </span>
+      </div>
+
+      <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
+        <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+        <span class="price-item price-item--last">
+          <span>{{- product.selected_or_first_available_variant.unit_price | money-}}</span>
+          <span aria-hidden="true">/</span>
+          <span class="visually-hidden">&nbsp;{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+          <span>
+            {%- if product.selected_or_first_available_variant.unit_price_measurement.reference_value != 1 -%}
+              {{- product.selected_or_first_available_variant.unit_price_measurement.reference_value -}}
+            {%- endif -%}
+            {{ product.selected_or_first_available_variant.unit_price_measurement.reference_unit }}
+          </span>
+        </span>
+      </small>
+      {% if product.metafields.custom.price_suffix_text != blank and request.page_type != 'collection' %}
+        <span class="price-suffix">
+          {{ product.metafields.custom.price_suffix_text }}
+        </span>
+      {% endif %}
+    </div>
+
+  </div>
+{% endunless %}

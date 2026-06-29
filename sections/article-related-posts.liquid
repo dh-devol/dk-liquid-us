@@ -1,0 +1,123 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-article-related-posts.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign all_articles = '' | split: ',' -%}
+{%- for blog_item in blogs -%}
+  {%- assign blog_obj = blogs[blog_item] -%}
+  {%- if blog_obj == blank -%}
+    {%- assign blog_obj = blog_item[1] -%}
+  {%- endif -%}
+  {%- if blog_obj != blank and blog_obj.articles_count > 0 -%}
+    {%- assign all_articles = all_articles | concat: blog_obj.articles -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign all_articles = all_articles | where: 'id' -%}
+{%- if all_articles == blank or all_articles.size == 0 -%}
+  {%- if blog != blank -%}
+    {%- assign all_articles = blog.articles -%}
+  {%- elsif article != blank and article.blog != blank -%}
+    {%- assign all_articles = article.blog.articles -%}
+  {%- endif -%}
+{%- endif -%}
+{%- assign all_articles = all_articles | sort: 'published_at' | reverse -%}
+
+{%- if all_articles != blank and all_articles.size > 0 -%}
+  {%- assign related_count = 0 -%}
+  <div class="article-related-posts color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+    <div class="page-width article-related-posts__inner">
+      {%- if section.settings.title != blank -%}
+        <h2 class="article-related-posts__title h3">{{ section.settings.title | upcase }}</h2>
+      {%- endif -%}
+      <ul
+        class="article-related-posts__grid grid grid--1-col grid--2-col-tablet grid--3-col-desktop"
+        role="list"
+      >
+        {%- for related_article in all_articles -%}
+          {%- if article == blank or related_article.id != article.id -%}
+            <li class="grid__item">
+              {% render 'article-card',
+                blog: related_article.blog,
+                article: related_article,
+                show_image: true,
+                show_date: false,
+                show_author: false,
+                show_excerpt: false,
+                show_badge: false
+              %}
+            </li>
+            {%- assign related_count = related_count | plus: 1 -%}
+            {%- if related_count >= 3 -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Related blog posts",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "You may also like"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-2"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "Related blog posts"
+    }
+  ]
+}
+{% endschema %}

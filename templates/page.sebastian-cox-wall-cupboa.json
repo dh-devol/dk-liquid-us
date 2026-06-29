@@ -1,0 +1,340 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "catalogue_title_with_richtext_BU9bBR": {
+      "type": "catalogue-title-with-richtext",
+      "settings": {
+        "show_title": true,
+        "show_description": false,
+        "show_main_description": false,
+        "show_guide_price": false,
+        "border_title": true,
+        "heading_size": "h1",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "catalogue_multicolumn_TfwjVb": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_QhJdVa": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>All wall cupboard dimensions exclude our 50mm cornice which is supplied separately. End panels are required for any exposed sides, priced at \u00a370 each (\u00a370 each for the London Glazed Wall Cupboard).</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_dKqyzA": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>The usable depth of all our wall cupboards is 220mm so they will not accommodate dinner plates. Dot or petal pattern cut-outs available for an additional \u00a370 per door. All prices shown include VAT.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_QhJdVa",
+        "column_dKqyzA"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "catalogue_multicolumn_KqtTFU": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_zxqbxG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/360_Closed_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "360mm Closed Wall Cupboard",
+            "subtext": "w 360\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3550</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YQGVWY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/435_Closed_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "435mm Closed Wall Cupboard",
+            "subtext": "w 435\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3570</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Ti3FeU": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/500_Closed_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "500mm Closed Wall Cupboard",
+            "subtext": "w 500\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3590</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_baRbja": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/800_Closed_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "800mm Closed Wall Cupboard",
+            "subtext": "w 800\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3890</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_xdFFAX": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/360_Glazed_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "360mm Glazed Wall Cupboard",
+            "subtext": "w 360\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3590</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_7FVd8W": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/435_Glazed_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "435mm Glazed Wall Cupboard",
+            "subtext": "w 435\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3610</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_DaKjy7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/500_Glazed_Wall_Cupboard_1.jpg",
+            "custom_text_hover": "",
+            "title": "500mm Glazed Wall Cupboard",
+            "subtext": "w 500\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3630</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_KTBRyg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/800_Glazed_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "800mm Glazed Wall Cupboard",
+            "subtext": "w 800\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3930</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_kUCyaC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/500_Open_Wall_Cupboard_0.jpg",
+            "custom_text_hover": "",
+            "title": "500mm Open Wall Cupboard",
+            "subtext": "w 500\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3470</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_AF3tpp": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/800_Open_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "800mm Open Wall Cupboard",
+            "subtext": "w 800\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3780</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NgtQLE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/500_Open_Wall_Cupboard_Plate_Rack.jpg",
+            "custom_text_hover": "",
+            "title": "500mm Plate Rack Cupboard",
+            "subtext": "w 500\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a3890</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ac9cWy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/800_Open_Wall_Cupboard_Plate_Rack.jpg",
+            "custom_text_hover": "",
+            "title": "800mm Plate Rack Cupboard",
+            "subtext": "w 800\u00a0\u00a0\u00a0h 765\u00a0\u00a0\u00a0d 270\u00a0mm",
+            "text": "<p>\u00a31,140</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_zxqbxG",
+        "column_YQGVWY",
+        "column_Ti3FeU",
+        "column_baRbja",
+        "column_xdFFAX",
+        "column_7FVd8W",
+        "column_DaKjy7",
+        "column_KTBRyg",
+        "column_kUCyaC",
+        "column_AF3tpp",
+        "column_NgtQLE",
+        "column_ac9cWy"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 60,
+        "sectionname": ""
+      }
+    },
+    "catalogue_multicolumn_cQ7N7J": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_d8qCC4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/London_Glazed_Wall_Cupboard.jpg",
+            "custom_text_hover": "",
+            "title": "London Glazed Wall Cupboard",
+            "subtext": "w 1000\u00a0\u00a0\u00a0h 1200\u00a0\u00a0\u00a0d 270\u00a0mm excluding cornice",
+            "text": "<p>\u00a31,830</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_MVKKpz": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NewCorniceRender01_1.jpg",
+            "custom_text_hover": "",
+            "title": "Cornice",
+            "subtext": "50 x 50 mm, longer lengths available on request",
+            "text": "<p>2 metres - \u00a390\u00a0 \u00a0|\u00a0 \u00a03 metres - \u00a3130</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_d8qCC4",
+        "column_MVKKpz"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "catalogue_title_with_richtext_BU9bBR",
+    "catalogue_multicolumn_TfwjVb",
+    "catalogue_multicolumn_KqtTFU",
+    "catalogue_multicolumn_cQ7N7J"
+  ]
+}

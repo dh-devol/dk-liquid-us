@@ -1,0 +1,260 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "breadcrumb_PY8FH4": {
+          "type": "breadcrumb",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "inventory_DNJrea": {
+          "type": "inventory",
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": false
+          }
+        },
+        "metafield_product_VgECqt": {
+          "type": "metafield_product",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_buy_button_fKpjca": {
+          "type": "quantity_buy_button",
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb_PY8FH4",
+        "title",
+        "price",
+        "inventory_DNJrea",
+        "metafield_product_VgECqt",
+        "variant_picker",
+        "quantity_buy_button_fKpjca",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-2",
+        "not_for_sale_text": "<p>Please get in contact by calling 01509 261000 or send an email to <a href=\"mailto:enquiries@devolkitchens.co.uk\">enquiries@devolkitchens.co.uk</a> if you are interested in placing an order.</p>",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "custom_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 0,
+        "padding_bottom": 12
+      }
+    },
+    "product_specification_3eHTJm": {
+      "type": "product-specification",
+      "name": "Product specification",
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "related_C67kYE": {
+      "type": "related",
+      "custom_css": [
+        "@media (min-width: 591px) and (max-width: 1024px) {.related-products-grid {grid-template-columns: repeat(2, 1fr); }}"
+      ],
+      "name": "Related Products",
+      "settings": {
+        "color_scheme": "",
+        "section_title": "Switches & Sockets",
+        "heading_size": "hxxl",
+        "subtitle": "Light Switches",
+        "section_page_width": 1600,
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "target_all_products": true,
+        "columns": 4,
+        "product_1": "heirloom-brass-jelly-mould-toggle-switch-black-base-2-way",
+        "product_2": "heirloom-brass-dolly-toggle-switch-black-base-2-way",
+        "product_3": "heirloom-brass-oval-toggle-switch-petite-1-gang",
+        "product_4": "heirloom-brass-oval-dimmer-switch-petite-1-gang",
+        "product_5": "heirloom-brass-classic-toggle-switch-1-gang-2-way",
+        "product_6": "heirloom-brass-classic-dimmer-switch-1-gang",
+        "product_7": "heirloom-brass-box-toggle-switch-1-gang",
+        "product_8": "heirloom-brass-box-dimmer-switch-1-gang",
+        "product_9": "",
+        "product_10": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_badge": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "target_collection": ""
+      }
+    },
+    "related_x4qg4M": {
+      "type": "related",
+      "custom_css": [
+        "@media (max-width: 590px) {.top__section-border:before {top: -15px; }}"
+      ],
+      "name": "Related Products",
+      "settings": {
+        "color_scheme": "",
+        "section_title": "Plug Sockets",
+        "heading_size": "h1",
+        "subtitle": "",
+        "section_page_width": 1600,
+        "button_label": "View All >",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "padding_top": 10,
+        "padding_bottom": 0,
+        "target_all_products": true,
+        "columns": 4,
+        "product_1": "heirloom-brass-classic-13a-plug-socket-single",
+        "product_2": "heirloom-brass-classic-5a-plug-socket",
+        "product_3": "heirloom-brass-classic-french-type-e-plug-socket-single",
+        "product_4": "heirloom-brass-classic-schuko-type-f-plug-socket-single",
+        "product_5": "",
+        "product_6": "",
+        "product_7": "",
+        "product_8": "",
+        "product_9": "",
+        "product_10": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_badge": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "target_collection": ""
+      }
+    },
+    "related_jJrhLb": {
+      "type": "related",
+      "custom_css": [
+        "@media (max-width: 590px) {.top__section-border:before {top: -15px; }}"
+      ],
+      "name": "Related Products",
+      "settings": {
+        "color_scheme": "",
+        "section_title": "Other Fittings",
+        "heading_size": "h1",
+        "subtitle": "",
+        "section_page_width": 1600,
+        "button_label": "View All >",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "padding_top": 10,
+        "padding_bottom": 0,
+        "target_all_products": true,
+        "columns": 4,
+        "product_1": "heirloom-brass-classic-mixed-switch",
+        "product_2": "heirloom-brass-classic-tv-outlet",
+        "product_3": "heirloom-brass-classic-20a-double-pole-switch",
+        "product_4": "heirloom-brass-classic-cooker-switch-32a",
+        "product_5": "heirloom-brass-classic-fused-connection-unit-switched",
+        "product_6": "heirloom-brass-classic-fan-isolator",
+        "product_7": "heirloom-brass-classic-shaver-outlet",
+        "product_8": "heirloom-brass-classic-blank-plate",
+        "product_9": "",
+        "product_10": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_badge": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "target_collection": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_specification_3eHTJm",
+    "related-products",
+    "related_C67kYE",
+    "related_x4qg4M",
+    "related_jJrhLb"
+  ]
+}

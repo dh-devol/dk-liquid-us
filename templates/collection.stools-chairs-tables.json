@@ -1,0 +1,369 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_VT8pFG": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_Ga7gCJ": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_EfgQpt": {
+          "type": "product_item",
+          "settings": {
+            "product": "bum-stool"
+          }
+        },
+        "product_item_3QJjFt": {
+          "type": "product_item",
+          "settings": {
+            "product": "helens-stool"
+          }
+        },
+        "product_item_MeQe9L": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-helens-stool"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_EfgQpt",
+        "product_item_3QJjFt",
+        "product_item_MeQe9L"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_tz7E6P": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_dkVbUK": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-bentwood-cafe-stool"
+          }
+        },
+        "product_item_nW4Ane": {
+          "type": "product_item",
+          "settings": {
+            "product": "woven-top-bentwood-cafe-stool"
+          }
+        },
+        "product_item_4jaJNd": {
+          "type": "product_item",
+          "settings": {
+            "product": "bentwood-cafe-chair"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_dkVbUK",
+        "product_item_nW4Ane",
+        "product_item_4jaJNd"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_r3TGAr": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_Rk6gqd": {
+          "type": "product_item",
+          "settings": {
+            "product": "creedy-stool-natural-walnut-charcoal-black"
+          }
+        },
+        "product_item_jW4XGy": {
+          "type": "product_item",
+          "settings": {
+            "product": "creedy-stool-oiled-oak-handyman-green"
+          }
+        },
+        "product_item_tthg3w": {
+          "type": "product_item",
+          "settings": {
+            "product": "creedy-stool-limed-oak-plasterers-pink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_Rk6gqd",
+        "product_item_jW4XGy",
+        "product_item_tthg3w"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_QpTw8P": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_krRzpi": {
+          "type": "product_item",
+          "settings": {
+            "product": "bum-chair"
+          }
+        },
+        "product_item_beDK4A": {
+          "type": "product_item",
+          "settings": {
+            "product": "plumbers-stool"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_krRzpi",
+        "product_item_beDK4A"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_nebHrX": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_Ezmrc3": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-vineyard-table"
+          }
+        },
+        "product_item_xP8tNm": {
+          "type": "product_item",
+          "settings": {
+            "product": "vineyard-table"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_Ezmrc3",
+        "product_item_xP8tNm"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Table",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_eU4wLg": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_RVifJD": {
+          "type": "product_item",
+          "settings": {
+            "product": "peg-leg-table"
+          }
+        },
+        "product_item_giTBUr": {
+          "type": "product_item",
+          "settings": {
+            "product": "shaker-table"
+          }
+        },
+        "product_item_KLnPXb": {
+          "type": "product_item",
+          "settings": {
+            "product": "millhouse-refectory-table"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_RVifJD",
+        "product_item_giTBUr",
+        "product_item_KLnPXb"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 590px) {.custom-product-list {padding-bottom: 54px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_VT8pFG",
+    "banner",
+    "product-grid",
+    "custom_product_list_Ga7gCJ",
+    "custom_product_list_tz7E6P",
+    "custom_product_list_r3TGAr",
+    "custom_product_list_QpTw8P",
+    "custom_product_list_nebHrX",
+    "custom_product_list_eU4wLg"
+  ]
+}

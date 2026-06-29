@@ -1,0 +1,20 @@
+.rich-text-with-multi-img .multi-image-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 44px;
+}
+.rich-text-with-multi-img h2.rich-text__heading {
+    font-size: 16px;
+}
+
+@media screen and (max-width:991px){
+  .rich-text-with-multi-img .rich-text__blocks {
+      max-width: 100%;
+  }
+}
+@media screen and (min-width:768px){
+.rich-text-with-multi-img .multi-image-wrapper {
+    margin-top: 50px;
+}
+}

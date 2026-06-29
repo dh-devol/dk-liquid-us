@@ -1,0 +1,232 @@
+{{ 'section-thumb-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media (max-width: 1270px){
+    .slideshow-thumbnail-gallery-wrapper {
+        padding: 0;
+    }
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="slideshow-thumbnail-gallery {{ section.settings.sectionname }} color-{{ section.settings.color_scheme }} gradient small-hide">
+  <div class="slideshow-thumbnail-gallery-wrapper page-width  section-{{ section.id }}-padding {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+     {% if settings.animations_reveal_on_scroll %}
+      data-cascade
+    {% endif %}>
+    <div class="thumbnail__gallery">
+     <div class="gallery-slides_main-wrapper"> 
+    <a class="prev" onclick="plusSlides(-1)">
+      {{- 'icon-caret.svg' | inline_asset_content -}}
+    </a>
+      {% for block in section.blocks %}
+       {% if block.settings.image != blank %}
+       <div class="gallery-slides">
+          <img src="{{ block.settings.image | image_url: width: 1920 }}" width="auto" height="auto" style="width:100%" alt="{{ block.settings.image.alt }}" {% unless forloop.first %}loading="lazy"{% endunless %}>
+        </div>
+       {% endif %}
+      {% endfor %}
+    <a class="next" onclick="plusSlides(1)">
+      {{- 'icon-caret.svg' | inline_asset_content -}}
+    </a>
+     </div>      
+
+      <div class="slider__thumbs-wrapper scrollable-thumbs">
+        <div class="thumbs-inner">
+          {% for block in section.blocks %} 
+          {% if block.settings.image != blank %} 
+            <div class="slide__thumb--wrapper">
+              <img class="slide__thumb" src="{{ block.settings.image | image_url: height: 124 }}" width="auto" height="62" loading="lazy" alt="{{ block.settings.image.alt }}" onclick="currentSlide({{ forloop.index }})">
+            </div>
+            {% endif %}
+          {% endfor %} 
+        </div>
+     </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<div class="thumb__gallery-mobile medium-hide large-up-hide">
+  <div class="swiper mySwiper mySwiper-{{ section.id }}">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+       {% if block.settings.mimage != blank %}
+        <div class="swiper-slide">
+          <img class="mobile_slide__thumb" src="{{ block.settings.mimage | image_url: width: 750 }}" width="auto" height="auto" style="width:100%" alt="{{ block.settings.mimage.alt }}" {% unless forloop.first %}loading="lazy"{% endunless %}>
+        </div>
+         {% endif %}
+        {% endfor %}
+       </div>
+  </div>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function preloadNearbyDesktopSlides(current, total) {
+  var slides = document.getElementsByClassName("gallery-slides");
+  for (var offset = -1; offset <= 2; offset++) {
+    var idx = ((current - 1 + offset) % total + total) % total;
+    var img = slides[idx] && slides[idx].querySelector('img[loading="lazy"]');
+    if (img) img.loading = 'eager';
+  }
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("gallery-slides");
+  let dots = document.getElementsByClassName("slide__thumb");
+  let thumbWrappers = document.getElementsByClassName("slide__thumb--wrapper");
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+
+  // Preload nearby slides so they're ready when navigated to
+  preloadNearbyDesktopSlides(slideIndex, slides.length);
+
+  // Scroll thumbnail into view
+  let activeThumb = thumbWrappers[slideIndex - 1];
+  if (activeThumb && activeThumb.scrollIntoView) {
+    activeThumb.scrollIntoView({
+      behavior: "smooth",
+      inline: "center",
+      block: "nearest"
+    });
+  }
+}
+
+var swiper = new Swiper(".mySwiper.mySwiper-{{ section.id }}", {
+  on: {
+    slideChange: function () {
+      var slides = this.slides;
+      var current = this.activeIndex;
+      var total = slides.length;
+      for (var offset = -1; offset <= 2; offset++) {
+        var idx = ((current + offset) % total + total) % total;
+        var img = slides[idx] && slides[idx].querySelector('img[loading="lazy"]');
+        if (img) img.loading = 'eager';
+      }
+    }
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Thumbnail gallery",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "For developer use"
+    },
+    {
+      "type": "text",
+      "id": "sectionname",
+      "label": "Do not edit"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slider_thumb",
+      "name": "Slider thumbnail",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+        },
+        {
+          "type": "image_picker",
+          "id": "mimage",
+          "label": "Mobile image",
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Thumbnail gallery",
+      "blocks": [
+        {
+          "type": "slider_thumb"
+        },
+        {
+          "type": "slider_thumb"
+        },
+        {
+          "type": "slider_thumb"
+        },
+        {
+          "type": "slider_thumb"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

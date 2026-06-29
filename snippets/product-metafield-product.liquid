@@ -1,0 +1,112 @@
+ {% assign variant_products = product.metafields.custom.swatch_product.value %}
+                  {%- assign has_variant_options = false -%}
+                  {%- assign all_options = '' -%}
+
+                  {%- for p in variant_products -%}
+                    {%- for tag in p.tags -%}
+                      {%- assign parts = tag | split: '_' -%}
+                      {%- if parts.size == 2 -%}
+                        {%- assign option_name = parts[0] | strip -%}
+                        {%- assign option_value = parts[1] | strip -%}
+                        {%- assign key_value = option_name | append: ':' | append: option_value -%}
+                        {%- unless all_options contains key_value -%}
+                          {%- assign has_variant_options = true -%}
+                          {%- assign all_options = all_options | append: key_value | append: ',' -%}
+                        {%- endunless -%}
+                      {%- endif -%}
+                    {%- endfor -%}
+                  {%- endfor -%}
+
+                  <div id="custom-select-wrapper" class="liquid-rendered-selects">
+                    {% assign option_pairs = all_options | split: ',' %}
+                    {% assign option_names = '' %}
+                    {% for pair in option_pairs %}
+                      {% assign name_value = pair | split: ':' %}
+                      {% assign option_name = name_value[0] %}
+                      {% unless option_names contains option_name %}
+                        {% assign option_names = option_names | append: option_name | append: ',' %}
+                      {% endunless %}
+                    {% endfor %}
+
+                    {% assign option_names_array = option_names | split: ',' %}
+
+                    {% assign ordered = '' %}
+
+                    {% if option_names_array contains 'Select a size' %}
+                      {% assign ordered = ordered | append: 'Select a size,' %}
+                    {% endif %}
+
+                    {% for opt in option_names_array %}
+                      {% if opt != 'Select a size' and opt != '' %}
+                        {% assign ordered = ordered | append: opt | append: ',' %}
+                      {% endif %}
+                    {% endfor %}
+
+                    {% assign final_array = ordered | split: ',' %}
+
+                    {% for option_name in final_array %}
+                      {% if option_name != '' %}
+                        {% assign values = '' %}
+                        {%- comment -%}
+                          Preserve option order based on the swatch_product metafield list.
+                          We walk variant_products in their stored order and collect unique values.
+                        {%- endcomment -%}
+                        {% for p in variant_products %}
+                          {% for tag in p.tags %}
+                            {% assign parts = tag | split: '_' %}
+                            {% if parts.size == 2 %}
+                              {% assign tag_option = parts[0] | strip %}
+                              {% assign tag_value = parts[1] | strip %}
+                              {% if tag_option == option_name and tag_value != '' %}
+                                {% assign wrapped_vals = ',' | append: values | append: ',' %}
+                                {% assign token = ',' | append: tag_value | append: ',' %}
+                                {% unless wrapped_vals contains token %}
+                                  {% assign values = values | append: tag_value | append: ',' %}
+                                {% endunless %}
+                              {% endif %}
+                            {% endif %}
+                          {% endfor %}
+                        {% endfor %}
+
+                        {% assign value_array = values | split: ',' %}
+                        <label for="{{ option_name | handleize }}">{{ option_name | capitalize }}</label>
+                        
+                        <select name="{{ option_name | handleize }}">
+                          {% for val in value_array %}
+                            {% if val != '' %}
+                              {% assign tag_to_check = option_name | append: '_' | append: val %}
+                              <option
+                                value="{{ val | handleize }}"
+                                {% if product.tags contains tag_to_check %}
+                                  selected
+                                {% endif %}
+                              >
+                                {{ val }}
+                              </option>
+                            {% endif %}
+                          {% endfor %}
+                        </select>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+
+                  <!-- Variant Map JSON (robust, no trailing commas, includes product + variant IDs) -->
+                  <script id="variantMap" type="application/json">
+                    {
+                    {% for p in variant_products %}
+                      {% unless forloop.first %},{% endunless %}
+                      "{{ p.handle | handleize }}": {
+                        "__product_id": {{ p.id }},
+                        "__variant_id": {{ p.selected_or_first_available_variant.id }},
+                        {% assign first_pair = true %}
+                        {% for tag in p.tags %}
+                          {% assign parts = tag | split: '_' %}
+                          {% if parts.size == 2 %}
+                            {% unless first_pair %},{% endunless %}"{{ parts[0] | handleize }}": "{{ parts[1] | handleize }}"
+                            {% assign first_pair = false %}
+                          {% endif %}
+                        {% endfor %}
+                      }
+                    {% endfor %}
+                    }
+                  </script>

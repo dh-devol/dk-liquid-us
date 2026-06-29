@@ -1,0 +1,24 @@
+.custom__rich-text .button:before , .custom__rich-text .button:after{
+  content:none;
+}
+.custom__rich-text .button{
+  padding:5px 32px 8px 32px;
+  border: 1px solid rgba(0,0,0,0.3);
+  font-size:16px;
+  letter-spacing:0;
+  line-height: 24px;
+  min-height: auto;
+}
+.custom__rich-text .rich-text__heading{
+  letter-spacing:1.5px;
+}
+.custom__rich-text .rich-text__text{
+  margin-top:23px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height:28px;
+}
+.custom__rich-text .rich-text__buttons{
+  margin-top:48px;
+}

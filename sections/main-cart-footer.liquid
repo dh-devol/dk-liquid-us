@@ -1,0 +1,803 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="gradient color-{{ section.settings.color_scheme }}{% if cart == empty %} is-empty{% endif %}"
+  id="main-cart-footer"
+  data-id="{{ section.id }}"
+>
+  <div class="page-width">
+    <div class="cart__footer isolate section-{{ section.id }}-padding">
+     
+
+      <div class="cart__blocks">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'subtotal' -%}
+              <div class="js-contents" {{ block.shopify_attributes }}>
+                <div>
+                  {%- if cart.cart_level_discount_applications.size > 0 -%}
+                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                      {%- for discount in cart.cart_level_discount_applications -%}
+                        <li class="discounts__discount discounts__discount--position">
+                          {{- 'icon-discount.svg' | inline_asset_content -}}
+                          {{ discount.title | escape }}
+                          (-{{ discount.total_allocated_amount | money}})
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </div>
+
+                <div class="totals">
+                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
+                  <p class="totals__total-value">{{ cart.total_price | money }}</p>
+                </div>
+              {% if block.settings.show_tax %}
+                <small class="tax-note caption-large rte">
+                  {%- if cart.duties_included and cart.taxes_included -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included == false and cart.taxes_included -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included and cart.taxes_included == false -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- endif -%}
+                </small>
+                {% endif %}
+              </div>
+            {% when 'description' %}
+            {%- comment -%}--- Flooring detection: product type + Flooring Support weight ---{%- endcomment -%}
+              {%- assign _flooring_type = settings.flooring_product_type | default: 'Flooring' -%}
+              {%- assign _support_type = settings.flooring_support_product_type | default: 'Flooring Support' -%}
+              {%- assign _weight_threshold_g = settings.flooring_support_weight_threshold | default: 30 | times: 1000 -%}
+
+              {%- assign has_flooring_products = false -%}
+              {%- assign flooring_support_weight_g = 0 -%}
+              {%- for item in cart.items -%}
+                {%- if item.product.type == _flooring_type -%}
+                  {%- assign has_flooring_products = true -%}
+                {%- elsif item.product.type == _support_type -%}
+                  {%- assign line_weight_g = item.grams | times: item.quantity -%}
+                  {%- assign flooring_support_weight_g = flooring_support_weight_g | plus: line_weight_g -%}
+                {%- endif -%}
+              {%- endfor -%}
+              {%- assign has_flooring = false -%}
+              {%- if has_flooring_products or flooring_support_weight_g > _weight_threshold_g -%}
+                {%- assign has_flooring = true -%}
+              {%- endif -%}
+               <div class="cart_custom-descrption-wrapper {% unless has_flooring %}no_flooring{% endunless %}">
+                 <div class="cart_custom-description-inner">
+                  {% if block.settings.show_datepicker %}
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+                    <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+
+                    <div class="date_picker-wrapper">
+                    {% if block.settings.datepicker_title != blank %}
+                      <h2 class="hxxl cart_description_title">{{ block.settings.datepicker_title }}</h2>
+                    {% endif %}
+                    {% if block.settings.datepicker_text != blank %}
+                      <div class="rte datepicker-description">
+                        {{ block.settings.datepicker_text }}
+                      </div>
+                    {% endif %}
+                     {%- assign flooring_lead_times = '' -%}
+                      {%- for item in cart.items -%}
+                        {%- if item.product.type == _flooring_type or item.product.type == _support_type -%}
+                          {%- assign lead_time = item.product.metafields.custom.lead_time_days.value | default: block.settings.default_lead_time_days -%}
+                          {%- if flooring_lead_times == '' -%}
+                            {%- assign flooring_lead_times = lead_time -%}
+                          {%- else -%}
+                            {%- assign flooring_lead_times = flooring_lead_times | append: ',' | append: lead_time -%}
+                          {%- endif -%}
+                        {%- endif -%}
+                      {%- endfor -%}
+                      <div
+                        id="lead-time-data"
+                        data-leadtimes="{{ flooring_lead_times | strip_newlines | strip }}"
+                        data-disable-weekends="{{ block.settings.disable_weekends }}"
+                        data-count-weekends="{{ block.settings.count_weekends_in_lead_time }}"
+                        data-max-days="{{ block.settings.max_days_ahead }}">
+                      </div>
+                    <div class="flatpickr_date-wrapper">
+                      <input id="date_select" type="text" placeholder="Select Date">
+                      <div class="icon_wrapper">
+                        <span class="svg-wrapper">
+                           {{- 'icon-calendar.svg' | inline_asset_content -}}
+                          </span>
+                      </div>
+                    </div>
+                    <input type="hidden" name="attributes[Flooring Delivery Date]" id="hidden-delivery-date" form="cart">
+                    <input type="hidden" name="attributes[_Promise Date]" id="hidden-promise-date" form="cart">
+                    </div>
+                  {% endif %}
+
+                  {% if block.settings.access_title != blank or block.settings.access_text != blank or block.settings.access_question != blank %}
+                    <div class="access-restrictions-wrapper">
+                      {% if block.settings.access_title != blank %}
+                        <h2 class="hxxl cart_description_title">{{ block.settings.access_title }}</h2>
+                      {% endif %}
+                      {% if block.settings.access_text != blank %}
+                        <div class="rte access-restrictions-text">
+                          {{ block.settings.access_text }}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.access_question != blank %}
+                        <p class="access-restrictions-question">{{ block.settings.access_question }}</p>
+                      {% endif %}
+                      <textarea
+                        class="text-area access-restrictions-textarea"
+                        name="attributes[Access Restrictions]"
+                        form="cart"
+                        id="access-restrictions"
+                        placeholder="{{ block.settings.access_placeholder | default: '' }}"
+                      >{{ cart.attributes['Access Restrictions'] }}</textarea>
+                    </div>
+                  {% endif %}
+
+                  {%- if settings.show_cart_note -%}
+                    <cart-note class="cart__note field">
+                      <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+                        <textarea
+                          class="text-area field__input"
+                          name="note"
+                          form="cart"
+                          id="Cart-note"
+                          placeholder="{{ 'sections.cart.note' | t }}"
+                        >{{ cart.note }}</textarea>
+                    </cart-note>
+                  {%- endif -%}
+                  {% if block.settings.info_checkbox %}
+                    <div class="info_checkbox-wrapper checkbox-wrapper">
+                        <input type="checkbox" id="info_checkbox" class="info_checkbox" name="attributes[general information]">
+                        <label for="info_checkbox" class="info_label">{{ block.settings.info_label }}</label>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.terms_agreed %}
+                    <label class="terms_checkbox-wrapper checkbox-wrapper">{{ block.settings.terms_label }}
+                        <input type="checkbox" id="terms_agreed" class="terms_agreed" name="attributes[terms agreed]">
+                        <span class="checkmark"></span>
+                    </label>
+                  {% endif %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  {% if block.settings.show_datepicker %}
+  const leadTimesDiv = document.getElementById('lead-time-data');
+  const dateInput = document.getElementById('date_select');
+  const hiddenInput = document.getElementById('hidden-delivery-date');
+
+  if (leadTimesDiv && dateInput && hiddenInput) {
+    const disableWeekends = leadTimesDiv.getAttribute('data-disable-weekends') === 'true';
+    const countWeekends = leadTimesDiv.getAttribute('data-count-weekends') === 'true';
+    const maxDaysAhead = parseInt(leadTimesDiv.getAttribute('data-max-days'), 10) || 31;
+
+    function getLeadTimesArray() {
+      const spans = Array.from(document.querySelectorAll('.lead-time-span'))
+        .map(el => parseInt(el.getAttribute('data-leadtime'), 10))
+        .filter(Boolean);
+      if (spans.length > 0) return spans;
+
+      const raw = leadTimesDiv.getAttribute('data-leadtimes');
+      if (!raw || raw.trim() === '') return [];
+      return raw.split(',').map(n => parseInt(n, 10)).filter(Boolean);
+    }
+
+    function addBusinessDays(startDate, days, countWeekends) {
+      const date = new Date(startDate);
+      let addedDays = 0;
+      while (addedDays < days) {
+        date.setDate(date.getDate() + 1);
+        const day = date.getDay();
+        if (countWeekends || (day !== 0 && day !== 6)) {
+          addedDays++;
+        }
+      }
+      return date;
+    }
+
+    function updateDatepicker() {
+      const leadTimesArray = getLeadTimesArray();
+      if (leadTimesArray.length === 0) return;
+
+      const minLeadTime = Math.max(...leadTimesArray);
+      const today = new Date();
+      const earliestDate = addBusinessDays(today, minLeadTime, countWeekends);
+      const maxDate = new Date(today);
+      maxDate.setDate(maxDate.getDate() + maxDaysAhead);
+
+      const disableRules = [
+        {
+          from: today,
+          to: new Date(earliestDate.setDate(earliestDate.getDate() - 1))
+        },
+        function (date) {
+          return date.toDateString() === today.toDateString();
+        }
+      ];
+
+      if (disableWeekends) {
+        disableRules.unshift(function (date) {
+          return date.getDay() === 0 || date.getDay() === 6;
+        });
+      }
+
+      const defaultDate = addBusinessDays(today, minLeadTime, countWeekends);
+      const defaultDateStr = defaultDate.getDate().toString().padStart(2, '0') + '-' +
+                             (defaultDate.getMonth() + 1).toString().padStart(2, '0') + '-' +
+                             defaultDate.getFullYear();
+
+      var wrapperEl = document.querySelector('.flatpickr_date-wrapper');
+      var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      function ordinal(d) {
+        if (d > 3 && d < 21) return d + 'th';
+        switch (d % 10) {
+          case 1: return d + 'st';
+          case 2: return d + 'nd';
+          case 3: return d + 'rd';
+          default: return d + 'th';
+        }
+      }
+      flatpickr(dateInput, {
+        dateFormat: "d-m-Y",
+        disable: disableRules,
+        minDate: today,
+        maxDate: maxDate,
+        formatDate: function (date, format, locale) {
+          return ordinal(date.getDate()) + ' ' + monthNames[date.getMonth()] + ' ' + date.getFullYear();
+        },
+        parseDate: function (datestr, format) {
+          var parts = datestr.replace(/(st|nd|rd|th)/, '').split(' ');
+          var day = parseInt(parts[0], 10);
+          var month = monthNames.indexOf(parts[1]);
+          var year = parseInt(parts[2], 10);
+          return new Date(year, month, day);
+        },
+        onChange: function (selectedDates, dateStr) {
+          var d = selectedDates[0];
+          hiddenInput.value = d.getDate().toString().padStart(2, '0') + '/' + (d.getMonth() + 1).toString().padStart(2, '0') + '/' + d.getFullYear().toString().slice(-2);
+          hiddenInput.dispatchEvent(new Event('change'));
+        },
+        onReady: function (selectedDates, dateStr, instance) {
+          if (wrapperEl) {
+            instance.calendarContainer.style.width = wrapperEl.offsetWidth + 'px';
+          }
+        },
+        onOpen: function (selectedDates, dateStr, instance) {
+          if (wrapperEl) {
+            instance.calendarContainer.style.width = wrapperEl.offsetWidth + 'px';
+          }
+        }
+      });
+
+    }
+
+    updateDatepicker();
+
+    let currentTbody = document.querySelector('.flooring_product-items tbody');
+    const observerConfig = { childList: true, subtree: false };
+
+    function observeTbody(tbody) {
+      if (!tbody) return;
+      const observer = new MutationObserver(function () {
+        updateDatepicker();
+      });
+      observer.observe(tbody, observerConfig);
+    }
+
+    observeTbody(currentTbody);
+
+    setInterval(function () {
+      const newTbody = document.querySelector('.flooring_product-items tbody');
+      if (newTbody !== currentTbody) {
+        currentTbody = newTbody;
+        updateDatepicker();
+        observeTbody(currentTbody);
+      }
+    }, 500);
+  }
+  {% endif %}
+
+  // Promise Date logic — runs for ALL carts (flooring and non-flooring)
+  function formatPromiseDate(daysToAdd) {
+    var date = new Date();
+    date.setDate(date.getDate() + daysToAdd);
+    var dd = date.getDate().toString().padStart(2, '0');
+    var mm = (date.getMonth() + 1).toString().padStart(2, '0');
+    var yy = date.getFullYear().toString().slice(-2);
+    return dd + '/' + mm + '/' + yy;
+  }
+
+  function updateOrderPromiseDate() {
+    var spans = document.querySelectorAll('.lead-time-span');
+    if (spans.length === 0) return;
+    var maxLeadTime = 0;
+    spans.forEach(function(span) {
+      var lt = parseInt(span.getAttribute('data-leadtime'), 10);
+      if (lt > maxLeadTime) maxLeadTime = lt;
+    });
+    var promiseDateInput = document.getElementById('hidden-promise-date');
+    if (promiseDateInput && maxLeadTime > 0) {
+      promiseDateInput.value = formatPromiseDate(maxLeadTime);
+    }
+  }
+
+  updateOrderPromiseDate();
+
+  // Layer 2: Recalculate _Promise Date on all line items and order attribute on cart page load
+  (function refreshPromiseDates() {
+    fetch('/cart.js')
+      .then(function(r) { return r.json(); })
+      .then(function(cart) {
+        var maxLeadDays = 0;
+        var lineUpdates = [];
+
+        (cart.items || []).forEach(function(item) {
+          if (!item.properties || !item.properties['_lead_time_days']) return;
+          var leadDays = parseInt(item.properties['_lead_time_days'], 10);
+          if (!leadDays) return;
+          if (leadDays > maxLeadDays) maxLeadDays = leadDays;
+          var expected = formatPromiseDate(leadDays);
+          if (item.properties['_Promise Date'] !== expected) {
+            lineUpdates.push(item);
+          }
+        });
+
+        // Always set order-level _Promise Date from cart data
+        if (maxLeadDays > 0) {
+          var orderPromise = formatPromiseDate(maxLeadDays);
+          var promiseDateInput = document.getElementById('hidden-promise-date');
+          if (promiseDateInput) promiseDateInput.value = orderPromise;
+          fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ attributes: { '_Promise Date': orderPromise } })
+          }).catch(function() { /* silent */ });
+        }
+
+        // Update stale line item promise dates
+        if (lineUpdates.length === 0) return;
+        function doUpdate(i) {
+          if (i >= lineUpdates.length) return;
+          var item = lineUpdates[i];
+          var leadDays = parseInt(item.properties['_lead_time_days'], 10);
+          var merged = Object.assign({}, item.properties, {
+            '_Promise Date': formatPromiseDate(leadDays)
+          });
+          fetch('/cart/change.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: item.key, quantity: item.quantity, properties: merged })
+          })
+          .then(function() { doUpdate(i + 1); })
+          .catch(function() { doUpdate(i + 1); });
+        }
+        doUpdate(0);
+      })
+      .catch(function() { /* silent */ });
+  })();
+
+  // Before checkout: update line item _Promise Date properties via AJAX
+  var cartForm = document.getElementById('cart');
+  if (cartForm) {
+    cartForm.addEventListener('submit', function(e) {
+      // Check if any items have lead time data (via DOM spans or cart data)
+      var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
+      if (spans.length === 0) return;
+
+      e.preventDefault();
+      updateOrderPromiseDate();
+
+      fetch('/cart.js', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(cart) {
+        var promiseDateMap = {};
+        spans.forEach(function(span) {
+          var key = span.getAttribute('data-line-key');
+          var leadTime = parseInt(span.getAttribute('data-leadtime'), 10);
+          if (key && leadTime) {
+            promiseDateMap[key] = formatPromiseDate(leadTime);
+          }
+        });
+
+        var itemsToUpdate = cart.items.filter(function(item) {
+          return promiseDateMap[item.key];
+        });
+
+        function processUpdates(index) {
+          if (index >= itemsToUpdate.length) {
+            if (!cartForm.querySelector('input[name="checkout"]')) {
+              var ci = document.createElement('input');
+              ci.type = 'hidden';
+              ci.name = 'checkout';
+              ci.value = '';
+              cartForm.appendChild(ci);
+            }
+            cartForm.submit();
+            return;
+          }
+          var item = itemsToUpdate[index];
+          var mergedProps = Object.assign({}, item.properties || {}, {
+            '_Promise Date': promiseDateMap[item.key]
+          });
+          fetch('/cart/change.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              id: item.key,
+              quantity: item.quantity,
+              properties: mergedProps
+            })
+          }).then(function() {
+            processUpdates(index + 1);
+          }).catch(function() {
+            processUpdates(index + 1);
+          });
+        }
+
+        processUpdates(0);
+      })
+      .catch(function() {
+        if (!cartForm.querySelector('input[name="checkout"]')) {
+          var ci = document.createElement('input');
+          ci.type = 'hidden';
+          ci.name = 'checkout';
+          ci.value = '';
+          cartForm.appendChild(ci);
+        }
+        cartForm.submit();
+      });
+    });
+  }
+
+  // Checkout gating and attribute persistence (flooring carts only)
+  const checkoutButton = document.querySelector('.cart__checkout-button.button');
+  const checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
+  const checkbox = document.querySelector('.terms_agreed');
+
+  if (!checkoutButton || !checkboxWrapper) return;
+
+  if (checkboxWrapper.classList.contains('no_flooring')) {
+    checkoutButton.removeAttribute('disabled');
+    return;
+  }
+
+  checkoutButton.setAttribute('disabled', true);
+
+  var hiddenDateInput = document.getElementById('hidden-delivery-date');
+
+  function updateCheckoutState() {
+    var dateOk = !hiddenDateInput || hiddenDateInput.value.trim() !== '';
+    var termsOk = !checkbox || checkbox.checked;
+    if (dateOk && termsOk) {
+      checkoutButton.removeAttribute('disabled');
+    } else {
+      checkoutButton.setAttribute('disabled', true);
+    }
+  }
+
+  if (checkbox) {
+    checkbox.addEventListener('change', updateCheckoutState);
+  }
+  if (hiddenDateInput) {
+    hiddenDateInput.addEventListener('change', updateCheckoutState);
+  }
+
+  updateCheckoutState();
+
+  // Persist cart attributes via AJAX on change so they survive checkout
+  function persistCartAttributes() {
+    var attrs = {};
+    var deliveryDate = document.getElementById('hidden-delivery-date');
+    if (deliveryDate && deliveryDate.value) attrs['Flooring Delivery Date'] = deliveryDate.value;
+    var accessRestrictions = document.getElementById('access-restrictions');
+    if (accessRestrictions && accessRestrictions.value.trim()) attrs['Access Restrictions'] = accessRestrictions.value.trim();
+    var termsCheckbox = document.getElementById('terms_agreed');
+    if (termsCheckbox) attrs['terms agreed'] = termsCheckbox.checked ? 'Yes' : '';
+    if (Object.keys(attrs).length > 0) {
+      fetch('/cart/update.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ attributes: attrs })
+      }).catch(function() { /* silent */ });
+    }
+  }
+
+  var accessTextarea = document.getElementById('access-restrictions');
+  if (accessTextarea) {
+    var debounceTimer;
+    accessTextarea.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(persistCartAttributes, 500);
+    });
+  }
+  if (hiddenDateInput) {
+    hiddenDateInput.addEventListener('change', persistCartAttributes);
+  }
+  if (checkbox) {
+    checkbox.addEventListener('change', persistCartAttributes);
+  }
+});
+</script>
+
+                 </div>
+               </div>
+            {%- when 'buttons' -%}
+              <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <button
+                  type="submit"
+                  id="checkout"
+                  class="cart__checkout-button button"
+                  name="checkout"
+                  {% if cart == empty %}
+                    disabled
+                  {% endif %}
+                  form="cart"
+                >
+                  {{ 'sections.cart.checkout' | t }}
+                </button>
+              </div>
+             {% if block.settings.show_dynamic_button %}
+              {%- if additional_checkout_buttons -%}
+                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {%- endif -%}
+               {% endif %}
+            <div class="footer__column footer__column--info">
+              {%- if block.settings.payment_enable -%}
+                <div class="footer__payment">
+                <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+                <ul class="list list-payment" role="list">
+                  {%- for type in shop.enabled_payment_types -%}
+                    <li class="list-payment__item">
+                      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                    </li>
+                  {%- endfor -%}
+                  </ul>
+                </div>
+                {%- endif -%}
+              </div>
+             {% if block.settings.custom_text != blank %}
+               <div class="custom__text__wrapper">
+                 <div class="rte">
+                   {{ block.settings.custom_text }}
+                 </div>
+               </div>
+             {% endif %}
+          {%- endcase -%}
+        {% endfor %}
+
+        <div id="cart-errors"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "main_cart-footer-wrapper",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_tax",
+          "label": "Show tax description"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_button",
+          "label": "Show dynamic checkout buttons"
+        },
+        {
+          "type": "checkbox",
+          "id": "payment_enable",
+          "label": "Show payment icons"
+        },
+        {
+          "type": "richtext",
+          "id": "custom_text",
+          "label": "Custom Text"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "info_checkbox",
+          "label": "Show information checkbox"
+        },
+        {
+          "type": "richtext",
+          "id": "info_label",
+          "label": "Information label",
+          "visible_if": "{{ block.settings.info_checkbox == true }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "terms_agreed",
+          "label": "Show terms checkbox"
+        },
+        {
+          "type": "richtext",
+          "id": "terms_label",
+          "label": "Terms label",
+          "visible_if": "{{ block.settings.terms_agreed == true }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_datepicker",
+          "label": "Show datepicker"
+        },
+        {
+          "type": "checkbox",
+          "id": "disable_weekends",
+          "label": "Disable weekends in datepicker",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "count_weekends_in_lead_time",
+          "label": "Count weekends in lead time calculation",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "datepicker_title",
+          "label": "Datepicker title",
+          "visible_if": "{{ block.settings.show_datepicker == true }}"
+        },
+        {
+          "type": "text",
+          "id": "datepicker_text",
+          "label": "Datepicker text",
+          "visible_if": "{{ block.settings.show_datepicker == true }}"
+        },
+        {
+          "type": "number",
+          "id": "default_lead_time_days",
+          "label": "Default lead time days",
+          "info": "Used when a product does not have a lead_time_days metafield set. Minimum number of days from today before a delivery date can be selected.",
+          "default": 14,
+          "visible_if": "{{ block.settings.show_datepicker == true }}"
+        },
+        {
+          "type": "number",
+          "id": "max_days_ahead",
+          "label": "Maximum days ahead",
+          "info": "The furthest date into the future a customer can select.",
+          "default": 31,
+          "visible_if": "{{ block.settings.show_datepicker == true }}"
+        },
+        {
+          "type": "text",
+          "id": "access_title",
+          "label": "Access restrictions title"
+        },
+        {
+          "type": "richtext",
+          "id": "access_text",
+          "label": "Access restrictions text"
+        },
+        {
+          "type": "text",
+          "id": "access_question",
+          "label": "Access restrictions question"
+        },
+        {
+          "type": "text",
+          "id": "access_placeholder",
+          "label": "Access restrictions placeholder"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

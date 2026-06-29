@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "title_warning_header": {
+      "type": "title-with-rich-text",
+      "custom_css": [
+        ".rich-text__text {max-width: 600px; margin-left: auto; margin-right: auto; font-size: 16px; font-weight: 300; line-height: 24px;}",
+        ".rich-text__text p {margin: 0;}",
+        ".rich-text__text a {text-decoration: underline !important; color: rgb(137, 137, 137) !important;}"
+      ],
+      "blocks": {
+        "heading_prop65": {
+          "type": "heading",
+          "settings": {
+            "heading": "Warning for California Residents",
+            "heading_size": "hxxl"
+          }
+        },
+        "warning_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>\u00a0\u26a0\u00a0WARNING</strong>\u00a0-\u00a0This product can expose you to chemicals including Lead, which is known to the State of California to cause cancer and birth defects or other reproductive harm. For more information go to\u00a0<a href=\"http://www.p65warnings.ca.gov/\"><u>www.P65Warnings.ca.gov</u></a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_prop65",
+        "warning_text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 24
+      }
+    },
+    "body_content": {
+      "type": "title-with-rich-text",
+      "custom_css": [
+        ".rich-text__text {column-count: 2; column-gap: 32px; color: #595959; font-size: 16px; font-weight: 300; line-height: 24px; max-width: 100% !important; width: 100% !important;}",
+        ".rich-text__text p {margin: 0; padding: 0;}",
+        ".rich-text__text strong {font-weight: 400;}",
+        ".rich-text__blocks {max-width: 1100px; width: 100%;}",
+        "@media (max-width: 749px) {.rich-text__text {column-count: 1;}}"
+      ],
+      "blocks": {
+        "body_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Brass Hardware</strong></p><p>\u00a0</p><p>Brass contains small percentages of lead to enhance its properties, making it suitable for various manufacturing processes. We use a range of traditional\u00a0and modern manufacturing techniques that require varying alloys of brass.</p><p>\u00a0</p><p><strong>Brass Taps</strong></p><p>\u00a0</p><p>All of our brass taps comply with NSF/ANSI 61 standards.\u00a0</p><p>NSF/ANSI 61 is an American National Standard developed by the National Sanitation Foundation (NSF)\u00a0and the American National Standards Institute (ANSI).\u00a0NSF/ANSI 61 focuses on the health effects of products, components, and materials that come into contact with drinking water.\u00a0NSF/ANSI 61 certification provides peace of mind to consumers by indicating which products\u00a0are safe for use in drinking water systems.</p><p>\u00a0</p><p><strong>Furniture</strong></p><p>\u00a0</p><p>Our carcasses and shelves are made from high-quality birch-veneered plywood which gives excellent rigidity.</p><p>The plywood used in our furniture is CARB Phase 2 compliant.\u00a0</p><p>CARB 2 is a regulation created by the California Air Resources Board (CARB). The board created this as a way to prevent formaldehyde from being released into the air and reducing the air quality.</p><p>The CARB phase 2 certification signifies that the product releases a low enough amount of formaldehyde to be considered safe.</p><p>Any formaldehyde released by products with a CARB phase 2 compliant seal is a small enough amount that it has absolutely no risk to your health.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "body_text"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "main",
+    "title_warning_header",
+    "body_content"
+  ]
+}

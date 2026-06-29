@@ -1,0 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "authors-directory",
+      "settings": {
+        "storefront_token": "354822f054bfd59214005d61f7b81503",
+        "blogs_page_size": 50,
+        "articles_page_size": 100,
+        "max_blogs": 500,
+        "max_articles_per_blog": 2000,
+        "max_total_articles": 1000,
+        "show_images": true,
+        "truncate_chars": 180
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

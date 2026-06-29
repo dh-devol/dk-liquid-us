@@ -1,0 +1,523 @@
+.multicolumn .title {
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.multicolumn.no-heading .title {
+  display: none;
+}
+
+.multicolumn .title-wrapper-with-link {
+  margin-top: 0;
+}
+
+.multicolumn-list__item {
+  margin-bottom: 2.4em;
+}
+
+.page-about .multicolumn-list__item {
+  margin-bottom: 2em;
+}
+
+.page-shaker-kitchen-paint-colours .multicolumn-list__item {
+  margin-bottom: 0;
+}
+
+.page-shaker-kitchen-paint-colours .grid {
+  column-gap:16px;
+}
+
+@media screen and (max-width: 749px) {
+  .multicolumn .title-wrapper-with-link {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .multicolumn__title {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  /* custom css */
+  .collection-page .custom-product-list .title-wrapper-with-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* custom css */
+}
+
+@media screen and (max-width: 989px) {
+  .multicolumn .page-width {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.multicolumn-card__image-wrapper--third-width {
+  width: 33%;
+}
+
+.multicolumn-card__image-wrapper--half-width {
+  width: 50%;
+}
+
+.multicolumn-list__item.center
+  .multicolumn-card__image-wrapper:not(
+    .multicolumn-card__image-wrapper--full-width
+  ),
+.multicolumn-list__item:only-child {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.multicolumn .button {
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .multicolumn .button {
+    margin-top: 4rem;
+  }
+}
+
+.multicolumn-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.multicolumn-list__item--empty {
+  display: none;
+}
+
+.multicolumn:not(.background-none) .multicolumn-card {
+  background: rgb(var(--color-background));
+  height: 100%;
+}
+
+.multicolumn.background-primary .multicolumn-card {
+  background: rgb(var(--color-background))
+    linear-gradient(
+      rgba(var(--color-foreground), 0.04),
+      rgba(var(--color-foreground), 0.04)
+    );
+}
+
+.multicolumn-list h3 {
+  line-height: calc(1 + 0.5 / max(1, var(--font-heading-scale)));
+}
+
+.multicolumn-list h3,
+.multicolumn-list p {
+  margin: 0;
+}
+
+.page-kitchen-enquiries .multicolumn-list h3{
+  font-size: 22px;
+}
+
+.multicolumn-card-spacing {
+  /* padding-top: 2.5rem; */
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.multicolumn-card__info > :nth-child(2) {
+  /*margin-top: 1rem;*/
+}
+
+.multicolumn-list__item.center .media--adapt,
+.multicolumn-list__item .media--adapt .multicolumn-card__image {
+  width: auto;
+}
+
+.staff-row .multicolumn-list__item .media--adapt .multicolumn-card__image {
+  width: 100%;
+}
+.multicolumn-list__item.center .media--adapt img {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width:768px){
+ .page-contact .multicolumn .title-wrapper-with-link{
+  justify-content:flex-start !important;
+  font-size:1.8em;
+ }
+}
+/* @media (min-width:768px) and (max-width:989px){
+ .page-contact .multicolumn-list:not(.slider) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+} */
+@media screen and (max-width: 990px) {
+  .multicolumn-list {
+    margin: 0;
+    width: 100%;
+  }
+
+  /* .multicolumn-list:not(.slider) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  } */
+}
+@media (max-width: 767px){
+    .multicolumn-list:not(.slider) {
+    padding-left: 0;
+    padding-right: 0;
+    column-gap: 20px;
+  }
+  .kitchen .multicolumn-list:not(.slider) {
+    column-gap: 0;
+    row-gap:0;
+  }
+  .collection-page .custom-product-list .multicolumn-list {
+	    max-width: 100%;
+	}
+}
+
+
+@media screen and (min-width: 750px) {
+  .multicolumn-list.slider {
+    padding: 0;
+  }
+
+  .multicolumn-list__item,
+  .grid--4-col-desktop .multicolumn-list__item {
+    padding-bottom: 0;
+
+  }
+
+  .background-none .grid--2-col-tablet .multicolumn-list__item {
+    margin-top: 4rem;
+  }
+}
+
+.background-none .multicolumn-card-spacing {
+  padding: 0;
+  margin: 0;
+}
+
+/* .multicolumn-card__info {
+  padding: 2.5rem;
+} */
+
+.background-none .multicolumn-card__info {
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.background-none .slider .multicolumn-card__info {
+  padding-bottom: 0;
+}
+
+.background-none .multicolumn-card__image-wrapper + .multicolumn-card__info {
+  padding-top: 2.5rem;
+}
+
+.background-none .slider .multicolumn-card__info {
+  padding-left: 0.5rem;
+}
+
+.background-none
+  .slider
+  .multicolumn-card__image-wrapper
+  + .multicolumn-card__info {
+  padding-left: 1.5rem;
+}
+
+.background-none
+  .multicolumn-list:not(.slider)
+  .center
+  .multicolumn-card__info {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+@media screen and (max-width: 749px) {
+  .background-none .slider .multicolumn-card__info {
+    padding-bottom: 1rem;
+  }
+
+  .multicolumn.background-none .slider.slider--mobile {
+    margin-bottom: 0rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .background-none .multicolumn-card__image-wrapper {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .background-none .multicolumn-list .multicolumn-card__info,
+  .background-none
+    .multicolumn-list:not(.slider)
+    .center
+    .multicolumn-card__info {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.multicolumn-card {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.multicolumn-card
+  > .multicolumn-card__image-wrapper--full-width:not(
+    .multicolumn-card-spacing
+  ) {
+  border-top-left-radius: calc(
+    var(--text-boxes-radius) - var(--text-boxes-border-width)
+  );
+  border-top-right-radius: calc(
+    var(--text-boxes-radius) - var(--text-boxes-border-width)
+  );
+  overflow: hidden;
+}
+
+.multicolumn.background-none .multicolumn-card {
+  border-radius: 0;
+}
+
+.multicolumn-card__info .link {
+  text-decoration: none;
+  font-size: inherit;
+  margin-top: 1.5rem;
+}
+
+.multicolumn-card__info .icon-wrap {
+  margin-left: 0.8rem;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 990px) {
+  .multicolumn-list__item--empty {
+    display: list-item;
+  }
+}
+
+/* catalogue-products css start */
+.catalogue-products .catalogue_product_dimensions {
+  display: inline-flex;
+  margin-right: 6px;
+}
+.catalogue-products .catalogue-card-text-and-image-separated {
+  width: 100%;
+  max-width: 100%;
+}
+.catalogue-products
+  .catalogue-card-text-and-image-separated
+  .multicolumn-card
+  .multicolumn-card__image-wrapper {
+  margin: 0;
+}
+.catalogue-products
+  .catalogue-card-text-and-image-separated
+  .multicolumn-card
+  .multicolumn-card__image-wrapper
+  .media--portrait {
+  padding-bottom: 0;
+}
+.catalogue-products
+  .catalogue-card-text-and-image-separated
+  .multicolumn-card
+  .multicolumn-card__image-wrapper
+  .multicolumn-card__image {
+  position: static;
+  object-fit: contain;
+  width: 100%;
+}
+.catalogue-products .catalogue_supporting_information table:not([class]) {
+  width: 100%;
+  box-shadow: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.catalogue-products
+  .catalogue_supporting_information
+  table:not([class])
+  td,
+.catalogue-products
+  .catalogue_supporting_information
+  table:not([class])
+  th {
+  border: none;
+  padding: 0;
+  font-size: 16px;
+}
+.catalogue-products
+  .catalogue_supporting_information
+  table:not([class])
+  td:first-child {
+  padding-right: 16px;
+  width: 70%;
+}
+.catalogue-products
+  .catalogue_supporting_information
+  table:not([class])
+  td:last-child {
+  width: 30%;
+  text-align: right;
+  white-space: nowrap;
+}
+.catalogue-products
+  .catalogue_supporting_information
+  table:not([class])
+  th {
+  text-align: left;
+  padding-bottom: 4px;
+}
+.catalogue-products
+  .catalogue_supporting_information
+  table:not([class])
+  th[colspan] {
+  width: 100%;
+}
+.catalogue-products .catalogue_supporting_information tr {
+  height: 24px;
+}
+.catalogue-products .multicolumn-card__info .rte {
+  margin-top: 13px;
+}
+.catalogue-products .multicolumn-card__info .catalogue_product_description {
+  margin-top: 19px;
+}
+.catalogue-products .catalogue_supporting_information {
+  margin-top: 41px;
+}
+.catalogue-products .catalogue-card-full-width {
+  width: 100%;
+  max-width: 100%;
+}
+.catalogue-products .catalogue-card-full-width .multicolumn-card__image {
+  position: static;
+}
+.catalogue-products .catalogue-card-full-width .media--portrait {
+  padding-bottom: 0;
+}
+.catalogue-products .catalogue-card-text-and-image-separated .media {
+  padding-bottom: 0 !important;
+}
+.catalogue-products .grid__item.catalogue-card-half-width {
+  width: calc(50% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+  max-width: calc(50% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+}
+.catalogue-products .catalogue-card-text-and-image-separated .multicolumn-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+.catalogue-products
+  .catalogue-card-text-and-image-separated
+  .multicolumn-card__info {
+  width: 100%;
+  max-width: 50%;
+}
+@media screen and (max-width: 590px) {
+  .catalogue-products .grid__item.catalogue-card-half-width {
+    width: 100%;
+    max-width: 100%;
+  }
+  .catalogue-products
+    .catalogue-card-text-and-image-separated
+    .multicolumn-card {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .catalogue-products
+    .catalogue-card-text-and-image-separated
+    .multicolumn-card__info {
+    width: 100%;
+    max-width: 100%;
+  }
+  /* .collection-page .custom-product-list .title-wrapper-with-link,
+  .collection-page .custom-product-list .multicolumn-list:not(.slider) {
+    padding: 0 1rem;
+  } */
+  
+  .collection-page .custom-product-list .multicolumn-list {
+    row-gap: 10px;
+    padding-bottom: 10px;
+  }
+}
+/* catalogue-products css end */
+
+
+.page-devols-tv-show .multicolumn .title{
+  margin: 0 !important;
+}
+.page-devols-tv-show .multicolumn-list .multicolumn-list__item{
+  margin-bottom: 1.4em;
+}
+.page-devols-tv-show .multi-video-column .title{
+  font-size: 1.4em;
+  margin-bottom: 28.8px !important;;
+}
+
+.page-devols-tv-show .multi-video-column.background-none .multicolumn-list .multicolumn-card__info{
+  padding-top: 16px;
+}
+.page-devols-tv-show .title-with-rich-text .rich-text__buttons{
+      margin-top: 25px;
+}
+
+.page-devols-tv-show .section-template--25492447887694__title_with_rich_text_Dwpdrd-padding{
+  padding-top: 0;
+  padding-bottom: 80px;
+}
+.page-the-real-shaker-kitchen .multicolumn .title,
+.page-the-classic-english-kitchen .multicolumn .title,
+.page-the-sebastian-cox-kitchen .multicolumn .title,
+.page-the-haberdashers-kitchen .multicolumn .title,
+.collection-page .multicolumn .title{
+  /*margin-bottom:42px;
+  margin-top:0;*/
+}
+
+@media screen and (min-width: 591px) and (max-width: 990px) {
+  .home-page .custom-multicolumn .subtitle__wrapper,
+  .home-page .custom-multicolumn .multicolumn-list:not(.slider), {
+    padding: 0 5rem;
+  }
+  /* .collection-page .custom-product-list .title-wrapper-with-link,
+  .collection-page .custom-product-list .multicolumn-list:not(.slider) {
+    padding: 0 1.5rem;
+  } */
+}
+/* @media screen and (min-width: 591px) and (max-width: 990px) {
+  .collection-page .custom-product-list .title-wrapper-with-link,
+  .collection-page .custom-product-list .multicolumn-list:not(.slider) {
+    padding: 0 5rem;
+  }
+} */
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+   .page-the-real-shaker-kitchen .multicolumn-list:not(.slider),
+    .page-the-classic-english-kitchen .multicolumn-list:not(.slider),
+    .page-the-sebastian-cox-kitchen .multicolumn-list:not(.slider),
+    .page-the-haberdashers-kitchen .multicolumn-list:not(.slider) {
+      padding:0 30px !important;
+    }
+
+  .page-the-real-shaker-kitchen .title-wrapper--self-padded-mobile,
+  .page-the-classic-english-kitchen .title-wrapper--self-padded-mobile,
+  .page-the-sebastian-cox-kitchen .title-wrapper--self-padded-mobile,
+  .page-the-haberdashers-kitchen .title-wrapper--self-padded-mobile {
+      padding:0 30px !important;
+  }
+  .page-the-real-shaker-kitchen .subtitle__wrapper,
+  .page-the-classic-english-kitchen .subtitle__wrapper,
+  .page-the-sebastian-cox-kitchen .subtitle__wrapper,
+  .page-the-haberdashers-kitchen .subtitle__wrapper {
+    padding:0 30px !important;
+  }
+  .collection-page .custom-product-list .multicolumn-list {
+      padding-left: 0;
+      padding-right: 0;
+  }
+}
+

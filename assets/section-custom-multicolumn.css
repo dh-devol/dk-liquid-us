@@ -1,0 +1,755 @@
+.custom-multicolumn .multicolumn-card__info .rte.italic {
+  font-style: italic;
+  margin-top:0.1em;
+  line-height: 1.5em;
+}
+
+.custom-multicolumn .multicolumn__title{
+  justify-content: center;
+}
+
+ body.kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title {
+  margin: 3.4em 0 3.2em 0;
+}
+@media (max-width: 768px){
+body.kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title {
+  padding: 0;
+  margin: 2em 0 3em 0;
+}
+}
+body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
+  margin: 1.5em 0 0 0;
+}
+.kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
+  margin: 1em 0;
+  line-height:36px;
+}
+ .home-page .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
+  padding-inline: 2.5em;
+  /*margin: 1.5em 0 1em;*/
+}
+
+#simple-furniture-beautifully-made.custom-multicolumn .subtitle__wrapper .sub-heading {
+  margin-top: 0.0;
+}
+
+.home-page .custom-multicolumn .subtitle__wrapper.above__margin{
+ padding-top:0;
+}
+.custom-multicolumn .subtitle__wrapper .sub-heading{
+  margin-bottom:17px;
+}
+.catalogue__multicolumn.custom-multicolumn .subtitle__wrapper .sub-heading{
+  margin-bottom:24px;
+}
+.subtitle__wrapper {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+.custom-multicolumn.background-none .multicolumn-card__image-wrapper {
+  margin-left: 0;
+  margin-right: 0;
+}
+.custom-multicolumn.background-none .multicolumn-card__image-wrapper+.multicolumn-card__info{
+  padding:0;
+}
+.custom-multicolumn.background-none .multicolumn-card__image-wrapper+.multicolumn-card__info h3{
+  padding-left:0;
+  padding-right:0;
+  padding-top:9px;
+  padding-bottom:0;
+}
+.custom-multicolumn .multicolumn-list__item:only-child {
+    max-width: 100%;
+}
+.custom-multicolumn .multicolumn-card__info>.sub-text {
+    margin-top: 1.6px;
+}
+
+.custom-multicolumn .multicolumn-card__info .rte{
+  max-width:95%;
+  margin-top:12.8px
+}
+.devol-tv-show-page .custom-multicolumn .multicolumn-card__info .rte{
+  margin-top:13.5px;
+  max-width:80%;
+  font-weight: 300;
+}
+.custom-multicolumn.background-none .multicolumn-card__image-wrapper+.multicolumn-card__info p:last-child {
+    width: 100%;
+}
+.custom-multicolumn .multicolumn-card__info a{
+  text-decoration:none;
+}
+.custom-multicolumn .multicolumn-card__info a:hover{
+  color:currentcolor;
+}
+
+/* .showroom__listing-wrapper .top__section-border:before, .showroom__listing-wrapper .top__section-border:after{
+  max-width:1600px;
+}  */
+.sub_heading--link{
+  color:#595959;
+  text-decoration:none;
+  font-weight: 500;
+  font-size: 18px;
+  margin-top:10px;
+}
+.sub_heading--link:hover{
+  text-decoration:underline;
+}
+.description_above--image{
+  margin-bottom:13px;
+  flex: 1
+}
+.top__text-section .multicolumn-card{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.top__text-section .multicolumn-card__info:empty{
+  display:none;
+}
+.top__text-section.custom-multicolumn .multicolumn__title {
+    justify-content: flex-start;
+    margin-bottom: 66px;
+}
+.brochure__book-section .multicolumn-card__info .link{
+  background-color: #27333f;
+  color:#fff;
+  text-decoration:none; 
+  padding:8px 16px;
+  font-size:16px;
+  line-height:24px;
+  margin-top:19.2px;
+}
+.brochure__book-section .multicolumn-card__info .link:hover{
+  color:#fff; 
+}
+.brochure__book-section .multicolumn__title{
+  margin-bottom:59px;
+}
+.brochure__book-section.custom-multicolumn .multicolumn-card__info .rte {
+    max-width: 80%;
+}
+
+/* ======================================================================== */
+.staff-multicolumn.custom-multicolumn .subtitle__wrapper .sub-heading {
+    margin: 19px 0;
+    line-height: normal;
+}
+.staff-multicolumn.custom-multicolumn .staff-row{
+  margin-bottom:0px;
+}
+.staff-detail{
+  height:0;
+  max-height:0;
+  opacity:0;
+  transition: all 0.1s ease-in-out;
+  display:flex;
+  column-gap:29px;
+}
+.staff-detail.active{
+  height:auto;
+  max-height:max-content;
+  opacity:1;
+  pointer-events: all;
+  transition: all 0.5s ease-in-out;
+  margin-bottom: 64px;
+  margin-top: 48px;
+  /* display:flex;
+  column-gap:29px; */
+}
+.staff__image-wrapper{
+  max-width:330px;
+  width:100%;
+}
+.staff__image-wrapper img{
+  object-fit:contain;
+  width:100%;
+}
+.staff__detail-wrapper{
+  width:100%;
+  max-width:100%;
+}
+.staff-name{
+  font-weight: 500;
+  margin-top:0;
+  margin-bottom:11.5px;
+  font-size: 1.2em;
+}
+.staff-degree{
+  font-weight: 300;
+  font-style: italic;
+  margin-top:1.6px;
+}
+.staff-description{
+  margin-top:32px;
+  column-count: 2;
+  column-gap: 48px;
+}
+.staff-description p + p, .staff-description p + ul{
+  margin-top:16px;
+}
+.staff-url__wrapper{
+  margin-top:16px;
+}
+.staff-url{
+    margin-top: 30px;
+    color: #898989;
+}
+.contact__section.custom-multicolumn .multicolumn__title{
+  margin-bottom:59px;
+}
+.contact__section.custom-multicolumn .multicolumn-card__info .inline-richtext{
+  font-size:22px;
+  font-weight:300;
+}
+.contact__section.custom-multicolumn .multicolumn-card__info .rte {
+    margin-top: 17.8px;
+}
+.custom-multicolumn.showroom_multicolumn .multicolumn-card__image-wrapper+.multicolumn-card__info h3{
+  font-size:22px;
+  font-weight:300;
+}
+.custom-multicolumn.showroom_multicolumn .multicolumn-card__info .rte {
+    max-width: 100%;
+}
+.custom-multicolumn.showroom_multicolumn .multicolumn-card__info .link {
+    color: #595959;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+.custom-multicolumn.showroom__description-wrapper .sub-heading{
+  font-size:24px;
+  line-height:24px;
+  margin-bottom:72px;
+  margin-top:2em;
+  line-height: 1.5;
+  width:70%;
+}
+.home-page .custom-multicolumn .subtitle__wrapper .sub-heading {
+  font-size:1.5em;
+  margin: 1.5em 0 1em 0;
+}
+.custom-product-list .subtitle__wrapper h3.sub-heading.hxl {
+    margin: 1.5em 0 1em 0;
+    color: #595959;
+}
+.custom-multicolumn.showroom__listing-wrapper .multicolumn-card__image-wrapper+.multicolumn-card__info h3 {
+    /*margin-top: 16px;*/
+    font-weight: 300;
+    font-size: 19.2px;
+}  
+.dash-showroom{  
+  opacity: 0.4;
+  margin-top: 0.25em !important;
+  margin-bottom: 1.25em;
+}
+.custom-multicolumn.showroom__listing-wrapper .multicolumn-card__info .link {
+    text-decoration: underline;
+    color: #595959;
+}
+
+.color_multicolumn.multicolumn .bg_color-main{
+  position: relative;
+  padding-top: 100%;
+  height:12em;
+  margin: 4% 1%;
+}
+.color_multicolumn.multicolumn .bg_color-main .inline-richtext{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Multi video column section css start */
+.devol-tv-show-page .multi-video-column.background-none .multicolumn-list .multicolumn-list__item {
+  margin-bottom: 38.4px;
+}
+.multi-video-column.background-none .multicolumn-list .multicolumn-card__info {
+    padding-left: 0;
+    padding-top: 22px;
+    padding-bottom: 14px;
+}
+.devol-tv-show-page .multi-video-column.background-none .multicolumn-list .multicolumn-card__info {
+    padding-top: 22.4px;
+}
+.custom-multicolumn.tv-show-about-devols .multicolumn-card__info .rte {
+    max-width: 100%;
+}
+
+/* Multi video column section css end */
+
+/* Support page css start */
+.support_tabs--wrapper .page-width {
+    max-width: 800px;
+    border-bottom: solid 1px #e5e5e5;
+    padding-right: 32px;
+    padding-left: 32px;
+}
+.support_tabs--wrapper .multicolumn-card__info a.link.animate-arrow {
+    color: #595959;
+    cursor: pointer;
+    font-weight: 300;
+}
+.support_tabs--wrapper .multicolumn-card__info a.link.animate-arrow.active {
+    text-decoration: underline;
+}
+.support_tabs--wrapper.background-none .multicolumn-list .multicolumn-card__info, .background-none .multicolumn-list:not(.slider) .center .multicolumn-card__info {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* Support page css end */
+
+/* project-multi-column metafield pages css start */
+.project-multi-column .multicolumn__title {
+    justify-content: left;
+}
+.project-multi-column .title-wrapper-with-link {
+    margin-bottom: 20px;
+}
+/* project-multi-column metafield pages css end */
+
+
+
+/* our story : start */
+
+.page-our-story .custom-multicolumn.two_column-paragraph_layout .multicolumn-card .rte{
+   column-count: 2;
+   gap: 20px;
+}
+.page-our-story .custom-multicolumn.two_column-paragraph_layout .multicolumn-card .rte p + p{
+  margin-top:16px;
+}
+
+.custom-multicolumn .multicolumn-card__info .rte>p{
+  margin-top: -7px;
+}
+.custom-multicolumn .multicolumn-card__info .rte>p.lght {
+    margin: 7px 0 20px;
+    color: rgb(89, 89, 89);
+    opacity: 0.4;
+}
+.custom-multicolumn .multicolumn-card__info .rte>p+p{
+  margin-top: 10px;
+}
+.custom-multicolumn .multicolumn-card__info .rte p:only-child {
+  margin-top:12.8px;
+}
+.brochure__book-section .slider-mobile-gutter>.grid li:last-child .rte p, .brochure__book-section .slider-mobile-gutter>.grid li:last-child .rte {
+    margin-top: 0;
+}
+
+
+/* Custom Css start here */
+
+.brochure__book-section .slider-mobile-gutter > .grid {
+  column-gap: 2.4em;
+}
+.brochure__book-section .slider-mobile-gutter > .grid .grid__item {
+  width: calc(50% - 2.4rem);
+}
+.page-our-brochure-book .custom-multicolumn.brochure__book-section h2.title {
+    margin-bottom: 58px;
+}
+.page-our-brochure-book .custom-multicolumn.background-none .multicolumn-card__image-wrapper+.multicolumn-card__info p:last-child{
+  width: 100%;
+}
+
+.page-devols-tv-show .custom-multicolumn.tv-show-about-devols .multicolumn-card__info .rte{
+  max-width: 100%;
+}
+
+@media (max-width: 430px){
+  .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title, .page-title-description:not(.catalogues__page-wrapper .page-title-description) {
+    font-size: 16px;
+    margin: 2.8em 0;
+  }
+}
+
+@media (max-width: 991px){
+.kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title {
+  padding: 2em 0 1.5em;
+  margin: 1em 0 0 0;
+}
+#simple-furniture-beautifully-made.custom-multicolumn .subtitle__wrapper .sub-heading {
+  margin-top: 0.3em;
+}
+.page-our-brochure-book .custom-multicolumn.brochure__book-section h2.title{
+  font-size: 1.8em;
+}
+.page-our-brochure-book .multicolumn .page-width{
+  max-width: 88% !important;
+}
+.page-our-brochure-book .title-wrapper--self-padded-mobile{
+  padding-left: 0;
+  padding-right: 0;
+}
+.page-our-brochure-book .multicolumn-list:not(.slider){
+  padding-right: 0;
+  padding-left: 0;
+}
+.brochure__book-section.custom-multicolumn .multicolumn-card__info .rte{
+  max-width: 90%;
+}
+.page-devols-tv-show .custom-multicolumn .multicolumn__title{
+    justify-content: center;
+}
+.page-devols-tv-show .title-with-rich-text .rich-text__blocks .rich-text__heading{
+    text-align: center;
+}
+.page-devols-tv-show .title-with-rich-text .rich-text__blocks{
+    text-align: center;
+}
+.page-devols-tv-show .title-with-rich-text .rich-text__blocks .rich-text__heading{
+    font-size: 1.4em;
+}
+.page-devols-tv-show .title-with-rich-text .rich-text__buttons{
+    justify-content: center;
+}
+.page-devols-tv-show .multicolumn-list:not(.slider){
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+}
+
+}
+
+
+@media (max-width: 767px){
+
+.page-our-brochure-book .custom-multicolumn.brochure__book-section h2.title{
+  font-size: 1.8em;
+  margin-top: 17px;
+  margin-bottom: 44.8px;
+}
+.custom-multicolumn.background-none .multicolumn-card__image-wrapper+.multicolumn-card__info p:last-child{
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+.brochure__book-section.custom-multicolumn .multicolumn-card__info .rte{
+  max-width: 95%;
+}
+.page-our-brochure-book .multicolumn-list__item{
+  margin-bottom: 1.8em; 
+}
+.page-devols-tv-show .multicolumn-list:not(.slider) {
+  padding-left: 0;
+  padding-right: 0;
+}
+.page-devols-tv-show .custom-multicolumn .multicolumn__title{
+  justify-content: flex-start;
+}
+.page-devols-tv-show .title-with-rich-text .rich-text__wrapper{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.page-devols-tv-show .title-with-rich-text .rich-text__blocks .rich-text__heading, .page-devols-tv-show .title-with-rich-text .rich-text__blocks{
+  text-align: left;
+}
+.custom-multicolumn.tv-show-about-devols ul.multicolumn-list li{
+margin-bottom:0px !important
+}
+.custom-multicolumn.tv-show-about-devols ul.multicolumn-list li h3+.rte,
+.custom-multicolumn.tv-show-about-devols ul.multicolumn-list li h3+.rte p{
+  margin-top:0px !important
+}
+
+}
+
+@media (min-width:590px) and (max-width:767px){
+  .page-devols-tv-show .multicolumn-list:not(.slider) {
+    max-width:93%;
+  }
+}
+
+/* Custom Css end here */
+
+
+
+/* our story : end */
+
+/* Responsive design : Start */
+@media screen and (max-width:1680px){
+/* .custom-multicolumn .subtitle__wrapper.above__margin {
+    margin-top: 58px;
+} */
+}
+@media screen and (max-width:1280px){
+  .custom-multicolumn.tv-show-about-devols .multicolumn-card__info .rte {
+    max-width: 100%;
+}
+}
+@media screen and (max-width:1025px){
+  .custom-multicolumn.support_tabs--wrapper .multicolumn-list{
+    justify-content:space-between;
+    gap:30px;
+  }
+  .custom-multicolumn.support_tabs--wrapper .multicolumn-list .grid__item {
+        width: 100%;
+        max-width: fit-content;
+  }
+}
+
+@media screen and (max-width:500px){ 
+ .custom-collapsible-content.staff-multicolumn .multicolumn-card__image-wrapper{
+        pointer-events: none;
+        display: block;
+        width: 100vw;
+        margin-left: -6.8%;
+  }
+}
+
+@media screen and (max-width:991px){
+  .subtitle__wrapper{
+    padding-top:10px;
+    padding-left:0;
+    padding-right:0;
+  }
+  .page-meet-the-staff .subtitle__wrapper{
+        padding-top:0;
+  }
+  .custom-multicolumn .multicolumn-list .grid__item{
+  width:100%;
+  max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+  .custom-multicolumn.full-width-column .multicolumn-list .grid__item{
+  width:100%;
+  max-width: 100%;  
+  }
+
+  .custom-multicolumn.support_tabs--wrapper .multicolumn-list{
+    padding: 0px 15px;
+    max-width:100%;
+  }
+  .custom-multicolumn.tv-show-about-devols .multicolumn-list .multicolumn-card__info{
+    padding:0;
+  }
+  .custom-collapsible-content.staff-multicolumn .multicolumn-card__image-wrapper{
+        pointer-events: none;
+  }
+  .custom-collapsible-content.staff-multicolumn .title_arrow-wrapper {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+  .custom-collapsible-content.staff-multicolumn span.accordion_sub_heading {
+    font-family: "EB Garamond", serif;
+    opacity: 1;
+    font-size: 16px;
+ }
+  .custom-collapsible-content.staff-multicolumn .accordion__content .link-wrapper {
+    margin-top: 14px;
+    margin-bottom: 40px;
+}
+  .custom-collapsible-content.staff-multicolumn .accordion__content .link-wrapper a{
+    font-size:16px;
+    text-decoration:underline;
+    color:#898989;
+  }
+  .custom-collapsible-content.staff-multicolumn .accordion {
+    margin-bottom:20px;
+  }
+  .catalogues__page-wrapper .catalogue__content-wrapper .catalogue__multicolumn .multicolumn-list{
+    padding-left:0;
+    padding-right:0;
+  }
+  .catalogue__multicolumn .subtitle__wrapper{
+    padding-left:0;
+  }
+  .color_multicolumn .grid--1-col-tablet-down .grid__item {
+        width: 100%;
+        max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+  .home-page .custom-multicolumn .multicolumn__title{
+      justify-content: center;
+  }
+  .custom-multicolumn .multicolumn__title{
+      justify-content: flex-start;
+  }
+  .color_multicolumn .multicolumn-list{
+    padding-left:0;
+    padding-right:0;
+  }
+  .catalogues__page-wrapper .catalogue__content-wrapper .catalogue__multicolumn .multicolumn-list .grid__item.multicolumn-list__item:only-child {
+    max-width: 100%;
+  }
+  .page-our-story .custom-multicolumn.two_column-paragraph_layout .multicolumn-list__item:only-child{
+    width:100%;
+    max-width:100%;
+  }
+  .page-our-story .custom-multicolumn.two_column-paragraph_layout .multicolumn-card .rte{
+   column-count: 1;
+}
+  
+     .home-page .title-wrapper-with-link .title.inline-richtext{
+              font-size: 1.8em;
+              margin-bottom:0px;
+    }
+}
+@media screen and (max-width:460px){
+    .home-page .title-wrapper-with-link .title.inline-richtext {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:749px){
+    .home-page .title-wrapper-with-link .title.inline-richtext {
+    margin: 0 auto;
+    text-align: center;
+    animation: none;
+  }
+  .home-page .section-template--25579147297102__project_multicolumns_qUNYyQ-padding {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .home-page .section-template--25579703468366__project_multicolumns_qUNYyQ-padding.animate--fade-in {
+        animation: none !important;
+    opacity: 1 !important;
+  }
+}
+@media screen and (max-width:589px){
+  .custom-multicolumn .multicolumn-list.grid--2-col-tablet-down .grid__item{
+    width:100%;
+    max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+  .custom-multicolumn .multicolumn-list.grid--1-col-tablet-down .grid__item{
+    width:100%;
+    max-width: 100%;
+  }
+  .custom-multicolumn .multicolumn-list .grid--2-col-tablet-down .grid__item{
+    width:100%;
+    max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+  .custom-multicolumn .multicolumn-list .grid--1-col-tablet-down .grid__item{
+    width:100%;
+    max-width: 100%;
+  }
+  .color_multicolumn .grid--2-col-tablet-down .grid__item {
+        width: 100%;
+        max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+  .color_multicolumn .grid--1-col-tablet-down .grid__item {
+        width: 100%;
+        max-width: 100%;
+  }
+  .custom-multicolumn .title{
+    text-align:center;
+    padding:0 30px;
+    line-height:35px;
+  }
+  .subtitle__wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .custom-multicolumn.background-none .multicolumn-card__image-wrapper+.multicolumn-card__info h3{
+    font-size:20px;
+  }
+  .custom-multicolumn .title {
+      padding: 0;
+   }
+  .custom-multicolumn.support_tabs--wrapper .multicolumn-list .grid__item {
+        width: 100%;
+        max-width: fit-content;
+  }
+  .custom-multicolumn.support_tabs--wrapper .multicolumn-list {
+        justify-content: flex-start;
+        gap: 30px;
+        row-gap: 0;
+      padding:0;
+  }
+  .support_tabs--wrapper .page-width {
+    padding-right: 50px;
+    padding-left: 20px; 
+  }
+  .page-the-real-shaker-kitchen .multicolumn-list:not(.slider) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+  .page-the-victorian-lacemakers-grange .multicolumn-list:not(.slider),  
+  .page-the-millhouse-kitchen .multicolumn-list:not(.slider),
+  .page-an-edwardian-home-in-mapesbury .multicolumn-list:not(.slider),
+  .page-the-stamp-house-kitchen-south-east-london .multicolumn-list:not(.slider){
+    max-width:100%;
+  }
+  #shopify-section-template--25495725605198__page_metafield_content_BYdAMp .page-width {
+    padding-bottom: 20px;
+  }
+  .page-kitchen-enquiries .multicolumn-list:not(.slider) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  }
+}
+.custom-multicolumn .multicolumn-list__item:only-child .multicolumn-card.content-container .description_above--image {
+    flex: 1;
+}
+/* Responsive design : End */
+
+
+
+/* Custom css */
+
+ .collection-page .custom-multicolumn .multicolumn-card__info .rte p:only-child{
+  margin-top:2px;
+}
+
+ .collection-page .custom-multicolumn .multicolumn-card__info .rte {
+  margin-top:2px;
+}
+@media (min-width: 590px) and (max-width: 991px) {
+  .home-page .subtitle__wrapper{ 
+        padding-left: 15px;
+        padding-right: 15px;
+  }
+}
+@media (min-width: 590px) {
+  .page-shaker-kitchen-paint-colours .color_multicolumn .grid--1-col-tablet-down .grid__item{
+    width: 100%;
+    max-width: calc(24% - var(--grid-desktop-horizontal-spacing) / 2) !important;
+  }
+}
+
+ .page-shaker-kitchen-paint-colours .color_multicolumn.multicolumn .bg_color-main .inline-richtext{
+  text-align:center;
+  font-size:16px;
+}
+
+@media (max-width:  990px) {
+  .custom-multicolumn .multicolumn-list__item.grid__item:only-child {
+      width: 100%;
+      max-width: 100%;
+  }
+
+}
+@media (max-width:  768px) {
+  .custom-multicolumn .multicolumn-list__item.grid__item:only-child>div {
+      margin-left: 0;
+      margin-right: 0;
+  }
+}
+.collection--page #MainContent .custom-product-list:nth-of-type(2) .title {
+  margin-top: 0;
+}
+
+.staff-row .multicolumn-list__item {
+    margin-bottom: 29px;
+}
+
+.multicolumn-list.grid {
+  row-gap:0;
+}
+
+@media screen and (max-width: 430px) {
+  .custom-multicolumn .multicolumn-card__info .rte:not(.rte.italic) {
+      font-size: 15px;
+  }
+  .devol-tv-show-page .custom-multicolumn .multicolumn-card__info .rte{
+    max-width:95%;
+  }
+  .custom-multicolumn.background-none .multicolumn-card__image-wrapper+.multicolumn-card__info p:last-child{
+    font-size: 15px;
+  }
+}

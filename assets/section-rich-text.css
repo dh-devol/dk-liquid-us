@@ -1,0 +1,139 @@
+.rich-text {
+  z-index: 1;
+}
+
+.rich-text__wrapper {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 4rem / var(--font-body-scale));
+}
+@media (max-width:768px){
+  .rich-text__wrapper {
+  width: 100%;
+}
+}
+
+.rich-text:not(.rich-text--full-width) .rich-text__wrapper {
+  margin: auto;
+  /*width: calc(100% - 8rem / var(--font-body-scale));*/
+}
+
+.rich-text__blocks {
+  width: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .rich-text__wrapper {
+    width: 100%;
+  }
+
+  .rich-text__wrapper--left {
+    justify-content: flex-start;
+  }
+
+  .rich-text__wrapper--right {
+    justify-content: flex-end;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .image-with-richtext.isolate .rich-text__blocks {
+    max-width: 45rem;
+  }
+}
+
+.rich-text__blocks * {
+  overflow-wrap: break-word;
+}
+
+
+.rich-text__buttons {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  max-width: 45rem;
+  word-break: break-word;
+}
+
+.rich-text__buttons--multiple > * {
+  flex-grow: 1;
+  min-width: 22rem;
+}
+
+.rich-text__buttons + .rich-text__buttons {
+  margin-top: 1rem;
+}
+
+.rich-text__blocks.left .rich-text__buttons {
+  justify-content: flex-start;
+}
+
+.rich-text__blocks.right .rich-text__buttons {
+  justify-content: flex-end;
+}
+
+.rich-text__blocks .rich-text__text p{ font-weight:300;}
+.catalogues__page-wrapper .catalogue-text-content .rich-text__text p{
+  max-width:550px;
+  margin-left: 0;
+}
+.description-columns {
+  column-gap: 20px;
+}
+
+.columns-1 {
+  column-count: 1;
+}
+
+.columns-2 {
+  column-count: 2;
+}
+
+.columns-3 {
+  column-count: 3;
+}
+
+.columns-4 {
+  column-count: 4;
+}
+
+@media screen and (max-width: 749px) {
+  .description-columns {
+    column-count: 1 !important;
+  }
+}
+.page.page-cotes-mill-leicestershire .description-columns,
+.page.page-st-johns-square-london .description-columns,
+.page.page-tysoe-street-london .description-columns,
+.page.page-george-street-bath .description-columns,
+.page.page-bond-street-new-york .description-columns,
+.page.page-la-cienega-blvd-los-angeles .description-columns
+{
+    column-gap: var(--grid-desktop-horizontal-spacing);
+}
+.page.page-cotes-mill-leicestershire .page-title-description:not(.catalogues__page-wrapper .page-title-description) .rte.inline-richtext.h1,
+.page.page-st-johns-square-london .page-title-description:not(.catalogues__page-wrapper .page-title-description) .rte.inline-richtext.h1,
+.page.page-tysoe-street-london .page-title-description:not(.catalogues__page-wrapper .page-title-description) .rte.inline-richtext.h1,
+.page.page-george-street-bath .page-title-description:not(.catalogues__page-wrapper .page-title-description) .rte.inline-richtext.h1,
+.page.page-bond-street-new-york .page-title-description:not(.catalogues__page-wrapper .page-title-description) .rte.inline-richtext.h1,
+.page.page-la-cienega-blvd-los-angeles .page-title-description:not(.catalogues__page-wrapper .page-title-description) .rte.inline-richtext.h1
+{
+    font-size: 1.5em;
+    margin-bottom: 60px !important;
+    margin-top: 0;
+    line-height: 1.5;
+    width: 70%;
+}
+
+.page.page-cotes-mill-leicestershire .page-title-description:not(.catalogues__page-wrapper .page-title-description) h1.rich-text__heading+.rich-text__text p,
+.page.page-st-johns-square-london .page-title-description:not(.catalogues__page-wrapper .page-title-description) h1.rich-text__heading+.rich-text__text p,
+.page.page-tysoe-street-london .page-title-description:not(.catalogues__page-wrapper .page-title-description) h1.rich-text__heading+.rich-text__text p,
+.page.page-george-street-bath .page-title-description:not(.catalogues__page-wrapper .page-title-description) h1.rich-text__heading+.rich-text__text p,
+.page.page-bond-street-new-york .page-title-description:not(.catalogues__page-wrapper .page-title-description) h1.rich-text__heading+.rich-text__text p,
+.page.page-la-cienega-blvd-los-angeles .page-title-description:not(.catalogues__page-wrapper .page-title-description) h1.rich-text__heading+.rich-text__text p
+{
+    width: 100%;
+    margin: 0 0 1.6em 0;
+}
