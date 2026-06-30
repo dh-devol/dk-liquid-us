@@ -220,6 +220,10 @@ class QuantityInput extends HTMLElement {
     this.input = this.querySelector('input');
     this.changeEvent = new Event('change', { bubbles: true });
     this.input.addEventListener('change', this.onInputChange.bind(this));
+    // Only add blur rounding outside the cart
+    if (!this.closest('cart-items') && !this.closest('cart-drawer-items')) {
+      this.input.addEventListener('blur', this.onInputBlur.bind(this));
+    } 
     this.querySelectorAll('button').forEach((button) =>
       button.addEventListener('click', this.onButtonClick.bind(this))
     );
@@ -240,6 +244,18 @@ class QuantityInput extends HTMLElement {
 
   onInputChange(event) {
     this.validateQtyRules();
+  }
+
+  onInputBlur(event) {
+    const rounded = Math.max(
+      Math.round(parseFloat(this.input.value) || 1),
+      parseInt(this.input.min) || 1
+    );
+    if (String(rounded) !== this.input.value) {
+      this.input.value = rounded;
+      this.input.dispatchEvent(new Event('input', { bubbles: true }));
+      this.input.dispatchEvent(this.changeEvent);
+    }
   }
 
   onButtonClick(event) {
