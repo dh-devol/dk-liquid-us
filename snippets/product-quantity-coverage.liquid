@@ -30,7 +30,13 @@
       data-calculator="{{ calculator_type }}"
     {% endif %}
   >
-    <div class="quantity_coverage-wrapper {{ tile_type }}">
+    {%- assign hide_calculator = false -%}
+    {%- unless product.selected_or_first_available_variant.available -%}
+      {%- if localization.country.iso_code != 'GB' and localization.country.iso_code != 'US' -%}
+        {%- assign hide_calculator = true -%}
+      {%- endif -%}
+    {%- endunless -%}
+    <div class="quantity_coverage-wrapper {{ tile_type }}"{% if hide_calculator %} style="display:none"{% endif %}>
       {% if tile_type != 'free length' and tile_type != 'variable pack' %}
         {% assign show_coverage = true %}
       {% else %}
@@ -44,7 +50,7 @@
         <div class="coverage_main-wrapper coverage-ft2-input-wrapper">
           <label for="CoverageFt2-{{ section.id }}" class="coverage__label form__label">Coverage (ft<sup>2</sup>)*</label>
           <div class="coverage-wrapper">
-            <button class="quantity__button tcalc-btn" type="button" id="CoverageFt2Minus-{{ section.id }}" aria-label="Decrease ft² coverage">
+            <button class="quantity__button tcalc-btn tcalc-btn--cov-minus" type="button" id="CoverageFt2Minus-{{ section.id }}" aria-label="Decrease ft² coverage">
               <span class="svg-wrapper">{{- 'icon-minus.svg' | inline_asset_content -}}</span>
             </button>
             <input
@@ -55,7 +61,7 @@
               id="CoverageFt2-{{ section.id }}"
               value="{{ qty_input_value | default: 1 | times: 10.7639 | round: 2 }}"
             >
-            <button class="quantity__button tcalc-btn" type="button" id="CoverageFt2Plus-{{ section.id }}" aria-label="Increase ft² coverage">
+            <button class="quantity__button tcalc-btn tcalc-btn--cov-plus" type="button" id="CoverageFt2Plus-{{ section.id }}" aria-label="Increase ft² coverage">
               <span class="svg-wrapper">{{- 'icon-plus.svg' | inline_asset_content -}}</span>
             </button>
           </div>
@@ -155,7 +161,7 @@
                 data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
                 max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
               {% endif %}
-              step="{% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}{{ qty_step }}{% else %}{{ product.selected_or_first_available_variant.quantity_rule.increment }}{% endif %}"
+              step="{% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}{{ qty_step }}{% elsif tile_type == 'free length' %}1{% else %}{{ product.selected_or_first_available_variant.quantity_rule.increment }}{% endif %}"
               value="{{ qty_input_value | default: 1 }}"
               form="{{ product_form_id }}"
             >
@@ -190,7 +196,7 @@
           {% endif %}
           {% if tile_type == 'free length' or tile_type == 'variable pack' %}
           <script>
-            document.addEventListener('DOMContentLoaded', function () {
+            (function () {
               var sectionId = {{ section.id | json }};
               var isFreeLength = {{ tile_type | json }} === 'free length';
               var M2_TO_FT2 = 10.7639;
@@ -200,6 +206,10 @@
               var ft2MinusBtn = document.getElementById('CoverageFt2Minus-' + sectionId);
               var ft2PlusBtn = document.getElementById('CoverageFt2Plus-' + sectionId);
               var totalPriceEl = document.getElementById('TotalPrice');
+
+              if (isFreeLength && quantityInput) {
+                quantityInput.setAttribute('step', '1');
+              }
 
               var calc = window.tileCalculator || {};
               var unitPriceCents = Number(calc.price) || 0;
@@ -218,7 +228,8 @@
                 if (!quantityInput || !totalPriceEl) return;
                 var qty = parseFloat(quantityInput.value);
                 if (isNaN(qty) || qty < 1) qty = 1;
-                totalPriceEl.textContent = formatPrice(unitPriceCents * qty);
+                var ft2 = isFreeLength ? qty * M2_TO_FT2 : qty;
+                totalPriceEl.textContent = formatPrice(unitPriceCents * ft2);
               }
 
               function syncFt2FromM2() {
@@ -251,21 +262,15 @@
 
               if (ft2MinusBtn) {
                 ft2MinusBtn.addEventListener('click', function () {
-                  var m2 = Math.max(1, parseInt(quantityInput.value, 10) || 1);
-                  m2 = Math.max(1, m2 - 1);
-                  quantityInput.value = m2;
-                  ft2Input.value = (m2 * M2_TO_FT2).toFixed(2);
-                  updateTotal();
+                  var m2Btn = quantityEl && quantityEl.querySelector('.quantity__button[name="minus"]');
+                  if (m2Btn) m2Btn.click();
                 });
               }
 
               if (ft2PlusBtn) {
                 ft2PlusBtn.addEventListener('click', function () {
-                  var m2 = Math.max(1, parseInt(quantityInput.value, 10) || 1);
-                  m2 = m2 + 1;
-                  quantityInput.value = m2;
-                  ft2Input.value = (m2 * M2_TO_FT2).toFixed(2);
-                  updateTotal();
+                  var m2Btn = quantityEl && quantityEl.querySelector('.quantity__button[name="plus"]');
+                  if (m2Btn) m2Btn.click();
                 });
               }
 
@@ -284,7 +289,7 @@
 
               syncFt2FromM2();
               updateTotal();
-            });
+            })();
           </script>
           {% endif %}
           {%- liquid
@@ -457,7 +462,7 @@
         <span id="TotalPrice">{{ product.price | money}}</span>
       </div>
     </div>
-    {% if product.metafields.custom.flooring_calculator_text.value != blank %}
+    {% if product.metafields.custom.flooring_calculator_text.value != blank and product.selected_or_first_available_variant.available %}
       <div class="coverage_note-wrapper offcut">
         <div class="rte">
           <p>{{ product.metafields.custom.flooring_calculator_text.value }}</p>

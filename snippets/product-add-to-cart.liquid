@@ -199,7 +199,11 @@
               {%- elsif product.selected_or_first_available_variant.available == false
                 or quantity_rule_soldout
               -%}
-                {{ 'products.product.sold_out' | t }}
+                {%- if localization.country.iso_code != 'GB' and localization.country.iso_code != 'US' -%}
+                  Unavailable to order online
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}

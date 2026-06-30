@@ -67,6 +67,7 @@
 
     const scope = root || document;
     scope.querySelectorAll('.quantity_coverage-wrapper').forEach(wrapper => {
+      if (wrapper.closest('[data-calculator]')?.dataset.calculator !== 'flooring') return;
       if (wrapper.dataset.flooringCalcInit === 'true') return;
       wrapper.dataset.flooringCalcInit = 'true';
       const qtyInput = wrapper.querySelector('.quantity__input');
@@ -118,8 +119,8 @@
     }
 
     function updateTotal() {
-      const qty = Number(qtyInput.value) || 0;
-      const subtotalCents = priceCents * qty;
+      const coverage = Number(coverageInput.value) || 0;
+      const subtotalCents = priceCents * coverage;
       totalPriceEl.textContent = formatPrice(subtotalCents, moneyFormat);
     }
 
@@ -151,7 +152,7 @@
 
     function decreaseCoverage() {
       let val = Number(coverageInput.value) || minCoverage;
-      const covStep = isLinear ? 1 : minCoverage;
+      const covStep = isLinear ? 1 : tile_area_m2 * qtyStep;
       val = subtractStep(val, covStep);
 
       const covMin = isLinear ? 1 : minCoverage;

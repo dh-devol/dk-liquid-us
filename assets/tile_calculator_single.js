@@ -128,9 +128,9 @@
   }
 
   function updateTotal() {
-    const qty = Number(qtyInput.value) || 0;
-    totalEl.textContent = formatPrice(priceCents * qty, moneyFormat);
-    console.log('[tile_calc] updateTotal', { qty, total: totalEl.textContent });
+    const coverage = Number(coverageInput.value) || 0;
+    totalEl.textContent = formatPrice(priceCents * coverage, moneyFormat);
+    console.log('[tile_calc] updateTotal', { coverage, total: totalEl.textContent });
   }
 
     const qtyMinusBtn = scope.querySelector('.tcalc-btn--qty-minus') || qtyInput.closest('.quantity')?.querySelector('button[name="minus"]');

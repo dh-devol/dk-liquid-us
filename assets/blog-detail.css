@@ -90,7 +90,9 @@
 }
 .blog__option-wrapper.active .blog__options{
   display:block;
-  margin-top: 0;
+}
+.blog__option-wrapper .blog__options{
+  margin-top: 0.45em;
 }
 .blog__option-wrapper.active .blog__title .svg-wrapper{
   transform: rotate(180deg);

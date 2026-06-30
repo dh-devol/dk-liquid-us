@@ -180,7 +180,7 @@
                                               <ul class="grid grid--1-col-tablet-down">
                                                 <li class="grid__item">
                                                   <a class="mega-menu_block-wrapper" href="{{ block.settings.link1 }}">
-                                                    <img src="{{ block.settings.image1 | image_url }}" height="auto" width="100%" alt="{{ block.settings.image1.alt }}">
+                                                    {%- if block.settings.image1 != blank -%}<img src="{{ block.settings.image1 | image_url }}" height="auto" width="100%" alt="{{ block.settings.image1.alt }}">{%- endif -%}
                                                     <div class="mega-menu_content-wrapper">
                                                       <h3>{{ block.settings.title1 }}</h3>
                                                       <span>{{ block.settings.text1 }}</span>
@@ -189,7 +189,7 @@
                                                 </li>
                                                 <li class="grid__item">
                                                   <a class="mega-menu_block-wrapper" href="{{ block.settings.link2 }}">
-                                                    <img src="{{ block.settings.image2 | image_url }}" height="auto" width="100%" alt="{{ block.settings.image2.alt }}">
+                                                    {%- if block.settings.image2 != blank -%}<img src="{{ block.settings.image2 | image_url }}" height="auto" width="100%" alt="{{ block.settings.image2.alt }}">{%- endif -%}
                                                     <div class="mega-menu_content-wrapper">
                                                       <h3>{{ block.settings.title2 }}</h3>
                                                       <span>{{ block.settings.text2 }}</span>

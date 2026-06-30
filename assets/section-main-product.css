@@ -246,7 +246,7 @@ p.sample-button-note {
  margin-top:0px;
 }
 .product-page .product .product-gallery-swiper{
-    max-width: 675px;
+    /* max-width: 675px; */
 }
 .product-page .add-to-cart-wrapper{
   margin:0;
@@ -1524,7 +1524,7 @@ a.product__text {
 
 
 .product .product__info-wrapper.grid__item {
-  padding: 0;
+  /* padding: 0; */
 }
 .product .product__title h1 {
     margin: 2.5em 0 0.5em;
@@ -2024,19 +2024,19 @@ margin-top:32px !important;
   }
 
 @media screen and (min-width: 990px) {
-   
-     .product-page  .product .product__info-wrapper.grid__item {
-        max-width: 40%;
-    }
-      .product-page   .product--large:not(.product--no-media) .product__media-wrapper {
-        max-width: 60%;
-        margin-right:40px;
-       
-    }
+  .product-page .product .product__info-wrapper.grid__item {
+    max-width: 40%;
+    padding-right: 0;
+    padding-left: 3rem;
+  }
+  .product-page .product--large:not(.product--no-media) .product__media-wrapper {
+    max-width: 60%;
+    /* margin-right:40px; */
+  }
 }
 
 @media screen and (max-width: 991px) {
-   .product-page  .product .product__info-wrapper.grid__item {
+   /* .product-page  .product .product__info-wrapper.grid__item {
         padding: 0 0 0 0 ;
          width: unset;
         max-width: 40%;
@@ -2045,13 +2045,22 @@ margin-top:32px !important;
         max-width: 60%;
         width: calc(60% - var(--grid-desktop-horizontal-spacing) / 2);
         padding: 0  0 0 0;
-    }
+    } */
      .product-page  product-info .product .product-gallery-swiper{
-      margin-right:40px;
+      margin-right: 0;
+      max-width: 100%;
     }
     .product-page .product-specification .specification-metafield .accordion__content.rte table tr:first-child td {
         width: auto;
-    } 
+    }
+}
+
+@media screen and (max-width: 989px) {
+  product-info .page-width {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 1025px) {
@@ -2172,4 +2181,13 @@ margin-top:32px !important;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* International OOS (flooring products outside US/GB): hide variant picker and Notify Me form */
+body:has(.not-for-sale--oos) #custom-select-wrapper {
+  display: none !important;
+}
+body:has(.not-for-sale--oos) #restock-rocket-inline-container,
+body:has(.not-for-sale--oos) .restock-rocket-wrapper-inline {
+  display: none !important;
 }

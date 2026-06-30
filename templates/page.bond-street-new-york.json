@@ -1,0 +1,424 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "page_metafield_gallery_Li4GBd": {
+      "type": "page-metafield-gallery",
+      "custom_css": [
+        ".slider__thumbs-wrapper {padding-bottom: 0;}",
+        ".slider__thumbs-wrapper::-webkit-scrollbar {height: 5px;}",
+        ".slider__thumbs-wrapper::-webkit-scrollbar-track {background: #f2f2f2; border-radius: 4px;}",
+        ".slider__thumbs-wrapper::-webkit-scrollbar-thumb {background: #898989; border-radius: 4px;}"
+      ],
+      "name": "Page metafield gallery",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "page_title_description_J3E4dg": {
+      "type": "page-title-description",
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "description_columns": 2,
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_multicolumns_xpBCAp": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_W4R47Y": {
+          "type": "column",
+          "settings": {
+            "link": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "<p>We are very happy to welcome you to deVOL in Manhattan, it’s our first showroom outside the British Isles. We have always had such great support from the people of New York and across the United States, so we felt this was the perfect spot to introduce ourselves. <br/><br/></p><p>Bond Street is located in between The Bowery and Lafayette Street, off East 2nd Street in East Village, an area known as NoHo. It’s a beautiful wide cobbled street with incredible architecture and a very bohemian history of artists, musicians and creatives.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "linked_product": ""
+          }
+        },
+        "column_fB3ekK": {
+          "type": "column",
+          "settings": {
+            "link": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "<p>Bond Street has long been associated with furniture and after the inevitable gentrification, has kept its charm and character and is a delightfully quiet part of town. <br/><br/></p><p>We have created four beautifully appointed kitchen displays in the main showroom, there is also a basement and yard full of vintage furniture, antiques and brocante. Lovely places for lunch are The Smile next door, or Il Buco Alimentari & Vineria on Great Jones Street which is open all day every day and is just a 3 minute walk from the showroom.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_W4R47Y",
+        "column_fB3ekK"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (max-width: 500px) {.description_above--image {margin-bottom: -20px; } li#Slide-template--25344076644686__custom_multicolumns_xpBCAp-2 {margin-top: -20px; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "28 Bond Street, a little piece of England in New York City",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 14,
+        "sectionname": "showroom__description-wrapper"
+      }
+    },
+    "title_with_rich_text_i7x9Vg": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_B84MtT": {
+          "type": "heading",
+          "settings": {
+            "heading": "Come and visit us",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_T7TL7a": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.showroom_timing | metafield_tag }}"
+          }
+        },
+        "text_KkfQhM": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.showroom_additional_note | metafield_tag }}"
+          }
+        },
+        "text_k7ckVz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>28 Bond Street, Manhattan, New York, NY 10012</p><p><a href=\"tel:212 210 6269\" title=\"tel:212 210 6269\">212 210 6269</a>   |   <a href=\"mailto:usa.enquiries@devolkitchens.com\" target=\"_blank\" title=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_B84MtT",
+        "text_T7TL7a",
+        "text_KkfQhM",
+        "text_k7ckVz"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.rich-text__blocks .rich-text__text p {max-width: 95%; }}",
+        ".rich-text__blocks .rich-text__text p {margin: 0 0 0.5em;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 60,
+        "sectionname": "showroom__title"
+      }
+    },
+    "showroom_multicolumn_eMnfM7": {
+      "type": "showroom-multicolumn",
+      "blocks": {
+        "column_X3pUnK": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/la-cienega-blvd-los-angeles",
+            "link_label": "Take a look around our Los Angeles showroom",
+            "custom_text_hover": "<p>Take a look around our Los Angeles showroom</p>",
+            "title": "",
+            "subtext": "",
+            "text": "",
+            "show_above_image": false
+          }
+        },
+        "column_hY9rDD": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/cotes-mill-leicestershire",
+            "link_label": "Take a look around Cotes Mill, Leicestershire",
+            "custom_text_hover": "<p>Take a look around Cotes Mill</p>",
+            "title": "",
+            "subtext": "",
+            "text": "",
+            "show_above_image": false
+          }
+        }
+      },
+      "block_order": [
+        "column_X3pUnK",
+        "column_hY9rDD"
+      ],
+      "custom_css": [
+        ".custom__text--on-hover .inner__hover-shadow {font-size: 1.2em; line-height: 1.2;}"
+      ],
+      "name": "Showroom multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "See our other kitchen showrooms",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "show_description": false,
+        "showroom_order": "timing,additional,address",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "sectionname": "showroom__listing-wrapper"
+      }
+    },
+    "showroom_multicolumn_LH333f": {
+      "type": "showroom-multicolumn",
+      "blocks": {
+        "column_HDXd8V": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/st-johns-square-london",
+            "link_label": "Take a look around our St John's Square showroom",
+            "custom_text_hover": "<p>Take a look around our St John's Square showroom</p>",
+            "title": "",
+            "subtext": "",
+            "text": "",
+            "show_above_image": false
+          }
+        },
+        "column_CwP9zt": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/tysoe-street-london",
+            "link_label": "Take a look around our Tysoe Street showroom",
+            "custom_text_hover": "<p>Take a look around our Tysoe Street showroom</p>",
+            "title": "",
+            "subtext": "",
+            "text": "",
+            "show_above_image": false
+          }
+        },
+        "column_zkw6BA": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/george-street-bath",
+            "link_label": "Take a look around our Bath showroom",
+            "custom_text_hover": "<p>Take a look around our Bath showroom</p>",
+            "title": "",
+            "subtext": "",
+            "text": "",
+            "show_above_image": false
+          }
+        }
+      },
+      "block_order": [
+        "column_HDXd8V",
+        "column_CwP9zt",
+        "column_zkw6BA"
+      ],
+      "custom_css": [
+        ".custom__text--on-hover .inner__hover-shadow {font-size: 1.2em; line-height: 1.2;}"
+      ],
+      "name": "Showroom multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "show_description": false,
+        "showroom_order": "timing,additional,address",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "showroom__listing-wrapper"
+      }
+    },
+    "custom_multicolumns_iawWNX": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_Viz9E8": {
+          "type": "column",
+          "settings": {
+            "link": "#",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/LA-Showroom-Mockup-Thumbnail-Use_jpg.webp",
+            "custom_text_hover": "Take a look around our Los Angeles showroom",
+            "title": "La Cienega Blvd, Los Angeles",
+            "show_text_double_column": false,
+            "text": "<p>Monday - Friday: 8.30am - 5pm PST<br/>Saturday: 10am - 5pm PST<br/>Sunday: Closed<br/> </p><p></p><p>740 N La Cienega Boulevard,<br/>Los Angeles, CA 90069</p><p>usa.west.enquiries@devolkitchens.com</p><p>+1 310 744 6000</p>",
+            "show_above_image": false,
+            "link_label": "Take a look around our La Cienega Blvd, Los Angeles",
+            "linked_product": ""
+          }
+        },
+        "column_FaRjgV": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/cotes-mill-leicestershire",
+            "dynamic_costs": "",
+            "custom_text_hover": "Take a look around our Manhattan Showroom",
+            "title": "Cotes Mill, Leicestershire",
+            "show_text_double_column": false,
+            "text": "<p>Monday - Friday: 8.30am - 5pm<br/>Saturday: 10am - 5pm<br/>Sunday: Closed</p><p></p><p></p><p><br/>Cotes Mill, Nottingham Road, Cotes,<br/>Leicestershire, LE12 5TL</p><p>enquiries@devolkitchens.co.uk</p><p>01509 261000</p>",
+            "show_above_image": false,
+            "link_label": "Take a look around Cotes Mill, Leicestershire",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Viz9E8",
+        "column_FaRjgV"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 64,
+        "sectionname": "showroom__listing-wrapper"
+      }
+    },
+    "custom_multicolumns_LfDyEJ": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_wnUR8G": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/st-johns-square-london",
+            "dynamic_costs": "",
+            "custom_text_hover": "Take a look around our St John's Square Showroom",
+            "title": "St John's Square, London",
+            "show_text_double_column": false,
+            "text": "<p>Monday - Friday: 9am - 5.30pm <br/>Saturday: 10am - 5pm<br/>Sunday: Closed<br/> </p><p></p><p>36 St John's Square, Clerkenwell,<br/>London, EC1V 4JJ<br/>london.enquiries@devolkitchens.co.uk<br/>020 3879 7900</p>",
+            "show_above_image": false,
+            "link_label": "Take a look around our St John's Square Showroom",
+            "linked_product": ""
+          }
+        },
+        "column_wa89w4": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/tysoe-street-london",
+            "dynamic_costs": "",
+            "custom_text_hover": "Take a look around our Tysoe Street Showroom",
+            "title": "Tysoe Street, London",
+            "show_text_double_column": false,
+            "text": "<p>Monday - Friday: 9am - 5.30pm<br/>Saturday: 10am - 5pm<br/>Sunday: Closed<br/> </p><p></p><p>2 Tysoe Street, Clerkenwell,<br/>London, EC1R 4RQ<br/>london.enquiries@devolkitchens.co.uk<br/>020 3837 5900</p>",
+            "show_above_image": false,
+            "link_label": "Take a look around our Tysoe Street Showroom",
+            "linked_product": ""
+          }
+        },
+        "column_yt676i": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/george-street-bath",
+            "dynamic_costs": "",
+            "custom_text_hover": "Take a look around our Bath showroom",
+            "title": "George Street, Bath",
+            "show_text_double_column": false,
+            "text": "<p>Monday - Friday: 9am - 5.30pm <br/>Saturday: 10am - 5pm<br/>Sunday: Closed<br/> </p><p></p><p>17 George Street, Bath,<br/>Somerset, BA1 2EN<br/>bath.enquiries@devolkitchens.co.uk<br/>01225 308803</p>",
+            "show_above_image": false,
+            "link_label": "Take a look around our Bath showroom",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_wnUR8G",
+        "column_wa89w4",
+        "column_yt676i"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "See our other kitchen showrooms",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 40,
+        "sectionname": "showroom__listing-wrapper"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_metafield_gallery_Li4GBd",
+    "page_title_description_J3E4dg",
+    "custom_multicolumns_xpBCAp",
+    "title_with_rich_text_i7x9Vg",
+    "showroom_multicolumn_eMnfM7",
+    "showroom_multicolumn_LH333f",
+    "custom_multicolumns_iawWNX",
+    "custom_multicolumns_LfDyEJ"
+  ]
+}

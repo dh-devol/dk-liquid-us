@@ -217,7 +217,7 @@
                       {%- endif -%}
 
                       {%- if show_international_oos and section.settings.out_of_stock_text != blank -%}
-                        <div class="not-for-sale">
+                        <div class="not-for-sale not-for-sale--oos">
                           <p style="color: #898989">Unavailable to order online</p>
                           {{ section.settings.out_of_stock_text }}
                         </div>
@@ -287,7 +287,7 @@
 
                             {%- unless product.selected_or_first_available_variant.available -%}
                               {%- if show_international_oos and section.settings.out_of_stock_text != blank -%}
-                                <div class="not-for-sale">
+                                <div class="not-for-sale not-for-sale--oos">
                                   <p style="color: #898989">Unavailable to order online</p>
                                   {{ section.settings.out_of_stock_text }}
                                 </div>
@@ -372,11 +372,13 @@
                 {%- when 'metafield_product' -%}
                   {% render 'product-metafield-product', product: product, block: block %}
                 {%- when 'variant_picker' -%}
-                  {% render 'product-variant-picker',
-                    product: product,
-                    block: block,
-                    product_form_id: product_form_id
-                  %}
+                  {%- unless show_international_oos -%}
+                    {% render 'product-variant-picker',
+                      product: product,
+                      block: block,
+                      product_form_id: product_form_id
+                    %}
+                  {%- endunless -%}
                 {%- when 'buy_buttons' -%}
                   {% if product.metafields.custom.unit_area_m2.value == blank %}
                     {% if product.metafields.custom.number_of_tile_for_coverage_1m2

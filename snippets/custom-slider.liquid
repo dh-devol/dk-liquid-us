@@ -4,7 +4,7 @@
     position: relative;
     height: 0;
     padding-top: 125%; /* 4:5 ratio (1800/1440) */
-    max-width: 792px;
+    {% comment %} max-width: 792px; {% endcomment %}
     margin-left: 0;
   }
   .product .product-gallery-swiper {
@@ -54,6 +54,11 @@
   /* Hide non-first slides before Swiper initialises to prevent flash of stacked images */
   .product .product-gallery-swiper:not(.swiper-initialized) .swiper-slide:not(:first-child) {
     display: none !important;
+  }
+  @media (min-width: 990px) {
+    .product .product-gallery-swiper-outer {
+      max-width: 792px;
+    }
   }
   @media (max-width: 430px) {
     .product .product-gallery-swiper .swiper-pagination {
