@@ -449,7 +449,7 @@ cart-remove-button .icon-remove {
 .cart_page-container .cart-item_custom__price {
     display: none;
 }
-.cart--page .flooring_product-items {
+.cart--page .flooring_product-items.mixed {
     margin-top: 40px;
 }
 .cart--page .cart_page-container .cart-item__quantity{

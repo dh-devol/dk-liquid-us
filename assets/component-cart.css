@@ -154,9 +154,9 @@ cart-items {
   .cart--page #main-cart-footer .page-width{
     padding-left:2em;
   }
-   #main-cart-footer .cart__footer .cart__blocks{
+   /* #main-cart-footer .cart__footer .cart__blocks{
     padding-top:10px;
-  } 
+  }  */
 }
 
 .cart__ctas button {
@@ -506,7 +506,7 @@ cart-items {
   min-height: auto;
 }
 .cart_custom-descrption-wrapper {
-    margin-top: 5px;
+    margin-top: 25px;
 }
 .date_picker-wrapper {
     margin-top: 0;
