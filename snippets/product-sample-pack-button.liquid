@@ -55,6 +55,28 @@
                           <input type="hidden" name="id" value="{{ sample_variant.id }}">
                           <input type="hidden" name="quantity" value="1" min="1" max="1">
                           <input type="hidden" name="properties[_parent_url]" value="{{ product.url }}">
+                          {% if product.metafields.custom.lead_time != blank %}
+                            <input
+                              id="lead_time"
+                              value="{{ product.metafields.custom.lead_time }}"
+                              type="hidden"
+                              name="properties[Lead time]"
+                            >
+                          {% endif %}
+                          {% if product.metafields.custom.lead_time_days != blank %}
+                            <input
+                              type="hidden"
+                              name="properties[_lead_time_days]"
+                              value="{{ product.metafields.custom.lead_time_days }}"
+                            >
+                            <input
+                              type="hidden"
+                              name="properties[_Promise Date]"
+                              class="js-promise-date-input"
+                              data-lead-days="{{ product.metafields.custom.lead_time_days }}"
+                              value=""
+                            >
+                          {% endif %}
                           {% if _pf_cart_qty_limit > 0 %}
                             <input type="hidden" name="properties[_cart_qty_tag]" value="{{ _pf_cart_qty_limit_tag | escape }}">
                           {% endif %}
