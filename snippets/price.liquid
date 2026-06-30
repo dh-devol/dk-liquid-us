@@ -218,14 +218,15 @@
         {%- else -%}
           <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
           <span class="price-item price-item--regular">
-            {{ money_price }}
             {%- assign area_raw = product.metafields.custom.unit_area_m2.value -%}
             {%- assign area = area_raw | times: 1.0 -%}
 
             {%- if product.template_suffix == 'handmade-tiles' -%}
-              per tile
+              {{ money_price }} per tile
             {%- elsif area and area > 0 -%}
-              per ft²
+              {{ product.metafields.custom.price_per_f2.value | money }} per f²
+            {%- else -%}
+              {{ money_price }}
             {%- endif -%}
 
           </span>
