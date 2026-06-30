@@ -1674,7 +1674,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
         background-color: #9f9f9f4d;
         width: 1px;
         height: 100%;
-        right: -5px;
+        right: 0px;
         top: 0;
   }
   .footer-block.grid__item.footer-block--menu {
