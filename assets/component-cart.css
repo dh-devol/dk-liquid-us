@@ -536,6 +536,11 @@ cart-items {
   -moz-appearance: none !important;
   color: #595959 !important;
 }
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: #595959 !important;
+  opacity: .5;
+}
 .date_picker-wrapper #date_select {
     width: 100%;
     height: auto;
