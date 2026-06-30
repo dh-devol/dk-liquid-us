@@ -415,6 +415,9 @@ cart-remove-button .icon-remove {
 .cart_page-container tbody .cart-item{
   border-bottom: none;
 }
+.cart_page-container tbody .cart-item .price {
+  letter-spacing: 0;
+}
 /* .cart_page-container .cart-items th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 } */
