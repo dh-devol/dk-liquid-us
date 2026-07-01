@@ -114,6 +114,14 @@
                 {%- assign has_flooring = true -%}
               {%- endif -%}
                <div class="cart_custom-descrption-wrapper {% unless has_flooring %}no_flooring{% endunless %}">
+                <div class="cart_title">
+                  {% if block.settings.title %}
+                    <h2 class="hxxl cart_description_title">{{ block.settings.title }}</h2>
+                  {% endif %}
+                  {% if block.settings.text %}
+                    {{ block.settings.text }}
+                  {% endif %}
+                </div>
                  <div class="cart_custom-description-inner">
                   {% if block.settings.show_datepicker %}
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">

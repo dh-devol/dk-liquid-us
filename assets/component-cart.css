@@ -638,7 +638,7 @@ cart-items {
 }
 .cart_custom-descrption-wrapper.no_flooring h2 , .cart_custom-descrption-wrapper.no_flooring .rte ,
 .cart_custom-descrption-wrapper.no_flooring .checkbox-wrapper , .cart_custom-descrption-wrapper.no_flooring .date_picker-wrapper ,
-.cart_custom-descrption-wrapper.no_flooring .access-restrictions-wrapper
+.cart_custom-descrption-wrapper.no_flooring .access-restrictions-wrapper, .cart_custom-descrption-wrapper.no_flooring .cart_title
 {
   display: none;
 }
