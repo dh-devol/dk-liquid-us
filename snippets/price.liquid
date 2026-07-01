@@ -224,7 +224,7 @@
             {%- if product.template_suffix == 'handmade-tiles' -%}
               {{ money_price }} per tile
             {%- elsif area and area > 0 -%}
-              {{ product.metafields.custom.price_per_f2.value | money }} per f²
+              {{ product.metafields.custom.price_per_f2.value | money }} per ft²
             {%- else -%}
               {{ money_price }}
             {%- endif -%}
