@@ -97,12 +97,12 @@
                 {% if block.settings.first_image != blank %}
                   <div class="first-multi-image">
                     {% if block.settings.button_link_1 != blank %}
-                      <a href="{{ block.settings.button_link_1 }}" target="_blank">
+                      <a href="{{ block.settings.button_link_1 }}" class="channel-logo" target="_blank">
                     {% endif %}
                     <img
                       src="{{ block.settings.first_image | image_url }}"
                       alt="First image"
-                      width="200px"
+                      width="120px"
                       height="39px"
                     >
                     {% if block.settings.button_link_1 != blank %}
@@ -113,7 +113,7 @@
                 {% if block.settings.second_image != blank %}
                   <div class="second-multi-image">
                     {% if block.settings.button_link_2 != blank %}
-                      <a href="{{ block.settings.button_link_2 }}" target="_blank">
+                      <a href="{{ block.settings.button_link_2 }}" class="channel-logo" target="_blank">
                     {% endif %}
                     <img
                       src="{{ block.settings.second_image | image_url }}"
@@ -129,7 +129,7 @@
                 {% if block.settings.third_image != blank %}
                   <div class="third-multi-image">
                     {% if block.settings.button_link_3 != blank %}
-                      <a href="{{ block.settings.button_link_3 }}" target="_blank">
+                      <a href="{{ block.settings.button_link_3 }}" class="channel-logo" target="_blank">
                     {% endif %}
                     <img
                       src="{{ block.settings.third_image | image_url }}"
@@ -145,7 +145,7 @@
                 {% if block.settings.fourth_image != blank %}
                   <div class="fourth-multi-image">
                     {% if block.settings.button_link_4 != blank %}
-                      <a href="{{ block.settings.button_link_4 }}" target="_blank">
+                      <a href="{{ block.settings.button_link_4 }}" class="channel-logo" target="_blank">
                     {% endif %}
                     <img
                       src="{{ block.settings.fourth_image | image_url }}"
@@ -161,12 +161,12 @@
                 {% if block.settings.fifth_image != blank %}
                   <div class="fifth-multi-image">
                     {% if block.settings.button_link_5 != blank %}
-                      <a href="{{ block.settings.button_link_5 }}" target="_blank">
+                      <a href="{{ block.settings.button_link_5 }}" class="channel-logo" target="_blank">
                     {% endif %}
                     <img
                       src="{{ block.settings.fifth_image | image_url }}"
                       alt="Fifth image"
-                      width="150px"
+                      width="100px"
                       height="48px"
                     >
                     {% if block.settings.button_link_5 != blank %}

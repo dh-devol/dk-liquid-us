@@ -533,11 +533,18 @@ a {
     margin-bottom: 42.5px;
   }
 }
-@media (max-width: 458px) {
+@media (max-width: 768px) {
+  .page-devols-tv-show .rich-text-with-multi-img .multi-image-wrapper {
+    justify-content: start;
+    flex-wrap: wrap;
+    row-gap: 70px;
+  }
+}
+/* @media (max-width: 458px) {
   .page-devols-tv-show .rich-text-with-multi-img .multi-image-wrapper {
     flex-direction: column;
   }
-}
+} */
 .header .mega-menu__content{
   background-color:transparent;
   padding:0;
