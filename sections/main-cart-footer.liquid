@@ -371,26 +371,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateOrderPromiseDate();
 
-  // Layer 2: Recalculate _Promise Date on all line items and order attribute on cart page load
+  // Layer 2: Recalculate lead times from the latest rendered cart items and keep cart properties in sync
   (function refreshPromiseDates() {
     fetch('/cart.js')
       .then(function(r) { return r.json(); })
       .then(function(cart) {
+        var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
         var maxLeadDays = 0;
         var lineUpdates = [];
 
-        (cart.items || []).forEach(function(item) {
-          if (!item.properties || !item.properties['_lead_time_days']) return;
-          var leadDays = parseInt(item.properties['_lead_time_days'], 10);
-          if (!leadDays) return;
+        spans.forEach(function(span) {
+          var key = span.getAttribute('data-line-key');
+          var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
+          if (!key || !leadDays) return;
           if (leadDays > maxLeadDays) maxLeadDays = leadDays;
-          var expected = formatPromiseDate(leadDays);
-          if (item.properties['_Promise Date'] !== expected) {
-            lineUpdates.push(item);
+
+          var cartItem = (cart.items || []).find(function(item) {
+            return item.key === key;
+          });
+          if (!cartItem) return;
+
+          var currentLeadDays = parseInt(cartItem.properties && cartItem.properties['_lead_time_days'], 10);
+          var expectedPromise = formatPromiseDate(leadDays);
+          var currentPromise = cartItem.properties && cartItem.properties['_Promise Date'];
+          var leadText = span.getAttribute('data-leadtext');
+
+          if (currentLeadDays !== leadDays || currentPromise !== expectedPromise || (leadText && cartItem.properties && cartItem.properties['Lead time'] !== leadText)) {
+            var mergedProps = Object.assign({}, cartItem.properties || {}, {
+              '_lead_time_days': String(leadDays),
+              '_Promise Date': expectedPromise
+            });
+            if (leadText) {
+              mergedProps['Lead time'] = leadText;
+            }
+            lineUpdates.push({
+              id: cartItem.key,
+              quantity: cartItem.quantity,
+              properties: mergedProps
+            });
           }
         });
 
-        // Always set order-level _Promise Date from cart data
+        // Always set order-level _Promise Date from the latest rendered lead times
         if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
@@ -406,15 +428,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (lineUpdates.length === 0) return;
         function doUpdate(i) {
           if (i >= lineUpdates.length) return;
-          var item = lineUpdates[i];
-          var leadDays = parseInt(item.properties['_lead_time_days'], 10);
-          var merged = Object.assign({}, item.properties, {
-            '_Promise Date': formatPromiseDate(leadDays)
-          });
+          var update = lineUpdates[i];
           fetch('/cart/change.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id: item.key, quantity: item.quantity, properties: merged })
+            body: JSON.stringify(update)
           })
           .then(function() { doUpdate(i + 1); })
           .catch(function() { doUpdate(i + 1); });
