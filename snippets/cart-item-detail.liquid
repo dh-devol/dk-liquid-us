@@ -133,15 +133,22 @@
           {%- endfor -%}
         {%- endif -%}
 
-        {%- assign item_product_lead_time = item.product.metafields.custom.lead_time.value -%}
-        {%- assign item_product_lead_time_days = item.product.metafields.custom.lead_time_days.value -%}
+        {%- capture item_lead_time_text -%}
+          {%- render 'lead-time-text', product: item.product, variant: item.variant -%}
+        {%- endcapture -%}
+
+        {%- capture item_lead_time_days -%}
+          {%- render 'lead-time-text', product: item.product, variant: item.variant, field: 'lead_time_days' -%}
+        {%- endcapture -%}
+        {%- assign item_lead_time_days = item_lead_time_days | strip -%}
+
         {%- for property in item.properties -%}
           {%- assign property_key = property.first -%}
           {%- assign property_value = property.last -%}
           {%- assign property_first_char = property_key | slice: 0 -%}
 
-          {%- if property_key == 'Lead time' and item_product_lead_time != blank -%}
-            {%- assign property_value = item_product_lead_time -%}
+          {%- if property_key == 'Lead time' and item_lead_time_text != blank -%}
+            {%- assign property_value = item_lead_time_text -%}
           {%- endif -%}
 
           {%- if property_value != blank
@@ -166,10 +173,9 @@
           {%- endif -%}
         {%- endfor -%}
       </dl>
-      {%- assign item_lead_time_days = item_product_lead_time_days | default: item.properties["_lead_time_days"] -%}
+      {% comment %} Fallback {%- assign item_lead_time_days = item_product_lead_time_days | default: item.properties["_lead_time_days"] -%} {% endcomment %}
       {%- if item_lead_time_days != blank -%}
-        <span class="lead-time-span visually-hidden" data-leadtime="{{ item_lead_time_days }}" data-leadtext="{{ item_product_lead_time | escape }}" data-line-key="{{ item.key }}"></span>
-      {%- endif -%}
+        <span class="lead-time-span visually-hidden" data-leadtime="{{ item_lead_time_days }}" data-leadtext="{{ item_lead_time_text | escape }}" data-line-key="{{ item.key }}"></span>      {%- endif -%}
       <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
       {%- comment -%}
         Render related add-on line items that reference this product via properties.group_id

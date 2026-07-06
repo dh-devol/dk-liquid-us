@@ -210,11 +210,12 @@
                         {%- assign show_international_oos = true -%}
                       {%- endif -%}
 
-                      {%- if product.selected_or_first_available_variant.available -%}
-                        {{ product.metafields.custom.lead_time.value }}
-                      {%- elsif show_international_oos == false or section.settings.out_of_stock_text == blank -%}
-                        {{- 'products.product.inventory_out_of_stock' | t -}}
-                      {%- endif -%}
+                      {%- assign variant = product.selected_or_first_available_variant -%}
+                        {%- if variant.available -%}
+                          {%- render 'lead-time-text', product: product, variant: variant -%}
+                        {%- else -%}
+                          {{- 'products.product.inventory_out_of_stock' | t -}}
+                        {%- endif -%}
 
                       {%- if show_international_oos and section.settings.out_of_stock_text != blank -%}
                         <div class="not-for-sale not-for-sale--oos">
