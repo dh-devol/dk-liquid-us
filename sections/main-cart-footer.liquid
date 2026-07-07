@@ -424,7 +424,6 @@ document.addEventListener('DOMContentLoaded', function () {
           }).catch(function() { /* silent */ });
         }
 
-        // Update stale line item promise dates
         if (lineUpdates.length === 0) return;
         function doUpdate(i) {
           if (i >= lineUpdates.length) return;
@@ -446,7 +445,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var cartForm = document.getElementById('cart');
   if (cartForm) {
     cartForm.addEventListener('submit', function(e) {
-      // Check if any items have lead time data (via DOM spans or cart data)
       var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
       if (spans.length === 0) return;
 
@@ -459,17 +457,22 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(function(r) { return r.json(); })
       .then(function(cart) {
-        var promiseDateMap = {};
+        var leadDataMap = {};
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
-          var leadTime = parseInt(span.getAttribute('data-leadtime'), 10);
-          if (key && leadTime) {
-            promiseDateMap[key] = formatPromiseDate(leadTime);
+          var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
+          var leadText = span.getAttribute('data-leadtext');
+          if (key && leadDays) {
+            leadDataMap[key] = {
+              days: leadDays,
+              text: leadText,
+              promise: formatPromiseDate(leadDays)
+            };
           }
         });
 
         var itemsToUpdate = cart.items.filter(function(item) {
-          return promiseDateMap[item.key];
+          return leadDataMap[item.key];
         });
 
         function processUpdates(index) {
@@ -485,9 +488,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
           }
           var item = itemsToUpdate[index];
+          var leadData = leadDataMap[item.key];
           var mergedProps = Object.assign({}, item.properties || {}, {
-            '_Promise Date': promiseDateMap[item.key]
+            '_lead_time_days': String(leadData.days),
+            '_Promise Date': leadData.promise
           });
+          if (leadData.text) {
+            mergedProps['Lead time'] = leadData.text;
+          }
           fetch('/cart/change.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
