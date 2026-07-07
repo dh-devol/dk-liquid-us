@@ -413,11 +413,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Always set order-level _Promise Date from the latest rendered lead times
-        if (maxLeadDays > 0) {
+        var checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
+        var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
+
+        var orderPromiseWrite = Promise.resolve();
+        if (maxLeadDays > 0 && !isFlooringCart) {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
-          fetch('/cart/update.js', {
+
+          orderPromiseWrite = fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ attributes: { '_Promise Date': orderPromise } })
@@ -441,10 +446,11 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(function() { /* silent */ });
   })();
 
-  // Before checkout: update line item _Promise Date properties via AJAX
+  // Before checkout: update line item and order-level promise date properties via AJAX
   var cartForm = document.getElementById('cart');
   if (cartForm) {
     cartForm.addEventListener('submit', function(e) {
+      // Check if any items have lead time data (via DOM spans or cart data)
       var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
       if (spans.length === 0) return;
 
@@ -458,6 +464,8 @@ document.addEventListener('DOMContentLoaded', function () {
       .then(function(r) { return r.json(); })
       .then(function(cart) {
         var leadDataMap = {};
+        var maxLeadDays = 0;
+
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
           var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
@@ -468,8 +476,25 @@ document.addEventListener('DOMContentLoaded', function () {
               text: leadText,
               promise: formatPromiseDate(leadDays)
             };
+            if (leadDays > maxLeadDays) maxLeadDays = leadDays;
           }
         });
+
+        var checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
+        var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
+
+        var orderPromiseWrite = Promise.resolve();
+        if (maxLeadDays > 0 && !isFlooringCart) {
+          var orderPromise = formatPromiseDate(maxLeadDays);
+          var promiseDateInput = document.getElementById('hidden-promise-date');
+          if (promiseDateInput) promiseDateInput.value = orderPromise;
+
+          orderPromiseWrite = fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ attributes: { '_Promise Date': orderPromise } })
+          }).catch(function() { /* silent */ });
+        }
 
         var itemsToUpdate = cart.items.filter(function(item) {
           return leadDataMap[item.key];
@@ -477,14 +502,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function processUpdates(index) {
           if (index >= itemsToUpdate.length) {
-            if (!cartForm.querySelector('input[name="checkout"]')) {
-              var ci = document.createElement('input');
-              ci.type = 'hidden';
-              ci.name = 'checkout';
-              ci.value = '';
-              cartForm.appendChild(ci);
-            }
-            cartForm.submit();
+            orderPromiseWrite.then(function() {
+              if (!cartForm.querySelector('input[name="checkout"]')) {
+                var ci = document.createElement('input');
+                ci.type = 'hidden';
+                ci.name = 'checkout';
+                ci.value = '';
+                cartForm.appendChild(ci);
+              }
+              cartForm.submit();
+            });
             return;
           }
           var item = itemsToUpdate[index];
