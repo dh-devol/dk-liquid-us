@@ -143,6 +143,14 @@
             value=""
           >
         {% endif %}
+        {% if product.metafields.custom.thumbnail_image_1 != blank %}
+          <input
+            id="thumbnail"
+            value="{{ product.metafields.custom.thumbnail_image_1 | image_url: width: 600}}"
+            type="hidden"
+            name="properties[_Thumbnail]"
+          >
+        {% endif %}
         {% if _pf_cart_qty_limit > 0 %}
           <input type="hidden" name="properties[_cart_qty_tag]" value="{{ _pf_cart_qty_limit_tag | escape }}">
         {% endif %}

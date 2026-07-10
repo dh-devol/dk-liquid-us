@@ -152,6 +152,8 @@
                 <a href="{{ property_value }}" class="link" target="_blank">
                   {{ property_value | split: '/' | last }}
                 </a>{% unless forloop.last %}{% if property_key contains "Scent" %},{% endif %}{% endunless %}
+              {%- elsif property_value contains '/cdn/shop'-%}
+                <img src="{{ property_value }}" class="visually-hidden" width="100" height="100" alt="Thumbnail">
               {%- else -%}
                 {{ property_value }}{% unless forloop.last %}{% if property_key contains "Scent" %},{% endif %}{% endunless %}
               {%- endif -%}
