@@ -31,7 +31,8 @@ class CartNotification extends HTMLElement {
    */
   renderContents(parsedState) {
     /* 1. Update popup message */
-    const title = parsedState?.items?.[0]?.title || parsedState?.product_title || 'Product';
+    const item = parsedState?.items?.[0] || parsedState;
+    const title = item?.title || parsedState?.product_title || 'Product';
     const messageEl = this.notification.querySelector('.added-message');
     if (messageEl) messageEl.textContent = `${title} has been added to your basket.`;
   
@@ -49,7 +50,61 @@ class CartNotification extends HTMLElement {
     });
   
     /* 3. Show popup */
+    this.updateBackorderMessage(item);
     this.open();
+  }
+
+  updateBackorderMessage(item) {
+    if (!item) return;
+
+    const dataEl = document.getElementById('lead-time-calc-data');
+    if (!dataEl) return;
+
+    const title = item?.title || parsedState?.product_title || 'Product';
+    const available = parseInt(dataEl.getAttribute('data-available'), 10) || 0;
+    const inventoryPolicy = dataEl.getAttribute('data-inventory-policy');
+    const inventoryManagement = dataEl.getAttribute('data-inventory-management');
+    const secondaryText = dataEl.getAttribute('data-secondary-text');
+    const quantity = parseInt(
+      document.querySelector('[name="quantity"]')?.value || '1',
+      10
+    );
+
+    const isBackorder =
+      inventoryManagement === 'shopify' &&
+      inventoryPolicy === 'continue' &&
+      (available - item.quantity) < 0 &&
+      secondaryText;
+
+    if (!isBackorder) return;
+
+    // Only show the partial-stock message when there's still some stock left.
+    // If available is 0 or less, the default "added to basket" message stands.
+    if (available <= 0) return;
+
+    const messageEl = document.querySelector('.added-message');
+    const test = document.querySelector('.cart-notification')
+
+    messageEl.textContent = '';
+    test.classList.add("secondary-message");
+
+    const line1 = document.createElement('p');
+    line1.textContent = `${title} has been added to your basket.`;
+
+    const line2 = document.createElement('p');
+    line2.textContent = `We currently have ${available} in stock. Your order of ${quantity} will be on a lead time of ${secondaryText}.`;
+
+    const line3 = document.createElement('p');
+    line3.textContent = 'Please head to your ';
+
+    const link = document.createElement('a');
+    link.href = '/cart';
+    link.textContent = 'basket';
+
+    line3.appendChild(link);
+    line3.append(' to review and adjust if needed.');
+
+    messageEl.append(line1, line2, line3);
   }
 
   /**

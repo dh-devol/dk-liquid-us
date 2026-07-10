@@ -1,25 +1,12 @@
 {%- comment -%}
-  Renders the correct lead time text for a product, accounting for
-  backorder status — either the product is already fully out of stock,
-  or the requested quantity exceeds remaining stock (continue-selling
-  variants only).
-
-  Usage:
-    {% capture lead_time_text %}
-      {% render 'lead-time-text', product: product, variant: variant, quantity: 1 %}
-    {% endcapture %}
-
-    {% capture lead_time_days %}
-      {% render 'lead-time-text', product: product, variant: variant, quantity: 1, field: 'lead_time_days' %}
-    {% endcapture %}
+  Renders lead time data for a product, accounting for backorder status.
 
   Params:
     product  - required, product object
-    variant  - required, the variant to check inventory_policy against
-               (typically product.selected_or_first_available_variant
-               or item.variant in cart context)
-    quantity - optional, the quantity being ordered/requested (default 1)
-    field    - optional, 'lead_time' (default) or 'lead_time_days'
+    variant  - required, variant to check inventory_policy against
+    quantity - optional, quantity being ordered/requested (default 1)
+    field    - optional: 'lead_time' (default), 'lead_time_days',
+               'is_backorder', or 'available'
 {%- endcomment -%}
 
 {%- assign lt_field = field | default: 'lead_time' -%}
@@ -50,4 +37,11 @@
   {%- assign lt_use_secondary = true -%}
 {%- endif -%}
 
-{%- if lt_use_secondary -%}{{ lt_secondary }}{%- else -%}{{ lt_primary }}{%- endif -%}
+{%- case lt_field -%}
+  {%- when 'is_backorder' -%}
+    {{ lt_use_secondary }}
+  {%- when 'available' -%}
+    {{ lt_total_inventory }}
+  {%- else -%}
+    {%- if lt_use_secondary -%}{{ lt_secondary }}{%- else -%}{{ lt_primary }}{%- endif -%}
+{%- endcase -%}
