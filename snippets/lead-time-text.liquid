@@ -1,26 +1,29 @@
 {%- comment -%}
   Renders the correct lead time text for a product, accounting for
-  backorder status (product allows continued selling + product is
-  out of stock.
+  backorder status — either the product is already fully out of stock,
+  or the requested quantity exceeds remaining stock (continue-selling
+  variants only).
 
   Usage:
     {% capture lead_time_text %}
-      {% render 'lead-time-text', product: product, variant: variant %}
+      {% render 'lead-time-text', product: product, variant: variant, quantity: 1 %}
     {% endcapture %}
 
     {% capture lead_time_days %}
-      {% render 'lead-time-text', product: product, variant: variant, field: 'lead_time_days' %}
+      {% render 'lead-time-text', product: product, variant: variant, quantity: 1, field: 'lead_time_days' %}
     {% endcapture %}
 
   Params:
-    product - required, product object
-    variant - required, the variant to check inventory_policy against
-              (typically product.selected_or_first_available_variant
-              or item.variant in cart context)
-    field   - optional, 'lead_time' (default) or 'lead_time_days'
+    product  - required, product object
+    variant  - required, the variant to check inventory_policy against
+               (typically product.selected_or_first_available_variant
+               or item.variant in cart context)
+    quantity - optional, the quantity being ordered/requested (default 1)
+    field    - optional, 'lead_time' (default) or 'lead_time_days'
 {%- endcomment -%}
 
 {%- assign lt_field = field | default: 'lead_time' -%}
+{%- assign lt_quantity = quantity | default: 1 -%}
 
 {%- case lt_field -%}
   {%- when 'lead_time_days' -%}
@@ -36,10 +39,12 @@
   {%- assign lt_total_inventory = lt_total_inventory | plus: lt_variant.inventory_quantity -%}
 {%- endfor -%}
 
+{%- assign lt_remaining_after_order = lt_total_inventory | minus: lt_quantity -%}
+
 {%- assign lt_use_secondary = false -%}
 {%- if variant.inventory_management == 'shopify'
   and variant.inventory_policy == 'continue'
-  and lt_total_inventory <= 0
+  and lt_remaining_after_order < 0
   and lt_secondary != blank
 -%}
   {%- assign lt_use_secondary = true -%}
