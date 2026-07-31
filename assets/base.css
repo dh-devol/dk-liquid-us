@@ -507,6 +507,83 @@ h6:empty {
   display: none;
 }
 
+/* Cookie bar */
+
+.cky-consent-container, .cky-modal {
+  font-family: gill-sans-nova, sans-serif;
+}
+
+.cky-consent-container .cky-consent-bar .cky-notice-content-wrapper {
+  max-width: 1425px;
+  margin: 0 auto;
+  padding: 3rem 9.5rem 3rem;
+}
+
+.cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-title {
+  font-size: 2.3rem;
+  font-weight: 500;
+  margin: 0 0 1.3rem;
+}
+
+.cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-notice-des {
+  max-width: 750px;
+  line-height: 1.4;
+}
+
+.cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-notice-des * {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-btn-customize,
+.cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-btn-accept {
+  border: 1px solid #212121;
+}
+
+.cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-btn {
+  font-weight: 200;
+  font-size: 16px !important;
+  margin: 0 18px 0 0 !important;
+}
+
+.cky-modal .cky-footer-wrapper .cky-prefrence-btn-wrapper {
+  padding: 22px 24px 30px 24px !important;
+}
+
+.cky-modal .cky-preference-header .cky-preference-title, .cky-modal .cky-accordion-header .cky-accordion-btn {
+  font-weight: 500;
+}
+
+.cky-consent-container .cky-consent-bar > div:nth-child(2), .cky-modal .cky-footer-wrapper > div:nth-of-type(2), .cky-btn-revisit-wrapper {
+  display: none !important;
+}
+
+@media screen and (max-width: 576px) {
+  .cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-title {
+    font-size: 1.8rem;
+  }
+
+  .cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-notice-des * {
+    font-size: 1.3rem;
+  }
+
+  .cky-consent-container .cky-consent-bar .cky-notice-content-wrapper {
+    padding: 24px 0 !important;
+  }
+
+  .cky-consent-container .cky-consent-bar .cky-notice-content-wrapper .cky-btn {
+    margin: 0 18px !important;
+    font-size: unset !important;
+  }
+
+  .cky-notice-btn-wrapper {
+    gap: 13px !important;
+    margin-top: 1.5rem !important;
+  }
+}
+
+/* Cookie bar end */
+
 .link,
 .customer a {
   cursor: pointer;
@@ -1377,6 +1454,11 @@ shopify-accelerated-checkout-cart {
 .quantity__button.disabled {
   cursor: not-allowed;
   opacity: 0.5;
+  letter-spacing: 0;
+}
+
+button:disabled.button--primary {
+  background-color: #5D676D !important;
 }
 
 .button--full-width {

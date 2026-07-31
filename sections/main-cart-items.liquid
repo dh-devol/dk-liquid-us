@@ -130,7 +130,7 @@
                 </tbody>
             </table>
           
-            <table class="cart-items flooring_product-items">
+            <table class="cart-items flooring_product-items{% if has_accessories and has_flooring %} mixed {% endif %}">
               <caption class="visually-hidden">
                 {{ 'sections.cart.title' | t }}
               </caption>

@@ -415,6 +415,9 @@ cart-remove-button .icon-remove {
 .cart_page-container tbody .cart-item{
   border-bottom: none;
 }
+.cart_page-container tbody .cart-item .price {
+  letter-spacing: 0;
+}
 /* .cart_page-container .cart-items th {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 } */
@@ -449,7 +452,7 @@ cart-remove-button .icon-remove {
 .cart_page-container .cart-item_custom__price {
     display: none;
 }
-.cart--page .flooring_product-items {
+.cart--page .flooring_product-items.mixed {
     margin-top: 40px;
 }
 .cart--page .cart_page-container .cart-item__quantity{

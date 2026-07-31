@@ -1,6 +1,8 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
+    <script src="https://cdn-cookieyes.com/common/shopify.js" defer></script>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -532,9 +534,9 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <script>
+    {% comment %} <script>
     document.addEventListener("DOMContentLoaded", () => {
-      let offset = 140;
+      let offset = 35;
 
       function smoothScroll(hash, offset) {
         const el = document.querySelector(hash);
@@ -557,7 +559,7 @@
           const linkPath = new URL(href, location.origin).pathname;
           if (linkPath === location.pathname) {
             e.preventDefault();
-            offset = 49;
+            offset = 35;
             smoothScroll(hash, offset);
           }
         });
@@ -570,7 +572,7 @@
         }, 50);
       }
     });
-    </script>
+    </script> {% endcomment %}
 
 
     <!--
@@ -625,7 +627,7 @@
         });
       </script>
     -->
-    <script>
+    {% comment %} <script>
       (function() {
         if (!window.location.hash) return;
         var hash = window.location.hash;
@@ -645,6 +647,6 @@
           setTimeout(scrollToHash, 300);
         });
       })();
-    </script>
+    </script> {% endcomment %}
   </body>
 </html>

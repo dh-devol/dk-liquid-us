@@ -15,6 +15,12 @@ body{
 .quantity_coverage-wrapper.linear .quantity__input {
   padding-left: 0.75em;
 }
+html {
+  scroll-behavior: none;
+}
+[id] {
+  scroll-margin-top: 35px;
+}
 
 /* ── Fast Bundles Add-on restyle (inline checkboxes) ── */
 #rbr-container-element-addOn [class*="style_header_"] {
@@ -174,6 +180,9 @@ a {
 #MainContent {
   padding-bottom:4em;
 }
+#MainContent.page-letters-from-devol {
+  padding-bottom: 0;
+}
 
 #MainContent.article--page {
   -webkit-font-smoothing: auto;
@@ -285,7 +294,8 @@ a {
   font-family:"gill-sans-nova", sans-serif;
 }
 .baskerville{
-  font-family: baskerville-urw, garamond-premier-pro, Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  /*font-family: baskerville-urw, garamond-premier-pro, Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;*/
+  font-family: "EB Garamond", "garamond-premier-pro-display", "Times New Roman", serif;
 }
 .button:before , .button:after{
   content:none;
@@ -325,11 +335,14 @@ a {
 .header--top-center .header__inline-menu{
   z-index:0;
 }
+.header--top-center > h1 > a {
+  height: 84px;
+}
 .header--top-center .header__inline-menu:after {
     content: "";
     position: absolute;
     width: 100%;
-    height: 50px;
+    height: 48px;
     left:0;
     bottom: 0;
     background-color: #f2f2f2;
@@ -394,6 +407,13 @@ a {
 
 .custom-multicolumn.tv-show-about-devols .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title {
     margin: 0 0 11px 0;
+}
+
+/* oos, not for sale and no international sales styling */
+.not-for-sale p {
+  margin: 2.3em 0 0;
+  color: #595959;
+  font-size: 0.95em;
 }
 
 
@@ -1512,9 +1532,9 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   .footer {
         padding-bottom: 8px !important;
   }
-  .article--page .article-template .main__blog--wrapper{
+  /* .article--page .article-template .main__blog--wrapper{
     margin-top:35px !important;
-  }
+  } */
   .article--page .article-template .full .date {
     font-size: 15px !important;
 }
@@ -1674,7 +1694,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
         background-color: #9f9f9f4d;
         width: 1px;
         height: 100%;
-        right: -5px;
+        right: 0px;
         top: 0;
   }
   .footer-block.grid__item.footer-block--menu {
@@ -2351,4 +2371,17 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
 .page-press-coverage .title-wrapper-with-link .title, .page-press-coverage .title-with-rich-text .rich-text__blocks .rich-text__heading {
   font-size:19.2px !important;
   font-weight:500;
+}
+
+.cart-unit-label {
+  font-size: 1em;
+  margin-left: 0.4em;
+  align-self: center;
+}
+
+.cart-item__flooring-summary {
+  font-size: 1.2rem;
+  color: #898989;
+  margin: 1em 0 0 !important;
+  text-align: left;
 }

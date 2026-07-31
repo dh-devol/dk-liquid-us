@@ -190,6 +190,10 @@
   text-align: left;
 }
 
+.card__content .card__heading {
+  font-weight: 400;
+}
+
 @media screen and (min-width: 990px) {
   .grid--6-col-desktop .card__content quick-add-bulk .quantity {
     width: auto;

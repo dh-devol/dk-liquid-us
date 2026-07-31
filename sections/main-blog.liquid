@@ -19,13 +19,10 @@
 
 {%- paginate blog.articles by 12 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
-  <div class="title__main-wrapper">  
-   <div class="title__inside-wrapper baskerville"> 
-    <span>You are looking at: </span> 
-    <h1 class="baskerville title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ blog.title | escape }}
-    </h1>
-   </div> 
+  <div class="brand__info-wrapper">
+    <a href="/pages/blog"><img src="{{ 'devol-journal.svg' | file_url }}" width="auto" height="auto" alt="The deVOL Journal"></a>
+  </div>
+    <div class="title__main-wrapper">   
     <div class="blog__option-wrapper">
       <div class="baskerville blog__title">{% if section.settings.option_title != blank %}{{ section.settings.option_title }}{% else %}Select{% endif %}
       <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
@@ -45,6 +42,13 @@
       </ul>
     </div>
   </div>
+
+   <div class="title__inside-wrapper baskerville"> 
+    <span>You are looking at: </span> 
+    <h1 class="baskerville title--primary{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {{ blog.title | escape }}
+    </h1>
+   </div>
 
     <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
       {%- assign sorted_articles = blog.articles | sort: 'published_at' | reverse -%}
@@ -71,7 +75,7 @@
 
    <div id="load-more-container">
   <button class="baskerville" id="load-more" data-next-page="{{ paginate.next.url }}" {% if paginate.next == blank %}style="display:none;"{% endif %}>
-    Load More
+    Loading more posts
   </button>
   </div>
   </div>

@@ -304,6 +304,51 @@ body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-w
 }
 /* Support page css end */
 
+/* US Switches css start */
+#switches-menu .page-width {
+  max-width: 650px;
+}
+#switches-menu .multicolumn-card__info a.link.animate-arrow {
+  color: #595959;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.25em;
+}
+#switches-menu .multicolumn-card__info a.link.animate-arrow.active {
+  border-bottom: solid 1px #595959;
+  padding: 0 0.125em 0.35em 0.125em;
+}
+#switches-menu .multicolumn-list__item {
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 989px) {
+  #switches-menu .page-width {
+    max-width: 88%;
+  }
+  #switches-menu .multicolumn-list__item {
+    margin: 1em 0 0;
+  }
+  section:has(> #switches-menu) ~ section .custom-product-list .subtitle__wrapper h3.sub-heading.hxl {
+    margin-top: 0.8em;
+  }
+  .custom-multicolumn#switches-menu .multicolumn-list.grid--3-col-tablet-down {
+    justify-content: left;
+    gap: 45px;
+  }
+  .custom-multicolumn#switches-menu .multicolumn-list.grid--3-col-tablet-down .grid__item {
+    width: 100%;
+    max-width: fit-content;
+  }
+  #switches-menu .multicolumn-card__info a.link.animate-arrow {
+    font-size: 1.15em;
+  }
+  #switches-menu .multicolumn-card__info .link {
+    margin-top: 0;
+  }
+}
+/* US switches css end */
+
 /* project-multi-column metafield pages css start */
 .project-multi-column .multicolumn__title {
     justify-content: left;

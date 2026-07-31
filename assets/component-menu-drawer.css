@@ -330,7 +330,7 @@ menu-drawer > details[open] > summary::before {
   display:none;
 }
 .js #menu-drawer .menu-drawer__close-button {
-    font-family: "Gill Sans Nova", sans-serif;
+    font-family: gill-sans-nova, sans-serif;
     text-transform: uppercase;
     color: #6c6c6c99;
     font-size: 14px;
@@ -376,7 +376,7 @@ menu-drawer > details[open] > summary::before {
   font-size:14px;
   color:#717171;
   line-height:21px;
-  font-family:Gill Sans Nova,sans-serif;
+  font-family: gill-sans-nova, sans-serif;
   font-weight:300;
 }
 #menu-drawer .mega__image-menu ul{
@@ -404,7 +404,7 @@ menu-drawer > details[open] > summary::before {
 }
 .mega-menu_content-wrapper span{
   font-size:11.2px;
-  font-family:Gill Sans Nova,sans-serif;
+  font-family: gill-sans-nova, sans-serif;
   text-decoration:underline;
   letter-spacing:0.7px;
 }

@@ -88,9 +88,15 @@
   }
   .article-card-wrapper .card--standard > .card__content .card__information {
     padding-bottom: 0;
+    padding-top: 0;
   }
   .article-card .article-card__excerpt {
     margin-bottom: 16.5px;
+  }
+}@media screen and (max-width: 990px) {
+  .article-card-wrapper .card--standard > .card__content .card__information {
+    padding-bottom: 0;
+    padding-top: 0;
   }
 }
 
@@ -150,28 +156,35 @@
 
 /* custom css */
 .article-card .card__heading{
-  font-size:15px;
+  font-size:16px;
   text-transform:uppercase;
-   color: #4D4D4C;
-  text-align:center;
-  margin-top:8px;
+   color: #696969;
+  text-align:left;
+  margin-top:16px;
+  padding-right: 10px;
+}
+.article-card .card__heading .full-unstyled-link{
+  color: #696969;
+  letter-spacing: 1.5px;
 }
 .article-card .card__heading a:hover{
   text-decoration:none;
 }
 .article-card .article-card__excerpt{
   font-size:15px;
-  color: #4D4D4C;
-  text-align:center;
+  color: #595959;
+  text-align:left;
   font-weight:400;
-  line-height:20.8px;
+  padding-right: 10px;
+  line-height:22px;
   -webkit-font-smoothing: auto;
+  letter-spacing: 0.1px
 
 }
 .article-card .article-card__info{
-  text-align:center;
+  text-align:left;
   font-size: 13px;
-  color: #4D4D4C;
+  color: #595959;
 }
 
 /*blog search page css*/
@@ -180,9 +193,9 @@
   display:none;
 }
 .blog-search-results .article-card .card__heading{
-    font-size: 15px;
-    line-height:20.8px;
-    font-weight:300;
+    font-size: 16px;
+    line-height:1.3;
+    font-weight:500;
     -webkit-font-smoothing: auto;
 }
 .blog-search-results {    
@@ -196,12 +209,12 @@
    margin-bottom:15px;
 }
 .blog-search-mobile-logo img{ width:100%;}
-@media (max-width:1280px){
+/* @media (max-width:1280px){
  .blog-search-results {    
   padding-left: 30px;
   padding-right: 30px;
 } 
-}
+} */
 @media screen and (min-width: 990px) {
 .blog-search-results .article-card__image--medium .ratio:before {
         padding-bottom: 21.2rem;
@@ -221,7 +234,7 @@
 @media (max-width:575px){
    .blog-search-results .blog-articles .card__inner {
     height:237px;
-    width:340px;
+    width:100%;
     margin:0 auto;
    }
    .blog-search-results .article-card .card__heading {

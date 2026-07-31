@@ -1,1 +1,667 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"metaobject_gallery_slider_teHTkh":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":"Slideshow about our brand"}},"gallery_slideshow_h3k8wd":{"type":"gallery-slideshow","blocks":{"slide_DLN9j8":{"type":"slide","settings":{"desktop_focal_point":50,"mobile_focal_point":54,"heading":"","heading_size":"h0","subheading":"","button_label":"","link":"","button_style_secondary":false,"box_align":"middle-center","show_text_box":false,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"","text_alignment_mobile":"center"}}},"block_order":["slide_DLN9j8"],"disabled":true,"custom_css":["@media (max-width: 590px) {div#Slide-template--25344076939598__gallery_slideshow_h3k8wd-1 {display: none; }}","@media (min-width: 591px) {div#Slide-template--25344076939598__gallery_slideshow_h3k8wd-2 {display: none; } .gallery-slideshow .slider-buttons .slider-button {display: none; }}"],"settings":{"layout":"full_bleed","show_mobile_banner":true,"slide_height":"large","slider_visual":"counter","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":""}},"page_title_description_7dkXeM":{"type":"page-title-description","disabled":true,"name":"Page title & description","settings":{"show_title":true,"show_description":true,"description_columns":1,"color_scheme":"","padding_top":40,"padding_bottom":40}},"title_with_rich_text_RLrj3y":{"type":"title-with-rich-text","blocks":{"heading_PyrbiA":{"type":"heading","settings":{"heading":"For the Love of Kitchens, a show all about deVOL","heading_size":"hxxl"}},"text_XrVpXy":{"type":"text","settings":{"text":"<p>There has never really been a TV show about kitchen design before, so we are super chuffed that deVOL was invited to do it first.<\/p>"}}},"block_order":["heading_PyrbiA","text_XrVpXy"],"custom_css":[".rich-text__blocks {width: 500px;}","@media (max-width: 768px) {.rich-text__text p, .rich-text__text h1 {max-width: 95%; }}"],"name":"Title with richtext","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":60,"padding_bottom":0,"sectionname":""}},"editorials_BfHAPE":{"type":"editorials","custom_css":[".editorials-title {display: none;}",".editorials-section .editorials-content {padding-bottom: 0; border-bottom: none;}",".editorials-page-separator {border-top: none;}"],"name":"Editorials","settings":{}},"title_with_rich_text_BjFMU6":{"type":"title-with-rich-text","blocks":{"text_Cj9dpX":{"type":"text","settings":{"text":"<p>Both seasons of For the Love of Kitchens are available to stream on Hulu, HBO Max, Apple TV and with Discovery+ on Prime Video.<\/p>"}}},"block_order":["text_Cj9dpX"],"custom_css":[".rich-text__blocks {width: 500px;}",".rich-text__heading {padding-top: 1em; font-size: 2rem;}","@media (max-width: 768px) {.title-with-rich-text .rich-text__text {margin-top: 0; } .rich-text__blocks .rich-text__text p {margin-top: 0; } .rich-text__heading {max-width: 90%; line-height: 1.4; margin-bottom: 2em; }}"],"name":"Title with richtext","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":0,"padding_bottom":0,"sectionname":""}},"title_with_rich_text_yP7A6B":{"type":"title-with-rich-text","blocks":{"heading_f7rCRC":{"type":"heading","settings":{"heading":"Click on the streaming channels below to find out how to watch.","heading_size":"h0"}}},"block_order":["heading_f7rCRC"],"custom_css":[".rich-text__blocks {width: 600px;}",".rich-text__heading {padding-top: 1em; font-size: 2rem;}","@media (max-width: 768px) {.title-with-rich-text .rich-text__text {margin-top: 0; } .rich-text__blocks .rich-text__text p {margin-top: 0; } .rich-text__heading {max-width: 90%; line-height: 1.4; margin-bottom: 2em; }}"],"name":"Title with richtext","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":0,"padding_bottom":0,"sectionname":""}},"rich_text_with_multi_image_mWtHkf":{"type":"rich-text-with-multi-image","blocks":{"multi_image_jHBfcp":{"type":"multi_image","settings":{"first_image":"shopify:\/\/shop_images\/Hulu_logo__2018.svg","button_link_1":"https:\/\/www.hulu.com\/series\/for-the-love-of-kitchens-94d67c5d-38ce-4287-9604-44c66aeda1b2","second_image":"shopify:\/\/shop_images\/Discovery_Plus_Logo_Vector.svg","button_link_2":"https:\/\/www.discoveryplus.com\/us\/en\/shows\/for-the-love-of-kitchens\/e8d18491-d65d-4b73-bfd9-4c6e1e40373a","third_image":"shopify:\/\/shop_images\/HBO_Max_Logo.svg","button_link_3":"https:\/\/www.hbomax.com\/shows\/for-the-love-of-kitchens\/e8d18491-d65d-4b73-bfd9-4c6e1e40373a","fourth_image":"shopify:\/\/shop_images\/Amazon_Prime_Video_logo.svg","button_link_4":"https:\/\/www.amazon.com\/Love-Kitchens-Season-1\/dp\/B09BXVDHHR","fifth_image":"shopify:\/\/shop_images\/Apple_TV__logo.svg","button_link_5":"https:\/\/tv.apple.com\/us\/show\/for-the-love-of-kitchens\/umc.cmc.kgaxdrjbkrnpz734phnryq0e"}}},"block_order":["multi_image_jHBfcp"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":false,"padding_top":0,"padding_bottom":0}},"multi_video_column_cU4Hfp":{"type":"multi-video-column","blocks":{"column_yHBEAy":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/rbh7Xq5139c","title":"The Haberdasher’s Kitchen","subtext":"","text":"<p>Join Lee and Phillip as they transform a white featureless box into a Californian, Spanish, Yorkshire dream of a kitchen with our Haberdasher's cupboards and retro tiles from their company, Bert & May. We also take you to the UK's leading independent design festival, where we create our own traditional English haberdashery, with furniture and wares all made by deVOL.<\/p>","show_above_image":false,"link":""}},"column_HYWwPz":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/vhTBq3Nktzc","title":"A Kitchen Where Old Meets New","subtext":"","text":"<p>This episode is all about mixing old and new as we help the lovely Louise and Gary transform their small, poorly designed kitchen into a glamorous mix of vintage and Shaker with a shimmering hand-aged copper worktop and a very unique green marble. Work begins on our new secret garden at Cotes Mill and we peek into the ceramics studio as they make the first Antique White Heirloom Platters.<\/p>","show_above_image":false,"link":""}},"column_twQT4C":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/nwPuXFkP1Ew","title":"A Rustic Kitchen For An Old Barn","subtext":"","text":"<p>Alastair and David take on an impressive renovation of a completely dilapidated 17th century barn in the English countryside. It's an incredible place but gosh, does it need some TLC. We revisit our secret garden at Cotes Mill as Paul and Helen design and make an ornamental fountain with our friends at Carvero Stone, and we introduce you to a whole new mid-century inspired deVOL lighting collection.<\/p>","show_above_image":false,"link":""}},"column_r9nX7U":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/_NS_46KLd7U","title":"A Kitchen Where Practicality and Beauty Meet","subtext":"","text":"<p>A very special project for a special couple, Alison & Paul, who want to create a kitchen that is as practical as it is beautiful, helping Paul as he slowly regains mobility after suffering a stroke. They also become the proud owners of our very first Vineyard Table and we attempt to recreate a rotating summer house from Paul’s childhood for our secret garden.<\/p>","show_above_image":false,"link":""}},"column_watYWq":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/4THyZgEyWTs","title":"A Basement Kitchen for a Georgian Home","subtext":"","text":"<p>In this episode, we visit one of our favourite places, the East End of London, and a complete dream of a home. Built in 1717, this big old townhouse has a very glamorous history and is now home to the super stylish Paul and Michelle and their perfect new deVOL kitchen. We take you behind the scenes as we develop our new Grand Tour lighting collection, and finally have the big reveal of our secret garden.<\/p>","show_above_image":false,"link":""}},"column_T4nFCY":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/2YhT832lwcM","title":"A Galley Kitchen","subtext":"","text":"<p>One of our wonderful kitchen designers, Iain, takes on the challenge of creating his own deVOL kitchen with his wife Daram. Paul embarks on a brand new project, designing a stylish chair for people who suffer from back pain and Helen takes inspiration from the London underground to create a new collection of deVOL tiles.<\/p>","show_above_image":false,"link":""}},"column_BjG9my":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/k3EkHRMaufQ","title":"A Kitchen for a Georgian Townhouse","subtext":"","text":"<p>Meet Roland and Lorna as they attempt to renovate a glorious Georgian mews in Bristol. After being converted into lots of tiny rooms for flats, this place needed a whole lot of love! But the bones of the building were quite spectacular, it just needed a kitchen to match. Plus, we give you the first peek at a very special new café light Helen has been working on.<\/p>","show_above_image":false,"link":""}},"column_ewUbDD":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/g9PHtcrxY0Y","title":"A Kitchen For A Forever Home","subtext":"","text":"<p>After many years travelling around the world and living on different military bases, Ben and Carice and their three children are finally hoping to settle down in a very special Tudor-style country home that was originally designed by Ben’s great-grandad. We introduce you to Robin’s Rack & Pinion catch and give you the first glimpse at a brand new collection of deVOL taps.<\/p>","show_above_image":false,"link":""}},"column_YweGnt":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/z0QW1l0SY9k","title":"A Connecticut Kitchen","subtext":"","text":"<p>The first of our special US episodes. After a visit to our NYC home on Bond Street, we head out of the city to Cornwall, Connecticut with the wonderful Marina and Robert as they create a Shaker kitchen with a little bit of vintage and a lot of style for their early 1800’s toll house. We also see Robin and Ben craft an all new deVOL pantry cupboard, inspired by a visit to the historic Shugborough Hall and we pop into the ceramics studio for a lesson in making the perfect pleated porcelain pendant.<\/p>","show_above_image":false,"link":""}},"column_WKk9AW":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/-kzqyhX4RJQ","title":"A Manhattan Apartment Kitchen","subtext":"","text":"<p>For the final episode, we meet Liz and Dan as we design a totally moody and elegant kitchen for their Manhattan apartment, inspired by Liz’s hometown on the English coast. We stop off at Merchant’s House and John Derian in NYC to soak up some inspiration. Robin crafts a brand new solid brass deVOL handle back at Cotes Mill, and we top it all off with a celebration in our Bond Street showroom.<\/p>","show_above_image":false,"link":""}}},"block_order":["column_yHBEAy","column_HYWwPz","column_twQT4C","column_r9nX7U","column_watYWq","column_T4nFCY","column_BjG9my","column_ewUbDD","column_YweGnt","column_WKk9AW"],"custom_css":[".multicolumn__title {margin-bottom: 0;}",".custom-multicolumn .multicolumn__title {justify-content: flex-start;}",".multicolumn-card__info {padding-top: 8px;}"],"settings":{"title":"A little taste of season 2","heading_size":"hxxl","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"multi_video_column_YE3nYc":{"type":"multi-video-column","blocks":{"column_4AdyC8":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/HL7ghzfQvnI","title":"A Kitchen Fit For a Castle","subtext":"","text":"<p>Welcome to the glorious castle-home of Frieda and Javvy. This episode features a wonderfully eccentric Classic English kitchen and our very first Heirloom Dairy Table. Expect to see plenty of psychedelic floral wallpapers, quirky fabrics and homewares.<\/p>","show_above_image":false,"link":""}},"column_H9YB6U":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/eUYLRaVeurM","title":"Form and Function","subtext":"","text":"<p>Bridget and Christopher create the perfect Shaker kitchen for their Victorian family home in Wimbledon. We also learn about the origins and early days of deVOL, with a visit to our first workshop in Loughborough.<\/p>","show_above_image":false,"link":""}},"column_7gmfew":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/GSHKzReJ8mg","title":"Big Dreams for a Small Kitchen","subtext":"","text":"<p>Designing for small spaces is often challenging, but Joe gets it just right with this bold Shaker kitchen in his self-renovated cottage in County Durham. This is one for people who love a good antiques market.<\/p>","show_above_image":false,"link":""}},"column_99PWC7":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/OM8A5kGx3HA","title":"Paul's Kitchen","subtext":"","text":"<p>Our Director, Paul, renovates his dream holiday cottage in St. Ives, opting for freestanding Classic cupboards and one-room living. We also see Robin, our Managing Director, in his home workshop, crafting our new Heirloom Gaselier Light.<\/p>","show_above_image":false,"link":""}},"column_ERAAB6":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/356r3GaA59w","title":"A Kitchen Built on Details","subtext":"","text":"<p>Cool couple, Becca and Damien, update their small family kitchen in Cornwall to suit their eco-lifestyle, and our Sebastian Cox cupboards are the perfect fit. We also follow our metalsmiths at Cotes Mill as they set out to design an elegant new light switch.<\/p>","show_above_image":false,"link":""}},"column_Kyf3EX":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/HzLGnkS5QPU","title":"A Kitchen for Entertaining","subtext":"","text":"<p>A beautiful old schoolhouse home in Brixton has its rather dysfunctional kitchen updated with simple Shaker cupboards. We also meet Doug and Danielle at the end of their six-year-long journey to renovate an incredible Tudor house in Cambridgeshire.<\/p>","show_above_image":false,"link":""}},"column_aTWD8b":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/lDpjinafCME","title":"A Kitchen Designer's Kitchen","subtext":"","text":"<p>Our Creative Director, Helen, designs an eclectic mix of Classic and vintage kitchen cupboards for her Victorian home in Leicestershire. Dainty lace curtains and handcrafted ceramic decorations.<\/p>","show_above_image":false,"link":""}},"column_BEc7UX":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/0mR-l513Nao","title":"A Chef's Kitchen","subtext":"","text":"<p>In the final episode, we follow Rebecca and Matt's extension project as they create a Shaker kitchen fit for a family and a cook's classroom. Meanwhile, Paul and Helen convert a retro VW pickup into our deVOLkswagon food truck.<\/p>","show_above_image":false,"link":""}}},"block_order":["column_4AdyC8","column_H9YB6U","column_7gmfew","column_99PWC7","column_ERAAB6","column_Kyf3EX","column_aTWD8b","column_BEc7UX"],"custom_css":[".multicolumn__title {margin-bottom: 0;}",".custom-multicolumn .multicolumn__title {justify-content: flex-start;}",".multicolumn-card__info {padding-top: 8px;}"],"settings":{"title":"A little taste of season 1","heading_size":"hxxl","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":24,"padding_bottom":0,"sectionname":""}},"title_with_rich_text_bCDT46":{"type":"title-with-rich-text","blocks":{"heading_RpceYP":{"type":"heading","settings":{"heading":"deVOL Films","heading_size":"hxxl"}},"text_AKF6LJ":{"type":"text","settings":{"text":"<p>From a full blown TV show, to our very own films, we love to share snippets of our unique and intricate design processes, take you behind the scenes in our workshops and studios and show you a little insight in to the life at Cotes Mill.<\/p>"}}},"block_order":["heading_RpceYP","text_AKF6LJ"],"custom_css":[],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":36,"padding_bottom":0,"sectionname":""}},"multi_video_column_9C3CTe":{"type":"multi-video-column","blocks":{"column_AF7nmP":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/V7kZQcedIAg","title":"Welcome to Cotes Mill","subtext":"","text":"<p>deVOL welcomes you to take a look around our beautiful home, Cotes Mill, where we work and create our kitchens and so much more. We hope you enjoy it.<\/p>","show_above_image":false,"link":""}},"column_VNeFKM":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/8jKOfKT3I_M","title":"How We Make Our Haberdasher's Cupboards","subtext":"","text":"<p>Peek inside the deVOL Haberdasher's workshop in Leicesterhire, England, to see our skilled craftspeople making this beautiful kitchen and all of it's little details.<\/p>","show_above_image":false,"link":""}},"column_iWBQkf":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/E_kuth2MltM","title":"How We Make Our Lace Market Tiles","subtext":"","text":"<p>Beautiful patterned tiles created by pressing elegant lace designs into clay on an antique tile press at Cotes Mill.<\/p>","show_above_image":false,"link":""}},"column_YVfEJH":{"type":"column","settings":{"video_url":"https:\/\/youtu.be\/n_elpNerhF4","title":"How We Make Cup Handles","subtext":"","text":"<p>A look at how deVOL's jeweller, Steph, casts our original cup handles, specially designed for our kitchens.<\/p>","show_above_image":false,"link":""}}},"block_order":["column_AF7nmP","column_VNeFKM","column_iWBQkf","column_YVfEJH"],"custom_css":[".multicolumn-card__info {padding-top: 8px;}"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":30,"padding_bottom":0,"sectionname":""}},"title_with_rich_text_Dwpdrd":{"type":"title-with-rich-text","blocks":{"button_tbj3qh":{"type":"button","settings":{"button_label":"See more deVOL films on our YouTube channel >","button_link":"https:\/\/www.youtube.com\/channel\/UCgbMUOsudggsBOLNA3kAQNQ","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["button_tbj3qh"],"custom_css":[".title-with-rich-text .rich-text__buttons .button {color: #898989; text-decoration: underline;}"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":12,"padding_bottom":24,"sectionname":""}}},"order":["main","metaobject_gallery_slider_teHTkh","gallery_slideshow_h3k8wd","page_title_description_7dkXeM","title_with_rich_text_RLrj3y","editorials_BfHAPE","title_with_rich_text_BjFMU6","title_with_rich_text_yP7A6B","rich_text_with_multi_image_mWtHkf","multi_video_column_cU4Hfp","multi_video_column_YE3nYc","title_with_rich_text_bCDT46","multi_video_column_9C3CTe","title_with_rich_text_Dwpdrd"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "metaobject_gallery_slider_teHTkh": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "gallery_slideshow_h3k8wd": {
+      "type": "gallery-slideshow",
+      "blocks": {
+        "slide_DLN9j8": {
+          "type": "slide",
+          "settings": {
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 54,
+            "heading": "",
+            "heading_size": "h0",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_DLN9j8"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media (max-width: 590px) {div#Slide-template--25344076939598__gallery_slideshow_h3k8wd-1 {display: none; }}",
+        "@media (min-width: 591px) {div#Slide-template--25344076939598__gallery_slideshow_h3k8wd-2 {display: none; } .gallery-slideshow .slider-buttons .slider-button {display: none; }}"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "show_mobile_banner": true,
+        "slide_height": "large",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": ""
+      }
+    },
+    "page_title_description_7dkXeM": {
+      "type": "page-title-description",
+      "disabled": true,
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "description_columns": 1,
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "title_with_rich_text_RLrj3y": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_PyrbiA": {
+          "type": "heading",
+          "settings": {
+            "heading": "For the Love of Kitchens, </br>a show all about deVOL",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_XrVpXy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>There has never really been a TV show about kitchen design before, so we are super chuffed that deVOL was invited to do it first.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PyrbiA",
+        "text_XrVpXy"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {width: 500px;}",
+        "@media (max-width: 768px) {.rich-text__text p, .rich-text__text h1 {max-width: 95%; }}"
+      ],
+      "name": "Title with richtext",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "editorials_BfHAPE": {
+      "type": "editorials",
+      "custom_css": [
+        ".editorials-title {display: none;}",
+        ".editorials-section .editorials-content {padding-bottom: 0; border-bottom: none;}",
+        ".editorials-page-separator {border-top: none;}"
+      ],
+      "name": "Editorials",
+      "settings": {}
+    },
+    "title_with_rich_text_BjFMU6": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "text_Cj9dpX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Both seasons of For the Love of Kitchens are available to stream on Hulu, HBO Max, Apple TV and with Discovery+ on Prime Video.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_Cj9dpX"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {width: 500px;}",
+        ".rich-text__heading {padding-top: 1em; font-size: 2rem;}",
+        "@media (max-width: 768px) {.title-with-rich-text .rich-text__text {margin-top: 0; } .rich-text__blocks .rich-text__text p {margin-top: 0; } .rich-text__heading {max-width: 90%; line-height: 1.4; margin-bottom: 2em; }}"
+      ],
+      "name": "Title with richtext",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "title_with_rich_text_yP7A6B": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_f7rCRC": {
+          "type": "heading",
+          "settings": {
+            "heading": "Click on the streaming channels below to find out how to watch.",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_f7rCRC"
+      ],
+      "custom_css": [
+        ".rich-text__blocks {width: 600px;}",
+        ".rich-text__heading {padding-top: 1em; font-size: 2rem;}",
+        "@media (max-width: 768px) {.title-with-rich-text .rich-text__text {margin-top: 0; } .rich-text__blocks .rich-text__text p {margin-top: 0; } .rich-text__heading {max-width: 90%; line-height: 1.4; margin-bottom: 2em; }}"
+      ],
+      "name": "Title with richtext",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "rich_text_with_multi_image_mWtHkf": {
+      "type": "rich-text-with-multi-image",
+      "blocks": {
+        "multi_image_jHBfcp": {
+          "type": "multi_image",
+          "settings": {
+            "first_image": "shopify://shop_images/Hulu_logo__2018.svg",
+            "button_link_1": "https://www.hulu.com/series/for-the-love-of-kitchens-94d67c5d-38ce-4287-9604-44c66aeda1b2",
+            "second_image": "shopify://shop_images/Discovery_Plus_Logo_Vector.svg",
+            "button_link_2": "https://www.discoveryplus.com/us/en/shows/for-the-love-of-kitchens/e8d18491-d65d-4b73-bfd9-4c6e1e40373a",
+            "third_image": "shopify://shop_images/HBO_Max_Logo.svg",
+            "button_link_3": "https://www.hbomax.com/shows/for-the-love-of-kitchens/e8d18491-d65d-4b73-bfd9-4c6e1e40373a",
+            "fourth_image": "shopify://shop_images/Amazon_Prime_Video_logo.svg",
+            "button_link_4": "https://www.amazon.com/Love-Kitchens-Season-1/dp/B09BXVDHHR",
+            "fifth_image": "shopify://shop_images/Apple_TV__logo.svg",
+            "button_link_5": "https://tv.apple.com/us/show/for-the-love-of-kitchens/umc.cmc.kgaxdrjbkrnpz734phnryq0e"
+          }
+        }
+      },
+      "block_order": [
+        "multi_image_jHBfcp"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "multi_video_column_cU4Hfp": {
+      "type": "multi-video-column",
+      "blocks": {
+        "column_yHBEAy": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/rbh7Xq5139c",
+            "title": "The Haberdasher’s Kitchen",
+            "subtext": "",
+            "text": "<p>Join Lee and Phillip as they transform a white featureless box into a Californian, Spanish, Yorkshire dream of a kitchen with our Haberdasher's cupboards and retro tiles from their company, Bert & May. We also take you to the UK's leading independent design festival, where we create our own traditional English haberdashery, with furniture and wares all made by deVOL.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_HYWwPz": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/vhTBq3Nktzc",
+            "title": "A Kitchen Where Old Meets New",
+            "subtext": "",
+            "text": "<p>This episode is all about mixing old and new as we help the lovely Louise and Gary transform their small, poorly designed kitchen into a glamorous mix of vintage and Shaker with a shimmering hand-aged copper worktop and a very unique green marble. Work begins on our new secret garden at Cotes Mill and we peek into the ceramics studio as they make the first Antique White Heirloom Platters.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_twQT4C": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/nwPuXFkP1Ew",
+            "title": "A Rustic Kitchen For An Old Barn",
+            "subtext": "",
+            "text": "<p>Alastair and David take on an impressive renovation of a completely dilapidated 17th century barn in the English countryside. It's an incredible place but gosh, does it need some TLC. We revisit our secret garden at Cotes Mill as Paul and Helen design and make an ornamental fountain with our friends at Carvero Stone, and we introduce you to a whole new mid-century inspired deVOL lighting collection.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_r9nX7U": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/_NS_46KLd7U",
+            "title": "A Kitchen Where Practicality and Beauty Meet",
+            "subtext": "",
+            "text": "<p>A very special project for a special couple, Alison & Paul, who want to create a kitchen that is as practical as it is beautiful, helping Paul as he slowly regains mobility after suffering a stroke. They also become the proud owners of our very first Vineyard Table and we attempt to recreate a rotating summer house from Paul’s childhood for our secret garden.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_watYWq": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/4THyZgEyWTs",
+            "title": "A Basement Kitchen for a Georgian Home",
+            "subtext": "",
+            "text": "<p>In this episode, we visit one of our favourite places, the East End of London, and a complete dream of a home. Built in 1717, this big old townhouse has a very glamorous history and is now home to the super stylish Paul and Michelle and their perfect new deVOL kitchen. We take you behind the scenes as we develop our new Grand Tour lighting collection, and finally have the big reveal of our secret garden.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_T4nFCY": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/2YhT832lwcM",
+            "title": "A Galley Kitchen",
+            "subtext": "",
+            "text": "<p>One of our wonderful kitchen designers, Iain, takes on the challenge of creating his own deVOL kitchen with his wife Daram. Paul embarks on a brand new project, designing a stylish chair for people who suffer from back pain and Helen takes inspiration from the London underground to create a new collection of deVOL tiles.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_BjG9my": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/k3EkHRMaufQ",
+            "title": "A Kitchen for a Georgian Townhouse",
+            "subtext": "",
+            "text": "<p>Meet Roland and Lorna as they attempt to renovate a glorious Georgian mews in Bristol. After being converted into lots of tiny rooms for flats, this place needed a whole lot of love! But the bones of the building were quite spectacular, it just needed a kitchen to match. Plus, we give you the first peek at a very special new café light Helen has been working on.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_ewUbDD": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/g9PHtcrxY0Y",
+            "title": "A Kitchen For A Forever Home",
+            "subtext": "",
+            "text": "<p>After many years travelling around the world and living on different military bases, Ben and Carice and their three children are finally hoping to settle down in a very special Tudor-style country home that was originally designed by Ben’s great-grandad. We introduce you to Robin’s Rack & Pinion catch and give you the first glimpse at a brand new collection of deVOL taps.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_YweGnt": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/z0QW1l0SY9k",
+            "title": "A Connecticut Kitchen",
+            "subtext": "",
+            "text": "<p>The first of our special US episodes. After a visit to our NYC home on Bond Street, we head out of the city to Cornwall, Connecticut with the wonderful Marina and Robert as they create a Shaker kitchen with a little bit of vintage and a lot of style for their early 1800’s toll house. We also see Robin and Ben craft an all new deVOL pantry cupboard, inspired by a visit to the historic Shugborough Hall and we pop into the ceramics studio for a lesson in making the perfect pleated porcelain pendant.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_WKk9AW": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/-kzqyhX4RJQ",
+            "title": "A Manhattan Apartment Kitchen",
+            "subtext": "",
+            "text": "<p>For the final episode, we meet Liz and Dan as we design a totally moody and elegant kitchen for their Manhattan apartment, inspired by Liz’s hometown on the English coast. We stop off at Merchant’s House and John Derian in NYC to soak up some inspiration. Robin crafts a brand new solid brass deVOL handle back at Cotes Mill, and we top it all off with a celebration in our Bond Street showroom.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_yHBEAy",
+        "column_HYWwPz",
+        "column_twQT4C",
+        "column_r9nX7U",
+        "column_watYWq",
+        "column_T4nFCY",
+        "column_BjG9my",
+        "column_ewUbDD",
+        "column_YweGnt",
+        "column_WKk9AW"
+      ],
+      "custom_css": [
+        ".multicolumn__title {margin-bottom: 0;}",
+        ".custom-multicolumn .multicolumn__title {justify-content: flex-start;}",
+        ".multicolumn-card__info {padding-top: 8px;}"
+      ],
+      "settings": {
+        "title": "A little taste of season 2",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "multi_video_column_YE3nYc": {
+      "type": "multi-video-column",
+      "blocks": {
+        "column_4AdyC8": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/HL7ghzfQvnI",
+            "title": "A Kitchen Fit For a Castle",
+            "subtext": "",
+            "text": "<p>Welcome to the glorious castle-home of Frieda and Javvy. This episode features a wonderfully eccentric Classic English kitchen and our very first Heirloom Dairy Table. Expect to see plenty of psychedelic floral wallpapers, quirky fabrics and homewares.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_H9YB6U": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/eUYLRaVeurM",
+            "title": "Form and Function",
+            "subtext": "",
+            "text": "<p>Bridget and Christopher create the perfect Shaker kitchen for their Victorian family home in Wimbledon. We also learn about the origins and early days of deVOL, with a visit to our first workshop in Loughborough.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_7gmfew": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/GSHKzReJ8mg",
+            "title": "Big Dreams for a Small Kitchen",
+            "subtext": "",
+            "text": "<p>Designing for small spaces is often challenging, but Joe gets it just right with this bold Shaker kitchen in his self-renovated cottage in County Durham. This is one for people who love a good antiques market.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_99PWC7": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/OM8A5kGx3HA",
+            "title": "Paul's Kitchen",
+            "subtext": "",
+            "text": "<p>Our Director, Paul, renovates his dream holiday cottage in St. Ives, opting for freestanding Classic cupboards and one-room living. We also see Robin, our Managing Director, in his home workshop, crafting our new Heirloom Gaselier Light.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_ERAAB6": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/356r3GaA59w",
+            "title": "A Kitchen Built on Details",
+            "subtext": "",
+            "text": "<p>Cool couple, Becca and Damien, update their small family kitchen in Cornwall to suit their eco-lifestyle, and our Sebastian Cox cupboards are the perfect fit. We also follow our metalsmiths at Cotes Mill as they set out to design an elegant new light switch.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_Kyf3EX": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/HzLGnkS5QPU",
+            "title": "A Kitchen for Entertaining",
+            "subtext": "",
+            "text": "<p>A beautiful old schoolhouse home in Brixton has its rather dysfunctional kitchen updated with simple Shaker cupboards. We also meet Doug and Danielle at the end of their six-year-long journey to renovate an incredible Tudor house in Cambridgeshire.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_aTWD8b": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/lDpjinafCME",
+            "title": "A Kitchen Designer's Kitchen",
+            "subtext": "",
+            "text": "<p>Our Creative Director, Helen, designs an eclectic mix of Classic and vintage kitchen cupboards for her Victorian home in Leicestershire. Dainty lace curtains and handcrafted ceramic decorations.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_BEc7UX": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/0mR-l513Nao",
+            "title": "A Chef's Kitchen",
+            "subtext": "",
+            "text": "<p>In the final episode, we follow Rebecca and Matt's extension project as they create a Shaker kitchen fit for a family and a cook's classroom. Meanwhile, Paul and Helen convert a retro VW pickup into our deVOLkswagon food truck.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_4AdyC8",
+        "column_H9YB6U",
+        "column_7gmfew",
+        "column_99PWC7",
+        "column_ERAAB6",
+        "column_Kyf3EX",
+        "column_aTWD8b",
+        "column_BEc7UX"
+      ],
+      "custom_css": [
+        ".multicolumn__title {margin-bottom: 0;}",
+        ".custom-multicolumn .multicolumn__title {justify-content: flex-start;}",
+        ".multicolumn-card__info {padding-top: 8px;}"
+      ],
+      "settings": {
+        "title": "A little taste of season 1",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 24,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "title_with_rich_text_bCDT46": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_RpceYP": {
+          "type": "heading",
+          "settings": {
+            "heading": "deVOL Films",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_AKF6LJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>From a full blown TV show, to our very own films, we love to share snippets of our unique and intricate design processes, take you behind the scenes in our workshops and studios and show you a little insight in to the life at Cotes Mill.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RpceYP",
+        "text_AKF6LJ"
+      ],
+      "custom_css": [],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "multi_video_column_9C3CTe": {
+      "type": "multi-video-column",
+      "blocks": {
+        "column_AF7nmP": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/V7kZQcedIAg",
+            "title": "Welcome to Cotes Mill",
+            "subtext": "",
+            "text": "<p>deVOL welcomes you to take a look around our beautiful home, Cotes Mill, where we work and create our kitchens and so much more. We hope you enjoy it.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_VNeFKM": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/8jKOfKT3I_M",
+            "title": "How We Make Our Haberdasher's Cupboards",
+            "subtext": "",
+            "text": "<p>Peek inside the deVOL Haberdasher's workshop in Leicesterhire, England, to see our skilled craftspeople making this beautiful kitchen and all of it's little details.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_iWBQkf": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/E_kuth2MltM",
+            "title": "How We Make Our Lace Market Tiles",
+            "subtext": "",
+            "text": "<p>Beautiful patterned tiles created by pressing elegant lace designs into clay on an antique tile press at Cotes Mill.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        },
+        "column_YVfEJH": {
+          "type": "column",
+          "settings": {
+            "video_url": "https://youtu.be/n_elpNerhF4",
+            "title": "How We Make Cup Handles",
+            "subtext": "",
+            "text": "<p>A look at how deVOL's jeweller, Steph, casts our original cup handles, specially designed for our kitchens.</p>",
+            "show_above_image": false,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_AF7nmP",
+        "column_VNeFKM",
+        "column_iWBQkf",
+        "column_YVfEJH"
+      ],
+      "custom_css": [
+        ".multicolumn-card__info {padding-top: 8px;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 30,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "title_with_rich_text_Dwpdrd": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "button_tbj3qh": {
+          "type": "button",
+          "settings": {
+            "button_label": "See more deVOL films on our YouTube channel >",
+            "button_link": "https://www.youtube.com/channel/UCgbMUOsudggsBOLNA3kAQNQ",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_tbj3qh"
+      ],
+      "custom_css": [
+        ".title-with-rich-text .rich-text__buttons .button {color: #898989; text-decoration: underline;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 12,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "metaobject_gallery_slider_teHTkh",
+    "gallery_slideshow_h3k8wd",
+    "page_title_description_7dkXeM",
+    "title_with_rich_text_RLrj3y",
+    "editorials_BfHAPE",
+    "title_with_rich_text_BjFMU6",
+    "title_with_rich_text_yP7A6B",
+    "rich_text_with_multi_image_mWtHkf",
+    "multi_video_column_cU4Hfp",
+    "multi_video_column_YE3nYc",
+    "title_with_rich_text_bCDT46",
+    "multi_video_column_9C3CTe",
+    "title_with_rich_text_Dwpdrd"
+  ]
+}

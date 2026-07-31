@@ -89,6 +89,7 @@
   max-width: 600px;
   margin: 1em auto;
   text-align: center;
+  z-index: 2;
 }
 
 .cart-notification__header {
@@ -98,6 +99,24 @@
 
 .cart-notification.active .added-message {
   line-height: 15px;
+}
+
+.cart-notification.active.secondary-message {
+  width: 100%;
+  max-width: 650px;
+}
+
+.cart-notification.active.secondary-message .added-message p:first-child {
+  margin-top: .5em;
+  font-weight: 500;
+}
+
+.cart-notification.active.secondary-message .added-message p:last-child {
+  margin-bottom: .5em;
+}
+
+.cart-notification.active .added-message a {
+  color: #fff;
 }
 
 .cart-notification__heading {

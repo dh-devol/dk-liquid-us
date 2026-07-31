@@ -30,12 +30,18 @@
       data-calculator="{{ calculator_type }}"
     {% endif %}
   >
+    {%- comment -%}
+      Purely geographic gate — flooring is not purchasable outside the UK/US
+      regardless of stock. (The section normally suppresses this snippet for
+      international visitors; this is a defensive fallback.)
+    {%- endcomment -%}
     {%- assign hide_calculator = false -%}
-    {%- unless product.selected_or_first_available_variant.available -%}
-      {%- if localization.country.iso_code != 'GB' and localization.country.iso_code != 'US' -%}
-        {%- assign hide_calculator = true -%}
-      {%- endif -%}
-    {%- endunless -%}
+    {%- assign _int_oos_type = settings.flooring_product_type | default: 'Flooring' -%}
+    {%- if product.type == _int_oos_type
+        and localization.country.iso_code != 'GB'
+        and localization.country.iso_code != 'US' -%}
+      {%- assign hide_calculator = true -%}
+    {%- endif -%}
     <div class="quantity_coverage-wrapper {{ tile_type }}"{% if hide_calculator %} style="display:none"{% endif %}>
       {% if tile_type != 'free length' and tile_type != 'variable pack' %}
         {% assign show_coverage = true %}
@@ -228,8 +234,10 @@
                 if (!quantityInput || !totalPriceEl) return;
                 var qty = parseFloat(quantityInput.value);
                 if (isNaN(qty) || qty < 1) qty = 1;
-                var ft2 = isFreeLength ? qty * M2_TO_FT2 : qty;
-                totalPriceEl.textContent = formatPrice(unitPriceCents * ft2);
+                // Free-length products are priced per m² (product.price === per-m² price) and
+                // the quantity field is in m², so multiply directly. This keeps the PDP subtotal
+                // in sync with the Shopify cart line total (variant price × m² quantity).
+                totalPriceEl.textContent = formatPrice(unitPriceCents * qty);
               }
 
               function syncFt2FromM2() {
@@ -449,7 +457,7 @@
               class="coverage__input"
               type="number"
               min="{% if tile_type == 'linear' %}1{% else %}0{% endif %}"
-              value="{% if tile_type == 'fixed tile' %}{{ coverage_input_value }}{% else %}10{% endif %}"
+              value="{% if tile_type == 'fixed tile' %}{{ coverage_input_value }}{% elsif tile_type == 'linear' %}1{% else %}10{% endif %}"
               step="{% if tile_type == 'fixed tile' %}any{% elsif tile_type == blank or tile_type == 'linear' %}1{% else %}{{ unit_area_m2 }}{% endif %}"
               name="coverage"
               id="Coverage-{{ section.id }}"
@@ -493,6 +501,7 @@
       unitAreaM2: {{ product.metafields.custom.unit_area_m2.value | default: 0 | times: 10.7639 | json }},
       unitAreaSet: {{ unit_area_value | json }},
       tilesPerM2: {{ product.metafields.custom.number_of_tile_for_coverage_1m2.value | default: 0 | json }},
+      templateSuffix: {{ product.template_suffix | json }},
       moneyFormat: {{ shop.money_format | json }} // Shopify money format
     };
   </script>

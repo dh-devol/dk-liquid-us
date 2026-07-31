@@ -286,9 +286,11 @@
                   </a>
                 {%- elsif block.settings.link_label != blank -%}
                   <a
-                    class="link animate-arrow{% if block.settings.link contains page.handle %} active{% endif %}"
+                    class="link animate-arrow{% if block.settings.link contains page.handle or block.settings.link contains collection.handle  %} active{% endif %}"
                     {% if block.settings.link == blank %}
                       role="link" aria-disabled="true"
+                    {% elsif block.settings.anchor != blank %}
+                      href="{{ block.settings.link | append: block.settings.anchor }}"
                     {% else %}
                       href="{{ block.settings.link }}"
                     {% endif %}
@@ -509,6 +511,10 @@
         {
           "value": "2",
           "label": "t:sections.multicolumn.settings.columns_mobile.options__2.label"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
         }
       ],
       "default": "1",
@@ -564,6 +570,12 @@
           "id": "link",
           "label": "t:sections.multicolumn.blocks.column.settings.link.label",
           "info": "If you link a page to the project, the images will be taken from that page’s settings."
+        },
+        {
+          "type": "text",
+          "id": "anchor",
+          "label": "Anchor tag",
+          "info": "Please add a '#' before the tag"
         },
         {
           "type": "page",

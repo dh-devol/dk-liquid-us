@@ -5,6 +5,37 @@
   {% continue %}
 {%- endif -%}
 
+{%- assign _cart_flooring_type = settings.flooring_product_type | default: 'Flooring' -%}
+{%- if item.product.type == _cart_flooring_type -%}
+  {%- assign _item_tile_type = item.product.metafields.custom.flooring_tile_type.value | downcase -%}
+  {%- assign _item_unit_area = item.product.metafields.custom.unit_area_m2.value | plus: 0 -%}
+  {%- assign _item_is_fixed_tile = false -%}
+  {%- assign _item_show_m2 = false -%}
+  {%- if _item_tile_type == 'fixed tile' or _item_tile_type == 'fixed pack' -%}
+    {%- assign _item_is_fixed_tile = true -%}
+    {%- if _item_unit_area > 0 -%}
+      {%- assign _item_m2 = item.quantity | times: _item_unit_area | round: 2 -%}
+      {%- assign _item_show_m2 = true -%}
+    {%- endif -%}
+  {%- elsif _item_tile_type == 'free length' or _item_tile_type == 'variable pack' -%}
+    {%- assign _item_m2 = item.quantity -%}
+    {%- assign _item_show_m2 = true -%}
+  {%- endif -%}
+  {%- if _item_show_m2 -%}
+    {%- assign _m2_cents = _item_m2 | times: 100 | round -%}
+    {%- assign _m2_frac = _m2_cents | modulo: 100 -%}
+    {%- assign _m2_frac_str = _m2_frac | prepend: '00' | slice: -2, 2 -%}
+    {%- assign _m2_floor = _item_m2 | floor -%}
+    {%- assign _item_m2_display = _m2_floor | append: '.' | append: _m2_frac_str -%}
+    {%- comment -%} US store: convert m² area to ft² (1 m² = 10.7639 ft²) for the desktop summary line {%- endcomment -%}
+    {%- assign _item_ft2 = _item_m2 | times: 10.7639 -%}
+    {%- assign _ft2_cents = _item_ft2 | times: 100 | round -%}
+    {%- assign _ft2_frac = _ft2_cents | modulo: 100 -%}
+    {%- assign _ft2_frac_str = _ft2_frac | prepend: '00' | slice: -2, 2 -%}
+    {%- assign _ft2_floor = _item_ft2 | floor -%}
+    {%- assign _item_ft2_display = _ft2_floor | append: '.' | append: _ft2_frac_str -%}
+  {%- endif -%}
+{%- endif -%}
 {%- comment -%}Resolve cart quantity limit from theme settings{%- endcomment -%}
 {%- assign _cart_qty_limit = 0 -%}
 {%- assign _cart_qty_limit_tag = '' -%}
@@ -133,10 +164,23 @@
           {%- endfor -%}
         {%- endif -%}
 
+         {%- capture item_lead_time_text -%}
+          {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item.quantity -%}
+        {%- endcapture -%}
+
+        {%- capture item_lead_time_days -%}
+          {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item.quantity, field: 'lead_time_days' -%}
+        {%- endcapture -%}
+        {%- assign item_lead_time_days = item_lead_time_days | strip -%}
+
         {%- for property in item.properties -%}
           {%- assign property_key = property.first -%}
           {%- assign property_value = property.last -%}
           {%- assign property_first_char = property_key | slice: 0 -%}
+
+          {%- if property_key == 'Lead time' and item_lead_time_text != blank -%}
+            {%- assign property_value = item_lead_time_text -%}
+          {%- endif -%}
 
           {%- if property_value != blank
             and property_first_char != '_'
@@ -152,6 +196,8 @@
                 <a href="{{ property_value }}" class="link" target="_blank">
                   {{ property_value | split: '/' | last }}
                 </a>{% unless forloop.last %}{% if property_key contains "Scent" %},{% endif %}{% endunless %}
+              {%- elsif property_value contains '/cdn/shop'-%}
+                <img src="{{ property_value }}" class="visually-hidden" width="100" height="100" alt="Thumbnail">
               {%- else -%}
                 {{ property_value }}{% unless forloop.last %}{% if property_key contains "Scent" %},{% endif %}{% endunless %}
               {%- endif -%}
@@ -160,14 +206,16 @@
           {%- endif -%}
         {%- endfor -%}
       </dl>
-      {%- if item.properties["_lead_time_days"] != blank -%}
-        <span class="lead-time-span visually-hidden" data-leadtime="{{ item.properties["_lead_time_days"] }}" data-line-key="{{ item.key }}"></span>
+      {% comment %} Fallback {%- assign item_lead_time_days = item_product_lead_time_days | default: item.properties["_lead_time_days"] -%} {% endcomment %}
+      {%- if item_lead_time_days != blank -%}
+        <span class="lead-time-span visually-hidden" data-leadtime="{{ item_lead_time_days }}" data-leadtext="{{ item_lead_time_text | escape }}" data-line-key="{{ item.key }}"></span>
       {%- endif -%}
       <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
       {%- comment -%}
         Render related add-on line items that reference this product via properties.group_id
         Add-ons are identified by properties['Added as add-on'] == 'true' and properties.group_id == item.product_id
       {%- endcomment -%}
+      {%- assign item_product_id_str = item.product_id | append: '' -%}
       {%- assign addon_related_count = 0 -%}
       {%- assign related_addon_total = 0 -%}
       {%- assign related_addon_original_total = 0 -%}
@@ -175,12 +223,12 @@
       {%- assign related_bundle_total = 0 -%}
       {%- assign related_bundle_original_total = 0 -%}
       {%- for ci in cart.items -%}
-        {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item.properties._group_id -%}
+        {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item_product_id_str -%}
           {%- assign addon_related_count = addon_related_count | plus: 1 -%}
           {%- assign related_addon_total = related_addon_total | plus: ci.final_line_price -%}
           {%- assign related_addon_original_total = related_addon_original_total | plus: ci.original_line_price -%}
         {%- endif -%}
-        {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item.properties._group_id -%}
+        {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item_product_id_str -%}
           {%- assign bundle_related_count = bundle_related_count | plus: 1 -%}
           {%- assign related_bundle_total = related_bundle_total | plus: ci.final_line_price -%}
           {%- assign related_bundle_original_total = related_bundle_original_total | plus: ci.original_line_price -%}
@@ -194,13 +242,14 @@
         {%- for sort_pos in (0..20) -%}
           {%- assign sort_str = sort_pos | append: '' -%}
           {%- for ci in cart.items -%}
-            {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item.properties._group_id and ci.properties._addon_sort == sort_str -%}
+            {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item_product_id_str and ci.properties._addon_sort == sort_str -%}
               {%- assign addon_index = addon_index | plus: 1 -%}
               {%- if ci.properties._addon_summary -%}
-                {%- assign addon_name = ci.properties._addon_summary -%}
+                {%- assign addon_piece = ci.properties._addon_summary -%}
               {%- else -%}
-                {%- assign addon_name = ci.product.metafields.custom.custom_product_title | default: ci.product.title -%}
+                {%- assign addon_piece = ci.product.metafields.custom.custom_product_title | default: ci.product.title -%}
               {%- endif -%}
+              {%- assign addon_name = addon_name | append: addon_piece -%}
               {%- if addon_index < addon_related_count -%}
                 {%- assign addon_name = addon_name | append: ", " -%}
               {%- endif -%}
@@ -213,7 +262,7 @@
         {%- for sort_pos in (0..20) -%}
           {%- assign sort_str = sort_pos | append: '' -%}
           {%- for ci in cart.items -%}
-            {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item.properties._group_id and ci.properties._bundle_sort == sort_str -%}
+            {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item_product_id_str and ci.properties._bundle_sort == sort_str -%}
               {%- assign bundle_index = bundle_index | plus: 1 -%}
               {%- if ci.properties._bundle_summary -%}
                 {%- assign bundle_name = bundle_name | append: ci.properties._bundle_summary -%}
@@ -236,12 +285,16 @@
           {% endif %}
           {% if bundle_name or addon_name %}
             Inc.
-            <span class="cart-item__addon switch-bundle" data-addon-lines="{{ ci.product.selected_or_first_available_variant.id }}" data-index="{{ ci.index | plus: 1 }}">
-              {{ bundle_name }}{%- if addon_name-%}, {% endif -%}
-            </span>
-            <span class="cart-item__addon" data-addon-lines="{{ ci.product.selected_or_first_available_variant.id }}" data-index="{{ ci.index | plus: 1 }}">
-              {{ addon_name }}
-            </span>
+            {% if bundle_name %}
+              <span class="cart-item__addon switch-bundle" data-addon-lines="{{ ci.product.selected_or_first_available_variant.id }}" data-index="{{ ci.index | plus: 1 }}">
+                {{- bundle_name -}}{% if addon_name %}, {% endif %}
+              </span>
+            {% endif %}
+            {% if addon_name %}
+              <span class="cart-item__addon" data-addon-lines="{{ ci.product.selected_or_first_available_variant.id }}" data-index="{{ ci.index | plus: 1 }}">
+                {{- addon_name -}}
+              </span>
+            {% endif %}
           {% endif %}
         </div>
       {% endif %}
@@ -250,6 +303,9 @@
     {% if item.properties == blank %}
       <span class="product__inventory cart-item-stock">{{ item.product.metafields.custom.lead_time.value }}</span>
     {% endif %}
+    {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
+      <p class="cart-item__flooring-summary small-hide medium-hide">{{ _item_ft2_display }} ft²</p>
+    {%- endif -%}
     <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
       {%- for discount in item.line_level_discount_allocations -%}
         <li class="discounts__discount">
@@ -457,6 +513,13 @@
               </span>
             </button>
           </quantity-input>
+          {%- if item.product.type == _cart_flooring_type -%}
+            {%- if _item_is_fixed_tile -%}
+              <span class="cart-unit-label">tiles</span>
+            {%- else -%}
+              <span class="cart-unit-label">m²</span>
+            {%- endif -%}
+          {%- endif -%}
         </div>
         {% comment %}
         <cart-remove-button
@@ -571,6 +634,9 @@
 
   <td class="cart-item__totals right">
     <quantity-popover>
+      {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
+        <p class="cart-item__flooring-summary large-up-hide">{{ _item_ft2_display }} ft²</p>
+      {%- endif -%}
       <div class="cart-item__quantity-wrapper quantity-popover-wrapper large-up-hide">
         <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
           {{ 'products.product.quantity.label' | t }}
@@ -640,6 +706,13 @@
               </span>
             </button>
           </quantity-input>
+          {%- if item.product.type == _cart_flooring_type -%}
+            {%- if _item_is_fixed_tile -%}
+              <span class="cart-unit-label">tiles</span>
+            {%- else -%}
+              <span class="cart-unit-label">m²</span>
+            {%- endif -%}
+          {%- endif -%}
         </div>
         {% comment %}
         <cart-remove-button

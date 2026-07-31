@@ -20,6 +20,7 @@
     const tileBundle = String(cfg.tileBundle || '').toLowerCase();
     const priceCents = Number(cfg.price) || 0;
     const moneyFormat = cfg.moneyFormat || "${{amount}}";
+    const isPerTile = String(cfg.templateSuffix || '').toLowerCase() === 'handmade-tiles';
     const hasType = tileBundle.length > 0;
 
   let tileAreaM2;
@@ -67,6 +68,7 @@
 
   const isFixedTileOrPack = tileBundle === 'fixed pack' || tileBundle === 'fixed tile';
   const isLinear = tileBundle === 'linear';
+  const isFreeLength = tileBundle === 'free length';
   const minCoverage = 1;
   let allowBelowCoverageMin = false;
   let qtyStep = tileBundle === 'fixed pack' ? packSize : (Number(qtyInput.step) || 1);
@@ -128,9 +130,26 @@
   }
 
   function updateTotal() {
-    const coverage = Number(coverageInput.value) || 0;
-    totalEl.textContent = formatPrice(priceCents * coverage, moneyFormat);
-    console.log('[tile_calc] updateTotal', { coverage, total: totalEl.textContent });
+    let amount;
+    if (isPerTile) {
+      const qty = Number(qtyInput.value) || 1;
+      amount = priceCents * qty;
+    } else if (isFreeLength) {
+      // Free-length products are priced per m² (product.price === per-m² price) and the
+      // quantity field is in m². Multiply directly so the subtotal matches the Shopify
+      // cart line total instead of using the ft² coverage value.
+      const qty = Number(qtyInput.value) || 1;
+      amount = priceCents * qty;
+    } else {
+      // Fixed tile / fixed pack / linear are charged as a Shopify line item =
+      // variant.price × quantity. The quantity field holds the unit count, so
+      // multiply by it. Multiplying the per-unit price by the ft² coverage mixes
+      // units and inflates the subtotal (e.g. $57.25/tile × 23.25 ft² = $1331.06).
+      const qty = Number(qtyInput.value) || 1;
+      amount = priceCents * qty;
+    }
+    totalEl.textContent = formatPrice(amount, moneyFormat);
+    console.log('[tile_calc] updateTotal', { isPerTile, isFreeLength, total: totalEl.textContent });
   }
 
     const qtyMinusBtn = scope.querySelector('.tcalc-btn--qty-minus') || qtyInput.closest('.quantity')?.querySelector('button[name="minus"]');

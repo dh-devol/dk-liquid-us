@@ -435,26 +435,62 @@
                     </script>
                   {% endif %}
 
-                  {% if product.metafields.custom.lead_time != blank %}
+                  {% if product.metafields.custom.lead_time.value != blank or product.metafields.custom.secondary_lead_time.value != blank %}
+                    {%- assign variant = product.selected_or_first_available_variant -%}
+                    {%- capture lead_time_value -%}
+                      {%- render 'lead-time-text', product: product, variant: variant -%}
+                    {%- endcapture -%}
                     <input
                       id="lead_time"
-                      value="{{ product.metafields.custom.lead_time }}"
+                      value="{{ lead_time_value | escape }}"
                       type="hidden"
                       name="properties[Lead time]"
                     >
                   {% endif %}
-                  {% if product.metafields.custom.lead_time_days != blank %}
+                  {% if product.metafields.custom.lead_time_days.value != blank or product.metafields.custom.secondary_lead_time_days.value != blank %}
+                    {%- capture lead_time_days_value -%}
+                      {%- render 'lead-time-text', product: product, variant: variant, field: 'lead_time_days' -%}
+                    {%- endcapture -%}
+                    {%- assign lead_time_days_value = lead_time_days_value | strip -%}
                     <input
                       type="hidden"
                       name="properties[_lead_time_days]"
-                      value="{{ product.metafields.custom.lead_time_days }}"
+                      value="{{ lead_time_days_value | escape }}"
                     >
                     <input
                       type="hidden"
                       name="properties[_Promise Date]"
                       class="js-promise-date-input"
-                      data-lead-days="{{ product.metafields.custom.lead_time_days }}"
+                      data-lead-days="{{ lead_time_days_value | escape }}"
                       value=""
+                    >
+                  {% endif %}
+                  {%- assign variant = product.selected_or_first_available_variant -%}
+
+                  {%- capture pdp_available -%}
+                    {%- render 'lead-time-text', product: product, variant: variant, quantity: 1, field: 'available' -%}
+                  {%- endcapture -%}
+                  {%- assign pdp_available = pdp_available | strip -%}
+
+                  {%- capture pdp_secondary_lead_time -%}
+                    {{ product.metafields.custom.secondary_lead_time.value }}
+                  {%- endcapture -%}
+                  {%- assign pdp_secondary_lead_time = pdp_secondary_lead_time | strip -%}
+
+                  <div
+                    id="lead-time-calc-data"
+                    data-available="{{ pdp_available }}"
+                    data-secondary-text="{{ pdp_secondary_lead_time | escape }}"
+                    data-inventory-policy="{{ variant.inventory_policy }}"
+                    data-inventory-management="{{ variant.inventory_management }}"
+                    style="display:none"
+                  ></div>
+                  {% if product.metafields.custom.thumbnail_image_1 != blank %}
+                    <input
+                      id="thumbnail"
+                      value="{{ product.metafields.custom.thumbnail_image_1 | image_url: width: 600}}"
+                      type="hidden"
+                      name="properties[_Thumbnail]"
                     >
                   {% endif %}
                   {% if _pf_cart_qty_limit > 0 %}

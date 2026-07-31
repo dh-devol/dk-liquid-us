@@ -4,13 +4,15 @@
 
 {%- assign target_author = page.metafields.custom.author_names | default: page.author | strip -%}
 {%- assign author_bio = page.metafields.custom.author_bio -%}
+{% assign author_position  = page.metafields.custom.author_position %}
 <article class="baskerville article-template">
+
+  <div class="brand__info-wrapper">
+    <a href="/pages/blog"><img src="{{ 'devol-journal.svg' | file_url }}" width="auto" height="auto" alt="The deVOL Journal"></a>
+  </div>
 
   <!-- Blog category menu -->
   <div class="main__blog--wrapper">  
-    <div class="blog_author-name">
-      <h1>Contributor: <span>{{ target_author }}</span></h1>
-    </div>
     <div class="blog__option-wrapper">
       <div class="baskerville blog__title">
         Categories
@@ -38,13 +40,19 @@
   <div class="author-header">
     {% if page.metafields.custom.author_image %}
       <div class="author-image-wrap">
-        <img src="{{ page.metafields.custom.author_image | file_url }}" alt="{{ target_author }}" class="author-image">
+        <img src="{{ page.metafields.custom.author_image | file_url }}" width="auto" height="auto" alt="{{ target_author }}" class="author-image">
       </div>
     {% endif %}
     <div class="author-bio rte">
+          <div class="blog_author-name">
+      <h1>{{ target_author }}</h1>
+    </div>
+              <div class="blog_author-role">
+      <h2>{{ author_position | metafield_tag}}</h2>
+    </div>
       <div class="bio-content">
         <div class="bio-text-truncated">
-          {{ author_bio | metafield_tag | truncatewords: 124, "." }}
+          {{ author_bio | metafield_tag | truncatewords: 115, "..." }}
         </div>
         </div>
         <div class="bio-text-full">
@@ -131,21 +139,21 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
     </div>
-  </div>
 
 <!-- Styles -->
 <style>
   article.baskerville.article-template .main__blog--wrapper {
-    justify-content: space-between;
+    justify-content: flex-end;
     border: 0;
     align-items: center;
-    max-width: 1074px;
-    padding: 0px 6rem;
-    margin-top: 36px;
+    max-width: 1100px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
   }
   .blog_author-name h1 {
-    font-family: baskerville-urw, garamond-premier-pro, Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-    font-size: 15px;
+    font-family: "EB Garamond", garamond-premier-pro-display, "Times New Roman", serif;
+    font-size: 18px;
+    color: #595959;
     letter-spacing: 0.03em;
     margin: 0;
   }
@@ -156,10 +164,11 @@ document.addEventListener("DOMContentLoaded", function () {
     font-size: 15px;
   }
   .author-page {
-    max-width: 1074px;
-    margin: 0 auto;
-    padding: 23px 6rem 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 36px 0;
   }
+
   .author-page .author-header {
     display: flex;
     flex-direction: column;
@@ -170,34 +179,44 @@ document.addEventListener("DOMContentLoaded", function () {
       width: 30%;
   }
   .author-page .author-image {
-    height: 212.2px;
-    width: 304.2px;
+    height: 300px;
+    width: 300px;
     object-fit: cover;
     object-position: 50% 5%;
   } 
+    .author-page .author-bio .metafield-single_line_text_field {
+    font-family: "EB Garamond", garamond-premier-pro-display, "Times New Roman", serif;
+    font-size: 14px;
+    color: #595959;
+  } 
+      .author-page .author-bio .blog_author-role h2 {
+        margin: -5px 0 1em;
+        font-style: italic;
+  } 
   .author-page .author-bio {
-    font-family: baskerville-urw, serif;
+    font-family: "EB Garamond", garamond-premier-pro-display, "Times New Roman", serif;
     font-size: 16px;
-        width: 70%;
+    width: 70%;
     line-height: 1.6;
-    color: #333;
+    color: #595959;
   }
-  .author-page .bio-content {
-    margin-bottom: -4px;    
-    font-size: 13px;
+  .author-page .bio-content {    
+    font-size: 15px;
   }
   .author-page .bio-content p:first-child {
     margin-top:0;
   }
   .author-page .read-more-btn {
-    font-family: baskerville-urw, garamond-premier-pro, Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-family: "EB Garamond", garamond-premier-pro-display, "Times New Roman", serif;
     font-style: italic;
     background: none;
     border: none;
-    color: #666;
-    font-size: 13px;
+    color: #595959;
+    font-size: 14px;
     cursor: pointer;
     padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
   }
   .author-page .read-more-btn:focus-visible {
     outline: 0;
@@ -207,40 +226,44 @@ document.addEventListener("DOMContentLoaded", function () {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.8s ease, opacity 1.0s ease;
+    transition: max-height 0.8s ease, opacity 0s ease;
     pointer-events: none;
   }
   .author-page .bio-text-full.expanded {
     max-height: 1000px; /* Should be higher than expected content height */
     opacity: 1;
     pointer-events: auto;
-    margin-top: -20px;
     margin-bottom: 13px;
   }
   .author-page .author-articles {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 21px;
+    gap: 1.5em;
   }
   .author-page .author-articles .grid__item.article {
     width: 100%;
     max-width: 100%;
   }
   .author-page .article-card img {
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     margin-bottom: 10px;
   }
 
-  @media (max-width: 590px) {
+  /*@media (max-width: 590px) {
     .author-page .author-image {
       width: 100% !important;
     }
     .author-page .author-image-wrap {
       width: 100% !important;
     }
+}*/
+@media screen and (max-width: 1350px) {
+  .author-page {
+  max-width: 88%;
+  }
 }
 
-  @media screen and (min-width: 990px) {
+  @media screen and (min-width: 768px) {
     .author-page .author-articles {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -250,6 +273,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     .author-page .bio-text-full.expanded p:last-child {
       margin-bottom: 0;
+    }
+  }
+ @media (max-width: 990px){
+      .author-page .author-image {
+      height: 250px;
+      width: 250px;
     }
   }
   @media (max-width: 768px){
@@ -262,28 +291,31 @@ document.addEventListener("DOMContentLoaded", function () {
     .author-page .bio-text-full.expanded {
       max-height: max-content;
     }
-    .author-page {
+      article.baskerville.article-template .main__blog--wrapper {
+    padding-bottom: 20px;
+  }
+    /*.author-page {
       padding: 0 3rem;
     }
-    .author-page .author-image {
+    /*.author-page .author-image {
       height: 254px;
       width: 364px;
     }
-    article.baskerville.article-template .main__blog--wrapper {
+    /*article.baskerville.article-template .main__blog--wrapper {
       display: block;
       padding: 0px 3rem;
       margin-bottom: 30px;
-    }
-    blog_author-name {
+    }*/
+    /*blog_author-name {
       margin-bottom: 20px;
-    }
+    }*/
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1200px) {
     .author-page .author-image-wrap {
       width: min-content;
     }
     .author-page .author-header {
-      gap: 40px;
+      gap: 30px;
     }
   }
 </style>

@@ -119,8 +119,11 @@
     }
 
     function updateTotal() {
-      const coverage = Number(coverageInput.value) || 0;
-      const subtotalCents = priceCents * coverage;
+      // Subtotal = Shopify line item price = variant.price × quantity. The quantity
+      // field holds the unit count (tiles/packs); multiplying the per-unit price by
+      // the ft² coverage instead mixes units and inflates the subtotal.
+      const qty = Number(qtyInput.value) || 1;
+      const subtotalCents = priceCents * qty;
       totalPriceEl.textContent = formatPrice(subtotalCents, moneyFormat);
     }
 

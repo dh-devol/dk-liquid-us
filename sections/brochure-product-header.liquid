@@ -11,6 +11,11 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding .rich-text__blocks.center {
+      text-align: left;
+    }
+  }
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
@@ -18,11 +23,11 @@
     <div class="rich-text__wrapper rich-text__wrapper--center">
       <div class="rich-text__blocks center">
         <h2 class="rich-text__heading rte inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-          {{ product.title }}
+          {{ section.settings.heading }}
         </h2>
-        {% if product.description != blank %}
+        {% if section.settings.sub_text != blank %}
           <div class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-            {{ product.description }}
+            {{ section.settings.sub_text }}
           </div>
         {% endif %}
       </div>
@@ -34,6 +39,16 @@
 {
   "name": "Brochure product header",
   "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+    },
+    {
+      "type": "text",
+      "id": "sub_text",
+      "label": "Subtext",
+    },
     {
       "type": "select",
       "id": "heading_size",
@@ -74,6 +89,10 @@
       "default": 60
     }
   ],
-  "templates": ["product"]
+  "presets": [
+    {
+      "name": "Brochure product header"
+    }
+  ]
 }
 {% endschema %}

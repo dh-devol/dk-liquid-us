@@ -53,20 +53,10 @@
                 <div class="swiper-slide blog_slide">
                   <div class="article_detail-wrapper baskerville">
                     {% if block.settings.show_date %}
-                      {% assign day = article.published_at | date: "%-d" %}
-                      {% assign month_year = article.published_at | date: "%B %Y" %}
-                      {% assign suffix = "th" %}
-                      {% if day == "1" or day == "21" or day == "31" %}
-                        {% assign suffix = "st" %}
-                      {% elsif day == "2" or day == "22" %}
-                        {% assign suffix = "nd" %}
-                      {% elsif day == "3" or day == "23" %}
-                        {% assign suffix = "rd" %}
-                      {% endif %}
-                      <span class="date">{{ day }}{{ suffix }} {{ month_year }}</span>
+                      <span class="date">{{ article.published_at | date: '%d %B %Y' }}</span>
                     {% endif %}
                     {% if block.settings.show_date and block.settings.show_author %}
-                      <span>|</span>
+                      <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                     {% endif %}
                     {% if block.settings.show_author %}
                       <span class="author">by {{ article.author }}</span>
@@ -79,7 +69,7 @@
                   {% endif %}
                   {% if block.settings.show_title %}
                     <div class="baskerville article_title">
-                      Featured Post | <span>{{ article.title }}</span>
+                      Featured Post&nbsp;&nbsp; |&nbsp;&nbsp; <span>{{ article.title }}</span>
                     </div>
                   {% endif %}
                 </div>
@@ -107,7 +97,9 @@
               <h2 class="brand_title">{{ block.settings.title }}</h2>
             {% endif %}
             {% if block.settings.image != blank %}
-             <img src="{{ block.settings.image | image_url }}" width="auto" height="auto" alt="{{ block.settings.image.alt }}">
+              <a href="/pages/blog">
+                <img src="{{ block.settings.image | image_url }}" width="auto" height="auto" alt="{{ block.settings.image.alt }}">
+              </a>
             {% endif %}
             {% if block.settings.text != blank %}
               <div class="rte">
@@ -293,12 +285,12 @@
           const loadMoreButton = document.createElement('button');
           loadMoreButton.type = 'button';
           loadMoreButton.className = 'blog__load-more';
-          loadMoreButton.textContent = 'Load More Posts';
+          loadMoreButton.textContent = 'Loading more posts';
           list.parentNode.appendChild(loadMoreButton);
 
           const setLoadingState = (loading) => {
             isLoading = loading;
-            loadMoreButton.textContent = loading ? 'Loading posts...' : 'Load More Posts';
+            loadMoreButton.textContent = loading ? 'Loading posts...' : 'Loading more posts';
             loadMoreButton.disabled = loading;
             loadMoreButton.classList.toggle('is-loading', loading);
           };

@@ -107,6 +107,27 @@
                 {%- endfor -%}
               }
             </script>
+            {%- comment -%}
+              International OOS: Flooring is not purchasable outside the UK and US.
+              This is a purely geographic gate (independent of stock/availability) so
+              it also fires for countries with no defined Shopify market, where the
+              variant falls back to an available market (e.g. Bosnia).
+            {%- endcomment -%}
+            {%- assign _int_oos_type = settings.flooring_product_type | default: 'Flooring' -%}
+            {%- assign show_international_oos = false -%}
+            {%- if product.type == _int_oos_type
+                and localization.country.iso_code != 'GB'
+                and localization.country.iso_code != 'US' -%}
+              {%- assign show_international_oos = true -%}
+            {%- endif -%}
+            <div id="int-oos-debug" style="display:none">
+              DEBUG — product.type=[{{ product.type }}] | _int_oos_type=[{{ _int_oos_type }}]
+              | localization.country.iso_code=[{{ localization.country.iso_code }}]
+              | localization.market.handle=[{{ localization.market.handle }}]
+              | request.country=[{{ request.country.iso_code }}]
+              | variant.available=[{{ product.selected_or_first_available_variant.available }}]
+              | show_international_oos=[{{ show_international_oos }}]
+            </div>
             {%- for block in section.blocks -%}
               {%- case block.type -%}
                 {%- when '@app' -%}
@@ -195,33 +216,24 @@
                     add_on_styling: block.settings.add_on_style
                   %}
                 {%- when 'inventory' -%}
-                  {%- if product.metafields.custom.lead_time.value != blank -%}
+                  {%- if show_international_oos and settings.international_oos_text != blank -%}
+                    <div class="not-for-sale not-for-sale--oos" id="Inventory-{{ section.id }}">
+                      {% comment %} <p style="color: #898989">Unavailable to order online</p> {% endcomment %}
+                      {{ settings.international_oos_text }}
+                    </div>
+                  {%- elsif product.metafields.custom.lead_time.value != blank -%}
                     <p
                       class="product__inventory{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                       {{ block.shopify_attributes }}
                       id="Inventory-{{ section.id }}"
                       role="status"
                     >
-                      {%- assign show_international_oos = false -%}
-                      {%- if product.selected_or_first_available_variant.available == false
-                          and product.type == 'Flooring'
-                          and localization.country.iso_code != 'GB'
-                          and localization.country.iso_code != 'US' -%}
-                        {%- assign show_international_oos = true -%}
-                      {%- endif -%}
-
-                      {%- if product.selected_or_first_available_variant.available -%}
-                        {{ product.metafields.custom.lead_time.value }}
-                      {%- elsif show_international_oos == false or section.settings.out_of_stock_text == blank -%}
-                        {{- 'products.product.inventory_out_of_stock' | t -}}
-                      {%- endif -%}
-
-                      {%- if show_international_oos and section.settings.out_of_stock_text != blank -%}
-                        <div class="not-for-sale not-for-sale--oos">
-                          <p style="color: #898989">Unavailable to order online</p>
-                          {{ section.settings.out_of_stock_text }}
-                        </div>
-                      {%- endif -%}
+                      {%- assign variant = product.selected_or_first_available_variant -%}
+                        {%- if variant.available -%}
+                          {%- render 'lead-time-text', product: product, variant: variant -%}
+                        {%- else -%}
+                          {{- 'products.product.inventory_out_of_stock' | t -}}
+                        {%- endif -%}
                     </p>
                   {%- elsif product.type == 'Not for Sale' -%}
                     <div class="not-for-sale">
@@ -271,28 +283,10 @@
                             </span>
                             {{- 'products.product.inventory_out_of_stock_continue_selling' | t -}}
                           {%- else -%}
-                            {%- assign show_international_oos = false -%}
-                            {%- if product.type == 'Flooring'
-                                and localization.country.iso_code != 'GB'
-                                and localization.country.iso_code != 'US' -%}
-                              {%- assign show_international_oos = true -%}
-                            {%- endif -%}
-
-                            {%- if show_international_oos == false or section.settings.out_of_stock_text == blank -%}
-                              <span class="svg-wrapper" style="color: rgb(200, 200, 200)">
-                                {{- 'icon-inventory-status.svg' | inline_asset_content -}}
-                              </span>
-                              {{- 'products.product.inventory_out_of_stock' | t -}}
-                            {%- endif -%}
-
-                            {%- unless product.selected_or_first_available_variant.available -%}
-                              {%- if show_international_oos and section.settings.out_of_stock_text != blank -%}
-                                <div class="not-for-sale not-for-sale--oos">
-                                  <p style="color: #898989">Unavailable to order online</p>
-                                  {{ section.settings.out_of_stock_text }}
-                                </div>
-                              {%- endif -%}
-                            {%- endunless -%}
+                            <span class="svg-wrapper" style="color: rgb(200, 200, 200)">
+                              {{- 'icon-inventory-status.svg' | inline_asset_content -}}
+                            </span>
+                            {{- 'products.product.inventory_out_of_stock' | t -}}
                           {%- endif -%}
                         {%- endif -%}
                       {%- endif -%}
@@ -331,21 +325,25 @@
                     </details>
                   </div>
                 {% when 'quantity_buy_button' %}
-                  {% if product.metafields.custom.unit_area_m2.value == blank %}
-                    {% render 'product-quantity-buy-button', block: block, product: product, product_form_id: product_form_id %}
-                  {% endif %}
+                  {%- unless show_international_oos -%}
+                    {% if product.metafields.custom.unit_area_m2.value == blank %}
+                      {% render 'product-quantity-buy-button', block: block, product: product, product_form_id: product_form_id %}
+                    {% endif %}
+                  {%- endunless -%}
                 {%- when 'quantity_selector' -%}
-                  {% if product.metafields.custom.unit_area_m2.value != blank %}
-                    {% render 'product-quantity-coverage',
-                      block: block,
-                      product: product,
-                      product_form_id: product_form_id,
-                      section_id: section.id,
-                      show_pickup_availability: true
-                    %}
-                  {% else %}
-                    {% render 'product-quantity-selector', block: block, product: product %}
-                  {% endif %}
+                  {%- unless show_international_oos -%}
+                    {% if product.metafields.custom.unit_area_m2.value != blank %}
+                      {% render 'product-quantity-coverage',
+                        block: block,
+                        product: product,
+                        product_form_id: product_form_id,
+                        section_id: section.id,
+                        show_pickup_availability: true
+                      %}
+                    {% else %}
+                      {% render 'product-quantity-selector', block: block, product: product %}
+                    {% endif %}
+                  {%- endunless -%}
                 {% when 'sample-pack-button' %}
                   {% render 'product-sample-pack-button', block: block, product: product %}
                 {%- when 'popup' -%}
@@ -380,7 +378,19 @@
                     %}
                   {%- endunless -%}
                 {%- when 'buy_buttons' -%}
-                  {% if product.metafields.custom.unit_area_m2.value == blank %}
+                  {%- if show_international_oos -%}
+                    <div class="product-form">
+                      <div class="product-form__buttons form">
+                        <button
+                          type="button"
+                          class="product-form__submit button button--full-width button--primary"
+                          disabled
+                        >
+                          Unavailable to order online
+                        </button>
+                      </div>
+                    </div>
+                  {%- elsif product.metafields.custom.unit_area_m2.value == blank %}
                     {% if product.metafields.custom.number_of_tile_for_coverage_1m2
                       or tile_type == 'free length'
                       or tile_type == 'variable pack'
@@ -519,7 +529,7 @@ document.addEventListener("DOMContentLoaded", () => {
   readmoreDescription();
   {%  endif %}
 
- function restyleBrassAddons() {
+  function restyleBrassAddons() {
     var container = document.querySelector('#rbr-container-element-addOn [class*="style_items_"]');
     if (!container) return false;
 
@@ -576,7 +586,7 @@ document.addEventListener("DOMContentLoaded", () => {
     restyleBrassAddons();
   })();
 
- function initProductSwitcher() {
+  function initProductSwitcher() {
     const variantDataElement = document.getElementById("variantMap");
     if (!variantDataElement) return;
 
@@ -593,14 +603,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const selects = selectorWrapper.querySelectorAll("select");
 
+    //kishan
+    function toggleFinishDropdown() {
+      const sizeSelect = selectorWrapper.querySelector(
+        'select[name="select-a-size"]'
+      );
+
+      const finishSelect = selectorWrapper.querySelector(
+        'select[name="select-a-finish"]'
+      );
+
+      if (!sizeSelect || !finishSelect) return;
+
+      const finishLabel = finishSelect.previousElementSibling;
+
+      const isIndividual =
+        sizeSelect.value === 'individual-hooks-no-rack';
+
+      finishSelect.style.display = isIndividual ? 'none' : '';
+
+      if (finishLabel?.tagName === 'LABEL') {
+        finishLabel.style.display = isIndividual ? 'none' : '';
+      }
+    }
+
+    toggleFinishDropdown();
+
     const rootPath = {{ routes.root_url | json }};
     const basePath = (rootPath || "").replace(/\/$/, "");
 
     // Safer than :has(...); product-info carries data-section="{{ section.id }}"
-    const getSectionId = () =>
+    const getSectionId = () => {
       document.querySelector("product-info[data-section]")?.dataset.section || null;
+    };
 
     selectorWrapper.addEventListener("change", () => {
+      toggleFinishDropdown();
       const selected = {};
       selectorWrapper.querySelectorAll("select").forEach((sel) => {
         // select names and values are already handleized in Liquid
@@ -735,6 +773,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
           history.replaceState(null, "", targetPath);
 
+          // 13. Mix-match bundle section
+          const curMixMatch = curWrapper.querySelector('.mm-bundle');
+          const newMixMatch = newWrapper.querySelector('.mm-bundle');
+
+          if (curMixMatch && newMixMatch) {
+            const replacement = newMixMatch.cloneNode(true);
+
+            curMixMatch.replaceWith(replacement);
+
+            initMixMatchBundle(replacement);
+          }
+
           // Re-run inline scripts (e.g. window.tileCalculator) from the new product
           newWrapper.querySelectorAll('script:not([src])').forEach((oldScript) => {
             const type = (oldScript.type || '').toLowerCase();
@@ -801,7 +851,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
- function initSwiperGallery() {
+  function initSwiperGallery() {
     const swiperEl = document.querySelector('.product-gallery-swiper');
     if (!swiperEl) return;
 
@@ -833,241 +883,240 @@ document.addEventListener("DOMContentLoaded", () => {
     new Swiper(swiperEl, options);
   }
 
+  function readmoreDescription() {
+    // Configuration
+    var charLimit = {{ product.metafields.custom.read_more_height.value | default: 220 }};              // show dropdown only if chars > 700
+    var defaultMaxPx = 80;          // collapse height when charLimit exceeded (between 350-400)
+    var transitionDuration = 350;    // ms, match your CSS transition
 
-function readmoreDescription() {
-  // Configuration
-  var charLimit = {{ product.metafields.custom.read_more_height.value | default: 220 }};              // show dropdown only if chars > 700
-  var defaultMaxPx = 80;          // collapse height when charLimit exceeded (between 350-400)
-  var transitionDuration = 350;    // ms, match your CSS transition
-
-  // Simple debounce
-  function debounce(fn, wait) {
-    var t;
-    return function () {
-      var args = arguments;
-      clearTimeout(t);
-      t = setTimeout(function () { fn.apply(null, args); }, wait);
-    };
-  }
-
-  // Process all wrappers (safe for AJAX-inserted DOM)
-  var wrappers = document.querySelectorAll('.product__description-wrapper');
-
-  wrappers.forEach(function (wrapper) {
-    var toggleBtn = wrapper.querySelector('.read-more-toggle');
-    var description = wrapper.querySelector('.description-content');
-    var collapsedOpen = wrapper.querySelector('.product__description');
-    var rotateIcon = wrapper.querySelector('.dropdown-arrow');
-
-    // If description missing, ensure toggle hidden and skip
-    if (!description) {
-      if (toggleBtn) toggleBtn.style.display = 'none';
-      if (rotateIcon) rotateIcon.style.display = 'none';
-      return;
+    // Simple debounce
+    function debounce(fn, wait) {
+      var t;
+      return function () {
+        var args = arguments;
+        clearTimeout(t);
+        t = setTimeout(function () { fn.apply(null, args); }, wait);
+      };
     }
 
-    // If toggle exists, remove previous listeners by cloning it (clean slate)
-    if (toggleBtn) {
-      var cleanButton = toggleBtn.cloneNode(true);
-      toggleBtn.parentNode.replaceChild(cleanButton, toggleBtn);
-      toggleBtn = cleanButton;
-    } else {
-      // No button in markup means the read_more metafield is not set — show description in full, no toggle
-      description.classList.remove('collapsed', 'collapsed-by-js', 'expanded');
-      description.style.maxHeight = 'none';
-      description.style.overflow = 'visible';
-      if (collapsedOpen) {
-        collapsedOpen.classList.remove('collapsed-open', 'collapsed-expanded');
+    // Process all wrappers (safe for AJAX-inserted DOM)
+    var wrappers = document.querySelectorAll('.product__description-wrapper');
+
+    wrappers.forEach(function (wrapper) {
+      var toggleBtn = wrapper.querySelector('.read-more-toggle');
+      var description = wrapper.querySelector('.description-content');
+      var collapsedOpen = wrapper.querySelector('.product__description');
+      var rotateIcon = wrapper.querySelector('.dropdown-arrow');
+
+      // If description missing, ensure toggle hidden and skip
+      if (!description) {
+        if (toggleBtn) toggleBtn.style.display = 'none';
+        if (rotateIcon) rotateIcon.style.display = 'none';
+        return;
       }
-      return;
-    }
 
-    // Ensure aria attribute exists
-    toggleBtn.setAttribute('aria-expanded', 'false');
-
-    // Normalize classes to a predictable starting state
-    description.classList.remove('expanded', 'collapsed-expanded');
-    description.classList.add('collapsed');
-    if (collapsedOpen) {
-      collapsedOpen.classList.remove('collapsed-expanded');
-      collapsedOpen.classList.add('collapsed-open');
-    }
-
-    // Count letters/characters (trim excessive whitespace)
-    var text = (description.textContent || '').replace(/\s+/g, ' ').trim();
-    var charCount = text.length;
-
-    // Determine threshold px: prefer data-maxheight-px -> data-maxheight-desktop/mobile -> default
-    function getConfiguredPx() {
-      var dataPx = description.getAttribute('data-maxheight-px');
-      if (dataPx) {
-        var n = parseInt(dataPx, 10);
-        if (!isNaN(n)) return n;
-      }
-      // Respect responsive data attributes you already might have
-      if (window.matchMedia('(max-width: 590px)').matches) {
-        var mobile = description.getAttribute('data-maxheight-mobile');
-        if (mobile) {
-          var m = parseInt(mobile, 10);
-          if (!isNaN(m)) return m;
-        }
+      // If toggle exists, remove previous listeners by cloning it (clean slate)
+      if (toggleBtn) {
+        var cleanButton = toggleBtn.cloneNode(true);
+        toggleBtn.parentNode.replaceChild(cleanButton, toggleBtn);
+        toggleBtn = cleanButton;
       } else {
-        var desktop = description.getAttribute('data-maxheight-desktop');
-        if (desktop) {
-          var d = parseInt(desktop, 10);
-          if (!isNaN(d)) return d;
+        // No button in markup means the read_more metafield is not set — show description in full, no toggle
+        description.classList.remove('collapsed', 'collapsed-by-js', 'expanded');
+        description.style.maxHeight = 'none';
+        description.style.overflow = 'visible';
+        if (collapsedOpen) {
+          collapsedOpen.classList.remove('collapsed-open', 'collapsed-expanded');
         }
+        return;
       }
-      return defaultMaxPx;
-    }
 
-    // If character count is under or equal to limit -> show full content and hide toggle
-    function showFullNoToggle() {
-      toggleBtn.style.display = 'none';
-      if (rotateIcon) rotateIcon.style.display = 'none';
-
-      description.classList.remove('collapsed', 'collapsed-by-js', 'expanded');
-      description.style.maxHeight = 'none';
-      description.style.overflow = 'visible';
-      if (collapsedOpen) {
-        collapsedOpen.classList.remove('collapsed-open', 'collapsed-expanded');
-      }
-      toggleBtn.setAttribute('aria-expanded', 'true');
-    }
-
-    // If over limit, we'll apply the collapse behaviour
-    function setupCollapsedMode() {
-      var px = getConfiguredPx();
-
-      toggleBtn.style.display = '';
-      if (rotateIcon) rotateIcon.style.display = '';
-
-      // Start collapsed
-      description.classList.add('collapsed', 'collapsed-by-js');
-      description.classList.remove('expanded', 'collapsed-expanded');
-      description.style.overflow = 'hidden';
-      description.style.maxHeight = px + 'px';
-      if (collapsedOpen) {
-        collapsedOpen.classList.add('collapsed-open');
-        collapsedOpen.classList.remove('collapsed-expanded');
-      }
+      // Ensure aria attribute exists
       toggleBtn.setAttribute('aria-expanded', 'false');
-      toggleBtn.textContent = 'Read More';
-      if (rotateIcon) rotateIcon.classList.remove('icon_rotate');
-    }
 
-    // Toggle handler (expand/collapse with smooth max-height animation)
-    toggleBtn.addEventListener('click', function () {
-      var px = getConfiguredPx();
+      // Normalize classes to a predictable starting state
+      description.classList.remove('expanded', 'collapsed-expanded');
+      description.classList.add('collapsed');
+      if (collapsedOpen) {
+        collapsedOpen.classList.remove('collapsed-expanded');
+        collapsedOpen.classList.add('collapsed-open');
+      }
 
-      if (!description.classList.contains('expanded')) {
-        // expand
-        description.classList.add('expanded');
-        description.classList.remove('collapsed');
-        if (collapsedOpen) {
-          collapsedOpen.classList.add('collapsed-expanded');
-          collapsedOpen.classList.remove('collapsed-open');
+      // Count letters/characters (trim excessive whitespace)
+      var text = (description.textContent || '').replace(/\s+/g, ' ').trim();
+      var charCount = text.length;
+
+      // Determine threshold px: prefer data-maxheight-px -> data-maxheight-desktop/mobile -> default
+      function getConfiguredPx() {
+        var dataPx = description.getAttribute('data-maxheight-px');
+        if (dataPx) {
+          var n = parseInt(dataPx, 10);
+          if (!isNaN(n)) return n;
         }
-
-        // animate to full height then remove max-height after transition
-        var fullH = description.scrollHeight;
-        description.style.maxHeight = fullH + 'px';
-        description.style.overflow = 'hidden';
-        toggleBtn.setAttribute('aria-expanded', 'true');
-        toggleBtn.textContent = 'Read Less';
-        if (rotateIcon) rotateIcon.classList.add('icon_rotate');
-
-        setTimeout(function () {
-          if (description.classList.contains('expanded')) {
-            description.style.maxHeight = 'none';
-            description.style.overflow = 'visible';
+        // Respect responsive data attributes you already might have
+        if (window.matchMedia('(max-width: 590px)').matches) {
+          var mobile = description.getAttribute('data-maxheight-mobile');
+          if (mobile) {
+            var m = parseInt(mobile, 10);
+            if (!isNaN(m)) return m;
           }
-        }, transitionDuration + 20);
-      } else {
-        // collapse
-        // set current height explicitly (helps smooth animation), force reflow, then set to px threshold
-        description.style.maxHeight = description.scrollHeight + 'px';
-        void description.offsetHeight; // force reflow
-        description.classList.remove('expanded');
-        description.classList.add('collapsed');
-        if (collapsedOpen) {
-          collapsedOpen.classList.remove('collapsed-expanded');
-          collapsedOpen.classList.add('collapsed-open');
+        } else {
+          var desktop = description.getAttribute('data-maxheight-desktop');
+          if (desktop) {
+            var d = parseInt(desktop, 10);
+            if (!isNaN(d)) return d;
+          }
         }
+        return defaultMaxPx;
+      }
+
+      // If character count is under or equal to limit -> show full content and hide toggle
+      function showFullNoToggle() {
+        toggleBtn.style.display = 'none';
+        if (rotateIcon) rotateIcon.style.display = 'none';
+
+        description.classList.remove('collapsed', 'collapsed-by-js', 'expanded');
+        description.style.maxHeight = 'none';
+        description.style.overflow = 'visible';
+        if (collapsedOpen) {
+          collapsedOpen.classList.remove('collapsed-open', 'collapsed-expanded');
+        }
+        toggleBtn.setAttribute('aria-expanded', 'true');
+      }
+
+      // If over limit, we'll apply the collapse behaviour
+      function setupCollapsedMode() {
+        var px = getConfiguredPx();
+
+        toggleBtn.style.display = '';
+        if (rotateIcon) rotateIcon.style.display = '';
+
+        // Start collapsed
+        description.classList.add('collapsed', 'collapsed-by-js');
+        description.classList.remove('expanded', 'collapsed-expanded');
         description.style.overflow = 'hidden';
         description.style.maxHeight = px + 'px';
+        if (collapsedOpen) {
+          collapsedOpen.classList.add('collapsed-open');
+          collapsedOpen.classList.remove('collapsed-expanded');
+        }
         toggleBtn.setAttribute('aria-expanded', 'false');
         toggleBtn.textContent = 'Read More';
         if (rotateIcon) rotateIcon.classList.remove('icon_rotate');
       }
-    });
 
-    // On image load / font change, re-evaluate if we should show toggle or not
-    var imgs = description.querySelectorAll('img');
-    imgs.forEach(function (img) {
-      if (!img.complete) {
-        img.addEventListener('load', function () {
-          // Re-evaluate mode based on char count (char count won't change, but height might)
-          // If chars <= limit we already show full content; if > limit ensure collapsed mode remains correct
-          if (charCount <= charLimit) {
-            showFullNoToggle();
-          } else {
-            // If currently expanded, ensure it remains expanded and grows if necessary
-            if (description.classList.contains('expanded')) {
-              description.style.maxHeight = description.scrollHeight + 'px';
-              setTimeout(function () {
-                description.style.maxHeight = 'none';
-                description.style.overflow = 'visible';
-              }, transitionDuration);
-            } else {
-              // collapsed state should keep threshold px
-              description.style.maxHeight = getConfiguredPx() + 'px';
-            }
+      // Toggle handler (expand/collapse with smooth max-height animation)
+      toggleBtn.addEventListener('click', function () {
+        var px = getConfiguredPx();
+
+        if (!description.classList.contains('expanded')) {
+          // expand
+          description.classList.add('expanded');
+          description.classList.remove('collapsed');
+          if (collapsedOpen) {
+            collapsedOpen.classList.add('collapsed-expanded');
+            collapsedOpen.classList.remove('collapsed-open');
           }
-        });
-      }
-    });
 
-    // Recalculate on resize (debounced). Note: charCount threshold is static; this mostly adjusts px threshold for responsive attrs
-    var debouncedResize = debounce(function () {
-      // If charCount <= limit -> ensure full
-      if (charCount <= charLimit) {
-        showFullNoToggle();
-      } else {
-        // reapply collapsed/expanded visuals correctly depending on current state
-        if (description.classList.contains('expanded')) {
-          // keep expanded but ensure height resets to content
-          description.style.maxHeight = description.scrollHeight + 'px';
+          // animate to full height then remove max-height after transition
+          var fullH = description.scrollHeight;
+          description.style.maxHeight = fullH + 'px';
+          description.style.overflow = 'hidden';
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          toggleBtn.textContent = 'Read Less';
+          if (rotateIcon) rotateIcon.classList.add('icon_rotate');
+
           setTimeout(function () {
             if (description.classList.contains('expanded')) {
               description.style.maxHeight = 'none';
               description.style.overflow = 'visible';
             }
-          }, transitionDuration);
-          toggleBtn.setAttribute('aria-expanded', 'true');
-          toggleBtn.textContent = 'Read Less';
-          if (rotateIcon) rotateIcon.classList.add('icon_rotate');
+          }, transitionDuration + 20);
         } else {
-          // collapsed state
-          description.style.maxHeight = getConfiguredPx() + 'px';
+          // collapse
+          // set current height explicitly (helps smooth animation), force reflow, then set to px threshold
+          description.style.maxHeight = description.scrollHeight + 'px';
+          void description.offsetHeight; // force reflow
+          description.classList.remove('expanded');
+          description.classList.add('collapsed');
+          if (collapsedOpen) {
+            collapsedOpen.classList.remove('collapsed-expanded');
+            collapsedOpen.classList.add('collapsed-open');
+          }
           description.style.overflow = 'hidden';
+          description.style.maxHeight = px + 'px';
           toggleBtn.setAttribute('aria-expanded', 'false');
           toggleBtn.textContent = 'Read More';
           if (rotateIcon) rotateIcon.classList.remove('icon_rotate');
         }
+      });
+
+      // On image load / font change, re-evaluate if we should show toggle or not
+      var imgs = description.querySelectorAll('img');
+      imgs.forEach(function (img) {
+        if (!img.complete) {
+          img.addEventListener('load', function () {
+            // Re-evaluate mode based on char count (char count won't change, but height might)
+            // If chars <= limit we already show full content; if > limit ensure collapsed mode remains correct
+            if (charCount <= charLimit) {
+              showFullNoToggle();
+            } else {
+              // If currently expanded, ensure it remains expanded and grows if necessary
+              if (description.classList.contains('expanded')) {
+                description.style.maxHeight = description.scrollHeight + 'px';
+                setTimeout(function () {
+                  description.style.maxHeight = 'none';
+                  description.style.overflow = 'visible';
+                }, transitionDuration);
+              } else {
+                // collapsed state should keep threshold px
+                description.style.maxHeight = getConfiguredPx() + 'px';
+              }
+            }
+          });
+        }
+      });
+
+      // Recalculate on resize (debounced). Note: charCount threshold is static; this mostly adjusts px threshold for responsive attrs
+      var debouncedResize = debounce(function () {
+        // If charCount <= limit -> ensure full
+        if (charCount <= charLimit) {
+          showFullNoToggle();
+        } else {
+          // reapply collapsed/expanded visuals correctly depending on current state
+          if (description.classList.contains('expanded')) {
+            // keep expanded but ensure height resets to content
+            description.style.maxHeight = description.scrollHeight + 'px';
+            setTimeout(function () {
+              if (description.classList.contains('expanded')) {
+                description.style.maxHeight = 'none';
+                description.style.overflow = 'visible';
+              }
+            }, transitionDuration);
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            toggleBtn.textContent = 'Read Less';
+            if (rotateIcon) rotateIcon.classList.add('icon_rotate');
+          } else {
+            // collapsed state
+            description.style.maxHeight = getConfiguredPx() + 'px';
+            description.style.overflow = 'hidden';
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.textContent = 'Read More';
+            if (rotateIcon) rotateIcon.classList.remove('icon_rotate');
+          }
+        }
+      }, 180);
+
+      window.addEventListener('resize', debouncedResize);
+
+      // Initial decision
+      if (charCount <= charLimit) {
+        showFullNoToggle();
+      } else {
+        setupCollapsedMode();
       }
-    }, 180);
-
-    window.addEventListener('resize', debouncedResize);
-
-    // Initial decision
-    if (charCount <= charLimit) {
-      showFullNoToggle();
-    } else {
-      setupCollapsedMode();
-    }
-  });
-}
+    });
+  }
 
   // stoq app - show pop up notification on submit:
   setTimeout(function stoqSuccess() {

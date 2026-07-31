@@ -222,6 +222,9 @@
     color: #595959;
     margin-top: 12px;
 }
+.product-specification .accordion__content.rte p:has(strong) {
+    margin-top: 0;
+}
 .product-specification .product-specification .accordion__content.rte p {
     margin:0;
     padding: 0.3em 0;
@@ -308,7 +311,7 @@
         font-size: 16px;
     }
     .product-specification .product-delivery-column table tr td {
-        padding-bottom: 0;
+        padding: 0.4em 1.5em 1.2em 0;
         line-height: normal;
     }
     .delivery-returns.accordion .page-accordion.accordion__content.rte {

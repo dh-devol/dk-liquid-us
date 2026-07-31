@@ -1955,8 +1955,12 @@ span#TotalPrice {
 .product-page .price-suffix {
     display: inline-block;
     margin-left: 5px;
-    color: rgb(var(--color-foreground));
-    font-size: 17.12px;
+    color: rgba(137, 137, 137, 1);
+    font-size: 0.9em;
+    white-space: pre-wrap;
+}
+.product-page .price-suffix.add-margin {
+  margin-top: 0.1em;
 }
 
 .product-page .product .product-specification .title_arrow-wrapper{
@@ -2027,7 +2031,7 @@ margin-top:32px !important;
   .product-page .product .product__info-wrapper.grid__item {
     max-width: 40%;
     padding-right: 0;
-    padding-left: 3rem;
+    padding-left: 4rem;
   }
   .product-page .product--large:not(.product--no-media) .product__media-wrapper {
     max-width: 60%;
@@ -2163,14 +2167,14 @@ margin-top:32px !important;
   display: flex;
   align-items: center;
   width: 100%;
-  min-height: 40px;
-  border: 1px solid #bfbfbf;
+  /* min-height: 40px; */
+  /* border: 1px solid #bfbfbf; */
   border-radius: var(--inputs-radius);
 }
 .coverage-ft2-input-wrapper .coverage__input {
-  border: none;
+  /* border: none; */
   flex: 1;
-  min-height: auto;
+  min-height: 40px;
   text-align: center;
   padding: 0;
   background: transparent;

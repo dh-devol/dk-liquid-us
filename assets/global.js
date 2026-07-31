@@ -220,6 +220,10 @@ class QuantityInput extends HTMLElement {
     this.input = this.querySelector('input');
     this.changeEvent = new Event('change', { bubbles: true });
     this.input.addEventListener('change', this.onInputChange.bind(this));
+    // Only add blur rounding outside the cart
+    if (!this.closest('cart-items') && !this.closest('cart-drawer-items')) {
+      this.input.addEventListener('blur', this.onInputBlur.bind(this));
+    }
     this.querySelectorAll('button').forEach((button) =>
       button.addEventListener('click', this.onButtonClick.bind(this))
     );
@@ -240,6 +244,18 @@ class QuantityInput extends HTMLElement {
 
   onInputChange(event) {
     this.validateQtyRules();
+  }
+
+  onInputBlur(event) {
+    const rounded = Math.max(
+      Math.round(parseFloat(this.input.value) || 1),
+      parseInt(this.input.min) || 1
+    );
+    if (String(rounded) !== this.input.value) {
+      this.input.value = rounded;
+      this.input.dispatchEvent(new Event('input', { bubbles: true }));
+      this.input.dispatchEvent(this.changeEvent);
+    }
   }
 
   onButtonClick(event) {
@@ -1395,6 +1411,78 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+document.addEventListener("DOMContentLoaded", async function () { 
+  // injecting css stylesheet into shadow form on accessory enquires page
+  const observer = new MutationObserver((mutations, obs) => {
+    const el = document.querySelector('shopify-forms-embed#app-embed');
+
+    if (!el) return;
+
+    // If element exists but shadowRoot not ready yet, wait a bit
+    const waitForShadow = setInterval(() => {
+      if (el.shadowRoot) {
+        console.log('Shadow root found:', el.shadowRoot);
+
+        // Inject CSS
+        const style = document.createElement('style');
+        style.textContent = `
+          ._inline_1q1d2_47 section._formContainer_1q1d2_30 {
+            max-width: unset;
+            margin: 0;
+            color: var(--form-placeholder-color);
+          }
+          form label._formInputFieldLabel_1mxsl_38 {
+            position: static;
+            order: 1;
+            margin-bottom: 10px;
+            color: var(--body-text-color);
+          }
+          div._formFieldContainer_1mxsl_5:has(textarea)::before, div._formFieldContainer_1mxsl_5:has(textarea):focus-within::before {
+            position: static;
+            height: 0;
+          }
+          form input._formInputField_nag3b_7, form button._selectToggle_12thd_25 {
+            padding: 0 1em;
+            height: 34px;
+            border-radius: 0;
+            order: 2;
+          }
+          form textarea._textArea_17mgw_1 {
+            border-radius: 0;
+            order: 2;
+            padding: 10px 1em 0;
+          }
+          div._dropdownContainer_12thd_63{
+            border-radius: 0;
+          }
+          ._formFieldContainer_1mxsl_5:focus-within label._formInputFieldLabel_1mxsl_38 {
+            transform: none;
+          }
+          ._formFieldContainer_1mxsl_5:focus-within textarea._textArea_17mgw_1, ._formFieldContainer_1mxsl_5 ._inputFilled_1mxsl_74 textarea._textArea_17mgw_1 {
+            padding-top: 10px;
+          }
+          form button._formSubmitButton_cit2d_96 {
+            margin-top: 1.5em;
+            border-radius: 0;
+          }
+          ._textBody_2aowh_10, span._textBody_2aowh_10, p._textBody_2aowh_10 {
+            padding-bottom: 7px;
+          }  
+        `;
+        el.shadowRoot.appendChild(style);
+
+        clearInterval(waitForShadow);
+        obs.disconnect(); // stop observing once done
+      }
+    }, 100);
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+});
 
 class AccountIcon extends HTMLElement {
   constructor() {

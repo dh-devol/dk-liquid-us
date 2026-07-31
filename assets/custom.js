@@ -90,7 +90,7 @@ function updateParentAccordions(element) {
     while (parent) {
       if (parent.classList.contains("accordion__content")) {
         // Dynamically adjust the max-height to include new child content
-        parent.style.maxHeight = parent.scrollHeight + "px";
+        parent.style.maxHeight = parent.scrollHeight + 20 + "px";
       }
       parent = parent.parentElement;
     }
