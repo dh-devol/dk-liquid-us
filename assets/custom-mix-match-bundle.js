@@ -262,6 +262,12 @@ window.initMixMatchBundle = function(root) {
         compressed.forEach((x, i) => {
         props[`${PREFIX} ${i + 1}`] = `${x.title} (× ${x.qty})`;
         });
+        if (bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
+            props['Lead time'] = bundleLeadTime;
+        }
+        if (bundleLeadTimeDays && bundleLeadTimeDays !== 'undefined' && bundleLeadTimeDays !== '') {
+            props['_lead_time_days'] = bundleLeadTimeDays;
+        }
 
         items.push(
         {
@@ -283,6 +289,10 @@ window.initMixMatchBundle = function(root) {
         } else {
         addon_cart_text = addon_title;
         }
+
+        const addonCheckbox = document.querySelector(`.brass-checkbox[value="${addon[0].variant_id}"]`);
+        const addonLeadTime = addonCheckbox ? addonCheckbox.getAttribute('data-lead-time') : null;
+        const addonLeadTimeDays = addonCheckbox ? addonCheckbox.getAttribute('data-lead-time-days') : null;
         
         items.push({
         id: addon[0].variant_id,
@@ -291,7 +301,9 @@ window.initMixMatchBundle = function(root) {
             "_Added as add-on": "true",
             "_group_id": group_id,
             "_addon_sort": "0",
-            "_addon_summary": addon_cart_text
+            "_addon_summary": addon_cart_text,
+            "Lead time": bundleLeadTime || undefined,
+            "_lead_time_days": bundleLeadTimeDays || undefined
         }
         });
     }
