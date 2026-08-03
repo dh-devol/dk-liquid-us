@@ -362,6 +362,12 @@ if (!customElements.get('product-form')) {
         let lastResponse = null;
         for (let index = 0; index < extras.length; index += 1) {
           const extra = extras[index];
+
+          // Get lead time from checkbox data attributes
+          const addonCheckbox = document.querySelector(`.brass-checkbox[value="${extra.variantId}"]`);
+          const addonLeadTime = addonCheckbox ? addonCheckbox.getAttribute('data-lead-time') : null;
+          const addonLeadTimeDays = addonCheckbox ? addonCheckbox.getAttribute('data-lead-time-days') : null;
+
           const body = {
             id: extra.variantId,
             quantity: mainQty,
@@ -369,6 +375,8 @@ if (!customElements.get('product-form')) {
               '_Added as add-on': 'true',
               '_group_id': String(mainProductId),
               '_addon_sort': String(extra.sort),
+              'Lead time': addonLeadTime,
+              '_lead_time_days': addonLeadTimeDays,
             },
           };
 

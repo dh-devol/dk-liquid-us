@@ -328,6 +328,8 @@
                                 value="{{ variant.id }}"
                                 data-available="{{ p.available }}"
                                 data-price="{{ variant.price }}"
+                                data-lead-time="{{ p.metafields.custom.lead_time }}"
+                                data-lead-time-days="{{ p.metafields.custom.lead_time_days }}"
                               >
                               <span> {{ display_title }}{% if item.show_price %} ({{ variant.price | money }}){% endif %} </span>
                             </label>
