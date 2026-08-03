@@ -65,7 +65,12 @@ if (!customElements.get('product-form')) {
             fetch('/cart/update.js', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ attributes: { '_Promise Date': dd + '/' + mm + '/' + yy } })
+              body: JSON.stringify({ 
+                attributes: { 
+                  '_Promise Date': dd + '/' + mm + '/' + yy,
+                   '_Days': String(greatest)
+                }
+              })
             }).catch(function () { /* silent */ });
           }).catch(function () { /* silent */ });
         }
