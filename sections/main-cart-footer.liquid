@@ -164,6 +164,7 @@
                     </div>
                     <input type="hidden" name="attributes[Flooring Delivery Date]" id="hidden-delivery-date" form="cart">
                     <input type="hidden" name="attributes[_Promise Date]" id="hidden-promise-date" form="cart">
+                    <input type="hidden" name="attributes[_Days]" id="hidden-days" form="cart">
                     </div>
                   {% endif %}
 
@@ -375,6 +376,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (promiseDateInput && maxLeadTime > 0) {
       promiseDateInput.value = formatPromiseDate(maxLeadTime);
     }
+    var daysInput = document.getElementById('hidden-days');
+    if (daysInput && maxLeadTime > 0) {
+      daysInput.value = maxLeadTime;
+    }
   }
 
   updateOrderPromiseDate();
@@ -429,11 +434,18 @@ document.addEventListener('DOMContentLoaded', function () {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
+          var daysInput = document.getElementById('hidden-days');
+          if (daysInput) daysInput.value = String(maxLeadDays); 
 
           orderPromiseWrite = fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ attributes: { '_Promise Date': orderPromise } })
+            body: JSON.stringify({ 
+              attributes: { 
+                '_Promise Date': orderPromise,
+                '_Days': String(maxLeadDays)
+              } 
+            })
           }).catch(function() { /* silent */ });
         }
 
@@ -496,11 +508,17 @@ document.addEventListener('DOMContentLoaded', function () {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
+          var daysInput = document.getElementById('hidden-days');
+          if (daysInput) daysInput.value = String(maxLeadDays);
 
           orderPromiseWrite = fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ attributes: { '_Promise Date': orderPromise } })
+            body: JSON.stringify({ 
+              attributes: { 
+                '_Promise Date': orderPromise },
+                '_Days': String(maxLeadDays);
+              })
           }).catch(function() { /* silent */ });
         }
 
