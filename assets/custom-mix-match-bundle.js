@@ -163,7 +163,7 @@ window.initMixMatchBundle = function(root) {
 
         const bundlePrice = sBundlePrice / 100;
 
-        priceSpan.innerHTML = Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(bundlePrice);
+        priceSpan.innerHTML = Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(bundlePrice);
         return bundlePrice;
     }
 

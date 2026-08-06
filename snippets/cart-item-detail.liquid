@@ -123,7 +123,9 @@
     {%- endif -%}
 
     <a href="{{ cart_item_url }}" class="cart-item__name h4 break">
-      {% if item.properties._group_id != blank and item.product.metafields.custom.custom_product_title %}
+      {% if item.properties._group_id != blank and item.product.title contains "Plate" %}
+        {{ item.product.title | escape }}
+      {% elsif item.properties._group_id != blank and item.product.metafields.custom.custom_product_title %}
         {{ item.product.metafields.custom.custom_product_title }}
       {% else %}
         {{ item.product.title | escape }}
@@ -260,7 +262,6 @@
       {%- for ci in cart.items -%}
         {%- if ci.properties._cart_text and ci.properties._group_id == item.properties._group_id -%}
           {% unless ci.properties._cart_text contains "Candles" or ci.properties._cart_text contains "Paint" %}
-            {%- assign product_text = ci.properties._cart_text -%}
             {%- assign bundle_name = ci.properties._bundle_summary -%}
           {% endunless %}
         {%- endif -%}
@@ -321,13 +322,8 @@
           {%- endfor -%}
         {%- endfor -%}
       {%- endif -%}
-      {%- if product_text or bundle_name or addon_name -%}
+      {%- if bundle_name or addon_name -%}
         <div class="product-option">
-          {% if product_text %}
-            <span class="cart-item__addon product-text">
-              {{ product_text }}
-            </span>
-          {% endif %}
           {% if bundle_name or addon_name %}
             Inc.
             {% if bundle_name %}
