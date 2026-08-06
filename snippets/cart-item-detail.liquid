@@ -229,6 +229,10 @@
                 {{ property_value }}{% unless property_key == last_matching_key %},{% endunless %}
               {%- endif -%}
             </div>
+          {%- elsif property_key == '_Cart Text' -%}
+            <div class="product-option">
+              {{ property_value }}
+            </div>
           {%- endif -%}
         {%- endfor -%}
 
