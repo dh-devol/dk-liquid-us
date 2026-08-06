@@ -6,22 +6,20 @@ class CartRemoveButton extends HTMLElement {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
       const groupId = this.querySelector('a').dataset.groupId;
-      if (groupId) {
+      const addonKeysStr = this.dataset.addonKeys || '';
+      const mainKey = this.dataset.mainKey;
+      console.log('[CartRemoveButton]', this.id, '| addonKeys:', addonKeysStr || '(empty)', '| mainKey:', mainKey || '(missing)');
+      if (groupId && groupId.length > 14) {
         const qty = document.querySelector(
           `.quantity__input[data-group-id="${groupId}"]`
         ).value;
         const qtyDiff = 0 - qty;
         cartItems.updateBundleQuantity(groupId, qty, qtyDiff, this.dataset.index);
+      } else if (addonKeysStr && mainKey) {
+        const addonKeys = addonKeysStr.split(',').filter(Boolean);
+        cartItems.removeWithAddons(this.dataset.index, mainKey, addonKeys);
       } else {
-        const addonKeysStr = this.dataset.addonKeys || '';
-        const mainKey = this.dataset.mainKey;
-        console.log('[CartRemoveButton]', this.id, '| addonKeys:', addonKeysStr || '(empty)', '| mainKey:', mainKey || '(missing)');
-        if (addonKeysStr && mainKey) {
-          const addonKeys = addonKeysStr.split(',').filter(Boolean);
-          cartItems.removeWithAddons(this.dataset.index, mainKey, addonKeys);
-        } else {
-          cartItems.updateQuantity(this.dataset.index, 0);
-        }
+        cartItems.updateQuantity(this.dataset.index, 0);
       }
     });
   }
@@ -492,48 +490,6 @@ class CartItems extends HTMLElement {
       parent["id"],
       updates
     );
-  }
-
-  removeWithAddons(line, mainKey, addonKeys) {
-    this.enableLoading(line);
-    const updates = {};
-    addonKeys.forEach((key) => { updates[key] = 0; });
-    updates[mainKey] = 0;
-
-    fetch('/cart/update.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        updates,
-        sections: this.getSectionsToRender().map((s) => s.section),
-        sections_url: window.location.pathname,
-      }),
-    })
-      .then((r) => r.json())
-      .then((parsedState) => {
-        this.classList.toggle('is-empty', parsedState.item_count === 0);
-        const cartDrawerWrapper = document.querySelector('cart-drawer');
-        const cartFooter = document.getElementById('main-cart-footer');
-        const mainContent = document.getElementById('MainContent');
-        if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
-        if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-        if (mainContent) mainContent.classList.toggle('is-empty', parsedState.item_count === 0);
-
-        this.getSectionsToRender().forEach((section) => {
-          const elementToReplace =
-            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-          elementToReplace.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
-        });
-
-        publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState });
-      })
-      .catch(() => {
-        const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-        if (errors) errors.textContent = window.cartStrings.error;
-      })
-      .finally(() => {
-        this.disableLoading(line);
-      });
   }
 
   removeWithAddons(line, mainKey, addonKeys) {

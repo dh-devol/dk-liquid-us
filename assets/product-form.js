@@ -155,6 +155,20 @@ if (!customElements.get('product-form')) {
           }
         }
 
+        // Bundle the selected add-ons with THIS parent line via a composite
+        // group id (variant + sorted add-on variant ids), so two otherwise-
+        // identical parent lines with DIFFERENT add-ons stay as separate cart
+        // lines (Shopify only merges lines whose variant AND properties match),
+        // while identical configurations still merge to one line. Mirrors the
+        // composite _group_id the variable-price bundles already use.
+        const _selectedExtras = this.getSelectedExtras();
+        let addonGroupId = '';
+        if (_selectedExtras.length) {
+          const _addonIds = _selectedExtras.map((e) => e.variantId).sort((a, b) => a - b);
+          addonGroupId = `${variantId}-${_addonIds.join('-')}`;
+          formData.append('properties[_group_id]', addonGroupId);
+        }
+
         try {
           const debug = {};
           formData.forEach((value, key) => {
@@ -252,7 +266,8 @@ if (!customElements.get('product-form')) {
                 mainQty,
                 mainProductId,
                 sections,
-                sectionsUrl
+                sectionsUrl,
+                addonGroupId
               );
               if (extrasResponse) {
                 // Use updated sections from last addon add, but keep main product info for notification
@@ -363,17 +378,25 @@ if (!customElements.get('product-form')) {
           .filter((item) => Number.isFinite(item.variantId));
       }
 
-      async addExtrasToCart(cartAddUrl, extras, mainQty, mainProductId, sections, sectionsUrl) {
+      async addExtrasToCart(cartAddUrl, extras, mainQty, mainProductId, sections, sectionsUrl, groupId) {
         let lastResponse = null;
         for (let index = 0; index < extras.length; index += 1) {
           const extra = extras[index];
+
+          // Get lead time from checkbox data attributes
+          const addonCheckbox = document.querySelector(`.brass-checkbox[value="${extra.variantId}"]`);
+          const addonLeadTime = addonCheckbox ? addonCheckbox.getAttribute('data-lead-time') : null;
+          const addonLeadTimeDays = addonCheckbox ? addonCheckbox.getAttribute('data-lead-time-days') : null;
+
           const body = {
             id: extra.variantId,
             quantity: mainQty,
             properties: {
               '_Added as add-on': 'true',
-              '_group_id': String(mainProductId),
+              '_group_id': groupId || String(mainProductId),
               '_addon_sort': String(extra.sort),
+              'Lead time': addonLeadTime,
+              '_lead_time_days': addonLeadTimeDays,
             },
           };
 
