@@ -302,7 +302,7 @@
           {%- liquid
             assign display_count = 0
             for item in cart.items
-              if item.properties["_bundle_child"] == "true" or item.properties["_Added as add-on"] == "true"
+              if item.properties["_group_id"] and item.properties["_bundle_child"] == "true" or item.properties["_Added as add-on"] == "true"
                 assign display_count = display_count | plus: 0
               elsif item.product.metafields.custom.unit_area_m2 != blank
                 assign display_count = display_count | plus: 1
