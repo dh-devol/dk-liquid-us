@@ -659,22 +659,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const basePath = (rootPath || "").replace(/\/$/, "");
 
     // Safer than :has(...); product-info carries data-section="{{ section.id }}"
-    const getSectionId = () => {
-      document.querySelector("product-info[data-section]")?.dataset.section || null;
-    };
+    const getSectionId = () => document.querySelector("product-info[data-section]")?.dataset.section || null;
 
     selectorWrapper.addEventListener("change", () => {
       toggleFinishDropdown();
       toggleSwitchDropdown();
       const selected = {};
-      selectorWrapper.querySelectorAll("select").forEach((sel) => {
+      selects.forEach((sel) => {
         // select names and values are already handleized in Liquid
         selected[sel.name] = (sel.value || "").toLowerCase();
       });
 
       const match = Object.entries(variantMap).find(([handle, options]) => {
         return Object.entries(selected).every(([key, value]) => {
-          return (options[key] || "") === value;
+          //Only do if the option doesn't exist e.g no finish for Individual hooks
+          if (!options[key]) return true;
+          return options[key] === value;
         });
       });
 
@@ -696,6 +696,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const sectionId = getSectionId();
       const targetPath = `${basePath}/products/${targetHandle}`;
+
+      const bundle = document.querySelector('.mm-bundle');
 
       // needed for heritage switches 1 gang
       let currentPattress = false;
@@ -870,14 +872,14 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleBtn.parentNode.replaceChild(cleanButton, toggleBtn);
         toggleBtn = cleanButton;
       } else {
-        // No button in markup means the read_more metafield is not set — show description in full, no toggle
-        description.classList.remove('collapsed', 'collapsed-by-js', 'expanded');
-        description.style.maxHeight = 'none';
-        description.style.overflow = 'visible';
-        if (collapsedOpen) {
-          collapsedOpen.classList.remove('collapsed-open', 'collapsed-expanded');
-        }
-        return;
+        // If no button in markup, create one so aria and show/hide can be applied consistently
+        toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'read-more-toggle';
+        toggleBtn.textContent = 'Read More';
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        // place after description wrapper content
+        wrapper.appendChild(toggleBtn);
       }
 
       // Ensure aria attribute exists
