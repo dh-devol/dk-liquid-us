@@ -1,1 +1,886 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"custom_liquid_jqtkaq":{"type":"custom-liquid","disabled":true,"name":"t:sections.custom-liquid.presets.name","settings":{"custom_liquid":"<div class=\"custom-multicolumn  scroll-id\" style=\"opacity:0; margin-bottom: -70px;\" id=\"projects\" >static<\/div>","color_scheme":"","padding_top":0,"padding_bottom":0}},"metaobject_gallery_slider_XVcnnR":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":"Slideshow about our brand"}},"gallery_slideshow_xKtB9f":{"type":"gallery-slideshow","blocks":{"slide_tcYaQz":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Bath-Showroom-Green-Room-62_1.jpg","mobile_image":"shopify:\/\/shop_images\/Bath-Showroom-Green-Room-47-1800x2700.jpg","desktop_focal_point":60,"mobile_focal_point":100,"heading":"Our Heirloom Kitchen in Bath","heading_size":"h0","subheading":"The Green Room","button_label":"STEP INSIDE","link":"shopify:\/\/pages\/the-green-room-bath","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}},"slide_zL6WyH":{"type":"slide","settings":{"desktop_focal_point":50,"mobile_focal_point":50,"heading":"Image slide","heading_size":"h1","subheading":"Tell your brand's story through images","button_label":"Button label","link":"","button_style_secondary":false,"box_align":"middle-center","show_text_box":true,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"scheme-1","text_alignment_mobile":"center"}},"slide_jBr9Rh":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Harborough_House-72_0.jpg","mobile_image":"shopify:\/\/shop_images\/Harborough_House-141.jpg","desktop_focal_point":60,"mobile_focal_point":100,"heading":"The Heirloom Collection in","heading_size":"h0","subheading":"Harborough House","button_label":"STEP INSIDE","link":"shopify:\/\/pages\/harborough-house","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}},"slide_yNFDRn":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Heirloom_Showroom_7263_1-Edit-darker.jpg","mobile_image":"shopify:\/\/shop_images\/Heirloom-210-4000px.jpg","desktop_focal_point":60,"mobile_focal_point":100,"heading":"The Heirloom Collection in","heading_size":"h0","subheading":"Our Cotes Mill Showroom","button_label":"STEP INSIDE","link":"shopify:\/\/pages\/the-heirloom-collection-at-cotes-mill","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}},"slide_Frame3":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Cafe_Curtain_Rail6840_5.jpg","mobile_image":"shopify:\/\/shop_images\/Cafe_Curtain_Rail6868.jpg","desktop_focal_point":40,"mobile_focal_point":100,"heading":"Beautifully simple","heading_size":"h0","subheading":"Café Curtain Rails","button_label":"SHOP NOW","link":"shopify:\/\/products\/aged-brass-cafe-curtain-rail-600-2-brackets-8-clips","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}},"slide_4gAR3U":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/HeirloomTaskLight01_3-2.jpg","mobile_image":"shopify:\/\/shop_images\/Small_Task_Light7274_crop_3.jpg","desktop_focal_point":50,"mobile_focal_point":100,"heading":"Simple elegance","heading_size":"h0","subheading":"The Heirloom Task Light","button_label":"SHOP NOW","link":"shopify:\/\/products\/heirloom-task-light-small","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}}},"block_order":["slide_tcYaQz","slide_zL6WyH","slide_jBr9Rh","slide_yNFDRn","slide_Frame3","slide_4gAR3U"],"disabled":true,"settings":{"layout":"full_bleed","show_mobile_banner":true,"slide_height":"large","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":"Slideshow about our brand"}},"catalogue_title_with_richtext_Vbtd9X":{"type":"catalogue-title-with-richtext","custom_css":[".page-title-description {margin-bottom: 24px;}","@media screen and (min-width: 768px) {.page-title-description p {max-width: 480px; }}"],"name":"Page information","settings":{"show_title":true,"show_description":false,"show_main_description":true,"show_guide_price":false,"border_title":false,"heading_size":"hxxl","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"project_multicolumns_UGjxfC":{"type":"project-multicolumns","blocks":{"column_3Y9brc":{"type":"column","settings":{"dynamic_costs":"a-window-into-devols-la-showroom","custom_text_hover":"View this project in detail"}},"column_PAFtKt":{"type":"column","settings":{"dynamic_costs":"a-grand-heirloom-kitchen-in-los-angeles","custom_text_hover":"View this project in detail"}},"column_Yrh8cR":{"type":"column","settings":{"dynamic_costs":"the-green-room-bath","custom_text_hover":"View this project in detail"}},"column_pnfd7R":{"type":"column","settings":{"dynamic_costs":"the-heirloom-collection-at-cotes-mill","custom_text_hover":"View this project in detail"}},"column_BLKjYW":{"type":"column","settings":{"dynamic_costs":"raynham-estate-north-norfolk","custom_text_hover":"View this project in detail"}},"column_8FPrVx":{"type":"column","settings":{"dynamic_costs":"the-victorian-lacemakers-grange","custom_text_hover":"View this project in detail"}}},"block_order":["column_3Y9brc","column_PAFtKt","column_Yrh8cR","column_pnfd7R","column_BLKjYW","column_8FPrVx"],"settings":{"title":"","heading_size":"h0","subtitle":"Heirloom Kitchens","show_subtitle":true,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_znXjyg":{"type":"project-multicolumns","blocks":{"column_wjfbX8":{"type":"column","settings":{"dynamic_costs":"harborough-house","custom_text_hover":"View this project in detail"}},"column_9JrzAy":{"type":"column","settings":{"dynamic_costs":"pearl-lowes-laundry-room","custom_text_hover":"View this project in detail"}},"column_ABpKiR":{"type":"column","settings":{"dynamic_costs":"castle-trematon-by-house-of-hackney","custom_text_hover":"View this project in detail"}}},"block_order":["column_wjfbX8","column_9JrzAy","column_ABpKiR"],"name":"Project multicolumn","settings":{"title":"","heading_size":"h1","subtitle":"","show_subtitle":true,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_CPB4B7":{"type":"custom-product-list","name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"Heirloom Furniture","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":true,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_qRnh3q":{"type":"project-multicolumns","blocks":{"column_4LrwgK":{"type":"column","settings":{"dynamic_costs":"the-butlers-pantry","custom_text_hover":""}},"column_Rpf4bi":{"type":"column","settings":{"dynamic_costs":"the-plate-rack","custom_text_hover":""}},"column_hYXCEk":{"type":"column","settings":{"dynamic_costs":"the-dairy-table","custom_text_hover":""}}},"block_order":["column_4LrwgK","column_Rpf4bi","column_hYXCEk"],"custom_css":[],"settings":{"title":"","heading_size":"h1","subtitle":"","show_subtitle":true,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":"furniture"}},"project_multicolumns_3rhjJM":{"type":"project-multicolumns","blocks":{"column_WgGeeK":{"type":"column","settings":{"dynamic_costs":"the-vegetable-box","custom_text_hover":""}},"column_intnpt":{"type":"column","settings":{"dynamic_costs":"the-sink-cabinet","custom_text_hover":""}}},"block_order":["column_WgGeeK","column_intnpt"],"settings":{"title":"","heading_size":"h1","subtitle":"","show_subtitle":true,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":6,"sectionname":""}},"custom_product_list_qn8ryM":{"type":"custom-product-list","blocks":{"product_item_9fbTHd":{"type":"product_item","settings":{"product":"heirloom-task-light-small"}},"product_item_qBM4Wi":{"type":"product_item","settings":{"product":"heirloom-gaselier-light-tall"}},"product_item_VEQFU9":{"type":"product_item","settings":{"product":"heirloom-wall-light-creamware-shade"}},"product_item_Y6BXfa":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-aged-brass-large"}},"product_item_a4rnPb":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-heirloom-brass-small"}},"product_item_DNBkam":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-cast-iron-large"}}},"block_order":["product_item_9fbTHd","product_item_qBM4Wi","product_item_VEQFU9","product_item_Y6BXfa","product_item_a4rnPb","product_item_DNBkam"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"Heirloom Accessories","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"View all","button_link":"shopify:\/\/collections\/heirloom-accessories","show_top_border":true,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_c3XW4f":{"type":"custom-product-list","blocks":{"product_item_U7Rc3f":{"type":"product_item","settings":{"product":"aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"}},"product_item_CyJTA3":{"type":"product_item","settings":{"product":"pot-hanger"}}},"block_order":["product_item_U7Rc3f","product_item_CyJTA3"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_DFbi7m":{"type":"custom-product-list","blocks":{"product_item_3njWYn":{"type":"product_item","settings":{"product":"classic-bentwood-cafe-stool"}},"product_item_dmqzgP":{"type":"product_item","settings":{"product":"woven-top-bentwood-cafe-stool"}},"product_item_GTc8Ly":{"type":"product_item","settings":{"product":"bentwood-cafe-chair"}}},"block_order":["product_item_3njWYn","product_item_dmqzgP","product_item_GTc8Ly"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"shopify:\/\/collections\/bathrooms","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_dRMeRT":{"type":"custom-product-list","blocks":{"product_item_CiURQd":{"type":"product_item","settings":{"product":"standard-single-polished-brass-sink"}},"product_item_pBiaWy":{"type":"product_item","settings":{"product":"extra-large-single-polished-brass-sink"}},"product_item_pBNjVA":{"type":"product_item","settings":{"product":"georgian-swing-handle-heirloom-brass-large"}},"product_item_amWmXH":{"type":"product_item","settings":{"product":"country-house-cup-handle"}},"product_item_NaBBRf":{"type":"product_item","settings":{"product":"rack-pinion-catch-heirloom-brass"}},"product_item_JitBJR":{"type":"product_item","settings":{"product":"brass-ventilation-grille-double-sided"}}},"block_order":["product_item_CiURQd","product_item_pBiaWy","product_item_pBNjVA","product_item_amWmXH","product_item_NaBBRf","product_item_JitBJR"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_Ywnr4J":{"type":"custom-product-list","blocks":{"product_item_eYf3ja":{"type":"product_item","settings":{"product":"button-knob-heirloom-brass"}},"product_item_JCVjND":{"type":"product_item","settings":{"product":"butlers-ring-pull-heirloom-brass"}},"product_item_LBhRb4":{"type":"product_item","settings":{"product":"butlers-knob"}},"product_item_UTqdVJ":{"type":"product_item","settings":{"product":"grand-heirloom-platters-sea-green"}},"product_item_XPMwRE":{"type":"product_item","settings":{"product":"oval-heirloom-platters-indigo-blue"}},"product_item_J8p88C":{"type":"product_item","settings":{"product":"round-heirloom-platters-antique-white"}}},"block_order":["product_item_eYf3ja","product_item_JCVjND","product_item_LBhRb4","product_item_UTqdVJ","product_item_XPMwRE","product_item_J8p88C"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_liquid_KRapgA":{"type":"custom-liquid","name":"t:sections.custom-liquid.presets.name","settings":{"custom_liquid":"<div class=\"custom-multicolumn  scroll-id\" style=\"opacity:0; margin-bottom: -70px;\" id=\"about\" >static<\/div>","color_scheme":"","padding_top":0,"padding_bottom":4}},"editorials_i4RYRr":{"type":"editorials","name":"Editorials","settings":{}},"image_with_rich_text_nhWMWe":{"type":"image-with-rich-text","blocks":{"image_yyDTxm":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/The_deVOL_Brochure_-_Spring_2024_0.jpg"}},"heading_BPnLCt":{"type":"heading","settings":{"heading":"The deVOL Brochure","heading_size":"hxxl"}},"text_Ee4K7j":{"type":"text","settings":{"text":"<p>Within the pages of our brochure you’ll find inspirational kitchen projects and learn more about our five beautiful ranges.<\/p>"}},"button_pxGzQf":{"type":"button","settings":{"button_label":"Order your copy","button_link":"shopify:\/\/products\/devol-brochure","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["image_yyDTxm","heading_BPnLCt","text_Ee4K7j","button_pxGzQf"],"custom_css":[".rich-text {padding-bottom: 54px;}","@media screen and (max-width: 768px) {.rich-text {padding-top: 2em; padding-bottom: 0; }}"],"settings":{"desktop_content_position":"center","content_alignment":"center","dynamic_section_link":"shopify:\/\/pages\/brochure","color_scheme":"scheme-2","full_width":true,"padding_top":32,"padding_bottom":0}}},"order":["main","custom_liquid_jqtkaq","metaobject_gallery_slider_XVcnnR","gallery_slideshow_xKtB9f","catalogue_title_with_richtext_Vbtd9X","project_multicolumns_UGjxfC","project_multicolumns_znXjyg","custom_product_list_CPB4B7","project_multicolumns_qRnh3q","project_multicolumns_3rhjJM","custom_product_list_qn8ryM","custom_product_list_c3XW4f","custom_product_list_DFbi7m","custom_product_list_dRMeRT","custom_product_list_Ywnr4J","custom_liquid_KRapgA","editorials_i4RYRr","image_with_rich_text_nhWMWe"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_liquid_jqtkaq": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"custom-multicolumn  scroll-id\" style=\"opacity:0; margin-bottom: -70px;\" id=\"projects\" >static</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "metaobject_gallery_slider_XVcnnR": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "gallery_slideshow_xKtB9f": {
+      "type": "gallery-slideshow",
+      "blocks": {
+        "slide_tcYaQz": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Bath-Showroom-Green-Room-62_1.jpg",
+            "mobile_image": "shopify://shop_images/Bath-Showroom-Green-Room-47-1800x2700.jpg",
+            "desktop_focal_point": 60,
+            "mobile_focal_point": 100,
+            "heading": "Our Heirloom Kitchen in Bath",
+            "heading_size": "h0",
+            "subheading": "The Green Room",
+            "button_label": "STEP INSIDE",
+            "link": "shopify://pages/the-green-room-bath",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_zL6WyH": {
+          "type": "slide",
+          "settings": {
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 50,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_jBr9Rh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Harborough_House-72_0.jpg",
+            "mobile_image": "shopify://shop_images/Harborough_House-141.jpg",
+            "desktop_focal_point": 60,
+            "mobile_focal_point": 100,
+            "heading": "The Heirloom Collection in",
+            "heading_size": "h0",
+            "subheading": "Harborough House",
+            "button_label": "STEP INSIDE",
+            "link": "shopify://pages/harborough-house",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_yNFDRn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Heirloom_Showroom_7263_1-Edit-darker.jpg",
+            "mobile_image": "shopify://shop_images/Heirloom-210-4000px.jpg",
+            "desktop_focal_point": 60,
+            "mobile_focal_point": 100,
+            "heading": "The Heirloom Collection in",
+            "heading_size": "h0",
+            "subheading": "Our Cotes Mill Showroom",
+            "button_label": "STEP INSIDE",
+            "link": "shopify://pages/the-heirloom-collection-at-cotes-mill",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_Frame3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Cafe_Curtain_Rail6840_5.jpg",
+            "mobile_image": "shopify://shop_images/Cafe_Curtain_Rail6868.jpg",
+            "desktop_focal_point": 40,
+            "mobile_focal_point": 100,
+            "heading": "Beautifully simple",
+            "heading_size": "h0",
+            "subheading": "Café Curtain Rails",
+            "button_label": "SHOP NOW",
+            "link": "shopify://products/aged-brass-cafe-curtain-rail-600-2-brackets-8-clips",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_4gAR3U": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/HeirloomTaskLight01_3-2.jpg",
+            "mobile_image": "shopify://shop_images/Small_Task_Light7274_crop_3.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 100,
+            "heading": "Simple elegance",
+            "heading_size": "h0",
+            "subheading": "The Heirloom Task Light",
+            "button_label": "SHOP NOW",
+            "link": "shopify://products/heirloom-task-light-small",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tcYaQz",
+        "slide_zL6WyH",
+        "slide_jBr9Rh",
+        "slide_yNFDRn",
+        "slide_Frame3",
+        "slide_4gAR3U"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "full_bleed",
+        "show_mobile_banner": true,
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "catalogue_title_with_richtext_Vbtd9X": {
+      "type": "catalogue-title-with-richtext",
+      "custom_css": [
+        ".page-title-description {margin-bottom: 24px;}",
+        "@media screen and (min-width: 768px) {.page-title-description p {max-width: 480px; }}"
+      ],
+      "name": "Page information",
+      "settings": {
+        "show_title": true,
+        "show_description": false,
+        "show_main_description": true,
+        "show_guide_price": false,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "project_multicolumns_UGjxfC": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_3Y9brc": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-window-into-devols-la-showroom",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_PAFtKt": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-grand-heirloom-kitchen-in-los-angeles",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Yrh8cR": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-green-room-bath",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_pnfd7R": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-heirloom-collection-at-cotes-mill",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_BLKjYW": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "raynham-estate-north-norfolk",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_8FPrVx": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-victorian-lacemakers-grange",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_3Y9brc",
+        "column_PAFtKt",
+        "column_Yrh8cR",
+        "column_pnfd7R",
+        "column_BLKjYW",
+        "column_8FPrVx"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "subtitle": "Heirloom Kitchens",
+        "show_subtitle": true,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_znXjyg": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_wjfbX8": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "harborough-house",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_9JrzAy": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "pearl-lowes-laundry-room",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_ABpKiR": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "castle-trematon-by-house-of-hackney",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_wjfbX8",
+        "column_9JrzAy",
+        "column_ABpKiR"
+      ],
+      "name": "Project multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "show_subtitle": true,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_CPB4B7": {
+      "type": "custom-product-list",
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Heirloom Furniture",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_qRnh3q": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_4LrwgK": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "butlers-pantry",
+            "custom_text_hover": ""
+          }
+        },
+        "column_Rpf4bi": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-plate-rack",
+            "custom_text_hover": ""
+          }
+        },
+        "column_hYXCEk": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-dairy-table",
+            "custom_text_hover": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_4LrwgK",
+        "column_Rpf4bi",
+        "column_hYXCEk"
+      ],
+      "custom_css": [],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "show_subtitle": true,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "furniture"
+      }
+    },
+    "project_multicolumns_3rhjJM": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_WgGeeK": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-vegetable-box",
+            "custom_text_hover": ""
+          }
+        },
+        "column_intnpt": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-sink-cabinet",
+            "custom_text_hover": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_WgGeeK",
+        "column_intnpt"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "show_subtitle": true,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 6,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_qn8ryM": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_9fbTHd": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-task-light-small"
+          }
+        },
+        "product_item_qBM4Wi": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-gaselier-light-tall"
+          }
+        },
+        "product_item_VEQFU9": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-creamware-shade"
+          }
+        },
+        "product_item_Y6BXfa": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-aged-brass-large"
+          }
+        },
+        "product_item_a4rnPb": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-heirloom-brass-small"
+          }
+        },
+        "product_item_DNBkam": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-cast-iron-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_9fbTHd",
+        "product_item_qBM4Wi",
+        "product_item_VEQFU9",
+        "product_item_Y6BXfa",
+        "product_item_a4rnPb",
+        "product_item_DNBkam"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Heirloom Accessories",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "View all",
+        "button_link": "shopify://collections/heirloom-accessories",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_c3XW4f": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_U7Rc3f": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"
+          }
+        },
+        "product_item_CyJTA3": {
+          "type": "product_item",
+          "settings": {
+            "product": "pot-hanger"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_U7Rc3f",
+        "product_item_CyJTA3"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_DFbi7m": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_3njWYn": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-bentwood-cafe-stool"
+          }
+        },
+        "product_item_dmqzgP": {
+          "type": "product_item",
+          "settings": {
+            "product": "woven-top-bentwood-cafe-stool"
+          }
+        },
+        "product_item_GTc8Ly": {
+          "type": "product_item",
+          "settings": {
+            "product": "bentwood-cafe-chair"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_3njWYn",
+        "product_item_dmqzgP",
+        "product_item_GTc8Ly"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/bathrooms",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_dRMeRT": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_CiURQd": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-polished-brass-sink"
+          }
+        },
+        "product_item_pBiaWy": {
+          "type": "product_item",
+          "settings": {
+            "product": "extra-large-single-polished-brass-sink"
+          }
+        },
+        "product_item_pBNjVA": {
+          "type": "product_item",
+          "settings": {
+            "product": "georgian-swing-handle-heirloom-brass-large"
+          }
+        },
+        "product_item_amWmXH": {
+          "type": "product_item",
+          "settings": {
+            "product": "country-house-cup-handle"
+          }
+        },
+        "product_item_NaBBRf": {
+          "type": "product_item",
+          "settings": {
+            "product": "rack-pinion-catch-heirloom-brass"
+          }
+        },
+        "product_item_JitBJR": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-ventilation-grille-double-sided"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_CiURQd",
+        "product_item_pBiaWy",
+        "product_item_pBNjVA",
+        "product_item_amWmXH",
+        "product_item_NaBBRf",
+        "product_item_JitBJR"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Ywnr4J": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_eYf3ja": {
+          "type": "product_item",
+          "settings": {
+            "product": "button-knob-heirloom-brass"
+          }
+        },
+        "product_item_JCVjND": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-ring-pull-heirloom-brass"
+          }
+        },
+        "product_item_LBhRb4": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-knob"
+          }
+        },
+        "product_item_UTqdVJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-heirloom-platters-sea-green"
+          }
+        },
+        "product_item_XPMwRE": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-heirloom-platters-indigo-blue"
+          }
+        },
+        "product_item_J8p88C": {
+          "type": "product_item",
+          "settings": {
+            "product": "round-heirloom-platters-antique-white"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_eYf3ja",
+        "product_item_JCVjND",
+        "product_item_LBhRb4",
+        "product_item_UTqdVJ",
+        "product_item_XPMwRE",
+        "product_item_J8p88C"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_liquid_KRapgA": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"custom-multicolumn  scroll-id\" style=\"opacity:0; margin-bottom: -70px;\" id=\"about\" >static</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "editorials_i4RYRr": {
+      "type": "editorials",
+      "name": "Editorials",
+      "settings": {}
+    },
+    "image_with_rich_text_nhWMWe": {
+      "type": "image-with-rich-text",
+      "blocks": {
+        "image_yyDTxm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_deVOL_Brochure_-_Spring_2024_0.jpg"
+          }
+        },
+        "heading_BPnLCt": {
+          "type": "heading",
+          "settings": {
+            "heading": "The deVOL Brochure",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_Ee4K7j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Within the pages of our brochure you’ll find inspirational kitchen projects and learn more about our five beautiful ranges.</p>"
+          }
+        },
+        "button_pxGzQf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Order your copy",
+            "button_link": "shopify://products/devol-brochure",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "image_yyDTxm",
+        "heading_BPnLCt",
+        "text_Ee4K7j",
+        "button_pxGzQf"
+      ],
+      "custom_css": [
+        ".rich-text {padding-bottom: 54px;}",
+        "@media screen and (max-width: 768px) {.rich-text {padding-top: 2em; padding-bottom: 0; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "dynamic_section_link": "shopify://pages/brochure",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_jqtkaq",
+    "metaobject_gallery_slider_XVcnnR",
+    "gallery_slideshow_xKtB9f",
+    "catalogue_title_with_richtext_Vbtd9X",
+    "project_multicolumns_UGjxfC",
+    "project_multicolumns_znXjyg",
+    "custom_product_list_CPB4B7",
+    "project_multicolumns_qRnh3q",
+    "project_multicolumns_3rhjJM",
+    "custom_product_list_qn8ryM",
+    "custom_product_list_c3XW4f",
+    "custom_product_list_DFbi7m",
+    "custom_product_list_dRMeRT",
+    "custom_product_list_Ywnr4J",
+    "custom_liquid_KRapgA",
+    "editorials_i4RYRr",
+    "image_with_rich_text_nhWMWe"
+  ]
+}
