@@ -411,7 +411,7 @@
         "column_intnpt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-sink-cabinet",
+            "dynamic_costs": "sink-cabinet",
             "custom_text_hover": ""
           }
         }
