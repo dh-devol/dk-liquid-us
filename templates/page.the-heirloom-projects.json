@@ -404,7 +404,7 @@
         "column_WgGeeK": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-vegetable-box",
+            "dynamic_costs": "vegetable-box",
             "custom_text_hover": ""
           }
         },
