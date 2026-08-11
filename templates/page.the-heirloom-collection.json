@@ -392,7 +392,7 @@
         "column_Rpf4bi": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-plate-rack",
+            "dynamic_costs": "plate-rack",
             "custom_text_hover": ""
           }
         },
