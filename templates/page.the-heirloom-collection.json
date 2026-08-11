@@ -399,7 +399,7 @@
         "column_hYXCEk": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-dairy-table",
+            "dynamic_costs": "dairy-table",
             "custom_text_hover": ""
           }
         }
