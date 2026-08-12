@@ -39,8 +39,8 @@
             "limit": 2,
             "bundle_product": "mix-match-4",
             "fast_bundle_id": "",
-            "item_label_prefix": "Module",
-            "bundle_products": []
+            "bundle_products": [],
+            "item_label_prefix": "Module"
           }
         },
         "metafield_product_VgECqt": {
@@ -236,7 +236,7 @@
         "target_all_products": true,
         "columns": 3,
         "product_1": "set-of-4-small-devol-scented-candles",
-        "product_2": "set-of-2-small-devol-scented-candles",
+        "product_2": "set-of-2-medium-devol-scented-candles",
         "product_3": "large-scented-candles",
         "product_4": "",
         "product_5": "",
