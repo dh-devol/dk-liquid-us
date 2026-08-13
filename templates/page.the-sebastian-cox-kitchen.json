@@ -160,7 +160,7 @@
         "column_hYXCEk": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-bath-larkhall-kitchen",
+            "dynamic_costs": "bath-larkhall-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },

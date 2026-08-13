@@ -310,7 +310,7 @@
         "column_iDTRp6": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-bath-larkhall-kitchen",
+            "dynamic_costs": "bath-larkhall-kitchen",
             "custom_text_hover": ""
           }
         },

@@ -113,7 +113,7 @@
         "column_PAFtKt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-historic-hall-in-the-north-downs",
+            "dynamic_costs": "historic-hall-in-the-north-downs",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -206,7 +206,7 @@
         "column_8hhBtW": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-black-kitchen-bath",
+            "dynamic_costs": "black-kitchen-bath",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -313,7 +313,7 @@
         "column_pH9BbX": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-hampstead-kitchen",
+            "dynamic_costs": "hampstead-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -375,7 +375,7 @@
         "column_Rpf4bi": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-crouch-end-kitchen",
+            "dynamic_costs": "crouch-end-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -501,7 +501,7 @@
         "column_MRABRc": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-fishermans-cottage-in-st-ives",
+            "dynamic_costs": "fishermans-cottage-in-st-ives",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -536,7 +536,7 @@
         "column_cFBN7U": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-clapham-kitchen",
+            "dynamic_costs": "clapham-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },

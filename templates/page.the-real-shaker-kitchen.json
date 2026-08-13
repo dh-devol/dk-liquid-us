@@ -241,7 +241,7 @@
         "column_CqHMnH": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-pink-blue-room-bath",
+            "dynamic_costs": "pink-blue-room-bath",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -295,7 +295,7 @@
         "column_wMJm7V": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-cotes-shaker-utility-room",
+            "dynamic_costs": "cotes-shaker-utility-room",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -634,7 +634,7 @@
         "column_fNqcje": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "an-edwardian-villa-in-cardiff",
+            "dynamic_costs": "edwardian-villa-in-cardiff",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -828,7 +828,7 @@
         "column_Xd9XVh": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-henley-on-thames-kitchen",
+            "dynamic_costs": "henley-on-thames-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
