@@ -115,7 +115,7 @@
         "column_Yrh8cR": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-victorian-lacemakers-grange",
+            "dynamic_costs": "victorian-lacemakers-grange",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -184,7 +184,7 @@
         "column_wGRBkr": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-surrey-scullery",
+            "dynamic_costs": "surrey-scullery",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -319,7 +319,7 @@
         "column_34fBE6": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-farmworkers-cottage-in-county-durham",
+            "dynamic_costs": "farmworkers-cottage-in-county-durham",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -450,7 +450,7 @@
         "column_xFEpNY": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-dulwich-kitchen",
+            "dynamic_costs": "dulwich-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -607,7 +607,7 @@
         "column_TcgNDF": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-chiswick-basement",
+            "dynamic_costs": "chiswick-basement",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -628,7 +628,7 @@
         "column_PqjA6Y": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-old-schoolhouse-brixton",
+            "dynamic_costs": "old-schoolhouse-brixton",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -758,7 +758,7 @@
         "column_edjRJz": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-bath-kitchen",
+            "dynamic_costs": "bath-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -842,7 +842,7 @@
         "column_XAbRQQ": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-clerkenwell-kitchen",
+            "dynamic_costs": "clerkenwell-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },

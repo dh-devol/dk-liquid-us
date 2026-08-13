@@ -259,7 +259,7 @@
         "column_8FPrVx": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-victorian-lacemakers-grange",
+            "dynamic_costs": "victorian-lacemakers-grange",
             "custom_text_hover": "View this project in detail"
           }
         }

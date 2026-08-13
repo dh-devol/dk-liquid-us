@@ -358,14 +358,14 @@
         "column_VAteHz": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-real-shaker-kitchen",
+            "dynamic_costs": "real-shaker-kitchen",
             "custom_text_hover": ""
           }
         },
         "column_78QjdU": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-classic-english-kitchen",
+            "dynamic_costs": "classic-english-kitchen",
             "custom_text_hover": ""
           }
         },
@@ -379,14 +379,14 @@
         "column_U4qTjm": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-haberdashers-kitchen",
+            "dynamic_costs": "haberdashers-kitchen",
             "custom_text_hover": ""
           }
         },
         "column_GDQykM": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-sebastian-cox-kitchen",
+            "dynamic_costs": "sebastian-cox-kitchen",
             "custom_text_hover": ""
           }
         },

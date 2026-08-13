@@ -248,7 +248,7 @@
         "column_Pte8mP": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-millhouse-kitchen",
+            "dynamic_costs": "millhouse-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -856,7 +856,7 @@
         "column_MRABRc": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-chipping-norton-kitchen",
+            "dynamic_costs": "chipping-norton-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },

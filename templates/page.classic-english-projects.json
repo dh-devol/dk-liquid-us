@@ -706,7 +706,7 @@
         "column_z9Mc3U": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-york-townhouse-kitchen",
+            "dynamic_costs": "york-townhouse-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
