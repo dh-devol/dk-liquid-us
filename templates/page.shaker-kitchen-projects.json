@@ -241,7 +241,7 @@
         "column_Tt4qJM": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-wonky-mews-house-bermondsey",
+            "dynamic_costs": "wonky-mews-house-bermondsey",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -291,7 +291,7 @@
         "column_FnPx69": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-refectory-red-dining-and-laundry-room",
+            "dynamic_costs": "refectory-red-dining-and-laundry-room",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -372,14 +372,14 @@
         "column_peNrMD": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-st-oak-apartment-kitchen",
+            "dynamic_costs": "st-oak-apartment-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_dPdRR9": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-cotes-mill-shaker-showroom",
+            "dynamic_costs": "cotes-mill-shaker-showroom",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -443,7 +443,7 @@
         "column_b89dUG": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-regency-terrace-in-bristol",
+            "dynamic_costs": "regency-terrace-in-bristol",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -457,14 +457,14 @@
         "column_wkhEzA": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-schoolhouse-in-northern-germany",
+            "dynamic_costs": "schoolhouse-in-northern-germany",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_URb6Mx": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-bloomsbury-kitchen",
+            "dynamic_costs": "bloomsbury-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -772,7 +772,7 @@
         "column_ghrCGT": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-crystal-palace-kitchen",
+            "dynamic_costs": "crystal-palace-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -786,7 +786,7 @@
         "column_pGFLab": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-coach-house-kitchen",
+            "dynamic_costs": "coach-house-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -828,7 +828,7 @@
         "column_D8dQXe": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-victoria-road-nw6-kitchen",
+            "dynamic_costs": "victoria-road-nw6-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -856,7 +856,7 @@
         "column_3hepAF": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-trinity-blue-kitchen-aka-st-albans",
+            "dynamic_costs": "trinity-blue-kitchen-aka-st-albans",
             "custom_text_hover": "View this project in detail"
           }
         },

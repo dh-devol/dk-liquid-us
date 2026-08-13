@@ -260,7 +260,7 @@
         "column_ykpLPq": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-margate-manor-kitchen",
+            "dynamic_costs": "margate-manor-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -368,7 +368,7 @@
         "column_4LrwgK": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-regents-park-kitchen",
+            "dynamic_costs": "regents-park-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -382,7 +382,7 @@
         "column_hYXCEk": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-twickenham-kitchen",
+            "dynamic_costs": "twickenham-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -410,14 +410,14 @@
         "column_ghrCGT": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-bond-street-classic-showroom",
+            "dynamic_costs": "bond-street-classic-showroom",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_9Wgyzk": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-frome-kitchen",
+            "dynamic_costs": "frome-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -438,7 +438,7 @@
         "column_akdiwN": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-classic-millhouse-kitchen",
+            "dynamic_costs": "classic-millhouse-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -459,14 +459,14 @@
         "column_hDK8WN": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-peckham-rye-kitchen",
+            "dynamic_costs": "peckham-rye-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_D8dQXe": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-st-johns-square-showroom",
+            "dynamic_costs": "st-johns-square-showroom",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -480,7 +480,7 @@
         "column_XAbRQQ": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-belsize-kitchen",
+            "dynamic_costs": "belsize-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },

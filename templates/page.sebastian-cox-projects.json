@@ -1,1 +1,388 @@
-{"sections":{"page_metafield_gallery_eRhUy4":{"type":"page-metafield-gallery","settings":{"color_scheme":"scheme-3","padding_top":0,"padding_bottom":16,"sectionname":""}},"page_metafield_content_6XHVrU":{"type":"page-metafield-content","custom_css":["@media screen and (max-width: 990px) {}",".page-width {padding-bottom: 83px;}",".accordion__title {font-weight: 500;}",".accordion__content {margin-bottom: 20px;}",".class-summary.active + .accordion__content-wrapper .accordion__content {margin-bottom: 44px;}","@media (max-width: 991px) {.accordion {margin-top: 0px; } .page_description p:last- child {margin-bottom: 0; } .page-width {padding-bottom: 80px; }}"],"settings":{"show_page_title":true,"heading_size":"hxxl","show_page_cupboard_costs":true,"show_page_description":true,"color_scheme":"scheme-2","show_top_border":false,"show_bottom_border":false,"padding_top":0,"padding_bottom":84,"sectionname":""}},"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"gallery_slideshow_xKtB9f":{"type":"gallery-slideshow","blocks":{"slide_tcYaQz":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/Seb_Cox_Showroom3460.jpg","desktop_focal_point":50,"mobile_focal_point":50,"heading":"A completely refreshed look for","heading_size":"h0","subheading":"Our Cotes Mill Showroom","button_label":"STEP INSIDE","link":"#","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}},"slide_jBr9Rh":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/INGREDIENTS_LDN-38-extended_0.jpg","desktop_focal_point":50,"mobile_focal_point":50,"heading":"Natural cupboards in","heading_size":"h0","subheading":"A Home in Edinburgh","button_label":"STEP INSIDE","link":"#","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}},"slide_yNFDRn":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/SebastianCox-DSC_6414.jpg","desktop_focal_point":50,"mobile_focal_point":50,"heading":"The potting shed in","heading_size":"h0","subheading":"Our Manhattan Showroom","button_label":"STEP INSIDE","link":"#","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}},"slide_Frame3":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/FLOK-S2-Suffolk-57-Lores_0.jpg","desktop_focal_point":50,"mobile_focal_point":50,"heading":"A lovingly restored barn","heading_size":"h0","subheading":"The Suffolk Dairy","button_label":"STEP INSIDE","link":"#","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}}},"block_order":["slide_tcYaQz","slide_jBr9Rh","slide_yNFDRn","slide_Frame3"],"disabled":true,"settings":{"layout":"full_bleed","show_mobile_banner":true,"slide_height":"large","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"title_with_rich_text_VAJQiT":{"type":"title-with-rich-text","blocks":{"heading_DTA4nV":{"type":"heading","settings":{"heading":"The Sebastian Cox Kitchen by deVOL","heading_size":"hxxl"}},"text_JK4HHa":{"type":"text","settings":{"text":"<p>Guide price £15,000–£30,000<\/p>"}},"text_CRjJLm":{"type":"text","settings":{"text":"<p>A culmination of good taste, modern innovation, traditional techniques and true inspiration, this range is a mix of everything that both Sebastian Cox and deVOL are passionate about.<\/p>"}},"button_YbpTfn":{"type":"button","settings":{"button_label":"View Catalogue & Prices","button_link":"#","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading_DTA4nV","text_JK4HHa","text_CRjJLm","button_YbpTfn"],"disabled":true,"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":60,"padding_bottom":60,"sectionname":""}},"project_multicolumns_7hAHqj":{"type":"project-multicolumns","blocks":{"column_PXJwBQ":{"type":"column","settings":{"dynamic_costs":"a-mediterranean-mix-in-our-la-showroom","custom_text_hover":""}},"column_VgzeM9":{"type":"column","settings":{"dynamic_costs":"the-potting-shed-in-manhattan","custom_text_hover":""}},"column_azjMNB":{"type":"column","settings":{"dynamic_costs":"the-sebastian-cox-kitchen-at-cotes-mill","custom_text_hover":""}},"column_pRgAkx":{"type":"column","settings":{"dynamic_costs":"the-london-basement-showroom","custom_text_hover":""}}},"block_order":["column_PXJwBQ","column_VgzeM9","column_azjMNB","column_pRgAkx"],"custom_css":["@media screen and (max-width: 990px) {.multicolumn-list:not(.slider) {padding-left: 0; padding-right: 0; }}"],"name":"Project multicolumn","settings":{"title":"","heading_size":"hxxl","subtitle":"View more Sebastian Cox projects","image_width":"full","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":false,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":26,"padding_bottom":0,"sectionname":"project-multi-column"}},"project_multicolumns_BijKXz":{"type":"project-multicolumns","blocks":{"column_kxyGbd":{"type":"column","settings":{"dynamic_costs":"the-st-johns-square-townhouse","custom_text_hover":""}},"column_HYxhGi":{"type":"column","settings":{"dynamic_costs":"the-ellei-home-kitchen","custom_text_hover":""}},"column_TKCb4H":{"type":"column","settings":{"dynamic_costs":"the-suffolk-dairy","custom_text_hover":""}},"column_AQF3hy":{"type":"column","settings":{"dynamic_costs":"the-marylebone-kitchen","custom_text_hover":""}},"column_mgf344":{"type":"column","settings":{"dynamic_costs":"the-hampshire-barn","custom_text_hover":""}},"column_iDTRp6":{"type":"column","settings":{"dynamic_costs":"the-bath-larkhall-kitchen","custom_text_hover":""}},"column_AQQ9DL":{"type":"column","settings":{"dynamic_costs":"the-kent-kitchen","custom_text_hover":""}},"column_tRJHmk":{"type":"column","settings":{"dynamic_costs":"the-clerkenwell-apartment","custom_text_hover":""}},"column_XecNn8":{"type":"column","settings":{"dynamic_costs":"the-south-london-kitchen","custom_text_hover":""}}},"block_order":["column_kxyGbd","column_HYxhGi","column_TKCb4H","column_AQF3hy","column_mgf344","column_iDTRp6","column_AQQ9DL","column_tRJHmk","column_XecNn8"],"custom_css":["@media screen and (max-width: 990px) {.multicolumn-list:not(.slider) {padding-left: 0; padding-right: 0; }}"],"name":"Project multicolumn","settings":{"title":"","heading_size":"hxl","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":false,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":"project-multi-column"}}},"order":["page_metafield_gallery_eRhUy4","page_metafield_content_6XHVrU","main","gallery_slideshow_xKtB9f","title_with_rich_text_VAJQiT","project_multicolumns_7hAHqj","project_multicolumns_BijKXz"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_metafield_gallery_eRhUy4": {
+      "type": "page-metafield-gallery",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "padding_top": 0,
+        "padding_bottom": 16,
+        "sectionname": ""
+      }
+    },
+    "page_metafield_content_6XHVrU": {
+      "type": "page-metafield-content",
+      "custom_css": [
+        "@media screen and (max-width: 990px) {}",
+        ".page-width {padding-bottom: 83px;}",
+        ".accordion__title {font-weight: 500;}",
+        ".accordion__content {margin-bottom: 20px;}",
+        ".class-summary.active + .accordion__content-wrapper .accordion__content {margin-bottom: 44px;}",
+        "@media (max-width: 991px) {.accordion {margin-top: 0px; } .page_description p:last- child {margin-bottom: 0; } .page-width {padding-bottom: 80px; }}"
+      ],
+      "settings": {
+        "show_page_title": true,
+        "heading_size": "hxxl",
+        "show_page_cupboard_costs": true,
+        "show_page_description": true,
+        "color_scheme": "scheme-2",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding_top": 0,
+        "padding_bottom": 84,
+        "sectionname": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "gallery_slideshow_xKtB9f": {
+      "type": "gallery-slideshow",
+      "blocks": {
+        "slide_tcYaQz": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Seb_Cox_Showroom3460.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 50,
+            "heading": "A completely refreshed look for",
+            "heading_size": "h0",
+            "subheading": "Our Cotes Mill Showroom",
+            "button_label": "STEP INSIDE",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_jBr9Rh": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/INGREDIENTS_LDN-38-extended_0.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 50,
+            "heading": "Natural cupboards in",
+            "heading_size": "h0",
+            "subheading": "A Home in Edinburgh",
+            "button_label": "STEP INSIDE",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_yNFDRn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/SebastianCox-DSC_6414.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 50,
+            "heading": "The potting shed in",
+            "heading_size": "h0",
+            "subheading": "Our Manhattan Showroom",
+            "button_label": "STEP INSIDE",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_Frame3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/FLOK-S2-Suffolk-57-Lores_0.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 50,
+            "heading": "A lovingly restored barn",
+            "heading_size": "h0",
+            "subheading": "The Suffolk Dairy",
+            "button_label": "STEP INSIDE",
+            "link": "#",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tcYaQz",
+        "slide_jBr9Rh",
+        "slide_yNFDRn",
+        "slide_Frame3"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "full_bleed",
+        "show_mobile_banner": true,
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "title_with_rich_text_VAJQiT": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_DTA4nV": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Sebastian Cox Kitchen by deVOL",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_JK4HHa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Guide price £15,000–£30,000</p>"
+          }
+        },
+        "text_CRjJLm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A culmination of good taste, modern innovation, traditional techniques and true inspiration, this range is a mix of everything that both Sebastian Cox and deVOL are passionate about.</p>"
+          }
+        },
+        "button_YbpTfn": {
+          "type": "button",
+          "settings": {
+            "button_label": "View Catalogue & Prices",
+            "button_link": "#",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_DTA4nV",
+        "text_JK4HHa",
+        "text_CRjJLm",
+        "button_YbpTfn"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_7hAHqj": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_PXJwBQ": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-mediterranean-mix-in-our-la-showroom",
+            "custom_text_hover": ""
+          }
+        },
+        "column_VgzeM9": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "potting-shed-in-manhattan",
+            "custom_text_hover": ""
+          }
+        },
+        "column_azjMNB": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-sebastian-cox-kitchen-at-cotes-mill",
+            "custom_text_hover": ""
+          }
+        },
+        "column_pRgAkx": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-london-basement-showroom",
+            "custom_text_hover": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_PXJwBQ",
+        "column_VgzeM9",
+        "column_azjMNB",
+        "column_pRgAkx"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 990px) {.multicolumn-list:not(.slider) {padding-left: 0; padding-right: 0; }}"
+      ],
+      "name": "Project multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "View more Sebastian Cox projects",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": false,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 26,
+        "padding_bottom": 0,
+        "sectionname": "project-multi-column"
+      }
+    },
+    "project_multicolumns_BijKXz": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_kxyGbd": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-st-johns-square-townhouse",
+            "custom_text_hover": ""
+          }
+        },
+        "column_HYxhGi": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-ellei-home-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_TKCb4H": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-suffolk-dairy",
+            "custom_text_hover": ""
+          }
+        },
+        "column_AQF3hy": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-marylebone-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_mgf344": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "hampshire-barn",
+            "custom_text_hover": ""
+          }
+        },
+        "column_iDTRp6": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-bath-larkhall-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_AQQ9DL": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "kent-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_tRJHmk": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "clerkenwell-apartment",
+            "custom_text_hover": ""
+          }
+        },
+        "column_XecNn8": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-south-london-kitchen",
+            "custom_text_hover": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_kxyGbd",
+        "column_HYxhGi",
+        "column_TKCb4H",
+        "column_AQF3hy",
+        "column_mgf344",
+        "column_iDTRp6",
+        "column_AQQ9DL",
+        "column_tRJHmk",
+        "column_XecNn8"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 990px) {.multicolumn-list:not(.slider) {padding-left: 0; padding-right: 0; }}"
+      ],
+      "name": "Project multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": false,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "project-multi-column"
+      }
+    }
+  },
+  "order": [
+    "page_metafield_gallery_eRhUy4",
+    "page_metafield_content_6XHVrU",
+    "main",
+    "gallery_slideshow_xKtB9f",
+    "title_with_rich_text_VAJQiT",
+    "project_multicolumns_7hAHqj",
+    "project_multicolumns_BijKXz"
+  ]
+}
