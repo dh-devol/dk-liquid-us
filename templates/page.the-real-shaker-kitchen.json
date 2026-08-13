@@ -1,1 +1,1031 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"metaobject_gallery_slider_E6be8H":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":"Slideshow about our brand"}},"catalogue_title_with_richtext_pLaMjh":{"type":"catalogue-title-with-richtext","custom_css":[".rte a:hover {text-decoration: underline; text-underline-offset: 0.5rem;}"],"name":"Page title & description","settings":{"show_title":true,"show_description":false,"show_main_description":true,"show_guide_price":true,"border_title":false,"heading_size":"hxxl","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"project_multicolumns_BQNAXe":{"type":"project-multicolumns","blocks":{"column_c9ArwG":{"type":"column","settings":{"dynamic_costs":"la-shaker-kitchen-scullery","custom_text_hover":""}},"column_4dFQPq":{"type":"column","settings":{"dynamic_costs":"the-la-showroom-shaker-kitchen","custom_text_hover":""}},"column_KmkW3Y":{"type":"column","settings":{"dynamic_costs":"a-casual-la-living-space","custom_text_hover":""}},"column_6y4mDf":{"type":"column","settings":{"dynamic_costs":"an-appliance-garage-or-english-larder-in-la","custom_text_hover":""}},"column_CKcRaz":{"type":"column","settings":{"dynamic_costs":"the-victorian-lacemakers-grange","custom_text_hover":"View this project in detail"}},"column_Eggqjg":{"type":"column","settings":{"dynamic_costs":"an-edwardian-home-in-mapesbury","custom_text_hover":"View this project in detail"}}},"block_order":["column_c9ArwG","column_4dFQPq","column_KmkW3Y","column_6y4mDf","column_CKcRaz","column_Eggqjg"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_UGjxfC":{"type":"project-multicolumns","blocks":{"column_Yrh8cR":{"type":"column","settings":{"dynamic_costs":"the-stamp-house-kitchen-south-east-london","custom_text_hover":"View this project in detail"}},"column_pnfd7R":{"type":"column","settings":{"dynamic_costs":"copy-of-an-edwardian-home-in-mapesbury","custom_text_hover":"View this project in detail"}}},"block_order":["column_Yrh8cR","column_pnfd7R"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_KrLUeH":{"type":"project-multicolumns","blocks":{"column_gYJynB":{"type":"column","settings":{"dynamic_costs":"a-bath-basement-kitchen","custom_text_hover":"View this project in detail"}},"column_eUMq4H":{"type":"column","settings":{"dynamic_costs":"the-tring-kitchen","custom_text_hover":"View this project in detail"}},"column_rxXGYh":{"type":"column","settings":{"dynamic_costs":"the-surrey-scullery","custom_text_hover":"View this project in detail"}}},"block_order":["column_gYJynB","column_eUMq4H","column_rxXGYh"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_EtjXUa":{"type":"project-multicolumns","blocks":{"column_CqHMnH":{"type":"column","settings":{"dynamic_costs":"the-pink-blue-room-bath","custom_text_hover":"View this project in detail"}},"column_Pte8mP":{"type":"column","settings":{"dynamic_costs":"the-millhouse-kitchen","custom_text_hover":"View this project in detail"}},"column_Tt4qJM":{"type":"column","settings":{"dynamic_costs":"the-wonky-mews-house-bermondsey","custom_text_hover":"View this project in detail"}}},"block_order":["column_CqHMnH","column_Pte8mP","column_Tt4qJM"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_GAUwAQ":{"type":"project-multicolumns","blocks":{"column_wMJm7V":{"type":"column","settings":{"dynamic_costs":"the-cotes-shaker-utility-room","custom_text_hover":"View this project in detail"}},"column_FnPx69":{"type":"column","settings":{"dynamic_costs":"the-refectory-red-dining-and-laundry-room","custom_text_hover":"View this project in detail"}},"column_kTH4ew":{"type":"column","settings":{"dynamic_costs":"the-shaker-loft-kitchens-at-cotes-mill","custom_text_hover":"View this project in detail"}},"column_JFJyfa":{"type":"column","settings":{"dynamic_costs":"the-stepney-townhouse","custom_text_hover":"View this project in detail"}},"column_PFkCBY":{"type":"column","settings":{"dynamic_costs":"pearl-s-bohemian-beach-house","custom_text_hover":"View this project in detail"}},"column_34fBE6":{"type":"column","settings":{"dynamic_costs":"a-farmworkers-cottage-in-county-durham","custom_text_hover":"View this project in detail"}}},"block_order":["column_wMJm7V","column_FnPx69","column_kTH4ew","column_JFJyfa","column_PFkCBY","column_34fBE6"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"half","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_mbwLKx":{"type":"project-multicolumns","blocks":{"column_erDpy6":{"type":"column","settings":{"dynamic_costs":"rumys-stoneygate-kitchen","custom_text_hover":"View this project in detail"}},"column_peNrMD":{"type":"column","settings":{"dynamic_costs":"the-st-oak-apartment-kitchen","custom_text_hover":"View this project in detail"}},"column_dPdRR9":{"type":"column","settings":{"dynamic_costs":"the-cotes-mill-shaker-showroom","custom_text_hover":"View this project in detail"}}},"block_order":["column_erDpy6","column_peNrMD","column_dPdRR9"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"third","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_JkyDWP":{"type":"project-multicolumns","blocks":{"column_mqcUcN":{"type":"column","settings":{"dynamic_costs":"a-new-jersey-shaker-kitchen","custom_text_hover":"View this project in detail"}},"column_Jzkryp":{"type":"column","settings":{"dynamic_costs":"the-oxfordshire-farmstead","custom_text_hover":"View this project in detail"}},"column_6W8nTX":{"type":"column","settings":{"dynamic_costs":"a-hampton-wick-townhouse","custom_text_hover":"View this project in detail"}},"column_b89dUG":{"type":"column","settings":{"dynamic_costs":"a-regency-terrace-in-bristol","custom_text_hover":"View this project in detail"}},"column_xFEpNY":{"type":"column","settings":{"dynamic_costs":"the-dulwich-kitchen","custom_text_hover":"View this project in detail"}},"column_wkhEzA":{"type":"column","settings":{"dynamic_costs":"a-schoolhouse-in-northern-germany","custom_text_hover":"View this project in detail"}},"column_URb6Mx":{"type":"column","settings":{"dynamic_costs":"the-bloomsbury-kitchen","custom_text_hover":"View this project in detail"}},"column_JDqhAc":{"type":"column","settings":{"dynamic_costs":"the-bond-street-shaker-showroom","custom_text_hover":"View this project in detail"}},"column_raEDLp":{"type":"column","settings":{"dynamic_costs":"a-georgian-apartment-in-bath","custom_text_hover":"View this project in detail"}},"column_QywWct":{"type":"column","settings":{"dynamic_costs":"the-upminster-kitchen","custom_text_hover":"View this project in detail"}},"column_9bWV6Q":{"type":"column","settings":{"dynamic_costs":"the-cheshire-townhouse-kitchen","custom_text_hover":"View this project in detail"}},"column_HjPnT9":{"type":"column","settings":{"dynamic_costs":"our-tysoe-street-shaker-showroom","custom_text_hover":"View this project in detail"}}},"block_order":["column_mqcUcN","column_Jzkryp","column_6W8nTX","column_b89dUG","column_xFEpNY","column_wkhEzA","column_URb6Mx","column_JDqhAc","column_raEDLp","column_QywWct","column_9bWV6Q","column_HjPnT9"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_EBXCUz":{"type":"project-multicolumns","blocks":{"column_73GbpT":{"type":"column","settings":{"dynamic_costs":"the-east-sussex-kitchen","custom_text_hover":"View this project in detail"}},"column_BLWzar":{"type":"column","settings":{"dynamic_costs":"the-queens-park-kitchen","custom_text_hover":"View this project in detail"}}},"block_order":["column_73GbpT","column_BLWzar"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"half","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_ByFqqQ":{"type":"project-multicolumns","blocks":{"column_DChfpa":{"type":"column","settings":{"dynamic_costs":"the-strawberry-hill-kitchen","custom_text_hover":"View this project in detail"}},"column_TcgNDF":{"type":"column","settings":{"dynamic_costs":"the-chiswick-basement","custom_text_hover":"View this project in detail"}},"column_TtX8qm":{"type":"column","settings":{"dynamic_costs":"a-countryside-kitchen-outside-berlin","custom_text_hover":"View this project in detail"}},"column_yawVC8":{"type":"column","settings":{"dynamic_costs":"the-cattle-shed-kitchen-north-norfolk","custom_text_hover":"View this project in detail"}},"column_PqjA6Y":{"type":"column","settings":{"dynamic_costs":"the-old-schoolhouse-brixton","custom_text_hover":"View this project in detail"}},"column_fNqcje":{"type":"column","settings":{"dynamic_costs":"an-edwardian-villa-in-cardiff","custom_text_hover":"View this project in detail"}}},"block_order":["column_DChfpa","column_TcgNDF","column_TtX8qm","column_yawVC8","column_PqjA6Y","column_fNqcje"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"third","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_LMQ7JD":{"type":"project-multicolumns","blocks":{"column_UybG7f":{"type":"column","settings":{"dynamic_costs":"the-arts-and-crafts-kitchen","custom_text_hover":"View this project in detail"}},"column_eBKNip":{"type":"column","settings":{"dynamic_costs":"the-brighton-kitchen","custom_text_hover":"View this project in detail"}}},"block_order":["column_UybG7f","column_eBKNip"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"half","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_qRnh3q":{"type":"project-multicolumns","blocks":{"column_4LrwgK":{"type":"column","settings":{"dynamic_costs":"the-park-kitchen-nottingham","custom_text_hover":"View this project in detail"}},"column_Rpf4bi":{"type":"column","settings":{"dynamic_costs":"the-south-wing-kitchen","custom_text_hover":"View this project in detail"}},"column_hYXCEk":{"type":"column","settings":{"dynamic_costs":"a-kitchen-in-hove","custom_text_hover":"View this project in detail"}},"column_HEfDza":{"type":"column","settings":{"dynamic_costs":"a-kitchen-in-ditchling","custom_text_hover":"View this project in detail"}},"column_edjRJz":{"type":"column","settings":{"dynamic_costs":"the-bath-kitchen","custom_text_hover":"View this project in detail"}},"column_UpfJgB":{"type":"column","settings":{"dynamic_costs":"the-kew-kitchen","custom_text_hover":"View this project in detail"}},"column_ghrCGT":{"type":"column","settings":{"dynamic_costs":"the-crystal-palace-kitchen","custom_text_hover":"View this project in detail"}},"column_9Wgyzk":{"type":"column","settings":{"dynamic_costs":"the-leicestershire-kitchen-in-the-woods","custom_text_hover":"View this project in detail"}},"column_pGFLab":{"type":"column","settings":{"dynamic_costs":"the-coach-house-kitchen","custom_text_hover":"View this project in detail"}},"column_wTUhj8":{"type":"column","settings":{"dynamic_costs":"the-west-sussex-kitchen","custom_text_hover":"View this project in detail"}},"column_akdiwN":{"type":"column","settings":{"dynamic_costs":"rachel-khoos-kitchen","custom_text_hover":"View this project in detail"}},"column_HAnbBt":{"type":"column","settings":{"dynamic_costs":"the-sw12-kitchen","custom_text_hover":"View this project in detail"}},"column_GiQgGQ":{"type":"column","settings":{"dynamic_costs":"the-petersham-kitchen","custom_text_hover":"View this project in detail"}},"column_hDK8WN":{"type":"column","settings":{"dynamic_costs":"the-chester-kitchen","custom_text_hover":"View this project in detail"}},"column_D8dQXe":{"type":"column","settings":{"dynamic_costs":"the-victoria-road-nw6-kitchen","custom_text_hover":"View this project in detail"}},"column_Xd9XVh":{"type":"column","settings":{"dynamic_costs":"the-henley-on-thames-kitchen","custom_text_hover":"View this project in detail"}},"column_XAbRQQ":{"type":"column","settings":{"dynamic_costs":"the-clerkenwell-kitchen","custom_text_hover":"View this project in detail"}},"column_eQ8473":{"type":"column","settings":{"dynamic_costs":"the-south-downs-laundry-and-pool-house","custom_text_hover":"View this project in detail"}},"column_3hepAF":{"type":"column","settings":{"dynamic_costs":"the-trinity-blue-kitchen-aka-st-albans","custom_text_hover":"View this project in detail"}},"column_MRABRc":{"type":"column","settings":{"dynamic_costs":"the-chipping-norton-kitchen","custom_text_hover":"View this project in detail"}},"column_Fd4iDw":{"type":"column","settings":{"dynamic_costs":"the-wymeswold-kitchen","custom_text_hover":"View this project in detail"}},"column_H43aiz":{"type":"column","settings":{"dynamic_costs":"the-balham-kitchen","custom_text_hover":"View this project in detail"}},"column_gb4gDU":{"type":"column","settings":{"dynamic_costs":"lidham-hill-farm","custom_text_hover":"View this project in detail"}},"column_dqVTQq":{"type":"column","settings":{"dynamic_costs":"the-regent-s-park-cellar-bar","custom_text_hover":"View this project in detail"}}},"block_order":["column_4LrwgK","column_Rpf4bi","column_hYXCEk","column_HEfDza","column_edjRJz","column_UpfJgB","column_ghrCGT","column_9Wgyzk","column_pGFLab","column_wTUhj8","column_akdiwN","column_HAnbBt","column_GiQgGQ","column_hDK8WN","column_D8dQXe","column_Xd9XVh","column_XAbRQQ","column_eQ8473","column_3hepAF","column_MRABRc","column_Fd4iDw","column_H43aiz","column_gb4gDU","column_dqVTQq"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_liquid_VX7XH7":{"type":"custom-liquid","name":"t:sections.custom-liquid.presets.name","settings":{"custom_liquid":"<div class=\"custom-multicolumn  scroll-id\" style=\"opacity:0; margin-bottom: -70px;\" id=\"about\" >static<\/div>","color_scheme":"","padding_top":0,"padding_bottom":4}},"editorials_Ly7hkE":{"type":"editorials","name":"Editorials","settings":{}},"image_with_rich_text_nhWMWe":{"type":"image-with-rich-text","blocks":{"image_yyDTxm":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/The_deVOL_Brochure_-_Spring_2024_0.jpg"}},"heading_BPnLCt":{"type":"heading","settings":{"heading":"The deVOL Brochure","heading_size":"hxxl"}},"text_Ee4K7j":{"type":"text","settings":{"text":"<p>Within the pages of our brochure you’ll find inspirational kitchen projects and learn more about our five beautiful ranges.<\/p>"}},"button_pxGzQf":{"type":"button","settings":{"button_label":"Order your copy","button_link":"shopify:\/\/products\/devol-brochure","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["image_yyDTxm","heading_BPnLCt","text_Ee4K7j","button_pxGzQf"],"custom_css":[".rich-text {padding-bottom: 54px;}","@media screen and (max-width: 768px) {.rich-text {padding-top: 2em; padding-bottom: 0; }}"],"settings":{"desktop_content_position":"center","content_alignment":"center","dynamic_section_link":"shopify:\/\/pages\/brochure","color_scheme":"scheme-2","full_width":true,"padding_top":36,"padding_bottom":0}}},"order":["main","metaobject_gallery_slider_E6be8H","catalogue_title_with_richtext_pLaMjh","project_multicolumns_BQNAXe","project_multicolumns_UGjxfC","project_multicolumns_KrLUeH","project_multicolumns_EtjXUa","project_multicolumns_GAUwAQ","project_multicolumns_mbwLKx","project_multicolumns_JkyDWP","project_multicolumns_EBXCUz","project_multicolumns_ByFqqQ","project_multicolumns_LMQ7JD","project_multicolumns_qRnh3q","custom_liquid_VX7XH7","editorials_Ly7hkE","image_with_rich_text_nhWMWe"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "metaobject_gallery_slider_E6be8H": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "catalogue_title_with_richtext_pLaMjh": {
+      "type": "catalogue-title-with-richtext",
+      "custom_css": [
+        ".rte a:hover {text-decoration: underline; text-underline-offset: 0.5rem;}"
+      ],
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": false,
+        "show_main_description": true,
+        "show_guide_price": true,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "project_multicolumns_BQNAXe": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_c9ArwG": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "la-shaker-kitchen-scullery",
+            "custom_text_hover": ""
+          }
+        },
+        "column_4dFQPq": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-la-showroom-shaker-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_KmkW3Y": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-casual-la-living-space",
+            "custom_text_hover": ""
+          }
+        },
+        "column_6y4mDf": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "an-appliance-garage-or-english-larder-in-la",
+            "custom_text_hover": ""
+          }
+        },
+        "column_CKcRaz": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-victorian-lacemakers-grange",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Eggqjg": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "an-edwardian-home-in-mapesbury",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_c9ArwG",
+        "column_4dFQPq",
+        "column_KmkW3Y",
+        "column_6y4mDf",
+        "column_CKcRaz",
+        "column_Eggqjg"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_UGjxfC": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_Yrh8cR": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-stamp-house-kitchen-south-east-london",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_pnfd7R": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "daws-heath-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_Yrh8cR",
+        "column_pnfd7R"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_KrLUeH": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_gYJynB": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "bath-basement-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_eUMq4H": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-tring-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_rxXGYh": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-surrey-scullery",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_gYJynB",
+        "column_eUMq4H",
+        "column_rxXGYh"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_EtjXUa": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_CqHMnH": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-pink-blue-room-bath",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Pte8mP": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-millhouse-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Tt4qJM": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-wonky-mews-house-bermondsey",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_CqHMnH",
+        "column_Pte8mP",
+        "column_Tt4qJM"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_GAUwAQ": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_wMJm7V": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-cotes-shaker-utility-room",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_FnPx69": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-refectory-red-dining-and-laundry-room",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_kTH4ew": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-shaker-loft-kitchens-at-cotes-mill",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_JFJyfa": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-stepney-townhouse",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_PFkCBY": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "pearl-s-bohemian-beach-house",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_34fBE6": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-farmworkers-cottage-in-county-durham",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_wMJm7V",
+        "column_FnPx69",
+        "column_kTH4ew",
+        "column_JFJyfa",
+        "column_PFkCBY",
+        "column_34fBE6"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "half",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_mbwLKx": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_erDpy6": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "rumys-stoneygate-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_peNrMD": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-st-oak-apartment-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_dPdRR9": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-cotes-mill-shaker-showroom",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_erDpy6",
+        "column_peNrMD",
+        "column_dPdRR9"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "third",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_JkyDWP": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_mqcUcN": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-new-jersey-shaker-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Jzkryp": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-oxfordshire-farmstead",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_6W8nTX": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-hampton-wick-townhouse",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_b89dUG": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-regency-terrace-in-bristol",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_xFEpNY": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-dulwich-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_wkhEzA": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "schoolhouse-in-northern-germany",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_URb6Mx": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-bloomsbury-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_JDqhAc": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-bond-street-shaker-showroom",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_raEDLp": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-georgian-apartment-in-bath",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_QywWct": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-upminster-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_9bWV6Q": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-cheshire-townhouse-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_HjPnT9": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "our-tysoe-street-shaker-showroom",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_mqcUcN",
+        "column_Jzkryp",
+        "column_6W8nTX",
+        "column_b89dUG",
+        "column_xFEpNY",
+        "column_wkhEzA",
+        "column_URb6Mx",
+        "column_JDqhAc",
+        "column_raEDLp",
+        "column_QywWct",
+        "column_9bWV6Q",
+        "column_HjPnT9"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_EBXCUz": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_73GbpT": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "east-sussex-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_BLWzar": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-queens-park-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_73GbpT",
+        "column_BLWzar"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "half",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_ByFqqQ": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_DChfpa": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-strawberry-hill-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_TcgNDF": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-chiswick-basement",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_TtX8qm": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-countryside-kitchen-outside-berlin",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_yawVC8": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "cattle-shed-kitchen-north-norfolk",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_PqjA6Y": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-old-schoolhouse-brixton",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_fNqcje": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "an-edwardian-villa-in-cardiff",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_DChfpa",
+        "column_TcgNDF",
+        "column_TtX8qm",
+        "column_yawVC8",
+        "column_PqjA6Y",
+        "column_fNqcje"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "third",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_LMQ7JD": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_UybG7f": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-arts-and-crafts-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_eBKNip": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "brighton-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_UybG7f",
+        "column_eBKNip"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "half",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_qRnh3q": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_4LrwgK": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-park-kitchen-nottingham",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Rpf4bi": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-south-wing-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_hYXCEk": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-kitchen-in-hove",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_HEfDza": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-kitchen-in-ditchling",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_edjRJz": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-bath-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_UpfJgB": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-kew-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_ghrCGT": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-crystal-palace-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_9Wgyzk": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-leicestershire-kitchen-in-the-woods",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_pGFLab": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-coach-house-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_wTUhj8": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-west-sussex-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_akdiwN": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "rachel-khoos-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_HAnbBt": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-sw12-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_GiQgGQ": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-petersham-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_hDK8WN": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "chester-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_D8dQXe": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-victoria-road-nw6-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Xd9XVh": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-henley-on-thames-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_XAbRQQ": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-clerkenwell-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_eQ8473": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-south-downs-laundry-and-pool-house",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_3hepAF": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-trinity-blue-kitchen-aka-st-albans",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_MRABRc": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-chipping-norton-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Fd4iDw": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-wymeswold-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_H43aiz": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "balham-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_gb4gDU": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "lidham-hill-farm",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_dqVTQq": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-regent-s-park-cellar-bar",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_4LrwgK",
+        "column_Rpf4bi",
+        "column_hYXCEk",
+        "column_HEfDza",
+        "column_edjRJz",
+        "column_UpfJgB",
+        "column_ghrCGT",
+        "column_9Wgyzk",
+        "column_pGFLab",
+        "column_wTUhj8",
+        "column_akdiwN",
+        "column_HAnbBt",
+        "column_GiQgGQ",
+        "column_hDK8WN",
+        "column_D8dQXe",
+        "column_Xd9XVh",
+        "column_XAbRQQ",
+        "column_eQ8473",
+        "column_3hepAF",
+        "column_MRABRc",
+        "column_Fd4iDw",
+        "column_H43aiz",
+        "column_gb4gDU",
+        "column_dqVTQq"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_liquid_VX7XH7": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"custom-multicolumn  scroll-id\" style=\"opacity:0; margin-bottom: -70px;\" id=\"about\" >static</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "editorials_Ly7hkE": {
+      "type": "editorials",
+      "name": "Editorials",
+      "settings": {}
+    },
+    "image_with_rich_text_nhWMWe": {
+      "type": "image-with-rich-text",
+      "blocks": {
+        "image_yyDTxm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_deVOL_Brochure_-_Spring_2024_0.jpg"
+          }
+        },
+        "heading_BPnLCt": {
+          "type": "heading",
+          "settings": {
+            "heading": "The deVOL Brochure",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_Ee4K7j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Within the pages of our brochure you’ll find inspirational kitchen projects and learn more about our five beautiful ranges.</p>"
+          }
+        },
+        "button_pxGzQf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Order your copy",
+            "button_link": "shopify://products/devol-brochure",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "image_yyDTxm",
+        "heading_BPnLCt",
+        "text_Ee4K7j",
+        "button_pxGzQf"
+      ],
+      "custom_css": [
+        ".rich-text {padding-bottom: 54px;}",
+        "@media screen and (max-width: 768px) {.rich-text {padding-top: 2em; padding-bottom: 0; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "dynamic_section_link": "shopify://pages/brochure",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "metaobject_gallery_slider_E6be8H",
+    "catalogue_title_with_richtext_pLaMjh",
+    "project_multicolumns_BQNAXe",
+    "project_multicolumns_UGjxfC",
+    "project_multicolumns_KrLUeH",
+    "project_multicolumns_EtjXUa",
+    "project_multicolumns_GAUwAQ",
+    "project_multicolumns_mbwLKx",
+    "project_multicolumns_JkyDWP",
+    "project_multicolumns_EBXCUz",
+    "project_multicolumns_ByFqqQ",
+    "project_multicolumns_LMQ7JD",
+    "project_multicolumns_qRnh3q",
+    "custom_liquid_VX7XH7",
+    "editorials_Ly7hkE",
+    "image_with_rich_text_nhWMWe"
+  ]
+}

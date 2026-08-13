@@ -1,1 +1,366 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"metaobject_gallery_slider_7Cizhp":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"catalogue_title_with_richtext_fHTxxq":{"type":"catalogue-title-with-richtext","custom_css":[".rte a:hover {text-decoration: underline; text-underline-offset: 0.5rem;}"],"name":"Page information","settings":{"show_title":true,"show_description":false,"show_main_description":true,"show_guide_price":true,"border_title":false,"heading_size":"hxxl","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"project_multicolumns_UGjxfC":{"type":"project-multicolumns","blocks":{"column_PAFtKt":{"type":"column","settings":{"dynamic_costs":"a-private-bar-in-our-la-showroom","custom_text_hover":"View this project in detail"}},"column_3Y9brc":{"type":"column","settings":{"dynamic_costs":"the-black-kitchen-bath","custom_text_hover":"View this project in detail"}}},"block_order":["column_PAFtKt","column_3Y9brc"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_qRnh3q":{"type":"project-multicolumns","blocks":{"column_4LrwgK":{"type":"column","settings":{"dynamic_costs":"the-east-sheen-kitchen","custom_text_hover":"View this project in detail"}},"column_Rpf4bi":{"type":"column","settings":{"dynamic_costs":"the-crypt-on-the-green-clerkenwell","custom_text_hover":"View this project in detail"}},"column_hYXCEk":{"type":"column","settings":{"dynamic_costs":"the-oxshott-pantry","custom_text_hover":"View this project in detail"}},"column_UDh3JY":{"type":"column","settings":{"dynamic_costs":"the-bond-street-haberdashery","custom_text_hover":"View this project in detail"}},"column_X7qqH4":{"type":"column","settings":{"dynamic_costs":"the-cotes-mill-haberdashery","custom_text_hover":"View this project in detail"}},"column_beWYYN":{"type":"column","settings":{"dynamic_costs":"the-st-johns-square-haberdashery","custom_text_hover":"View this project in detail"}}},"block_order":["column_4LrwgK","column_Rpf4bi","column_hYXCEk","column_UDh3JY","column_X7qqH4","column_beWYYN"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_LMriqB":{"type":"project-multicolumns","blocks":{"column_jrxbEC":{"type":"column","settings":{"dynamic_costs":"the-bert-may-kitchen","custom_text_hover":"View this project in detail"}},"column_7UcDDy":{"type":"column","settings":{"dynamic_costs":"a-haberdashers-hideaway-in-skane-sweden","custom_text_hover":"View this project in detail"}}},"block_order":["column_jrxbEC","column_7UcDDy"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":2,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"project_multicolumns_UiENKh":{"type":"project-multicolumns","blocks":{"column_9NftiD":{"type":"column","settings":{"dynamic_costs":"the-barleycroft-kitchen","custom_text_hover":"View this project in detail"}},"column_LKc64L":{"type":"column","settings":{"dynamic_costs":"a-historical-viennese-apartment","custom_text_hover":"View this project in detail"}},"column_EYTE9h":{"type":"column","settings":{"dynamic_costs":"the-mezzanine-kitchen","custom_text_hover":"View this project in detail"}}},"block_order":["column_9NftiD","column_LKc64L","column_EYTE9h"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"portrait","columns_desktop":3,"show_hover_image":false,"show_secondary_image_hover":true,"show_hover_text":false,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_liquid_FtBppq":{"type":"custom-liquid","name":"t:sections.custom-liquid.presets.name","settings":{"custom_liquid":"<div class=\"custom-multicolumn  scroll-id\" style=\"opacity:0; margin-bottom: -70px;\" id=\"about\" >static<\/div>","color_scheme":"","padding_top":0,"padding_bottom":4}},"editorials_djETaw":{"type":"editorials","name":"Editorials","settings":{}},"image_with_rich_text_nhWMWe":{"type":"image-with-rich-text","blocks":{"image_yyDTxm":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/The_deVOL_Brochure_-_Spring_2024_0.jpg"}},"heading_BPnLCt":{"type":"heading","settings":{"heading":"The deVOL Brochure","heading_size":"hxxl"}},"text_Ee4K7j":{"type":"text","settings":{"text":"<p>Within the pages of our brochure you’ll find inspirational kitchen projects and learn more about our five beautiful ranges.<\/p>"}},"button_pxGzQf":{"type":"button","settings":{"button_label":"Order your copy","button_link":"shopify:\/\/products\/devol-brochure","button_style_secondary":false,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["image_yyDTxm","heading_BPnLCt","text_Ee4K7j","button_pxGzQf"],"custom_css":[".rich-text {padding-bottom: 54px;}","@media screen and (max-width: 768px) {.rich-text {padding-top: 2em; padding-bottom: 0; }}"],"settings":{"desktop_content_position":"center","content_alignment":"center","dynamic_section_link":"shopify:\/\/pages\/brochure","color_scheme":"scheme-2","full_width":true,"padding_top":36,"padding_bottom":0}}},"order":["main","metaobject_gallery_slider_7Cizhp","catalogue_title_with_richtext_fHTxxq","project_multicolumns_UGjxfC","project_multicolumns_qRnh3q","project_multicolumns_LMriqB","project_multicolumns_UiENKh","custom_liquid_FtBppq","editorials_djETaw","image_with_rich_text_nhWMWe"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "metaobject_gallery_slider_7Cizhp": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "catalogue_title_with_richtext_fHTxxq": {
+      "type": "catalogue-title-with-richtext",
+      "custom_css": [
+        ".rte a:hover {text-decoration: underline; text-underline-offset: 0.5rem;}"
+      ],
+      "name": "Page information",
+      "settings": {
+        "show_title": true,
+        "show_description": false,
+        "show_main_description": true,
+        "show_guide_price": true,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "project_multicolumns_UGjxfC": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_PAFtKt": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-private-bar-in-our-la-showroom",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_3Y9brc": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-black-kitchen-bath",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_PAFtKt",
+        "column_3Y9brc"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_qRnh3q": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_4LrwgK": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "east-sheen-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_Rpf4bi": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "crypt-on-the-green-clerkenwell",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_hYXCEk": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-oxshott-pantry",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_UDh3JY": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-bond-street-haberdashery",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_X7qqH4": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-cotes-mill-haberdashery",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_beWYYN": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-st-johns-square-haberdashery",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_4LrwgK",
+        "column_Rpf4bi",
+        "column_hYXCEk",
+        "column_UDh3JY",
+        "column_X7qqH4",
+        "column_beWYYN"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_LMriqB": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_jrxbEC": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-bert-may-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_7UcDDy": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-haberdashers-hideaway-in-skane-sweden",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_jrxbEC",
+        "column_7UcDDy"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "project_multicolumns_UiENKh": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_9NftiD": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-barleycroft-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_LKc64L": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "a-historical-viennese-apartment",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_EYTE9h": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-mezzanine-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        }
+      },
+      "block_order": [
+        "column_9NftiD",
+        "column_LKc64L",
+        "column_EYTE9h"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": true,
+        "show_hover_text": false,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_liquid_FtBppq": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div class=\"custom-multicolumn  scroll-id\" style=\"opacity:0; margin-bottom: -70px;\" id=\"about\" >static</div>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 4
+      }
+    },
+    "editorials_djETaw": {
+      "type": "editorials",
+      "name": "Editorials",
+      "settings": {}
+    },
+    "image_with_rich_text_nhWMWe": {
+      "type": "image-with-rich-text",
+      "blocks": {
+        "image_yyDTxm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/The_deVOL_Brochure_-_Spring_2024_0.jpg"
+          }
+        },
+        "heading_BPnLCt": {
+          "type": "heading",
+          "settings": {
+            "heading": "The deVOL Brochure",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_Ee4K7j": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Within the pages of our brochure you’ll find inspirational kitchen projects and learn more about our five beautiful ranges.</p>"
+          }
+        },
+        "button_pxGzQf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Order your copy",
+            "button_link": "shopify://products/devol-brochure",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "image_yyDTxm",
+        "heading_BPnLCt",
+        "text_Ee4K7j",
+        "button_pxGzQf"
+      ],
+      "custom_css": [
+        ".rich-text {padding-bottom: 54px;}",
+        "@media screen and (max-width: 768px) {.rich-text {padding-top: 2em; padding-bottom: 0; }}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "dynamic_section_link": "shopify://pages/brochure",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "metaobject_gallery_slider_7Cizhp",
+    "catalogue_title_with_richtext_fHTxxq",
+    "project_multicolumns_UGjxfC",
+    "project_multicolumns_qRnh3q",
+    "project_multicolumns_LMriqB",
+    "project_multicolumns_UiENKh",
+    "custom_liquid_FtBppq",
+    "editorials_djETaw",
+    "image_with_rich_text_nhWMWe"
+  ]
+}
