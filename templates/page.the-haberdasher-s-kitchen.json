@@ -144,7 +144,7 @@
         "column_beWYYN": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-st-johns-square-haberdashery",
+            "dynamic_costs": "st-johns-square-haberdashery",
             "custom_text_hover": "View this project in detail"
           }
         }

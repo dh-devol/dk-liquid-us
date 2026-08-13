@@ -194,7 +194,7 @@
         "column_eUMq4H": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-tring-kitchen",
+            "dynamic_costs": "tring-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -316,7 +316,7 @@
         "column_JFJyfa": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-stepney-townhouse",
+            "dynamic_costs": "stepney-townhouse",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -441,7 +441,7 @@
         "column_6W8nTX": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-hampton-wick-townhouse",
+            "dynamic_costs": "hampton-wick-townhouse",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -483,7 +483,7 @@
         "column_raEDLp": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-georgian-apartment-in-bath",
+            "dynamic_costs": "georgian-apartment-in-bath",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -807,7 +807,7 @@
         "column_GiQgGQ": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-petersham-kitchen",
+            "dynamic_costs": "petersham-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -835,7 +835,7 @@
         "column_XAbRQQ": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-clerkenwell-kitchen",
+            "dynamic_costs": "clerkenwell-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -863,7 +863,7 @@
         "column_Fd4iDw": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-wymeswold-kitchen",
+            "dynamic_costs": "wymeswold-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },

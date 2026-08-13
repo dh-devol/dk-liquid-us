@@ -120,7 +120,7 @@
         "column_Pi4KmJ": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-camberwell-kitchen",
+            "dynamic_costs": "camberwell-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -220,7 +220,7 @@
         "column_tBdxre": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-blackheath-kitchen",
+            "dynamic_costs": "blackheath-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -306,7 +306,7 @@
         "column_wg699w": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-riverside-apartment-barnes",
+            "dynamic_costs": "riverside-apartment-barnes",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -327,7 +327,7 @@
         "column_i48rkR": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-country-house-apartment-in-bruton",
+            "dynamic_costs": "country-house-apartment-in-bruton",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -445,7 +445,7 @@
         "column_HAnbBt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-oxshott-kitchen",
+            "dynamic_costs": "oxshott-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -522,7 +522,7 @@
         "column_gb4gDU": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-cotswold-barn",
+            "dynamic_costs": "cotswold-barn",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -557,7 +557,7 @@
         "column_dPDzEj": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-osgathorpe-kitchen",
+            "dynamic_costs": "osgathorpe-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -571,7 +571,7 @@
         "column_HFYBhh": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-south-downs-house",
+            "dynamic_costs": "south-downs-house",
             "custom_text_hover": "View this project in detail"
           }
         }

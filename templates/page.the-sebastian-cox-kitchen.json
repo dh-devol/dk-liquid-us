@@ -77,7 +77,7 @@
         "column_3Y9brc": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-sebastian-cox-kitchen-at-cotes-mill",
+            "dynamic_costs": "sebastian-cox-kitchen-at-cotes-mill",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -125,7 +125,7 @@
         "column_VA3DN8": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-st-johns-square-townhouse",
+            "dynamic_costs": "st-johns-square-townhouse",
             "custom_text_hover": ""
           }
         },

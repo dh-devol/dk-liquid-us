@@ -415,7 +415,7 @@
         "column_LKc64L": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-historical-viennese-apartment",
+            "dynamic_costs": "historical-viennese-apartment",
             "custom_text_hover": "View this project in detail"
           }
         },

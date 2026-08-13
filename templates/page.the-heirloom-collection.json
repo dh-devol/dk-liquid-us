@@ -120,7 +120,7 @@
             "heading_size": "h0",
             "subheading": "Our Cotes Mill Showroom",
             "button_label": "STEP INSIDE",
-            "link": "shopify://pages/the-heirloom-collection-at-cotes-mill",
+            "link": "shopify://pages/heirloom-collection-at-cotes-mill",
             "button_style_secondary": false,
             "box_align": "bottom-left",
             "show_text_box": true,
@@ -245,7 +245,7 @@
         "column_pnfd7R": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-heirloom-collection-at-cotes-mill",
+            "dynamic_costs": "heirloom-collection-at-cotes-mill",
             "custom_text_hover": "View this project in detail"
           }
         },
