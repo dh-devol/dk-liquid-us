@@ -231,7 +231,7 @@
         "column_PAFtKt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-grand-heirloom-kitchen-in-los-angeles",
+            "dynamic_costs": "grand-heirloom-kitchen-in-los-angeles",
             "custom_text_hover": "View this project in detail"
           }
         },

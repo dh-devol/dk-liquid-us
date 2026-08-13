@@ -209,28 +209,28 @@
         "column_ALgReL": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-window-into-devols-la-showroom",
+            "dynamic_costs": "window-into-devols-la-showroom",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_EpBEgj": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-grand-heirloom-kitchen-in-los-angeles",
+            "dynamic_costs": "grand-heirloom-kitchen-in-los-angeles",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_3Y9brc": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-green-room-bath",
+            "dynamic_costs": "green-room-bath",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_PAFtKt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-heirloom-collection-at-cotes-mill",
+            "dynamic_costs": "heirloom-collection-at-cotes-mill",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -244,7 +244,7 @@
         "column_8FPrVx": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-victorian-lacemakers-grange",
+            "dynamic_costs": "victorian-lacemakers-grange",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -411,7 +411,7 @@
         "column_intnpt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "sink-cabinet",
+            "dynamic_costs": "the-sink-cabinet",
             "custom_text_hover": ""
           }
         }

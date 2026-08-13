@@ -320,7 +320,7 @@
         "column_U4FkNt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-yellow-room-bath",
+            "dynamic_costs": "yellow-room-bath",
             "custom_text_hover": "View this project in detail"
           }
         },

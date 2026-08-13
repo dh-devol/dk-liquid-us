@@ -141,7 +141,7 @@
         "column_Yrh8cR": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-stamp-house-kitchen-south-east-london",
+            "dynamic_costs": "stamp-house-kitchen-south-east-london",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -737,14 +737,14 @@
         "column_hYXCEk": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-kitchen-in-hove",
+            "dynamic_costs": "kitchen-in-hove",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_HEfDza": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-kitchen-in-ditchling",
+            "dynamic_costs": "kitchen-in-ditchling",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -800,7 +800,7 @@
         "column_HAnbBt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-sw12-kitchen",
+            "dynamic_costs": "sw12-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
