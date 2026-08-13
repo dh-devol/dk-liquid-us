@@ -230,7 +230,7 @@
         "column_pRgAkx": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-london-basement-showroom",
+            "dynamic_costs": "london-basement-showroom",
             "custom_text_hover": ""
           }
         }
@@ -289,7 +289,7 @@
         "column_TKCb4H": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-suffolk-dairy",
+            "dynamic_costs": "suffolk-dairy",
             "custom_text_hover": ""
           }
         },
@@ -331,7 +331,7 @@
         "column_XecNn8": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-south-london-kitchen",
+            "dynamic_costs": "south-london-kitchen",
             "custom_text_hover": ""
           }
         }

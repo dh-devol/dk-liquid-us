@@ -531,7 +531,7 @@
         "column_HEfDza": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-victorian-rectory",
+            "dynamic_costs": "victorian-rectory",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -566,14 +566,14 @@
         "column_pGFLab": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-notting-hill-kitchen",
+            "dynamic_costs": "notting-hill-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_wTUhj8": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-millhouse-scullery",
+            "dynamic_costs": "millhouse-scullery",
             "custom_text_hover": "View this project in detail"
           }
         },

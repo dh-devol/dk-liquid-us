@@ -94,7 +94,7 @@
         "column_69riT8": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "an-appliance-garage-or-english-larder-in-la",
+            "dynamic_costs": "appliance-garage-or-english-larder-in-la",
             "custom_text_hover": ""
           }
         },
@@ -614,7 +614,7 @@
         "column_TtX8qm": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-countryside-kitchen-outside-berlin",
+            "dynamic_costs": "countryside-kitchen-outside-berlin",
             "custom_text_hover": "View this project in detail"
           }
         },

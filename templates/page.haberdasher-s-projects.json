@@ -422,7 +422,7 @@
         "column_EYTE9h": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-mezzanine-kitchen",
+            "dynamic_costs": "mezzanine-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         }
