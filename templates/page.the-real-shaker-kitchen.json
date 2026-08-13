@@ -70,7 +70,7 @@
         "column_4dFQPq": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-la-showroom-shaker-kitchen",
+            "dynamic_costs": "la-showroom-shaker-kitchen",
             "custom_text_hover": ""
           }
         },
@@ -723,7 +723,7 @@
         "column_4LrwgK": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-park-kitchen-nottingham",
+            "dynamic_costs": "park-kitchen-nottingham",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -758,7 +758,7 @@
         "column_UpfJgB": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-kew-kitchen",
+            "dynamic_costs": "kew-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -772,7 +772,7 @@
         "column_9Wgyzk": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-leicestershire-kitchen-in-the-woods",
+            "dynamic_costs": "leicestershire-kitchen-in-the-woods",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -842,7 +842,7 @@
         "column_eQ8473": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-south-downs-laundry-and-pool-house",
+            "dynamic_costs": "south-downs-laundry-and-pool-house",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -884,7 +884,7 @@
         "column_dqVTQq": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-regent-s-park-cellar-bar",
+            "dynamic_costs": "regent-s-park-cellar-bar",
             "custom_text_hover": "View this project in detail"
           }
         }

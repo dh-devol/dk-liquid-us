@@ -292,7 +292,7 @@
         "column_hYXCEk": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-oxshott-pantry",
+            "dynamic_costs": "oxshott-pantry",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -306,7 +306,7 @@
         "column_VQ34wm": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-cotes-mill-haberdashery",
+            "dynamic_costs": "cotes-mill-haberdashery",
             "custom_text_hover": "View this project in detail"
           }
         },

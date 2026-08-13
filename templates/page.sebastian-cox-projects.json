@@ -296,7 +296,7 @@
         "column_AQF3hy": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-marylebone-kitchen",
+            "dynamic_costs": "marylebone-kitchen",
             "custom_text_hover": ""
           }
         },

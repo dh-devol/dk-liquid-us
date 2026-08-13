@@ -323,7 +323,7 @@
         "column_HWAWPB": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-primrose-hill-kitchen",
+            "dynamic_costs": "primrose-hill-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -538,7 +538,7 @@
         "column_edjRJz": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-stoke-newington-kitchen",
+            "dynamic_costs": "stoke-newington-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -594,7 +594,7 @@
         "column_GiQgGQ": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-islington-townhouse-kitchen",
+            "dynamic_costs": "islington-townhouse-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
