@@ -355,7 +355,6 @@ window.initMixMatchBundle = function(root) {
             if (bundlePriceType == "fixed" && bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
                 const leadAttrs = {};
                 leadAttrs[`_bundle_lead_time_${bundleProductId}`] = bundleLeadTime;
-                leadAttrs[`_bundle_lead_time_days_${bundleProductId}`] = bundleLeadTimeDays || '';
                 fetch('/cart/update.js', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
