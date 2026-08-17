@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
 
         var orderPromiseWrite = Promise.resolve();
-        if (maxLeadDays > 0 && !isFlooringCart) {
+        if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
@@ -523,7 +523,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
 
         var orderPromiseWrite = Promise.resolve();
-        if (maxLeadDays > 0 && !isFlooringCart) {
+        if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
