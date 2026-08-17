@@ -421,6 +421,38 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         });
 
+        // Clear Flooring attributes if no flooring/qualifying-support items remain
+        var leadTimesEl = document.getElementById('lead-time-data');
+        var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
+        var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
+        var weightThresholdForClear = leadTimesEl ? parseFloat(leadTimesEl.getAttribute('data-weight-threshold')) : 30000;
+
+        var hasFlooringForClear = (cart.items || []).some(function(item) {
+          return item.product_type === flooringTypeForClear;
+        });
+        var supportWeightForClear = 0;
+        (cart.items || []).forEach(function(item) {
+          if (item.product_type === supportTypeForClear) {
+            supportWeightForClear += (item.grams || 0) * item.quantity;
+          }
+        });
+        var stillHasFlooring = (cart.items || []).some(function(item) {
+          return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
+        });
+
+        if (!stillHasFlooring && cart.attributes && cart.attributes['terms agreed']) {
+          fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              attributes: { 
+                'Access Restrictions': '',
+                'terms agreed': '',
+              } 
+            })
+          }).catch(function() { /* silent */ });
+        }
+
         // Sync _coverage from flooring summary
         document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
           var key = el.getAttribute('data-line-key');
@@ -525,6 +557,39 @@ document.addEventListener('DOMContentLoaded', function () {
         var checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
         var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
 
+         // Clear Flooring attributes if no flooring/qualifying-support items remain
+        var leadTimesEl = document.getElementById('lead-time-data');
+        var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
+        var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
+        var weightThresholdForClear = leadTimesEl ? parseFloat(leadTimesEl.getAttribute('data-weight-threshold')) : 30000;
+
+        var supportWeightForClear = 0;
+        cart.items.forEach(function(item) {
+          if (item.product_type === supportTypeForClear) {
+            supportWeightForClear += (item.grams || 0) * item.quantity;
+          }
+        });
+        var hasFlooringForClear = cart.items.some(function(item) {
+          return item.product_type === flooringTypeForClear;
+        });
+        var stillHasFlooring = (cart.items || []).some(function(item) {
+          return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
+        });
+
+        var deliveryDateClearWrite = Promise.resolve();
+        if (!stillHasFlooring && cart.attributes && cart.attributes['terms agreed']) {
+          deliveryDateClearWrite = fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              attributes: { 
+                'Access Restrictions': '',
+                'terms agreed': '',
+              } 
+            })
+          }).catch(function() { /* silent */ });
+        }
+
         var orderPromiseWrite = Promise.resolve();
         if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
@@ -549,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function processUpdates(index) {
           if (index >= itemsToUpdate.length) {
-            orderPromiseWrite.then(function() {
+            Promise.all([orderPromiseWrite, deliveryDateClearWrite]).then(function() {
               if (!cartForm.querySelector('input[name="checkout"]')) {
                 var ci = document.createElement('input');
                 ci.type = 'hidden';
@@ -567,7 +632,7 @@ document.addEventListener('DOMContentLoaded', function () {
           delete mergedProps['_lead_time_days'];
           delete mergedProps['_Promise Date'];
           if (leadData.text) {
-            mergedProps['Lead time'] = leadData.text;
+            mergedProps['Availability'] = leadData.text;
           }
           fetch('/cart/change.js', {
             method: 'POST',
