@@ -208,8 +208,6 @@
               <a href="{{ property_value }}" class="link" target="_blank">
                 {{ property_value | split: '/' | last }}
               </a>{% unless property_key == last_matching_key %}, {% endunless %}
-            {%- elsif property_value contains '/cdn/shop'-%}
-              <img src="{{ property_value }}" class="visually-hidden" width="100" height="100" alt="Thumbnail">
             {%- else -%}
               {{ property_value }}
             {%- endif -%}
@@ -223,8 +221,6 @@
                 <a href="{{ property_value }}" class="link" target="_blank">
                   {{ property_value | split: '/' | last }}
                 </a>{% unless property_key == last_matching_key %},{% endunless %}
-              {%- elsif property_value contains '/cdn/shop'-%}
-                <img src="{{ property_value }}" class="visually-hidden" width="100" height="100" alt="Thumbnail">
               {%- else -%}
                 {{ property_value }}{% unless property_key == last_matching_key %},{% endunless %}
               {%- endif -%}
