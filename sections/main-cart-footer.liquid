@@ -401,11 +401,15 @@ document.addEventListener('DOMContentLoaded', function () {
           if (!cartItem) return;
 
           var leadText = span.getAttribute('data-leadtext');
+          var props = cartItem.properties || {};
+          var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
+          var availability = leadText && props['Availability'] !== leadText;
 
-          if (leadText && cartItem.properties && cartItem.properties['Lead time'] !== leadText) {
-            var mergedProps = Object.assign({}, cartItem.properties || {}, { 'Lead time': leadText });
+          if (hasStaleKeys || availability) {
+            var mergedProps = Object.assign({}, props);
             delete mergedProps['_lead_time_days'];
             delete mergedProps['_Promise Date'];
+            if (leadText) mergedProps['Availability'] = leadText;
             lineUpdates.push({ 
               id: cartItem.key,
               quantity: cartItem.quantity,

@@ -190,7 +190,7 @@
           {%- assign property_value = property.last -%}
           {%- assign property_first_char = property_key | slice: 0 -%}
 
-          {%- if property_key == 'Lead time' and item_lead_time_text != blank -%}
+          {%- if property_key == 'Availability' and item_lead_time_text != blank -%}
             {%- assign property_value = item_lead_time_text -%}
           {%- endif -%}
 

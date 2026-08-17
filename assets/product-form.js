@@ -398,7 +398,7 @@ if (!customElements.get('product-form')) {
               '_Added as add-on': 'true',
               '_group_id': groupId || String(mainProductId),
               '_addon_sort': String(extra.sort),
-              'Lead time': addonLeadTime,
+              'Availability': addonLeadTime,
             },
           };
 

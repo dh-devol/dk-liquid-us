@@ -262,7 +262,7 @@ window.initMixMatchBundle = function(root) {
             };
 
             if (bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
-                props['Lead time'] = bundleLeadTime;
+                props['Availability'] = bundleLeadTime;
             }
 
             compressed.forEach((x, i) => {
@@ -312,7 +312,7 @@ window.initMixMatchBundle = function(root) {
                     "_group_id": group_id,
                     "_addon_sort": "0",
                     "_addon_summary": addon_cart_text,
-                    'Lead time': bundleLeadTime || undefined,
+                    'Availability': bundleLeadTime || undefined,
                 }
             });
         }
