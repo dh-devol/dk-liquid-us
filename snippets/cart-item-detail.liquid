@@ -554,7 +554,9 @@
             </button>
           </quantity-input>
           {%- if item.product.type == _cart_flooring_type -%}
-            {%- if _item_is_fixed_tile -%}
+            {%- if _item_is_fixed_tile and item.product.title contains 'Parquet' -%}
+              <span class="cart-unit-label">blocks</span>
+            {%- elsif _item_is_fixed_tile -%}
               <span class="cart-unit-label">tiles</span>
             {%- else -%}
               <span class="cart-unit-label">m²</span>
