@@ -335,8 +335,8 @@ a {
 .header--top-center .header__inline-menu{
   z-index:0;
 }
-@media screen and (min-width: 749px) {
-  .header--top-center > h1 > a {
+@media screen and (min-width: 990px) {
+  .header--top-center > a {
     height: 83px;
   }
 }

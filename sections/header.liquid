@@ -82,9 +82,11 @@
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .nav-container {
-    height: 48px;
-    grid-area: navigation;
+  @media screen and (min-width: 990px) {
+    .nav-container {
+      height: 48px;
+      grid-area: navigation;
+    }
   }
 
   .header-sticky-nav {
