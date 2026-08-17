@@ -170,6 +170,7 @@
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                     {%- render 'price',
                       product: product,
+                      root_id: 'mm-bundle-' | append: block.id,
                       use_variant: true,
                       show_badges: true,
                       price_class: 'price--large'
@@ -213,7 +214,8 @@
                     bundle_first_option: block.settings.first_option,
                     item_label_styling: block.settings.item_label_styling,
                     bundle_price: block.settings.bundle_add_pricing,
-                    add_on_styling: block.settings.add_on_style
+                    add_on_styling: block.settings.add_on_style,
+                    bundle_qty: block.settings.bundle_qty
                   %}
                 {%- when 'inventory' -%}
                   {%- if show_international_oos and settings.international_oos_text != blank -%}
@@ -629,25 +631,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggleFinishDropdown();
 
+    function toggleSwitchDropdown() {
+      const pattressSelect = selectorWrapper.querySelector(
+        'select[name="select-a-wooden-pattress"]'
+      );
+
+      const switchSelect = selectorWrapper.querySelector(
+        'select[name="select-your-switch-module"]'
+      );
+
+      if (!pattressSelect || !switchSelect) return;
+
+      const switchLabel = switchSelect.previousElementSibling;
+
+      const withPattress =
+        pattressSelect.value != 'without-pattress';
+
+      switchSelect.style.display = withPattress ? 'none' : 'block';
+
+      if (switchLabel?.tagName === 'LABEL') {
+        switchLabel.style.display = withPattress ? 'none' : 'block';
+      }
+    }
+    toggleSwitchDropdown();
+
     const rootPath = {{ routes.root_url | json }};
     const basePath = (rootPath || "").replace(/\/$/, "");
 
     // Safer than :has(...); product-info carries data-section="{{ section.id }}"
-    const getSectionId = () => {
-      document.querySelector("product-info[data-section]")?.dataset.section || null;
-    };
+    const getSectionId = () => document.querySelector("product-info[data-section]")?.dataset.section || null;
 
     selectorWrapper.addEventListener("change", () => {
       toggleFinishDropdown();
+      toggleSwitchDropdown();
       const selected = {};
-      selectorWrapper.querySelectorAll("select").forEach((sel) => {
+      selects.forEach((sel) => {
         // select names and values are already handleized in Liquid
         selected[sel.name] = (sel.value || "").toLowerCase();
       });
 
       const match = Object.entries(variantMap).find(([handle, options]) => {
         return Object.entries(selected).every(([key, value]) => {
-          return (options[key] || "") === value;
+          //Only do if the option doesn't exist e.g no finish for Individual hooks
+          if (!options[key]) return true;
+          return options[key] === value;
         });
       });
 
@@ -670,8 +697,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const sectionId = getSectionId();
       const targetPath = `${basePath}/products/${targetHandle}`;
 
-      // If we can't resolve the current section id, do a hard navigation
-      if (!sectionId) {
+      const bundle = document.querySelector('.mm-bundle');
+
+      // needed for heritage switches 1 gang
+      let currentPattress = false;
+      let targetPattress = false;
+      if (currentHandle.includes("mahogany") || currentHandle.includes("maple")) {
+        currentPattress = true;
+      }
+      if (targetHandle.includes("mahogany") || targetHandle.includes("maple")) {
+        targetPattress = true;
+      }
+
+      // If we can't resolve the current section id, do a hard navigation or if bundle
+      if (!sectionId || bundle || targetPattress != currentPattress) {
         window.location.assign(targetPath);
         return;
       }
@@ -689,117 +728,29 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
           }
 
-          // Helper: swap innerHTML of a matching element
-          function swapEl(selector) {
-            const cur = curWrapper.querySelector(selector);
-            const nw = newWrapper.querySelector(selector);
-            if (cur && nw) cur.innerHTML = nw.innerHTML;
-          }
+          curWrapper.innerHTML = newWrapper.innerHTML;
 
-          // Helper: swap entire element (outerHTML) for structural changes
-          function replaceEl(selector) {
-            const cur = curWrapper.querySelector(selector);
-            const nw = newWrapper.querySelector(selector);
-            if (cur && nw) {
-              cur.replaceWith(nw.cloneNode(true));
-            } else if (cur && !nw) {
-              cur.innerHTML = '';
-            } else if (!cur && nw) {
-              // New element exists in target but not current — fallback to full swap
-              return false;
-            }
-            return true;
-          }
+          // Execute scripts from injected HTML
+          curWrapper.querySelectorAll('script').forEach(oldScript => {
+            const newScript = document.createElement('script');
 
-          // 1. Update product-info attributes
-          const curInfo = curWrapper.querySelector('product-info');
-          const newInfo = newWrapper.querySelector('product-info');
-          if (curInfo && newInfo) {
-            curInfo.dataset.productId = newInfo.dataset.productId || '';
-            curInfo.dataset.url = newInfo.dataset.url || '';
-          }
+            [...oldScript.attributes].forEach(attr => {
+              newScript.setAttribute(attr.name, attr.value);
+            });
 
-          // 2. Title
-          swapEl('.product__title');
+            newScript.textContent = oldScript.textContent;
 
-          // 3. Price
-          swapEl('[id^="price-"]');
-
-          // 4. Inventory / lead time
-          const curInv = curWrapper.querySelector('[id^="Inventory-"]');
-          const newInv = newWrapper.querySelector('[id^="Inventory-"]');
-          if (curInv && newInv) {
-            curInv.className = newInv.className;
-            curInv.innerHTML = newInv.innerHTML;
-          }
-
-          // 5. Image gallery
-          swapEl('.product__media-wrapper');
-
-          // 6. Description
-          replaceEl('.product__description');
-
-          // 7. Coverage calculator (full replace — structural differences between products)
-          const curCalc = curWrapper.querySelector('.quantity_coverage-main-wrapper');
-          const newCalc = newWrapper.querySelector('.quantity_coverage-main-wrapper');
-          if (curCalc && newCalc) {
-            curCalc.replaceWith(newCalc.cloneNode(true));
-          } else if (curCalc && !newCalc) {
-            curCalc.remove();
-          }
-
-          // 8. Buy button / quantity wrapper
-          replaceEl('.quantity_buy_button-wrapper');
-
-          // 9. Variant ID in form
-          const curIdInput = curWrapper.querySelector('input.product-variant-id[name="id"]') ||
-            curWrapper.querySelector('form[action*="/cart/add"] input[name="id"]');
-          const newIdInput = newWrapper.querySelector('input.product-variant-id[name="id"]') ||
-            newWrapper.querySelector('form[action*="/cart/add"] input[name="id"]');
-          if (curIdInput && newIdInput) curIdInput.value = newIdInput.value;
-
-          // 10. Product inventory JSON
-          const curInvJson = curWrapper.querySelector('[id^="ProductInventory-"]');
-          const newInvJson = newWrapper.querySelector('[id^="ProductInventory-"]');
-          if (curInvJson && newInvJson) curInvJson.textContent = newInvJson.textContent;
-
-          // 11. Sample pack button
-          replaceEl('.product-sample-pack');
-
-          // 12. Installment / payment terms
-          const curInstallment = curWrapper.querySelector('.installment');
-          const newInstallment = newWrapper.querySelector('.installment');
-          if (curInstallment && newInstallment) curInstallment.innerHTML = newInstallment.innerHTML;
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+          });
 
           history.replaceState(null, "", targetPath);
-
-          // 13. Mix-match bundle section
-          const curMixMatch = curWrapper.querySelector('.mm-bundle');
-          const newMixMatch = newWrapper.querySelector('.mm-bundle');
-
-          if (curMixMatch && newMixMatch) {
-            const replacement = newMixMatch.cloneNode(true);
-
-            curMixMatch.replaceWith(replacement);
-
-            initMixMatchBundle(replacement);
-          }
-
-          // Re-run inline scripts (e.g. window.tileCalculator) from the new product
-          newWrapper.querySelectorAll('script:not([src])').forEach((oldScript) => {
-            const type = (oldScript.type || '').toLowerCase();
-            if (type && type !== 'text/javascript') return;
-            const s = document.createElement('script');
-            s.textContent = oldScript.textContent;
-            document.head.appendChild(s);
-            document.head.removeChild(s);
-          });
 
           // Clean up addon state when switching to a non-addon product
           var qtyWrapper = document.querySelector('.product .quantity_buy_button-wrapper');
           if (qtyWrapper) qtyWrapper.classList.remove('has-addon');
 
           // Re-init for newly injected DOM (not initProductSwitcher — selector persists)
+          initProductSwitcher();
           initSwiperGallery();
           initCoverageCalculators(curWrapper);
           readmoreDescription();
@@ -921,14 +872,14 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleBtn.parentNode.replaceChild(cleanButton, toggleBtn);
         toggleBtn = cleanButton;
       } else {
-        // No button in markup means the read_more metafield is not set — show description in full, no toggle
-        description.classList.remove('collapsed', 'collapsed-by-js', 'expanded');
-        description.style.maxHeight = 'none';
-        description.style.overflow = 'visible';
-        if (collapsedOpen) {
-          collapsedOpen.classList.remove('collapsed-open', 'collapsed-expanded');
-        }
-        return;
+        // If no button in markup, create one so aria and show/hide can be applied consistently
+        toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'read-more-toggle';
+        toggleBtn.textContent = 'Read More';
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        // place after description wrapper content
+        wrapper.appendChild(toggleBtn);
       }
 
       // Ensure aria attribute exists
@@ -1130,14 +1081,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const popup = document.querySelector('#cart-popup-container .added-message');
         if (success) {
           popup.innerHTML = "Thank you, we'll send you a message as soon as it is back in stock.";
-          popupContainer.style.removeProperty("display");
           popupContainer.classList.add("show");
           popupDiv.classList.add("active", "animate");
         }
       },1000);
     });
   }, 1000);
-  // stoqSuccess(); // named function expression — not accessible in outer scope
+  stoqSuccess();
 });
 </script>
 

@@ -36,6 +36,7 @@
     {%- assign _item_ft2_display = _ft2_floor | append: '.' | append: _ft2_frac_str -%}
   {%- endif -%}
 {%- endif -%}
+
 {%- comment -%}Resolve cart quantity limit from theme settings{%- endcomment -%}
 {%- assign _cart_qty_limit = 0 -%}
 {%- assign _cart_qty_limit_tag = '' -%}
@@ -73,7 +74,7 @@
   {%- assign cart_item_url = item.properties._parent_url -%}
 {%- endif -%}
 
-{% comment %} adding addon and bundle component keys and qty to cart {% endcomment %}
+{% comment %} adding bundle addon and bundle component keys and qty to cart {% endcomment %}
 {%- if item.properties['_bundle_parent'] == 'true' -%}
   {%- assign addon_keys = '' -%}
   {%- assign bundle_items = '' -%}
@@ -122,7 +123,9 @@
     {%- endif -%}
 
     <a href="{{ cart_item_url }}" class="cart-item__name h4 break">
-      {% if item.properties._group_id != blank and item.product.metafields.custom.custom_product_title %}
+      {% if item.properties._group_id != blank and item.product.title contains "Plate" %}
+        {{ item.product.title | escape }}
+      {% elsif item.properties._group_id != blank and item.product.metafields.custom.custom_product_title %}
         {{ item.product.metafields.custom.custom_product_title }}
       {% else %}
         {{ item.product.title | escape }}
@@ -173,6 +176,15 @@
         {%- endcapture -%}
         {%- assign item_lead_time_days = item_lead_time_days | strip -%}
 
+        {%- assign last_matching_key = "" -%}
+        {%- for property in item.properties -%}
+          {%- assign key = property.first -%}
+
+          {%- if key contains "Scent" or key contains "Colour" -%}
+            {%- assign last_matching_key = key -%}
+          {%- endif -%}
+        {%- endfor -%}
+
         {%- for property in item.properties -%}
           {%- assign property_key = property.first -%}
           {%- assign property_value = property.last -%}
@@ -188,23 +200,53 @@
             and property_key != '_qty-step'
           -%}
           
-          {% if property_key == "Scent 1" %}
+          {% if property_key == "Scent 1" or property_key == "_Colour 1" %}
             <div class="product-option scent">Inc.</div>
           {%- endif -%}
-            <div class="product-option{% if property_key contains "Scent" %} scent{% endif %}">
+          <div class="product-option{% if property_key contains "Scent" or property_key contains "Colour" %} scent{% endif %}">
+            {%- if property_value contains '/uploads/' -%}
+              <a href="{{ property_value }}" class="link" target="_blank">
+                {{ property_value | split: '/' | last }}
+              </a>{% unless property_key == last_matching_key %}, {% endunless %}
+            {%- elsif property_value contains '/cdn/shop'-%}
+              <img src="{{ property_value }}" class="visually-hidden" width="100" height="100" alt="Thumbnail">
+            {%- else -%}
+              {{ property_value }}
+            {%- endif -%}
+          </div>
+          {%- elsif property_key contains 'Scent' or property_key contains 'Colour' -%}
+            {% if property_key == "_Scent 1" or property_key == "_Colour 1"  %}
+              <div class="product-option scent">Inc.</div>
+            {%- endif -%}
+            <div class="product-option{% if property_key contains "Scent" or property_key contains "Colour" %} scent{% endif %}">
               {%- if property_value contains '/uploads/' -%}
                 <a href="{{ property_value }}" class="link" target="_blank">
                   {{ property_value | split: '/' | last }}
-                </a>{% unless forloop.last %}{% if property_key contains "Scent" %},{% endif %}{% endunless %}
+                </a>{% unless property_key == last_matching_key %},{% endunless %}
               {%- elsif property_value contains '/cdn/shop'-%}
                 <img src="{{ property_value }}" class="visually-hidden" width="100" height="100" alt="Thumbnail">
               {%- else -%}
-                {{ property_value }}{% unless forloop.last %}{% if property_key contains "Scent" %},{% endif %}{% endunless %}
+                {{ property_value }}{% unless property_key == last_matching_key %},{% endunless %}
               {%- endif -%}
             </div>
-
+          {%- elsif property_key == '_Cart Text' -%}
+            <div class="product-option">
+              {{ property_value }}
+            </div>
           {%- endif -%}
         {%- endfor -%}
+
+        {%- comment -%}
+          Bundle colours rendered IN THE CART from the hidden `_bundle_summary`
+          property. Because it's underscore-prefixed it does NOT appear at
+          checkout, where the Cart Transform Function already lists the chosen
+          components as nested line items. Net: colours show in the cart, but
+          aren't duplicated at checkout.
+        {%- endcomment -%}
+        {%- comment -%} `_bundle_summary` already lists chosen colours (with "(×N)" only when N>1). {%- endcomment -%}
+        {% comment %} {%- if item.properties._bundle_summary != blank -%}
+          <div class="product-option">Inc. {{ item.properties._bundle_summary | replace: ' • ', ', ' }}</div>
+        {%- endif -%} {% endcomment %}
       </dl>
       {% comment %} Fallback {%- assign item_lead_time_days = item_product_lead_time_days | default: item.properties["_lead_time_days"] -%} {% endcomment %}
       {%- if item_lead_time_days != blank -%}
@@ -215,7 +257,6 @@
         Render related add-on line items that reference this product via properties.group_id
         Add-ons are identified by properties['Added as add-on'] == 'true' and properties.group_id == item.product_id
       {%- endcomment -%}
-      {%- assign item_product_id_str = item.product_id | append: '' -%}
       {%- assign addon_related_count = 0 -%}
       {%- assign related_addon_total = 0 -%}
       {%- assign related_addon_original_total = 0 -%}
@@ -223,33 +264,42 @@
       {%- assign related_bundle_total = 0 -%}
       {%- assign related_bundle_original_total = 0 -%}
       {%- for ci in cart.items -%}
-        {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item_product_id_str -%}
+        {%- if ci.properties._cart_text and ci.properties._group_id == item.properties._group_id -%}
+          {% unless ci.properties._cart_text contains "Candles" or ci.properties._cart_text contains "Paint" %}
+            {%- assign bundle_name = ci.properties._bundle_summary -%}
+          {% endunless %}
+        {%- endif -%}
+        {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item.properties._group_id -%}
           {%- assign addon_related_count = addon_related_count | plus: 1 -%}
           {%- assign related_addon_total = related_addon_total | plus: ci.final_line_price -%}
           {%- assign related_addon_original_total = related_addon_original_total | plus: ci.original_line_price -%}
         {%- endif -%}
-        {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item_product_id_str -%}
+        {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item.properties._group_id -%}
           {%- assign bundle_related_count = bundle_related_count | plus: 1 -%}
           {%- assign related_bundle_total = related_bundle_total | plus: ci.final_line_price -%}
           {%- assign related_bundle_original_total = related_bundle_original_total | plus: ci.original_line_price -%}
-        {%- endif -%} 
+        {%- endif -%}
+        {%- if ci.properties['_bundle_items'] and ci.properties._group_id == item.properties._group_id -%}
+          {%- assign bundle_related_count = bundle_related_count | plus: 1 -%}
+        {%- endif -%}
       {%- endfor -%}
       {%- assign display_final_line_price = item.final_line_price | plus: related_addon_total | plus: related_bundle_total -%}
       {%- assign display_original_line_price = item.original_line_price | plus: related_addon_original_total | plus: related_bundle_original_total -%}
       
       {%- if addon_related_count > 0 -%}
         {%- assign addon_index = 0 -%}
+        {%- assign addon_name = '' -%}
         {%- for sort_pos in (0..20) -%}
           {%- assign sort_str = sort_pos | append: '' -%}
           {%- for ci in cart.items -%}
-            {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item_product_id_str and ci.properties._addon_sort == sort_str -%}
+            {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item.properties._group_id and ci.properties._addon_sort == sort_str -%}
               {%- assign addon_index = addon_index | plus: 1 -%}
               {%- if ci.properties._addon_summary -%}
-                {%- assign addon_piece = ci.properties._addon_summary -%}
+                {%- assign this_addon = ci.properties._addon_summary -%}
               {%- else -%}
-                {%- assign addon_piece = ci.product.metafields.custom.custom_product_title | default: ci.product.title -%}
+                {%- assign this_addon = ci.product.metafields.custom.custom_product_title | default: ci.product.title -%}
               {%- endif -%}
-              {%- assign addon_name = addon_name | append: addon_piece -%}
+              {%- assign addon_name = addon_name | append: this_addon -%}
               {%- if addon_index < addon_related_count -%}
                 {%- assign addon_name = addon_name | append: ", " -%}
               {%- endif -%}
@@ -262,7 +312,7 @@
         {%- for sort_pos in (0..20) -%}
           {%- assign sort_str = sort_pos | append: '' -%}
           {%- for ci in cart.items -%}
-            {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item_product_id_str and ci.properties._bundle_sort == sort_str -%}
+            {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item.properties._group_id and ci.properties._bundle_sort == sort_str -%}
               {%- assign bundle_index = bundle_index | plus: 1 -%}
               {%- if ci.properties._bundle_summary -%}
                 {%- assign bundle_name = bundle_name | append: ci.properties._bundle_summary -%}
@@ -278,23 +328,16 @@
       {%- endif -%}
       {%- if bundle_name or addon_name -%}
         <div class="product-option">
-          {% if product_text %}
-            <span class="cart-item__addon product-text">
-              {{ product_text }}
-            </span>
-          {% endif %}
           {% if bundle_name or addon_name %}
             Inc.
             {% if bundle_name %}
               <span class="cart-item__addon switch-bundle" data-addon-lines="{{ ci.product.selected_or_first_available_variant.id }}" data-index="{{ ci.index | plus: 1 }}">
-                {{- bundle_name -}}{% if addon_name %}, {% endif %}
+                {{ bundle_name }}{%- if bundle_name != blank and addon_name != blank -%}, {% endif -%}
               </span>
             {% endif %}
-            {% if addon_name %}
               <span class="cart-item__addon" data-addon-lines="{{ ci.product.selected_or_first_available_variant.id }}" data-index="{{ ci.index | plus: 1 }}">
-                {{- addon_name -}}
+                {{ addon_name }}
               </span>
-            {% endif %}
           {% endif %}
         </div>
       {% endif %}
@@ -304,7 +347,7 @@
       <span class="product__inventory cart-item-stock">{{ item.product.metafields.custom.lead_time.value }}</span>
     {% endif %}
     {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
-      <p class="cart-item__flooring-summary small-hide medium-hide">{{ _item_ft2_display }} ft²</p>
+      <p class="cart-item__flooring-summary small-hide medium-hide" data-line-key="{{ item.key }}">{{ _item_ft2_display }} ft²</p>
     {%- endif -%}
     <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
       {%- for discount in item.line_level_discount_allocations -%}
@@ -338,14 +381,14 @@
     {%- endif -%}
         {% endcomment %}
     {%- comment -%} Collect addon keys for this main item {%- endcomment -%}
-    {%- assign item_product_id_str = item.product_id | append: '' -%}
-    {%- assign remove_addon_keys = '' -%}
+
+    {%- assign addon_keys = '' -%}
     {%- for ci in cart.items -%}
-      {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item_product_id_str -%}
-        {%- if remove_addon_keys == '' -%}
-          {%- assign remove_addon_keys = ci.key -%}
+      {%- if ci.properties['_Added as add-on'] == 'true' and ci.properties._group_id == item.properties._group_id and item.properties._group_id != blank -%}
+        {%- if addon_keys == '' -%}
+          {%- assign addon_keys = ci.key -%}
         {%- else -%}
-          {%- assign remove_addon_keys = remove_addon_keys | append: ',' | append: ci.key -%}
+          {%- assign addon_keys = addon_keys | append: ',' | append: ci.key -%}
         {%- endif -%}
       {%- endif -%}
     {%- endfor -%}
@@ -353,13 +396,14 @@
     <cart-remove-button
       id="Remove-{{ item.index | plus: 1 }}"
       data-index="{{ item.index | plus: 1 }}"
-      data-addon-keys="{{ remove_addon_keys }}"
+      data-addon-keys="{{ addon_keys }}"
       data-main-key="{{ item.key }}"
     >
       <a
         href="{{ item.url_to_remove }}"
         class="button button--tertiary cart-remove-with-addons"
         aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}"
+        {% if item.properties._group_id %}data-group-id="{{ item.properties._group_id }}"{% endif %}
       >
         <span class="svg-wrapper">
             Remove
@@ -635,7 +679,7 @@
   <td class="cart-item__totals right">
     <quantity-popover>
       {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
-        <p class="cart-item__flooring-summary large-up-hide">{{ _item_ft2_display }} ft²</p>
+        <p class="cart-item__flooring-summary large-up-hide" data-line-key="{{ item.key }}">{{ _item_ft2_display }} ft²</p>
       {%- endif -%}
       <div class="cart-item__quantity-wrapper quantity-popover-wrapper large-up-hide">
         <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
@@ -865,58 +909,3 @@
     </div>
   </td>
 </tr>
-
-<script>
-  {% comment %} (function(){
-    document.addEventListener('click', async function (e) {
-      const btn = e.target.closest('.cart-remove-with-addons');
-      if (!btn) return;
-
-      e.preventDefault();
-      e.stopImmediatePropagation();
-
-      console.log('Bundle remove clicked');
-
-      const mainKey = btn.dataset.mainKey;
-      const addonKeys = (btn.dataset.addonKeys || '')
-        .split(',')
-        .filter(Boolean);
-
-      const bundleKeys = (btn.dataset.bundleKeys || '')
-        .split(',')
-        .filter(Boolean);
-
-      const updates = {};
-
-      updates[mainKey] = 0;
-      addonKeys.forEach(key => {
-        updates[key] = 0;
-      })
-      bundleKeys.forEach(key => {
-        updates[key] = 0;
-      })
-
-      console.log(updates);
-
-      const res = await fetch('/cart/update.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ updates })
-      });
-
-      const data = await res.json();
-
-      console.log('status', res.status);
-      console.log('response', data);
-
-      if (!res.ok) {
-        console.error('Cart update failed');
-        return;
-      }
-
-      window.location.reload();
-    });
-  })(); {% endcomment %}
-</script>

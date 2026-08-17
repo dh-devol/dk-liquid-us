@@ -1,7 +1,9 @@
 {%- liquid
   assign display_count = 0
   for item in cart.items
-    if item.product.metafields.custom.unit_area_m2 != blank
+    if item.properties["_group_id"] and item.properties["_bundle_child"] == "true" or item.properties["_Added as add-on"] == "true"
+      assign display_count = display_count | plus: 0
+    elsif item.product.metafields.custom.unit_area_m2 != blank
       assign display_count = display_count | plus: 1
     else
       assign display_count = display_count | plus: item.quantity
@@ -18,7 +20,7 @@
 <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
 
 <div class="cart-count-bubble{% if display_count == 0 %} cart-count-bubble--empty{% endif %}">
-  {%- if display_count > 0 -%}
+  {%- if display_count >= 0 -%}
     <span class="small-hide medium-hide">(</span>
     <span aria-hidden="true">{{ display_count }}</span>
     <span class="small-hide medium-hide">)</span>
