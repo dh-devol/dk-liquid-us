@@ -152,7 +152,10 @@
                         data-leadtimes="{{ flooring_lead_times | strip_newlines | strip }}"
                         data-disable-weekends="{{ block.settings.disable_weekends }}"
                         data-count-weekends="{{ block.settings.count_weekends_in_lead_time }}"
-                        data-max-days="{{ block.settings.max_days_ahead }}">
+                        data-max-days="{{ block.settings.max_days_ahead }}"
+                        data-flooring-type="{{  _flooring_type }}"
+                        data-support-type="{{ _support_type }}"
+                        data-weight-threshold="{{ _weight_threshold_g }}">
                       </div>
                     <div class="flatpickr_date-wrapper">
                       <input id="date_select" type="text" placeholder="Select Date">
