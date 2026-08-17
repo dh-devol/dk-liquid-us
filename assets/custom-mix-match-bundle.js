@@ -229,7 +229,6 @@ window.initMixMatchBundle = function(root) {
                     _bundle_parent: "true",
                     _cart_text: product_cart_text,
                     lead_time: bundleLeadTime,
-                    _lead_time_days: bundleLeadTimeDays
                 }
             });
 
@@ -264,9 +263,6 @@ window.initMixMatchBundle = function(root) {
 
             if (bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
                 props['Lead time'] = bundleLeadTime;
-            }
-            if (bundleLeadTimeDays && bundleLeadTimeDays !== 'undefined' && bundleLeadTimeDays !== '') {
-                props['_lead_time_days'] = bundleLeadTimeDays;
             }
 
             compressed.forEach((x, i) => {
@@ -317,7 +313,6 @@ window.initMixMatchBundle = function(root) {
                     "_addon_sort": "0",
                     "_addon_summary": addon_cart_text,
                     'Lead time': bundleLeadTime || undefined,
-                    '_lead_time_days': bundleLeadTimeDays || undefined
                 }
             });
         }

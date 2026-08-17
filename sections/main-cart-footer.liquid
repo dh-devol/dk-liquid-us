@@ -376,10 +376,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (promiseDateInput && maxLeadTime > 0) {
       promiseDateInput.value = formatPromiseDate(maxLeadTime);
     }
-    var daysInput = document.getElementById('hidden-days');
-    if (daysInput && maxLeadTime > 0) {
-      daysInput.value = maxLeadTime;
-    }
   }
 
   updateOrderPromiseDate();
@@ -404,21 +400,42 @@ document.addEventListener('DOMContentLoaded', function () {
           });
           if (!cartItem) return;
 
-          var currentLeadDays = parseInt(cartItem.properties && cartItem.properties['_lead_time_days'], 10);
-          var expectedPromise = formatPromiseDate(leadDays);
-          var currentPromise = cartItem.properties && cartItem.properties['_Promise Date'];
           var leadText = span.getAttribute('data-leadtext');
 
-          if (currentLeadDays !== leadDays || currentPromise !== expectedPromise || (leadText && cartItem.properties && cartItem.properties['Lead time'] !== leadText)) {
-            var mergedProps = Object.assign({}, cartItem.properties || {}, {
-              '_lead_time_days': String(leadDays),
-              '_Promise Date': expectedPromise
-            });
-            if (leadText) {
-              mergedProps['Lead time'] = leadText;
-            }
-            lineUpdates.push({
+          if (leadText && cartItem.properties && cartItem.properties['Lead time'] !== leadText) {
+            var mergedProps = Object.assign({}, cartItem.properties || {}, { 'Lead time': leadText });
+            delete mergedProps['_lead_time_days'];
+            delete mergedProps['_Promise Date'];
+            lineUpdates.push({ 
               id: cartItem.key,
+              quantity: cartItem.quantity,
+              properties: mergedProps 
+            });
+          }
+        });
+
+        // Sync _coverage from flooring summary
+        document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
+          var key = el.getAttribute('data-line-key');
+          var text = el.textContent.trim();
+          var match = text.match(/[\d.]+/);
+          if (!match) return;
+          var coverage = match[0];
+
+          var cartItem = (cart.items || []).find(function(item) {
+            return item.key === key;
+          });
+          if (!cartItem) return;
+
+          var props = cartItem.properties || {};
+          var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
+
+          if (props['_coverage'] !== coverage || hasStaleKeys) {
+            var mergedProps = Object.assign({}, props, { '_coverage': coverage });
+            delete mergedProps['_lead_time_days'];
+            delete mergedProps['_Promise Date'];
+            lineUpdates.push({
+              id: key,
               quantity: cartItem.quantity,
               properties: mergedProps
             });
@@ -434,8 +451,6 @@ document.addEventListener('DOMContentLoaded', function () {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
-          var daysInput = document.getElementById('hidden-days');
-          if (daysInput) daysInput.value = String(maxLeadDays); 
 
           orderPromiseWrite = fetch('/cart/update.js', {
             method: 'POST',
@@ -508,17 +523,16 @@ document.addEventListener('DOMContentLoaded', function () {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
-          var daysInput = document.getElementById('hidden-days');
-          if (daysInput) daysInput.value = String(maxLeadDays);
 
           orderPromiseWrite = fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
               attributes: { 
-                '_Promise Date': orderPromise },
-                '_Days': String(maxLeadDays);
-              })
+                '_Promise Date': orderPromise,
+                '_Days': String(maxLeadDays)
+              }
+            })
           }).catch(function() { /* silent */ });
         }
 
@@ -542,10 +556,9 @@ document.addEventListener('DOMContentLoaded', function () {
           }
           var item = itemsToUpdate[index];
           var leadData = leadDataMap[item.key];
-          var mergedProps = Object.assign({}, item.properties || {}, {
-            '_lead_time_days': String(leadData.days),
-            '_Promise Date': leadData.promise
-          });
+          var mergedProps = Object.assign({}, item.properties || {});
+          delete mergedProps['_lead_time_days'];
+          delete mergedProps['_Promise Date'];
           if (leadData.text) {
             mergedProps['Lead time'] = leadData.text;
           }
