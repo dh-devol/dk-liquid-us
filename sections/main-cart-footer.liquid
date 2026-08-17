@@ -391,6 +391,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
         var maxLeadDays = 0;
         var lineUpdates = [];
+        
+        function pushLineUpdate(id, quantity, propsPatch) {
+          var existing = lineUpdates.find(function(u) { return u.id === id; });
+          if (existing) {
+            Object.assign(existing.properties, propsPatch);
+          } else {
+            lineUpdates.push({ id: id, quantity: quantity, properties: propsPatch });
+          }
+        }
 
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
@@ -408,16 +417,13 @@ document.addEventListener('DOMContentLoaded', function () {
           var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
           var availability = leadText && props['Availability'] !== leadText;
 
+          // Availability block
           if (hasStaleKeys || availability) {
             var mergedProps = Object.assign({}, props);
             delete mergedProps['_lead_time_days'];
             delete mergedProps['_Promise Date'];
             if (leadText) mergedProps['Availability'] = leadText;
-            lineUpdates.push({ 
-              id: cartItem.key,
-              quantity: cartItem.quantity,
-              properties: mergedProps 
-            });
+            pushLineUpdate(cartItem.key, cartItem.quantity, mergedProps);
           }
         });
 
@@ -453,13 +459,19 @@ document.addEventListener('DOMContentLoaded', function () {
           }).catch(function() { /* silent */ });
         }
 
-        // Sync _coverage from flooring summary
+        // Sync Coverage from flooring summary (only the visible responsive variant)
+        var seenKeys = {};
         document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
           var key = el.getAttribute('data-line-key');
+          if (!key || seenKeys[key]) return;
+          if (el.offsetParent === null) return;
+          seenKeys[key] = true;
+
           var text = el.textContent.trim();
           var match = text.match(/[\d.]+/);
           if (!match) return;
           var coverage = match[0];
+          var coverageDisplay = coverage + ' ft²';
 
           var cartItem = (cart.items || []).find(function(item) {
             return item.key === key;
@@ -469,15 +481,12 @@ document.addEventListener('DOMContentLoaded', function () {
           var props = cartItem.properties || {};
           var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
 
-          if (props['_coverage'] !== coverage || hasStaleKeys) {
-            var mergedProps = Object.assign({}, props, { '_coverage': coverage });
+          // Coverage block
+          if (props['Coverage'] !== coverageDisplay || hasStaleKeys) {
+            var mergedProps = Object.assign({}, props, { 'Coverage': coverageDisplay });
             delete mergedProps['_lead_time_days'];
             delete mergedProps['_Promise Date'];
-            lineUpdates.push({
-              id: key,
-              quantity: cartItem.quantity,
-              properties: mergedProps
-            });
+            pushLineUpdate(key, cartItem.quantity, mergedProps);
           }
         });
 
@@ -634,6 +643,15 @@ document.addEventListener('DOMContentLoaded', function () {
           if (leadData.text) {
             mergedProps['Availability'] = leadData.text;
           }
+
+          // Get correct coverage from DOM (only the visible responsive variant)
+          var coverageEls = document.querySelectorAll('.cart-item__flooring-summary[data-line-key="' + item.key + '"]');
+          var visibleCoverageEl = Array.prototype.find.call(coverageEls, function(el) { return el.offsetParent !== null; });
+          if (visibleCoverageEl) {
+            var coverageMatch = visibleCoverageEl.textContent.trim().match(/[\d.]+/);
+            if (coverageMatch) mergedProps['Coverage'] = coverageMatch[0] + ' ft²';
+          }
+
           fetch('/cart/change.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
