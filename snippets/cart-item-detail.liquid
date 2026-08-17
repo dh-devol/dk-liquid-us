@@ -208,6 +208,8 @@
               <a href="{{ property_value }}" class="link" target="_blank">
                 {{ property_value | split: '/' | last }}
               </a>{% unless property_key == last_matching_key %}, {% endunless %}
+            {%- elsif property_key == 'Coverage' -%}
+              <span class="visually-hidden">{{ property_value }}</span>
             {%- else -%}
               {{ property_value }}
             {%- endif -%}
