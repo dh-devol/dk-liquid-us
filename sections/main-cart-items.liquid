@@ -66,14 +66,14 @@
               {%- comment -%}Flooring Support grouped with flooring when real flooring exists OR combined weight exceeds threshold{%- endcomment -%}
               {%- assign flooring_support_as_flooring = false -%}
               {%- if has_flooring_support -%}
-                {%- if has_flooring_products or flooring_support_weight_g > _weight_threshold_g -%}
+                {%- if has_flooring_products or flooring_support_weight_g >= _weight_threshold_g -%}
                   {%- assign flooring_support_as_flooring = true -%}
                 {%- endif -%}
               {%- endif -%}
 
               {%- comment -%}has_flooring drives datepicker, access restrictions, delivery text, checkout gating{%- endcomment -%}
               {%- assign has_flooring = false -%}
-              {%- if has_flooring_products or flooring_support_weight_g > _weight_threshold_g -%}
+              {%- if has_flooring_products or flooring_support_weight_g >= _weight_threshold_g -%}
                 {%- assign has_flooring = true -%}
               {%- endif -%}
 
