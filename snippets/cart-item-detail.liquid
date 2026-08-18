@@ -190,7 +190,7 @@
           {%- assign property_value = property.last -%}
           {%- assign property_first_char = property_key | slice: 0 -%}
 
-          {%- if property_key == 'Lead time' and item_lead_time_text != blank -%}
+          {%- if property_key == 'Availability' and item_lead_time_text != blank -%}
             {%- assign property_value = item_lead_time_text -%}
           {%- endif -%}
 
@@ -208,8 +208,8 @@
               <a href="{{ property_value }}" class="link" target="_blank">
                 {{ property_value | split: '/' | last }}
               </a>{% unless property_key == last_matching_key %}, {% endunless %}
-            {%- elsif property_value contains '/cdn/shop'-%}
-              <img src="{{ property_value }}" class="visually-hidden" width="100" height="100" alt="Thumbnail">
+            {%- elsif property_key == 'Coverage' -%}
+              <span class="visually-hidden">{{ property_value }}</span>
             {%- else -%}
               {{ property_value }}
             {%- endif -%}
@@ -223,8 +223,6 @@
                 <a href="{{ property_value }}" class="link" target="_blank">
                   {{ property_value | split: '/' | last }}
                 </a>{% unless property_key == last_matching_key %},{% endunless %}
-              {%- elsif property_value contains '/cdn/shop'-%}
-                <img src="{{ property_value }}" class="visually-hidden" width="100" height="100" alt="Thumbnail">
               {%- else -%}
                 {{ property_value }}{% unless property_key == last_matching_key %},{% endunless %}
               {%- endif -%}
@@ -558,7 +556,9 @@
             </button>
           </quantity-input>
           {%- if item.product.type == _cart_flooring_type -%}
-            {%- if _item_is_fixed_tile -%}
+            {%- if _item_is_fixed_tile and item.product.title contains 'Parquet' -%}
+              <span class="cart-unit-label">blocks</span>
+            {%- elsif _item_is_fixed_tile -%}
               <span class="cart-unit-label">tiles</span>
             {%- else -%}
               <span class="cart-unit-label">m²</span>

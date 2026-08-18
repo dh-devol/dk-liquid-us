@@ -229,7 +229,6 @@ window.initMixMatchBundle = function(root) {
                     _bundle_parent: "true",
                     _cart_text: product_cart_text,
                     lead_time: bundleLeadTime,
-                    _lead_time_days: bundleLeadTimeDays
                 }
             });
 
@@ -263,10 +262,7 @@ window.initMixMatchBundle = function(root) {
             };
 
             if (bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
-                props['Lead time'] = bundleLeadTime;
-            }
-            if (bundleLeadTimeDays && bundleLeadTimeDays !== 'undefined' && bundleLeadTimeDays !== '') {
-                props['_lead_time_days'] = bundleLeadTimeDays;
+                props['Availability'] = bundleLeadTime;
             }
 
             compressed.forEach((x, i) => {
@@ -316,8 +312,7 @@ window.initMixMatchBundle = function(root) {
                     "_group_id": group_id,
                     "_addon_sort": "0",
                     "_addon_summary": addon_cart_text,
-                    'Lead time': bundleLeadTime || undefined,
-                    '_lead_time_days': bundleLeadTimeDays || undefined
+                    'Availability': bundleLeadTime || undefined,
                 }
             });
         }
@@ -355,7 +350,6 @@ window.initMixMatchBundle = function(root) {
             if (bundlePriceType == "fixed" && bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
                 const leadAttrs = {};
                 leadAttrs[`_bundle_lead_time_${bundleProductId}`] = bundleLeadTime;
-                leadAttrs[`_bundle_lead_time_days_${bundleProductId}`] = bundleLeadTimeDays || '';
                 fetch('/cart/update.js', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

@@ -152,7 +152,10 @@
                         data-leadtimes="{{ flooring_lead_times | strip_newlines | strip }}"
                         data-disable-weekends="{{ block.settings.disable_weekends }}"
                         data-count-weekends="{{ block.settings.count_weekends_in_lead_time }}"
-                        data-max-days="{{ block.settings.max_days_ahead }}">
+                        data-max-days="{{ block.settings.max_days_ahead }}"
+                        data-flooring-type="{{  _flooring_type }}"
+                        data-support-type="{{ _support_type }}"
+                        data-weight-threshold="{{ _weight_threshold_g }}">
                       </div>
                     <div class="flatpickr_date-wrapper">
                       <input id="date_select" type="text" placeholder="Select Date">
@@ -376,10 +379,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (promiseDateInput && maxLeadTime > 0) {
       promiseDateInput.value = formatPromiseDate(maxLeadTime);
     }
-    var daysInput = document.getElementById('hidden-days');
-    if (daysInput && maxLeadTime > 0) {
-      daysInput.value = maxLeadTime;
-    }
   }
 
   updateOrderPromiseDate();
@@ -392,6 +391,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
         var maxLeadDays = 0;
         var lineUpdates = [];
+        
+        function pushLineUpdate(id, quantity, propsPatch) {
+          var existing = lineUpdates.find(function(u) { return u.id === id; });
+          if (existing) {
+            Object.assign(existing.properties, propsPatch);
+          } else {
+            lineUpdates.push({ id: id, quantity: quantity, properties: propsPatch });
+          }
+        }
 
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
@@ -404,24 +412,80 @@ document.addEventListener('DOMContentLoaded', function () {
           });
           if (!cartItem) return;
 
-          var currentLeadDays = parseInt(cartItem.properties && cartItem.properties['_lead_time_days'], 10);
-          var expectedPromise = formatPromiseDate(leadDays);
-          var currentPromise = cartItem.properties && cartItem.properties['_Promise Date'];
           var leadText = span.getAttribute('data-leadtext');
+          var props = cartItem.properties || {};
+          var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
+          var availability = leadText && props['Availability'] !== leadText;
 
-          if (currentLeadDays !== leadDays || currentPromise !== expectedPromise || (leadText && cartItem.properties && cartItem.properties['Lead time'] !== leadText)) {
-            var mergedProps = Object.assign({}, cartItem.properties || {}, {
-              '_lead_time_days': String(leadDays),
-              '_Promise Date': expectedPromise
-            });
-            if (leadText) {
-              mergedProps['Lead time'] = leadText;
-            }
-            lineUpdates.push({
-              id: cartItem.key,
-              quantity: cartItem.quantity,
-              properties: mergedProps
-            });
+          // Availability block
+          if (hasStaleKeys || availability) {
+            var mergedProps = Object.assign({}, props);
+            delete mergedProps['_lead_time_days'];
+            delete mergedProps['_Promise Date'];
+            if (leadText) mergedProps['Availability'] = leadText;
+            pushLineUpdate(cartItem.key, cartItem.quantity, mergedProps);
+          }
+        });
+
+        // Clear Flooring attributes if no flooring/qualifying-support items remain
+        var leadTimesEl = document.getElementById('lead-time-data');
+        var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
+        var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
+        var weightThresholdForClear = leadTimesEl ? parseFloat(leadTimesEl.getAttribute('data-weight-threshold')) : 30000;
+
+        var hasFlooringForClear = (cart.items || []).some(function(item) {
+          return item.product_type === flooringTypeForClear;
+        });
+        var supportWeightForClear = 0;
+        (cart.items || []).forEach(function(item) {
+          if (item.product_type === supportTypeForClear) {
+            supportWeightForClear += (item.grams || 0) * item.quantity;
+          }
+        });
+        var stillHasFlooring = (cart.items || []).some(function(item) {
+          return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
+        });
+
+        if (!stillHasFlooring && cart.attributes && cart.attributes['Access Restrictions']) {
+          fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              attributes: { 
+                'Access Restrictions': '',
+              } 
+            })
+          }).catch(function() { /* silent */ });
+        }
+
+        // Sync Coverage from flooring summary (only the visible responsive variant)
+        var seenKeys = {};
+        document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
+          var key = el.getAttribute('data-line-key');
+          if (!key || seenKeys[key]) return;
+          if (el.offsetParent === null) return;
+          seenKeys[key] = true;
+
+          var text = el.textContent.trim();
+          var match = text.match(/[\d.]+/);
+          if (!match) return;
+          var coverage = match[0];
+          var coverageDisplay = coverage + ' ft²';
+
+          var cartItem = (cart.items || []).find(function(item) {
+            return item.key === key;
+          });
+          if (!cartItem) return;
+
+          var props = cartItem.properties || {};
+          var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
+
+          // Coverage block
+          if (props['Coverage'] !== coverageDisplay || hasStaleKeys) {
+            var mergedProps = Object.assign({}, props, { 'Coverage': coverageDisplay });
+            delete mergedProps['_lead_time_days'];
+            delete mergedProps['_Promise Date'];
+            pushLineUpdate(key, cartItem.quantity, mergedProps);
           }
         });
 
@@ -430,12 +494,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
 
         var orderPromiseWrite = Promise.resolve();
-        if (maxLeadDays > 0 && !isFlooringCart) {
+        if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
-          var daysInput = document.getElementById('hidden-days');
-          if (daysInput) daysInput.value = String(maxLeadDays); 
 
           orderPromiseWrite = fetch('/cart/update.js', {
             method: 'POST',
@@ -503,22 +565,53 @@ document.addEventListener('DOMContentLoaded', function () {
         var checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
         var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
 
+         // Clear Flooring attributes if no flooring/qualifying-support items remain
+        var leadTimesEl = document.getElementById('lead-time-data');
+        var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
+        var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
+        var weightThresholdForClear = leadTimesEl ? parseFloat(leadTimesEl.getAttribute('data-weight-threshold')) : 30000;
+
+        var supportWeightForClear = 0;
+        cart.items.forEach(function(item) {
+          if (item.product_type === supportTypeForClear) {
+            supportWeightForClear += (item.grams || 0) * item.quantity;
+          }
+        });
+        var hasFlooringForClear = cart.items.some(function(item) {
+          return item.product_type === flooringTypeForClear;
+        });
+        var stillHasFlooring = (cart.items || []).some(function(item) {
+          return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
+        });
+
+        var deliveryDateClearWrite = Promise.resolve();
+        if (!stillHasFlooring && cart.attributes && cart.attributes['Access Restrictions']) {
+          deliveryDateClearWrite = fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              attributes: { 
+                'Access Restrictions': '',
+              } 
+            })
+          }).catch(function() { /* silent */ });
+        }
+
         var orderPromiseWrite = Promise.resolve();
-        if (maxLeadDays > 0 && !isFlooringCart) {
+        if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
-          var daysInput = document.getElementById('hidden-days');
-          if (daysInput) daysInput.value = String(maxLeadDays);
 
           orderPromiseWrite = fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
               attributes: { 
-                '_Promise Date': orderPromise },
-                '_Days': String(maxLeadDays);
-              })
+                '_Promise Date': orderPromise,
+                '_Days': String(maxLeadDays)
+              }
+            })
           }).catch(function() { /* silent */ });
         }
 
@@ -528,7 +621,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function processUpdates(index) {
           if (index >= itemsToUpdate.length) {
-            orderPromiseWrite.then(function() {
+            Promise.all([orderPromiseWrite, deliveryDateClearWrite]).then(function() {
               if (!cartForm.querySelector('input[name="checkout"]')) {
                 var ci = document.createElement('input');
                 ci.type = 'hidden';
@@ -542,13 +635,21 @@ document.addEventListener('DOMContentLoaded', function () {
           }
           var item = itemsToUpdate[index];
           var leadData = leadDataMap[item.key];
-          var mergedProps = Object.assign({}, item.properties || {}, {
-            '_lead_time_days': String(leadData.days),
-            '_Promise Date': leadData.promise
-          });
+          var mergedProps = Object.assign({}, item.properties || {});
+          delete mergedProps['_lead_time_days'];
+          delete mergedProps['_Promise Date'];
           if (leadData.text) {
-            mergedProps['Lead time'] = leadData.text;
+            mergedProps['Availability'] = leadData.text;
           }
+
+          // Get correct coverage from DOM (only the visible responsive variant)
+          var coverageEls = document.querySelectorAll('.cart-item__flooring-summary[data-line-key="' + item.key + '"]');
+          var visibleCoverageEl = Array.prototype.find.call(coverageEls, function(el) { return el.offsetParent !== null; });
+          if (visibleCoverageEl) {
+            var coverageMatch = visibleCoverageEl.textContent.trim().match(/[\d.]+/);
+            if (coverageMatch) mergedProps['Coverage'] = coverageMatch[0] + ' ft²';
+          }
+
           fetch('/cart/change.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -621,8 +722,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (deliveryDate && deliveryDate.value) attrs['Flooring Delivery Date'] = deliveryDate.value;
     var accessRestrictions = document.getElementById('access-restrictions');
     if (accessRestrictions && accessRestrictions.value.trim()) attrs['Access Restrictions'] = accessRestrictions.value.trim();
-    var termsCheckbox = document.getElementById('terms_agreed');
-    if (termsCheckbox) attrs['terms agreed'] = termsCheckbox.checked ? 'Yes' : '';
     if (Object.keys(attrs).length > 0) {
       fetch('/cart/update.js', {
         method: 'POST',

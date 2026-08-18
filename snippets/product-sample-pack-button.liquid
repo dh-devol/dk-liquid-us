@@ -60,7 +60,7 @@
                               id="lead_time"
                               value="{{ product.metafields.custom.lead_time }}"
                               type="hidden"
-                              name="properties[Lead time]"
+                              name="properties[Availability]"
                             >
                           {% endif %}
                           {% if product.metafields.custom.lead_time_days != blank %}
@@ -75,14 +75,6 @@
                               class="js-promise-date-input"
                               data-lead-days="{{ product.metafields.custom.lead_time_days }}"
                               value=""
-                            >
-                          {% endif %}
-                          {% if product.metafields.custom.thumbnail_image_1 != blank %}
-                            <input
-                              id="thumbnail"
-                              value="{{ product.metafields.custom.thumbnail_image_1 | image_url: width: 600}}"
-                              type="hidden"
-                              name="properties[_Thumbnail]"
                             >
                           {% endif %}
                           {% if _pf_cart_qty_limit > 0 %}

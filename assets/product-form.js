@@ -50,6 +50,9 @@ if (!customElements.get('product-form')) {
 
         // Also update the order-level _Promise Date cart attribute
         // (uses the max lead time across all items already in cart + this item)
+        // Note: only reflects this item's lead time at add-to-cart time — the
+        // cart page (main-cart-footer) recalculates the true max across all
+        // items from the DOM before checkout
         if (maxLeadDays > 0) {
           fetch('/cart.js').then(function (r) { return r.json(); }).then(function (cart) {
             var greatest = maxLeadDays;
@@ -395,8 +398,7 @@ if (!customElements.get('product-form')) {
               '_Added as add-on': 'true',
               '_group_id': groupId || String(mainProductId),
               '_addon_sort': String(extra.sort),
-              'Lead time': addonLeadTime,
-              '_lead_time_days': addonLeadTimeDays,
+              'Availability': addonLeadTime,
             },
           };
 
