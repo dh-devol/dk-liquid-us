@@ -453,7 +453,6 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify({ 
               attributes: { 
                 'Access Restrictions': '',
-                'terms agreed': '',
               } 
             })
           }).catch(function() { /* silent */ });
@@ -593,7 +592,6 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify({ 
               attributes: { 
                 'Access Restrictions': '',
-                'terms agreed': '',
               } 
             })
           }).catch(function() { /* silent */ });
@@ -724,8 +722,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (deliveryDate && deliveryDate.value) attrs['Flooring Delivery Date'] = deliveryDate.value;
     var accessRestrictions = document.getElementById('access-restrictions');
     if (accessRestrictions && accessRestrictions.value.trim()) attrs['Access Restrictions'] = accessRestrictions.value.trim();
-    var termsCheckbox = document.getElementById('terms_agreed');
-    if (termsCheckbox) attrs['terms agreed'] = termsCheckbox.checked ? 'Yes' : '';
     if (Object.keys(attrs).length > 0) {
       fetch('/cart/update.js', {
         method: 'POST',
