@@ -446,7 +446,7 @@ document.addEventListener('DOMContentLoaded', function () {
           return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
         });
 
-        if (!stillHasFlooring && cart.attributes && cart.attributes['terms agreed']) {
+        if (!stillHasFlooring && cart.attributes && cart.attributes['Access Restrictions']) {
           fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -585,7 +585,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         var deliveryDateClearWrite = Promise.resolve();
-        if (!stillHasFlooring && cart.attributes && cart.attributes['terms agreed']) {
+        if (!stillHasFlooring && cart.attributes && cart.attributes['Access Restrictions']) {
           deliveryDateClearWrite = fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
