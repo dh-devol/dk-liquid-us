@@ -1788,10 +1788,11 @@ span#TotalPrice {
 }
 
 @media screen and (max-width:991px){
-      .product--large:not(.product--no-media) .product__media-wrapper {
-        width: 100%;
-        max-width: 100%;
-    }
+  .product--large:not(.product--no-media) .product__media-wrapper {
+    max-width: 56%;
+    width: calc(60% - var(--grid-desktop-horizontal-spacing) / 2);
+    padding: 0;
+  }
   .product .product__info-wrapper.grid__item{
     max-width: 100%;
     width: 100%;
@@ -1804,7 +1805,9 @@ span#TotalPrice {
     margin: 0;
   }
   .product .product__info-wrapper.grid__item{
-    padding: 0 5rem;
+    padding: 0;
+    width: unset;
+    max-width: 40%;
   }
   .product__info-wrapper .product-form__buttons {
     max-width: 100%;
@@ -1951,10 +1954,11 @@ span#TotalPrice {
 .product-page .price__regular .price-item--regular {
     line-height: 1;
 }
-
+.product-page .price__regular {
+  margin-right: 5px;
+}
 .product-page .price-suffix {
     display: inline-block;
-    margin-left: 5px;
     color: rgba(137, 137, 137, 1);
     font-size: 0.9em;
     white-space: pre-wrap;
@@ -2062,8 +2066,6 @@ margin-top:32px !important;
 @media screen and (max-width: 989px) {
   product-info .page-width {
     padding: 0;
-    margin: 0;
-    width: 100%;
   }
 }
 
@@ -2137,14 +2139,16 @@ margin-top:32px !important;
     display: flex;
     align-items: center;
 }
-@media(max-width:768px){
+@media(max-width:767px){
 .product-page product-info .page-width{
   width:100%;
   max-width:100%;
 }
+}
+@media(max-width:768px){
 .product-page .product-specification.custom-collapsible-content{
-        padding-left: 0;
-        padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 .product-page .related-section.page-width{
   max-width:88% !important;

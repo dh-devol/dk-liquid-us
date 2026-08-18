@@ -1115,10 +1115,6 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 }
 
 @media (max-width:991px){
-.header-wrapper {
-  padding: 2em 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
 .header-menu-wrapper{
   position: relative;
   display: flex;
@@ -1395,12 +1391,12 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 990px) {
   .header__heading-logo {
     margin: 8px 0 20px;
   }
   .footer-block.grid__item.footer-block--menu {
-      display: none;
+    display: none;
   }
   .section-header.shopify-section-header-sticky.scrolled-past-header header.header.header--top-center.header--mobile-center {
     padding-top: 0;
@@ -1454,10 +1450,16 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
     --page-width-max: 1600px;
   }
 }
-@media screen and (max-width:991px){
-.header__icon span {
-  font-family: "Gill Sans Nova", sans-serif;
+@media screen and (max-width:989px){
+  .header__icon span {
+    font-family: "Gill Sans Nova", sans-serif;
+  }
+  .header-wrapper {
+    padding: 2em 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
 }
+@media screen and (max-width:991px){
 .header-wrapper .header__icon--menu {
     padding-left: 0px;
 }
