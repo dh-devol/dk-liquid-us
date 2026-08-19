@@ -94,7 +94,11 @@ body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-w
   text-decoration:none;
   font-weight: 500;
   font-size: 18px;
-  margin-top:10px;
+  margin-top:14px;
+}
+.custom-multicolumn.project-multicolumns .sub_heading--link{
+  margin-top:7px;
+  margin-bottom: 17px;
 }
 .sub_heading--link:hover{
   text-decoration:underline;
