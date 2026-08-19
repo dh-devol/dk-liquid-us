@@ -114,6 +114,8 @@
             Coverage (m<sup>2</sup>)*
           {% elsif tile_type == 'variable pack' %}
             Coverage (ft<sup>2</sup>)*
+          {% elsif product.title contains "Parquet" %}
+            Quantity
           {% else %}
             Tile Quantity
           {% endif %}
