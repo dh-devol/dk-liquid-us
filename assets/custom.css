@@ -335,14 +335,16 @@ a {
 .header--top-center .header__inline-menu{
   z-index:0;
 }
-.header--top-center > h1 > a {
-  height: 84px;
+@media screen and (min-width: 990px) {
+  .header--top-center > a {
+    height: 83px;
+  }
 }
 .header--top-center .header__inline-menu:after {
     content: "";
     position: absolute;
     width: 100%;
-    height: 48px;
+    height: 47px;
     left:0;
     bottom: 0;
     background-color: #f2f2f2;

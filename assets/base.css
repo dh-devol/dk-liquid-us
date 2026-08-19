@@ -163,7 +163,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   }
   .shopify-section-header-sticky {
     position: sticky !important;
-    top: -93px !important;
+    top: -95px !important;
   }
 }
 
