@@ -138,7 +138,7 @@
         "show_secondary_image": true,
         "background_style": "primary",
         "button_label": "View all",
-        "button_link": "shopify://collections/the-grand-tour-collection",
+        "button_link": "shopify://collections/grand-tour-collection",
         "show_top_border": false,
         "show_bottom_border": false,
         "color_scheme": "scheme-2",
