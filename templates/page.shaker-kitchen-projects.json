@@ -793,7 +793,7 @@
         "column_wTUhj8": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-west-sussex-kitchen",
+            "dynamic_costs": "west-sussex-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -891,7 +891,7 @@
         "column_dqVTQq": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "regent-s-park-cellar-bar",
+            "dynamic_costs": "regents-park-cellar-bar",
             "custom_text_hover": "View this project in detail"
           }
         }
