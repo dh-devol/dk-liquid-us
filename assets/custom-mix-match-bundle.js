@@ -38,7 +38,6 @@ window.initMixMatchBundle = function(root) {
         return parts[parts.length - 1].trim();
     };
 
-
     // Populate dropdowns
     function renderOptions(select) {
         select.innerHTML = '<option value="">— Choose —</option>';
@@ -115,16 +114,16 @@ window.initMixMatchBundle = function(root) {
     }
 
     function collectAddons() {
-    const vid = Number(addonId.value || 0);
+        const vid = Number(addonId.value || 0);
 
-    if (!vid) return [];
+        if (!vid) return [];
 
-    return [{
-        variant_id: vid,
-        title: addonTitle.value,
-        qty: 1,
-        price: Number(addonPrice.value),
-    }];
+        return [{
+            variant_id: vid,
+            title: addonTitle.value,
+            qty: 1,
+            price: Number(addonPrice.value),
+        }];
     }
 
     // dropdown accordian logic used on some bundles - check template for
@@ -188,6 +187,15 @@ window.initMixMatchBundle = function(root) {
         }
 
         return groupId;
+    }
+
+    function setBtnLoading(on) {
+        if (!addBtn) return;
+        addBtn.classList.toggle('loading', on);
+        addBtn.setAttribute('aria-busy', on ? 'true' : 'false');
+        addBtn.disabled = on;               // re-enabled on completion (selection still meets LIMIT)
+        const sp = addBtn.querySelector('.loading__spinner');
+        if (sp) sp.classList.toggle('hidden', !on);
     }
 
     async function addToCart() {
@@ -280,11 +288,11 @@ window.initMixMatchBundle = function(root) {
             // (once as properties, once as the nested children).
 
             items.push(
-            {
-                id: bundleVariantId,
-                quantity,
-                properties: props
-            }
+                {
+                    id: bundleVariantId,
+                    quantity,
+                    properties: props
+                }
             );
         } else {
             console.error("Assign a bundlePriceType on the product");
@@ -317,6 +325,7 @@ window.initMixMatchBundle = function(root) {
             });
         }
 
+        setBtnLoading(true);
         try {
             const res = await fetch('/cart/add.js', {
                 method: 'POST',
@@ -362,6 +371,8 @@ window.initMixMatchBundle = function(root) {
 
         } catch (e) {
             showError(e.message || 'Sorry, something went wrong adding the bundle.');
+        } finally {
+            setBtnLoading(false);
         }
     }
 
@@ -380,6 +391,8 @@ window.initMixMatchBundle = function(root) {
         const esc = s => String(s).replace(/[&<>"']/g, m => (
             {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]
         ));
+
+        const suffix = msg.textContent.match(/has been added.*$/)?.[0] || 'has been added.';
 
         msg.innerHTML = `${esc(title)} has been added`;
     }
