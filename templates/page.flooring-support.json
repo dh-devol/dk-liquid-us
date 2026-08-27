@@ -1,1 +1,304 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"catalogue_title_with_richtext_flrSup":{"type":"catalogue-title-with-richtext","name":"Page title & description","settings":{"show_title":true,"show_description":true,"show_main_description":true,"show_guide_price":false,"border_title":false,"heading_size":"hxxl","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"custom_multicolumns_c47MN8":{"type":"custom-multicolumns","blocks":{"column_hyjLAk":{"type":"column","settings":{"link":"shopify:\/\/pages\/ordering-online","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Ordering Online","linked_product":""}},"column_ycQCjc":{"type":"column","settings":{"link":"shopify:\/\/pages\/payments","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Payments","linked_product":""}},"column_AeTWca":{"type":"column","settings":{"link":"shopify:\/\/pages\/delivery","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Delivery","linked_product":""}},"column_YKft6p":{"type":"column","settings":{"link":"shopify:\/\/pages\/returns","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Returns","linked_product":""}},"column_flrSup":{"type":"column","settings":{"link":"shopify:\/\/pages\/flooring-support","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Flooring","linked_product":""}},"column_L3H9Ke":{"type":"column","settings":{"link":"shopify:\/\/pages\/help-faqs","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Help & FAQs","linked_product":""}}},"block_order":["column_hyjLAk","column_ycQCjc","column_AeTWca","column_YKft6p","column_flrSup","column_L3H9Ke"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":6,"column_alignment":"center","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":20,"sectionname":"support_tabs--wrapper shop-tabs"}},"custom_collapsible_content_jx9WzK":{"type":"custom-collapsible-content","blocks":{"collapsible_row_flr001":{"type":"collapsible_row","settings":{"heading":"How will my flooring be delivered?","sub_heading":"","icon":"none","row_content":"<p>All flooring will arrive packed on pallets or wooden crates, delivered by a trusted third-party haulage company.<\/p><p>Your flooring will arrive on a Class A heavy-duty vehicle with a tail-lift offload. This is a kerbside delivery service; however, where possible and depending on access restrictions, the driver will aim to use a manual pump truck to get your delivery as close to your property as possible. The driver is unable to handle the goods or enter your property, so someone responsible must be available at the delivery address to check and sign for the goods upon delivery.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_flr002":{"type":"collapsible_row","settings":{"heading":"What is meant by 'access restrictions' and why are they important?","sub_heading":"","icon":"none","row_content":"<p>Flooring deliveries are typically made using a large Class A heavy-duty vehicle, so we must be made aware of any potential access restrictions at the delivery address when your order is placed.<\/p><p><strong>If we're not made aware of potential access restrictions as soon as possible, it could result in delays, failed deliveries or pallets being left at an inconvenient distance from your property.<\/strong><\/p><p>Potential access restrictions include: narrow roads, overhanging trees, gravel driveways, steep gradients, uneven ground, weight-limited bridges, etc.<\/p><p>Please try to provide as many details as you can, but don't worry if you're unsure about anything; our flooring team will call you after you have placed your order to discuss potential issues in more detail.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_flr003":{"type":"collapsible_row","settings":{"heading":"How much will I pay for delivery?","sub_heading":"","icon":"none","row_content":"<p>To find out exactly what you'll pay for delivery, please add your flooring items to a basket and proceed to the checkout, where the total fee will be calculated for your address.<\/p><p>Charges vary by state and are based on the number of pallets being sent. Ordering more than one full pallet will qualify you for a 30% discount on your shipping; this amount varies and is stated on each flooring product page.<\/p><p>Fixing & care products can fill additional space on flooring pallets; we therefore recommend ordering them with flooring to ensure your order remains cost-effective. Items ordered without flooring, up to 30kg, are charged at $80. Once these items exceed 30kg, they must be sent on pallets, and so the delivery cost from the UK can become prohibitive when ordered without flooring.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_flr004":{"type":"collapsible_row","settings":{"heading":"When will my flooring be delivered?","sub_heading":"","icon":"none","row_content":"<p>Delivery lead times will vary by state; we estimate 6-8 weeks for the East Coast and 8-10 weeks for the West Coast. Unforeseen delays at customs are beyond our control and may occasionally extend these lead times. Please note that all wood flooring is made to order with a 3-week lead time and will therefore take longer to arrive.<\/p><p>Deliveries can be made between the hours of 8:30am – 6pm, Monday to Friday (excluding holidays). Once they have received your order, the haulage company should contact you directly with a delivery window to confirm a suitable date.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_flr005":{"type":"collapsible_row","settings":{"heading":"Will I need to be in to sign for my delivery?","sub_heading":"","icon":"none","row_content":"<p>Yes, someone responsible must be available at the delivery address to check and sign for the goods upon delivery.<\/p><p><strong>Do not sign for the goods without checking them first.<\/strong><\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_flr006":{"type":"collapsible_row","settings":{"heading":"Where can you deliver flooring to?","sub_heading":"","icon":"none","row_content":"<p>Flooring products are currently only available to order online for addresses in the USA; however, you'll need to get in contact with our customer service team if you wish to order to Alaska or Hawaii.<\/p><p>Please contact our customer service team if you are interested in ordering flooring for delivery to Canada.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_flr007":{"type":"collapsible_row","settings":{"heading":"Why do I need to check my flooring before signing for the delivery?","sub_heading":"","icon":"none","row_content":"<p>It is common for the odd tile to break in transit (any breakages can typically be used for edges and off-cuts); however, should there be any damage or shortages, this must be acknowledged on the delivery note with the single word 'damaged'.<\/p><p><strong>If you believe that more than 10% of the goods have been damaged upon delivery, please contact our customer service team immediately.<\/strong><\/p><p>Please take care when unpacking tiles, as they can be particularly fragile. The tiles should be stored safely and handled carefully prior to installation.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_flr008":{"type":"collapsible_row","settings":{"heading":"Can I store my wood flooring outdoors?","sub_heading":"","icon":"none","row_content":"<p>Wood is a hygroscopic material, so it is very sensitive to changes in temperature and humidity.<\/p><p><strong>It is essential that you move your wood flooring indoors as soon as possible after delivery to avoid potential damage. We would advise having assistance on site on the day of delivery to ensure this is done as quickly as possible.<\/strong><\/p><p>Please take care when unloading the goods and ensure they are stored in a dry, heated environment.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_flr009":{"type":"collapsible_row","settings":{"heading":"Do you accept returns of flooring?","sub_heading":"","icon":"none","row_content":"<p><strong>To return flooring or fixing &amp; care items, you must notify our customer service team within 7 days of receiving your order.<\/strong><\/p><p><strong>Please be aware that made-to-order items, such as wood flooring, are not eligible for returns.<\/strong><\/p><p>Unfortunately, we cannot be held liable for return delivery fees, and all items must be returned in their original condition before we can issue a full refund for the cost of your goods. We may be able to arrange for your items to be collected, but you will be liable for any charges and must make the goods available, packaging them adequately to protect against damage.<\/p><p>We may accept returns after 7 days; however, this would be subject to an additional 25% handling fee.<\/p><p>Flooring orders cancelled before items have been despatched will be refunded in full. Made-to-order flooring can be refunded in full if your order is cancelled before manufacturing has commenced; otherwise, you will be liable for any costs incurred.<\/p>","url_title":"","link_url":"","page":""}}},"block_order":["collapsible_row_flr001","collapsible_row_flr002","collapsible_row_flr003","collapsible_row_flr004","collapsible_row_flr005","collapsible_row_flr006","collapsible_row_flr007","collapsible_row_flr008","collapsible_row_flr009"],"settings":{"caption":"","heading":"Flooring","heading_size":"hxxl","heading_alignment":"left","layout":"none","color_scheme":"scheme-2","container_color_scheme":"","open_first_collapsible_row":false,"hide_desktop":false,"image_ratio":"adapt","desktop_layout":"image_second","padding_top":0,"padding_bottom":0,"sectionname":"support_custom_collapsible shop-tab-content"}}},"order":["main","catalogue_title_with_richtext_flrSup","custom_multicolumns_c47MN8","custom_collapsible_content_jx9WzK"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "catalogue_title_with_richtext_flrSup": {
+      "type": "catalogue-title-with-richtext",
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "show_main_description": true,
+        "show_guide_price": false,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "custom_multicolumns_c47MN8": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_hyjLAk": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/ordering-online",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Ordering Online",
+            "linked_product": ""
+          }
+        },
+        "column_ycQCjc": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/payments",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Payments",
+            "linked_product": ""
+          }
+        },
+        "column_AeTWca": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/delivery",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Delivery",
+            "linked_product": ""
+          }
+        },
+        "column_YKft6p": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/returns",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Returns",
+            "linked_product": ""
+          }
+        },
+        "column_flrSup": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/flooring-support",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Flooring",
+            "linked_product": ""
+          }
+        },
+        "column_L3H9Ke": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/help-faqs",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Help & FAQs",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_hyjLAk",
+        "column_ycQCjc",
+        "column_AeTWca",
+        "column_YKft6p",
+        "column_flrSup",
+        "column_L3H9Ke"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 20,
+        "sectionname": "support_tabs--wrapper shop-tabs"
+      }
+    },
+    "custom_collapsible_content_jx9WzK": {
+      "type": "custom-collapsible-content",
+      "blocks": {
+        "collapsible_row_flr001": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How will my flooring be delivered?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>All flooring will arrive packed on pallets or wooden crates, delivered by a trusted third-party haulage company.</p><p>Your flooring will arrive on a Class A heavy-duty vehicle with a tail-lift offload. This is a kerbside delivery service; however, where possible and depending on access restrictions, the driver will aim to use a manual pump truck to get your delivery as close to your property as possible. The driver is unable to handle the goods or enter your property, so someone responsible must be available at the delivery address to check and sign for the goods upon delivery.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_flr002": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is meant by 'access restrictions' and why are they important?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Flooring deliveries are typically made using a large Class A heavy-duty vehicle, so we must be made aware of any potential access restrictions at the delivery address when your order is placed.</p><p><strong>If we're not made aware of potential access restrictions as soon as possible, it could result in delays, failed deliveries or pallets being left at an inconvenient distance from your property.</strong></p><p>Potential access restrictions include: narrow roads, overhanging trees, gravel driveways, steep gradients, uneven ground, weight-limited bridges, etc.</p><p>Please try to provide as many details as you can, but don't worry if you're unsure about anything; our flooring team will call you after you have placed your order to discuss potential issues in more detail.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_flr003": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much will I pay for delivery?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>To find out exactly what you'll pay for delivery, please add your flooring items to a basket and proceed to the checkout, where the total fee will be calculated for your address.</p><p>Charges vary by state and are based on the number of pallets being sent. Ordering more than one full pallet will qualify you for a 30% discount on your shipping; this amount varies and is stated on each flooring product page.</p><p>Fixing & care products can fill additional space on flooring pallets; we therefore recommend ordering them with flooring to ensure your order remains cost-effective. Items ordered without flooring, up to 30kg, are charged at $80. Once these items exceed 30kg, they must be sent on pallets, and so the delivery cost from the UK can become prohibitive when ordered without flooring.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_flr004": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "When will my flooring be delivered?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Delivery lead times will vary by state; we estimate 6-8 weeks for the East Coast and 8-10 weeks for the West Coast. Unforeseen delays at customs are beyond our control and may occasionally extend these lead times. Please note that all wood flooring is made to order with a 3-week lead time and will therefore take longer to arrive.</p><p>Deliveries can be made between the hours of 8:30am – 6pm, Monday to Friday (excluding holidays). Once they have received your order, the haulage company should contact you directly with a delivery window to confirm a suitable date.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_flr005": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will I need to be in to sign for my delivery?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Yes, someone responsible must be available at the delivery address to check and sign for the goods upon delivery.</p><p><strong>Do not sign for the goods without checking them first.</strong></p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_flr006": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Where can you deliver flooring to?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Flooring products are currently only available to order online for addresses in the USA; however, you'll need to get in contact with our customer service team if you wish to order to Alaska or Hawaii.</p><p>Please contact our customer service team if you are interested in ordering flooring for delivery to Canada.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_flr007": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why do I need to check my flooring before signing for the delivery?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>It is common for the odd tile to break in transit (any breakages can typically be used for edges and off-cuts); however, should there be any damage or shortages, this must be acknowledged on the delivery note with the single word 'damaged'.</p><p><strong>If you believe that more than 10% of the goods have been damaged upon delivery, please contact our customer service team immediately.</strong></p><p>Please take care when unpacking tiles, as they can be particularly fragile. The tiles should be stored safely and handled carefully prior to installation.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_flr008": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I store my wood flooring outdoors?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Wood is a hygroscopic material, so it is very sensitive to changes in temperature and humidity.</p><p><strong>It is essential that you move your wood flooring indoors as soon as possible after delivery to avoid potential damage. We would advise having assistance on site on the day of delivery to ensure this is done as quickly as possible.</strong></p><p>Please take care when unloading the goods and ensure they are stored in a dry, heated environment.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_flr009": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you accept returns of flooring?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p><strong>To return flooring or fixing &amp; care items, you must notify our customer service team within 7 days of receiving your order.</strong></p><p><strong>Please be aware that made-to-order items, such as wood flooring, are not eligible for returns.</strong></p><p>Unfortunately, we cannot be held liable for return delivery fees, and all items must be returned in their original condition before we can issue a full refund for the cost of your goods. We may be able to arrange for your items to be collected, but you will be liable for any charges and must make the goods available, packaging them adequately to protect against damage.</p><p>We may accept returns after 7 days; however, this would be subject to an additional 25% handling fee.</p><p>Flooring orders cancelled before items have been despatched will be refunded in full. Made-to-order flooring can be refunded in full if your order is cancelled before manufacturing has commenced; otherwise, you will be liable for any costs incurred.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_flr001",
+        "collapsible_row_flr002",
+        "collapsible_row_flr003",
+        "collapsible_row_flr004",
+        "collapsible_row_flr005",
+        "collapsible_row_flr006",
+        "collapsible_row_flr007",
+        "collapsible_row_flr008",
+        "collapsible_row_flr009"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Flooring",
+        "heading_size": "hxxl",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-2",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "hide_desktop": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "support_custom_collapsible shop-tab-content"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "catalogue_title_with_richtext_flrSup",
+    "custom_multicolumns_c47MN8",
+    "custom_collapsible_content_jx9WzK"
+  ]
+}
