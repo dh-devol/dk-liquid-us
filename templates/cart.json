@@ -1,1 +1,143 @@
-{"sections":{"cart-items":{"type":"main-cart-items","settings":{"flooring_title":"Flooring","accessories_title":"Items","color_scheme":"scheme-cf9846db-d066-4e46-8334-ad7abe871963","padding_top":44,"padding_bottom":0}},"cart-footer":{"type":"main-cart-footer","blocks":{"description_MXngM6":{"type":"description","settings":{"title":"Flooring delivery","text":"<p>Flooring deliveries vary by state; we typically estimate 6-8 weeks for the East Coast, and 8-10 weeks for the West Coast, from the date of dispatch. Some products may take longer due to production lead times and stock availability.<\/p><p>Unforeseen delays at customs are beyond our control and can occasionally extend these estimates. Once they have received your order, the haulage company should contact you directly with a delivery window to confirm a suitable date.<\/p>","info_checkbox":false,"info_label":"<p>Have you visited a showroom?<\/p>","terms_agreed":true,"terms_label":"<p>I confirm all relevant access details have been provided and I agree to the <a href=\"\/pages\/terms-conditions\" title=\"Terms & Conditions\">Terms & Conditions<\/a>.*<\/p>","show_datepicker":false,"disable_weekends":false,"count_weekends_in_lead_time":false,"datepicker_title":"Choose a flooring delivery date","datepicker_text":"Please note that our flooring team will need to call you to confirm your delivery date and to discuss potential access restrictions to the address.","default_lead_time_days":14,"max_days_ahead":31,"access_title":"Access restrictions","access_text":"<p>Please note, your flooring will arrive on a Class A heavy-duty vehicle with a tail-lift offload and a manual pump truck to get your delivery as close to your property as possible. We must be made aware of any potential access restrictions using the form below.<\/p>","access_question":"Are there any access restrictions to your property?","access_placeholder":"Narrow roads, gravel pathways, steep inclines, etc."}},"subtotal":{"type":"subtotal","settings":{"show_tax":true}},"buttons":{"type":"buttons","settings":{"show_dynamic_button":false,"payment_enable":false,"custom_text":""}}},"block_order":["description_MXngM6","subtotal","buttons"],"custom_css":["#main-cart-footer .cart__ctas {justify-content: center; margin-top: 30px;}"],"settings":{"color_scheme":"scheme-cf9846db-d066-4e46-8334-ad7abe871963","padding_top":0,"padding_bottom":60}},"collection_multicolumn_ifjapz":{"type":"collection-multicolumn","blocks":{"column_GLkx7L":{"type":"column","settings":{"selected_collection":"taps-sinks","show_text_double_column":false}},"column_tTy7Xn":{"type":"column","settings":{"selected_collection":"cupboard-hardware","show_text_double_column":false}},"column_h47YKq":{"type":"column","settings":{"selected_collection":"lighting","show_text_double_column":false}}},"block_order":["column_GLkx7L","column_tTy7Xn","column_h47YKq"],"custom_css":[".custom-multicolumn .multicolumn__title {justify-content: left;}","@media (max-width: 575px) {.custom-multicolumn .multicolumn__title {padding: 0px; } .title {font-size: 1.125em; }}","@media (max-width: 575px) {.multicolumn-list {padding: 0px; padding-bottom: 32px; }}",".multicolumn-card__info h3 {padding-top: 12px;}","@media (max-width: 768px) {.title-wrapper-with-link {margin-bottom: 15px !important; }}",".title-wrapper-with-link {margin-bottom: 24px;}","@media (min-width: 768px) {.page-width {margin: 0; width: 100%; max-width: none; }}"],"name":"Custom multicolumn","settings":{"title":"Looking for something else?","heading_size":"hxxl","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["cart-items","cart-footer","collection_multicolumn_ifjapz"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "flooring_title": "Flooring",
+        "accessories_title": "Items",
+        "color_scheme": "scheme-cf9846db-d066-4e46-8334-ad7abe871963",
+        "padding_top": 44,
+        "padding_bottom": 0
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "description_MXngM6": {
+          "type": "description",
+          "settings": {
+            "title": "Flooring delivery",
+            "text": "<p>Flooring deliveries vary by state; we typically estimate 6-8 weeks for the East Coast, and 8-10 weeks for the West Coast, from the date of dispatch. Some products may take longer due to production lead times and stock availability.</p><p>Unforeseen delays at customs are beyond our control and can occasionally extend these estimates. Once they have received your order, the haulage company should contact you directly with a delivery window to confirm a suitable date.</p>",
+            "info_checkbox": false,
+            "info_label": "<p>Have you visited a showroom?</p>",
+            "terms_agreed": true,
+            "terms_label": "<p>I confirm all relevant access details have been provided and I agree to the <a href=\"/pages/terms-conditions\" title=\"Terms & Conditions\">Terms & Conditions</a>.*</p>",
+            "show_datepicker": false,
+            "disable_weekends": false,
+            "count_weekends_in_lead_time": false,
+            "datepicker_title": "Choose a flooring delivery date",
+            "datepicker_text": "Please note that our flooring team will need to call you to confirm your delivery date and to discuss potential access restrictions to the address.",
+            "default_lead_time_days": 14,
+            "max_days_ahead": 31,
+            "access_title": "Access restrictions",
+            "access_text": "<p>Please note, your flooring will arrive on a Class A heavy-duty vehicle with a tail-lift offload and a manual pump truck to get your delivery as close to your property as possible. We must be made aware of any potential access restrictions using the form below.</p>",
+            "access_question": "Are there any access restrictions to your property?",
+            "access_placeholder": "Narrow roads, gravel pathways, steep inclines, etc."
+          }
+        },
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {
+            "show_tax": true
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+            "show_dynamic_button": false,
+            "payment_enable": false,
+            "custom_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "description_MXngM6",
+        "subtotal",
+        "buttons"
+      ],
+      "custom_css": [
+        "#main-cart-footer .cart__ctas {justify-content: center; margin-top: 30px;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-cf9846db-d066-4e46-8334-ad7abe871963",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "collection_multicolumn_ifjapz": {
+      "type": "collection-multicolumn",
+      "blocks": {
+        "column_GLkx7L": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "taps-sinks",
+            "show_text_double_column": false
+          }
+        },
+        "column_tTy7Xn": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "cupboard-hardware",
+            "show_text_double_column": false
+          }
+        },
+        "column_h47YKq": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "lighting",
+            "show_text_double_column": false
+          }
+        }
+      },
+      "block_order": [
+        "column_GLkx7L",
+        "column_tTy7Xn",
+        "column_h47YKq"
+      ],
+      "custom_css": [
+        ".custom-multicolumn .multicolumn__title {justify-content: left;}",
+        "@media (max-width: 575px) {.custom-multicolumn .multicolumn__title {padding: 0px; } .title {font-size: 1.125em; }}",
+        "@media (max-width: 575px) {.multicolumn-list {padding: 0px; padding-bottom: 32px; }}",
+        ".multicolumn-card__info h3 {padding-top: 12px;}",
+        "@media (max-width: 768px) {.title-wrapper-with-link {margin-bottom: 15px !important; }}",
+        ".title-wrapper-with-link {margin-bottom: 24px;}",
+        "@media (min-width: 768px) {.page-width {margin: 0; width: 100%; max-width: none; }}"
+      ],
+      "name": "Custom multicolumn",
+      "settings": {
+        "title": "Looking for something else?",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer",
+    "collection_multicolumn_ifjapz"
+  ]
+}
