@@ -1,1 +1,141 @@
-{"sections":{"metaobject_gallery_slider_Wp94Un":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 60px;}",".collection-hero__title {margin-bottom: 1em;}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"settings":{"products_per_page":36,"columns_desktop":4,"color_scheme":"scheme-2","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":false,"filter_type":"drawer","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"custom_product_list_dpp3Qa":{"type":"custom-product-list","blocks":{"product_item_ynpDD3":{"type":"product_item","settings":{"product":"heirloom-task-light-small"}},"product_item_tFzb89":{"type":"product_item","settings":{"product":"heirloom-wall-light-creamware-shade"}},"product_item_DB6FTP":{"type":"product_item","settings":{"product":"mini-creamware-wall-light"}},"product_item_GdD4p7":{"type":"product_item","settings":{"product":"milk-glass-task-light-small"}},"product_item_baChrA":{"type":"product_item","settings":{"product":"heirloom-wall-light-milk-glass-shade"}},"product_item_i9mCzT":{"type":"product_item","settings":{"product":"mini-milk-glass-wall-light"}}},"block_order":["product_item_ynpDD3","product_item_tFzb89","product_item_DB6FTP","product_item_GdD4p7","product_item_baChrA","product_item_i9mCzT"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["metaobject_gallery_slider_Wp94Un","banner","product-grid","custom_product_list_dpp3Qa"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_Wp94Un": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_dpp3Qa": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_ynpDD3": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-task-light-small"
+          }
+        },
+        "product_item_tFzb89": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-creamware-shade"
+          }
+        },
+        "product_item_DB6FTP": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-creamware-wall-light"
+          }
+        },
+        "product_item_GdD4p7": {
+          "type": "product_item",
+          "settings": {
+            "product": "milk-glass-task-light-small"
+          }
+        },
+        "product_item_baChrA": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-milk-glass-shade"
+          }
+        },
+        "product_item_i9mCzT": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-milk-glass-wall-light"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_ynpDD3",
+        "product_item_tFzb89",
+        "product_item_DB6FTP",
+        "product_item_GdD4p7",
+        "product_item_baChrA",
+        "product_item_i9mCzT"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_Wp94Un",
+    "banner",
+    "product-grid",
+    "custom_product_list_dpp3Qa"
+  ]
+}

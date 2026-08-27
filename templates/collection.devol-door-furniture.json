@@ -1,1 +1,171 @@
-{"sections":{"metaobject_gallery_slider_zYd76f":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"center","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 60px;}",".collection-hero__title {margin-bottom: 1em;}","@media screen and (min-width: 768px) {.collection-hero__description {max-width: 450px; }}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"settings":{"products_per_page":36,"columns_desktop":4,"color_scheme":"scheme-2","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":false,"filter_type":"drawer","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"custom_product_list_8paG99":{"type":"custom-product-list","blocks":{"product_item_UrUYMy":{"type":"product_item","settings":{"product":"romilly-doorknob-romilly-backplate"}},"product_item_TYPRAh":{"type":"product_item","settings":{"product":"cecily-doorknob-cecily-backplate"}},"product_item_9iiwNx":{"type":"product_item","settings":{"product":"marguerite-doorknob-marguerite-backplate"}},"product_item_FdqUPP":{"type":"product_item","settings":{"product":"clothilde-doorknob-romilly-backplate"}},"product_item_VkXUEj":{"type":"product_item","settings":{"product":"clarice-doorknob-romilly-backplate"}},"product_item_n6UWii":{"type":"product_item","settings":{"product":"ottilie-door-handle-ottilie-backplate"}},"product_item_EmQaKw":{"type":"product_item","settings":{"product":"eglantine-drop-handle-romilly-backplate"}},"product_item_YX4NXj":{"type":"product_item","settings":{"product":"elodie-pull-handle"}},"product_item_UkYYbm":{"type":"product_item","settings":{"product":"grand-romilly-centre-pull"}},"product_item_XNpmAf":{"type":"product_item","settings":{"product":"weavers-hand-door-knocker"}}},"block_order":["product_item_UrUYMy","product_item_TYPRAh","product_item_9iiwNx","product_item_FdqUPP","product_item_VkXUEj","product_item_n6UWii","product_item_EmQaKw","product_item_YX4NXj","product_item_UkYYbm","product_item_XNpmAf"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["metaobject_gallery_slider_zYd76f","banner","product-grid","custom_product_list_8paG99"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_zYd76f": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "center",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 450px; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_8paG99": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_UrUYMy": {
+          "type": "product_item",
+          "settings": {
+            "product": "romilly-doorknob-romilly-backplate"
+          }
+        },
+        "product_item_TYPRAh": {
+          "type": "product_item",
+          "settings": {
+            "product": "cecily-doorknob-cecily-backplate"
+          }
+        },
+        "product_item_9iiwNx": {
+          "type": "product_item",
+          "settings": {
+            "product": "marguerite-doorknob-marguerite-backplate"
+          }
+        },
+        "product_item_FdqUPP": {
+          "type": "product_item",
+          "settings": {
+            "product": "clothilde-doorknob-romilly-backplate"
+          }
+        },
+        "product_item_VkXUEj": {
+          "type": "product_item",
+          "settings": {
+            "product": "clarice-doorknob-romilly-backplate"
+          }
+        },
+        "product_item_n6UWii": {
+          "type": "product_item",
+          "settings": {
+            "product": "ottilie-door-handle-ottilie-backplate"
+          }
+        },
+        "product_item_EmQaKw": {
+          "type": "product_item",
+          "settings": {
+            "product": "eglantine-drop-handle-romilly-backplate"
+          }
+        },
+        "product_item_YX4NXj": {
+          "type": "product_item",
+          "settings": {
+            "product": "elodie-pull-handle"
+          }
+        },
+        "product_item_UkYYbm": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-romilly-centre-pull"
+          }
+        },
+        "product_item_XNpmAf": {
+          "type": "product_item",
+          "settings": {
+            "product": "weavers-hand-door-knocker"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_UrUYMy",
+        "product_item_TYPRAh",
+        "product_item_9iiwNx",
+        "product_item_FdqUPP",
+        "product_item_VkXUEj",
+        "product_item_n6UWii",
+        "product_item_EmQaKw",
+        "product_item_YX4NXj",
+        "product_item_UkYYbm",
+        "product_item_XNpmAf"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_zYd76f",
+    "banner",
+    "product-grid",
+    "custom_product_list_8paG99"
+  ]
+}

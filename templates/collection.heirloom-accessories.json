@@ -1,1 +1,1020 @@
-{"sections":{"metaobject_gallery_slider_8CfynF":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 24px;}",".collection-hero__title {margin-bottom: 1em;}","@media screen and (min-width: 768px) {.collection-hero__description {max-width: 400px; }}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"custom_product_list_zBPUp4":{"type":"custom-product-list","blocks":{"product_item_3TKCJK":{"type":"product_item","settings":{"product":"petite-gaselier-light-milk-glass-shades-tall"}},"product_item_VTJLMD":{"type":"product_item","settings":{"product":"heirloom-gaselier-light-tall"}},"product_item_xU8J9y":{"type":"product_item","settings":{"product":"milk-glass-gaselier-light-tall"}}},"block_order":["product_item_3TKCJK","product_item_VTJLMD","product_item_xU8J9y"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Heirloom Lighting","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_MpDtJy":{"type":"custom-product-list","blocks":{"product_item_c6beAg":{"type":"product_item","settings":{"product":"heirloom-task-light-small"}},"product_item_WLPPgq":{"type":"product_item","settings":{"product":"heirloom-wall-light-creamware-shade"}}},"block_order":["product_item_c6beAg","product_item_WLPPgq"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_BUDdED":{"type":"custom-product-list","blocks":{"product_item_MhekWi":{"type":"product_item","settings":{"product":"milk-glass-task-light-small"}},"product_item_JQq7dj":{"type":"product_item","settings":{"product":"heirloom-wall-light-milk-glass-shade"}}},"block_order":["product_item_MhekWi","product_item_JQq7dj"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_eMeUfM":{"type":"custom-product-list","blocks":{"product_item_DLmwLU":{"type":"product_item","settings":{"product":"grand-tour-desk-lamp"}},"product_item_czR4Cn":{"type":"product_item","settings":{"product":"grand-tour-library-lamp"}},"product_item_i7x8Un":{"type":"product_item","settings":{"product":"grand-tour-reading-lamp"}}},"block_order":["product_item_DLmwLU","product_item_czR4Cn","product_item_i7x8Un"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_LCkT4W":{"type":"custom-product-list","blocks":{"product_item_4xNRK4":{"type":"product_item","settings":{"product":"grand-heirloom-platters-sea-green"}},"product_item_QzFGbn":{"type":"product_item","settings":{"product":"oval-heirloom-platters-indigo-blue"}},"product_item_WNiBcN":{"type":"product_item","settings":{"product":"round-heirloom-platters-antique-white"}}},"block_order":["product_item_4xNRK4","product_item_QzFGbn","product_item_WNiBcN"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Heirloom Tableware","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"shopify:\/\/collections\/switches-sockets-heirloom-brass","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_xAQji4":{"type":"custom-product-list","blocks":{"product_item_YzpdN4":{"type":"product_item","settings":{"product":"heirloom-petal-bowl-sepia"}},"product_item_twc6T9":{"type":"product_item","settings":{"product":"heirloom-petal-bowl-blue"}}},"block_order":["product_item_YzpdN4","product_item_twc6T9"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_FeAFfL":{"type":"custom-product-list","blocks":{"product_item_QKkULN":{"type":"product_item","settings":{"product":"country-house-cup-handle"}},"product_item_HzTbfA":{"type":"product_item","settings":{"product":"georgian-swing-handle-heirloom-brass-large"}},"product_item_79X3b6":{"type":"product_item","settings":{"product":"rack-pinion-catch-heirloom-brass"}},"product_item_BQebqq":{"type":"product_item","settings":{"product":"brass-ventilation-grille-double-sided"}}},"block_order":["product_item_QKkULN","product_item_HzTbfA","product_item_79X3b6","product_item_BQebqq"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Heirloom Cupboard Hardware","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"shopify:\/\/collections\/switches-sockets-heirloom-brass","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_X3TY6B":{"type":"custom-product-list","blocks":{"product_item_XFqkHX":{"type":"product_item","settings":{"product":"button-knob-heirloom-brass"}},"product_item_BpGdMA":{"type":"product_item","settings":{"product":"butlers-ring-pull-heirloom-brass"}},"product_item_wcQERN":{"type":"product_item","settings":{"product":"butlers-knob"}}},"block_order":["product_item_XFqkHX","product_item_BpGdMA","product_item_wcQERN"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"shopify:\/\/collections\/switches-sockets-heirloom-brass","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_K3hTG4":{"type":"custom-product-list","blocks":{"product_item_CCXE7L":{"type":"product_item","settings":{"product":"romilly-doorknob-romilly-backplate"}},"product_item_yKr3Li":{"type":"product_item","settings":{"product":"cecily-doorknob-cecily-backplate"}},"product_item_PGyHXn":{"type":"product_item","settings":{"product":"marguerite-doorknob-marguerite-backplate"}}},"block_order":["product_item_CCXE7L","product_item_yKr3Li","product_item_PGyHXn"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Heirloom Architectural Hardware","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_zNTc7L":{"type":"custom-product-list","blocks":{"product_item_YhmCei":{"type":"product_item","settings":{"product":"clothilde-doorknob-romilly-backplate"}},"product_item_nTc7qJ":{"type":"product_item","settings":{"product":"clarice-doorknob-romilly-backplate"}}},"block_order":["product_item_YhmCei","product_item_nTc7qJ"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_eVDzzj":{"type":"custom-product-list","blocks":{"product_item_WN9qcD":{"type":"product_item","settings":{"product":"ottilie-door-handle-ottilie-backplate"}},"product_item_LhXf9h":{"type":"product_item","settings":{"product":"eglantine-drop-handle-romilly-backplate"}},"product_item_VLKnwa":{"type":"product_item","settings":{"product":"elodie-pull-handle"}}},"block_order":["product_item_WN9qcD","product_item_LhXf9h","product_item_VLKnwa"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_dGjbQ4":{"type":"custom-product-list","blocks":{"product_item_fWqckU":{"type":"product_item","settings":{"product":"grand-romilly-centre-pull"}},"product_item_3VhcdG":{"type":"product_item","settings":{"product":"weavers-hand-door-knocker"}}},"block_order":["product_item_fWqckU","product_item_3VhcdG"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_UXz3XX":{"type":"custom-product-list","blocks":{"product_item_tCLkGi":{"type":"product_item","settings":{"product":"aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"}},"product_item_YGqUiE":{"type":"product_item","settings":{"product":"pot-hanger"}}},"block_order":["product_item_tCLkGi","product_item_YGqUiE"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"shopify:\/\/collections\/switches-sockets-heirloom-brass","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_f4APjn":{"type":"custom-product-list","blocks":{"product_item_qedazq":{"type":"product_item","settings":{"product":"petite-parisian-cafe-hook"}},"product_item_NXkVPT":{"type":"product_item","settings":{"product":"grand-parisian-cafe-hook"}},"product_item_369qyP":{"type":"product_item","settings":{"product":"edwardian-coat-hook"}}},"block_order":["product_item_qedazq","product_item_NXkVPT","product_item_369qyP"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_XRcLfm":{"type":"custom-product-list","blocks":{"product_item_dyfh3n":{"type":"product_item","settings":{"product":"twin-parisian-cafe-hook"}},"product_item_CdbE6X":{"type":"product_item","settings":{"product":"twin-edwardian-coat-hook"}}},"block_order":["product_item_dyfh3n","product_item_CdbE6X"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_yrMTPx":{"type":"custom-product-list","blocks":{"product_item_7zdpCL":{"type":"product_item","settings":{"product":"petite-parisian-cafe-hook-rack-3-mahogany-finish"}},"product_item_jbdbYd":{"type":"product_item","settings":{"product":"grand-parisian-cafe-hook-rack-3-mahogany-finish"}},"product_item_KexKTM":{"type":"product_item","settings":{"product":"edwardian-coat-hook-rack-3-mahogany-finish"}}},"block_order":["product_item_7zdpCL","product_item_jbdbYd","product_item_KexKTM"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_kNn3aN":{"type":"custom-product-list","blocks":{"product_item_X4ihVA":{"type":"product_item","settings":{"product":"twin-parisian-cafe-hook-rack-3-mahogany-finish"}},"product_item_RMdm3e":{"type":"product_item","settings":{"product":"twin-edwardian-coat-hook-rack-3-mahogany-finish"}}},"block_order":["product_item_X4ihVA","product_item_RMdm3e"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_eqD7Ty":{"type":"custom-product-list","blocks":{"product_item_xFEDf8":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-aged-brass-large"}},"product_item_xmY7WL":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-heirloom-brass-small"}},"product_item_TBTakz":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-cast-iron-large"}}},"block_order":["product_item_xFEDf8","product_item_xmY7WL","product_item_TBTakz"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_FqfFUm":{"type":"custom-product-list","blocks":{"product_item_azLBaB":{"type":"product_item","settings":{"product":"standard-single-polished-brass-sink"}},"product_item_CqQejz":{"type":"product_item","settings":{"product":"extra-large-single-polished-brass-sink"}}},"block_order":["product_item_azLBaB","product_item_CqQejz"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"settings":{"products_per_page":36,"columns_desktop":4,"color_scheme":"scheme-2","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":false,"filter_type":"drawer","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}}},"order":["metaobject_gallery_slider_8CfynF","banner","custom_product_list_zBPUp4","custom_product_list_MpDtJy","custom_product_list_BUDdED","custom_product_list_eMeUfM","custom_product_list_LCkT4W","custom_product_list_xAQji4","custom_product_list_FeAFfL","custom_product_list_X3TY6B","custom_product_list_K3hTG4","custom_product_list_zNTc7L","custom_product_list_eVDzzj","custom_product_list_dGjbQ4","custom_product_list_UXz3XX","custom_product_list_f4APjn","custom_product_list_XRcLfm","custom_product_list_yrMTPx","custom_product_list_kNn3aN","custom_product_list_eqD7Ty","custom_product_list_FqfFUm","product-grid"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_8CfynF": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 24px;}",
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 400px; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "custom_product_list_zBPUp4": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_3TKCJK": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-gaselier-light-milk-glass-shades-tall"
+          }
+        },
+        "product_item_VTJLMD": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-gaselier-light-tall"
+          }
+        },
+        "product_item_xU8J9y": {
+          "type": "product_item",
+          "settings": {
+            "product": "milk-glass-gaselier-light-tall"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_3TKCJK",
+        "product_item_VTJLMD",
+        "product_item_xU8J9y"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Heirloom Lighting",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_MpDtJy": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_c6beAg": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-task-light-small"
+          }
+        },
+        "product_item_WLPPgq": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-creamware-shade"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_c6beAg",
+        "product_item_WLPPgq"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_BUDdED": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_MhekWi": {
+          "type": "product_item",
+          "settings": {
+            "product": "milk-glass-task-light-small"
+          }
+        },
+        "product_item_JQq7dj": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-milk-glass-shade"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_MhekWi",
+        "product_item_JQq7dj"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_eMeUfM": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_DLmwLU": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-desk-lamp"
+          }
+        },
+        "product_item_czR4Cn": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-library-lamp"
+          }
+        },
+        "product_item_i7x8Un": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-reading-lamp"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_DLmwLU",
+        "product_item_czR4Cn",
+        "product_item_i7x8Un"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_LCkT4W": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_4xNRK4": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-heirloom-platters-sea-green"
+          }
+        },
+        "product_item_QzFGbn": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-heirloom-platters-indigo-blue"
+          }
+        },
+        "product_item_WNiBcN": {
+          "type": "product_item",
+          "settings": {
+            "product": "round-heirloom-platters-antique-white"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_4xNRK4",
+        "product_item_QzFGbn",
+        "product_item_WNiBcN"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Heirloom Tableware",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_xAQji4": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_YzpdN4": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-petal-bowl-sepia"
+          }
+        },
+        "product_item_twc6T9": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-petal-bowl-blue"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_YzpdN4",
+        "product_item_twc6T9"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_FeAFfL": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_QKkULN": {
+          "type": "product_item",
+          "settings": {
+            "product": "country-house-cup-handle"
+          }
+        },
+        "product_item_HzTbfA": {
+          "type": "product_item",
+          "settings": {
+            "product": "georgian-swing-handle-heirloom-brass-large"
+          }
+        },
+        "product_item_79X3b6": {
+          "type": "product_item",
+          "settings": {
+            "product": "rack-pinion-catch-heirloom-brass"
+          }
+        },
+        "product_item_BQebqq": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-ventilation-grille-double-sided"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_QKkULN",
+        "product_item_HzTbfA",
+        "product_item_79X3b6",
+        "product_item_BQebqq"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Heirloom Cupboard Hardware",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_X3TY6B": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_XFqkHX": {
+          "type": "product_item",
+          "settings": {
+            "product": "button-knob-heirloom-brass"
+          }
+        },
+        "product_item_BpGdMA": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-ring-pull-heirloom-brass"
+          }
+        },
+        "product_item_wcQERN": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-knob"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_XFqkHX",
+        "product_item_BpGdMA",
+        "product_item_wcQERN"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_K3hTG4": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_CCXE7L": {
+          "type": "product_item",
+          "settings": {
+            "product": "romilly-doorknob-romilly-backplate"
+          }
+        },
+        "product_item_yKr3Li": {
+          "type": "product_item",
+          "settings": {
+            "product": "cecily-doorknob-cecily-backplate"
+          }
+        },
+        "product_item_PGyHXn": {
+          "type": "product_item",
+          "settings": {
+            "product": "marguerite-doorknob-marguerite-backplate"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_CCXE7L",
+        "product_item_yKr3Li",
+        "product_item_PGyHXn"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Heirloom Architectural Hardware",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_zNTc7L": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_YhmCei": {
+          "type": "product_item",
+          "settings": {
+            "product": "clothilde-doorknob-romilly-backplate"
+          }
+        },
+        "product_item_nTc7qJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "clarice-doorknob-romilly-backplate"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_YhmCei",
+        "product_item_nTc7qJ"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_eVDzzj": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_WN9qcD": {
+          "type": "product_item",
+          "settings": {
+            "product": "ottilie-door-handle-ottilie-backplate"
+          }
+        },
+        "product_item_LhXf9h": {
+          "type": "product_item",
+          "settings": {
+            "product": "eglantine-drop-handle-romilly-backplate"
+          }
+        },
+        "product_item_VLKnwa": {
+          "type": "product_item",
+          "settings": {
+            "product": "elodie-pull-handle"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_WN9qcD",
+        "product_item_LhXf9h",
+        "product_item_VLKnwa"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_dGjbQ4": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_fWqckU": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-romilly-centre-pull"
+          }
+        },
+        "product_item_3VhcdG": {
+          "type": "product_item",
+          "settings": {
+            "product": "weavers-hand-door-knocker"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_fWqckU",
+        "product_item_3VhcdG"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_UXz3XX": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_tCLkGi": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"
+          }
+        },
+        "product_item_YGqUiE": {
+          "type": "product_item",
+          "settings": {
+            "product": "pot-hanger"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_tCLkGi",
+        "product_item_YGqUiE"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_f4APjn": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_qedazq": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-parisian-cafe-hook"
+          }
+        },
+        "product_item_NXkVPT": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-parisian-cafe-hook"
+          }
+        },
+        "product_item_369qyP": {
+          "type": "product_item",
+          "settings": {
+            "product": "edwardian-coat-hook"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_qedazq",
+        "product_item_NXkVPT",
+        "product_item_369qyP"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_XRcLfm": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_dyfh3n": {
+          "type": "product_item",
+          "settings": {
+            "product": "twin-parisian-cafe-hook"
+          }
+        },
+        "product_item_CdbE6X": {
+          "type": "product_item",
+          "settings": {
+            "product": "twin-edwardian-coat-hook"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_dyfh3n",
+        "product_item_CdbE6X"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_yrMTPx": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_7zdpCL": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-parisian-cafe-hook-rack-3-mahogany-finish"
+          }
+        },
+        "product_item_jbdbYd": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-parisian-cafe-hook-rack-3-mahogany-finish"
+          }
+        },
+        "product_item_KexKTM": {
+          "type": "product_item",
+          "settings": {
+            "product": "edwardian-coat-hook-rack-3-mahogany-finish"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_7zdpCL",
+        "product_item_jbdbYd",
+        "product_item_KexKTM"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_kNn3aN": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_X4ihVA": {
+          "type": "product_item",
+          "settings": {
+            "product": "twin-parisian-cafe-hook-rack-3-mahogany-finish"
+          }
+        },
+        "product_item_RMdm3e": {
+          "type": "product_item",
+          "settings": {
+            "product": "twin-edwardian-coat-hook-rack-3-mahogany-finish"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_X4ihVA",
+        "product_item_RMdm3e"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_eqD7Ty": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_xFEDf8": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-aged-brass-large"
+          }
+        },
+        "product_item_xmY7WL": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-heirloom-brass-small"
+          }
+        },
+        "product_item_TBTakz": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-cast-iron-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_xFEDf8",
+        "product_item_xmY7WL",
+        "product_item_TBTakz"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_FqfFUm": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_azLBaB": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-polished-brass-sink"
+          }
+        },
+        "product_item_CqQejz": {
+          "type": "product_item",
+          "settings": {
+            "product": "extra-large-single-polished-brass-sink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_azLBaB",
+        "product_item_CqQejz"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_8CfynF",
+    "banner",
+    "custom_product_list_zBPUp4",
+    "custom_product_list_MpDtJy",
+    "custom_product_list_BUDdED",
+    "custom_product_list_eMeUfM",
+    "custom_product_list_LCkT4W",
+    "custom_product_list_xAQji4",
+    "custom_product_list_FeAFfL",
+    "custom_product_list_X3TY6B",
+    "custom_product_list_K3hTG4",
+    "custom_product_list_zNTc7L",
+    "custom_product_list_eVDzzj",
+    "custom_product_list_dGjbQ4",
+    "custom_product_list_UXz3XX",
+    "custom_product_list_f4APjn",
+    "custom_product_list_XRcLfm",
+    "custom_product_list_yrMTPx",
+    "custom_product_list_kNn3aN",
+    "custom_product_list_eqD7Ty",
+    "custom_product_list_FqfFUm",
+    "product-grid"
+  ]
+}

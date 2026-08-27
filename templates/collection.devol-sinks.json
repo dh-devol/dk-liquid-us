@@ -1,1 +1,267 @@
-{"sections":{"metaobject_gallery_slider_JfxMMF":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 60px;}",".collection-hero__title {margin-bottom: 1em;}","@media screen and (min-width: 768px) {.collection-hero__description {max-width: 480px; }}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"settings":{"products_per_page":36,"columns_desktop":4,"color_scheme":"scheme-2","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":false,"filter_type":"drawer","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"custom_product_list_Lhmd3h":{"type":"custom-product-list","blocks":{"product_item_zMmGmF":{"type":"product_item","settings":{"product":"standard-single-fluted-belfast-sink"}},"product_item_DUGgzR":{"type":"product_item","settings":{"product":"large-single-fluted-belfast-sink"}},"product_item_b4NY8Y":{"type":"product_item","settings":{"product":"extra-large-double-fluted-belfast-sink"}}},"block_order":["product_item_zMmGmF","product_item_DUGgzR","product_item_b4NY8Y"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_HEdH3i":{"type":"custom-product-list","blocks":{"product_item_HaMWnm":{"type":"product_item","settings":{"product":"tuscan-farmhouse-large-single-carrara-marble-sink"}},"product_item_ACTkKB":{"type":"product_item","settings":{"product":"tuscan-farmhouse-extra-large-single-fluted-arabescato-marble-sink"}}},"block_order":["product_item_HaMWnm","product_item_ACTkKB"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_R6JGjV":{"type":"custom-product-list","blocks":{"product_item_mtj6yi":{"type":"product_item","settings":{"product":"standard-single-aged-copper-sink"}},"product_item_GcCctT":{"type":"product_item","settings":{"product":"standard-single-polished-brass-sink"}},"product_item_DqkfLJ":{"type":"product_item","settings":{"product":"extra-large-single-polished-brass-sink"}}},"block_order":["product_item_mtj6yi","product_item_GcCctT","product_item_DqkfLJ"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_f6FeVA":{"type":"custom-product-list","blocks":{"product_item_W43FqB":{"type":"product_item","settings":{"product":"brass-basket-waste-strainer-overflow-kit-devol-cover"}},"product_item_tdkbKb":{"type":"product_item","settings":{"product":"chrome-basket-waste-strainer-overflow-kit"}}},"block_order":["product_item_W43FqB","product_item_tdkbKb"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"Waste Strainer & Overflow Kit","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["metaobject_gallery_slider_JfxMMF","banner","product-grid","custom_product_list_Lhmd3h","custom_product_list_HEdH3i","custom_product_list_R6JGjV","custom_product_list_f6FeVA"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_JfxMMF": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 480px; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_Lhmd3h": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_zMmGmF": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-fluted-belfast-sink"
+          }
+        },
+        "product_item_DUGgzR": {
+          "type": "product_item",
+          "settings": {
+            "product": "large-single-fluted-belfast-sink"
+          }
+        },
+        "product_item_b4NY8Y": {
+          "type": "product_item",
+          "settings": {
+            "product": "extra-large-double-fluted-belfast-sink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_zMmGmF",
+        "product_item_DUGgzR",
+        "product_item_b4NY8Y"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_HEdH3i": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_HaMWnm": {
+          "type": "product_item",
+          "settings": {
+            "product": "tuscan-farmhouse-large-single-carrara-marble-sink"
+          }
+        },
+        "product_item_ACTkKB": {
+          "type": "product_item",
+          "settings": {
+            "product": "tuscan-farmhouse-extra-large-single-fluted-arabescato-marble-sink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_HaMWnm",
+        "product_item_ACTkKB"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_R6JGjV": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_mtj6yi": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-aged-copper-sink"
+          }
+        },
+        "product_item_GcCctT": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-polished-brass-sink"
+          }
+        },
+        "product_item_DqkfLJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "extra-large-single-polished-brass-sink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_mtj6yi",
+        "product_item_GcCctT",
+        "product_item_DqkfLJ"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_f6FeVA": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_W43FqB": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-basket-waste-strainer-overflow-kit-devol-cover"
+          }
+        },
+        "product_item_tdkbKb": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-basket-waste-strainer-overflow-kit"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_W43FqB",
+        "product_item_tdkbKb"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Waste Strainer & Overflow Kit",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_JfxMMF",
+    "banner",
+    "product-grid",
+    "custom_product_list_Lhmd3h",
+    "custom_product_list_HEdH3i",
+    "custom_product_list_R6JGjV",
+    "custom_product_list_f6FeVA"
+  ]
+}

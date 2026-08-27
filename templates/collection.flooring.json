@@ -29,7 +29,7 @@
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
-        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__inner {margin-bottom: 24px;}",
         ".collection-hero__title {margin-bottom: 1em;}",
         "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 550px; }}"
       ],
@@ -78,7 +78,7 @@
         "product_item_3pQPDC": {
           "type": "product_item",
           "settings": {
-            "product": "brushed-charcoal-limestone-23-5-8xflx3-8"
+            "product": "brushed-charcoal-limestone-600xflx22"
           }
         },
         "product_item_LWREdR": {
