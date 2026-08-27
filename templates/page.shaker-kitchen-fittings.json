@@ -1,1 +1,202 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"catalogue_title_with_richtext_BU9bBR":{"type":"catalogue-title-with-richtext","custom_css":[".rich-text__text {margin-top: 16px;}",".page-width {padding-bottom: 24px;}","@media (max-width: 768px) {.rich-text {padding-bottom: 24px; }}"],"settings":{"show_title":true,"show_description":true,"show_main_description":true,"show_guide_price":false,"border_title":true,"heading_size":"h1","desktop_content_position":"left","content_alignment":"left","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"catalogue_products_rGVHd8":{"type":"catalogue-products","custom_css":[".custom-catalogue-products .multicolumn-list {row-gap: 30px;}",".title-with-rich-text {margin-bottom: 15px;}",".grid .grid__item {padding-right: 0px; max-width: 100% !important;}"],"name":"Catalogue products","settings":{"show_collection_title":true,"collection_title_border":false,"show_collection_description":true,"heading_size":"h1","catalogue_collection":"shaker-fittings-i","catalogue_card_layout":"half_width","standard_columns":"3","products_to_show":50,"button_label":"","button_link":"","color_scheme":"scheme-2","border_bottom":false,"image_ratio":"custom","custom_image_padding_bottom":68,"hide_price":true,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0}},"catalogue_products_xFtFL8":{"type":"catalogue-products","custom_css":[".custom-catalogue-products .multicolumn-list {row-gap: 30px;}",".title-with-rich-text {margin-bottom: 15px;}",".grid .grid__item {padding-right: 0px; max-width: 100% !important;}"],"name":"Catalogue products","settings":{"show_collection_title":true,"collection_title_border":false,"show_collection_description":true,"heading_size":"h1","catalogue_collection":"shaker-fittings-ii","catalogue_card_layout":"half_width","standard_columns":"3","products_to_show":50,"button_label":"","button_link":"","color_scheme":"scheme-2","border_bottom":false,"image_ratio":"custom","custom_image_padding_bottom":68,"hide_price":true,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":40,"padding_bottom":0}},"catalogue_products_wWLYYB":{"type":"catalogue-products","custom_css":[".custom-catalogue-products .multicolumn-list {row-gap: 30px;}",".title-with-rich-text {margin-bottom: 15px;}",".grid .grid__item {padding-right: 0px; max-width: 100% !important;}"],"name":"Catalogue products","settings":{"show_collection_title":true,"collection_title_border":false,"show_collection_description":true,"heading_size":"h1","catalogue_collection":"shaker-fittings-iii","catalogue_card_layout":"half_width","standard_columns":"3","products_to_show":50,"button_label":"","button_link":"","color_scheme":"scheme-2","border_bottom":false,"image_ratio":"custom","custom_image_padding_bottom":68,"hide_price":true,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":40,"padding_bottom":0}},"catalogue_products_yU8hMm":{"type":"catalogue-products","custom_css":[".custom-catalogue-products .multicolumn-list {row-gap: 30px;}",".title-with-rich-text {margin-bottom: 15px;}",".grid .grid__item {padding-right: 0px; max-width: 100% !important;}"],"name":"Catalogue products","settings":{"show_collection_title":true,"collection_title_border":false,"show_collection_description":true,"heading_size":"h1","catalogue_collection":"shaker-fittings-iv","catalogue_card_layout":"half_width","standard_columns":"3","products_to_show":50,"button_label":"","button_link":"","color_scheme":"scheme-2","border_bottom":false,"image_ratio":"custom","custom_image_padding_bottom":68,"hide_price":true,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":40,"padding_bottom":0}},"catalogue_products_6mydL3":{"type":"catalogue-products","custom_css":[".grid .grid__item {padding-right: 0px; flex: 100%; max-width: 100% !important;}"],"name":"Catalogue products","settings":{"show_collection_title":false,"collection_title_border":false,"show_collection_description":true,"heading_size":"h1","catalogue_collection":"shaker-fittings-v","catalogue_card_layout":"full_width","standard_columns":"3","products_to_show":50,"button_label":"","button_link":"","color_scheme":"scheme-2","border_bottom":false,"image_ratio":"adapt","custom_image_padding_bottom":50,"hide_price":true,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":30,"padding_bottom":0}}},"order":["main","catalogue_title_with_richtext_BU9bBR","catalogue_products_rGVHd8","catalogue_products_xFtFL8","catalogue_products_wWLYYB","catalogue_products_yU8hMm","catalogue_products_6mydL3"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "catalogue_title_with_richtext_BU9bBR": {
+      "type": "catalogue-title-with-richtext",
+      "custom_css": [
+        ".rich-text__text {margin-top: 16px;}",
+        ".page-width {padding-bottom: 24px;}",
+        "@media (max-width: 768px) {.rich-text {padding-bottom: 24px; }}"
+      ],
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "show_main_description": true,
+        "show_guide_price": false,
+        "border_title": true,
+        "heading_size": "h1",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "catalogue_products_rGVHd8": {
+      "type": "catalogue-products",
+      "custom_css": [
+        ".custom-catalogue-products .multicolumn-list {row-gap: 30px;}",
+        ".title-with-rich-text {margin-bottom: 15px;}",
+        ".grid .grid__item {padding-right: 0px; max-width: 100% !important;}"
+      ],
+      "name": "Catalogue products",
+      "settings": {
+        "show_collection_title": true,
+        "collection_title_border": false,
+        "show_collection_description": true,
+        "heading_size": "h1",
+        "catalogue_collection": "shaker-fittings-i",
+        "catalogue_card_layout": "half_width",
+        "standard_columns": "3",
+        "products_to_show": 50,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "border_bottom": false,
+        "image_ratio": "custom",
+        "custom_image_padding_bottom": 68,
+        "hide_price": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "catalogue_products_xFtFL8": {
+      "type": "catalogue-products",
+      "custom_css": [
+        ".custom-catalogue-products .multicolumn-list {row-gap: 30px;}",
+        ".title-with-rich-text {margin-bottom: 15px;}",
+        ".grid .grid__item {padding-right: 0px; max-width: 100% !important;}"
+      ],
+      "name": "Catalogue products",
+      "settings": {
+        "show_collection_title": true,
+        "collection_title_border": false,
+        "show_collection_description": true,
+        "heading_size": "h1",
+        "catalogue_collection": "shaker-fittings-ii",
+        "catalogue_card_layout": "half_width",
+        "standard_columns": "3",
+        "products_to_show": 50,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "border_bottom": false,
+        "image_ratio": "custom",
+        "custom_image_padding_bottom": 68,
+        "hide_price": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "catalogue_products_wWLYYB": {
+      "type": "catalogue-products",
+      "custom_css": [
+        ".custom-catalogue-products .multicolumn-list {row-gap: 30px;}",
+        ".title-with-rich-text {margin-bottom: 15px;}",
+        ".grid .grid__item {padding-right: 0px; max-width: 100% !important;}"
+      ],
+      "name": "Catalogue products",
+      "settings": {
+        "show_collection_title": true,
+        "collection_title_border": false,
+        "show_collection_description": true,
+        "heading_size": "h1",
+        "catalogue_collection": "shaker-fittings-iii",
+        "catalogue_card_layout": "half_width",
+        "standard_columns": "3",
+        "products_to_show": 50,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "border_bottom": false,
+        "image_ratio": "custom",
+        "custom_image_padding_bottom": 68,
+        "hide_price": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "catalogue_products_yU8hMm": {
+      "type": "catalogue-products",
+      "custom_css": [
+        ".custom-catalogue-products .multicolumn-list {row-gap: 30px;}",
+        ".title-with-rich-text {margin-bottom: 15px;}",
+        ".grid .grid__item {padding-right: 0px; max-width: 100% !important;}"
+      ],
+      "name": "Catalogue products",
+      "settings": {
+        "show_collection_title": true,
+        "collection_title_border": false,
+        "show_collection_description": true,
+        "heading_size": "h1",
+        "catalogue_collection": "shaker-fittings-iv",
+        "catalogue_card_layout": "half_width",
+        "standard_columns": "3",
+        "products_to_show": 50,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "border_bottom": false,
+        "image_ratio": "custom",
+        "custom_image_padding_bottom": 68,
+        "hide_price": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "catalogue_products_6mydL3": {
+      "type": "catalogue-products",
+      "custom_css": [
+        ".grid .grid__item {padding-right: 0px; flex: 100%; max-width: 100% !important;}"
+      ],
+      "name": "Catalogue products",
+      "settings": {
+        "show_collection_title": false,
+        "collection_title_border": false,
+        "show_collection_description": true,
+        "heading_size": "h1",
+        "catalogue_collection": "shaker-fittings-v",
+        "catalogue_card_layout": "full_width",
+        "standard_columns": "3",
+        "products_to_show": 50,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "border_bottom": false,
+        "image_ratio": "adapt",
+        "custom_image_padding_bottom": 50,
+        "hide_price": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "catalogue_title_with_richtext_BU9bBR",
+    "catalogue_products_rGVHd8",
+    "catalogue_products_xFtFL8",
+    "catalogue_products_wWLYYB",
+    "catalogue_products_yU8hMm",
+    "catalogue_products_6mydL3"
+  ]
+}

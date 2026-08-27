@@ -1,1 +1,193 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"catalogue_title_with_richtext_BU9bBR":{"type":"catalogue-title-with-richtext","custom_css":[],"settings":{"show_title":true,"show_description":true,"show_main_description":true,"show_guide_price":false,"border_title":true,"heading_size":"h1","desktop_content_position":"left","content_alignment":"left","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"catalogue_products_zRU7Xw":{"type":"catalogue-products","custom_css":[".custom-catalogue-products .multicolumn-card__info > :nth-child(2) {margin-top: 0;}","@media (max-width: 590px) {.page-width {padding-bottom: 40px; }}"],"name":"Catalogue products","settings":{"show_collection_title":false,"collection_title_border":false,"show_collection_description":false,"heading_size":"h1","catalogue_collection":"haberdashers-counters-islands-i","catalogue_card_layout":"text-image-separated","standard_columns":"3","products_to_show":50,"button_label":"","button_link":"","color_scheme":"scheme-2","border_bottom":false,"image_ratio":"adapt","custom_image_padding_bottom":50,"hide_price":false,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":20,"padding_bottom":20}},"catalogue_multicolumn_CJURNi":{"type":"catalogue-multicolumn","blocks":{"column_n6UQhG":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>The Haberdasher's cupboards work beautifully as a kitchen and as impressively as individual pieces of furniture, the look is very striking and each piece is full of personality. To allow customers to fully immerse themselves in this eclectic Haberdasher's look and not to feel constrained by one style, we have designed an island and some<\/p>","show_above_image":true,"link_label":"","link":""}},"column_NRnxj6":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>counters with a historically earlier look to them. Chunky pieces of furniture that instantly transport you to a club bar with all its evocative vibes and extras like brass foot rails, big proportions and elegantly cut marble.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_n6UQhG","column_NRnxj6"],"custom_css":[".page-width {padding-top: 10px;}",".sub-heading {margin-top: 0px; margin-bottom: 30px;}","@media (max-width: 590px) {slider-component.slider-mobile-gutter {display: none; }}"],"settings":{"title":"","heading_size":"h1","subtitle":"Islands","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"title_with_rich_text_9HiPmp":{"type":"title-with-rich-text","blocks":{"text_e8bEWG":{"type":"text","settings":{"text":"<p>The Haberdasher's cupboards work beautifully as a kitchen and as impressively as individual pieces of furniture, the look is very striking and each piece is full of personality. To allow customers to fully immerse themselves in this eclectic Haberdasher's look and not to feel constrained by one style, we have designed an island and some counters with a historically earlier look to them. Chunky pieces of furniture that instantly transport you to a club bar with all its evocative vibes and extras like brass foot rails, big proportions and elegantly cut marble.<\/p>"}}},"block_order":["text_e8bEWG"],"custom_css":[".rich-text__wrapper.rich-text__wrapper--left.page-width {padding: 0;}","@media (min-width: 591px) {.title-with-rich-text.isolate {display: none; }}","@media (max-width: 590px) {.rich-text__text.rte.scroll-trigger.animate--slide-in {margin-top: 15px; }}"],"name":"Title with richtext","settings":{"desktop_content_position":"left","content_alignment":"left","color_scheme":"scheme-2","full_width":true,"padding_top":0,"padding_bottom":0,"sectionname":""}},"catalogue_products_gD8xx9":{"type":"catalogue-products","custom_css":[".multicolumn-list__item {margin-bottom: 20px;}"],"name":"Catalogue products","settings":{"show_collection_title":false,"collection_title_border":false,"show_collection_description":false,"heading_size":"h1","catalogue_collection":"haberdashers-counters-islands-ii","catalogue_card_layout":"full_width","standard_columns":"3","products_to_show":50,"button_label":"","button_link":"","color_scheme":"scheme-2","border_bottom":false,"image_ratio":"adapt","custom_image_padding_bottom":50,"hide_price":false,"columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":52}}},"order":["main","catalogue_title_with_richtext_BU9bBR","catalogue_products_zRU7Xw","catalogue_multicolumn_CJURNi","title_with_rich_text_9HiPmp","catalogue_products_gD8xx9"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "catalogue_title_with_richtext_BU9bBR": {
+      "type": "catalogue-title-with-richtext",
+      "custom_css": [],
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "show_main_description": true,
+        "show_guide_price": false,
+        "border_title": true,
+        "heading_size": "h1",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "catalogue_products_zRU7Xw": {
+      "type": "catalogue-products",
+      "custom_css": [
+        ".custom-catalogue-products .multicolumn-card__info > :nth-child(2) {margin-top: 0;}",
+        "@media (max-width: 590px) {.page-width {padding-bottom: 40px; }}"
+      ],
+      "name": "Catalogue products",
+      "settings": {
+        "show_collection_title": false,
+        "collection_title_border": false,
+        "show_collection_description": false,
+        "heading_size": "h1",
+        "catalogue_collection": "haberdashers-counters-islands-i",
+        "catalogue_card_layout": "text-image-separated",
+        "standard_columns": "3",
+        "products_to_show": 50,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "border_bottom": false,
+        "image_ratio": "adapt",
+        "custom_image_padding_bottom": 50,
+        "hide_price": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "catalogue_multicolumn_CJURNi": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_n6UQhG": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>The Haberdasher's cupboards work beautifully as a kitchen and as impressively as individual pieces of furniture, the look is very striking and each piece is full of personality. To allow customers to fully immerse themselves in this eclectic Haberdasher's look and not to feel constrained by one style, we have designed an island and some</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_NRnxj6": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>counters with a historically earlier look to them. Chunky pieces of furniture that instantly transport you to a club bar with all its evocative vibes and extras like brass foot rails, big proportions and elegantly cut marble.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_n6UQhG",
+        "column_NRnxj6"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 10px;}",
+        ".sub-heading {margin-top: 0px; margin-bottom: 30px;}",
+        "@media (max-width: 590px) {slider-component.slider-mobile-gutter {display: none; }}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Islands",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "title_with_rich_text_9HiPmp": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "text_e8bEWG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The Haberdasher's cupboards work beautifully as a kitchen and as impressively as individual pieces of furniture, the look is very striking and each piece is full of personality. To allow customers to fully immerse themselves in this eclectic Haberdasher's look and not to feel constrained by one style, we have designed an island and some counters with a historically earlier look to them. Chunky pieces of furniture that instantly transport you to a club bar with all its evocative vibes and extras like brass foot rails, big proportions and elegantly cut marble.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_e8bEWG"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper.rich-text__wrapper--left.page-width {padding: 0;}",
+        "@media (min-width: 591px) {.title-with-rich-text.isolate {display: none; }}",
+        "@media (max-width: 590px) {.rich-text__text.rte.scroll-trigger.animate--slide-in {margin-top: 15px; }}"
+      ],
+      "name": "Title with richtext",
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "catalogue_products_gD8xx9": {
+      "type": "catalogue-products",
+      "custom_css": [
+        ".multicolumn-list__item {margin-bottom: 20px;}"
+      ],
+      "name": "Catalogue products",
+      "settings": {
+        "show_collection_title": false,
+        "collection_title_border": false,
+        "show_collection_description": false,
+        "heading_size": "h1",
+        "catalogue_collection": "haberdashers-counters-islands-ii",
+        "catalogue_card_layout": "full_width",
+        "standard_columns": "3",
+        "products_to_show": 50,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "border_bottom": false,
+        "image_ratio": "adapt",
+        "custom_image_padding_bottom": 50,
+        "hide_price": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "catalogue_title_with_richtext_BU9bBR",
+    "catalogue_products_zRU7Xw",
+    "catalogue_multicolumn_CJURNi",
+    "title_with_rich_text_9HiPmp",
+    "catalogue_products_gD8xx9"
+  ]
+}

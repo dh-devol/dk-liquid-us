@@ -63,7 +63,7 @@
         "column_BLKjYW": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-mediterranean-mix-in-our-la-showroom",
+            "dynamic_costs": "mediterranean-mix-in-our-la-showroom",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -132,7 +132,7 @@
         "column_WWrtFT": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-ellei-home-kitchen",
+            "dynamic_costs": "ellei-home-kitchen",
             "custom_text_hover": ""
           }
         },

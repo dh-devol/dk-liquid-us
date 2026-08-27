@@ -60,7 +60,7 @@
         "column_dgxhdt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-la-powder-room",
+            "dynamic_costs": "la-powder-room",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -80,6 +80,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -134,6 +135,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -170,19 +172,28 @@
             "dynamic_costs": "our-creative-directors-victorian-villa",
             "custom_text_hover": "View this project in detail"
           }
+        },
+        "column_KDiHDd": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "classic-kitchen-regency-home",
+            "custom_text_hover": ""
+          }
         }
       },
       "block_order": [
         "column_BfjGC6",
-        "column_cA6anN"
+        "column_cA6anN",
+        "column_KDiHDd"
       ],
       "settings": {
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "show_hover_image": false,
         "show_secondary_image_hover": true,
         "show_hover_text": false,
@@ -234,6 +245,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -280,6 +292,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -342,6 +355,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -494,7 +508,7 @@
         "column_3hepAF": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-lincolnshire-hall",
+            "dynamic_costs": "lincolnshire-hall",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -543,7 +557,7 @@
         "column_GKdGVp": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-pimlico-kitchen",
+            "dynamic_costs": "pimlico-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -612,6 +626,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,

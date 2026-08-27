@@ -217,7 +217,7 @@
         "column_dgxhdt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-la-powder-room",
+            "dynamic_costs": "la-powder-room",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -240,6 +240,7 @@
         "title": "",
         "heading_size": "hxxl",
         "subtitle": "View more Classic projects",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -297,6 +298,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -333,11 +335,19 @@
             "dynamic_costs": "our-creative-directors-victorian-villa",
             "custom_text_hover": "View this project in detail"
           }
+        },
+        "column_HyEMQK": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "classic-kitchen-regency-home",
+            "custom_text_hover": ""
+          }
         }
       },
       "block_order": [
         "column_HWAWPB",
-        "column_KJLykm"
+        "column_KJLykm",
+        "column_HyEMQK"
       ],
       "custom_css": [
         "@media screen and (max-width: 990px) {.multicolumn-list:not(.slider) {padding-left: 0; padding-right: 0; }}"
@@ -346,9 +356,10 @@
         "title": "",
         "heading_size": "hxl",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "show_hover_image": false,
         "show_secondary_image_hover": false,
         "show_hover_text": true,
@@ -403,6 +414,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -484,6 +496,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -545,7 +558,7 @@
         "column_UpfJgB": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-brownstone-in-jersey-city",
+            "dynamic_costs": "brownstone-in-jersey-city",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -636,7 +649,7 @@
         "column_3hepAF": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-lincolnshire-hall",
+            "dynamic_costs": "lincolnshire-hall",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -685,7 +698,7 @@
         "column_GKdGVp": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-pimlico-kitchen",
+            "dynamic_costs": "pimlico-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -713,7 +726,7 @@
         "column_HFYBhh": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-south-downs-house",
+            "dynamic_costs": "south-downs-house",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -757,6 +770,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
