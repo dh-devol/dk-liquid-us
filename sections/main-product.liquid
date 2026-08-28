@@ -753,6 +753,7 @@ document.addEventListener("DOMContentLoaded", () => {
           initProductSwitcher();
           initSwiperGallery();
           initCoverageCalculators(curWrapper);
+          initAccordionScript(curWrapper);
           readmoreDescription();
         })
         .catch(() => window.location.assign(targetPath));
@@ -832,6 +833,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     new Swiper(swiperEl, options);
+  }
+
+  function initAccordionScript(root) {
+    const scope = root || document;
+    const accordionScript = scope.querySelector("#dropdown-accordion-script");
+    const accordionScriptSrc = {{ 'accordion-script.js' | asset_url | json }};
+    if (!accordionScript) return;
+
+    loadScriptOnce(accordionScriptSrc, "accordion-script", () => {
+      if (typeof window.initAccordion === "function") {
+        window.initAccordion(scope);
+      } else {
+        console.warn("initAccordion() is not available");
+      }
+    });
+    return;
   }
 
   function readmoreDescription() {

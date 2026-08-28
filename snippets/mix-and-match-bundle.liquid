@@ -147,7 +147,7 @@ We include all variants of each child product, disabling sold-out ones.
   {%- endunless -%}
 
   {% if _item_label_styling == 'one_label' %}<button class="dropdown-accordion"><p>{{ _prefix }}</p><span class="dropdown-arrow"></span></button>{% endif %}
-  <div class="mm-grid mm-grid--selects{% if _bundle_price  %} mm-bundle-price{% endif %}" {% if _item_label_styling == 'one_label' %}style="display:none" aria-expanded="false"{% endif %}>
+  <div class="mm-grid mm-grid--selects{% if _bundle_price  %} mm-bundle-price{% endif %}" {% if _item_label_styling == 'one_label' %}style="display:none" aria-expanded="true"{% endif %}>
     {%- if _first -%}
       <p>No child products provided. Select child products or pass a collection.</p>
     {%- else -%}
@@ -343,7 +343,7 @@ We include all variants of each child product, disabling sold-out ones.
       margin: 4px 0 15px;
     }
 
-    /* accordian styling for one label on bundle dropdowns */
+    /* accordion styling for one label on bundle dropdowns */
     .product__info-container #mm-bundle-.mm-bundle .mm-select .one-label {
       margin: 0 0 10px;
     }
@@ -366,7 +366,7 @@ We include all variants of each child product, disabling sold-out ones.
     }
 
     /* dropdown arrow */
-    button.dropdown-accordian {
+    button.dropdown-accordion {
       margin-top: 1em;
       letter-spacing: 0.02em;
     }

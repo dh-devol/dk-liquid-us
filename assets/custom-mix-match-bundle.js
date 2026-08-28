@@ -28,7 +28,7 @@ window.initMixMatchBundle = function(root) {
     const errElText = errEl.querySelector('.added-message');
     const choiceEls = Array.from(root.querySelectorAll('.mm-choice'));
     const choiceStyling = root.querySelector('[data-styling]');
-    const accordianBtn = root.querySelector('.dropdown-accordion');
+    const accordionBtn = root.querySelector('.dropdown-accordion');
     const selectDiv = root.querySelector('.mm-grid');
     const qtyWrapper = root.querySelector('.quantity__input');
 
@@ -127,9 +127,9 @@ window.initMixMatchBundle = function(root) {
     }];
     }
 
-    // dropdown accordian logic used on some bundles - check template for
-    function accordianAnimation () {
-        accordianBtn.toggleAttribute("open");
+    // dropdown accordion logic used on some bundles - check template for
+    function accordionAnimation () {
+        accordionBtn.toggleAttribute("open");
         if (selectDiv.style.display === "block") {
             selectDiv.style.display = "none";
             selectDiv.setAttribute("aria-expanded", "false");
@@ -138,8 +138,8 @@ window.initMixMatchBundle = function(root) {
             selectDiv.setAttribute("aria-expanded", "true");
         }
     }
-    if (accordianBtn) {
-        accordianBtn.addEventListener("click", accordianAnimation);
+    if (accordionBtn) {
+        accordionBtn.addEventListener("click", accordionAnimation);
     }
 
     function updatePrice() {
@@ -228,7 +228,7 @@ window.initMixMatchBundle = function(root) {
                     _group_id: group_id,
                     _bundle_parent: "true",
                     _cart_text: product_cart_text,
-                    lead_time: bundleLeadTime,
+                    Availability: bundleLeadTime
                 }
             });
 
