@@ -155,14 +155,14 @@
         "column_7wyR9B": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "bath-basement-kitchen",
+            "dynamic_costs": "gallery-kitchen-in-marylebone",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_WMqCUY": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "surrey-scullery",
+            "dynamic_costs": "clifton-garden-apartment",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -202,6 +202,27 @@
     "project_multicolumns_GQqpVU": {
       "type": "project-multicolumns",
       "blocks": {
+        "column_tnCPTX": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "bath-basement-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_VrfRWx": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "surrey-scullery",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
+        "column_9LkQDQ": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "kentish-town-kitchen",
+            "custom_text_hover": "View this project in detail"
+          }
+        },
         "column_zKwRWm": {
           "type": "column",
           "settings": {
@@ -225,6 +246,9 @@
         }
       },
       "block_order": [
+        "column_tnCPTX",
+        "column_VrfRWx",
+        "column_9LkQDQ",
         "column_zKwRWm",
         "column_anfCjd",
         "column_wGRBkr"
