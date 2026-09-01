@@ -83,6 +83,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -161,6 +162,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -187,14 +189,14 @@
         "column_jrxbEC": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-bert-may-kitchen",
+            "dynamic_costs": "bert-may-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_7UcDDy": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-haberdashers-hideaway-in-skane-sweden",
+            "dynamic_costs": "haberdashers-hideaway-in-skane-sweden",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -207,6 +209,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -233,14 +236,14 @@
         "column_9NftiD": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-barleycroft-kitchen",
+            "dynamic_costs": "barleycroft-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_LKc64L": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-historical-viennese-apartment",
+            "dynamic_costs": "historical-viennese-apartment",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -261,6 +264,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,

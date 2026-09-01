@@ -1,1 +1,91 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"custom_multicolumns_fYrwHi":{"type":"custom-multicolumns","blocks":{"column_WyRTqq":{"type":"column","settings":{"link":"shopify:\/\/products\/devol-brochure","dynamic_costs":"","image":"shopify:\/\/shop_images\/thumbnail-brochure-_-book-our-kitchen-brochure-01.jpg","image_hover":"shopify:\/\/shop_images\/thumbnail-brochure-_-book-our-kitchen-brochure-02.jpg","custom_text_hover":"","title":"Our Kitchen Brochure","show_text_double_column":false,"text":"<p>Spring 2026 Edition<br\/><br\/>Within the pages of our brochure you’ll find inspirational kitchen projects and learn more about our five beautiful ranges. We hope to whisk you away to a happy place of colourful kitchens, eclectic styles and beautiful photography.<\/p>","show_above_image":false,"link_label":"Order a free copy","linked_product":""}},"column_CLURJq":{"type":"column","settings":{"link":"shopify:\/\/products\/devol-kitchen-hardback-signed","dynamic_costs":"","image":"shopify:\/\/shop_images\/e6b94355-ce2d-47db-a45e-f5cc7e4fce0c.jpg","image_hover":"shopify:\/\/shop_images\/devol_kitchens_book_rollover_jpg.webp","custom_text_hover":"","title":"The deVOL Kitchen (Signed hardback)","show_text_double_column":false,"text":"<p>Published by Ebury Press, 2023<br\/><br\/>This is deVOL's first ever published book. Our directors, Paul, Helen and Robin tell stories of their childhoods and share how their experiences have shaped their approach to design, craftsmanship and kitchens.<\/p>","show_above_image":false,"link_label":"Order your copy","linked_product":""}}},"block_order":["column_WyRTqq","column_CLURJq"],"custom_css":["@media (max-width: 768px) {.custom-multicolumn.background-none .multicolumn-card__image-wrapper + .multicolumn-card__info {padding: 0 0 1em; }}",".multicolumn-card__info .rte {max-width: 95%; margin-top: 0;}",".multicolumn-card__info .rte p {margin-top: 0;}"],"settings":{"title":"Our Brochure & Book","heading_size":"hxxl","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":0,"sectionname":"brochure__book-section"}}},"order":["main","custom_multicolumns_fYrwHi"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "custom_multicolumns_fYrwHi": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_WyRTqq": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://products/devol-brochure",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/thumbnail-brochure-_-book-our-kitchen-brochure-01.jpg",
+            "image_hover": "shopify://shop_images/thumbnail-brochure-_-book-our-kitchen-brochure-02.jpg",
+            "custom_text_hover": "",
+            "title": "Our Kitchen Brochure",
+            "show_text_double_column": false,
+            "text": "<p>Spring 2026 Edition<br/><br/>Within the pages of our brochure you’ll find inspirational kitchen projects and learn more about our five beautiful ranges. We hope to whisk you away to a happy place of colourful kitchens, eclectic styles and beautiful photography.</p>",
+            "show_above_image": false,
+            "link_label": "Order a free copy",
+            "linked_product": ""
+          }
+        },
+        "column_CLURJq": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://products/devol-kitchen-hardback-signed",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/e6b94355-ce2d-47db-a45e-f5cc7e4fce0c.jpg",
+            "image_hover": "shopify://shop_images/devol_kitchens_book_rollover_jpg.webp",
+            "custom_text_hover": "",
+            "title": "The deVOL Kitchen (Signed hardback)",
+            "show_text_double_column": false,
+            "text": "<p>Published by Ebury Press, 2023<br/><br/>This is deVOL's first ever published book. Our directors, Paul, Helen and Robin tell stories of their childhoods and share how their experiences have shaped their approach to design, craftsmanship and kitchens.</p>",
+            "show_above_image": false,
+            "link_label": "Order your copy",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_WyRTqq",
+        "column_CLURJq"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.custom-multicolumn.background-none .multicolumn-card__image-wrapper + .multicolumn-card__info {padding: 0 0 1em; }}",
+        ".multicolumn-card__info .rte {max-width: 95%; margin-top: 0;}",
+        ".multicolumn-card__info .rte p {margin-top: 0;}"
+      ],
+      "settings": {
+        "title": "Our Brochure & Book",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "sectionname": "brochure__book-section"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_multicolumns_fYrwHi"
+  ]
+}

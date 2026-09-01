@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "metaobject_gallery_slider_xGDwdP": {
+    "metaobject_gallery_slider_cA6x8B": {
       "type": "metaobject-gallery-slider",
       "name": "Page Metaobject slideshow",
       "settings": {
@@ -30,8 +30,7 @@
       "type": "main-collection-banner",
       "custom_css": [
         ".collection-hero__inner {margin-bottom: 60px;}",
-        ".collection-hero__title {margin-bottom: 1em;}",
-        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 450px; }}"
+        ".collection-hero__title {margin-bottom: 1em;}"
       ],
       "settings": {
         "show_collection_description": true,
@@ -60,41 +59,42 @@
         "padding_bottom": 36
       }
     },
-    "custom_product_list_bUNrEF": {
+    "custom_product_list_yzmBwH": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_X64BJC": {
+        "product_item_ir8xqq": {
           "type": "product_item",
           "settings": {
-            "product": "ditsy-delft-tiles-ditsy-sepia"
+            "product": "13-iron-hook-rack"
           }
         },
-        "product_item_wnTzCk": {
+        "product_item_kNfqxw": {
           "type": "product_item",
           "settings": {
-            "product": "emerald-green-london-tiles"
+            "product": "17-iron-hook-rack"
           }
         },
-        "product_item_3n4gDP": {
+        "product_item_wHwhak": {
           "type": "product_item",
           "settings": {
-            "product": "crackle-metro-tiles"
+            "product": "27-iron-hook-rack"
           }
         }
       },
       "block_order": [
-        "product_item_X64BJC",
-        "product_item_wnTzCk",
-        "product_item_3n4gDP"
+        "product_item_ir8xqq",
+        "product_item_kNfqxw",
+        "product_item_wHwhak"
       ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "",
+        "subtitle": "Hooks",
         "hide_subtitle": false,
         "image_width": "full",
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
@@ -111,41 +111,56 @@
         "sectionname": ""
       }
     },
-    "custom_product_list_cHX6zx": {
+    "custom_product_list_Y63KQq": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_MfAEfd": {
+        "product_item_TTfWMX": {
           "type": "product_item",
           "settings": {
-            "product": "kentish-brown-subway-tiles"
+            "product": "pot-hanger"
           }
         },
-        "product_item_FQF99b": {
+        "product_item_FAt9JM": {
           "type": "product_item",
           "settings": {
-            "product": "cream-subway-tiles"
+            "product": "iron-shelf-bracket-square-bar"
+          }
+        },
+        "product_item_7qmEbN": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-shelf-bracket-diamond-bar"
+          }
+        },
+        "product_item_T4BxTT": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-cast-iron-large"
           }
         }
       },
       "block_order": [
-        "product_item_MfAEfd",
-        "product_item_FQF99b"
+        "product_item_TTfWMX",
+        "product_item_FAt9JM",
+        "product_item_7qmEbN",
+        "product_item_T4BxTT"
       ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "Subway & Border Tiles",
+        "subtitle": "Hangers & Brackets",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "columns_desktop": 4,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "show_top_border": true,
+        "show_top_border": false,
         "show_bottom_border": false,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
@@ -155,50 +170,57 @@
         "sectionname": ""
       }
     },
-    "custom_product_list_RECPjw": {
+    "custom_product_list_HnUj3d": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_mBbmjU": {
+        "product_item_AdmHzi": {
           "type": "product_item",
           "settings": {
-            "product": "vintage-teal-lace-market-tiles-plain-metro"
+            "product": "iron-beam-hook-large"
           }
         },
-        "product_item_NeKfF3": {
+        "product_item_NNJPMd": {
           "type": "product_item",
           "settings": {
-            "product": "sepia-lace-market-tiles-plain-metro"
+            "product": "iron-wall-hook-large"
           }
         },
-        "product_item_68Dekg": {
+        "product_item_LndYWU": {
           "type": "product_item",
           "settings": {
-            "product": "rose-lace-market-tiles-plain-metro"
+            "product": "iron-hook-square-backplate-large"
+          }
+        },
+        "product_item_BmM7AC": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-hook-elephant-backplate-large"
           }
         }
       },
       "block_order": [
-        "product_item_mBbmjU",
-        "product_item_NeKfF3",
-        "product_item_68Dekg"
+        "product_item_AdmHzi",
+        "product_item_NNJPMd",
+        "product_item_LndYWU",
+        "product_item_BmM7AC"
       ],
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "Lace Market Tiles",
+        "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "show_top_border": true,
-        "show_bottom_border": false,
+        "show_top_border": false,
+        "show_bottom_border": true,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
@@ -209,11 +231,11 @@
     }
   },
   "order": [
-    "metaobject_gallery_slider_xGDwdP",
+    "metaobject_gallery_slider_cA6x8B",
     "banner",
     "product-grid",
-    "custom_product_list_bUNrEF",
-    "custom_product_list_cHX6zx",
-    "custom_product_list_RECPjw"
+    "custom_product_list_yzmBwH",
+    "custom_product_list_HnUj3d",
+    "custom_product_list_Y63KQq"
   ]
 }

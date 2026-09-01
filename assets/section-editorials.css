@@ -28,6 +28,9 @@
 .product-page .editorial-block .image-wrapper img {
   margin-bottom: 1.5em;
 }
+.product-page .editorial-video {
+  margin-bottom: 1.5em !important;
+}
 
 .editorial-block.editorial-images,
 .editorial-block.editorial-video {

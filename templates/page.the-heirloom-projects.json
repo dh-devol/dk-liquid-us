@@ -266,6 +266,7 @@
         "title": "",
         "heading_size": "hxxl",
         "subtitle": "View more from the Heirloom Collection",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -321,6 +322,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -378,6 +380,7 @@
         "title": "",
         "heading_size": "hxxl",
         "subtitle": "Heirloom Furniture",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -411,7 +414,7 @@
         "column_intnpt": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-sink-cabinet",
+            "dynamic_costs": "sink-cabinet",
             "custom_text_hover": ""
           }
         }
@@ -427,6 +430,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -454,6 +458,7 @@
         "title": "",
         "heading_size": "hxxl",
         "subtitle": "Heirloom Accessories",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -566,6 +571,7 @@
         "product_item_qp9TMd",
         "product_item_W6Eagp"
       ],
+      "disabled": true,
       "name": "Custom product list",
       "settings": {
         "title": "",
@@ -617,6 +623,7 @@
         "product_item_XmQQkr",
         "product_item_zQYFQV"
       ],
+      "disabled": true,
       "name": "Custom product list",
       "settings": {
         "title": "",
@@ -689,6 +696,7 @@
         "product_item_8WRgwn",
         "product_item_Gqc3Lx"
       ],
+      "disabled": true,
       "name": "Custom product list",
       "settings": {
         "title": "",
@@ -761,6 +769,7 @@
         "product_item_XWDM7N",
         "product_item_Edppx7"
       ],
+      "disabled": true,
       "name": "Custom product list",
       "settings": {
         "title": "",

@@ -1,1 +1,499 @@
-{"sections":{"metaobject_gallery_slider_wjLQmD":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 60px;}",".collection-hero__title {margin-bottom: 1em;}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"settings":{"products_per_page":36,"columns_desktop":4,"color_scheme":"scheme-2","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":false,"filter_type":"drawer","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"custom_product_list_4WY4Ny":{"type":"custom-product-list","blocks":{"product_item_kXHHWB":{"type":"product_item","settings":{"product":"petite-frilly-chartreuse-glass-light"}},"product_item_EVTa6Y":{"type":"product_item","settings":{"product":"petite-frilly-cranberry-glass-light"}},"product_item_j4hem7":{"type":"product_item","settings":{"product":"petite-frilly-amber-glass-light"}},"product_item_UNchwi":{"type":"product_item","settings":{"product":"grand-frilly-chartreuse-glass-light"}},"product_item_fEtadg":{"type":"product_item","settings":{"product":"grand-frilly-cranberry-glass-light"}},"product_item_gjRQfB":{"type":"product_item","settings":{"product":"grand-frilly-amber-glass-light"}},"product_item_KwxVta":{"type":"product_item","settings":{"product":"creamware-rise-fall-pendant-light-small"}},"product_item_NCDHDU":{"type":"product_item","settings":{"product":"mini-milk-glass-pendant-light"}},"product_item_9aUJq8":{"type":"product_item","settings":{"product":"milk-glass-pendant-light"}},"product_item_GCRWUG":{"type":"product_item","settings":{"product":"petite-gaselier-light-milk-glass-shades-tall"}},"product_item_7RAxif":{"type":"product_item","settings":{"product":"heirloom-gaselier-light-tall"}},"product_item_XJyzA9":{"type":"product_item","settings":{"product":"milk-glass-gaselier-light-tall"}},"product_item_3wCNKc":{"type":"product_item","settings":{"product":"heirloom-wall-light-creamware-shade"}},"product_item_mLdJdQ":{"type":"product_item","settings":{"product":"heirloom-task-light-small"}},"product_item_weJjJc":{"type":"product_item","settings":{"product":"mini-creamware-wall-light"}},"product_item_hWWKxx":{"type":"product_item","settings":{"product":"heirloom-wall-light-milk-glass-shade"}},"product_item_UmJPRJ":{"type":"product_item","settings":{"product":"milk-glass-task-light-small"}},"product_item_Q43wpU":{"type":"product_item","settings":{"product":"mini-milk-glass-wall-light"}},"product_item_ef4xfC":{"type":"product_item","settings":{"product":"grand-tour-desk-lamp"}},"product_item_PerVjq":{"type":"product_item","settings":{"product":"grand-tour-library-lamp"}},"product_item_xwczKE":{"type":"product_item","settings":{"product":"grand-tour-reading-lamp"}}},"block_order":["product_item_kXHHWB","product_item_EVTa6Y","product_item_j4hem7","product_item_UNchwi","product_item_fEtadg","product_item_gjRQfB","product_item_KwxVta","product_item_NCDHDU","product_item_9aUJq8","product_item_GCRWUG","product_item_7RAxif","product_item_XJyzA9","product_item_3wCNKc","product_item_mLdJdQ","product_item_weJjJc","product_item_hWWKxx","product_item_UmJPRJ","product_item_Q43wpU","product_item_ef4xfC","product_item_PerVjq","product_item_xwczKE"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_Ygct7m":{"type":"custom-product-list","blocks":{"product_item_3nQ8Jd":{"type":"product_item","settings":{"product":"chartreuse-bonnet-pendant-light"}},"product_item_jQqbUq":{"type":"product_item","settings":{"product":"sepia-bell-pendant-light"}},"product_item_T6jHU6":{"type":"product_item","settings":{"product":"crackle-pendant-light-large-antiqued-brass"}},"product_item_hABrgd":{"type":"product_item","settings":{"product":"creamware-pendant-light-large"}}},"block_order":["product_item_3nQ8Jd","product_item_jQqbUq","product_item_T6jHU6","product_item_hABrgd"],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_PPngfA":{"type":"custom-product-list","blocks":{"product_item_zhLM9Q":{"type":"product_item","settings":{"product":"porcelain-pendant-light-narrow-pleat-large"}},"product_item_baXDfW":{"type":"product_item","settings":{"product":"porcelain-pendant-light-narrow-pleat-small"}},"product_item_Gkab6c":{"type":"product_item","settings":{"product":"porcelain-pendant-light-wide-pleat-large"}},"product_item_EiL9h6":{"type":"product_item","settings":{"product":"porcelain-pendant-light-wide-pleat-small"}},"product_item_iFix7V":{"type":"product_item","settings":{"product":"porcelain-pendant-light-plain-skullcap-large"}},"product_item_iQMchH":{"type":"product_item","settings":{"product":"porcelain-pendant-light-plain-skullcap-small"}},"product_item_LUDnBU":{"type":"product_item","settings":{"product":"porcelain-pendant-light-chattered-skullcap-large"}},"product_item_GQfqDz":{"type":"product_item","settings":{"product":"porcelain-pendant-light-chattered-skullcap-small"}},"product_item_HJ6Xhd":{"type":"product_item","settings":{"product":"porcelain-pendant-light-plain-beaker-large"}},"product_item_tUqxtA":{"type":"product_item","settings":{"product":"porcelain-pendant-light-chattered-beaker-large"}},"product_item_mTdeR3":{"type":"product_item","settings":{"product":"porcelain-pendant-light-plain-rice-bowl"}},"product_item_VMJyyK":{"type":"product_item","settings":{"product":"porcelain-pendant-light-chattered-rice-bowl"}}},"block_order":["product_item_zhLM9Q","product_item_baXDfW","product_item_Gkab6c","product_item_EiL9h6","product_item_iFix7V","product_item_iQMchH","product_item_LUDnBU","product_item_GQfqDz","product_item_HJ6Xhd","product_item_tUqxtA","product_item_mTdeR3","product_item_VMJyyK"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_Fwd4bf":{"type":"custom-product-list","blocks":{"product_item_DQQMkD":{"type":"product_item","settings":{"product":"porcelain-pendant-light-plain-beaker-large-plugin"}},"product_item_ARLqwK":{"type":"product_item","settings":{"product":"mini-creamware-plug-in-light"}}},"block_order":["product_item_DQQMkD","product_item_ARLqwK"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":36,"sectionname":""}}},"order":["metaobject_gallery_slider_wjLQmD","banner","product-grid","custom_product_list_4WY4Ny","custom_product_list_Ygct7m","custom_product_list_PPngfA","custom_product_list_Fwd4bf"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_wjLQmD": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_4WY4Ny": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_kXHHWB": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-frilly-chartreuse-glass-light"
+          }
+        },
+        "product_item_xLNFUk": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-frilly-cranberry-glass-light"
+          }
+        },
+        "product_item_j4hem7": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-frilly-amber-glass-light"
+          }
+        },
+        "product_item_UNchwi": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-frilly-chartreuse-glass-light"
+          }
+        },
+        "product_item_Cg8diG": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-frilly-cranberry-glass-light"
+          }
+        },
+        "product_item_gjRQfB": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-frilly-amber-glass-light"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_kXHHWB",
+        "product_item_xLNFUk",
+        "product_item_j4hem7",
+        "product_item_UNchwi",
+        "product_item_Cg8diG",
+        "product_item_gjRQfB"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_HNdz7R": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_KiRxUB": {
+          "type": "product_item",
+          "settings": {
+            "product": "creamware-rise-fall-pendant-light-small"
+          }
+        },
+        "product_item_gRWCax": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-milk-glass-pendant-light"
+          }
+        },
+        "product_item_r8CGrw": {
+          "type": "product_item",
+          "settings": {
+            "product": "milk-glass-pendant-light"
+          }
+        },
+        "product_item_mCqctm": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-gaselier-light-milk-glass-shades-tall"
+          }
+        },
+        "product_item_QGXmPC": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-gaselier-light-tall"
+          }
+        },
+        "product_item_P9nDWB": {
+          "type": "product_item",
+          "settings": {
+            "product": "milk-glass-gaselier-light-tall"
+          }
+        },
+        "product_item_8BR7M4": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-creamware-shade"
+          }
+        },
+        "product_item_RWB97c": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-task-light-small"
+          }
+        },
+        "product_item_3epTmE": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-creamware-wall-light"
+          }
+        },
+        "product_item_m8mCdC": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-milk-glass-shade"
+          }
+        },
+        "product_item_dDmxp3": {
+          "type": "product_item",
+          "settings": {
+            "product": "milk-glass-task-light-small"
+          }
+        },
+        "product_item_99yw3t": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-milk-glass-wall-light"
+          }
+        },
+        "product_item_73dT39": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-desk-lamp"
+          }
+        },
+        "product_item_tbjpxn": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-library-lamp"
+          }
+        },
+        "product_item_ACfRHp": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-tour-reading-lamp"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_KiRxUB",
+        "product_item_gRWCax",
+        "product_item_r8CGrw",
+        "product_item_mCqctm",
+        "product_item_QGXmPC",
+        "product_item_P9nDWB",
+        "product_item_8BR7M4",
+        "product_item_RWB97c",
+        "product_item_3epTmE",
+        "product_item_m8mCdC",
+        "product_item_dDmxp3",
+        "product_item_99yw3t",
+        "product_item_73dT39",
+        "product_item_tbjpxn",
+        "product_item_ACfRHp"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Ygct7m": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_3nQ8Jd": {
+          "type": "product_item",
+          "settings": {
+            "product": "chartreuse-bonnet-pendant-light"
+          }
+        },
+        "product_item_jQqbUq": {
+          "type": "product_item",
+          "settings": {
+            "product": "sepia-bell-pendant-light"
+          }
+        },
+        "product_item_T6jHU6": {
+          "type": "product_item",
+          "settings": {
+            "product": "crackle-pendant-light-large-antiqued-brass"
+          }
+        },
+        "product_item_hABrgd": {
+          "type": "product_item",
+          "settings": {
+            "product": "creamware-pendant-light-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_3nQ8Jd",
+        "product_item_jQqbUq",
+        "product_item_T6jHU6",
+        "product_item_hABrgd"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_PPngfA": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_zhLM9Q": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-narrow-pleat-large"
+          }
+        },
+        "product_item_baXDfW": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-narrow-pleat-small"
+          }
+        },
+        "product_item_Gkab6c": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-wide-pleat-large"
+          }
+        },
+        "product_item_EiL9h6": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-wide-pleat-small"
+          }
+        },
+        "product_item_iFix7V": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-plain-skullcap-large"
+          }
+        },
+        "product_item_iQMchH": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-plain-skullcap-small"
+          }
+        },
+        "product_item_LUDnBU": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-skullcap-large"
+          }
+        },
+        "product_item_GQfqDz": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-skullcap-small"
+          }
+        },
+        "product_item_HJ6Xhd": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-plain-beaker-large"
+          }
+        },
+        "product_item_tUqxtA": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-beaker-large"
+          }
+        },
+        "product_item_mTdeR3": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-plain-rice-bowl"
+          }
+        },
+        "product_item_VMJyyK": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-rice-bowl"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_zhLM9Q",
+        "product_item_baXDfW",
+        "product_item_Gkab6c",
+        "product_item_EiL9h6",
+        "product_item_iFix7V",
+        "product_item_iQMchH",
+        "product_item_LUDnBU",
+        "product_item_GQfqDz",
+        "product_item_HJ6Xhd",
+        "product_item_tUqxtA",
+        "product_item_mTdeR3",
+        "product_item_VMJyyK"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Fwd4bf": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_DQQMkD": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-plain-beaker-large-plugin"
+          }
+        },
+        "product_item_ARLqwK": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-creamware-plug-in-light"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_DQQMkD",
+        "product_item_ARLqwK"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_wjLQmD",
+    "banner",
+    "product-grid",
+    "custom_product_list_4WY4Ny",
+    "custom_product_list_HNdz7R",
+    "custom_product_list_Ygct7m",
+    "custom_product_list_PPngfA",
+    "custom_product_list_Fwd4bf"
+  ]
+}

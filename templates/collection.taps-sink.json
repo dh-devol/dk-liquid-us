@@ -1,1 +1,785 @@
-{"sections":{"metaobject_gallery_slider_DxVmgK":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 24px;}",".collection-hero__title {margin-bottom: 1em;}","@media screen and (min-width: 768px) {.collection-hero__description {max-width: 450px; }}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"custom_product_list_K3hTG4":{"type":"custom-product-list","blocks":{"product_item_bciLpW":{"type":"product_item","settings":{"product":"aged-brass-mayan-taps"}},"product_item_H4H3kx":{"type":"product_item","settings":{"product":"aged-brass-ionian-tap"}},"product_item_iizwpG":{"type":"product_item","settings":{"product":"aged-brass-pot-filler-tap"}},"product_item_NreeKf":{"type":"product_item","settings":{"product":"aged-brass-parthian-mini-instant-hot-tap"}},"product_item_THjarP":{"type":"product_item","settings":{"product":"aged-brass-filter-tap"}},"product_item_N9bYHT":{"type":"product_item","settings":{"product":"brass-basket-waste-strainer-overflow-kit-devol-cover"}}},"block_order":["product_item_bciLpW","product_item_H4H3kx","product_item_iizwpG","product_item_NreeKf","product_item_THjarP","product_item_N9bYHT"],"disabled":true,"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Aged Brass Taps","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_7efDd4":{"type":"custom-product-list","blocks":{"product_item_UL4DUn":{"type":"product_item","settings":{"product":"aged-brass-mayan-taps"}},"product_item_iQFwCQ":{"type":"product_item","settings":{"product":"aged-brass-ionian-tap"}}},"block_order":["product_item_UL4DUn","product_item_iQFwCQ"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Aged Brass Taps","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_FgFJkY":{"type":"custom-product-list","blocks":{"product_item_3yctrz":{"type":"product_item","settings":{"product":"aged-brass-parthian-mini-instant-hot-tap"}},"product_item_ycLPAa":{"type":"product_item","settings":{"product":"aged-brass-pot-filler-tap"}},"product_item_RJTknT":{"type":"product_item","settings":{"product":"aged-brass-filter-tap"}}},"block_order":["product_item_3yctrz","product_item_ycLPAa","product_item_RJTknT"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_rBpYpm":{"type":"custom-product-list","blocks":{"product_item_k3fdhn":{"type":"product_item","settings":{"product":"aged-brass-basin-pillar-taps"}},"product_item_QeeBiQ":{"type":"product_item","settings":{"product":"aged-brass-basin-mixer-tap"}}},"block_order":["product_item_k3fdhn","product_item_QeeBiQ"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Bathroom Taps","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_jGxgtg":{"type":"custom-product-list","blocks":{"product_item_xcQnnJ":{"type":"product_item","settings":{"product":"antique-silver-ionian-tap"}},"product_item_rYJJnF":{"type":"product_item","settings":{"product":"antique-silver-mayan-taps"}}},"block_order":["product_item_xcQnnJ","product_item_rYJJnF"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Antique Silver Taps","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_JFFcym":{"type":"custom-product-list","blocks":{"product_item_W86aM7":{"type":"product_item","settings":{"product":"chrome-mayan-taps"}},"product_item_F6byb9":{"type":"product_item","settings":{"product":"chrome-ionian-tap"}}},"block_order":["product_item_W86aM7","product_item_F6byb9"],"disabled":true,"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Chrome & Nickel Taps","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_k7XqJn":{"type":"custom-product-list","blocks":{"product_item_7cijxk":{"type":"product_item","settings":{"product":"chrome-mayan-taps"}},"product_item_imE4Ux":{"type":"product_item","settings":{"product":"chrome-ionian-tap"}},"product_item_Kg8CPt":{"type":"product_item","settings":{"product":"chrome-pot-filler-tap"}}},"block_order":["product_item_7cijxk","product_item_imE4Ux","product_item_Kg8CPt"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Chrome & Nickel Taps","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_jthNDT":{"type":"custom-product-list","blocks":{"product_item_T8yWHq":{"type":"product_item","settings":{"product":"chrome-pot-filler-tap"}},"product_item_nrhefj":{"type":"product_item","settings":{"product":"chrome-basket-waste-strainer-overflow-kit"}},"product_item_dgQEzB":{"type":"product_item","settings":{"product":"nickel-pot-filler-tap"}}},"block_order":["product_item_T8yWHq","product_item_nrhefj","product_item_dgQEzB"],"disabled":true,"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_tFVXHk":{"type":"custom-product-list","blocks":{"product_item_aqYtye":{"type":"product_item","settings":{"product":"nickel-mayan-taps"}},"product_item_iU7cba":{"type":"product_item","settings":{"product":"nickel-ionian-tap"}},"product_item_BAhNdn":{"type":"product_item","settings":{"product":"nickel-pot-filler-tap"}}},"block_order":["product_item_aqYtye","product_item_iU7cba","product_item_BAhNdn"],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_gQMwex":{"type":"custom-product-list","blocks":{"product_item_yf3rbD":{"type":"product_item","settings":{"product":"standard-single-fluted-belfast-sink"}},"product_item_ETePcJ":{"type":"product_item","settings":{"product":"large-single-fluted-belfast-sink"}},"product_item_eTpT8n":{"type":"product_item","settings":{"product":"extra-large-double-fluted-belfast-sink"}}},"block_order":["product_item_yf3rbD","product_item_ETePcJ","product_item_eTpT8n"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"deVOL Sinks","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_UeUhRg":{"type":"custom-product-list","blocks":{"product_item_NfF4mM":{"type":"product_item","settings":{"product":"tuscan-farmhouse-large-single-carrara-marble-sink"}},"product_item_YNwzbH":{"type":"product_item","settings":{"product":"tuscan-farmhouse-extra-large-single-fluted-arabescato-marble-sink"}}},"block_order":["product_item_NfF4mM","product_item_YNwzbH"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_EB6U4r":{"type":"custom-product-list","blocks":{"product_item_Dd4bci":{"type":"product_item","settings":{"product":"standard-single-aged-copper-sink"}},"product_item_FzFWNX":{"type":"product_item","settings":{"product":"standard-single-polished-brass-sink"}},"product_item_UnLMPr":{"type":"product_item","settings":{"product":"extra-large-single-polished-brass-sink"}}},"block_order":["product_item_Dd4bci","product_item_FzFWNX","product_item_UnLMPr"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_U3mCEi":{"type":"custom-product-list","blocks":{"product_item_JabMtX":{"type":"product_item","settings":{"product":"brass-basket-waste-strainer-overflow-kit-devol-cover"}},"product_item_mNgmHk":{"type":"product_item","settings":{"product":"chrome-basket-waste-strainer-overflow-kit"}}},"block_order":["product_item_JabMtX","product_item_mNgmHk"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Waste Strainer & Overflow Kit","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_qzYhf7":{"type":"custom-product-list","blocks":{"product_item_fz7q9j":{"type":"product_item","settings":{"product":"nickel-mayan-taps"}},"product_item_hRpP8R":{"type":"product_item","settings":{"product":"nickel-ionian-tap"}}},"block_order":["product_item_fz7q9j","product_item_hRpP8R"],"disabled":true,"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"settings":{"products_per_page":36,"columns_desktop":4,"color_scheme":"scheme-2","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":false,"filter_type":"drawer","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}}},"order":["metaobject_gallery_slider_DxVmgK","banner","custom_product_list_K3hTG4","custom_product_list_7efDd4","custom_product_list_FgFJkY","custom_product_list_rBpYpm","custom_product_list_jGxgtg","custom_product_list_JFFcym","custom_product_list_k7XqJn","custom_product_list_jthNDT","custom_product_list_tFVXHk","custom_product_list_gQMwex","custom_product_list_UeUhRg","custom_product_list_EB6U4r","custom_product_list_U3mCEi","custom_product_list_qzYhf7","product-grid"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_DxVmgK": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 24px;}",
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 450px; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "custom_product_list_K3hTG4": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_bciLpW": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-mayan-taps"
+          }
+        },
+        "product_item_H4H3kx": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-ionian-tap"
+          }
+        },
+        "product_item_iizwpG": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-pot-filler-tap"
+          }
+        },
+        "product_item_NreeKf": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-parthian-mini-instant-hot-tap"
+          }
+        },
+        "product_item_THjarP": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-filter-tap"
+          }
+        },
+        "product_item_N9bYHT": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-basket-waste-strainer-overflow-kit-devol-cover"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_bciLpW",
+        "product_item_H4H3kx",
+        "product_item_iizwpG",
+        "product_item_NreeKf",
+        "product_item_THjarP",
+        "product_item_N9bYHT"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Aged Brass Taps",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_7efDd4": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_UL4DUn": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-mayan-taps"
+          }
+        },
+        "product_item_iQFwCQ": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-ionian-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_UL4DUn",
+        "product_item_iQFwCQ"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Aged Brass Taps",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_FgFJkY": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_3yctrz": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-parthian-mini-instant-hot-tap"
+          }
+        },
+        "product_item_ycLPAa": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-pot-filler-tap"
+          }
+        },
+        "product_item_RJTknT": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-filter-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_3yctrz",
+        "product_item_ycLPAa",
+        "product_item_RJTknT"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_rBpYpm": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_k3fdhn": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-basin-pillar-taps"
+          }
+        },
+        "product_item_QeeBiQ": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-basin-mixer-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_k3fdhn",
+        "product_item_QeeBiQ"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Bathroom Taps",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_jGxgtg": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_xcQnnJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "antique-silver-ionian-tap"
+          }
+        },
+        "product_item_rYJJnF": {
+          "type": "product_item",
+          "settings": {
+            "product": "antique-silver-mayan-taps"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_xcQnnJ",
+        "product_item_rYJJnF"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Antique Silver Taps",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_JFFcym": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_W86aM7": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-mayan-taps"
+          }
+        },
+        "product_item_F6byb9": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-ionian-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_W86aM7",
+        "product_item_F6byb9"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Chrome & Nickel Taps",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_k7XqJn": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_7cijxk": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-mayan-taps"
+          }
+        },
+        "product_item_imE4Ux": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-ionian-tap"
+          }
+        },
+        "product_item_Kg8CPt": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-pot-filler-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_7cijxk",
+        "product_item_imE4Ux",
+        "product_item_Kg8CPt"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Chrome & Nickel Taps",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_jthNDT": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_T8yWHq": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-pot-filler-tap"
+          }
+        },
+        "product_item_nrhefj": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-basket-waste-strainer-overflow-kit"
+          }
+        },
+        "product_item_dgQEzB": {
+          "type": "product_item",
+          "settings": {
+            "product": "nickel-pot-filler-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_T8yWHq",
+        "product_item_nrhefj",
+        "product_item_dgQEzB"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_tFVXHk": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_aqYtye": {
+          "type": "product_item",
+          "settings": {
+            "product": "nickel-mayan-taps"
+          }
+        },
+        "product_item_iU7cba": {
+          "type": "product_item",
+          "settings": {
+            "product": "nickel-ionian-tap"
+          }
+        },
+        "product_item_BAhNdn": {
+          "type": "product_item",
+          "settings": {
+            "product": "nickel-pot-filler-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_aqYtye",
+        "product_item_iU7cba",
+        "product_item_BAhNdn"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_gQMwex": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_yf3rbD": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-fluted-belfast-sink"
+          }
+        },
+        "product_item_ETePcJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "large-single-fluted-belfast-sink"
+          }
+        },
+        "product_item_eTpT8n": {
+          "type": "product_item",
+          "settings": {
+            "product": "extra-large-double-fluted-belfast-sink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_yf3rbD",
+        "product_item_ETePcJ",
+        "product_item_eTpT8n"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "deVOL Sinks",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_UeUhRg": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_NfF4mM": {
+          "type": "product_item",
+          "settings": {
+            "product": "tuscan-farmhouse-large-single-carrara-marble-sink"
+          }
+        },
+        "product_item_YNwzbH": {
+          "type": "product_item",
+          "settings": {
+            "product": "tuscan-farmhouse-extra-large-single-fluted-arabescato-marble-sink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_NfF4mM",
+        "product_item_YNwzbH"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_EB6U4r": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_Dd4bci": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-aged-copper-sink"
+          }
+        },
+        "product_item_FzFWNX": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-polished-brass-sink"
+          }
+        },
+        "product_item_UnLMPr": {
+          "type": "product_item",
+          "settings": {
+            "product": "extra-large-single-polished-brass-sink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_Dd4bci",
+        "product_item_FzFWNX",
+        "product_item_UnLMPr"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_U3mCEi": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_JabMtX": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-basket-waste-strainer-overflow-kit-devol-cover"
+          }
+        },
+        "product_item_mNgmHk": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-basket-waste-strainer-overflow-kit"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_JabMtX",
+        "product_item_mNgmHk"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Waste Strainer & Overflow Kit",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_qzYhf7": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_fz7q9j": {
+          "type": "product_item",
+          "settings": {
+            "product": "nickel-mayan-taps"
+          }
+        },
+        "product_item_hRpP8R": {
+          "type": "product_item",
+          "settings": {
+            "product": "nickel-ionian-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_fz7q9j",
+        "product_item_hRpP8R"
+      ],
+      "disabled": true,
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_DxVmgK",
+    "banner",
+    "custom_product_list_K3hTG4",
+    "custom_product_list_7efDd4",
+    "custom_product_list_FgFJkY",
+    "custom_product_list_rBpYpm",
+    "custom_product_list_jGxgtg",
+    "custom_product_list_JFFcym",
+    "custom_product_list_k7XqJn",
+    "custom_product_list_jthNDT",
+    "custom_product_list_tFVXHk",
+    "custom_product_list_gQMwex",
+    "custom_product_list_UeUhRg",
+    "custom_product_list_EB6U4r",
+    "custom_product_list_U3mCEi",
+    "custom_product_list_qzYhf7",
+    "product-grid"
+  ]
+}

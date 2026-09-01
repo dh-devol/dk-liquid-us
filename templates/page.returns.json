@@ -1,1 +1,324 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"catalogue_title_with_richtext_rKVffT":{"type":"catalogue-title-with-richtext","name":"Page title & description","settings":{"show_title":true,"show_description":true,"show_main_description":true,"show_guide_price":false,"border_title":false,"heading_size":"hxxl","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"custom_multicolumns_c47MN8":{"type":"custom-multicolumns","blocks":{"column_hyjLAk":{"type":"column","settings":{"link":"shopify:\/\/pages\/ordering-online","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Ordering Online","linked_product":""}},"column_ycQCjc":{"type":"column","settings":{"link":"shopify:\/\/pages\/payments","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Payments","linked_product":""}},"column_AeTWca":{"type":"column","settings":{"link":"shopify:\/\/pages\/delivery","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Delivery","linked_product":""}},"column_YKft6p":{"type":"column","settings":{"link":"shopify:\/\/pages\/returns","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Returns","linked_product":""}},"column_flrSup":{"type":"column","settings":{"link":"shopify:\/\/pages\/flooring-support","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Flooring","linked_product":""}},"column_L3H9Ke":{"type":"column","settings":{"link":"shopify:\/\/pages\/help-faqs","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Help & FAQs","linked_product":""}}},"block_order":["column_hyjLAk","column_ycQCjc","column_AeTWca","column_YKft6p","column_flrSup","column_L3H9Ke"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":6,"column_alignment":"center","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":20,"sectionname":"support_tabs--wrapper shop-tabs"}},"custom_collapsible_content_jx9WzK":{"type":"custom-collapsible-content","blocks":{"collapsible_row_a3dnXg":{"type":"collapsible_row","settings":{"heading":"Are any items excluded from returns?","sub_heading":"","icon":"none","row_content":"<p>We cannot accept returns of bespoke items, samples (including paint samples) or taps that have been plumbed in.<\/p><p>Please be aware that if we do receive any excluded items you will not be refunded the original amount and you may be charged a second delivery fee if you wish to have them returned to you.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_7rFf6m":{"type":"collapsible_row","settings":{"heading":"Will I receive a refund for returned items?","sub_heading":"","icon":"none","row_content":"<p>If products are returned to us in the condition in which they were sent, we will issue a refund for the cost of the item, excluding any delivery fees and a 10% restocking fee.<br\/><\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_dGWzjk":{"type":"collapsible_row","settings":{"heading":"Are returns free?","sub_heading":"","icon":"none","row_content":"<p>All returns should be made to our UK workshop. We're not able to cover any return postage costs, or any loss or breakages that occur during the return process. We therefore recommend that returns are made using the original packaging with a tracked, insured and signed for service.<\/p><p>Please declare the shipment as a 'Return to Origin' to avoid any unnecessary customs charges. Any items declared otherwise will incur a charge and deVOL cannot be responsible for any outstanding import tariffs or duties. <\/p><p>Any items that reach the UK with outstanding charges will be held by customs for a period and ultimately sent back to you, which could mean you miss your 28 day return window.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_67URJU":{"type":"collapsible_row","settings":{"heading":"How long do I have to return an item?","sub_heading":"","icon":"none","row_content":"<p>You have 28 days from when you receive your items to make a return. Items returned to us past this date will not result in a refund and you may be charged a second delivery fee if you wish to have the items back.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_jfqzme":{"type":"collapsible_row","settings":{"heading":"How do I return an item?","sub_heading":"","icon":"none","row_content":"<p>A printed order summary and returns slip should be included with each delivery you receive.<\/p><p>Please complete the form and return any items to the address provided on the integrated label (please note this is not a pre-paid postage label).<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_J4H4yh":{"type":"collapsible_row","settings":{"heading":"What happens if my items arrive damaged or I receive the wrong item?","sub_heading":"","icon":"none","row_content":"<p>Please get in touch with <a href=\"mailto:websales@devolkitchens.co.uk\" target=\"_blank\">websales@devolkitchens.co.uk<\/a> within 14 days of your order being received, if you have an incorrect or damaged\/faulty item.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_Xh7T7e":{"type":"collapsible_row","settings":{"heading":"What is your returns address?","sub_heading":"","icon":"none","row_content":"<p>All returns should be made to our UK workshop:<\/p><p>deVOL Kitchens - Returns<\/p><p><br\/><br\/>Unit 14 Gelders Hall Road<\/p><p><br\/><br\/>Shepshed, Loughborough<\/p><p><br\/><br\/>Leicestershire, England, UK<\/p><p><br\/><br\/>LE12 9NH<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_iAcDif":{"type":"collapsible_row","settings":{"heading":"Will you notify me once you receive my returns?","sub_heading":"","icon":"none","row_content":"<p>You should receive email confirmation once your return has been processed and accepted. If you’re concerned that you haven’t heard from us then please don’t hesitate to get in touch with <a href=\"mailto:websales@devolkitchens.co.uk\">websales@devolkitchens.co.uk<\/a>.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_EjV4rf":{"type":"collapsible_row","settings":{"heading":"How long will it take to receive a refund?","sub_heading":"","icon":"none","row_content":"<p>Refunds are made to the card or account that made the original payment and should arrive within 10 working days of your return being accepted.<br\/><\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_rXjh7Y":{"type":"collapsible_row","disabled":true,"settings":{"heading":"How do I return an item from overseas?","sub_heading":"","icon":"none","row_content":"<p>If you are making a return from outside the UK, please declare the shipment as a 'Return to Origin' to avoid any unnecessary customs charges. Any items declared otherwise will incur a charge and deVOL cannot be responsible for any outstanding import tariffs or duties. <\/p><p>Any items that reach the UK with outstanding charges will be held by customs for a period and ultimately sent back to you, which could mean you miss your 28 day return window.<\/p>","url_title":"","link_url":"","page":""}}},"block_order":["collapsible_row_a3dnXg","collapsible_row_7rFf6m","collapsible_row_dGWzjk","collapsible_row_67URJU","collapsible_row_jfqzme","collapsible_row_J4H4yh","collapsible_row_Xh7T7e","collapsible_row_iAcDif","collapsible_row_EjV4rf","collapsible_row_rXjh7Y"],"settings":{"caption":"","heading":"Returns","heading_size":"hxxl","heading_alignment":"left","layout":"none","color_scheme":"scheme-2","container_color_scheme":"","open_first_collapsible_row":false,"hide_desktop":false,"image_ratio":"adapt","desktop_layout":"image_second","padding_top":0,"padding_bottom":0,"sectionname":"support_custom_collapsible shop-tab-content"}}},"order":["main","catalogue_title_with_richtext_rKVffT","custom_multicolumns_c47MN8","custom_collapsible_content_jx9WzK"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "catalogue_title_with_richtext_rKVffT": {
+      "type": "catalogue-title-with-richtext",
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "show_main_description": true,
+        "show_guide_price": false,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "custom_multicolumns_c47MN8": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_hyjLAk": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/ordering-online",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Ordering Online",
+            "linked_product": ""
+          }
+        },
+        "column_ycQCjc": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/payments",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Payments",
+            "linked_product": ""
+          }
+        },
+        "column_AeTWca": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/delivery",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Delivery",
+            "linked_product": ""
+          }
+        },
+        "column_YKft6p": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/returns",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Returns",
+            "linked_product": ""
+          }
+        },
+        "column_flrSup": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/flooring-support",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Flooring",
+            "linked_product": ""
+          }
+        },
+        "column_L3H9Ke": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/help-faqs",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Help & FAQs",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_hyjLAk",
+        "column_ycQCjc",
+        "column_AeTWca",
+        "column_YKft6p",
+        "column_flrSup",
+        "column_L3H9Ke"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 20,
+        "sectionname": "support_tabs--wrapper shop-tabs"
+      }
+    },
+    "custom_collapsible_content_jx9WzK": {
+      "type": "custom-collapsible-content",
+      "blocks": {
+        "collapsible_row_a3dnXg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are any items excluded from returns?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>We cannot accept returns of bespoke items, samples (including paint samples) or taps that have been plumbed in.</p><p>Please be aware that if we do receive any excluded items you will not be refunded the original amount and you may be charged a second delivery fee if you wish to have them returned to you.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_7rFf6m": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will I receive a refund for returned items?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>If products are returned to us in the condition in which they were sent, we will issue a refund for the cost of the item, excluding any delivery fees and a 10% restocking fee.<br/></p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_dGWzjk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are returns free?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>All returns should be made to our UK workshop. We're not able to cover any return postage costs, or any loss or breakages that occur during the return process. We therefore recommend that returns are made using the original packaging with a tracked, insured and signed for service.</p><p>Please declare the shipment as a 'Return to Origin' to avoid any unnecessary customs charges. Any items declared otherwise will incur a charge and deVOL cannot be responsible for any outstanding import tariffs or duties. </p><p>Any items that reach the UK with outstanding charges will be held by customs for a period and ultimately sent back to you, which could mean you miss your 28 day return window.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_67URJU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long do I have to return an item?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>You have 28 days from when you receive your items to make a return. Items returned to us past this date will not result in a refund and you may be charged a second delivery fee if you wish to have the items back.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_jfqzme": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I return an item?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>A printed order summary and returns slip should be included with each delivery you receive.</p><p>Please complete the form and return any items to the address provided on the integrated label (please note this is not a pre-paid postage label).</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_J4H4yh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What happens if my items arrive damaged or I receive the wrong item?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Please get in touch with <a href=\"mailto:websales@devolkitchens.co.uk\" target=\"_blank\">websales@devolkitchens.co.uk</a> within 14 days of your order being received, if you have an incorrect or damaged/faulty item.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_Xh7T7e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What is your returns address?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>All returns should be made to our UK workshop:</p><p>deVOL Kitchens - Returns</p><p><br/><br/>Unit 14 Gelders Hall Road</p><p><br/><br/>Shepshed, Loughborough</p><p><br/><br/>Leicestershire, England, UK</p><p><br/><br/>LE12 9NH</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_iAcDif": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will you notify me once you receive my returns?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>You should receive email confirmation once your return has been processed and accepted. If you’re concerned that you haven’t heard from us then please don’t hesitate to get in touch with <a href=\"mailto:websales@devolkitchens.co.uk\">websales@devolkitchens.co.uk</a>.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_EjV4rf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long will it take to receive a refund?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Refunds are made to the card or account that made the original payment and should arrive within 10 working days of your return being accepted.<br/></p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_rXjh7Y": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "How do I return an item from overseas?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>If you are making a return from outside the UK, please declare the shipment as a 'Return to Origin' to avoid any unnecessary customs charges. Any items declared otherwise will incur a charge and deVOL cannot be responsible for any outstanding import tariffs or duties. </p><p>Any items that reach the UK with outstanding charges will be held by customs for a period and ultimately sent back to you, which could mean you miss your 28 day return window.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_a3dnXg",
+        "collapsible_row_7rFf6m",
+        "collapsible_row_dGWzjk",
+        "collapsible_row_67URJU",
+        "collapsible_row_jfqzme",
+        "collapsible_row_J4H4yh",
+        "collapsible_row_Xh7T7e",
+        "collapsible_row_iAcDif",
+        "collapsible_row_EjV4rf",
+        "collapsible_row_rXjh7Y"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Returns",
+        "heading_size": "hxxl",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-2",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "hide_desktop": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "support_custom_collapsible shop-tab-content"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "catalogue_title_with_richtext_rKVffT",
+    "custom_multicolumns_c47MN8",
+    "custom_collapsible_content_jx9WzK"
+  ]
+}

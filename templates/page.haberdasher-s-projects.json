@@ -252,6 +252,7 @@
         "title": "",
         "heading_size": "hxxl",
         "subtitle": "View more Haberdasher's projects",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -333,6 +334,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -359,14 +361,14 @@
         "column_wLJTzB": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-bert-may-kitchen",
+            "dynamic_costs": "bert-may-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
         "column_7UcDDy": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "a-haberdashers-hideaway-in-skane-sweden",
+            "dynamic_costs": "haberdashers-hideaway-in-skane-sweden",
             "custom_text_hover": "View this project in detail"
           }
         }
@@ -382,6 +384,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -408,7 +411,7 @@
         "column_9NftiD": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-barleycroft-kitchen",
+            "dynamic_costs": "barleycroft-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
@@ -439,6 +442,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -486,6 +490,7 @@
         "title": "Handsomely English",
         "heading_size": "hxxl",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 2,
@@ -525,6 +530,7 @@
         "title": "",
         "heading_size": "hxxl",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 1,
@@ -568,6 +574,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/Haberdashers-Editorial-04_1.jpg",
             "custom_text_hover": "",
@@ -583,6 +590,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/Haberdashers-Editorial-04_2.jpg",
             "custom_text_hover": "",
@@ -598,6 +606,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/Haberdashers-Editorial-02_1.jpg",
             "custom_text_hover": "",
@@ -613,6 +622,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/Haberdashers-Editorial-02_2.jpg",
             "custom_text_hover": "",

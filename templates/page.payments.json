@@ -1,1 +1,268 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"catalogue_title_with_richtext_9rH6cf":{"type":"catalogue-title-with-richtext","name":"Page title & description","settings":{"show_title":true,"show_description":true,"show_main_description":true,"show_guide_price":false,"border_title":false,"heading_size":"hxxl","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"custom_multicolumns_c47MN8":{"type":"custom-multicolumns","blocks":{"column_hyjLAk":{"type":"column","settings":{"link":"shopify:\/\/pages\/ordering-online","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Ordering Online","linked_product":""}},"column_ycQCjc":{"type":"column","settings":{"link":"shopify:\/\/pages\/payments","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Payments","linked_product":""}},"column_AeTWca":{"type":"column","settings":{"link":"shopify:\/\/pages\/delivery","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Delivery","linked_product":""}},"column_YKft6p":{"type":"column","settings":{"link":"shopify:\/\/pages\/returns","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Returns","linked_product":""}},"column_flrSup":{"type":"column","settings":{"link":"shopify:\/\/pages\/flooring-support","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Flooring","linked_product":""}},"column_L3H9Ke":{"type":"column","settings":{"link":"shopify:\/\/pages\/help-faqs","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Help & FAQs","linked_product":""}}},"block_order":["column_hyjLAk","column_ycQCjc","column_AeTWca","column_YKft6p","column_flrSup","column_L3H9Ke"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":6,"column_alignment":"center","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":20,"sectionname":"support_tabs--wrapper shop-tabs"}},"custom_collapsible_content_jx9WzK":{"type":"custom-collapsible-content","blocks":{"collapsible_row_YGk6zW":{"type":"collapsible_row","settings":{"heading":"What currency will I pay in?","sub_heading":"","icon":"none","row_content":"<p>All payments are made in USD.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_xpAcp3":{"type":"collapsible_row","settings":{"heading":"What payment methods do you accept?","sub_heading":"","icon":"none","row_content":"<p>You can make secure online payments with the following credit and debit cards: <\/p><p>Mastercard, Visa and Visa Debit. We can accept American Express up to a limit of $3,000 for purchases through our online shop only.<\/p><p>You can also pay via Apple or Google Pay.<\/p><p>Payment is usually taken at the time the order is placed.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_rXjh7Y":{"type":"collapsible_row","settings":{"heading":"Why has my payment been declined?","sub_heading":"","icon":"none","row_content":"<p>Please ensure that your card details are correct before contacting our websales team.<\/p><p>You may need to contact your bank if your card continues to be declined.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_dGWzjk":{"type":"collapsible_row","disabled":true,"settings":{"heading":"Do your prices include VAT?","sub_heading":"","icon":"none","row_content":"<p>All prices include VAT for UK customers.<\/p><p>For customers outside the UK, our prices include a 20% fee which covers all applicable taxes and duty.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_a3dnXg":{"type":"collapsible_row","disabled":true,"settings":{"heading":"What is your VAT number?","sub_heading":"","icon":"none","row_content":"<p>Our VAT registration number is 939 7380 73.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_J4H4yh":{"type":"collapsible_row","disabled":true,"settings":{"heading":"Can I get a VAT invoice?","sub_heading":"","icon":"none","row_content":"<p>We can certainly provide you with a VAT invoice upon request. Please email <a href=\"mailto:websales@devolkitchens.co.uk\">websales@devolkitchens.co.uk<\/a> with your name and order number and we'll be happy to help.<\/p>","url_title":"","link_url":"","page":""}}},"block_order":["collapsible_row_YGk6zW","collapsible_row_xpAcp3","collapsible_row_rXjh7Y","collapsible_row_dGWzjk","collapsible_row_a3dnXg","collapsible_row_J4H4yh"],"settings":{"caption":"","heading":"Payments","heading_size":"hxxl","heading_alignment":"left","layout":"none","color_scheme":"scheme-2","container_color_scheme":"","open_first_collapsible_row":false,"hide_desktop":false,"image_ratio":"adapt","desktop_layout":"image_second","padding_top":0,"padding_bottom":0,"sectionname":"support_custom_collapsible shop-tab-content"}}},"order":["main","catalogue_title_with_richtext_9rH6cf","custom_multicolumns_c47MN8","custom_collapsible_content_jx9WzK"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "catalogue_title_with_richtext_9rH6cf": {
+      "type": "catalogue-title-with-richtext",
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "show_main_description": true,
+        "show_guide_price": false,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "custom_multicolumns_c47MN8": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_hyjLAk": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/ordering-online",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Ordering Online",
+            "linked_product": ""
+          }
+        },
+        "column_ycQCjc": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/payments",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Payments",
+            "linked_product": ""
+          }
+        },
+        "column_AeTWca": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/delivery",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Delivery",
+            "linked_product": ""
+          }
+        },
+        "column_YKft6p": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/returns",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Returns",
+            "linked_product": ""
+          }
+        },
+        "column_flrSup": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/flooring-support",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Flooring",
+            "linked_product": ""
+          }
+        },
+        "column_L3H9Ke": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/help-faqs",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Help & FAQs",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_hyjLAk",
+        "column_ycQCjc",
+        "column_AeTWca",
+        "column_YKft6p",
+        "column_flrSup",
+        "column_L3H9Ke"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 20,
+        "sectionname": "support_tabs--wrapper shop-tabs"
+      }
+    },
+    "custom_collapsible_content_jx9WzK": {
+      "type": "custom-collapsible-content",
+      "blocks": {
+        "collapsible_row_YGk6zW": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What currency will I pay in?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>All payments are made in USD.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_xpAcp3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What payment methods do you accept?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>You can make secure online payments with the following credit and debit cards: </p><p>Mastercard, Visa and Visa Debit. We can accept American Express up to a limit of $3,000 for purchases through our online shop only.</p><p>You can also pay via Apple or Google Pay.</p><p>Payment is usually taken at the time the order is placed.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_rXjh7Y": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why has my payment been declined?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Please ensure that your card details are correct before contacting our websales team.</p><p>You may need to contact your bank if your card continues to be declined.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_dGWzjk": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "Do your prices include VAT?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>All prices include VAT for UK customers.</p><p>For customers outside the UK, our prices include a 20% fee which covers all applicable taxes and duty.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_a3dnXg": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "What is your VAT number?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Our VAT registration number is 939 7380 73.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_J4H4yh": {
+          "type": "collapsible_row",
+          "disabled": true,
+          "settings": {
+            "heading": "Can I get a VAT invoice?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>We can certainly provide you with a VAT invoice upon request. Please email <a href=\"mailto:websales@devolkitchens.co.uk\">websales@devolkitchens.co.uk</a> with your name and order number and we'll be happy to help.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_YGk6zW",
+        "collapsible_row_xpAcp3",
+        "collapsible_row_rXjh7Y",
+        "collapsible_row_dGWzjk",
+        "collapsible_row_a3dnXg",
+        "collapsible_row_J4H4yh"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Payments",
+        "heading_size": "hxxl",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-2",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "hide_desktop": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "support_custom_collapsible shop-tab-content"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "catalogue_title_with_richtext_9rH6cf",
+    "custom_multicolumns_c47MN8",
+    "custom_collapsible_content_jx9WzK"
+  ]
+}

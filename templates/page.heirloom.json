@@ -1,1 +1,535 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"metaobject_gallery_slider_cdVb7a":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"medium","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"catalogue_title_with_richtext_jTmYGV":{"type":"catalogue-title-with-richtext","name":"Page information","settings":{"show_title":true,"show_description":true,"show_main_description":false,"show_guide_price":false,"border_title":false,"heading_size":"hxxl","desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","padding_top":0,"padding_bottom":0,"padding_left":0,"padding_right":0}},"custom_product_list_qn8ryM":{"type":"custom-product-list","blocks":{"product_item_9fbTHd":{"type":"product_item","settings":{"product":"the-task-light"}},"product_item_qBM4Wi":{"type":"product_item","settings":{"product":"the-heirloom-gaselier-light"}},"product_item_VEQFU9":{"type":"product_item","settings":{"product":"heirloom-wall-light-creamware-shade"}}},"block_order":["product_item_9fbTHd","product_item_qBM4Wi","product_item_VEQFU9"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"shopify:\/\/collections\/bathrooms","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_c3XW4f":{"type":"custom-product-list","blocks":{"product_item_U7Rc3f":{"type":"product_item","settings":{"product":"aged-brass-cafe-curtain-rail-3000-4-brackets-30-clips"}},"product_item_CyJTA3":{"type":"product_item","settings":{"product":"pot-hanger"}}},"block_order":["product_item_U7Rc3f","product_item_CyJTA3"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_MdmRMh":{"type":"custom-product-list","blocks":{"product_item_8Yh7GQ":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-aged-brass-large"}},"product_item_AJ3cRe":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-heirloom-brass-small"}},"product_item_CV38w6":{"type":"product_item","settings":{"product":"scullery-shelf-bracket-cast-iron-large"}}},"block_order":["product_item_8Yh7GQ","product_item_AJ3cRe","product_item_CV38w6"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"shopify:\/\/collections\/bathrooms","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_DNiLKw":{"type":"custom-product-list","blocks":{"product_item_GxEERT":{"type":"product_item","settings":{"product":"devol-1000-single-polished-brass-sink"}},"product_item_Ua6icK":{"type":"product_item","settings":{"product":"bentwood-cafe-chair"}}},"block_order":["product_item_GxEERT","product_item_Ua6icK"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_Ywnr4J":{"type":"custom-product-list","blocks":{"product_item_UTqdVJ":{"type":"product_item","settings":{"product":"grand-heirloom-platters-sea-green"}},"product_item_XPMwRE":{"type":"product_item","settings":{"product":"oval-heirloom-platters-indigo-blue"}},"product_item_J8p88C":{"type":"product_item","settings":{"product":"round-heirloom-platters-antique-white"}}},"block_order":["product_item_UTqdVJ","product_item_XPMwRE","product_item_J8p88C"],"name":"Custom product list","settings":{"title":"Heirloom Platters","heading_size":"hxl","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":true,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_AYBii8":{"type":"custom-product-list","blocks":{"product_item_yMNDdm":{"type":"product_item","settings":{"product":"country-house-cup-handle"}},"product_item_cNqwTg":{"type":"product_item","settings":{"product":"the-brass-ventilation-grille"}},"product_item_UMXrwN":{"type":"product_item","settings":{"product":"the-rack-pinion-catch"}},"product_item_99GEMd":{"type":"product_item","settings":{"product":"button-knob-heirloom-brass"}},"product_item_BUtwXj":{"type":"product_item","settings":{"product":"butlers-ring-pull-heirloom-brass"}},"product_item_4W78yc":{"type":"product_item","settings":{"product":"butlers-knob"}},"product_item_dwxfed":{"type":"product_item","settings":{"product":"classic-handle-aged-brass"}},"product_item_gdaLE9":{"type":"product_item","settings":{"product":"boho-handle-aged-brass"}},"product_item_YcdLw9":{"type":"product_item","settings":{"product":"pull-handle-aged-brass-extra-large"}}},"block_order":["product_item_yMNDdm","product_item_cNqwTg","product_item_UMXrwN","product_item_99GEMd","product_item_BUtwXj","product_item_4W78yc","product_item_dwxfed","product_item_gdaLE9","product_item_YcdLw9"],"name":"Custom product list","settings":{"title":"","heading_size":"h0","subtitle":"Heirloom Brass Cupboard Fittings","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"View All >","button_link":"shopify:\/\/collections\/cupboard-hardware","show_top_border":true,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_YNjQat":{"type":"custom-product-list","blocks":{"product_item_a9mbLn":{"type":"product_item","settings":{"product":"classic-knob-heirloom-brass-large"}},"product_item_AxXBzC":{"type":"product_item","settings":{"product":"oval-knob-heirloom-brass-large"}}},"block_order":["product_item_a9mbLn","product_item_AxXBzC"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_7VX4F3":{"type":"custom-product-list","blocks":{"product_item_amagxA":{"type":"product_item","settings":{"product":"heirloom-brass-oval-toggle-switch-petite-1-gang"}},"product_item_8TLqyB":{"type":"product_item","settings":{"product":"heirloom-brass-oval-dimmer-switch-petite-1-gang"}}},"block_order":["product_item_amagxA","product_item_8TLqyB"],"name":"Custom product list","settings":{"title":"","heading_size":"h0","subtitle":"Heirloom Brass Switches & Sockets","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"View All >","button_link":"shopify:\/\/collections\/switches-sockets-heirloom-brass","show_top_border":true,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_kWqfTF":{"type":"custom-product-list","blocks":{"product_item_G4ABQV":{"type":"product_item","settings":{"product":"heirloom-brass-classic-dimmer-switch-1-gang"}},"product_item_k64Krk":{"type":"product_item","settings":{"product":"heirloom-brass-classic-13a-plug-socket-single"}},"product_item_GeKkyM":{"type":"product_item","settings":{"product":"heirloom-brass-classic-cooker-switch-32a"}}},"block_order":["product_item_G4ABQV","product_item_k64Krk","product_item_GeKkyM"],"name":"Custom product list","settings":{"title":"","heading_size":"h0","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["main","metaobject_gallery_slider_cdVb7a","catalogue_title_with_richtext_jTmYGV","custom_product_list_qn8ryM","custom_product_list_c3XW4f","custom_product_list_MdmRMh","custom_product_list_DNiLKw","custom_product_list_Ywnr4J","custom_product_list_AYBii8","custom_product_list_YNjQat","custom_product_list_7VX4F3","custom_product_list_kWqfTF"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "metaobject_gallery_slider_cdVb7a": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "catalogue_title_with_richtext_jTmYGV": {
+      "type": "catalogue-title-with-richtext",
+      "name": "Page information",
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "show_main_description": false,
+        "show_guide_price": false,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "custom_product_list_qn8ryM": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_9fbTHd": {
+          "type": "product_item",
+          "settings": {
+            "product": "the-task-light"
+          }
+        },
+        "product_item_qBM4Wi": {
+          "type": "product_item",
+          "settings": {
+            "product": "the-heirloom-gaselier-light"
+          }
+        },
+        "product_item_VEQFU9": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-creamware-shade"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_9fbTHd",
+        "product_item_qBM4Wi",
+        "product_item_VEQFU9"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/bathrooms",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_c3XW4f": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_U7Rc3f": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-cafe-curtain-rail-3000-4-brackets-30-clips"
+          }
+        },
+        "product_item_CyJTA3": {
+          "type": "product_item",
+          "settings": {
+            "product": "pot-hanger"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_U7Rc3f",
+        "product_item_CyJTA3"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_MdmRMh": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_8Yh7GQ": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-aged-brass-large"
+          }
+        },
+        "product_item_AJ3cRe": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-heirloom-brass-small"
+          }
+        },
+        "product_item_CV38w6": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-cast-iron-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_8Yh7GQ",
+        "product_item_AJ3cRe",
+        "product_item_CV38w6"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/bathrooms",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_DNiLKw": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_GxEERT": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-1000-single-polished-brass-sink"
+          }
+        },
+        "product_item_Ua6icK": {
+          "type": "product_item",
+          "settings": {
+            "product": "bentwood-cafe-chair"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_GxEERT",
+        "product_item_Ua6icK"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Ywnr4J": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_UTqdVJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-heirloom-platters-sea-green"
+          }
+        },
+        "product_item_XPMwRE": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-heirloom-platters-indigo-blue"
+          }
+        },
+        "product_item_J8p88C": {
+          "type": "product_item",
+          "settings": {
+            "product": "round-heirloom-platters-antique-white"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_UTqdVJ",
+        "product_item_XPMwRE",
+        "product_item_J8p88C"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "Heirloom Platters",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_AYBii8": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_yMNDdm": {
+          "type": "product_item",
+          "settings": {
+            "product": "country-house-cup-handle"
+          }
+        },
+        "product_item_cNqwTg": {
+          "type": "product_item",
+          "settings": {
+            "product": "the-brass-ventilation-grille"
+          }
+        },
+        "product_item_UMXrwN": {
+          "type": "product_item",
+          "settings": {
+            "product": "the-rack-pinion-catch"
+          }
+        },
+        "product_item_99GEMd": {
+          "type": "product_item",
+          "settings": {
+            "product": "button-knob-heirloom-brass"
+          }
+        },
+        "product_item_BUtwXj": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-ring-pull-heirloom-brass"
+          }
+        },
+        "product_item_4W78yc": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-knob"
+          }
+        },
+        "product_item_dwxfed": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-handle-aged-brass"
+          }
+        },
+        "product_item_gdaLE9": {
+          "type": "product_item",
+          "settings": {
+            "product": "boho-handle-aged-brass"
+          }
+        },
+        "product_item_YcdLw9": {
+          "type": "product_item",
+          "settings": {
+            "product": "pull-handle-aged-brass-extra-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_yMNDdm",
+        "product_item_cNqwTg",
+        "product_item_UMXrwN",
+        "product_item_99GEMd",
+        "product_item_BUtwXj",
+        "product_item_4W78yc",
+        "product_item_dwxfed",
+        "product_item_gdaLE9",
+        "product_item_YcdLw9"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "subtitle": "Heirloom Brass Cupboard Fittings",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "View All >",
+        "button_link": "shopify://collections/cupboard-hardware",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_YNjQat": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_a9mbLn": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-knob-heirloom-brass-large"
+          }
+        },
+        "product_item_AxXBzC": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-knob-heirloom-brass-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_a9mbLn",
+        "product_item_AxXBzC"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_7VX4F3": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_amagxA": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-brass-oval-toggle-switch-petite-1-gang"
+          }
+        },
+        "product_item_8TLqyB": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-brass-oval-dimmer-switch-petite-1-gang"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_amagxA",
+        "product_item_8TLqyB"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "subtitle": "Heirloom Brass Switches & Sockets",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View All >",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_kWqfTF": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_G4ABQV": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-brass-classic-dimmer-switch-1-gang"
+          }
+        },
+        "product_item_k64Krk": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-brass-classic-13a-plug-socket-single"
+          }
+        },
+        "product_item_GeKkyM": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-brass-classic-cooker-switch-32a"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_G4ABQV",
+        "product_item_k64Krk",
+        "product_item_GeKkyM"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "metaobject_gallery_slider_cdVb7a",
+    "catalogue_title_with_richtext_jTmYGV",
+    "custom_product_list_qn8ryM",
+    "custom_product_list_c3XW4f",
+    "custom_product_list_MdmRMh",
+    "custom_product_list_DNiLKw",
+    "custom_product_list_Ywnr4J",
+    "custom_product_list_AYBii8",
+    "custom_product_list_YNjQat",
+    "custom_product_list_7VX4F3",
+    "custom_product_list_kWqfTF"
+  ]
+}

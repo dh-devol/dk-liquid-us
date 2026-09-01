@@ -37,7 +37,7 @@
           "settings": {
             "limit": 2,
             "bundle_product": "set-of-2-medium-scented-candles",
-            "fast_bundle_id": "509552",
+            "fast_bundle_id": "64528046",
             "bundle_products": [
               "scented-candle-amber-tonka-bean-medium",
               "scented-candle-black-oud-medium",
@@ -113,6 +113,7 @@
         "enable_sticky_info": false,
         "color_scheme": "scheme-2",
         "not_for_sale_text": "<p>Please get in contact by calling 01509 261000 or send an email to <a href=\"mailto:enquiries@devolkitchens.co.uk\">enquiries@devolkitchens.co.uk</a> if you are interested in placing an order.</p>",
+        "out_of_stock_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order for delivery outside of the US.</p>",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -211,7 +212,7 @@
         "heading": "Build your bundle",
         "subheading": "Pick any 4 items from the options below.",
         "limit": 4,
-        "bundle_product": "set-of-4-small-devol-scented-candles",
+        "bundle_product": "set-of-4-small-scented-candles",
         "fast_bundle_id": "64116422",
         "redirect_to_cart": false,
         "button_label": "Add bundle to cart"
@@ -245,8 +246,8 @@
         "padding_bottom": 0,
         "target_all_products": true,
         "columns": 3,
-        "product_1": "set-of-4-small-devol-scented-candles",
-        "product_2": "set-of-2-medium-devol-scented-candles",
+        "product_1": "set-of-4-small-scented-candles",
+        "product_2": "set-of-2-medium-scented-candles",
         "product_3": "scented-candle-amber-tonka-bean-large",
         "product_4": "",
         "product_5": "",

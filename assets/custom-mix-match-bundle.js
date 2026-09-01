@@ -28,7 +28,7 @@ window.initMixMatchBundle = function(root) {
     const errElText = errEl.querySelector('.added-message');
     const choiceEls = Array.from(root.querySelectorAll('.mm-choice'));
     const choiceStyling = root.querySelector('[data-styling]');
-    const accordianBtn = root.querySelector('.dropdown-accordion');
+    const accordionBtn = root.querySelector('.dropdown-accordion');
     const selectDiv = root.querySelector('.mm-grid');
     const qtyWrapper = root.querySelector('.quantity__input');
 
@@ -37,7 +37,6 @@ window.initMixMatchBundle = function(root) {
         const parts = str.split('-');
         return parts[parts.length - 1].trim();
     };
-
 
     // Populate dropdowns
     function renderOptions(select) {
@@ -115,21 +114,21 @@ window.initMixMatchBundle = function(root) {
     }
 
     function collectAddons() {
-    const vid = Number(addonId.value || 0);
+        const vid = Number(addonId.value || 0);
 
-    if (!vid) return [];
+        if (!vid) return [];
 
-    return [{
-        variant_id: vid,
-        title: addonTitle.value,
-        qty: 1,
-        price: Number(addonPrice.value),
-    }];
+        return [{
+            variant_id: vid,
+            title: addonTitle.value,
+            qty: 1,
+            price: Number(addonPrice.value),
+        }];
     }
 
-    // dropdown accordian logic used on some bundles - check template for
-    function accordianAnimation () {
-        accordianBtn.toggleAttribute("open");
+    // dropdown accordion logic used on some bundles - check template for
+    function accordionAnimation () {
+        accordionBtn.toggleAttribute("open");
         if (selectDiv.style.display === "block") {
             selectDiv.style.display = "none";
             selectDiv.setAttribute("aria-expanded", "false");
@@ -138,8 +137,8 @@ window.initMixMatchBundle = function(root) {
             selectDiv.setAttribute("aria-expanded", "true");
         }
     }
-    if (accordianBtn) {
-        accordianBtn.addEventListener("click", accordianAnimation);
+    if (accordionBtn) {
+        accordionBtn.addEventListener("click", accordionAnimation);
     }
 
     function updatePrice() {
@@ -188,6 +187,15 @@ window.initMixMatchBundle = function(root) {
         }
 
         return groupId;
+    }
+
+    function setBtnLoading(on) {
+        if (!addBtn) return;
+        addBtn.classList.toggle('loading', on);
+        addBtn.setAttribute('aria-busy', on ? 'true' : 'false');
+        addBtn.disabled = on;               // re-enabled on completion (selection still meets LIMIT)
+        const sp = addBtn.querySelector('.loading__spinner');
+        if (sp) sp.classList.toggle('hidden', !on);
     }
 
     async function addToCart() {
@@ -291,11 +299,11 @@ window.initMixMatchBundle = function(root) {
             // (once as properties, once as the nested children).
 
             items.push(
-            {
-                id: bundleVariantId,
-                quantity,
-                properties: props
-            }
+                {
+                    id: bundleVariantId,
+                    quantity,
+                    properties: props
+                }
             );
         } else {
             console.error("Assign a bundlePriceType on the product");
@@ -328,6 +336,7 @@ window.initMixMatchBundle = function(root) {
             });
         }
 
+        setBtnLoading(true);
         try {
             const res = await fetch('/cart/add.js', {
                 method: 'POST',
@@ -373,6 +382,8 @@ window.initMixMatchBundle = function(root) {
 
         } catch (e) {
             showError(e.message || 'Sorry, something went wrong adding the bundle.');
+        } finally {
+            setBtnLoading(false);
         }
     }
 
@@ -391,6 +402,8 @@ window.initMixMatchBundle = function(root) {
         const esc = s => String(s).replace(/[&<>"']/g, m => (
             {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]
         ));
+
+        const suffix = msg.textContent.match(/has been added.*$/)?.[0] || 'has been added.';
 
         msg.innerHTML = `${esc(title)} has been added`;
     }

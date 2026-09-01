@@ -127,6 +127,7 @@
         "enable_sticky_info": false,
         "color_scheme": "scheme-2",
         "not_for_sale_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com \">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order.</p>",
+        "out_of_stock_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order for delivery outside of the US.</p>",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -166,6 +167,9 @@
     },
     "related_yUaDrJ": {
       "type": "related",
+      "custom_css": [
+        ".product-listing-additional-information {max-width: 95%;}"
+      ],
       "name": "Related Products",
       "settings": {
         "color_scheme": "",

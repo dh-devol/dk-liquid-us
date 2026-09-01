@@ -193,18 +193,6 @@
           "settings": {
             "product": "porcelain-pendant-light-chattered-beaker-large"
           }
-        },
-        "product_item_HRjEdb": {
-          "type": "product_item",
-          "settings": {
-            "product": "porcelain-pendant-light-plain-beaker-small"
-          }
-        },
-        "product_item_xmCqCA": {
-          "type": "product_item",
-          "settings": {
-            "product": "porcelain-pendant-light-chattered-beaker-small"
-          }
         }
       },
       "block_order": [
@@ -219,9 +207,7 @@
         "product_item_GfyJHN",
         "product_item_HXkmWj",
         "product_item_LPd8jn",
-        "product_item_zaexiT",
-        "product_item_HRjEdb",
-        "product_item_xmCqCA"
+        "product_item_zaexiT"
       ],
       "custom_css": [
         "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
@@ -231,9 +217,10 @@
         "title": "",
         "heading_size": "hxl",
         "subtitle": "",
+        "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "columns_desktop": 4,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
@@ -297,6 +284,7 @@
         "product_item_bJWfRC",
         "product_item_8784At"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
       ],
@@ -305,9 +293,10 @@
         "title": "",
         "heading_size": "hxl",
         "subtitle": "More Pendant Lights",
+        "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",

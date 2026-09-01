@@ -1,1 +1,411 @@
-{"sections":{"metaobject_gallery_slider_8FFyRT":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 24px;}",".collection-hero__title {margin-bottom: 1em;}","@media screen and (min-width: 768px) {.collection-hero__description {max-width: 550px; }}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"custom_multicolumns_aTKq4M":{"type":"custom-multicolumns","blocks":{"column_xd4gWw":{"type":"column","settings":{"link":"shopify:\/\/collections\/devol-switches","anchor":"#us-switch-anchor","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Switches","linked_product":""}},"column_DHcGGx":{"type":"column","settings":{"link":"shopify:\/\/collections\/devol-outlets","anchor":"#us-switch-anchor","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Outlets","linked_product":""}},"column_3GHjtV":{"type":"column","settings":{"link":"shopify:\/\/collections\/devol-plates","anchor":"#us-switch-anchor","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Plates","linked_product":""}}},"block_order":["column_xd4gWw","column_DHcGGx","column_3GHjtV"],"custom_css":[],"name":"Custom multicolumn","settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"center","background_style":"none","button_label":"Button label","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"3","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":"switches-menu"}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"settings":{"products_per_page":36,"columns_desktop":4,"color_scheme":"scheme-2","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":false,"filter_type":"drawer","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"custom_product_list_Jn7hxi":{"type":"custom-product-list","blocks":{"product_item_dGHeR3":{"type":"product_item","settings":{"product":"devol-heirloom-brass-toggle-switch-plate-1-gang"}},"product_item_mUyrNd":{"type":"product_item","settings":{"product":"devol-heirloom-brass-toggle-switch-plate-2-gang"}},"product_item_4TmHTe":{"type":"product_item","settings":{"product":"devol-heirloom-brass-toggle-switch-plate-3-gang"}},"product_item_BM3X3B":{"type":"product_item","settings":{"product":"devol-heirloom-brass-toggle-switch-plate-4-gang"}},"product_item_wJN9d3":{"type":"product_item","settings":{"product":"devol-heirloom-brass-decora-plate-1-gang"}},"product_item_BXhLna":{"type":"product_item","settings":{"product":"devol-heirloom-brass-decora-plate-2-gang"}},"product_item_LYEVFe":{"type":"product_item","settings":{"product":"devol-heirloom-brass-decora-plate-3-gang"}},"product_item_HEMANN":{"type":"product_item","settings":{"product":"devol-heirloom-brass-decora-plate-4-gang"}}},"block_order":["product_item_dGHeR3","product_item_mUyrNd","product_item_4TmHTe","product_item_BM3X3B","product_item_wJN9d3","product_item_BXhLna","product_item_LYEVFe","product_item_HEMANN"],"custom_css":["@media screen and (max-width: 590px) {.custom-product-list {padding-bottom: 44px; }}"],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"Heirloom Brass","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":true,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_4Q6fRy":{"type":"custom-product-list","blocks":{"product_item_ayGJVj":{"type":"product_item","settings":{"product":"devol-aged-brass-toggle-switch-plate-1-gang"}},"product_item_HTxMUN":{"type":"product_item","settings":{"product":"devol-aged-brass-toggle-switch-plate-2-gang"}},"product_item_fMN4zT":{"type":"product_item","settings":{"product":"devol-aged-brass-toggle-switch-plate-3-gang"}},"product_item_hiG7Ym":{"type":"product_item","settings":{"product":"devol-aged-brass-toggle-switch-plate-4-gang"}},"product_item_d7L6Ka":{"type":"product_item","settings":{"product":"devol-aged-brass-decora-plate-1-gang"}},"product_item_7JnarQ":{"type":"product_item","settings":{"product":"devol-aged-brass-decora-plate-2-gang"}},"product_item_RnFBWQ":{"type":"product_item","settings":{"product":"devol-aged-brass-decora-plate-3-gang"}},"product_item_iEtzXR":{"type":"product_item","settings":{"product":"devol-aged-brass-decora-plate-4-gang"}}},"block_order":["product_item_ayGJVj","product_item_HTxMUN","product_item_fMN4zT","product_item_hiG7Ym","product_item_d7L6Ka","product_item_7JnarQ","product_item_RnFBWQ","product_item_iEtzXR"],"name":"Custom product list","settings":{"title":"","heading_size":"h1","subtitle":"Aged Brass","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"custom_product_list_KNee3Q":{"type":"custom-product-list","blocks":{"product_item_HGQ3YP":{"type":"product_item","settings":{"product":"devol-oxidised-brass-toggle-switch-plate-1-gang"}},"product_item_PJ8aGF":{"type":"product_item","settings":{"product":"devol-oxidised-brass-toggle-switch-plate-2-gang"}},"product_item_PEbECr":{"type":"product_item","settings":{"product":"devol-oxidised-brass-toggle-switch-plate-3-gang"}},"product_item_rmyagA":{"type":"product_item","settings":{"product":"devol-oxidised-brass-toggle-switch-plate-4-gang"}},"product_item_VA3PWF":{"type":"product_item","settings":{"product":"devol-oxidised-brass-decora-plate-1-gang"}},"product_item_FwP3HE":{"type":"product_item","settings":{"product":"devol-oxidised-brass-decora-plate-2-gang"}},"product_item_LFAajL":{"type":"product_item","settings":{"product":"devol-oxidised-brass-decora-plate-3-gang"}},"product_item_gDAttk":{"type":"product_item","settings":{"product":"devol-oxidised-brass-decora-plate-4-gang"}}},"block_order":["product_item_HGQ3YP","product_item_PJ8aGF","product_item_PEbECr","product_item_rmyagA","product_item_VA3PWF","product_item_FwP3HE","product_item_LFAajL","product_item_gDAttk"],"name":"Custom product list","settings":{"title":"","heading_size":"hxxl","subtitle":"Oxidised Brass","hide_subtitle":false,"image_width":"full","image_ratio":"adapt","columns_desktop":4,"column_alignment":"left","show_secondary_image":true,"background_style":"primary","button_label":"","button_link":"","show_top_border":true,"show_bottom_border":false,"color_scheme":"","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["metaobject_gallery_slider_8FFyRT","banner","custom_multicolumns_aTKq4M","product-grid","custom_product_list_Jn7hxi","custom_product_list_4Q6fRy","custom_product_list_KNee3Q"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_8FFyRT": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 24px;}",
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 550px; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "custom_multicolumns_aTKq4M": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_xd4gWw": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://collections/devol-switches",
+            "anchor": "#us-switch-anchor",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Switches",
+            "linked_product": ""
+          }
+        },
+        "column_DHcGGx": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://collections/devol-outlets",
+            "anchor": "#us-switch-anchor",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Outlets",
+            "linked_product": ""
+          }
+        },
+        "column_3GHjtV": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://collections/devol-plates",
+            "anchor": "#us-switch-anchor",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Plates",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_xd4gWw",
+        "column_DHcGGx",
+        "column_3GHjtV"
+      ],
+      "custom_css": [],
+      "name": "Custom multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "3",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "switches-menu"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_Jn7hxi": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_dGHeR3": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-toggle-switch-plate-1-gang"
+          }
+        },
+        "product_item_mUyrNd": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-toggle-switch-plate-2-gang"
+          }
+        },
+        "product_item_4TmHTe": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-toggle-switch-plate-3-gang"
+          }
+        },
+        "product_item_BM3X3B": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-toggle-switch-plate-4-gang"
+          }
+        },
+        "product_item_wJN9d3": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-decora-plate-1-gang"
+          }
+        },
+        "product_item_BXhLna": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-decora-plate-2-gang"
+          }
+        },
+        "product_item_LYEVFe": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-decora-plate-3-gang"
+          }
+        },
+        "product_item_HEMANN": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-decora-plate-4-gang"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_dGHeR3",
+        "product_item_mUyrNd",
+        "product_item_4TmHTe",
+        "product_item_BM3X3B",
+        "product_item_wJN9d3",
+        "product_item_BXhLna",
+        "product_item_LYEVFe",
+        "product_item_HEMANN"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 590px) {.custom-product-list {padding-bottom: 44px; }}"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Heirloom Brass",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_4Q6fRy": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_ayGJVj": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-aged-brass-toggle-switch-plate-1-gang"
+          }
+        },
+        "product_item_HTxMUN": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-aged-brass-toggle-switch-plate-2-gang"
+          }
+        },
+        "product_item_fMN4zT": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-aged-brass-toggle-switch-plate-3-gang"
+          }
+        },
+        "product_item_hiG7Ym": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-aged-brass-toggle-switch-plate-4-gang"
+          }
+        },
+        "product_item_d7L6Ka": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-aged-brass-decora-plate-1-gang"
+          }
+        },
+        "product_item_7JnarQ": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-aged-brass-decora-plate-2-gang"
+          }
+        },
+        "product_item_RnFBWQ": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-aged-brass-decora-plate-3-gang"
+          }
+        },
+        "product_item_iEtzXR": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-aged-brass-decora-plate-4-gang"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_ayGJVj",
+        "product_item_HTxMUN",
+        "product_item_fMN4zT",
+        "product_item_hiG7Ym",
+        "product_item_d7L6Ka",
+        "product_item_7JnarQ",
+        "product_item_RnFBWQ",
+        "product_item_iEtzXR"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Aged Brass",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_KNee3Q": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_HGQ3YP": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-oxidised-brass-toggle-switch-plate-1-gang"
+          }
+        },
+        "product_item_PJ8aGF": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-oxidised-brass-toggle-switch-plate-2-gang"
+          }
+        },
+        "product_item_PEbECr": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-oxidised-brass-toggle-switch-plate-3-gang"
+          }
+        },
+        "product_item_rmyagA": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-oxidised-brass-toggle-switch-plate-4-gang"
+          }
+        },
+        "product_item_VA3PWF": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-oxidised-brass-decora-plate-1-gang"
+          }
+        },
+        "product_item_FwP3HE": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-oxidised-brass-decora-plate-2-gang"
+          }
+        },
+        "product_item_LFAajL": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-oxidised-brass-decora-plate-3-gang"
+          }
+        },
+        "product_item_gDAttk": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-oxidised-brass-decora-plate-4-gang"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_HGQ3YP",
+        "product_item_PJ8aGF",
+        "product_item_PEbECr",
+        "product_item_rmyagA",
+        "product_item_VA3PWF",
+        "product_item_FwP3HE",
+        "product_item_LFAajL",
+        "product_item_gDAttk"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Oxidised Brass",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_8FFyRT",
+    "banner",
+    "custom_multicolumns_aTKq4M",
+    "product-grid",
+    "custom_product_list_Jn7hxi",
+    "custom_product_list_4Q6fRy",
+    "custom_product_list_KNee3Q"
+  ]
+}

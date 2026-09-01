@@ -3,6 +3,7 @@
 {% assign pack_size = product.metafields.custom.flooring_pack_size.value | default: 1 %}
 {% assign unit_area_value = product.metafields.custom.unit_area_m2.value %}
 {% assign unit_area_m2 = unit_area_value | default: 0.01 | times: 10.7639 %}
+{% assign unit_linear = product.metafields.custom.product_width.value | default: 1 | times: 3.28084 %}
 {% assign qty_step = 1 %}
 {% if tile_type == 'fixed pack' %}
   {% assign qty_step = pack_size %}
@@ -16,6 +17,8 @@
   {% if unit_area_value != blank %}
     {% assign coverage_input_value = unit_area_m2 | times: qty_input_value | round: 2 %}
   {% endif %}
+{% elsif tile_type == 'linear' %}
+  {% assign coverage_input_value = unit_linear | round: 2 %}
 {% endif %}
 {% if unit_area_value != blank %}
   {%- assign calculator_type = '' -%}
@@ -51,6 +54,32 @@
       {% assign is_fixed_tile_or_pack = false %}
       {% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}
         {% assign is_fixed_tile_or_pack = true %}
+      {% endif %}
+      {% if show_coverage and tile_type != 'fixed pack' and tile_type != 'fixed tile' %}
+        <div class="coverage_main-wrapper">
+          <label for="Coverage-{{ section.id }}" class="coverage__label form__label">{% if tile_type == 'linear' %}Linear Feet*{% else %}Coverage (ft<sup>2</sup>)*{% endif %}</label>
+          <div class="coverage-wrapper">
+            {% if tile_type == 'linear' or tile_type == 'wall' %}
+              <button class="quantity__button tcalc-btn tcalc-btn--cov-minus" type="button" aria-label="Decrease coverage">
+                <span class="svg-wrapper">{{- 'icon-minus.svg' | inline_asset_content -}}</span>
+              </button>
+            {% endif %}
+            <input
+              class="coverage__input"
+              type="number"
+              min="0"
+              value="{% if tile_type == 'fixed tile' %}{{ coverage_input_value }}{% elsif tile_type == 'linear' %}{{ coverage_input_value }}{% else %}10{% endif %}"
+              step="{% if tile_type == 'fixed tile' %}any{% elsif tile_type == blank or tile_type == 'linear' %}{{ coverage_input_value }}{% else %}{{ unit_area_m2 }}{% endif %}"
+              name="coverage"
+              id="Coverage-{{ section.id }}"
+            >
+            {% if tile_type == 'linear' or tile_type == 'wall' %}
+              <button class="quantity__button tcalc-btn tcalc-btn--cov-plus" type="button" aria-label="Increase coverage">
+                <span class="svg-wrapper">{{- 'icon-plus.svg' | inline_asset_content -}}</span>
+              </button>
+            {% endif %}
+          </div>
+        </div>
       {% endif %}
       {% if tile_type == 'free length' %}
         <div class="coverage_main-wrapper coverage-ft2-input-wrapper">
@@ -188,7 +217,7 @@
             </button>
             {% endif %}
           </quantity-input>
-          {% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}
+          {% if tile_type == 'fixed pack' or tile_type == 'fixed tile' or tile_type == 'linear' or tile_type == 'wall' %}
             <div class="tcalc-qty-buttons">
               <button class="quantity__button tcalc-btn tcalc-btn--qty-minus" type="button" aria-label="Decrease quantity">
                 <span class="svg-wrapper">
@@ -451,22 +480,6 @@
           </volume-pricing>
         {%- endif -%}
       </div>
-      {% if show_coverage and tile_type != 'fixed pack' and tile_type != 'fixed tile' %}
-        <div class="coverage_main-wrapper">
-          <label for="Coverage-{{ section.id }}" class="coverage__label form__label">{% if tile_type == 'linear' %}Linear Feet*{% else %}Coverage (ft<sup>2</sup>)*{% endif %}</label>
-          <div class="coverage-wrapper">
-            <input
-              class="coverage__input"
-              type="number"
-              min="{% if tile_type == 'linear' %}1{% else %}0{% endif %}"
-              value="{% if tile_type == 'fixed tile' %}{{ coverage_input_value }}{% elsif tile_type == 'linear' %}1{% else %}10{% endif %}"
-              step="{% if tile_type == 'fixed tile' %}any{% elsif tile_type == blank or tile_type == 'linear' %}1{% else %}{{ unit_area_m2 }}{% endif %}"
-              name="coverage"
-              id="Coverage-{{ section.id }}"
-            >
-          </div>
-        </div>
-      {% endif %}
       <div class="total_price-wrapper">
         <span for="TotalPrice" class="total-price__label form__label"> Subtotal </span>
         <span id="TotalPrice">{{ product.price | money}}</span>
@@ -503,6 +516,7 @@
       unitAreaM2: {{ product.metafields.custom.unit_area_m2.value | default: 0 | times: 10.7639 | json }},
       unitAreaSet: {{ unit_area_value | json }},
       tilesPerM2: {{ product.metafields.custom.number_of_tile_for_coverage_1m2.value | default: 0 | json }},
+      linearUnitSize: {% if tile_type == 'linear' %}{{ product.metafields.custom.product_width.value | default: 0 }}{% else %}0{% endif %}, // US: Product width (m) -> linear feet; linear tiles only
       templateSuffix: {{ product.template_suffix | json }},
       moneyFormat: {{ shop.money_format | json }} // Shopify money format
     };
