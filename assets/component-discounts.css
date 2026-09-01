@@ -9,6 +9,9 @@
   word-break: break-word;
   line-height: calc(1 + .5 / var(--font-body-scale));
   color: #898989;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  margin-top: 1.5rem;
 }
 
 .discounts__discount svg {
