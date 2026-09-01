@@ -1706,12 +1706,14 @@ p.checbox-addon-heading {
 .quantity_coverage-wrapper.fixed.pack .quantity__input, .quantity_coverage-wrapper.fixed.pack .coverage__input, .quantity_coverage-wrapper.free.length .quantity__input,
 .quantity_coverage-wrapper.free.length .coverage__input, .quantity_coverage-wrapper.fixed.tile .quantity__input, .quantity_coverage-wrapper.fixed.tile .coverage__input,
 .quantity_coverage-wrapper.variable.pack .quantity__input, .quantity_coverage-wrapper.variable.pack .coverage__input,
-.quantity_coverage-wrapper.linear .quantity__input, .quantity_coverage-wrapper.linear .coverage__input {
+.quantity_coverage-wrapper.linear .quantity__input, .quantity_coverage-wrapper.linear .coverage__input,
+.quantity_coverage-wrapper.wall .quantity__input, .quantity_coverage-wrapper.wall .coverage__input {
   text-align: center;
 }
 .quantity_coverage-wrapper.fixed.pack .coverage__input,
 .quantity_coverage-wrapper.fixed.tile .coverage__input,
-.quantity_coverage-wrapper.linear .coverage__input {
+.quantity_coverage-wrapper.linear .coverage__input,
+.quantity_coverage-wrapper.wall .coverage__input {
   -moz-appearance: textfield;
   appearance: textfield;
 }
@@ -1720,7 +1722,9 @@ p.checbox-addon-heading {
 .quantity_coverage-wrapper.fixed.tile .coverage__input::-webkit-outer-spin-button,
 .quantity_coverage-wrapper.fixed.tile .coverage__input::-webkit-inner-spin-button,
 .quantity_coverage-wrapper.linear .coverage__input::-webkit-outer-spin-button,
-.quantity_coverage-wrapper.linear .coverage__input::-webkit-inner-spin-button {
+.quantity_coverage-wrapper.linear .coverage__input::-webkit-inner-spin-button,
+.quantity_coverage-wrapper.wall .coverage__input::-webkit-outer-spin-button,
+.quantity_coverage-wrapper.wall .coverage__input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }

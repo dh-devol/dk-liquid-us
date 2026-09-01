@@ -3,6 +3,7 @@
 {% assign pack_size = product.metafields.custom.flooring_pack_size.value | default: 1 %}
 {% assign unit_area_value = product.metafields.custom.unit_area_m2.value %}
 {% assign unit_area_m2 = unit_area_value | default: 0.01 | times: 10.7639 %}
+{% assign unit_linear = product.metafields.custom.product_width.value | default: 1 | times: 3.28084 %}
 {% assign qty_step = 1 %}
 {% if tile_type == 'fixed pack' %}
   {% assign qty_step = pack_size %}
@@ -16,6 +17,8 @@
   {% if unit_area_value != blank %}
     {% assign coverage_input_value = unit_area_m2 | times: qty_input_value | round: 2 %}
   {% endif %}
+{% elsif tile_type == 'linear' %}
+  {% assign coverage_input_value = unit_linear | round: 2 %}
 {% endif %}
 {% if unit_area_value != blank %}
   {%- assign calculator_type = '' -%}
@@ -65,8 +68,8 @@
               class="coverage__input"
               type="number"
               min="0"
-              value="{% if tile_type == 'fixed tile' %}{{ coverage_input_value }}{% elsif tile_type == 'linear' %}1{% else %}10{% endif %}"
-              step="1"
+              value="{% if tile_type == 'fixed tile' %}{{ coverage_input_value }}{% elsif tile_type == 'linear' %}{{ coverage_input_value }}{% else %}10{% endif %}"
+              step="{% if tile_type == 'fixed tile' %}any{% elsif tile_type == blank or tile_type == 'linear' %}{{ coverage_input_value }}{% else %}{{ unit_area_m2 }}{% endif %}"
               name="coverage"
               id="Coverage-{{ section.id }}"
             >
@@ -214,7 +217,7 @@
             </button>
             {% endif %}
           </quantity-input>
-          {% if tile_type == 'fixed pack' or tile_type == 'fixed tile' or tile_type == 'linear' %}
+          {% if tile_type == 'fixed pack' or tile_type == 'fixed tile' or tile_type == 'linear' or tile_type == 'wall' %}
             <div class="tcalc-qty-buttons">
               <button class="quantity__button tcalc-btn tcalc-btn--qty-minus" type="button" aria-label="Decrease quantity">
                 <span class="svg-wrapper">

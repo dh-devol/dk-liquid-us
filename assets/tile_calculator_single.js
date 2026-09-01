@@ -24,6 +24,8 @@
     const isPerTile = String(cfg.templateSuffix || '').toLowerCase() === 'handmade-tiles';
     const hasType = tileBundle.length > 0;
     const isLinear = tileBundle === 'linear';
+    const isWall = tileBundle === 'wall';
+    const isLinearOrWall = isLinear || isWall;
     const isFixedTileOrPack = tileBundle === 'fixed pack' || tileBundle === 'fixed tile';
     const isFreeLength = tileBundle === 'free length';
 
@@ -34,11 +36,9 @@
   let needsFt2Conversion = false;
   if (isLinear && linearUnitSizeM > 0) {
     // Linear/border tiles are sold by LENGTH, not area — the coverage unit is
-    // the tile's own width, converted metres -> feet. Using the area factor
-    // (10.7639) here would be wrong: it treats a length as if it were an area.
+    // the tile's own width, converted to feet.
     tileAreaM2 = linearUnitSizeM * M_TO_FT;
   } else if (unitAreaSet && unitAreaM2 > 0) {
-    // unit_area_m2 explicitly set in admin — use it as the authoritative coverage value
     tileAreaM2 = unitAreaM2; // already in ft² from Liquid
   } else if (tileWidth && tileLength) {
     tileAreaM2 = (tileWidth * tileLength) / 1000000;
@@ -124,7 +124,7 @@
   }
 
   function updateQuantityFromCoverage(roundUp = true) {
-    const minCov = isLinear ? 0 : getMinCoverage();
+    const minCov = isLinearOrWall ? 0 : getMinCoverage();
     let coverage = Math.max(minCov, Number(coverageInput.value) || 0);
     // For non-typed tiles use Math.round; Math.ceil overshoots when coverage/area has a
     // fractional part (e.g. 10/0.414 = 24.15 → ceil gives 25 instead of 24).
@@ -140,8 +140,6 @@
   }
 
   function updateTotal() {
-    // Fixed tile / fixed pack / linear / per-tile / free-length are all charged
-    // as a Shopify line item = variant.price × quantity field value.
     const qty = Number(qtyInput.value) || 1;
     const amount = priceCents * qty;
     totalEl.textContent = formatPrice(amount, moneyFormat);
@@ -163,7 +161,7 @@
 
   function decreaseQty() {
     enableBelowMinCoverage();
-    const floor = (isFixedTileOrPack || isLinear) ? minQtyFloor : (allowBelowCoverageMin ? minQtyFloor : minQty);
+    const floor = (isFixedTileOrPack || isLinearOrWall) ? minQtyFloor : (allowBelowCoverageMin ? minQtyFloor : minQty);
     let val = Number(qtyInput.value) || floor;
     val = val - qtyStep;
     if (val < floor) val = floor;
@@ -172,15 +170,14 @@
     updateTotal();
   }
 
-  // ── Linear: always steps by exactly one tile's width (tileAreaM2, already in feet) ──
-  function increaseLinearQty() {
+    function increaseTileQty() {
     const qty = Math.max(1, Number(qtyInput.value) || 1) + 1;
     qtyInput.value = qty;
     coverageInput.value = formatCoverage(qty * tileAreaM2);
     updateTotal();
   }
 
-  function decreaseLinearQty() {
+  function decreaseTileQty() {
     const qty = Math.max(1, (Number(qtyInput.value) || 1) - 1);
     qtyInput.value = qty;
     coverageInput.value = formatCoverage(qty * tileAreaM2);
@@ -189,11 +186,10 @@
 
   function increaseCoverage() {
     enableBelowMinCoverage();
-    if (isLinear) {
-      increaseLinearQty();
+    if (isLinearOrWall) {
+      increaseTileQty();
       return;
     }
-    // Step qty directly to avoid toFixed(2) accumulation causing double-steps.
     const floor = allowBelowCoverageMin ? minQtyFloor : minQty;
     const currentQty = Math.max(floor, Number(qtyInput.value) || floor);
     qtyInput.value = currentQty + qtyStep;
@@ -203,8 +199,8 @@
 
   function decreaseCoverage() {
     enableBelowMinCoverage();
-    if (isLinear) {
-      decreaseLinearQty();
+    if (isLinearOrWall) {
+      decreaseTileQty();
       return;
     }
     const floor = allowBelowCoverageMin ? minQtyFloor : minQty;
@@ -225,16 +221,14 @@
   }
 
   const isNativeQuantityBtn = btn => btn && btn.closest('quantity-input') !== null;
-  if (isLinear) {
-    if (!isNativeQuantityBtn(qtyPlusBtn)) bindButton(qtyPlusBtn, increaseLinearQty);
-    if (!isNativeQuantityBtn(qtyMinusBtn)) bindButton(qtyMinusBtn, decreaseLinearQty);
+  if (isLinearOrWall) {
+    if (!isNativeQuantityBtn(qtyPlusBtn)) bindButton(qtyPlusBtn, increaseTileQty);
+    if (!isNativeQuantityBtn(qtyMinusBtn)) bindButton(qtyMinusBtn, decreaseTileQty);
     bindButton(covPlusBtn, increaseCoverage);
     bindButton(covMinusBtn, decreaseCoverage);
   } else {
     if (!isNativeQuantityBtn(qtyPlusBtn)) bindButton(qtyPlusBtn, increaseQty);
     if (!isNativeQuantityBtn(qtyMinusBtn)) bindButton(qtyMinusBtn, decreaseQty);
-    // Free-length tiles: ft² buttons are exclusively managed by the inline script
-    // in product-quantity-coverage.liquid — binding here would cause double-step on m².
     if (tileBundle !== 'free length') {
       bindButton(covPlusBtn, increaseCoverage);
       bindButton(covMinusBtn, decreaseCoverage);
@@ -242,7 +236,7 @@
   }
 
   qtyInput.addEventListener('change', () => {
-    if (isLinear) {
+    if (isLinearOrWall) {
       let val = Math.round(Number(qtyInput.value)) || 1;
       val = Math.max(1, val); // floor = 1 tile, no forced minimum coverage
       qtyInput.value = val;
@@ -266,10 +260,10 @@
   });
 
   coverageInput.addEventListener('change', () => {
-    if (isLinear) {
+    if (isLinearOrWall) {
       let val = Number(coverageInput.value) || 0;
       if (val < 0) val = 0; // allowed to go below 1 ft — no forced minimum
-      const qty = Math.max(1, Math.round(val / tileAreaM2)); // floor = 1 tile
+      const qty = Math.max(1, Math.ceil((val / tileAreaM2) - 1e-9));
       qtyInput.value = qty;
       coverageInput.value = formatCoverage(qty * tileAreaM2);
       updateTotal();
@@ -302,11 +296,9 @@
     console.log('[tile_calc] coverage change end', { coverage: coverageInput.value, qty: qtyInput.value });
   });
 
-  if (isLinear) {
-    // Default: smallest whole number of tiles that covers at least 1 linear
-    // foot, coverage derived from that exact tile count, 2dp — mirrors the
-    // metric/UK default logic, translated into feet.
-    const defaultQty = Math.max(1, Math.ceil(1 / tileAreaM2));
+  if (isLinearOrWall) {
+    const targetCoverage = isWall ? 10 : 1;
+    const defaultQty = Math.max(1, Math.ceil(targetCoverage / tileAreaM2));
     qtyInput.value = defaultQty;
     coverageInput.value = formatCoverage(defaultQty * tileAreaM2);
   } else {
