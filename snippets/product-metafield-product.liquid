@@ -1,4 +1,4 @@
-{{ 'custom-accordian-dropdown-label.css' | asset_url | stylesheet_tag }}
+{{ 'custom-accordion-dropdown-label.css' | asset_url | stylesheet_tag }}
 
 {% assign variant_products = product.metafields.custom.swatch_product.value %}
 {%- assign has_variant_options = false -%}
@@ -119,30 +119,4 @@
   {% endfor %}
   }
 </script>
-<script>
-  // dropdown accordian logic used on some bundles - check template for
-  document.addEventListener("DOMContentLoaded", () => {
-    const accordianBtn = document.querySelector('.switch-dropdown-accordion');
-    const selectDiv = document.querySelector('.switch-select');
-    const mmBundle = document.querySelector('.mm-bundle');
-    function hideAccordian () {
-      accordianBtn.style.display = "none";
-    }
-    function accordianAnimation () {
-        accordianBtn.toggleAttribute("open");
-        if (selectDiv.style.display === "block") {
-            selectDiv.style.display = "none";
-            selectDiv.setAttribute("aria-expanded", "false");
-        } else {
-            selectDiv.style.display = "block";
-            selectDiv.setAttribute("aria-expanded", "true");
-        }
-    }
-    if (accordianBtn && mmBundle) {
-      hideAccordian();
-    }
-    if (accordianBtn) {
-      accordianBtn.addEventListener("click", accordianAnimation);
-    }
-  })
-</script>
+<script id="dropdown-accordion-script" src="{{ 'accordion-script.js' | asset_url }}" defer></script>

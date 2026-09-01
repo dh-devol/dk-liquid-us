@@ -895,9 +895,12 @@ document.addEventListener("DOMContentLoaded", () => {
             try { readmoreDescription(); } catch (e) { console.error('[product-switch] readmoreDescription failed:', e); }
           };
 
-          // Keep the current content on screen until the new images are ready, then apply
-          // everything in a single animation frame — one clean paint, no flicker.
-          preloadImages(imgUrls).then(() => requestAnimationFrame(applyUpdate));
+          // Re-init for newly injected DOM (not initProductSwitcher — selector persists)
+          initProductSwitcher();
+          initSwiperGallery();
+          initCoverageCalculators(curWrapper);
+          initAccordionScript(curWrapper);
+          readmoreDescription();
         })
         .catch(() => window.location.assign(targetPath));
     });
@@ -976,6 +979,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     new Swiper(swiperEl, options);
+  }
+
+  function initAccordionScript(root) {
+    const scope = root || document;
+    const accordionScript = scope.querySelector("#dropdown-accordion-script");
+    const accordionScriptSrc = {{ 'accordion-script.js' | asset_url | json }};
+    if (!accordionScript) return;
+
+    loadScriptOnce(accordionScriptSrc, "accordion-script", () => {
+      if (typeof window.initAccordion === "function") {
+        window.initAccordion(scope);
+      } else {
+        console.warn("initAccordion() is not available");
+      }
+    });
+    return;
   }
 
   function readmoreDescription() {
