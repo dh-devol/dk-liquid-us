@@ -5,7 +5,10 @@
 .discounts__discount {
   display: flex;
   align-items: center;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
+  font-size: 1.4rem;
+  word-break: break-word;
+  line-height: calc(1 + .5 / var(--font-body-scale));
+  color: #898989;
 }
 
 .discounts__discount svg {
