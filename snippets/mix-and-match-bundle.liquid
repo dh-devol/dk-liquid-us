@@ -307,7 +307,8 @@ We include all variants of each child product, disabling sold-out ones.
       </div>
     {% endif %}
     <button class="mm-add-btn product-form__submit button button--full-width button--primary" type="button" data-add disabled>
-      {{ _btn }}
+      <span>{{ _btn }}</span>
+      {%- render 'loading-spinner' -%}
     </button>
     <div class="mm-error" data-error style="display:none;color:#b00020;margin-left:12px;"></div>
   </div>

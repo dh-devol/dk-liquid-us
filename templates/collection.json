@@ -1,1 +1,213 @@
-{"sections":{"gallery_slideshow_ECnaGy":{"type":"gallery-slideshow","blocks":{"slide_JyTkQR":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/banner-desktop-the-grand-tour-collection.jpg","desktop_focal_point":50,"mobile_focal_point":100,"heading":"","heading_size":"h0","subheading":"","button_label":"","link":"shopify:\/\/products\/brushed-charcoal-limestone-600xflx22","button_style_secondary":false,"box_align":"bottom-left","show_text_box":true,"text_alignment":"left","image_overlay_opacity":0,"color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","text_alignment_mobile":"center"}}},"block_order":["slide_JyTkQR"],"name":"Gallery slideshow","settings":{"layout":"full_bleed","show_mobile_banner":true,"slide_height":"large","slider_visual":"dots","auto_rotate":true,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 60px;}",".collection-hero__title {margin-bottom: 1em;}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"custom_product_list_Miirec":{"type":"custom-product-list","blocks":{"product_item_JU6JWP":{"type":"product_item","settings":{"product":"grand-tour-desk-lamp"}},"product_item_keT9qC":{"type":"product_item","settings":{"product":"grand-tour-library-lamp"}},"product_item_3pQPDC":{"type":"product_item","settings":{"product":"grand-tour-reading-lamp"}}},"block_order":["product_item_JU6JWP","product_item_keT9qC","product_item_3pQPDC"],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":3,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"custom_css":["@media screen and (min-width: 591px) and (max-width: 1024px) {.grid__item {width: calc(50% - var(--grid-desktop-horizontal-spacing) \/ 2); max-width: calc(50% - var(--grid-desktop-horizontal-spacing) \/ 2); }}","@media (max-width: 590px) {.grid--2-col-tablet-down .grid__item {width: 100%; max-width: 100%; }}"],"settings":{"products_per_page":36,"columns_desktop":3,"color_scheme":"scheme-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":true,"filter_type":"drawer","enable_sorting":true,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"editorials_cDH6VD":{"type":"editorials","custom_css":[],"name":"Editorials","settings":{}}},"order":["gallery_slideshow_ECnaGy","banner","editorials_cDH6VD","custom_product_list_Miirec","product-grid"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gallery_slideshow_ECnaGy": {
+      "type": "gallery-slideshow",
+      "blocks": {
+        "slide_JyTkQR": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-desktop-the-grand-tour-collection.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 100,
+            "heading": "",
+            "heading_size": "h0",
+            "subheading": "",
+            "button_label": "",
+            "link": "shopify://products/brushed-charcoal-limestone-600xflx22",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": true,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_JyTkQR"
+      ],
+      "name": "Gallery slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "show_mobile_banner": true,
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "editorials_cDH6VD": {
+      "type": "editorials",
+      "custom_css": [],
+      "name": "Editorials",
+      "settings": {}
+    },
+    "custom_product_list_Miirec": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_JhX9XH": {
+          "type": "product_item",
+          "settings": {
+            "product": "13-iron-hook-rack"
+          }
+        },
+        "product_item_jLEreL": {
+          "type": "product_item",
+          "settings": {
+            "product": "17-iron-hook-rack"
+          }
+        },
+        "product_item_pHp6te": {
+          "type": "product_item",
+          "settings": {
+            "product": "27-iron-hook-rack"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_JhX9XH",
+        "product_item_jLEreL",
+        "product_item_pHp6te"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_qfWJy3": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_kpeyk6": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-beam-hook-large"
+          }
+        },
+        "product_item_yUPPHU": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-wall-hook-large"
+          }
+        },
+        "product_item_ch4VQt": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-hook-square-backplate-large"
+          }
+        },
+        "product_item_yxxmLm": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-hook-elephant-backplate-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_kpeyk6",
+        "product_item_yUPPHU",
+        "product_item_ch4VQt",
+        "product_item_yxxmLm"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "custom_css": [
+        "@media screen and (min-width: 591px) and (max-width: 1024px) {.grid__item {width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2); max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2); }}",
+        "@media (max-width: 590px) {.grid--2-col-tablet-down .grid__item {width: 100%; max-width: 100%; }}"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "gallery_slideshow_ECnaGy",
+    "banner",
+    "editorials_cDH6VD",
+    "custom_product_list_Miirec",
+    "custom_product_list_qfWJy3",
+    "product-grid"
+  ]
+}

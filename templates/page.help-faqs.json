@@ -1,1 +1,321 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"title_with_rich_text_yc8yT8":{"type":"title-with-rich-text","blocks":{"heading_mm74Ai":{"type":"heading","settings":{"heading":"Shop Support","heading_size":"hxxl"}},"text_qqGdKX":{"type":"text","settings":{"text":"<p>For any queries relating to ordering online, our UK based customer services team can be reached by calling 646 347 0320 or emailing <a href=\"mailto:websales@devolkitchens.co.uk\">websales@devolkitchens.co.uk<\/a>. If your query relates to our kitchen furniture, please visit our <a href=\"\/pages\/contact\" title=\"Contact\">Contact page<\/a> for details of our enquiries teams.<\/p>"}}},"block_order":["heading_mm74Ai","text_qqGdKX"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":60,"padding_bottom":44,"sectionname":"support-heading"}},"custom_multicolumns_c47MN8":{"type":"custom-multicolumns","blocks":{"column_hyjLAk":{"type":"column","settings":{"link":"shopify:\/\/pages\/ordering-online","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Ordering Online","linked_product":""}},"column_ycQCjc":{"type":"column","settings":{"link":"shopify:\/\/pages\/payments","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Payments","linked_product":""}},"column_AeTWca":{"type":"column","settings":{"link":"shopify:\/\/pages\/delivery","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Delivery","linked_product":""}},"column_YKft6p":{"type":"column","settings":{"link":"shopify:\/\/pages\/returns","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Returns","linked_product":""}},"column_flrSup":{"type":"column","settings":{"link":"shopify:\/\/pages\/flooring-support","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Flooring","linked_product":""}},"column_L3H9Ke":{"type":"column","settings":{"link":"shopify:\/\/pages\/help-faqs","anchor":"","dynamic_costs":"","custom_text_hover":"","title":"","show_text_double_column":false,"text":"","show_above_image":false,"link_label":"Help & FAQs","linked_product":""}}},"block_order":["column_hyjLAk","column_ycQCjc","column_AeTWca","column_YKft6p","column_flrSup","column_L3H9Ke"],"settings":{"title":"","heading_size":"h1","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":6,"column_alignment":"center","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":36,"padding_bottom":20,"sectionname":"support_tabs--wrapper shop-tabs"}},"custom_collapsible_content_jx9WzK":{"type":"custom-collapsible-content","blocks":{"collapsible_row_rXjh7Y":{"type":"collapsible_row","settings":{"heading":"Do you have a catalogue?","sub_heading":"","icon":"none","row_content":"<p>Our beautiful deVOL accessories can all be viewed on our <a href=\"\/pages\/shop\" title=\"Our Shop\">online shop<\/a>, or if you'd like more inspiration, you can order our brochure where you'll find all our favourite projects and learn a little bit about everything we do here at deVOL. <a href=\"\/products\/devol-brochure\" title=\"The deVOL Brochure - Spring 2026\">Request a free copy here<\/a>. You can also see online catalogues of our modular furniture collections via the links below: <\/p><p><a href=\"\/pages\/shaker-kitchen-base-cabinets\" title=\"Shaker Base Cabinets\">The Shaker Catalogue<\/a><\/p><p><a href=\"\/pages\/sebastian-cox-base-cabinets\" title=\"Sebastian Cox Base Cabinets\">The Sebastian Cox Catalogue<\/a><\/p><p><a href=\"\/pages\/haberdashers-base-cabinets\" title=\"Haberdasher's Base Cabinets\">The Haberdasher's Catalogue<\/a><\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_67URJU":{"type":"collapsible_row","settings":{"heading":"How much does a deVOL Kitchen cost?","sub_heading":"","icon":"none","row_content":"<p>The average cost of a deVOL Kitchen is as follows:<\/p><p>Avg. Shaker Kitchen - $35,000<\/p><p>Avg. Classic Kitchen - $60,000<\/p><p>Avg. Sebastian Cox Kitchen - $35,000<\/p><p>Avg. Haberdasher’s Kitchen - $50,000<\/p><p>It’s important to recognise that these costs exclude worktops and delivery.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_jfqzme":{"type":"collapsible_row","settings":{"heading":"Are shop items available to see in your showrooms?","sub_heading":"","icon":"none","row_content":"<p>Yes, we have lots of our home accessories dotted throughout our showrooms. However, we cannot guarantee that every item is available to see in every showroom.<\/p><p>Please call ahead of your visit if there is a particular item that you'd like to see and we'll do our best to get one ready for you.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_dGWzjk":{"type":"collapsible_row","settings":{"heading":"Can I make an account on your website?","sub_heading":"","icon":"none","row_content":"<p>Not at the moment, we will send all of your order information, including dispatch notifications and returns updates, directly to the email you provide.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_a3dnXg":{"type":"collapsible_row","settings":{"heading":"Can I subscribe to a deVOL newsletter?","sub_heading":"","icon":"none","row_content":"<p>Yes! You can sign up to receive interiors inspiration and occasional updates from deVOL <a href=\"\/pages\/thanks\" title=\"Letters from deVOL\">here<\/a>.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_J4H4yh":{"type":"collapsible_row","settings":{"heading":"How do I unsubscribe from your emails?","sub_heading":"","icon":"none","row_content":"<p>Every email sent to you will have an option to unsubscribe at the bottom of the email. We'd love to hear from you if you have any feedback about the things we send to you.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_Xh7T7e":{"type":"collapsible_row","settings":{"heading":"Can I use your images on my blog or website?","sub_heading":"","icon":"none","row_content":"<p>Please contact our PR & Marketing team for further information about using our images.<\/p><p><a href=\"mailto:pr@devolkitchens.co.uk\">pr@devolkitchens.co.uk<\/a><\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_iAcDif":{"type":"collapsible_row","settings":{"heading":"Do you use cookies?","sub_heading":"","icon":"none","row_content":"<p>Yes, we use cookies to help our website function correctly and to improve your experience using this site. For more information and to manage our cookies please visit our <a href=\"\/pages\/cookies\" title=\"Cookies\">Cookies Policy<\/a> page.<\/p>","url_title":"","link_url":"","page":""}},"collapsible_row_7rFf6m":{"type":"collapsible_row","settings":{"heading":"What do you do with my data?","sub_heading":"","icon":"none","row_content":"<p>All data is processed in accordance to GDPR legislation. We will never pass your data on to a third party without your consent.<\/p>","url_title":"","link_url":"","page":""}}},"block_order":["collapsible_row_rXjh7Y","collapsible_row_67URJU","collapsible_row_jfqzme","collapsible_row_dGWzjk","collapsible_row_a3dnXg","collapsible_row_J4H4yh","collapsible_row_Xh7T7e","collapsible_row_iAcDif","collapsible_row_7rFf6m"],"settings":{"caption":"","heading":"Help & FAQs","heading_size":"hxxl","heading_alignment":"left","layout":"none","color_scheme":"scheme-2","container_color_scheme":"","open_first_collapsible_row":false,"hide_desktop":false,"image_ratio":"adapt","desktop_layout":"image_second","padding_top":0,"padding_bottom":0,"sectionname":"support_custom_collapsible shop-tab-content"}}},"order":["main","title_with_rich_text_yc8yT8","custom_multicolumns_c47MN8","custom_collapsible_content_jx9WzK"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "title_with_rich_text_yc8yT8": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_mm74Ai": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shop Support",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_qqGdKX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For any queries relating to ordering online, our UK based customer services team can be reached by calling 646 347 0320 or emailing <a href=\"mailto:websales@devolkitchens.co.uk\">websales@devolkitchens.co.uk</a>. If your query relates to our kitchen furniture, please visit our <a href=\"/pages/contact\" title=\"Contact\">Contact page</a> for details of our enquiries teams.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_mm74Ai",
+        "text_qqGdKX"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 44,
+        "sectionname": "support-heading"
+      }
+    },
+    "custom_multicolumns_c47MN8": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_hyjLAk": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/ordering-online",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Ordering Online",
+            "linked_product": ""
+          }
+        },
+        "column_ycQCjc": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/payments",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Payments",
+            "linked_product": ""
+          }
+        },
+        "column_AeTWca": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/delivery",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Delivery",
+            "linked_product": ""
+          }
+        },
+        "column_YKft6p": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/returns",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Returns",
+            "linked_product": ""
+          }
+        },
+        "column_flrSup": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/flooring-support",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Flooring",
+            "linked_product": ""
+          }
+        },
+        "column_L3H9Ke": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/help-faqs",
+            "anchor": "",
+            "dynamic_costs": "",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "Help & FAQs",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_hyjLAk",
+        "column_ycQCjc",
+        "column_AeTWca",
+        "column_YKft6p",
+        "column_flrSup",
+        "column_L3H9Ke"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 6,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 20,
+        "sectionname": "support_tabs--wrapper shop-tabs"
+      }
+    },
+    "custom_collapsible_content_jx9WzK": {
+      "type": "custom-collapsible-content",
+      "blocks": {
+        "collapsible_row_rXjh7Y": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you have a catalogue?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Our beautiful deVOL accessories can all be viewed on our <a href=\"/pages/shop\" title=\"Our Shop\">online shop</a>, or if you'd like more inspiration, you can order our brochure where you'll find all our favourite projects and learn a little bit about everything we do here at deVOL. <a href=\"/products/devol-brochure\" title=\"The deVOL Brochure - Spring 2026\">Request a free copy here</a>. You can also see online catalogues of our modular furniture collections via the links below: </p><p><a href=\"/pages/shaker-kitchen-base-cabinets\" title=\"Shaker Base Cabinets\">The Shaker Catalogue</a></p><p><a href=\"/pages/sebastian-cox-base-cabinets\" title=\"Sebastian Cox Base Cabinets\">The Sebastian Cox Catalogue</a></p><p><a href=\"/pages/haberdashers-base-cabinets\" title=\"Haberdasher's Base Cabinets\">The Haberdasher's Catalogue</a></p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_67URJU": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How much does a deVOL Kitchen cost?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>The average cost of a deVOL Kitchen is as follows:</p><p>Avg. Shaker Kitchen - $35,000</p><p>Avg. Classic Kitchen - $60,000</p><p>Avg. Sebastian Cox Kitchen - $35,000</p><p>Avg. Haberdasher’s Kitchen - $50,000</p><p>It’s important to recognise that these costs exclude worktops and delivery.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_jfqzme": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are shop items available to see in your showrooms?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Yes, we have lots of our home accessories dotted throughout our showrooms. However, we cannot guarantee that every item is available to see in every showroom.</p><p>Please call ahead of your visit if there is a particular item that you'd like to see and we'll do our best to get one ready for you.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_dGWzjk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I make an account on your website?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Not at the moment, we will send all of your order information, including dispatch notifications and returns updates, directly to the email you provide.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_a3dnXg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I subscribe to a deVOL newsletter?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Yes! You can sign up to receive interiors inspiration and occasional updates from deVOL <a href=\"/pages/thanks\" title=\"Letters from deVOL\">here</a>.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_J4H4yh": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do I unsubscribe from your emails?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Every email sent to you will have an option to unsubscribe at the bottom of the email. We'd love to hear from you if you have any feedback about the things we send to you.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_Xh7T7e": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use your images on my blog or website?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Please contact our PR & Marketing team for further information about using our images.</p><p><a href=\"mailto:pr@devolkitchens.co.uk\">pr@devolkitchens.co.uk</a></p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_iAcDif": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you use cookies?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Yes, we use cookies to help our website function correctly and to improve your experience using this site. For more information and to manage our cookies please visit our <a href=\"/pages/cookies\" title=\"Cookies\">Cookies Policy</a> page.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_7rFf6m": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What do you do with my data?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>All data is processed in accordance to GDPR legislation. We will never pass your data on to a third party without your consent.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_rXjh7Y",
+        "collapsible_row_67URJU",
+        "collapsible_row_jfqzme",
+        "collapsible_row_dGWzjk",
+        "collapsible_row_a3dnXg",
+        "collapsible_row_J4H4yh",
+        "collapsible_row_Xh7T7e",
+        "collapsible_row_iAcDif",
+        "collapsible_row_7rFf6m"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "Help & FAQs",
+        "heading_size": "hxxl",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "scheme-2",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "hide_desktop": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "support_custom_collapsible shop-tab-content"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "title_with_rich_text_yc8yT8",
+    "custom_multicolumns_c47MN8",
+    "custom_collapsible_content_jx9WzK"
+  ]
+}

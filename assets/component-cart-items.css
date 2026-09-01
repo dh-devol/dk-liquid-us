@@ -680,3 +680,20 @@ cart-remove-button .icon-remove {
     font-size: 16px;
     letter-spacing: 0px;
 }
+
+/* Bundle cart lines: put the stock label ("In Stock") on its own line ABOVE the
+   "Inc. …" child items, instead of inline after them. Scoped to bundle lines only
+   (a dl that contains .scent children) so normal cart items are unaffected. */
+.cart-item__details dl:has(> .product-option.scent) {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+}
+.cart-item__details dl:has(> .product-option.scent) > .product-option {
+  float: none; /* .scent uses float:left; flex handles the layout here instead */
+}
+.cart-item__details dl:has(> .product-option.scent) > .product-option:not(.scent) {
+  order: -1;          /* stock label first */
+  flex-basis: 100%;   /* on its own full-width line */
+  width: 100%;
+}

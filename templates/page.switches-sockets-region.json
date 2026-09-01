@@ -1,1 +1,127 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"metaobject_gallery_slider_YhUneN":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"medium","box_align":"middle-center","text_alignment":"center","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":"Slideshow about our brand"}},"rich_text_E8Lwtj":{"type":"rich-text","blocks":{"heading_rfMHjt":{"type":"heading","settings":{"heading":"Sorry, this range of Switches & Sockets is currently unavailable in your region","heading_size":"hxl"}},"text_wLw6r7":{"type":"text","settings":{"text":"<p>Please feel free to browse our full selection of Switches & Sockets using the link below.<\/p>"}}},"block_order":["heading_rfMHjt","text_wLw6r7"],"custom_css":["@media screen and (max-width: 768px) {.rich-text__blocks {max-width: 88%; text-align: left; } .rich-text__blocks .hxl {font-size: 1.4em; line-height: 1.5; }}"],"name":"t:sections.rich-text.presets.name","settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":60,"padding_bottom":60}},"custom_multicolumns_Ye4hpR":{"type":"custom-multicolumns","blocks":{"column_C4Jxh3":{"type":"column","settings":{"link":"shopify:\/\/collections\/switches-sockets","anchor":"","dynamic_costs":"","image":"shopify:\/\/shop_images\/banner-desktop-shop-switches-and-sockets.jpg","custom_text_hover":"","title":"Switches & Sockets","show_text_double_column":false,"text":"<p>Our handmade fixtures offer a unique, living patina that will continue to develop over time and grow in character with every touch. <\/p>","show_above_image":false,"link_label":"","linked_product":""}}},"block_order":["column_C4Jxh3"],"custom_css":[".page-width {max-width: 600px;}","@media screen and (max-width: 768px) {.page-width {max-width: 88%; }}"],"name":"Custom multicolumn","settings":{"title":"","heading_size":"hxl","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":1,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["main","metaobject_gallery_slider_YhUneN","rich_text_E8Lwtj","custom_multicolumns_Ye4hpR"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "metaobject_gallery_slider_YhUneN": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "box_align": "middle-center",
+        "text_alignment": "center",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "rich_text_E8Lwtj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rfMHjt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sorry, this range of Switches & Sockets is currently unavailable in your region",
+            "heading_size": "hxl"
+          }
+        },
+        "text_wLw6r7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Please feel free to browse our full selection of Switches & Sockets using the link below.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rfMHjt",
+        "text_wLw6r7"
+      ],
+      "custom_css": [
+        "@media screen and (max-width: 768px) {.rich-text__blocks {max-width: 88%; text-align: left; } .rich-text__blocks .hxl {font-size: 1.4em; line-height: 1.5; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "custom_multicolumns_Ye4hpR": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_C4Jxh3": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://collections/switches-sockets",
+            "anchor": "",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/banner-desktop-shop-switches-and-sockets.jpg",
+            "custom_text_hover": "",
+            "title": "Switches & Sockets",
+            "show_text_double_column": false,
+            "text": "<p>Our handmade fixtures offer a unique, living patina that will continue to develop over time and grow in character with every touch. </p>",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_C4Jxh3"
+      ],
+      "custom_css": [
+        ".page-width {max-width: 600px;}",
+        "@media screen and (max-width: 768px) {.page-width {max-width: 88%; }}"
+      ],
+      "name": "Custom multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 1,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "metaobject_gallery_slider_YhUneN",
+    "rich_text_E8Lwtj",
+    "custom_multicolumns_Ye4hpR"
+  ]
+}

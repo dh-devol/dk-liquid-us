@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "metaobject_gallery_slider_xGDwdP": {
+    "metaobject_gallery_slider_4iyYRm": {
       "type": "metaobject-gallery-slider",
       "name": "Page Metaobject slideshow",
       "settings": {
@@ -30,8 +30,7 @@
       "type": "main-collection-banner",
       "custom_css": [
         ".collection-hero__inner {margin-bottom: 60px;}",
-        ".collection-hero__title {margin-bottom: 1em;}",
-        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 450px; }}"
+        ".collection-hero__title {margin-bottom: 1em;}"
       ],
       "settings": {
         "show_collection_description": true,
@@ -60,32 +59,32 @@
         "padding_bottom": 36
       }
     },
-    "custom_product_list_bUNrEF": {
+    "custom_product_list_XRfF8g": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_X64BJC": {
+        "product_item_WPWaDe": {
           "type": "product_item",
           "settings": {
-            "product": "ditsy-delft-tiles-ditsy-sepia"
+            "product": "classic-bentwood-cafe-stool"
           }
         },
-        "product_item_wnTzCk": {
+        "product_item_jgH6mz": {
           "type": "product_item",
           "settings": {
-            "product": "emerald-green-london-tiles"
+            "product": "woven-top-bentwood-cafe-stool"
           }
         },
-        "product_item_3n4gDP": {
+        "product_item_Rr3RCB": {
           "type": "product_item",
           "settings": {
-            "product": "crackle-metro-tiles"
+            "product": "bentwood-cafe-chair"
           }
         }
       },
       "block_order": [
-        "product_item_X64BJC",
-        "product_item_wnTzCk",
-        "product_item_3n4gDP"
+        "product_item_WPWaDe",
+        "product_item_jgH6mz",
+        "product_item_Rr3RCB"
       ],
       "name": "Custom product list",
       "settings": {
@@ -111,34 +110,34 @@
         "sectionname": ""
       }
     },
-    "custom_product_list_cHX6zx": {
+    "custom_product_list_RXJfNy": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_MfAEfd": {
+        "product_item_EtQeyG": {
           "type": "product_item",
           "settings": {
-            "product": "kentish-brown-subway-tiles"
+            "product": "petite-vineyard-table"
           }
         },
-        "product_item_FQF99b": {
+        "product_item_rjDr8b": {
           "type": "product_item",
           "settings": {
-            "product": "cream-subway-tiles"
+            "product": "vineyard-table"
           }
         }
       },
       "block_order": [
-        "product_item_MfAEfd",
-        "product_item_FQF99b"
+        "product_item_EtQeyG",
+        "product_item_rjDr8b"
       ],
       "name": "Custom product list",
       "settings": {
         "title": "",
-        "heading_size": "hxl",
-        "subtitle": "Subway & Border Tiles",
+        "heading_size": "hxxl",
+        "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "columns_desktop": 2,
         "column_alignment": "left",
         "show_secondary_image": true,
@@ -155,49 +154,120 @@
         "sectionname": ""
       }
     },
-    "custom_product_list_RECPjw": {
+    "custom_product_list_pR8a6Y": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_mBbmjU": {
+        "product_item_4FbYVr": {
           "type": "product_item",
           "settings": {
-            "product": "vintage-teal-lace-market-tiles-plain-metro"
+            "product": "petite-frilly-chartreuse-glass-light"
           }
         },
-        "product_item_NeKfF3": {
+        "product_item_eBWYiq": {
           "type": "product_item",
           "settings": {
-            "product": "sepia-lace-market-tiles-plain-metro"
+            "product": "petite-frilly-cranberry-glass-light"
           }
         },
-        "product_item_68Dekg": {
+        "product_item_TWmYaH": {
           "type": "product_item",
           "settings": {
-            "product": "rose-lace-market-tiles-plain-metro"
+            "product": "petite-frilly-amber-glass-light"
           }
         }
       },
       "block_order": [
-        "product_item_mBbmjU",
-        "product_item_NeKfF3",
-        "product_item_68Dekg"
+        "product_item_4FbYVr",
+        "product_item_eBWYiq",
+        "product_item_TWmYaH"
       ],
-      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "Lace Market Tiles",
+        "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "show_top_border": true,
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_taDrmg": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_FAxrUP": {
+          "type": "product_item",
+          "settings": {
+            "product": "ditsy-delft-wallpaper-grand-sepia"
+          }
+        },
+        "product_item_GWt4KU": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-hanging-rail-22-2-brackets-5-hooks"
+          }
+        },
+        "product_item_xMeiCy": {
+          "type": "product_item",
+          "settings": {
+            "product": "ditsy-delft-tiles-ditsy-sepia"
+          }
+        },
+        "product_item_MVVB6X": {
+          "type": "product_item",
+          "settings": {
+            "product": "set-of-4-small-scented-candles"
+          }
+        },
+        "product_item_cYEqhG": {
+          "type": "product_item",
+          "settings": {
+            "product": "set-of-2-medium-scented-candles"
+          }
+        },
+        "product_item_kW3jNJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "scented-candle-amber-tonka-bean-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_FAxrUP",
+        "product_item_GWt4KU",
+        "product_item_xMeiCy",
+        "product_item_MVVB6X",
+        "product_item_cYEqhG",
+        "product_item_kW3jNJ"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
         "show_bottom_border": false,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
@@ -209,11 +279,12 @@
     }
   },
   "order": [
-    "metaobject_gallery_slider_xGDwdP",
+    "metaobject_gallery_slider_4iyYRm",
     "banner",
     "product-grid",
-    "custom_product_list_bUNrEF",
-    "custom_product_list_cHX6zx",
-    "custom_product_list_RECPjw"
+    "custom_product_list_XRfF8g",
+    "custom_product_list_RXJfNy",
+    "custom_product_list_pR8a6Y",
+    "custom_product_list_taDrmg"
   ]
 }

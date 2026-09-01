@@ -62,104 +62,96 @@
     "collection_multicolumn_EXUaqF": {
       "type": "collection-multicolumn",
       "blocks": {
-        "column_kAwx99": {
+        "column_FYteEg": {
           "type": "column",
           "settings": {
-            "selected_collection": "new-arrivals",
+            "selected_collection": "heirloom-accessories",
             "show_text_double_column": false
           }
         },
-        "column_P8aUMz": {
+        "column_mG9May": {
           "type": "column",
           "settings": {
-            "selected_collection": "taps-sinks",
+            "selected_collection": "for-the-love-of-kitchens",
             "show_text_double_column": false
           }
         },
-        "column_MPqJVF": {
+        "column_fegyWg": {
           "type": "column",
           "settings": {
-            "selected_collection": "cupboard-hardware",
+            "selected_collection": "cafe-collection",
             "show_text_double_column": false
           }
         },
-        "column_yHMhDF": {
+        "column_FVpFna": {
           "type": "column",
           "settings": {
-            "selected_collection": "lighting",
+            "selected_collection": "grand-tour-collection",
             "show_text_double_column": false
           }
         },
-        "column_fPNepN": {
+        "column_4PFKLt": {
           "type": "column",
           "settings": {
-            "selected_collection": "devol-switches",
+            "selected_collection": "tableware",
             "show_text_double_column": false
           }
         },
-        "column_hcpfMC": {
+        "column_nThYde": {
           "type": "column",
           "settings": {
-            "selected_collection": "architectural-hardware",
+            "selected_collection": "lace-market-tiles",
             "show_text_double_column": false
           }
         },
-        "column_q4rhyG": {
+        "column_KHerBw": {
           "type": "column",
           "settings": {
-            "selected_collection": "furniture",
+            "selected_collection": "porcelain-pendant-lights",
             "show_text_double_column": false
           }
         },
-        "column_38zHgW": {
+        "column_iW3pqL": {
           "type": "column",
           "settings": {
-            "selected_collection": "bathrooms",
+            "selected_collection": "copper-brass-sinks",
             "show_text_double_column": false
           }
         },
-        "column_EFrrMh": {
+        "column_kgimX4": {
           "type": "column",
           "settings": {
-            "selected_collection": "homeware",
+            "selected_collection": "ironmongery",
             "show_text_double_column": false
           }
         },
-        "column_BV79NA": {
+        "column_ANFnKA": {
           "type": "column",
           "settings": {
-            "selected_collection": "handmade-tiles",
+            "selected_collection": "",
             "show_text_double_column": false
           }
         },
-        "column_TyV9hg": {
+        "column_MXJYac": {
           "type": "column",
           "settings": {
-            "selected_collection": "wallpaper",
-            "show_text_double_column": false
-          }
-        },
-        "column_ML7w7n": {
-          "type": "column",
-          "settings": {
-            "selected_collection": "flooring",
+            "selected_collection": "",
             "show_text_double_column": false
           }
         }
       },
       "block_order": [
-        "column_kAwx99",
-        "column_P8aUMz",
-        "column_MPqJVF",
-        "column_yHMhDF",
-        "column_fPNepN",
-        "column_hcpfMC",
-        "column_q4rhyG",
-        "column_38zHgW",
-        "column_EFrrMh",
-        "column_BV79NA",
-        "column_TyV9hg",
-        "column_ML7w7n"
+        "column_FYteEg",
+        "column_mG9May",
+        "column_fegyWg",
+        "column_FVpFna",
+        "column_4PFKLt",
+        "column_nThYde",
+        "column_KHerBw",
+        "column_iW3pqL",
+        "column_kgimX4",
+        "column_ANFnKA",
+        "column_MXJYac"
       ],
       "custom_css": [
         "@media screen and (min-width: 768px) {.page-width {max-width: 1600px; }}",

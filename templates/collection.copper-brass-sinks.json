@@ -9,7 +9,7 @@
  */
 {
   "sections": {
-    "metaobject_gallery_slider_rbBYVY": {
+    "metaobject_gallery_slider_JfxMMF": {
       "type": "metaobject-gallery-slider",
       "name": "Page Metaobject slideshow",
       "settings": {
@@ -30,7 +30,8 @@
       "type": "main-collection-banner",
       "custom_css": [
         ".collection-hero__inner {margin-bottom: 60px;}",
-        ".collection-hero__title {margin-bottom: 1em;}"
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 480px; }}"
       ],
       "settings": {
         "show_collection_description": true,
@@ -59,100 +60,42 @@
         "padding_bottom": 36
       }
     },
-    "custom_product_list_qaVMLT": {
+    "custom_product_list_R6JGjV": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_z3ww4C": {
+        "product_item_mtj6yi": {
           "type": "product_item",
           "settings": {
-            "product": "victorian-washstand-pillar-taps-twin-printers-black-carrara-marble-worktop"
+            "product": "standard-single-aged-copper-sink"
           }
         },
-        "product_item_9gcA3z": {
+        "product_item_GcCctT": {
           "type": "product_item",
           "settings": {
-            "product": "victorian-washstand-mixer-tap-large-princelet-pink-carrara-marble-worktop"
+            "product": "standard-single-polished-brass-sink"
           }
         },
-        "product_item_WyXCdk": {
+        "product_item_DqkfLJ": {
           "type": "product_item",
           "settings": {
-            "product": "victorian-washstand-pillar-taps-medium-mushroom-carrara-marble-worktop"
-          }
-        },
-        "product_item_n3g697": {
-          "type": "product_item",
-          "settings": {
-            "product": "victorian-washstand-pillar-taps-small-princelet-pink-carrara-marble-worktop"
+            "product": "extra-large-single-polished-brass-sink"
           }
         }
       },
       "block_order": [
-        "product_item_z3ww4C",
-        "product_item_9gcA3z",
-        "product_item_WyXCdk",
-        "product_item_n3g697"
-      ],
-      "name": "Custom product list",
-      "settings": {
-        "title": "",
-        "heading_size": "hxl",
-        "subtitle": "",
-        "hide_subtitle": false,
-        "image_width": "full",
-        "image_ratio": "portrait",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "show_secondary_image": true,
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "show_top_border": false,
-        "show_bottom_border": false,
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "sectionname": ""
-      }
-    },
-    "custom_product_list_hD9GDD": {
-      "type": "custom-product-list",
-      "blocks": {
-        "product_item_49BnXC": {
-          "type": "product_item",
-          "settings": {
-            "product": "aged-brass-basin-pillar-taps"
-          }
-        },
-        "product_item_NKtAGW": {
-          "type": "product_item",
-          "settings": {
-            "product": "aged-brass-basin-mixer-tap"
-          }
-        },
-        "product_item_UNRHbX": {
-          "type": "product_item",
-          "settings": {
-            "product": "clothes-horse"
-          }
-        }
-      },
-      "block_order": [
-        "product_item_49BnXC",
-        "product_item_NKtAGW",
-        "product_item_UNRHbX"
+        "product_item_mtj6yi",
+        "product_item_GcCctT",
+        "product_item_DqkfLJ"
       ],
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
-        "heading_size": "hxl",
+        "heading_size": "h1",
         "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
@@ -171,10 +114,9 @@
     }
   },
   "order": [
-    "metaobject_gallery_slider_rbBYVY",
+    "metaobject_gallery_slider_JfxMMF",
     "banner",
     "product-grid",
-    "custom_product_list_qaVMLT",
-    "custom_product_list_hD9GDD"
+    "custom_product_list_R6JGjV"
   ]
 }

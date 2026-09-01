@@ -659,7 +659,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const basePath = (rootPath || "").replace(/\/$/, "");
 
     // Safer than :has(...); product-info carries data-section="{{ section.id }}"
+    // NOTE: expression body (no braces) so it actually RETURNS the section id. It previously
+    // had a block body with no `return`, so it always returned undefined — which made every
+    // option switch fall through to the hard-navigation fallback below (a full page reload).
     const getSectionId = () => document.querySelector("product-info[data-section]")?.dataset.section || null;
+
+    // Bumped on every switch so out-of-order fetches (rapid back-and-forth) can't apply a
+    // stale product — only the most recent selection is committed to the DOM.
+    let switchSeq = 0;
 
     selectorWrapper.addEventListener("change", () => {
       toggleFinishDropdown();
@@ -715,6 +722,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      // Claim this as the latest switch; a later switch bumps switchSeq and supersedes us.
+      const mySeq = ++switchSeq;
+
       // Targeted AJAX swap: only update elements that differ between swatch products
       fetch(`${targetPath}?section_id=${encodeURIComponent(sectionId)}`)
         .then((res) => res.text())
@@ -728,26 +738,162 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
           }
 
-          curWrapper.innerHTML = newWrapper.innerHTML;
+          // Structural safety net: if the two option products differ in shape (one has the
+          // coverage calculator or a mix-match bundle and the other doesn't), a targeted field
+          // update could leave stale/half-updated DOM. Fall back to a full navigation instead.
+          const curHasCalc = !!curWrapper.querySelector('.quantity_coverage-main-wrapper');
+          const newHasCalc = !!newWrapper.querySelector('.quantity_coverage-main-wrapper');
+          const curHasMM = !!curWrapper.querySelector('.mm-bundle');
+          const newHasMM = !!newWrapper.querySelector('.mm-bundle');
+          if (curHasCalc !== newHasCalc || curHasMM !== newHasMM) {
+            window.location.assign(targetPath);
+            return;
+          }
 
-          // Execute scripts from injected HTML
-          curWrapper.querySelectorAll('script').forEach(oldScript => {
-            const newScript = document.createElement('script');
+          // Targeted update: replace ONLY the pieces that differ between the two option
+          // products, instead of rebuilding the whole wrapper. Rebuilding the whole wrapper
+          // tore down the gallery + entire block, which flickered in and out on every switch.
+          // NOTE: #custom-select-wrapper is not inside any element replaced here, so its change
+          // listener persists — we deliberately do NOT call initProductSwitcher again
+          // (re-binding it would make one dropdown change fire the swap twice).
 
-            [...oldScript.attributes].forEach(attr => {
-              newScript.setAttribute(attr.name, attr.value);
+          // Helper: swap innerHTML of a matching element
+          function swapEl(selector) {
+            const cur = curWrapper.querySelector(selector);
+            const nw = newWrapper.querySelector(selector);
+            if (cur && nw) cur.innerHTML = nw.innerHTML;
+          }
+
+          // Helper: swap entire element (outerHTML) for structural changes
+          function replaceEl(selector) {
+            const cur = curWrapper.querySelector(selector);
+            const nw = newWrapper.querySelector(selector);
+            if (cur && nw) cur.replaceWith(nw.cloneNode(true));
+            else if (cur && !nw) cur.innerHTML = '';
+            else if (!cur && nw) return false;
+
+            return true;
+          }
+
+          // Collect the new option's gallery image URLs so we can PRELOAD them before swapping.
+          // Preloading means the swap paints an already-decoded image, instead of a blank that
+          // fills in a moment later — that "fill-in" was the gallery flicker.
+          const imgUrls = (() => {
+            const urls = new Set();
+            newWrapper.querySelectorAll('.product__media-wrapper img').forEach((img) => {
+              const src = img.getAttribute('src') || img.getAttribute('data-src');
+              if (src) urls.add(src);
+              const srcset = img.getAttribute('srcset') || img.getAttribute('data-srcset');
+              if (srcset) {
+                const first = (srcset.split(',')[0] || '').trim().split(' ')[0];
+                if (first) urls.add(first);
+              }
             });
+            return [...urls];
+          })();
+          const preloadImages = (urls) => Promise.race([
+            Promise.all(urls.map((u) => new Promise((res) => {
+              const im = new Image();
+              im.onload = im.onerror = () => res();
+              im.src = u;
+            }))),
+            new Promise((res) => setTimeout(res, 600)) // never stall the swap on a slow image
+          ]);
 
-            newScript.textContent = oldScript.textContent;
+          // Every visible mutation happens inside ONE synchronous callback, so the browser
+          // paints a single time with the finished result. In particular the calculator is
+          // replaced, reconfigured AND recomputed in the same tick (its script is already
+          // loaded, so initCoverageCalculators runs synchronously), so its numbers never paint
+          // the raw server defaults first — no hide/reveal, no number flash.
+          const applyUpdate = () => {
+            // A newer switch has been requested since we started — don't apply stale product.
+            if (mySeq !== switchSeq) return;
+            try {
+              // 1. Update product-info attributes
+              const curInfo = curWrapper.querySelector('product-info');
+              const newInfo = newWrapper.querySelector('product-info');
+              if (curInfo && newInfo) {
+                if (newInfo.dataset.productId) curInfo.dataset.productId = newInfo.dataset.productId;
+                if (newInfo.dataset.url) curInfo.dataset.url = newInfo.dataset.url;
+              }
 
-            oldScript.parentNode.replaceChild(newScript, oldScript);
-          });
+              // 2. Title
+              swapEl('.product__title');
 
-          history.replaceState(null, "", targetPath);
+              // 3. Price
+              swapEl('[id^="price-"]');
 
-          // Clean up addon state when switching to a non-addon product
-          var qtyWrapper = document.querySelector('.product .quantity_buy_button-wrapper');
-          if (qtyWrapper) qtyWrapper.classList.remove('has-addon');
+              // 4. Inventory / lead time
+              const curInv = curWrapper.querySelector('[id^="Inventory-"]');
+              const newInv = newWrapper.querySelector('[id^="Inventory-"]');
+              if (curInv && newInv) { curInv.className = newInv.className; curInv.innerHTML = newInv.innerHTML; }
+
+              // 5. Image gallery (images already preloaded above)
+              swapEl('.product__media-wrapper');
+
+              // 6. Description
+              replaceEl('.product__description');
+
+              // 7. Coverage calculator (full replace — structural differences between products)
+              replaceEl('.quantity_coverage-main-wrapper');
+              const liveCalcEl = curWrapper.querySelector('.quantity_coverage-main-wrapper');
+
+              // 8. Buy button / quantity wrapper
+              if (!(liveCalcEl && liveCalcEl.querySelector('.quantity_buy_button-wrapper'))) {
+                replaceEl('.quantity_buy_button-wrapper');
+              }
+
+              // 9. Variant ID in form
+              const curId = curWrapper.querySelector('input.product-variant-id[name="id"]') ||
+                curWrapper.querySelector('form[action*="/cart/add"] input[name="id"]');
+              const newId = newWrapper.querySelector('input.product-variant-id[name="id"]') ||
+                newWrapper.querySelector('form[action*="/cart/add"] input[name="id"]');
+              if (curId && newId) curId.value = newId.value;
+
+              // 10. Product inventory JSON
+              const curInvJson = curWrapper.querySelector('[id^="ProductInventory-"]');
+              const newInvJson = newWrapper.querySelector('[id^="ProductInventory-"]');
+              if (curInvJson && newInvJson) curInvJson.textContent = newInvJson.textContent;
+
+              // 11. Sample pack button
+              replaceEl('.product-sample-pack');
+
+              // 12. Installment / payment terms
+              const curInstallment = curWrapper.querySelector('.installment');
+              const newInstallment = newWrapper.querySelector('.installment');
+              if (curInstallment && newInstallment) curInstallment.innerHTML = newInstallment.innerHTML;
+
+              // Re-run ONLY the tile-calculator config inline script (sets window.tileCalculator
+              // for the new product) — must happen BEFORE initCoverageCalculators below.
+              // (Deliberately NOT re-running every inline script — that would re-run the whole
+              // section script and re-trigger unrelated behaviour.)
+              newWrapper.querySelectorAll('script:not([src])').forEach((s) => {
+                const type = (s.type || '').toLowerCase();
+                if (type && type !== 'text/javascript') return;
+                if (!/window\.tileCalculator/.test(s.textContent)) return;
+                const clone = document.createElement('script');
+                clone.textContent = s.textContent;
+                document.head.appendChild(clone);
+                document.head.removeChild(clone);
+              });
+            } catch (e) {
+              console.error('[product-switch] targeted update error (non-fatal):', e);
+            }
+
+            history.replaceState(null, "", targetPath);
+
+            // Clean up addon state when switching to a non-addon product
+            var qtyWrapper = document.querySelector('.product .quantity_buy_button-wrapper');
+            if (qtyWrapper) qtyWrapper.classList.remove('has-addon');
+
+            // Re-init the behaviours tied to the replaced DOM. initCoverageCalculators computes
+            // synchronously here (script already loaded), so the freshly-inserted calculator is
+            // filled with the correct values within this same paint. Each guarded so a hiccup
+            // can't reject the promise / trigger a reload.
+            try { initSwiperGallery(); } catch (e) { console.error('[product-switch] initSwiperGallery failed:', e); }
+            try { initCoverageCalculators(curWrapper); } catch (e) { console.error('[product-switch] initCoverageCalculators failed:', e); }
+            try { readmoreDescription(); } catch (e) { console.error('[product-switch] readmoreDescription failed:', e); }
+          };
 
           // Re-init for newly injected DOM (not initProductSwitcher — selector persists)
           initProductSwitcher();

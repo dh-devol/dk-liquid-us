@@ -147,8 +147,8 @@
         "slide_dNi9hP": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Bath-Showroom-Green-Room-62_1.jpg",
-            "mobile_image": "shopify://shop_images/Bath-Showroom-Green-Room-47_jpg.webp",
+            "image": "shopify://shop_images/Frilly_Charteuse_Light-1801_crop_jpg.webp",
+            "mobile_image": "shopify://shop_images/07_Millhouse_Kitchen_jpg.webp",
             "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
             "desktop_focal_point": 56,
             "mobile_focal_point": 100,
@@ -316,7 +316,7 @@
         "column_t89NrC": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-classic-english-kitchen",
+            "dynamic_costs": "classic-english-kitchen",
             "custom_text_hover": ""
           }
         },
