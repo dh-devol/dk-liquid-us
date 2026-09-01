@@ -675,7 +675,7 @@
     </quantity-popover>
   </td>
 
-  <td class="cart-item__totals right">
+  <td class="cart-item__totals right" {%- if display_original_line_price != display_final_line_price -%}style="padding-top: 1rem;"{% endif %}>
     <quantity-popover>
       {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
         <p class="cart-item__flooring-summary large-up-hide" data-line-key="{{ item.key }}">{{ _item_ft2_display }} ft²</p>
