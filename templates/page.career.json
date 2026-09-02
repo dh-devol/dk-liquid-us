@@ -71,23 +71,10 @@
             "link_url": "",
             "page": ""
           }
-        },
-        "collapsible_row_jGTiBN": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Assistant Kitchen Designer",
-            "sub_heading": "Manhattan Showroom",
-            "icon": "none",
-            "row_content": "<p>We are looking for a creative, organised individual with a genuine passion for design and interiors to join our high-performing design team at our Bond Street showroom in New York City. This is a junior, supportive role suited to someone at the beginning of their design career who is eager to learn, develop their skills, and play an integral part in creating beautiful designs for our customers in the distinctive style that deVOL is known for. You will work closely with our Senior Designers and Managers, offering assistance across every stage of the kitchen design and ordering process.</p><p><br/>The role will include, but is not limited to:</p><ul><li>Drawing up customer room plans and creating kitchen layouts using our 2D CAD software (DraftSight), under the supervision of a Kitchen Designer</li><li>Assisting Senior Designers throughout the full kitchen design process</li><li>Being involved in customer design meetings and assisting with ongoing design work</li><li>Preparing detailed kitchen quotations using Microsoft Excel</li><li>Assisting with the internal processing of kitchen orders in line with company processes</li><li>Meeting and greeting clients in the showroom, and answering and directing telephone and email enquiries</li><li>Working closely with the wider UK design and project management teams to ensure the highest standards of design and customer service are offered and met on each project</li><li>Contributing to a beautifully presented showroom and maintaining a professional, well-organised working environment</li></ul><p></p><p><br/>We Would Love You To:</p><ul><li>Have a degree in furniture/product design, interior design, interior architecture, or a related design discipline</li><li>Have a strong interest in interiors and kitchen design, showing pride in producing high-quality designs</li><li>Have excellent written and verbal communication skills and strong numerical ability, with confidence in preparing clear correspondence and accurate quotations.</li><li>Be organized and comfortable managing multiple tasks in a fast-paced showroom environment</li><li>Have good experience using CAD software (DraftSight, AutoCAD, or similar), Microsoft suite (and/or similar packages), and a willingness to learn new systems and processes</li><li>Have some prior experience in a customer-facing role, as a bonus, but is not fully essential</li></ul><p></p><p>This is a full-time role, based at our Bond Street Showroom. For the right candidate, compensation for the role will start at$70,000 per year.</p><p>To apply for this role, please send your resume, a covering letter and a portfolio with examples of your design work to:<br/><a href=\"mailto:us.careers@devolkitchens.com\" title=\"mailto:us.careers@devolkitchens.com\">us.careers@devolkitchens.com</a></p>",
-            "url_title": "",
-            "link_url": "",
-            "page": ""
-          }
         }
       },
       "block_order": [
-        "collapsible_row_67URJU",
-        "collapsible_row_jGTiBN"
+        "collapsible_row_67URJU"
       ],
       "custom_css": [
         "h2.collapsible-content__heading.inline-richtext.h0 {margin-bottom: -20px;}",
