@@ -547,8 +547,8 @@ cart-remove-button .icon-remove {
     position:relative;
   }
   .cart_item-remove-price__wrapper{
-    position: absolute;
-    bottom: 7px;
+    position: relative;
+    /* bottom: 7px; */
   }
   
 }

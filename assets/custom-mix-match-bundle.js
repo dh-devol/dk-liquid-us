@@ -229,31 +229,42 @@ window.initMixMatchBundle = function(root) {
         if (bundlePriceType == "variable") {
             console.log("variable");
 
+            const parentProps = {
+                _group_id: group_id,
+                _bundle_parent: "true",
+                _cart_text: product_cart_text,
+            };
+
+            if (bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
+                parentProps['Availability'] = bundleLeadTime;
+            }
+
             items.push({
                 id: bundleVariantId,
                 quantity,
-                properties: {
-                    _group_id: group_id,
-                    _bundle_parent: "true",
-                    _cart_text: product_cart_text,
-                    Availability: bundleLeadTime
-                }
+                properties: parentProps
             });
 
             let i = 0;
             compressed.forEach(c => {
                 i += 1;
                 if(c.variant_id != "none") {
+                    const childProps = {
+                        _group_id: group_id,
+                        _bundle_child: "true",
+                        _bundle_sort: `${i}`,
+                        _bundle_summary: `${c.title} (× ${c.qty})`,
+                        _bundle_base_qty: String(c.qty)
+                    };
+
+                    if (bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
+                        childProps['Availability'] = bundleLeadTime;
+                    }
+
                     items.push({
                         id: c.variant_id,
                         quantity: c.qty,
-                        properties: {
-                            _group_id: group_id,
-                            _bundle_child: "true",
-                            _bundle_sort: `${i}`,
-                            _bundle_summary: `${c.title} (× ${c.qty})`,
-                            _bundle_base_qty: String(c.qty)
-                        }
+                        properties: childProps
                     });
                 }
             });
