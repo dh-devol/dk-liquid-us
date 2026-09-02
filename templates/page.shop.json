@@ -83,6 +83,13 @@
             "show_text_double_column": false
           }
         },
+        "column_hcpfMC": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "architectural-hardware",
+            "show_text_double_column": false
+          }
+        },
         "column_yHMhDF": {
           "type": "column",
           "settings": {
@@ -94,13 +101,6 @@
           "type": "column",
           "settings": {
             "selected_collection": "devol-switches",
-            "show_text_double_column": false
-          }
-        },
-        "column_hcpfMC": {
-          "type": "column",
-          "settings": {
-            "selected_collection": "architectural-hardware",
             "show_text_double_column": false
           }
         },
@@ -151,9 +151,9 @@
         "column_kAwx99",
         "column_P8aUMz",
         "column_MPqJVF",
+        "column_hcpfMC",
         "column_yHMhDF",
         "column_fPNepN",
-        "column_hcpfMC",
         "column_q4rhyG",
         "column_38zHgW",
         "column_EFrrMh",
