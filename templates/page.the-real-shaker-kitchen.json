@@ -464,7 +464,7 @@
         "column_BLWzar": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "connecticut-kitchen-ftlok",
+            "dynamic_costs": "connecticut-kitchen",
             "custom_text_hover": "View this project in detail"
           }
         },
