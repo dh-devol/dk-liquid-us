@@ -24,8 +24,9 @@
           "type": "column",
           "settings": {
             "link": "shopify://products/devol-brochure",
+            "anchor": "",
             "dynamic_costs": "",
-            "image": "shopify://shop_images/thumbnail-brochure-_-book-our-kitchen-brochure-01.jpg",
+            "image": "shopify://shop_images/thumbnail-brochure-and-book-our-kitchen-brochure-01.jpg",
             "image_hover": "shopify://shop_images/thumbnail-brochure-_-book-our-kitchen-brochure-02.jpg",
             "custom_text_hover": "",
             "title": "Our Kitchen Brochure",
@@ -40,6 +41,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://products/devol-kitchen-hardback-signed",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/e6b94355-ce2d-47db-a45e-f5cc7e4fce0c.jpg",
             "image_hover": "shopify://shop_images/devol_kitchens_book_rollover_jpg.webp",
