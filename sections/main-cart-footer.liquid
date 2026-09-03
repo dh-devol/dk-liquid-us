@@ -279,10 +279,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
 
-      const defaultDate = addBusinessDays(today, minLeadTime, countWeekends);
+      {% comment %} const defaultDate = addBusinessDays(today, minLeadTime, countWeekends);
       const defaultDateStr = defaultDate.getDate().toString().padStart(2, '0') + '-' +
                              (defaultDate.getMonth() + 1).toString().padStart(2, '0') + '-' +
-                             defaultDate.getFullYear();
+                             defaultDate.getFullYear(); {% endcomment %}
 
       var wrapperEl = document.querySelector('.flatpickr_date-wrapper');
       var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
             supportWeightForClear += (item.grams || 0) * item.quantity;
           }
         });
-        var stillHasFlooring = (cart.items || []).some(function(item) {
+        var stillHasFlooring = cart.items.some(function(item) {
           return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
         });
 
@@ -465,7 +465,6 @@ document.addEventListener('DOMContentLoaded', function () {
           var props = cartItem.properties || {};
           var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
 
-          // Coverage block
           if (props['Coverage'] !== coverageDisplay || hasStaleKeys) {
             var mergedProps = Object.assign({}, props, { 'Coverage': coverageDisplay });
             delete mergedProps['_lead_time_days'];
@@ -578,7 +577,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var hasFlooringForClear = cart.items.some(function(item) {
           return item.product_type === flooringTypeForClear;
         });
-        var stillHasFlooring = (cart.items || []).some(function(item) {
+        var stillHasFlooring = cart.items.some(function(item) {
           return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
         });
 
@@ -617,8 +616,18 @@ document.addEventListener('DOMContentLoaded', function () {
           return leadDataByVariant[String(item.variant_id)];
         });
 
-        function processUpdates(index) {
-          if (index >= itemsToUpdate.length) {
+        // Group lines by variant so same-variant duplicates are handled as one unit
+        var groupedByVariant = {};
+        itemsToUpdate.forEach(function(item) {
+          var vid = String(item.variant_id);
+          if (!groupedByVariant[vid]) groupedByVariant[vid] = [];
+          groupedByVariant[vid].push(item);
+        });
+
+        var variantIds = Object.keys(groupedByVariant);
+
+        function processVariant(index) {
+          if (index >= variantIds.length) {
             Promise.all([orderPromiseWrite, deliveryDateClearWrite]).then(function() {
               if (!cartForm.querySelector('input[name="checkout"]')) {
                 var ci = document.createElement('input');
@@ -631,36 +640,60 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             return;
           }
-          var item = itemsToUpdate[index];
-          var leadData = leadDataByVariant[String(item.variant_id)];
-          var mergedProps = Object.assign({}, item.properties || {});
+
+          var vid = variantIds[index];
+          var lines = groupedByVariant[vid];
+          var leadData = leadDataByVariant[vid];
+          var totalQty = lines.reduce(function(sum, l) { return sum + l.quantity; }, 0);
+
+          var keepLine = lines[0];
+          var mergedProps = Object.assign({}, keepLine.properties || {});
           delete mergedProps['_lead_time_days'];
           delete mergedProps['_Promise Date'];
-          if (leadData.text) {
-            mergedProps['Availability'] = leadData.text;
+          if (leadData.text) mergedProps['Availability'] = leadData.text;
+
+          var liveCoverage = coverageByVariant[vid];
+          if (liveCoverage) mergedProps['Coverage'] = liveCoverage;
+
+          var isFlooringItem = keepLine.product_type === flooringTypeForClear;
+          var isQualifyingSupportItem = keepLine.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear);
+          if (!isFlooringItem && !isQualifyingSupportItem) {
+            delete mergedProps['Flooring Delivery Date'];
           }
 
-          var liveCoverage = coverageByVariant[String(item.variant_id)];
-          if (liveCoverage) {
-            mergedProps['Coverage'] = liveCoverage;
-          }
+          // Remove extra duplicate lines FIRST, then set the survivor's combined
+          // quantity + properties. Removing first avoids writing to keys that a
+          // prior write in this same sequence may have invalidated.
+          var removals = lines.slice(1);
 
-          fetch('/cart/change.js', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              id: item.key,
-              quantity: item.quantity,
-              properties: mergedProps
+          function removeNext(i) {
+            if (i >= removals.length) {
+              fetch('/cart/change.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  id: keepLine.key,
+                  quantity: totalQty,
+                  properties: mergedProps
+                })
+              })
+              .then(function() { processVariant(index + 1); })
+              .catch(function() { processVariant(index + 1); });
+              return;
+            }
+            fetch('/cart/change.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id: removals[i].key, quantity: 0 })
             })
-          }).then(function() {
-            processUpdates(index + 1);
-          }).catch(function() {
-            processUpdates(index + 1);
-          });
+            .then(function() { removeNext(i + 1); })
+            .catch(function() { removeNext(i + 1); });
+          }
+
+          removeNext(0);
         }
 
-        processUpdates(0);
+        processVariant(0);
       })
       .catch(function() {
         if (!cartForm.querySelector('input[name="checkout"]')) {
