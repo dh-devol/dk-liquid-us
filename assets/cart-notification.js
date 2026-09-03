@@ -60,51 +60,53 @@ class CartNotification extends HTMLElement {
     const dataEl = document.getElementById('lead-time-calc-data');
     if (!dataEl) return;
 
-    const title = item?.title || parsedState?.product_title || 'Product';
     const available = parseInt(dataEl.getAttribute('data-available'), 10) || 0;
     const inventoryPolicy = dataEl.getAttribute('data-inventory-policy');
     const inventoryManagement = dataEl.getAttribute('data-inventory-management');
     const secondaryText = dataEl.getAttribute('data-secondary-text');
-    const quantity = parseInt(
-      document.querySelector('[name="quantity"]')?.value || '1',
-      10
-    );
 
-    const isBackorder =
-      inventoryManagement === 'shopify' &&
-      inventoryPolicy === 'continue' &&
-      (available - item.quantity) < 0 &&
-      secondaryText;
-
-    if (!isBackorder) return;
-
-    // Only show the partial-stock message when there's still some stock left.
-    // If available is 0 or less, the default "added to basket" message stands.
+    if (inventoryManagement !== 'shopify' || inventoryPolicy !== 'continue' || !secondaryText) {
+      return;
+    }
     if (available <= 0) return;
 
-    const messageEl = document.querySelector('.added-message');
-    const test = document.querySelector('.cart-notification')
+    fetch('/cart.js')
+      .then((r) => r.json())
+      .then((cart) => {
+        const totalQuantity = (cart.items || [])
+          .filter((line) => line.variant_id === item.variant_id)
+          .reduce((sum, line) => sum + line.quantity, 0);
 
-    messageEl.textContent = '';
-    test.classList.add("secondary-message");
+        const isBackorder = (available - totalQuantity) < 0;
+        if (!isBackorder) return;
 
-    const line1 = document.createElement('p');
-    line1.textContent = `${title} has been added to your basket.`;
+        const title = item.title || 'Product';
+        const messageEl = document.querySelector('.added-message');
+        const notification = document.querySelector('.cart-notification');
+        if (!messageEl) return;
 
-    const line2 = document.createElement('p');
-    line2.textContent = `We currently have ${available} in stock. Your order of ${quantity} will be on a lead time of ${secondaryText}.`;
+        messageEl.textContent = '';
+        if (notification) notification.classList.add('secondary-message');
 
-    const line3 = document.createElement('p');
-    line3.textContent = 'Please head to your ';
+        const line1 = document.createElement('p');
+        line1.textContent = `${title} has been added to your basket.`;
 
-    const link = document.createElement('a');
-    link.href = '/cart';
-    link.textContent = 'basket';
+        const line2 = document.createElement('p');
+        line2.textContent = `We currently have ${available} in stock. Your basket now has ${totalQuantity}, which will ship on a ${secondaryText}.`;
 
-    line3.appendChild(link);
-    line3.append(' to review and adjust if needed.');
+        const line3 = document.createElement('p');
+        line3.textContent = 'Please head to your ';
 
-    messageEl.append(line1, line2, line3);
+        const link = document.createElement('a');
+        link.href = '/cart';
+        link.textContent = 'basket';
+
+        line3.appendChild(link);
+        line3.append(' to review and adjust if needed.');
+
+        messageEl.append(line1, line2, line3);
+      })
+      .catch(() => { /* silent */ });
   }
 
   /**

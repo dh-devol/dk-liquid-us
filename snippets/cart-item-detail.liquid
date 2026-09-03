@@ -167,12 +167,20 @@
           {%- endfor -%}
         {%- endif -%}
 
-         {%- capture item_lead_time_text -%}
-          {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item.quantity -%}
+        {%- assign item_variant_total_qty = 0 -%}
+        {%- for cart_line in cart.items -%}
+          {%- if cart_line.variant_id == item.variant_id -%}
+            {%- assign item_variant_total_qty = item_variant_total_qty | plus: cart_line.quantity -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- capture item_lead_time_text -%}
+          {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item_variant_total_qty -%}
         {%- endcapture -%}
+        {%- assign item_lead_time_text = item_lead_time_text | strip -%}
 
         {%- capture item_lead_time_days -%}
-          {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item.quantity, field: 'lead_time_days' -%}
+          {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item_variant_total_qty, field: 'lead_time_days' -%}
         {%- endcapture -%}
         {%- assign item_lead_time_days = item_lead_time_days | strip -%}
 
@@ -190,8 +198,9 @@
           {%- assign property_value = property.last -%}
           {%- assign property_first_char = property_key | slice: 0 -%}
 
-          {%- if property_key == 'Availability' and item_lead_time_text != blank -%}
-            {%- assign property_value = item_lead_time_text -%}
+          {%- comment -%} Skip 'Availability' here — rendered separately below, live from item.quantity {%- endcomment -%}
+          {%- if property_key == 'Availability' -%}
+            {%- continue -%}
           {%- endif -%}
 
           {%- if property_value != blank
@@ -248,7 +257,7 @@
       </dl>
       {% comment %} Fallback {%- assign item_lead_time_days = item_product_lead_time_days | default: item.properties["_lead_time_days"] -%} {% endcomment %}
       {%- if item_lead_time_days != blank -%}
-        <span class="lead-time-span visually-hidden" data-leadtime="{{ item_lead_time_days }}" data-leadtext="{{ item_lead_time_text | escape }}" data-line-key="{{ item.key }}"></span>
+        <span class="lead-time-span product__inventory cart-item-stock" data-leadtime="{{ item_lead_time_days }}" data-leadtext="{{ item_lead_time_text | escape }}" data-line-key="{{ item.key }}">{{ item_lead_time_text | escape }}</span>
       {%- endif -%}
       <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
       {%- comment -%}
@@ -341,9 +350,9 @@
       {% endif %}
       
     {%- endif -%}
-    {% if item.properties == blank %}
+    {% comment %} {% if item.properties == blank %}
       <span class="product__inventory cart-item-stock">{{ item.product.metafields.custom.lead_time.value }}</span>
-    {% endif %}
+    {% endif %} {% endcomment %}
     {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
       <p class="cart-item__flooring-summary small-hide medium-hide" data-line-key="{{ item.key }}">{{ _item_ft2_display }} ft²</p>
     {%- endif -%}

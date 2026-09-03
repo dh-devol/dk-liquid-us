@@ -108,7 +108,7 @@
                 {%- endif -%}
               {%- endfor -%}
               {%- assign has_flooring = false -%}
-              {%- if has_flooring_products or flooring_support_weight_g > _weight_threshold_g -%}
+              {%- if has_flooring_products or flooring_support_weight_g >= _weight_threshold_g -%}
                 {%- assign has_flooring = true -%}
               {%- endif -%}
                <div class="cart_custom-descrption-wrapper {% unless has_flooring %}no_flooring{% endunless %}">
@@ -399,30 +399,17 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
+        // NOTE: Availability/_lead_time_days/_Promise Date are intentionally
+        // NOT written to line properties here. Writing them
+        // (before checkout) causes future adds of the same variant to fail
+        // to merge into this line, since Shopify only merges lines whose
+        // properties match exactly. These are written once, at checkout
+        // time, by the cart form's submit handler instead.
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
           var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
           if (!key || !leadDays) return;
           if (leadDays > maxLeadDays) maxLeadDays = leadDays;
-
-          var cartItem = (cart.items || []).find(function(item) {
-            return item.key === key;
-          });
-          if (!cartItem) return;
-
-          var leadText = span.getAttribute('data-leadtext');
-          var props = cartItem.properties || {};
-          var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
-          var availability = leadText && props['Availability'] !== leadText;
-
-          // Availability block
-          if (hasStaleKeys || availability) {
-            var mergedProps = Object.assign({}, props);
-            delete mergedProps['_lead_time_days'];
-            delete mergedProps['_Promise Date'];
-            if (leadText) mergedProps['Availability'] = leadText;
-            pushLineUpdate(cartItem.key, cartItem.quantity, mergedProps);
-          }
         });
 
         // Clear Flooring attributes if no flooring/qualifying-support items remain
@@ -488,9 +475,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Always set order-level _Promise Date from the latest rendered lead times
-        var checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
-        var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
-
         var orderPromiseWrite = Promise.resolve();
         if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
@@ -530,12 +514,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var cartForm = document.getElementById('cart');
   if (cartForm) {
     cartForm.addEventListener('submit', function(e) {
-      // Check if any items have lead time data (via DOM spans or cart data)
       var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
       if (spans.length === 0) return;
 
       e.preventDefault();
       updateOrderPromiseDate();
+
+      function extractVariantId(lineKey) {
+        return lineKey ? lineKey.split(':')[0] : null;
+      }
 
       fetch('/cart.js', {
         method: 'GET',
@@ -543,27 +530,40 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(function(r) { return r.json(); })
       .then(function(cart) {
-        var leadDataMap = {};
+        // Build lookup by variant_id, not line key — the line key can
+        // change between when spans were rendered and now (e.g. a
+        // flooring delivery-date selection mutates the property hash),
+        // so matching on key can silently miss the item entirely.
+        var leadDataByVariant = {};
         var maxLeadDays = 0;
 
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
           var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
           var leadText = span.getAttribute('data-leadtext');
-          if (key && leadDays) {
-            leadDataMap[key] = {
-              days: leadDays,
-              text: leadText,
-              promise: formatPromiseDate(leadDays)
-            };
-            if (leadDays > maxLeadDays) maxLeadDays = leadDays;
-          }
+          var variantId = extractVariantId(key);
+          if (!variantId || !leadDays) return;
+
+          leadDataByVariant[variantId] = {
+            days: leadDays,
+            text: leadText,
+            promise: formatPromiseDate(leadDays)
+          };
+          if (leadDays > maxLeadDays) maxLeadDays = leadDays;
         });
 
-        var checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
-        var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
+        // Coverage elements are also DOM-rendered with the OLD line key,
+        // so also index those by variant_id for the same reason.
+        var coverageByVariant = {};
+        document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
+          if (el.offsetParent === null) return; // skip hidden responsive duplicate
+          var key = el.getAttribute('data-line-key');
+          var variantId = extractVariantId(key);
+          if (!variantId) return;
+          var match = el.textContent.trim().match(/[\d.]+/);
+          if (match) coverageByVariant[variantId] = match[0] + ' m²';
+        });
 
-         // Clear Flooring attributes if no flooring/qualifying-support items remain
         var leadTimesEl = document.getElementById('lead-time-data');
         var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
         var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
@@ -614,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var itemsToUpdate = cart.items.filter(function(item) {
-          return leadDataMap[item.key];
+          return leadDataByVariant[String(item.variant_id)];
         });
 
         function processUpdates(index) {
@@ -632,7 +632,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
           }
           var item = itemsToUpdate[index];
-          var leadData = leadDataMap[item.key];
+          var leadData = leadDataByVariant[String(item.variant_id)];
           var mergedProps = Object.assign({}, item.properties || {});
           delete mergedProps['_lead_time_days'];
           delete mergedProps['_Promise Date'];
@@ -640,12 +640,9 @@ document.addEventListener('DOMContentLoaded', function () {
             mergedProps['Availability'] = leadData.text;
           }
 
-          // Get correct coverage from DOM (only the visible responsive variant)
-          var coverageEls = document.querySelectorAll('.cart-item__flooring-summary[data-line-key="' + item.key + '"]');
-          var visibleCoverageEl = Array.prototype.find.call(coverageEls, function(el) { return el.offsetParent !== null; });
-          if (visibleCoverageEl) {
-            var coverageMatch = visibleCoverageEl.textContent.trim().match(/[\d.]+/);
-            if (coverageMatch) mergedProps['Coverage'] = coverageMatch[0] + ' ft²';
+          var liveCoverage = coverageByVariant[String(item.variant_id)];
+          if (liveCoverage) {
+            mergedProps['Coverage'] = liveCoverage;
           }
 
           fetch('/cart/change.js', {
