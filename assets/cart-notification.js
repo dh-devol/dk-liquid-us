@@ -92,17 +92,10 @@ class CartNotification extends HTMLElement {
         line1.textContent = `${title} has been added to your basket.`;
 
         const line2 = document.createElement('p');
-        line2.textContent = `We currently have ${available} in stock. Your basket now has ${totalQuantity}, which will ship on a ${secondaryText}.`;
+        line2.append(`The quantity you have added will take longer to arrive: ${secondaryText}.`);
 
         const line3 = document.createElement('p');
-        line3.textContent = 'Please head to your ';
-
-        const link = document.createElement('a');
-        link.href = '/cart';
-        link.textContent = 'basket';
-
-        line3.appendChild(link);
-        line3.append(' to review and adjust if needed.');
+        line3.append(`If you would like your items sooner, you can purchase up to ${available} with the original lead time.`);
 
         messageEl.append(line1, line2, line3);
       })
