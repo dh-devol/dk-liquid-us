@@ -25,13 +25,27 @@ if (!customElements.get('product-form')) {
 
       async onSubmitHandler(evt) {
         evt.preventDefault();
-        if (this.submitButton.getAttribute('aria-disabled') === 'true') return;
+        // Guard against a genuine in-flight request only. We deliberately do NOT gate on the
+        // button's `aria-disabled` attribute: if a previous attempt ever left that attribute stuck
+        // (a thrown error mid-handler, a rebuilt button after a variant switch, a blocked fetch),
+        // gating on it would permanently dead-lock add-to-cart until a full page reload — which is
+        // exactly the intermittent "nothing happens / had to refresh the page" behaviour reported.
+        // A backstop timer clears the flag even if a synchronous throw skips the finally below, so
+        // the button can never be stranded in memory.
+        if (this.submitting) return;
+        this.submitting = true;
+        clearTimeout(this._submitGuardTimer);
+        this._submitGuardTimer = setTimeout(() => { this.submitting = false; }, 10000);
+        // Per-attempt reset: `this.error` is instance state that otherwise leaks across submits.
+        // A stale `true` makes a later *successful* add skip the cartUpdate publish (so the header
+        // count silently fails to refresh) and skip re-enabling the button in the finally.
+        this.error = false;
 
         this.handleErrorMessage();
 
         this.submitButton.setAttribute('aria-disabled', true);
         this.submitButton.classList.add('loading');
-        this.querySelector('.loading__spinner').classList.remove('hidden');
+        this.setSpinnerHidden(false);
 
         // Populate _Promise Date on any hidden inputs before collecting form data
         var maxLeadDays = 0;
@@ -48,35 +62,15 @@ if (!customElements.get('product-form')) {
           }
         });
 
-        // Also update the order-level _Promise Date cart attribute
-        // (uses the max lead time across all items already in cart + this item)
-        // Note: only reflects this item's lead time at add-to-cart time — the
-        // cart page (main-cart-footer) recalculates the true max across all
-        // items from the DOM before checkout
-        if (maxLeadDays > 0) {
-          fetch('/cart.js').then(function (r) { return r.json(); }).then(function (cart) {
-            var greatest = maxLeadDays;
-            (cart.items || []).forEach(function (item) {
-              var lt = parseInt((item.properties || {})['_lead_time_days'], 10);
-              if (lt > greatest) greatest = lt;
-            });
-            var d = new Date();
-            d.setDate(d.getDate() + greatest);
-            var dd = d.getDate().toString().padStart(2, '0');
-            var mm = (d.getMonth() + 1).toString().padStart(2, '0');
-            var yy = d.getFullYear().toString().slice(-2);
-            fetch('/cart/update.js', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ 
-                attributes: { 
-                  '_Promise Date': dd + '/' + mm + '/' + yy,
-                   '_Days': String(greatest)
-                }
-              })
-            }).catch(function () { /* silent */ });
-          }).catch(function () { /* silent */ });
-        }
+        // NOTE: the order-level `_Promise Date` cart attribute used to be written HERE, via an
+        // un-awaited fetch('/cart/update.js') that ran CONCURRENTLY with the /cart/add.js below.
+        // Two concurrent cart mutations race server-side: when the attribute write-back wins it
+        // lands a cart snapshot taken *before* the add, silently dropping the just-added line —
+        // the add still returns 200, so the UI says "added" but the item never persists. That was
+        // the primary intermittent "adds nothing / says added but isn't" bug (reproduced live).
+        // The attribute write is now DEFERRED until AFTER the add (+ any add-ons) via
+        // updatePromiseDateAttribute(), called in the success handler below. The per-line
+        // `properties[_Promise Date]` set on the hidden inputs above still ships WITH the add.
 
         const config = fetchConfig('javascript');
         config.headers['X-Requested-With'] = 'XMLHttpRequest';
@@ -106,8 +100,9 @@ if (!customElements.get('product-form')) {
             }
             this.error = true;
             this.submitButton.classList.remove('loading');
-            this.querySelector('.loading__spinner').classList.add('hidden');
+            this.setSpinnerHidden(true);
             this.submitButton.removeAttribute('aria-disabled');
+            this.endSubmit();
             return;
           }
         }
@@ -134,8 +129,9 @@ if (!customElements.get('product-form')) {
             this.handleErrorMessage(message);
             if (this.cart && typeof this.cart.showError === 'function') this.cart.showError(message);
             this.submitButton.classList.remove('loading');
-            this.querySelector('.loading__spinner').classList.add('hidden');
+            this.setSpinnerHidden(true);
             this.submitButton.removeAttribute('aria-disabled');
+            this.endSubmit();
             return;
           }
         }
@@ -152,8 +148,9 @@ if (!customElements.get('product-form')) {
             this.handleErrorMessage(message);
             if (this.cart && typeof this.cart.showError === 'function') this.cart.showError(message);
             this.submitButton.classList.remove('loading');
-            this.querySelector('.loading__spinner').classList.add('hidden');
+            this.setSpinnerHidden(true);
             this.submitButton.removeAttribute('aria-disabled');
+            this.endSubmit();
             return;
           }
         }
@@ -282,10 +279,22 @@ if (!customElements.get('product-form')) {
               }
             }
 
+            // Item (and any add-ons) are now in the cart — write the order-level _Promise Date
+            // attribute SEQUENTIALLY here, never concurrently with an add, so it can no longer
+            // clobber the line we just added. Awaited so the in-flight guard stays held and a fast
+            // second add can't race it either. Non-fatal on failure.
+            if (maxLeadDays > 0) {
+              await this.updatePromiseDateAttribute(maxLeadDays);
+            }
+
             if (!this.cart) {
               window.location = window.routes.cart_url;
               return;
             }
+
+            // The mini cart can only redraw from `sections`; the add response sometimes omits them.
+            // Backfill from the GET Section Rendering API so the count/notification always update.
+            renderResponse = await this.ensureCartSections(renderResponse);
 
             const quickAddModal = this.closest('quick-add-modal');
             if (quickAddModal) {
@@ -305,15 +314,90 @@ if (!customElements.get('product-form')) {
           })
           .catch((e) => console.error(e))
           .finally(() => {
+            this.endSubmit();
             this.submitButton.classList.remove('loading');
             if (this.cart && this.cart.classList.contains('is-empty'))
               this.cart.classList.remove('is-empty');
             if (!this.error) this.submitButton.removeAttribute('aria-disabled');
-            this.querySelector('.loading__spinner').classList.add('hidden');
+            this.setSpinnerHidden(true);
           });
       }
 
       /* ---------- unchanged helper methods ---------- */
+
+      // Clear the in-flight guard. Called on every exit path (early returns + finally) so a stuck
+      // flag can never permanently block future add-to-cart clicks.
+      endSubmit() {
+        this.submitting = false;
+        clearTimeout(this._submitGuardTimer);
+      }
+
+      // Null-safe spinner toggle. The spinner lives inside the submit button, which can be rebuilt
+      // by the combined-listing variant switch; a raw `.classList` access on a missing node would
+      // throw synchronously and strand the button mid-submit.
+      setSpinnerHidden(hidden) {
+        const spinner = this.querySelector('.loading__spinner');
+        if (spinner) spinner.classList.toggle('hidden', hidden);
+      }
+
+      // Write the order-level `_Promise Date` cart attribute (greatest lead time across all cart
+      // items). MUST be called AFTER the add so it never races /cart/add.js — concurrent cart
+      // mutations can drop the just-added line. Non-fatal on failure (attribute is non-critical).
+      updatePromiseDateAttribute(maxLeadDays) {
+        return fetch('/cart.js')
+          .then(function (r) { return r.json(); })
+          .then(function (cart) {
+            var greatest = maxLeadDays;
+            (cart.items || []).forEach(function (item) {
+              var lt = parseInt((item.properties || {})['_lead_time_days'], 10);
+              if (lt > greatest) greatest = lt;
+            });
+            var d = new Date();
+            d.setDate(d.getDate() + greatest);
+            var dd = d.getDate().toString().padStart(2, '0');
+            var mm = (d.getMonth() + 1).toString().padStart(2, '0');
+            var yy = d.getFullYear().toString().slice(-2);
+            return fetch('/cart/update.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ attributes: { '_Promise Date': dd + '/' + mm + '/' + yy } }),
+            });
+          })
+          .catch(function () { /* silent — attribute is non-critical */ });
+      }
+
+      // The cart AJAX endpoints sometimes return `sections: null` (notably while the store is
+      // password-protected / pre-launch), leaving the mini cart with nothing to redraw. The GET
+      // Section Rendering API is unaffected, so when the add response is missing the section(s)
+      // the cart needs, fetch them via GET and merge them in — keyed by BOTH `id` and `section`
+      // so it works whichever key the cart component reads. No-op once Shopify returns sections.
+      async ensureCartSections(response) {
+        try {
+          if (!this.cart || typeof this.cart.getSectionsToRender !== 'function') return response;
+          const list = this.cart.getSectionsToRender();
+          const have = response && response.sections;
+          const need = list.filter((s) => {
+            const key = s.id || s.section;
+            return key && (!have || have[key] == null);
+          });
+          if (!need.length) return response;
+          const apiIds = [...new Set(need.map((s) => s.section || s.id).filter(Boolean))];
+          const base = typeof routes !== 'undefined' && routes.cart_url ? routes.cart_url : '/cart';
+          const fetched = await fetch(`${base}?sections=${encodeURIComponent(apiIds.join(','))}`).then((r) => r.json());
+          response = response || {};
+          response.sections = Object.assign({}, response.sections);
+          need.forEach((s) => {
+            const html = fetched[s.section || s.id];
+            if (html != null) {
+              if (s.id) response.sections[s.id] = html;
+              if (s.section) response.sections[s.section] = html;
+            }
+          });
+        } catch (e) {
+          /* silent — mini cart will catch up on next page load */
+        }
+        return response;
+      }
 
       handleErrorMessage(errorMessage = false) {
         if (this.hideErrors) return;

@@ -5,9 +5,9 @@ class CartRemoveButton extends HTMLElement {
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
-      const groupId = this.querySelector('a').dataset.groupId;
       const addonKeysStr = this.dataset.addonKeys || '';
       const mainKey = this.dataset.mainKey;
+      const groupId = this.querySelector('a').dataset.groupId;
       console.log('[CartRemoveButton]', this.id, '| addonKeys:', addonKeysStr || '(empty)', '| mainKey:', mainKey || '(missing)');
       if (groupId && groupId.length > 14) {
         const qty = document.querySelector(
@@ -326,6 +326,23 @@ class CartItems extends HTMLElement {
     ];
   }
 
+  // Cart AJAX (/cart/change.js, /cart/update.js) sometimes returns `sections: null` — e.g. while
+  // the store is password-protected / pre-launch — which makes the section redraw throw and the
+  // cart silently fail to update. Backfill from the GET Section Rendering API (unaffected). No-op
+  // once Shopify returns sections normally.
+  async ensureSections(parsedState) {
+    if (parsedState && !parsedState.sections) {
+      try {
+        const apiIds = [...new Set(this.getSectionsToRender().map((s) => s.section).filter(Boolean))];
+        const base = typeof routes !== 'undefined' && routes.cart_url ? routes.cart_url : '/cart';
+        parsedState.sections = await fetch(`${base}?sections=${encodeURIComponent(apiIds.join(','))}`).then((r) => r.json());
+      } catch (e) {
+        /* silent — the caller's catch handles a hard failure */
+      }
+    }
+    return parsedState;
+  }
+
   updateQuantity(line, quantity, name, variantId, bundle) {
     this.enableLoading(line);
 
@@ -367,7 +384,7 @@ class CartItems extends HTMLElement {
       .then((response) => {
         return response.text();
       })
-      .then((state) => {
+      .then(async (state) => {
         const parsedState = JSON.parse(state);
         const quantityElement =
           document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
@@ -389,11 +406,14 @@ class CartItems extends HTMLElement {
         if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
         if (mainContent) mainContent.classList.toggle('is-empty', parsedState.item_count === 0);
 
+        // Backfill sections if the cart AJAX response omitted them (see ensureSections).
+        await this.ensureSections(parsedState);
+
         this.getSectionsToRender().forEach((section) => {
           const elementToReplace =
             document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
           elementToReplace.innerHTML = this.getSectionInnerHTML(
-            parsedState.sections[section.section],
+            parsedState.sections && parsedState.sections[section.section],
             section.selector
           );
         });
@@ -508,7 +528,8 @@ class CartItems extends HTMLElement {
       }),
     })
       .then((r) => r.json())
-      .then((parsedState) => {
+      .then(async (parsedState) => {
+        await this.ensureSections(parsedState);
         this.classList.toggle('is-empty', parsedState.item_count === 0);
         const cartDrawerWrapper = document.querySelector('cart-drawer');
         const cartFooter = document.getElementById('main-cart-footer');
@@ -520,7 +541,7 @@ class CartItems extends HTMLElement {
         this.getSectionsToRender().forEach((section) => {
           const elementToReplace =
             document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-          elementToReplace.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+          elementToReplace.innerHTML = this.getSectionInnerHTML(parsedState.sections && parsedState.sections[section.section], section.selector);
         });
 
         publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState });
