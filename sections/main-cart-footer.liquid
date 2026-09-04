@@ -108,7 +108,7 @@
                 {%- endif -%}
               {%- endfor -%}
               {%- assign has_flooring = false -%}
-              {%- if has_flooring_products or flooring_support_weight_g > _weight_threshold_g -%}
+              {%- if has_flooring_products or flooring_support_weight_g >= _weight_threshold_g -%}
                 {%- assign has_flooring = true -%}
               {%- endif -%}
                <div class="cart_custom-descrption-wrapper {% unless has_flooring %}no_flooring{% endunless %}">
@@ -279,10 +279,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
 
-      const defaultDate = addBusinessDays(today, minLeadTime, countWeekends);
+      {% comment %} const defaultDate = addBusinessDays(today, minLeadTime, countWeekends);
       const defaultDateStr = defaultDate.getDate().toString().padStart(2, '0') + '-' +
                              (defaultDate.getMonth() + 1).toString().padStart(2, '0') + '-' +
-                             defaultDate.getFullYear();
+                             defaultDate.getFullYear(); {% endcomment %}
 
       var wrapperEl = document.querySelector('.flatpickr_date-wrapper');
       var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -399,30 +399,17 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
 
+        // NOTE: Availability/_lead_time_days/_Promise Date are intentionally
+        // NOT written to line properties here. Writing them
+        // (before checkout) causes future adds of the same variant to fail
+        // to merge into this line, since Shopify only merges lines whose
+        // properties match exactly. These are written once, at checkout
+        // time, by the cart form's submit handler instead.
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
           var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
           if (!key || !leadDays) return;
           if (leadDays > maxLeadDays) maxLeadDays = leadDays;
-
-          var cartItem = (cart.items || []).find(function(item) {
-            return item.key === key;
-          });
-          if (!cartItem) return;
-
-          var leadText = span.getAttribute('data-leadtext');
-          var props = cartItem.properties || {};
-          var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
-          var availability = leadText && props['Availability'] !== leadText;
-
-          // Availability block
-          if (hasStaleKeys || availability) {
-            var mergedProps = Object.assign({}, props);
-            delete mergedProps['_lead_time_days'];
-            delete mergedProps['_Promise Date'];
-            if (leadText) mergedProps['Availability'] = leadText;
-            pushLineUpdate(cartItem.key, cartItem.quantity, mergedProps);
-          }
         });
 
         // Clear Flooring attributes if no flooring/qualifying-support items remain
@@ -440,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
             supportWeightForClear += (item.grams || 0) * item.quantity;
           }
         });
-        var stillHasFlooring = (cart.items || []).some(function(item) {
+        var stillHasFlooring = cart.items.some(function(item) {
           return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
         });
 
@@ -478,7 +465,6 @@ document.addEventListener('DOMContentLoaded', function () {
           var props = cartItem.properties || {};
           var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
 
-          // Coverage block
           if (props['Coverage'] !== coverageDisplay || hasStaleKeys) {
             var mergedProps = Object.assign({}, props, { 'Coverage': coverageDisplay });
             delete mergedProps['_lead_time_days'];
@@ -488,9 +474,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Always set order-level _Promise Date from the latest rendered lead times
-        var checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
-        var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
-
         var orderPromiseWrite = Promise.resolve();
         if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
@@ -530,12 +513,15 @@ document.addEventListener('DOMContentLoaded', function () {
   var cartForm = document.getElementById('cart');
   if (cartForm) {
     cartForm.addEventListener('submit', function(e) {
-      // Check if any items have lead time data (via DOM spans or cart data)
       var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
       if (spans.length === 0) return;
 
       e.preventDefault();
       updateOrderPromiseDate();
+
+      function extractVariantId(lineKey) {
+        return lineKey ? lineKey.split(':')[0] : null;
+      }
 
       fetch('/cart.js', {
         method: 'GET',
@@ -543,27 +529,40 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(function(r) { return r.json(); })
       .then(function(cart) {
-        var leadDataMap = {};
+        // Build lookup by variant_id, not line key — the line key can
+        // change between when spans were rendered and now (e.g. a
+        // flooring delivery-date selection mutates the property hash),
+        // so matching on key can silently miss the item entirely.
+        var leadDataByVariant = {};
         var maxLeadDays = 0;
 
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
           var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
           var leadText = span.getAttribute('data-leadtext');
-          if (key && leadDays) {
-            leadDataMap[key] = {
-              days: leadDays,
-              text: leadText,
-              promise: formatPromiseDate(leadDays)
-            };
-            if (leadDays > maxLeadDays) maxLeadDays = leadDays;
-          }
+          var variantId = extractVariantId(key);
+          if (!variantId || !leadDays) return;
+
+          leadDataByVariant[variantId] = {
+            days: leadDays,
+            text: leadText,
+            promise: formatPromiseDate(leadDays)
+          };
+          if (leadDays > maxLeadDays) maxLeadDays = leadDays;
         });
 
-        var checkboxWrapper = document.querySelector('.cart_custom-descrption-wrapper');
-        var isFlooringCart = !!checkboxWrapper && !checkboxWrapper.classList.contains('no_flooring');
+        // Coverage elements are also DOM-rendered with the OLD line key,
+        // so also index those by variant_id for the same reason.
+        var coverageByVariant = {};
+        document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
+          if (el.offsetParent === null) return; // skip hidden responsive duplicate
+          var key = el.getAttribute('data-line-key');
+          var variantId = extractVariantId(key);
+          if (!variantId) return;
+          var match = el.textContent.trim().match(/[\d.]+/);
+          if (match) coverageByVariant[variantId] = match[0] + ' m²';
+        });
 
-         // Clear Flooring attributes if no flooring/qualifying-support items remain
         var leadTimesEl = document.getElementById('lead-time-data');
         var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
         var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
@@ -578,7 +577,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var hasFlooringForClear = cart.items.some(function(item) {
           return item.product_type === flooringTypeForClear;
         });
-        var stillHasFlooring = (cart.items || []).some(function(item) {
+        var stillHasFlooring = cart.items.some(function(item) {
           return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
         });
 
@@ -614,11 +613,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var itemsToUpdate = cart.items.filter(function(item) {
-          return leadDataMap[item.key];
+          return leadDataByVariant[String(item.variant_id)];
         });
 
-        function processUpdates(index) {
-          if (index >= itemsToUpdate.length) {
+        // Group lines by variant so same-variant duplicates are handled as one unit
+        var groupedByVariant = {};
+        itemsToUpdate.forEach(function(item) {
+          var vid = String(item.variant_id);
+          if (!groupedByVariant[vid]) groupedByVariant[vid] = [];
+          groupedByVariant[vid].push(item);
+        });
+
+        var variantIds = Object.keys(groupedByVariant);
+
+        function processVariant(index) {
+          if (index >= variantIds.length) {
             Promise.all([orderPromiseWrite, deliveryDateClearWrite]).then(function() {
               if (!cartForm.querySelector('input[name="checkout"]')) {
                 var ci = document.createElement('input');
@@ -631,39 +640,60 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             return;
           }
-          var item = itemsToUpdate[index];
-          var leadData = leadDataMap[item.key];
-          var mergedProps = Object.assign({}, item.properties || {});
+
+          var vid = variantIds[index];
+          var lines = groupedByVariant[vid];
+          var leadData = leadDataByVariant[vid];
+          var totalQty = lines.reduce(function(sum, l) { return sum + l.quantity; }, 0);
+
+          var keepLine = lines[0];
+          var mergedProps = Object.assign({}, keepLine.properties || {});
           delete mergedProps['_lead_time_days'];
           delete mergedProps['_Promise Date'];
-          if (leadData.text) {
-            mergedProps['Availability'] = leadData.text;
+          if (leadData.text) mergedProps['Availability'] = leadData.text;
+
+          var liveCoverage = coverageByVariant[vid];
+          if (liveCoverage) mergedProps['Coverage'] = liveCoverage;
+
+          var isFlooringItem = keepLine.product_type === flooringTypeForClear;
+          var isQualifyingSupportItem = keepLine.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear);
+          if (!isFlooringItem && !isQualifyingSupportItem) {
+            delete mergedProps['Flooring Delivery Date'];
           }
 
-          // Get correct coverage from DOM (only the visible responsive variant)
-          var coverageEls = document.querySelectorAll('.cart-item__flooring-summary[data-line-key="' + item.key + '"]');
-          var visibleCoverageEl = Array.prototype.find.call(coverageEls, function(el) { return el.offsetParent !== null; });
-          if (visibleCoverageEl) {
-            var coverageMatch = visibleCoverageEl.textContent.trim().match(/[\d.]+/);
-            if (coverageMatch) mergedProps['Coverage'] = coverageMatch[0] + ' ft²';
-          }
+          // Remove extra duplicate lines FIRST, then set the survivor's combined
+          // quantity + properties. Removing first avoids writing to keys that a
+          // prior write in this same sequence may have invalidated.
+          var removals = lines.slice(1);
 
-          fetch('/cart/change.js', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              id: item.key,
-              quantity: item.quantity,
-              properties: mergedProps
+          function removeNext(i) {
+            if (i >= removals.length) {
+              fetch('/cart/change.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  id: keepLine.key,
+                  quantity: totalQty,
+                  properties: mergedProps
+                })
+              })
+              .then(function() { processVariant(index + 1); })
+              .catch(function() { processVariant(index + 1); });
+              return;
+            }
+            fetch('/cart/change.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id: removals[i].key, quantity: 0 })
             })
-          }).then(function() {
-            processUpdates(index + 1);
-          }).catch(function() {
-            processUpdates(index + 1);
-          });
+            .then(function() { removeNext(i + 1); })
+            .catch(function() { removeNext(i + 1); });
+          }
+
+          removeNext(0);
         }
 
-        processUpdates(0);
+        processVariant(0);
       })
       .catch(function() {
         if (!cartForm.querySelector('input[name="checkout"]')) {

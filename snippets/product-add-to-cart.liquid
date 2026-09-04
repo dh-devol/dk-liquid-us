@@ -121,7 +121,7 @@
           </script>
         {% endif %}
 
-        {% if product.metafields.custom.lead_time.value != blank or product.metafields.custom.secondary_lead_time.value != blank %}
+        {% comment %} {% if product.metafields.custom.lead_time.value != blank or product.metafields.custom.secondary_lead_time.value != blank %}
           {%- assign variant = product.selected_or_first_available_variant -%}
           {%- capture lead_time_value -%}
             {%- render 'lead-time-text', product: product, variant: variant -%}
@@ -132,8 +132,8 @@
             type="hidden"
             name="properties[Availability]"
           >
-        {% endif %}
-        {%- if product.metafields.custom.lead_time_days.value != blank or product.metafields.custom.secondary_lead_time_days.value != blank -%}
+        {% endif %} {% endcomment %}
+        {% comment %} {%- if product.metafields.custom.lead_time_days.value != blank or product.metafields.custom.secondary_lead_time_days.value != blank -%}
           {%- capture lead_time_days_value -%}
             {%- render 'lead-time-text', product: product, variant: variant, field: 'lead_time_days' -%}
           {%- endcapture -%}
@@ -150,7 +150,7 @@
             data-lead-days="{{ lead_time_days_value | escape }}"
             value=""
           >
-        {% endif %}
+        {%- endif -%} {% endcomment %}
         {%- assign variant = product.selected_or_first_available_variant -%}
 
         {%- capture pdp_available -%}
