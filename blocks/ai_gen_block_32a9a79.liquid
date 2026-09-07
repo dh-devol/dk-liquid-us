@@ -15,7 +15,7 @@
     max-height: 750px;
   }
   .ai-block-inner-content {
-    max-width: 62%;
+    max-width: 405px;
     margin: 0 auto;
   }
   .ai-image-content-block__image-{{ ai_gen_id }} {
@@ -84,7 +84,7 @@
     font-size: {{ block.settings.text_size }}px;
     line-height: 1.5;
     margin: 0 0 {{ block.settings.text_margin }}px 0;
-    width: 70%;
+    width: 100%;
   }
 
   .ai-image-content-block__buttons-{{ ai_gen_id }} {
@@ -122,6 +122,12 @@
     border: 2px solid {{ block.settings.secondary_button_border_color }};
   }
 
+  .ai-image-content-block__button--primary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.primary_button_hover_bg_color }};
+    color: {{ block.settings.primary_button_hover_text_color }};
+    border-color: {{ block.settings.primary_button_hover_border_color }};
+  }
+
   .ai-image-content-block__button--secondary-{{ ai_gen_id }}:hover {
     background-color: {{ block.settings.secondary_button_hover_bg_color }};
     color: {{ block.settings.secondary_button_hover_text_color }};
@@ -131,23 +137,28 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
     color: #746f74;
     padding: 0.25em 2em 0.3em;
-    margin-right: 1.2em;
+    {% comment %} margin-right: 1.2em; {% endcomment %}
     min-width: 173px;
     text-align: center;
   }
 
-  @media screen and (max-width: 749px) {
+   @media screen and (max-width: 900px) {
+    .ai-image-content-block__image-{{ ai_gen_id }} {
+      display: none;
+    }
     .ai-image-content-block-{{ ai_gen_id }} {
       flex-direction: {% if block.settings.mobile_layout == 'image_first' %}column{% else %}column-reverse{% endif %};
       min-height: auto;
     }
+    .ai-image-content-block__content-{{ ai_gen_id }} {
+      padding: {{ block.settings.mobile_content_padding }}px;
+    }
+   }
+
+  @media screen and (max-width: 749px) {
 
     .ai-image-content-block__image-{{ ai_gen_id }} {
       min-height: {{ block.settings.mobile_image_height }}px;
-    }
-
-    .ai-image-content-block__content-{{ ai_gen_id }} {
-      padding: {{ block.settings.mobile_content_padding }}px;
     }
 
     .ai-image-content-block__heading-{{ ai_gen_id }} {
@@ -266,7 +277,7 @@
     {
       "type": "range",
       "id": "content_padding",
-      "min": 20,
+      "min": 0,
       "max": 80,
       "step": 10,
       "unit": "px",
@@ -355,6 +366,12 @@
       "label": "Primary button hover text",
       "default": "#ffffff"
     },
+     {
+      "type": "color",
+      "id": "primary_button_hover_border_color",
+      "label": "Primary button hover border",
+      "default": "#000000"
+    },
     {
       "type": "color",
       "id": "secondary_button_bg_color",
@@ -439,7 +456,7 @@
       "type": "range",
       "id": "text_margin",
       "min": 15,
-      "max": 50,
+      "max": 100,
       "step": 5,
       "unit": "px",
       "label": "Text bottom margin",
