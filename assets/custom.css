@@ -1399,7 +1399,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 }
 }
 
-@media (min-width: 990px) {
+@media (min-width: 992px) {
   .header__heading-logo {
     margin: 8px 0 20px;
   }
@@ -1474,9 +1474,9 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 .footer-block.footer-block--text {
     display: none;
 }
-.footer-block.grid__item.footer-block--menu {
+/* .footer-block.grid__item.footer-block--menu {
     max-width: 47%;
-}
+} */
 .footer .footer-block__heading{
   font-size:22px;
   text-transform: uppercase;
