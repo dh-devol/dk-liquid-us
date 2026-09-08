@@ -60,53 +60,33 @@
         "padding_bottom": 36
       }
     },
-    "custom_product_list_WBm98E": {
+    "custom_product_list_ermBbW": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_eVnVHa": {
+        "product_item_hjEdYW": {
           "type": "product_item",
           "settings": {
             "product": "aged-brass-mayan-taps"
           }
         },
-        "product_item_Rrxeh4": {
+        "product_item_8K3DPV": {
           "type": "product_item",
           "settings": {
-            "product": "aged-brass-ionian-tap-with-rinse"
+            "product": "aged-brass-ionian-tap"
+          }
+        },
+        "product_item_tFNDEe": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-pot-filler-tap"
           }
         }
       },
       "block_order": [
-        "product_item_eVnVHa",
-        "product_item_Rrxeh4"
+        "product_item_hjEdYW",
+        "product_item_8K3DPV",
+        "product_item_tFNDEe"
       ],
-      "custom_css": [],
-      "name": "Custom product list",
-      "settings": {
-        "title": "",
-        "heading_size": "hxl",
-        "subtitle": "",
-        "hide_subtitle": false,
-        "image_width": "full",
-        "image_ratio": "portrait",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "show_secondary_image": true,
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "show_top_border": false,
-        "show_bottom_border": false,
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "sectionname": ""
-      }
-    },
-    "custom_product_list_ermBbW": {
-      "type": "custom-product-list",
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
@@ -138,12 +118,6 @@
         "product_item_YEUBPA": {
           "type": "product_item",
           "settings": {
-            "product": "aged-brass-pot-filler-tap"
-          }
-        },
-        "product_item_m6w7pF": {
-          "type": "product_item",
-          "settings": {
             "product": "aged-brass-parthian-mini-instant-hot-tap"
           }
         },
@@ -152,12 +126,18 @@
           "settings": {
             "product": "aged-brass-filter-tap"
           }
+        },
+        "product_item_bw3xFV": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-basket-waste-strainer-overflow-kit-devol-cover"
+          }
         }
       },
       "block_order": [
         "product_item_YEUBPA",
-        "product_item_m6w7pF",
-        "product_item_m4K8ya"
+        "product_item_m4K8ya",
+        "product_item_bw3xFV"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -234,7 +214,6 @@
     "metaobject_gallery_slider_WmCftj",
     "banner",
     "product-grid",
-    "custom_product_list_WBm98E",
     "custom_product_list_ermBbW",
     "custom_product_list_X4PbKx",
     "custom_product_list_Hw6QiT"
