@@ -62,24 +62,6 @@
     },
     "custom_product_list_WgRb3j": {
       "type": "custom-product-list",
-      "blocks": {
-        "product_item_8PMgpQ": {
-          "type": "product_item",
-          "settings": {
-            "product": "chrome-mayan-taps"
-          }
-        },
-        "product_item_d9cD3X": {
-          "type": "product_item",
-          "settings": {
-            "product": "chrome-ionian-tap"
-          }
-        }
-      },
-      "block_order": [
-        "product_item_8PMgpQ",
-        "product_item_d9cD3X"
-      ],
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
@@ -111,13 +93,31 @@
         "product_item_Gjf9Hf": {
           "type": "product_item",
           "settings": {
+            "product": "chrome-mayan-taps"
+          }
+        },
+        "product_item_9DfpjD": {
+          "type": "product_item",
+          "settings": {
+            "product": "chrome-ionian-tap-with-rinse"
+          }
+        },
+        "product_item_zeUYJT": {
+          "type": "product_item",
+          "settings": {
             "product": "chrome-pot-filler-tap"
+          }
+        },
+        "product_item_R6X6R7": {
+          "type": "product_item",
+          "settings": {
+            "product": "nickel-mayan-taps"
           }
         },
         "product_item_NwBNrV": {
           "type": "product_item",
           "settings": {
-            "product": "chrome-basket-waste-strainer-overflow-kit"
+            "product": "nickel-ionian-tap"
           }
         },
         "product_item_bDFXhg": {
@@ -129,6 +129,9 @@
       },
       "block_order": [
         "product_item_Gjf9Hf",
+        "product_item_9DfpjD",
+        "product_item_zeUYJT",
+        "product_item_R6X6R7",
         "product_item_NwBNrV",
         "product_item_bDFXhg"
       ],
@@ -159,24 +162,6 @@
     },
     "custom_product_list_yha3XR": {
       "type": "custom-product-list",
-      "blocks": {
-        "product_item_bXydhP": {
-          "type": "product_item",
-          "settings": {
-            "product": "nickel-mayan-taps"
-          }
-        },
-        "product_item_8K4kUA": {
-          "type": "product_item",
-          "settings": {
-            "product": "nickel-ionian-tap"
-          }
-        }
-      },
-      "block_order": [
-        "product_item_bXydhP",
-        "product_item_8K4kUA"
-      ],
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
