@@ -161,16 +161,16 @@
     "custom_product_list_FgFJkY": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_3yctrz": {
-          "type": "product_item",
-          "settings": {
-            "product": "aged-brass-parthian-mini-instant-hot-tap"
-          }
-        },
         "product_item_ycLPAa": {
           "type": "product_item",
           "settings": {
             "product": "aged-brass-pot-filler-tap"
+          }
+        },
+        "product_item_3yctrz": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-parthian-mini-instant-hot-tap"
           }
         },
         "product_item_RJTknT": {
@@ -181,8 +181,8 @@
         }
       },
       "block_order": [
-        "product_item_3yctrz",
         "product_item_ycLPAa",
+        "product_item_3yctrz",
         "product_item_RJTknT"
       ],
       "custom_css": [],
