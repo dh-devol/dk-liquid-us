@@ -16,8 +16,7 @@
   }
 {%- endstyle -%}
 
-
-{%- paginate blog.articles by 12 -%}
+{%- paginate blogs['our-journal'].articles by 12 -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
   <div class="brand__info-wrapper">
     <a href="/pages/blog"><img src="{{ 'devol-journal.svg' | file_url }}" width="auto" height="auto" alt="The deVOL Journal"></a>
@@ -51,25 +50,28 @@
    </div>
 
     <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
-      {%- assign sorted_articles = blog.articles | sort: 'published_at' | reverse -%}
-      {%- for article in sorted_articles -%}
-        <div
-          class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-            style="--animation-order: {{ forloop.index }};"
-          {% endif %}
-        >
-          {%- render 'article-card',
-            article: article,
-            media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
-            show_image: section.settings.show_image,
-            show_date: section.settings.show_date,
-            show_author: section.settings.show_author,
-            show_excerpt: true
-          -%}
-        </div>
+      {%- assign sorted_articles = blogs['our-journal'].articles | sort: 'published_at' | reverse -%}
+      {% for article in sorted_articles %}
+        {% if article.tags contains blog.title %}
+          <div
+            class="blog-articles__article article{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            {{  }}
+            {%- render 'article-card',
+              article: article,
+              media_height: section.settings.image_height,
+              media_aspect_ratio: article.image.aspect_ratio,
+              show_image: section.settings.show_image,
+              show_date: section.settings.show_date,
+              show_author: section.settings.show_author,
+              show_excerpt: true
+            -%}
+          </div>
+        {% endif %}
       {%- endfor -%}
     </div>
 
