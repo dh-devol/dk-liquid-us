@@ -129,6 +129,24 @@
     margin-left: auto;
     max-width: 620px;
   }
+  .collection-heirloom-accessories .title-with-rich-text .rich-text,
+  .collection-porcelain-pendant-lights .title-with-rich-text .rich-text{
+    max-width: 92%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .collection-grand-tour-collection .title-with-rich-text .rich-text{
+    max-width: 88%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width:768px){
+  .collection-heirloom-accessories .title-with-rich-text .rich-text,
+  .collection-porcelain-pendant-lights .title-with-rich-text .rich-text
+  {
+    max-width: 88%;
+  }
 }
 @media (max-width:767px){
   .page-online-accessory-sales .contact-form-with-details-wrapper h2{
