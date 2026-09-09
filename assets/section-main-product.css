@@ -1240,6 +1240,9 @@ a.product__text {
 .product__inventory .icon-inventory-status circle:first-of-type {
   opacity: .3;
 }
+.product__inventory:has(~ #restock-rocket-inline-container) {
+  display: none;
+}
 
 /* Icon with text */
 .icon-with-text {
