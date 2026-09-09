@@ -53,6 +53,12 @@
     max-width: 620px;
 }
 
+.page-online-accessory-sales .title-with-rich-text .rich-text {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 620px;
+}
+
 .page-title-description h1.rich-text__heading + .rich-text__text p{
   font-size:16px;
   line-height:24px;
