@@ -99,9 +99,6 @@
    /*max-width: 88%;*/
     padding: 0;
   }
-  .page-press-coverage .title-with-rich-text .rich-text__wrapper{
-   max-width: 88%;
-  }
   .title-with-rich-text .rich-text__text{
     max-width:100%;
     width:100%;
@@ -139,6 +136,9 @@
 @media screen and (max-width:575px){
 .title-with-rich-text .rich-text__text{
   width:100%;
+}
+.page-press-coverage .title-with-rich-text .rich-text__wrapper{
+  max-width: 88%;
 }
 }
 
