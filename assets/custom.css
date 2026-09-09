@@ -557,9 +557,6 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
     margin-top: 42.5px;
     margin-bottom: 42.5px;
   }
-  .page-press-coverage .swiper-button-next, .page-press-coverage .swiper-button-prev {
-    z-index: 1;
-  }
 }
 @media (max-width: 458px) {
   .page-devols-tv-show .rich-text-with-multi-img .multi-image-wrapper {
