@@ -40,7 +40,7 @@
       ],
       "custom_css": [
         "@media (max-width: 590px) {.rich-text__text.rte.scroll-trigger.animate--slide-in {width: 100%; }}",
-        "@media screen and (max-width: 991px) {.title-with-rich-text .rich-text__wrapper {max-width: 88%; }}",
+        "@media screen and (max-width: 991px) {.title-with-rich-text .rich-text__wrapper {max-width: 92%; }}",
         ".rte a {color: #898989 !important; text-decoration: underline;}"
       ],
       "settings": {
