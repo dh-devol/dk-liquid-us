@@ -221,9 +221,9 @@ slideshow-component.gallery-slideshow:not([data-gallery-ready="true"]) .slidesho
 }
 
 @media screen and (max-width:991px){
- .gallery-slideshow .banner--large:not(.banner--adapt) {
+ /* .gallery-slideshow .banner--large:not(.banner--adapt) {
   min-height: 38.5rem;
-}
+} */
 .gallery-slideshow .slider-buttons .slider-counter {
   left: auto;
   right: 30px;
@@ -232,9 +232,9 @@ slideshow-component.gallery-slideshow:not([data-gallery-ready="true"]) .slidesho
 .page-devols-tv-show .gallery-slideshow .slider-buttons .slider-counter{
   display: none;
 }
-.gallery-slideshow .slideshow__text-wrapper.banner__content {
+/* .gallery-slideshow .slideshow__text-wrapper.banner__content {
     padding: 2rem;
-}
+} */
 }
 @media screen and (max-width:767px){
   .gallery-slideshow .banner__buttons{
