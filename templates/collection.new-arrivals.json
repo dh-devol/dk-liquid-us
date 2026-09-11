@@ -232,6 +232,79 @@
         "sectionname": ""
       }
     },
+    "custom_product_list_X3TY6B": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_QnfcUC": {
+          "type": "product_item",
+          "settings": {
+            "product": "pearl-moonstone-pendant-light"
+          }
+        },
+        "product_item_qbH63h": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-milk-glass-pendant-light"
+          }
+        },
+        "product_item_EHiRHh": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-gaselier-light-milk-glass-shades-tall"
+          }
+        },
+        "product_item_YNxtaw": {
+          "type": "product_item",
+          "settings": {
+            "product": "milk-glass-gaselier-light-tall"
+          }
+        },
+        "product_item_nA9k7G": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-milk-glass-shade"
+          }
+        },
+        "product_item_aFkUUd": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-milk-glass-wall-light"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_QnfcUC",
+        "product_item_qbH63h",
+        "product_item_EHiRHh",
+        "product_item_YNxtaw",
+        "product_item_nA9k7G",
+        "product_item_aFkUUd"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Milk Glass Lights",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
     "custom_product_list_LCkT4W": {
       "type": "custom-product-list",
       "blocks": {
@@ -277,78 +350,8 @@
         "sectionname": ""
       }
     },
-    "custom_product_list_X3TY6B": {
-      "type": "custom-product-list",
-      "blocks": {
-        "product_item_EHiRHh": {
-          "type": "product_item",
-          "settings": {
-            "product": "petite-gaselier-light-milk-glass-shades-tall"
-          }
-        },
-        "product_item_qbH63h": {
-          "type": "product_item",
-          "settings": {
-            "product": "mini-milk-glass-pendant-light"
-          }
-        },
-        "product_item_YNxtaw": {
-          "type": "product_item",
-          "settings": {
-            "product": "milk-glass-gaselier-light-tall"
-          }
-        }
-      },
-      "block_order": [
-        "product_item_EHiRHh",
-        "product_item_qbH63h",
-        "product_item_YNxtaw"
-      ],
-      "custom_css": [],
-      "name": "Custom product list",
-      "settings": {
-        "title": "",
-        "heading_size": "hxxl",
-        "subtitle": "Milk Glass Lights",
-        "hide_subtitle": false,
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "show_secondary_image": true,
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
-        "show_top_border": false,
-        "show_bottom_border": false,
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "sectionname": ""
-      }
-    },
     "custom_product_list_UXz3XX": {
       "type": "custom-product-list",
-      "blocks": {
-        "product_item_tCLkGi": {
-          "type": "product_item",
-          "settings": {
-            "product": "heirloom-wall-light-milk-glass-shade"
-          }
-        },
-        "product_item_YGqUiE": {
-          "type": "product_item",
-          "settings": {
-            "product": "mini-milk-glass-wall-light"
-          }
-        }
-      },
-      "block_order": [
-        "product_item_tCLkGi",
-        "product_item_YGqUiE"
-      ],
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
@@ -499,6 +502,7 @@
         "product_item_YzpdN4",
         "product_item_twc6T9"
       ],
+      "disabled": true,
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
@@ -806,7 +810,7 @@
         "button_label": "",
         "button_link": "",
         "show_top_border": false,
-        "show_bottom_border": true,
+        "show_bottom_border": false,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
@@ -842,6 +846,7 @@
         "product_item_XKGatU",
         "product_item_xEq8VH"
       ],
+      "disabled": true,
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
@@ -896,8 +901,8 @@
     "custom_product_list_MpDtJy",
     "custom_product_list_eMeUfM",
     "custom_product_list_f4APjn",
-    "custom_product_list_LCkT4W",
     "custom_product_list_X3TY6B",
+    "custom_product_list_LCkT4W",
     "custom_product_list_UXz3XX",
     "custom_product_list_JzdtdG",
     "custom_product_list_HJiAda",
