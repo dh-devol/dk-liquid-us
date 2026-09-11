@@ -79,7 +79,8 @@
         </div>
       </div>
      <div class="blog__article-cards-wrapper">
-      {%- assign articles_endpoint = routes.search_url | append: '?type=article&q=tag:all&view=articles-json' -%}
+      {%- comment -%} Use a wildcard query so blogs appear without requiring all tag on each blog {%- endcomment -%}
+      {%- assign articles_endpoint = routes.search_url | append: '?type=article&q=NOT+tag:hide&view=articles-json' -%}
       <ul
         class="blog__posts articles-wrapper contains-card contains-card--article grid grid--peek grid--2-col-tablet grid--3-col-desktop blog-posts--source-dynamic"
         data-articles-endpoint="{{ articles_endpoint }}"
