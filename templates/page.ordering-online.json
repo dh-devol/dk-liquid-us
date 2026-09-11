@@ -99,7 +99,7 @@
         "column_flrSup": {
           "type": "column",
           "settings": {
-            "link": "shopify://pages/flooring-support",
+            "link": "shopify://pages/flooring",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
