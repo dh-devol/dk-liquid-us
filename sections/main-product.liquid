@@ -168,13 +168,7 @@
                   </div>
                 {%- when 'price' -%}
                   <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                    {%- render 'price',
-                      product: product,
-                      root_id: 'mm-bundle-' | append: block.id,
-                      use_variant: true,
-                      show_badges: true,
-                      price_class: 'price--large'
-                    -%}
+                    {%- render 'price', product: product, root_id: 'mm-bundle-', append: block.id, use_variant: true, show_badges: true, price_class: 'price--large' -%}
                   </div>
                   {%- if product.quantity_price_breaks_configured? -%}
                     <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
@@ -203,20 +197,7 @@
                     {%- endform -%}
                   </div>
                 {% when 'mix_and_match_bundle' %}
-                  {%
-                    render 'mix-and-match-bundle',
-                    root_id: 'mm-bundle-' | append: block.id,
-                    limit: block.settings.limit,
-                    bundle_product: block.settings.bundle_product,
-                    fast_bundle_id: block.settings.fast_bundle_id,
-                    item_label_prefix: block.settings.item_label_prefix,
-                    products_list: block.settings.bundle_products,
-                    bundle_first_option: block.settings.first_option,
-                    item_label_styling: block.settings.item_label_styling,
-                    bundle_price: block.settings.bundle_add_pricing,
-                    add_on_styling: block.settings.add_on_style,
-                    bundle_qty: block.settings.bundle_qty
-                  %}
+                  {% render 'mix-and-match-bundle', root_id: 'mm-bundle-', append: block.id, limit: block.settings.limit, bundle_product: block.settings.bundle_product, fast_bundle_id: block.settings.fast_bundle_id, item_label_prefix: block.settings.item_label_prefix, products_list: block.settings.bundle_products, bundle_first_option: block.settings.first_option, item_label_styling: block.settings.item_label_styling, bundle_price: block.settings.bundle_add_pricing, add_on_styling: block.settings.add_on_style, bundle_qty: block.settings.bundle_qty %}
                 {%- when 'inventory' -%}
                   {%- if show_international_oos and settings.international_oos_text != blank -%}
                     <div class="not-for-sale not-for-sale--oos" id="Inventory-{{ section.id }}">
@@ -2879,3 +2860,44 @@ document.addEventListener("DOMContentLoaded", () => {
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%- render 'price',
+                          product: product,
+                          root_id: 'mm-bundle-' | append: block.id,
+                          use_variant: true,
+                          show_badges: true,
+                          price_class: 'price--large'
+                        -%}
+  to: "{%- render 'price', product: product, root_id: 'mm-bundle-', append: block.id,
+    use_variant: true, show_badges: true, price_class: 'price--large' -%}"
+  position: 8700..8848
+- from: |-
+    {%
+                        render 'mix-and-match-bundle',
+                        root_id: 'mm-bundle-' | append: block.id,
+                        limit: block.settings.limit,
+                        bundle_product: block.settings.bundle_product,
+                        fast_bundle_id: block.settings.fast_bundle_id,
+                        item_label_prefix: block.settings.item_label_prefix,
+                        products_list: block.settings.bundle_products,
+                        bundle_first_option: block.settings.first_option,
+                        item_label_styling: block.settings.item_label_styling,
+                        bundle_price: block.settings.bundle_add_pricing,
+                        add_on_styling: block.settings.add_on_style,
+                        bundle_qty: block.settings.bundle_qty
+                      %}
+  to: "{% render 'mix-and-match-bundle', root_id: 'mm-bundle-', append: block.id,
+    limit: block.settings.limit, bundle_product: block.settings.bundle_product, fast_bundle_id:
+    block.settings.fast_bundle_id, item_label_prefix: block.settings.item_label_prefix,
+    products_list: block.settings.bundle_products, bundle_first_option: block.settings.first_option,
+    item_label_styling: block.settings.item_label_styling, bundle_price: block.settings.bundle_add_pricing,
+    add_on_styling: block.settings.add_on_style, bundle_qty: block.settings.bundle_qty
+    %}"
+  position: 10641..11178
+{% endcomment %}
