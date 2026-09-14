@@ -22,6 +22,12 @@
   justify-content: center;
 }
 
+@media screen and (min-width: 1140px) {
+  .discounts__discount {
+    margin-bottom: 3rem;
+  }
+}
+
 @media screen and (min-width: 750px) {
   .discounts__discount--position {
     justify-content: flex-end;
