@@ -573,6 +573,7 @@
     padding:0;
 }
 .collection-page .custom-product-list .card__heading {
+  font-weight: 400;
   margin-top: 0.5em;
 }
 .product-card-wrapper {
