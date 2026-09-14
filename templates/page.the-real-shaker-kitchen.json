@@ -80,36 +80,12 @@
             "dynamic_costs": "casual-la-living-space",
             "custom_text_hover": ""
           }
-        },
-        "column_6y4mDf": {
-          "type": "column",
-          "settings": {
-            "dynamic_costs": "appliance-garage-or-english-larder-in-la",
-            "custom_text_hover": ""
-          }
-        },
-        "column_CKcRaz": {
-          "type": "column",
-          "settings": {
-            "dynamic_costs": "stamp-house-kitchen-south-east-london",
-            "custom_text_hover": "View this project in detail"
-          }
-        },
-        "column_Eggqjg": {
-          "type": "column",
-          "settings": {
-            "dynamic_costs": "daws-heath-kitchen",
-            "custom_text_hover": "View this project in detail"
-          }
         }
       },
       "block_order": [
         "column_c9ArwG",
         "column_4dFQPq",
-        "column_KmkW3Y",
-        "column_6y4mDf",
-        "column_CKcRaz",
-        "column_Eggqjg"
+        "column_KmkW3Y"
       ],
       "settings": {
         "title": "",
@@ -139,6 +115,34 @@
     "project_multicolumns_UGjxfC": {
       "type": "project-multicolumns",
       "blocks": {
+        "column_nTWk8f": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "appliance-garage-or-english-larder-in-la",
+            "custom_text_hover": ""
+          }
+        },
+        "column_6AiHmP": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "stamp-house-kitchen-south-east-london",
+            "custom_text_hover": ""
+          }
+        },
+        "column_4EwEDe": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-clements-house",
+            "custom_text_hover": ""
+          }
+        },
+        "column_NaBjFA": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "daws-heath-kitchen",
+            "custom_text_hover": ""
+          }
+        },
         "column_Yrh8cR": {
           "type": "column",
           "settings": {
@@ -155,6 +159,10 @@
         }
       },
       "block_order": [
+        "column_nTWk8f",
+        "column_6AiHmP",
+        "column_4EwEDe",
+        "column_NaBjFA",
         "column_Yrh8cR",
         "column_pnfd7R"
       ],
