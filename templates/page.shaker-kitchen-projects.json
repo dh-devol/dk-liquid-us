@@ -90,36 +90,12 @@
             "dynamic_costs": "casual-la-living-space",
             "custom_text_hover": "View this project in detail"
           }
-        },
-        "column_69riT8": {
-          "type": "column",
-          "settings": {
-            "dynamic_costs": "appliance-garage-or-english-larder-in-la",
-            "custom_text_hover": "View this project in detail"
-          }
-        },
-        "column_rDWpTa": {
-          "type": "column",
-          "settings": {
-            "dynamic_costs": "stamp-house-kitchen-south-east-london",
-            "custom_text_hover": "View this project in detail"
-          }
-        },
-        "column_JtaLyH": {
-          "type": "column",
-          "settings": {
-            "dynamic_costs": "daws-heath-kitchen",
-            "custom_text_hover": "View this project in detail"
-          }
         }
       },
       "block_order": [
         "column_TnejhN",
         "column_6mtNFW",
-        "column_n4DJbk",
-        "column_69riT8",
-        "column_rDWpTa",
-        "column_JtaLyH"
+        "column_n4DJbk"
       ],
       "custom_css": [
         "@media screen and (max-width: 990px) {.multicolumn-list:not(.slider) {padding-left: 0; padding-right: 0; }}"
@@ -152,6 +128,34 @@
     "project_multicolumns_tbcYkE": {
       "type": "project-multicolumns",
       "blocks": {
+        "column_Q89hF3": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "appliance-garage-or-english-larder-in-la",
+            "custom_text_hover": ""
+          }
+        },
+        "column_9w4Mfe": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "stamp-house-kitchen-south-east-london",
+            "custom_text_hover": ""
+          }
+        },
+        "column_fYtPLW": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "the-clements-house",
+            "custom_text_hover": ""
+          }
+        },
+        "column_PAqmwM": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "daws-heath-kitchen",
+            "custom_text_hover": ""
+          }
+        },
         "column_7wyR9B": {
           "type": "column",
           "settings": {
@@ -168,6 +172,10 @@
         }
       },
       "block_order": [
+        "column_Q89hF3",
+        "column_9w4Mfe",
+        "column_fYtPLW",
+        "column_PAqmwM",
         "column_7wyR9B",
         "column_WMqCUY"
       ],
