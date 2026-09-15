@@ -34,13 +34,49 @@
       data-cascade
     {% endif %}
   >
+    {%- liquid
+      assign is_cart_page = false
+      if template.name == 'cart'
+        assign is_cart_page = true
+      endif
+    -%}
+
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
         <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+          {%- if is_cart_page -%}
+            <span class="cart-heading--full"{% if cart.item_count == 0 %} style="display:none"{% endif %}>
+              {{- section.settings.title -}}
+            </span>
+            <span class="cart-heading--empty"{% if cart.item_count > 0 %} style="display:none"{% endif %}>
+              Simple things, beautifully made
+            </span>
+          {%- else -%}
             {{ section.settings.title }}
+          {%- endif -%}
         </h2>
       </div>
     {%- endunless -%}
+
+    {%- if is_cart_page -%}
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          if (typeof subscribe !== 'function' || typeof PUB_SUB_EVENTS === 'undefined') return;
+
+          subscribe(PUB_SUB_EVENTS.cartUpdate, function (event) {
+            var count = event && event.cartData && event.cartData.item_count;
+            if (typeof count !== 'number') return;
+
+            document.querySelectorAll('.cart-heading--full').forEach(function (el) {
+              el.style.display = count === 0 ? 'none' : '';
+            });
+            document.querySelectorAll('.cart-heading--empty').forEach(function (el) {
+              el.style.display = count > 0 ? 'none' : '';
+            });
+          });
+        });
+      </script>
+    {%- endif -%}
     {% if section.settings.subtitle != blank %}
       <div class="subtitle__wrapper {% if section.settings.title != blank %}above__margin{% endif %}">
         <h3 class="sub-heading hxl">{{ section.settings.subtitle }}</h3>
