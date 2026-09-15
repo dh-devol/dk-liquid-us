@@ -380,7 +380,7 @@
       "name": "Project multicolumn",
       "settings": {
         "title": "Simple Furniture, Beautifully Made",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "subtitle": "Our Kitchens",
         "show_subtitle": true,
         "image_width": "full",
