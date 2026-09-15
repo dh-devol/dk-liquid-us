@@ -1559,6 +1559,12 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   margin-bottom:0px !important
 }
 
+@media screen and (max-width:782px){
+  body .product-specification.custom-collapsible-content .main-accordion.accordion__content.rte {
+    display: block;
+  }
+}
+
 @media screen and (max-width:767px){
   .collection-page .title-with-rich-text .rich-text__wrapper.rich-text__wrapper--center {
     padding:0!important;
