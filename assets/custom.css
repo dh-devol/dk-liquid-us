@@ -1620,9 +1620,6 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
       column-gap: 20px;
       flex-direction: column;
   }
-  body .product-specification.custom-collapsible-content .main-accordion.accordion__content.rte {
-      display: block;
-  }
   body .product-specification .specification-metafield .accordion__content.rte table tr td {
     padding: 8px 9px 0 0; 
   }
