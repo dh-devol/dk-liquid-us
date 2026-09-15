@@ -100,6 +100,72 @@
             "text_alignment_mobile": "center"
           }
         },
+        "slide_djYzRQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frome-DSC_9805_Edit_jpg.webp",
+            "mobile_image": "shopify://shop_images/05_Frome_Kitchen2_jpg.webp",
+            "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
+            "desktop_focal_point": 56,
+            "mobile_focal_point": 100,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_AFtfqa": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Classic_Peckham_Rye_-_Desktop_Gallery_02_jpg.webp",
+            "mobile_image": "shopify://shop_images/06_Peckham_Rye_jpg.webp",
+            "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
+            "desktop_focal_point": 64,
+            "mobile_focal_point": 100,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_jwiYb7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/banner-desktop-homepage-3d.jpg",
+            "mobile_image": "shopify://shop_images/07_Millhouse_Kitchen_jpg.webp",
+            "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
+            "desktop_focal_point": 64,
+            "mobile_focal_point": 100,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
         "slide_8cK9z6": {
           "type": "slide",
           "settings": {
@@ -147,8 +213,8 @@
         "slide_dNi9hP": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Frilly_Charteuse_Light-1801_crop_jpg.webp",
-            "mobile_image": "shopify://shop_images/07_Millhouse_Kitchen_jpg.webp",
+            "image": "shopify://shop_images/Bath-Showroom-Green-Room-62.jpg",
+            "mobile_image": "shopify://shop_images/Bath-Showroom-Green-Room-47_jpg.webp",
             "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
             "desktop_focal_point": 56,
             "mobile_focal_point": 100,
@@ -170,7 +236,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Bath-Showroom-Haberdasher-112_HDR_jpg.webp",
-            "mobile_image": "shopify://shop_images/Bath-Showroom-Haberdasher-83_1.jpg",
+            "mobile_image": "shopify://shop_images/thumbnail-the-classic-english-kitchen-the-black-kitchen-bath-02.jpg",
             "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
             "desktop_focal_point": 90,
             "mobile_focal_point": 100,
@@ -185,72 +251,6 @@
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_jwiYb7": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/banner-desktop-homepage-3d.jpg",
-            "mobile_image": "shopify://shop_images/07_Millhouse_Kitchen_jpg.webp",
-            "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
-            "desktop_focal_point": 64,
-            "mobile_focal_point": 100,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "scheme-1",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_djYzRQ": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Frome-DSC_9805_Edit_jpg.webp",
-            "mobile_image": "shopify://shop_images/05_Frome_Kitchen2_jpg.webp",
-            "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
-            "desktop_focal_point": 56,
-            "mobile_focal_point": 100,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_AFtfqa": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/Classic_Peckham_Rye_-_Desktop_Gallery_02_jpg.webp",
-            "mobile_image": "shopify://shop_images/06_Peckham_Rye_jpg.webp",
-            "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white_2287ddbd-f40b-470b-9ad5-6ff8eaa73c35.svg",
-            "desktop_focal_point": 64,
-            "mobile_focal_point": 100,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "bottom-center",
-            "show_text_box": false,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
             "text_alignment_mobile": "center"
           }
         },
@@ -282,13 +282,13 @@
         "slide_pEMwqL",
         "slide_tqYG4r",
         "slide_Crcang",
+        "slide_djYzRQ",
+        "slide_AFtfqa",
+        "slide_jwiYb7",
         "slide_8cK9z6",
         "slide_PXDJnJ",
         "slide_dNi9hP",
         "slide_fzPcJB",
-        "slide_jwiYb7",
-        "slide_djYzRQ",
-        "slide_AFtfqa",
         "slide_UVTGgE"
       ],
       "settings": {
