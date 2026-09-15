@@ -24,7 +24,6 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Rayham-Hall-crop1_jpg.webp",
-            "mobile_image": "shopify://shop_images/Raynham_Hall-169.jpg",
             "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white.svg",
             "desktop_focal_point": 54,
             "mobile_focal_point": 100,
@@ -213,7 +212,7 @@
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "padding_top": 36,
-        "padding_bottom": 100,
+        "padding_bottom": 52,
         "sectionname": ""
       }
     }
