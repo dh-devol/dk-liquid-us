@@ -616,18 +616,29 @@ document.addEventListener('DOMContentLoaded', function () {
           return leadDataByVariant[String(item.variant_id)];
         });
 
-        // Group lines by variant so same-variant duplicates are handled as one unit
         var groupedByVariant = {};
         itemsToUpdate.forEach(function(item) {
-          var vid = String(item.variant_id);
-          if (!groupedByVariant[vid]) groupedByVariant[vid] = [];
-          groupedByVariant[vid].push(item);
+          var props = item.properties || {};
+          var groupKey;
+
+          // Bundle parents and add-on children must never be merged. Two bundles
+          // of the same parent variant with different children are indistinguishable
+          // by properties alone (_group_id identifies the parent, not the
+          // configuration), so any bundle-related line gets a unique key.
+          if (props['_group_id'] || props['_bundle_parent'] || props['_Added as add-on']) {
+            groupKey = 'nomerge:' + item.key;
+          } else {
+            groupKey = String(item.variant_id);
+          }
+
+          if (!groupedByVariant[groupKey]) groupedByVariant[groupKey] = [];
+          groupedByVariant[groupKey].push(item);
         });
 
-        var variantIds = Object.keys(groupedByVariant);
+        var groupKeys = Object.keys(groupedByVariant);
 
         function processVariant(index) {
-          if (index >= variantIds.length) {
+          if (index >= groupKeys.length) {
             Promise.all([orderPromiseWrite, deliveryDateClearWrite]).then(function() {
               if (!cartForm.querySelector('input[name="checkout"]')) {
                 var ci = document.createElement('input');
@@ -641,8 +652,9 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
           }
 
-          var vid = variantIds[index];
-          var lines = groupedByVariant[vid];
+          var groupKey = groupKeys[index];
+          var lines = groupedByVariant[groupKey];
+          var vid = String(lines[0].variant_id);
           var leadData = leadDataByVariant[vid];
           var totalQty = lines.reduce(function(sum, l) { return sum + l.quantity; }, 0);
 
