@@ -24,6 +24,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Rayham-Hall-crop1_jpg.webp",
+            "mobile_image": "shopify://shop_images/thumbnail-the-classic-english-kitchen-raynham-estate-north-norfolk-01.jpg",
             "trademark_image": "shopify://shop_images/winners_assets_2024_KAE_logo_2024_international_trade_white.svg",
             "desktop_focal_point": 54,
             "mobile_focal_point": 100,
