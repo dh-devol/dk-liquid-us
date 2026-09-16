@@ -243,9 +243,9 @@ slideshow-component.gallery-slideshow:not([data-gallery-ready="true"]) .slidesho
   .gallery-slideshow .banner__text{
     margin-bottom: 34px;
   }
-  .gallery-slideshow .banner--large:not(.banner--adapt) {
+  /* .gallery-slideshow .banner--large:not(.banner--adapt) {
         min-height: 60.5rem;
-  }
+  } */
   .gallery-slideshow .slideshow__text-wrapper.banner__content{
     padding: 2em 1.5em 2em;
   }
