@@ -1065,10 +1065,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const popupContainer = document.getElementById('cart-popup-container');
         const popupDiv = document.getElementById('cart-notification');
         const popup = document.querySelector('#cart-popup-container .added-message');
+        const inventory = document.querySelector('[role="status"].product__inventory');
         if (success) {
           popup.innerHTML = "Thank you, we'll send you a message as soon as it is back in stock.";
           popupContainer.classList.add("show");
           popupDiv.classList.add("active", "animate");
+          inventory.style.display = "block";
         }
       },1000);
     });
