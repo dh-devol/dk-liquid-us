@@ -801,11 +801,24 @@ flatpickr-months .flatpickr-prev-month:hover svg,
  .cart--page section{
   grid-column: 1 / -1;
 }
+.cart--page .main_cart-footer-wrapper #main-cart-footer {
+  display: flex;
+  justify-content: end;
+  position: sticky;
+  top: 50px;
+  overflow: hidden;
+}
 .cart--page{ .multicolumn__title {
         padding-left: 0;
         padding-right: 0;
     } 
 }
+}
+
+@media (max-width:990px){
+  .cart--page .main_cart-footer-wrapper #main-cart-footer {
+    top: 110px;
+  }
 }
 
 @media (max-width:767px){
