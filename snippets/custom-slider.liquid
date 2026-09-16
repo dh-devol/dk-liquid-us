@@ -112,8 +112,10 @@
       <img class="placeholder-img" src="https://cdn.shopify.com/s/files/1/0898/4012/4238/files/placeholder_660x660.jpg?v=1768830010" />
     {% endif %}
   </div>
+  {% if product.media.size > 1 %}
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
   <div class="swiper-pagination"></div>
+  {% endif %}
 </div>
 </div>
