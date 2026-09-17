@@ -290,6 +290,13 @@
         font-weight: 600;
 }
 
+@media screen and (max-width:767px) {
+    .product-specification.custom-collapsible-content {
+        padding-bottom: 4em;
+        padding-top: 0;
+    }
+}
+
 @media screen and (max-width: 750px) {
     .product-specification.custom-collapsible-content {
         padding-left: 2.5rem;
