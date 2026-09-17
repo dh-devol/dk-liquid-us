@@ -423,9 +423,6 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 
 
 @media screen and (max-width: 749px) {
-  .cart-count-bubble--empty {
-    display: none;
-  }
   .page-about .rich-text__text,
   .page-our-story .rich-text__text {
     margin-top: 28.8px;
@@ -1117,6 +1114,12 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
     padding-right: 2.4rem;
   }
 
+}
+
+@media (max-width:989px){
+  .header-wrapper .cart-count-bubble.cart-count-bubble--empty {
+    display: none;
+  }
 }
 
 @media (max-width:991px){
