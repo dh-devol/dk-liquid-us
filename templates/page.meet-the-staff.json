@@ -161,7 +161,7 @@
           "settings": {
             "image": "shopify://shop_images/Annah_Morrish-28.jpg",
             "custom_text_hover": "Annah Morrish",
-            "custom_text_hover_position": "Design Manager",
+            "custom_text_hover_position": "Showroom Manager",
             "title": "",
             "subtext": "",
             "text": "",
@@ -197,34 +197,13 @@
             "staff_url": ""
           }
         },
-        "column_9rCgAH": {
-          "type": "column",
-          "name": "Corbin Morgan",
-          "settings": {
-            "image": "shopify://shop_images/Corbin_Morgan_2.jpg",
-            "custom_text_hover": "Corbin Morgan",
-            "custom_text_hover_position": "Senior Kitchen Designer",
-            "title": "",
-            "subtext": "",
-            "text": "",
-            "show_above_image": false,
-            "link_label": "",
-            "link": "",
-            "staff_name": "Corbin Morgan",
-            "staff_role": "Senior Kitchen Designer",
-            "staff_degree": "BFA Industrial Design",
-            "staff_description": "<p>Corbin graduated from Brigham Young University in Utah in 2021 with a degree in Industrial Design. One of his final, and favourite, projects involved designing and selling bar stools made from beautiful reclaimed wood from a local barn. </p><p>Corbin joined deVOL as a Kitchen Designer and helps the design team with all customer projects, as well as being a very friendly face around the showroom. </p><p>He loves language and travel and spent two and a half years living abroad completing his religious mission in the Balkans, studying biology in South Africa, studying global leadership and engineering in the UK and studying design in the Netherlands.</p><p>In his spare time, Corbin loves baking, photography, playing the guitar and hiking in national parks. He is also currently training for his first ultra marathon, 100 miles long!</p>",
-            "staff_url_title": "",
-            "staff_url": ""
-          }
-        },
         "column_c9hXdd": {
           "type": "column",
           "name": "Phoebe",
           "settings": {
             "image": "shopify://shop_images/Phoebe_Menear_1.jpg",
             "custom_text_hover": "Phoebe",
-            "custom_text_hover_position": "Senior Kitchen Designer",
+            "custom_text_hover_position": "Assistant Showroom Manager",
             "title": "",
             "subtext": "",
             "text": "",
@@ -235,6 +214,27 @@
             "staff_role": "Senior Kitchen Designer",
             "staff_degree": "BA (Hons) Furniture and Product Design",
             "staff_description": "<p>Phoebe graduated from Nottingham Trent University in 2020 after studying for her BA (Hons) in Furniture and Product Design.</p><p>Phoebe grew up doing art and crafts, slowly refining her passion over the years through school, university, design competitions and working at her family's pottery business. These experiences, alongside working for a bespoke kitchen company at university, meant she was keen to pursue a career in the design industry. As a Kitchen Designer at deVOL, Phoebe loves to combine a mixture of our accessories and antiques throughout the kitchen to provide our customers with a beautiful and functional space they can spend all day relaxing in. After joining deVOL and working at Cotes Mill, Phoebe moved to join the team at the Bond Street, New York showroom in 2022.</p><p>When not designing, Phoebe likes to explore new areas, including discovering new live music venues and comedy shows across New York. When not exploring the city, she likes to brew her own wine, read and cook delicious new recipes!</p>",
+            "staff_url_title": "",
+            "staff_url": ""
+          }
+        },
+        "column_9rCgAH": {
+          "type": "column",
+          "name": "Corbin Morgan",
+          "settings": {
+            "image": "shopify://shop_images/Corbin_Morgan_2.jpg",
+            "custom_text_hover": "Corbin Morgan",
+            "custom_text_hover_position": "Assistant Design Manager",
+            "title": "",
+            "subtext": "",
+            "text": "",
+            "show_above_image": false,
+            "link_label": "",
+            "link": "",
+            "staff_name": "Corbin Morgan",
+            "staff_role": "Senior Kitchen Designer",
+            "staff_degree": "BFA Industrial Design",
+            "staff_description": "<p>Corbin graduated from Brigham Young University in Utah in 2021 with a degree in Industrial Design. One of his final, and favourite, projects involved designing and selling bar stools made from beautiful reclaimed wood from a local barn. </p><p>Corbin joined deVOL as a Kitchen Designer and helps the design team with all customer projects, as well as being a very friendly face around the showroom. </p><p>He loves language and travel and spent two and a half years living abroad completing his religious mission in the Balkans, studying biology in South Africa, studying global leadership and engineering in the UK and studying design in the Netherlands.</p><p>In his spare time, Corbin loves baking, photography, playing the guitar and hiking in national parks. He is also currently training for his first ultra marathon, 100 miles long!</p>",
             "staff_url_title": "",
             "staff_url": ""
           }
@@ -286,8 +286,8 @@
         "column_k7n7wi",
         "column_AjTN6i",
         "column_46mkQT",
-        "column_9rCgAH",
         "column_c9hXdd",
+        "column_9rCgAH",
         "column_g9JWR8",
         "column_MXqaiL"
       ],
