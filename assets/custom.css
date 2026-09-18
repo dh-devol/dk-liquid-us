@@ -922,6 +922,10 @@ section#shopify-pc__banner .shopify-pc__banner__wrapper button#shopify-pc__banne
   .page-design-service .custom-collapsible-content .collapsible-content-wrapper-narrow {
     max-width: 86% !important;
   }
+  .footer .policies {
+    row-gap: 10px;
+    flex-wrap: wrap;
+  }
 }
 .page-shaker-kitchen-worktops .banner,
 .page-sebastian-cox-worktops .banner{
@@ -1778,6 +1782,24 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   .footer-block.footer-tablet_view {
     width: 25%;
     max-width: 25%;
+  }
+}
+
+@media screen and (max-width:575px){
+  .footer .page-width {
+    max-width: 84%;
+  }
+  .footer .region-currency_wrapper {
+    gap: 0;
+    display: block;
+    text-align: left;
+  }
+  .footer .region--wrapper a {
+    padding-left: 0;
+    border-left: none;
+  }
+  .footer .footer__blocks-wrapper .footer-block.footer-link_list:nth-of-type(2) {
+    border-right: 1px solid #9f9f9f4d;
   }
 }
 
