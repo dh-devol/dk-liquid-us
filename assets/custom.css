@@ -1640,6 +1640,9 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
     right: 0;
     z-index: 1;
   }
+  .banner--has-overlay-content .slideshow__media picture:after {
+    background-image: none;
+  }
    #main-cart-footer{
     position: fixed;
     top: 110px;
