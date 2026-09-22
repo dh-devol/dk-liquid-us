@@ -415,3 +415,9 @@
     row-gap: var(--grid-desktop-vertical-spacing);
   }
 }
+
+@media screen and (max-width: 900px) {
+  .page-letters-from-devol .image-with-text__media-item {
+    display: none;
+  }
+}
