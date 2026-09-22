@@ -514,7 +514,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (cartForm) {
     cartForm.addEventListener('submit', function(e) {
       var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
-      if (spans.length === 0) return;
+      {% comment %} if (spans.length === 0) return; {% endcomment %}
 
       e.preventDefault();
       updateOrderPromiseDate();
@@ -523,200 +523,238 @@ document.addEventListener('DOMContentLoaded', function () {
         return lineKey ? lineKey.split(':')[0] : null;
       }
 
-      fetch('/cart.js', {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' }
-      })
-      .then(function(r) { return r.json(); })
-      .then(function(cart) {
-        // Build lookup by variant_id, not line key — the line key can
-        // change between when spans were rendered and now (e.g. a
-        // flooring delivery-date selection mutates the property hash),
-        // so matching on key can silently miss the item entirely.
-        var leadDataByVariant = {};
-        var maxLeadDays = 0;
-
-        spans.forEach(function(span) {
-          var key = span.getAttribute('data-line-key');
-          var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
-          var leadText = span.getAttribute('data-leadtext');
-          var variantId = extractVariantId(key);
-          if (!variantId || !leadDays) return;
-
-          leadDataByVariant[variantId] = {
-            days: leadDays,
-            text: leadText,
-            promise: formatPromiseDate(leadDays)
-          };
-          if (leadDays > maxLeadDays) maxLeadDays = leadDays;
-        });
-
-        // Coverage elements are also DOM-rendered with the OLD line key,
-        // so also index those by variant_id for the same reason.
-        var coverageByVariant = {};
-        document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
-          if (el.offsetParent === null) return; // skip hidden responsive duplicate
-          var key = el.getAttribute('data-line-key');
-          var variantId = extractVariantId(key);
-          if (!variantId) return;
-          var match = el.textContent.trim().match(/[\d.]+/);
-          if (match) coverageByVariant[variantId] = match[0] + ' m²';
-        });
-
-        var leadTimesEl = document.getElementById('lead-time-data');
-        var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
-        var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
-        var weightThresholdForClear = leadTimesEl ? parseFloat(leadTimesEl.getAttribute('data-weight-threshold')) : 30000;
-
-        var supportWeightForClear = 0;
-        cart.items.forEach(function(item) {
-          if (item.product_type === supportTypeForClear) {
-            supportWeightForClear += (item.grams || 0) * item.quantity;
-          }
-        });
-        var hasFlooringForClear = cart.items.some(function(item) {
-          return item.product_type === flooringTypeForClear;
-        });
-        var stillHasFlooring = cart.items.some(function(item) {
-          return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
-        });
-
-        var deliveryDateClearWrite = Promise.resolve();
-        if (!stillHasFlooring && cart.attributes && cart.attributes['Access Restrictions']) {
-          deliveryDateClearWrite = fetch('/cart/update.js', {
+      // Sync quantities for EVERY cart line via keyed /cart/update.js first.
+      // Fixes duplicate bundle-child lines resetting to qty 1 at checkout —
+      // those lines get no rendered <tr>/input at all, so this handler used
+      // to skip entirely (via the spans.length === 0 return above) whenever
+      // a cart had no flooring/lead-time items, leaving native positional
+      // updates[] submission — which mishandles the missing-input gap — to
+      // run unopposed. This pass is unconditional and independent of the
+      // lead-time-specific logic below.
+      fetch('/cart.js', { method: 'GET', headers: { 'Content-Type': 'application/json' } })
+        .then(function(r) { return r.json(); })
+        .then(function(preSyncCart) {
+          var keyedUpdates = {};
+          preSyncCart.items.forEach(function(item, i) {
+            var qty = item.quantity;
+            var inputForLine = document.querySelector('.quantity__input[data-index="' + (i + 1) + '"]');
+            if (inputForLine) {
+              var parsed = parseInt(inputForLine.value, 10);
+              if (!isNaN(parsed)) qty = parsed;
+            }
+            keyedUpdates[item.key] = qty;
+          });
+          return fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-              attributes: { 
-                'Access Restrictions': '',
-              } 
-            })
-          }).catch(function() { /* silent */ });
-        }
+            body: JSON.stringify({ updates: keyedUpdates })
+          });
+        })
+        .catch(function() { /* proceed regardless — checkout must not get stuck */ })
+        .then(function() { proceedWithLeadTimeSync(); });
 
-        var orderPromiseWrite = Promise.resolve();
-        if (maxLeadDays > 0) {
-          var orderPromise = formatPromiseDate(maxLeadDays);
-          var promiseDateInput = document.getElementById('hidden-promise-date');
-          if (promiseDateInput) promiseDateInput.value = orderPromise;
+      function proceedWithLeadTimeSync() {
+        fetch('/cart.js', {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' }
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(cart) {
+          // Build lookup by variant_id, not line key — the line key can
+          // change between when spans were rendered and now (e.g. a
+          // flooring delivery-date selection mutates the property hash),
+          // so matching on key can silently miss the item entirely.
+          var leadDataByVariant = {};
+          var maxLeadDays = 0;
 
-          orderPromiseWrite = fetch('/cart/update.js', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
-              attributes: { 
-                '_Promise Date': orderPromise,
-                '_Days': String(maxLeadDays)
+          spans.forEach(function(span) {
+            var key = span.getAttribute('data-line-key');
+            var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
+            var leadText = span.getAttribute('data-leadtext');
+            var variantId = extractVariantId(key);
+            if (!variantId || !leadDays) return;
+
+            leadDataByVariant[variantId] = {
+              days: leadDays,
+              text: leadText,
+              promise: formatPromiseDate(leadDays)
+            };
+            if (leadDays > maxLeadDays) maxLeadDays = leadDays;
+          });
+
+          // Coverage elements are also DOM-rendered with the OLD line key,
+          // so also index those by variant_id for the same reason.
+          var coverageByVariant = {};
+          document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
+            if (el.offsetParent === null) return; // skip hidden responsive duplicate
+            var key = el.getAttribute('data-line-key');
+            var variantId = extractVariantId(key);
+            if (!variantId) return;
+            var match = el.textContent.trim().match(/[\d.]+/);
+            if (match) coverageByVariant[variantId] = match[0] + ' m²';
+          });
+
+          var leadTimesEl = document.getElementById('lead-time-data');
+          var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
+          var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
+          var weightThresholdForClear = leadTimesEl ? parseFloat(leadTimesEl.getAttribute('data-weight-threshold')) : 30000;
+
+          var supportWeightForClear = 0;
+          cart.items.forEach(function(item) {
+            if (item.product_type === supportTypeForClear) {
+              supportWeightForClear += (item.grams || 0) * item.quantity;
+            }
+          });
+          var hasFlooringForClear = cart.items.some(function(item) {
+            return item.product_type === flooringTypeForClear;
+          });
+          var stillHasFlooring = cart.items.some(function(item) {
+            return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
+          });
+
+          var deliveryDateClearWrite = Promise.resolve();
+          if (!stillHasFlooring && cart.attributes && cart.attributes['Access Restrictions']) {
+            deliveryDateClearWrite = fetch('/cart/update.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ 
+                attributes: { 
+                  'Access Restrictions': '',
+                } 
+              })
+            }).catch(function() { /* silent */ });
+          }
+
+          var orderPromiseWrite = Promise.resolve();
+          if (maxLeadDays > 0) {
+            var orderPromise = formatPromiseDate(maxLeadDays);
+            var promiseDateInput = document.getElementById('hidden-promise-date');
+            if (promiseDateInput) promiseDateInput.value = orderPromise;
+
+            orderPromiseWrite = fetch('/cart/update.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ 
+                attributes: { 
+                  '_Promise Date': orderPromise,
+                  '_Days': String(maxLeadDays)
+                }
+              })
+            }).catch(function() { /* silent */ });
+          }
+
+          var itemsToUpdate = cart.items.filter(function(item) {
+            return leadDataByVariant[String(item.variant_id)];
+          });
+
+          var groupedByVariant = {};
+          itemsToUpdate.forEach(function(item) {
+            var props = item.properties || {};
+            var groupKey;
+
+            // Bundle parents and add-on children must never be merged. Two bundles
+            // of the same parent variant with different children are indistinguishable
+            // by properties alone (_group_id identifies the parent, not the
+            // configuration), so any bundle-related line gets a unique key.
+            if (props['_group_id'] || props['_bundle_parent'] || props['_Added as add-on']) {
+              groupKey = 'nomerge:' + item.key;
+            } else {
+              groupKey = String(item.variant_id);
+            }
+
+            if (!groupedByVariant[groupKey]) groupedByVariant[groupKey] = [];
+            groupedByVariant[groupKey].push(item);
+          });
+
+          var groupKeys = Object.keys(groupedByVariant);
+
+          function processVariant(index) {
+            if (index >= groupKeys.length) {
+              Promise.all([orderPromiseWrite, deliveryDateClearWrite]).then(function() {
+                if (!cartForm.querySelector('input[name="checkout"]')) {
+                  var ci = document.createElement('input');
+                  ci.type = 'hidden';
+                  ci.name = 'checkout';
+                  ci.value = '';
+                  cartForm.appendChild(ci);
+                }
+                document.querySelectorAll('.quantity__input[name="updates[]"]').forEach(function(el) {
+                  el.disabled = true;
+                });
+                cartForm.submit();
+              });
+              return;
+            }
+
+            var groupKey = groupKeys[index];
+            var lines = groupedByVariant[groupKey];
+            var vid = String(lines[0].variant_id);
+            var leadData = leadDataByVariant[vid];
+            var totalQty = lines.reduce(function(sum, l) { return sum + l.quantity; }, 0);
+
+            var keepLine = lines[0];
+            var mergedProps = Object.assign({}, keepLine.properties || {});
+            delete mergedProps['_lead_time_days'];
+            delete mergedProps['_Promise Date'];
+            if (leadData.text) mergedProps['Availability'] = leadData.text;
+
+            var liveCoverage = coverageByVariant[vid];
+            if (liveCoverage) mergedProps['Coverage'] = liveCoverage;
+
+            var isFlooringItem = keepLine.product_type === flooringTypeForClear;
+            var isQualifyingSupportItem = keepLine.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear);
+            if (!isFlooringItem && !isQualifyingSupportItem) {
+              delete mergedProps['Flooring Delivery Date'];
+            }
+
+            // Remove extra duplicate lines FIRST, then set the survivor's combined
+            // quantity + properties. Removing first avoids writing to keys that a
+            // prior write in this same sequence may have invalidated.
+            var removals = lines.slice(1);
+
+            function removeNext(i) {
+              if (i >= removals.length) {
+                fetch('/cart/change.js', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                    id: keepLine.key,
+                    quantity: totalQty,
+                    properties: mergedProps
+                  })
+                })
+                .then(function() { processVariant(index + 1); })
+                .catch(function() { processVariant(index + 1); });
+                return;
               }
-            })
-          }).catch(function() { /* silent */ });
-        }
-
-        var itemsToUpdate = cart.items.filter(function(item) {
-          return leadDataByVariant[String(item.variant_id)];
-        });
-
-        var groupedByVariant = {};
-        itemsToUpdate.forEach(function(item) {
-          var props = item.properties || {};
-          var groupKey;
-
-          // Bundle parents and add-on children must never be merged. Two bundles
-          // of the same parent variant with different children are indistinguishable
-          // by properties alone (_group_id identifies the parent, not the
-          // configuration), so any bundle-related line gets a unique key.
-          if (props['_group_id'] || props['_bundle_parent'] || props['_Added as add-on']) {
-            groupKey = 'nomerge:' + item.key;
-          } else {
-            groupKey = String(item.variant_id);
-          }
-
-          if (!groupedByVariant[groupKey]) groupedByVariant[groupKey] = [];
-          groupedByVariant[groupKey].push(item);
-        });
-
-        var groupKeys = Object.keys(groupedByVariant);
-
-        function processVariant(index) {
-          if (index >= groupKeys.length) {
-            Promise.all([orderPromiseWrite, deliveryDateClearWrite]).then(function() {
-              if (!cartForm.querySelector('input[name="checkout"]')) {
-                var ci = document.createElement('input');
-                ci.type = 'hidden';
-                ci.name = 'checkout';
-                ci.value = '';
-                cartForm.appendChild(ci);
-              }
-              cartForm.submit();
-            });
-            return;
-          }
-
-          var groupKey = groupKeys[index];
-          var lines = groupedByVariant[groupKey];
-          var vid = String(lines[0].variant_id);
-          var leadData = leadDataByVariant[vid];
-          var totalQty = lines.reduce(function(sum, l) { return sum + l.quantity; }, 0);
-
-          var keepLine = lines[0];
-          var mergedProps = Object.assign({}, keepLine.properties || {});
-          delete mergedProps['_lead_time_days'];
-          delete mergedProps['_Promise Date'];
-          if (leadData.text) mergedProps['Availability'] = leadData.text;
-
-          var liveCoverage = coverageByVariant[vid];
-          if (liveCoverage) mergedProps['Coverage'] = liveCoverage;
-
-          var isFlooringItem = keepLine.product_type === flooringTypeForClear;
-          var isQualifyingSupportItem = keepLine.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear);
-          if (!isFlooringItem && !isQualifyingSupportItem) {
-            delete mergedProps['Flooring Delivery Date'];
-          }
-
-          // Remove extra duplicate lines FIRST, then set the survivor's combined
-          // quantity + properties. Removing first avoids writing to keys that a
-          // prior write in this same sequence may have invalidated.
-          var removals = lines.slice(1);
-
-          function removeNext(i) {
-            if (i >= removals.length) {
               fetch('/cart/change.js', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                  id: keepLine.key,
-                  quantity: totalQty,
-                  properties: mergedProps
-                })
+                body: JSON.stringify({ id: removals[i].key, quantity: 0 })
               })
-              .then(function() { processVariant(index + 1); })
-              .catch(function() { processVariant(index + 1); });
-              return;
+              .then(function() { removeNext(i + 1); })
+              .catch(function() { removeNext(i + 1); });
             }
-            fetch('/cart/change.js', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ id: removals[i].key, quantity: 0 })
-            })
-            .then(function() { removeNext(i + 1); })
-            .catch(function() { removeNext(i + 1); });
+
+            removeNext(0);
           }
 
-          removeNext(0);
-        }
-
-        processVariant(0);
-      })
-      .catch(function() {
-        if (!cartForm.querySelector('input[name="checkout"]')) {
-          var ci = document.createElement('input');
-          ci.type = 'hidden';
-          ci.name = 'checkout';
-          ci.value = '';
-          cartForm.appendChild(ci);
-        }
-        cartForm.submit();
-      });
+          processVariant(0);
+        })
+        .catch(function() {
+          if (!cartForm.querySelector('input[name="checkout"]')) {
+            var ci = document.createElement('input');
+            ci.type = 'hidden';
+            ci.name = 'checkout';
+            ci.value = '';
+            cartForm.appendChild(ci);
+          }
+          document.querySelectorAll('.quantity__input[name="updates[]"]').forEach(function(el) {
+            el.disabled = true;
+          });
+          cartForm.submit();
+        });
+      }
     });
   }
 
