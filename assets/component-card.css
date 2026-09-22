@@ -603,7 +603,8 @@
 }
 .product-page .related-section .related-products-grid .card__heading {
   margin-top: 0.5em;
-  font-size: 20px
+  font-size: 18px;
+  font-weight: 400;
 }
 .product-page .related-section .related-products-grid .card-wrapper .card__information .price {
     margin-top: 2px;
