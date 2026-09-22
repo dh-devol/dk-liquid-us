@@ -185,12 +185,13 @@ if (!staffRows.length) return;
 
             if (name) staffName.textContent = name;
             if (role) staffRole.textContent = role;
-            if (degree) staffDegree.textContent = degree;
+            staffDegree.textContent = degree || '';
             if (description) staffDescription.innerHTML = description;
             if (personImagesrc) staffImage.src = personImagesrc;
             if (personImagealt) staffImage.alt = personImagealt;
-            if (urlText) staffurl.textContent = urlText;
-            if (urlPath) staffurl.href = urlPath;
+            staffurl.textContent = urlText || urlPath || '';
+            staffurl.href = urlPath || '';
+            staffurl.hidden = !urlPath;
           
 
             staffDetail.classList.add("active");
