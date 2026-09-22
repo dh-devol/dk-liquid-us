@@ -59,7 +59,7 @@
       "custom_css": [
         ".page-width {max-width: unset; width: 100%;}",
         ".image-with-text__media {border: unset;}",
-        ".klaviyo-form-WGgbcs {max-width: 476px; margin: 0 auto; padding: 0 48px;}",
+        "@media screen and (min-width: 990px) {.klaviyo-form-WGgbcs {max-width: 476px; margin: 0 auto; padding: 0 48px; }}",
         ".klaviyo-form-WGgbcs h1,.klaviyo-form-WGgbcs p {text-align: left; font-family: \"EB Garamond\", serif !important; color: rgb(89, 89, 89) !important; line-height: 1.5;}",
         ".klaviyo-form-WGgbcs label {font-weight: 300 !important;}",
         ".klaviyo-form-WGgbcs button {padding: 0 1.8em !important;}",
