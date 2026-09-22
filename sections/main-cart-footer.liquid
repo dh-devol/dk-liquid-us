@@ -560,7 +560,7 @@ document.addEventListener('DOMContentLoaded', function () {
           var variantId = extractVariantId(key);
           if (!variantId) return;
           var match = el.textContent.trim().match(/[\d.]+/);
-          if (match) coverageByVariant[variantId] = match[0] + ' m²';
+          if (match) coverageByVariant[variantId] = match[0] + ' f²';
         });
 
         var leadTimesEl = document.getElementById('lead-time-data');
