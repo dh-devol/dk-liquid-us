@@ -1204,6 +1204,15 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   margin: 3.8em 0 0 0;
 }
 
+/* Block image hover rollover for tablet and lower */
+.hover__image-wrapper:hover .hover__image,
+.text__hover:hover .hover__image{
+  opacity:0;
+}
+.hover__image-wrapper:not(.text__hover):hover .standard__image{
+  opacity:1;
+}
+
 
 }
 
