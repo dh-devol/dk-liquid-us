@@ -64,13 +64,14 @@
           "settings": {
             "megatitle": "the-classic-english-kitchen",
             "blocktitle": "NEW & FEATURED",
-            "title1": "The Primrose Hill Kitchen",
+            "image1": "shopify://shop_images/thumbnail-the-classic-english-kitchen-an-eclectic-victorian-villa-1-edit.jpg",
+            "title1": "An Eclectic Victorian Villa",
             "text1": "STEP INSIDE",
-            "link1": "shopify://pages/primrose-hill-kitchen",
-            "image2": "shopify://shop_images/thumbnail-the-classic-english-kitchen-a-historic-hall-in-the-north-downs-01.jpg",
-            "title2": "A Historic Hall in the North Downs",
+            "link1": "shopify://pages/eclectic-victorian-villa",
+            "image2": "shopify://shop_images/thumbnail-the-classic-english-kitchen-the-primrose-hill-kitchen-01.jpg",
+            "title2": "The Primrose Hill Kitchen",
             "text2": "STEP INSIDE",
-            "link2": "shopify://pages/historic-hall-in-the-north-downs"
+            "link2": "shopify://pages/primrose-hill-kitchen"
           }
         },
         "mega_menu_THx79m": {
