@@ -850,27 +850,6 @@
             "staff_url_title": "",
             "staff_url": ""
           }
-        },
-        "column_AGwXyH": {
-          "type": "column",
-          "name": "Barny Pitts",
-          "settings": {
-            "image": "shopify://shop_images/thumbnail-about-us-meet-the-staff-st-johns-square-clerkenwell-barny-pitts.jpg",
-            "custom_text_hover": "Barny Pitts",
-            "custom_text_hover_position": "Kitchen Design Technician",
-            "title": "",
-            "subtext": "",
-            "text": "",
-            "show_above_image": false,
-            "link_label": "",
-            "link": "",
-            "staff_name": "Barny Pitts",
-            "staff_role": "Kitchen Design Technician",
-            "staff_degree": "<em>Mathematics and Physics BSC Hons</em>",
-            "staff_description": "<p>Having taken a gap year where he worked for a youth work charity in London, Barny moved to Loughborough to study Mathematics and Physics in 2015. In his final year, he specialised in quantum and solid-state physics. Barny graduated in 2018 and went on to work in sales for a promotional products company in Leicester, before joining deVOL in May 2019.<br/><br/>Barny has worked in multiple departments across deVOL and is highly knowledgeable about every aspect of the business. Starting in the Logistics team, Barny coordinated the deliveries of deVOL furniture all over the country and the world. Following a year working with our incredibly talented kitchen fitters in London, Barny joined the St. John’s Square showroom in 2025 as a Kitchen Design Technician. Here, Barny assists the team by drawing up designs and checking their technical feasibility. You can also find Barny out on the road, carrying out site surveys at our customers’ homes.<br/><br/>Outside work, Barny is a keen musician and sportsman and loves to travel as well as spend time with his son, Theo, who was born at the end of 2025!</p>",
-            "staff_url_title": "",
-            "staff_url": ""
-          }
         }
       },
       "block_order": [
@@ -878,8 +857,7 @@
         "column_akYQRU",
         "column_gecgeP",
         "column_Gac3n3",
-        "column_kXUNxR",
-        "column_AGwXyH"
+        "column_kXUNxR"
       ],
       "custom_css": [],
       "name": "St. John's Square, Clerkenwell",
