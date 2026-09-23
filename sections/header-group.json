@@ -48,14 +48,14 @@
           "settings": {
             "megatitle": "the-real-shaker-kitchen",
             "blocktitle": "NEW & FEATURED",
-            "image1": "shopify://shop_images/thumbnail-the-real-shaker-kitchen-the-daws-heath-01.jpg",
-            "title1": "The Daws Heath Kitchen",
+            "image1": "shopify://shop_images/The-LA-Showroom-Kitchen-Thumbnail1.jpg",
+            "title1": "The LA Showroom Shaker Kitchen",
             "text1": "STEP INSIDE",
-            "link1": "shopify://pages/daws-heath-kitchen",
-            "image2": "shopify://shop_images/thumbnail-the-real-shaker-kitchen-the-tring-kitchen-01.jpg",
-            "title2": "The Tring Kitchen",
+            "link1": "shopify://pages/la-showroom-shaker-kitchen",
+            "image2": "shopify://shop_images/thumbnail-the-real-shaker-kitchen-clements-house-a-shaker-kitchen-in-bath-01.jpg",
+            "title2": "Clements House",
             "text2": "STEP INSIDE",
-            "link2": "shopify://pages/tring-kitchen"
+            "link2": "shopify://pages/the-clements-house"
           }
         },
         "mega_menu_enANy7": {
