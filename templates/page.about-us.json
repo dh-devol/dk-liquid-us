@@ -85,8 +85,7 @@
         "column_GGL4Qd"
       ],
       "custom_css": [
-        ".page-width {padding-bottom: 0px;}",
-        "@media (min-width: 768px) and (max-width: 990px) {.page-width {padding: 0 5rem !important; }}"
+        ".page-width {padding-bottom: 0px;}"
       ],
       "settings": {
         "title": "",
