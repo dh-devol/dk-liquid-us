@@ -52,7 +52,7 @@
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
-        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__inner {margin-bottom: 50px;}",
         ".collection-hero__title {margin-bottom: 1em;}"
       ],
       "settings": {
@@ -203,9 +203,7 @@
         "product_item_keT9qC",
         "product_item_GfyJHN"
       ],
-      "custom_css": [
-        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
-      ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
