@@ -205,27 +205,81 @@
         "sectionname": ""
       }
     },
-    "custom_product_list_taDrmg": {
+    "custom_product_list_pm9ym4": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_FAxrUP": {
-          "type": "product_item",
-          "settings": {
-            "product": "ditsy-delft-wallpaper-grand-sepia"
-          }
-        },
-        "product_item_GWt4KU": {
+        "product_item_pgkdVw": {
           "type": "product_item",
           "settings": {
             "product": "aged-brass-hanging-rail-22-2-brackets-5-hooks"
           }
         },
-        "product_item_xMeiCy": {
+        "product_item_pAA4Rh": {
           "type": "product_item",
           "settings": {
             "product": "ditsy-delft-tiles-ditsy-sepia"
           }
         },
+        "product_item_CdT37g": {
+          "type": "product_item",
+          "settings": {
+            "product": "ditsy-delft-wallpaper-grand-sepia"
+          }
+        },
+        "product_item_tqiGt7": {
+          "type": "product_item",
+          "settings": {
+            "product": "ditsy-delft-wallpaper-grand-blue"
+          }
+        },
+        "product_item_4hmBR7": {
+          "type": "product_item",
+          "settings": {
+            "product": "ditsy-delft-wallpaper-petite-sepia"
+          }
+        },
+        "product_item_tV6DFm": {
+          "type": "product_item",
+          "settings": {
+            "product": "ditsy-delft-wallpaper-petite-blue"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_pgkdVw",
+        "product_item_pAA4Rh",
+        "product_item_CdT37g",
+        "product_item_tqiGt7",
+        "product_item_4hmBR7",
+        "product_item_tV6DFm"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_taDrmg": {
+      "type": "custom-product-list",
+      "blocks": {
         "product_item_MVVB6X": {
           "type": "product_item",
           "settings": {
@@ -246,9 +300,6 @@
         }
       },
       "block_order": [
-        "product_item_FAxrUP",
-        "product_item_GWt4KU",
-        "product_item_xMeiCy",
         "product_item_MVVB6X",
         "product_item_cYEqhG",
         "product_item_kW3jNJ"
@@ -285,6 +336,7 @@
     "custom_product_list_XRfF8g",
     "custom_product_list_RXJfNy",
     "custom_product_list_pR8a6Y",
+    "custom_product_list_pm9ym4",
     "custom_product_list_taDrmg"
   ]
 }
