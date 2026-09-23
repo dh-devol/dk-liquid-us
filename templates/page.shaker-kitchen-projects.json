@@ -145,7 +145,7 @@
         "column_fYtPLW": {
           "type": "column",
           "settings": {
-            "dynamic_costs": "the-clements-house",
+            "dynamic_costs": "clements-house",
             "custom_text_hover": ""
           }
         },
