@@ -27,7 +27,7 @@
         "text_alignment": "left",
         "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
         "slider_visual": "dots",
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "image_behavior": "none",
         "show_text_below": true,
