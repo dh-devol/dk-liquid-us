@@ -64,82 +64,144 @@
   </div>
 
   <div class="author-articles">
-    {% assign handles = section.settings.blog_handles | split: ',' %}
-    {% assign clean_handle = handle | strip %}
-    {% comment %} {% assign blog = page.metafields.custom.blog_posts.value %} {% endcomment %}
-   {% assign blog_menu = menus['blog-menu'] %}
-    {% assign target_author = page.title
-      | downcase
-      | replace: "'", ""
-      | replace: " ", ""
-    %}
+    {%- liquid
+      assign author_source = page.metafields.custom.author_names.value | default: page.title
+      assign target_key = author_source | downcase | replace: "’", "" | replace: "'", "" | replace: ".", "" | replace: "-", "" | replace: " ", "" | strip
+      assign seen_blogs = ','
+    -%}
+    {%- assign max_pages = 1 -%}
 
+    {%- for link in menus['blog-menu'].links -%}
+      {%- assign blog_handle = link.url | split: '/blogs/' | last | split: '/' | first | split: '?' | first -%}
+      {%- assign blog_key = ',' | append: blog_handle | append: ',' -%}
+      {%- if seen_blogs contains blog_key -%}{%- continue -%}{%- endif -%}
+      {%- assign seen_blogs = seen_blogs | append: blog_handle | append: ',' -%}
+      {%- assign blog = blogs[blog_handle] -%}
+      {%- if blog == blank -%}{%- continue -%}{%- endif -%}
 
-    {% if blog_menu %}
-      {% for link in blog_menu.links %}
-        {% assign blog = blogs[link.object.handle] %}
-        {% if blog %}
-          {% paginate blog.articles by 500 %}
-            {% for article in blog.articles %}
-              {% assign article_author = article.author
-                | downcase
-                | replace: "'", ""
-                | replace: " ", ""
+      {%- paginate blog.articles by 250 -%}
+        {%- if paginate.pages > max_pages -%}{%- assign max_pages = paginate.pages -%}{%- endif -%}
+        {%- for article in blog.articles -%}
+          {%- assign author_raw = article.author | replace: ' & ', ',' | replace: ' and ', ',' | replace: ' And ', ',' -%}
+          {%- assign author_parts = author_raw | split: ',' -%}
+          {%- assign is_match = false -%}
+          {%- for part in author_parts -%}
+            {%- assign part_key = part | downcase | replace: "’", "" | replace: "'", "" | replace: ".", "" | replace: "-", "" | replace: " ", "" | strip -%}
+            {%- if part_key == target_key -%}
+              {%- assign is_match = true -%}
+              {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if is_match -%}
+            <div class="grid__item article lazy-article" data-date="{{ article.published_at | date: '%s' }}">
+              {% render 'article-card',
+                blog: blog,
+                article: article,
+                media_aspect_ratio: 1.66,
+                show_image: section.settings.show_image,
+                show_date: section.settings.show_date,
+                show_author: section.settings.show_author,
+                show_excerpt: true
               %}
-              {% if article_author == target_author %}
-                <div class="grid__item article">
-                    {% render 'article-card',
-                      blog: blog,
-                      article: article,
-                      media_aspect_ratio: 1.66,
-                      show_image: section.settings.show_image,
-                      show_date: section.settings.show_date,
-                      show_author: section.settings.show_author,
-                      show_excerpt: true
-                    %}
-                  </div>
-              {% endif %}
-            {% endfor %}
-          {% endpaginate %}
-        {% endif %}
-      {% endfor %}
-    {% endif %}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endpaginate -%}
+    {%- endfor -%}
+    <div id="author-articles-meta" hidden data-pages="{{ max_pages }}"></div>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        const grid = document.querySelector(".author-page .author-articles");
+        if (!grid) return;
 
-    <div id="load-more-container">
-  <button id="load-more" class="baskerville">
-    Load More
-  </button>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const articles = document.querySelectorAll(".lazy-article");
-  const loadMoreBtn = document.getElementById("load-more");
+        const meta = document.getElementById("author-articles-meta");
+        const totalPages = parseInt((meta && meta.dataset.pages) || "1", 10);
+        const sectionId = "{{ section.id }}";
+        const PAGE_SIZE = 12;
 
-  let visibleCount = 6;
-  const step = 6;
+        let articles = Array.from(grid.querySelectorAll(".lazy-article"));
+        let renderedCount = PAGE_SIZE;
+        let isLoading = false;
+        let observer;
 
-  function updateVisibility() {
-    articles.forEach((article, index) => {
-      article.style.display = index < visibleCount ? "block" : "none";
-    });
+        // Hide anything beyond the current batch (CSS handles this via .js-batched)
+        grid.classList.add("js-batched");
 
-    if (visibleCount >= articles.length) {
-      loadMoreBtn.style.display = "none";
-    }
-  }
+        const showUpTo = (count) => {
+          articles.forEach((el, i) => el.classList.toggle("is-visible", i < count));
+        };
 
-  loadMoreBtn.addEventListener("click", function () {
-    visibleCount += step;
-    updateVisibility();
-  });
+        const loadMoreButton = document.createElement("button");
+        loadMoreButton.type = "button";
+        loadMoreButton.className = "blog__load-more baskerville";
+        grid.after(loadMoreButton);
 
-  updateVisibility();
-});
-</script>
+        const setLoadingState = (loading) => {
+          isLoading = loading;
+          loadMoreButton.textContent = loading ? "Loading posts..." : "Load more posts";
+          loadMoreButton.disabled = loading;
+          loadMoreButton.classList.toggle("is-loading", loading);
+        };
 
-    </div>
+        // Show the first batch straight away, then fetch older posts in the background
+        showUpTo(renderedCount);
+        setLoadingState(true);
 
+        if (totalPages > 1) {
+          const pageNums = Array.from({ length: totalPages - 1 }, (_, i) => i + 2);
+          const pages = await Promise.all(pageNums.map((p) =>
+            fetch(`${window.location.pathname}?section_id=${sectionId}&page=${p}`)
+              .then((res) => (res.ok ? res.text() : ""))
+              .catch((err) => { console.error("Couldn't load article page", p, err); return ""; })
+          ));
+
+          pages.forEach((html) => {
+            if (!html) return;
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            doc.querySelectorAll(".lazy-article").forEach((el) => grid.appendChild(el));
+          });
+        }
+
+        // Newest first across all pages and blogs
+        articles = Array.from(grid.querySelectorAll(".lazy-article"));
+        articles.sort((a, b) => Number(b.dataset.date || 0) - Number(a.dataset.date || 0));
+        articles.forEach((el) => grid.appendChild(el));
+
+        showUpTo(renderedCount);
+        setLoadingState(false);
+
+        if (renderedCount >= articles.length) {
+          loadMoreButton.remove();
+          return;
+        }
+
+        const loadNextBatch = () => {
+          if (isLoading || renderedCount >= articles.length) return;
+          renderedCount += PAGE_SIZE;
+          showUpTo(renderedCount);
+
+          if (renderedCount >= articles.length) {
+            loadMoreButton.remove();
+            observer.disconnect();
+          }
+        };
+
+        loadMoreButton.addEventListener("click", loadNextBatch);
+
+        observer = new IntersectionObserver(
+          (entries) => {
+            if (!entries.some((entry) => entry.isIntersecting)) return;
+            loadNextBatch();
+          },
+          { rootMargin: "-250px 0px" }
+        );
+        observer.observe(loadMoreButton);
+      });
+    </script>
+
+  </div>
 <!-- Styles -->
 <style>
   article.baskerville.article-template .main__blog--wrapper {
@@ -247,6 +309,35 @@ document.addEventListener("DOMContentLoaded", function () {
   .author-page .article-card img {
     /*border-radius: 4px;*/
     margin-bottom: 10px;
+  }
+  .author-page .author-articles.js-batched .lazy-article:not(.is-visible) {
+    display: none;
+  }
+  .author-page .blog__load-more {
+    display: block;
+    margin: 40px auto 0;
+    padding: 10px 31.2px 11px;
+    background: #27333f;
+    color: #fff;
+    border: none;
+    font-family: "EB Garamond", garamond-premier-pro-display, "Times New Roman", serif;
+    font-size: 15.6px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 20.8px;
+    letter-spacing: 0.02em;
+    width: auto;
+    max-width: 260px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .author-page .blog__load-more.is-loading {
+    cursor: default;
+    opacity: 0.8;
+  }
+  .author-page .blog__load-more:disabled {
+    cursor: default;
+    opacity: 0.8;
   }
 
   /*@media (max-width: 590px) {
