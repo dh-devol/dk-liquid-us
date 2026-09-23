@@ -88,7 +88,7 @@
     margin-top: 0;
   }
 }
-@media (max-width:768px){
+@media (max-width:767px){
   .page-title-description .rich-text__wrapper .rich-text__blocks.center{
     text-align:left;
   }
