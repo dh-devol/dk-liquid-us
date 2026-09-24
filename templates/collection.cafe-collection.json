@@ -144,7 +144,7 @@
         "background_style": "none",
         "button_label": "",
         "button_link": "",
-        "show_top_border": true,
+        "show_top_border": false,
         "show_bottom_border": false,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
