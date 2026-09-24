@@ -384,7 +384,8 @@ a.product__text {
   margin-bottom: 0;
 }
 
-.coverage__label.form__label sup {
+.coverage__label.form__label sup,
+.quantity__label.form__label sup {
   line-height: 0;
 }
 
