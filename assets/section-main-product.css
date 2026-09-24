@@ -1863,11 +1863,6 @@ span#TotalPrice {
     font-size:11px;
   }
 }
-@media screen and (max-width:400px){
-.quantity_coverage-wrapper .product-form__input {
-        max-width: 90px;
-    }
-}
 @media (min-width: 1025px) {
   .product-page .product .product-gallery-swiper {
     max-width: 100%;
