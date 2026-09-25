@@ -157,6 +157,9 @@
     margin-top: 60px;
     width: 90%;
   }
+    .kitchen .page-metafield-content .card__slider-gallery-wrapper.page-width .title-wrapper-with-link {
+    max-width: 90%;
+  }
   .kitchen .page-metafield-content .card__slider-gallery-wrapper.page-width .page_description {
     margin-top: 1.6em;
     margin-bottom: 2.1em;
