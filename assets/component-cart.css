@@ -267,6 +267,9 @@ cart-items {
     text-align: center;
     margin-top: 30px;
 }
+#main-cart-footer .delivery__text {
+  margin-top: 4rem;
+}
 .cart--page{
   display: flex; 
   flex-wrap: wrap;

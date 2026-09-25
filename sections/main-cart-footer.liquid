@@ -833,6 +833,12 @@ document.addEventListener('DOMContentLoaded', function () {
                  </div>
                </div>
              {% endif %}
+             {% when 'delivery' %}
+             {% if block.settings.delivery_text != blank %}
+               <div class="delivery__text">
+                   {{ block.settings.delivery_text }}
+               </div>
+             {% endif %}
           {%- endcase -%}
         {% endfor %}
 
@@ -907,6 +913,18 @@ document.addEventListener('DOMContentLoaded', function () {
           "id": "custom_text",
           "label": "Custom Text"
         }
+      ]
+    },
+    {
+      "type": "delivery",
+      "name": "Delivery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "delivery_text",
+          "label": "Delivery text"
+        },
       ]
     },
     {
