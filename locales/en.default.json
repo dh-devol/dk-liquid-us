@@ -549,7 +549,7 @@
       },
       "order_summary": {
         "total_savings": "Your saving",
-        "confirmation_number_label": "LOL jk"
+        "confirmation_number_label": "Order confirmed"
       }
     }
   }
