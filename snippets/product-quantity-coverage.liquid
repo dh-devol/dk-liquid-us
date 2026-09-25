@@ -81,7 +81,7 @@
           </div>
         </div>
       {% endif %}
-      {% if tile_type == 'free length' %}
+      {% if tile_type == 'free length' or tile_type == 'variable pack' %}
         <div class="coverage_main-wrapper coverage-ft2-input-wrapper">
           <label for="CoverageFt2-{{ section.id }}" class="coverage__label form__label">Coverage (ft<sup>2</sup>)*</label>
           <div class="coverage-wrapper">
@@ -142,7 +142,7 @@
           {% if tile_type == 'free length' %}
             Coverage (m<sup>2</sup>)*
           {% elsif tile_type == 'variable pack' %}
-            Coverage (ft<sup>2</sup>)*
+            Coverage (m<sup>2</sup>)*
           {% elsif product.title contains "Parquet" %}
             Quantity
           {% else %}
@@ -198,7 +198,7 @@
                 data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
                 max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
               {% endif %}
-              step="{% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}{{ qty_step }}{% elsif tile_type == 'free length' %}1{% else %}{{ product.selected_or_first_available_variant.quantity_rule.increment }}{% endif %}"
+              step="{% if tile_type == 'fixed pack' or tile_type == 'fixed tile' %}{{ qty_step }}{% elsif tile_type == 'free length' or tile_type == 'variable pack' %}1{% else %}{{ product.selected_or_first_available_variant.quantity_rule.increment }}{% endif %}"
               value="{{ qty_input_value | default: 1 }}"
               form="{{ product_form_id }}"
             >
@@ -236,6 +236,7 @@
             (function () {
               var sectionId = {{ section.id | json }};
               var isFreeLength = {{ tile_type | json }} === 'free length';
+              var isVariablePack = {{ tile_type | json }} === 'variable pack';
               var M2_TO_FT2 = 10.7639;
 
               var quantityInput = document.getElementById('Quantity-' + sectionId);
@@ -244,7 +245,7 @@
               var ft2PlusBtn = document.getElementById('CoverageFt2Plus-' + sectionId);
               var totalPriceEl = document.getElementById('TotalPrice');
 
-              if (isFreeLength && quantityInput) {
+              if ((isFreeLength || isVariablePack) && quantityInput) {
                 quantityInput.setAttribute('step', '1');
               }
 
@@ -272,14 +273,14 @@
               }
 
               function syncFt2FromM2() {
-                if (!isFreeLength || !ft2Input || !quantityInput) return;
+                if ((!isFreeLength && !isVariablePack) || !ft2Input || !quantityInput) return;
                 var m2 = parseFloat(quantityInput.value);
                 if (isNaN(m2) || m2 < 1) m2 = 1;
                 ft2Input.value = (m2 * M2_TO_FT2).toFixed(2);
               }
 
               function syncM2FromFt2() {
-                if (!isFreeLength || !ft2Input || !quantityInput) return;
+                if ((!isFreeLength && !isVariablePack) || !ft2Input || !quantityInput) return;
                 var ft2 = parseFloat(ft2Input.value);
                 if (isNaN(ft2) || ft2 <= 0) ft2 = M2_TO_FT2;
                 var m2 = Math.max(1, Math.ceil(ft2 / M2_TO_FT2));
