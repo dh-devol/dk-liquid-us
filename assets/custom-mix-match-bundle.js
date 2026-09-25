@@ -233,6 +233,7 @@ window.initMixMatchBundle = function(root) {
                 _group_id: group_id,
                 _bundle_parent: "true",
                 _cart_text: product_cart_text,
+                _disable_qty: "true"
             };
 
             if (bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {
@@ -254,7 +255,8 @@ window.initMixMatchBundle = function(root) {
                         _bundle_child: "true",
                         _bundle_sort: `${i}`,
                         _bundle_summary: `${c.title} (× ${c.qty})`,
-                        _bundle_base_qty: String(c.qty)
+                        _bundle_base_qty: String(c.qty),
+                        _disable_qty: "true"
                     };
 
                     if (bundleLeadTime && bundleLeadTime !== 'undefined' && bundleLeadTime !== '') {

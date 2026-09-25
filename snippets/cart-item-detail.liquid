@@ -1,9 +1,9 @@
 {%- if item.properties['_Added as add-on'] == 'true' and item.properties._group_id != blank -%}
   {% continue %}
 {%- endif -%}
-{%- if item.properties._bundle_child == 'true' -%}
+{% comment %} {%- if item.properties._bundle_child == 'true' -%}
   {% continue %}
-{%- endif -%}
+{%- endif -%} {% endcomment %}
 
 {%- assign _cart_flooring_type = settings.flooring_product_type | default: 'Flooring' -%}
 {%- if item.product.type == _cart_flooring_type -%}
@@ -86,7 +86,7 @@
         {%- assign addon_keys = addon_keys | append: ci.key | append: ',' -%}
       {%- endif -%}
     {%- endif -%}
-    {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item.properties._group_id -%}
+    {% comment %} {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item.properties._group_id -%}
       {%- assign multiplier = ci.properties._bundle_base_qty | divided_by: item.quantity -%}
       {%- capture row -%}
         {"key": "{{ ci.key }}", "multiplier": "{{ multiplier }}"}
@@ -95,7 +95,7 @@
         {%- assign bundle_items = bundle_items | append: ',' -%}
       {%- endif -%}
       {%- assign bundle_items = bundle_items | append: row -%}
-    {%- endif -%}
+    {%- endif -%} {% endcomment %}
   {%- endfor -%}
 {%- endif -%}
 
@@ -157,6 +157,19 @@
       or item.properties.size != 0
       or item.selling_plan_allocation != null
     -%}
+    {%- capture item_lead_time_text -%}
+      {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item_variant_total_qty -%}
+    {%- endcapture -%}
+    {%- assign item_lead_time_text = item_lead_time_text | strip -%}
+
+    {%- capture item_lead_time_days -%}
+      {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item_variant_total_qty, field: 'lead_time_days' -%}
+    {%- endcapture -%}
+    {%- assign item_lead_time_days = item_lead_time_days | strip -%}
+
+    {%- if item_lead_time_days != blank -%}
+      <div><span class="lead-time-span product__inventory cart-item-stock" data-leadtime="{{ item_lead_time_days }}" data-leadtext="{{ item_lead_time_text | escape }}" data-line-key="{{ item.key }}">{{ item_lead_time_text | escape }}</span></div>
+    {%- endif -%}
       <dl>
         {%- if item.product.has_only_default_variant == false -%}
           {%- for option in item.options_with_values -%}
@@ -173,16 +186,6 @@
             {%- assign item_variant_total_qty = item_variant_total_qty | plus: cart_line.quantity -%}
           {%- endif -%}
         {%- endfor -%}
-
-        {%- capture item_lead_time_text -%}
-          {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item_variant_total_qty -%}
-        {%- endcapture -%}
-        {%- assign item_lead_time_text = item_lead_time_text | strip -%}
-
-        {%- capture item_lead_time_days -%}
-          {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item_variant_total_qty, field: 'lead_time_days' -%}
-        {%- endcapture -%}
-        {%- assign item_lead_time_days = item_lead_time_days | strip -%}
 
         {%- assign last_matching_key = "" -%}
         {%- for property in item.properties -%}
@@ -256,9 +259,6 @@
         {%- endif -%} {% endcomment %}
       </dl>
       {% comment %} Fallback {%- assign item_lead_time_days = item_product_lead_time_days | default: item.properties["_lead_time_days"] -%} {% endcomment %}
-      {%- if item_lead_time_days != blank -%}
-        <span class="lead-time-span product__inventory cart-item-stock" data-leadtime="{{ item_lead_time_days }}" data-leadtext="{{ item_lead_time_text | escape }}" data-line-key="{{ item.key }}">{{ item_lead_time_text | escape }}</span>
-      {%- endif -%}
       <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
       {%- comment -%}
         Render related add-on line items that reference this product via properties.group_id
@@ -281,14 +281,14 @@
           {%- assign related_addon_total = related_addon_total | plus: ci.final_line_price -%}
           {%- assign related_addon_original_total = related_addon_original_total | plus: ci.original_line_price -%}
         {%- endif -%}
-        {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item.properties._group_id -%}
+        {% comment %} {%- if ci.properties['_bundle_child'] == 'true' and ci.properties._group_id == item.properties._group_id -%}
           {%- assign bundle_related_count = bundle_related_count | plus: 1 -%}
           {%- assign related_bundle_total = related_bundle_total | plus: ci.final_line_price -%}
           {%- assign related_bundle_original_total = related_bundle_original_total | plus: ci.original_line_price -%}
         {%- endif -%}
         {%- if ci.properties['_bundle_items'] and ci.properties._group_id == item.properties._group_id -%}
           {%- assign bundle_related_count = bundle_related_count | plus: 1 -%}
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
       {%- endfor -%}
       {%- assign display_final_line_price = item.final_line_price | plus: related_addon_total | plus: related_bundle_total -%}
       {%- assign display_original_line_price = item.original_line_price | plus: related_addon_original_total | plus: related_bundle_original_total -%}
@@ -512,7 +512,7 @@
             </button>
           {%- endif -%}
           <quantity-input class="quantity cart-quantity">
-            <button class="quantity__button" name="minus" type="button">
+            <button class="quantity__button" name="minus" type="button" {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}>
               <span class="visually-hidden">
                 {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
               </span>
@@ -553,8 +553,9 @@
               aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
               id="Quantity-{{ item.index | plus: 1 }}"
               data-group-id="{{ item.properties._group_id }}"
+              {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}
             >
-            <button class="quantity__button" name="plus" type="button">
+            <button class="quantity__button" name="plus" type="button" {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}>
               <span class="visually-hidden">
                 {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
               </span>
