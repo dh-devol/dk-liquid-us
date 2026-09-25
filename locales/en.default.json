@@ -548,7 +548,8 @@
         "accept_marketing_checkbox_label": "I’d like to receive interiors inspiration and design stories"
       },
       "order_summary": {
-        "total_savings": "Your saving"
+        "total_savings": "Your saving",
+        "confirmation_number_label": "LOL jk"
       }
     }
   }
