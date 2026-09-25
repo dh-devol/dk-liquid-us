@@ -302,6 +302,9 @@
         padding-left: 2.5rem;
         padding-right: 2.5rem;
     }
+            .product-specification .accordion__content-wrapper .page-accordion .product-returns-column {
+        margin-top: 1.8em;
+    }
     .product-specification .accordion__content-wrapper .page-accordion .product-delivery-column tbody {
         display: block;
     }
