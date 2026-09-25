@@ -57,12 +57,19 @@
             "payment_enable": false,
             "custom_text": ""
           }
+        },
+        "delivery_cLzezL": {
+          "type": "delivery",
+          "settings": {
+            "delivery_text": "<p>Please be aware that your items will be dispatched together in one delivery. If you wish to receive items as soon as they're available, please consider placing them as separate orders. Any flooring items will arrive separately from accessories.</p>"
+          }
         }
       },
       "block_order": [
         "description_MXngM6",
         "subtotal",
-        "buttons"
+        "buttons",
+        "delivery_cLzezL"
       ],
       "custom_css": [
         "#main-cart-footer .cart__ctas {justify-content: center; margin-top: 30px;}"
