@@ -421,7 +421,7 @@ body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-w
 
 @media (max-width: 991px){
 .kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title {
-  padding: 2em 0 1.5em;
+  /*padding: 2em 0 1.5em;*/
   margin: 1em 0 0 0;
 }
 #simple-furniture-beautifully-made.custom-multicolumn .subtitle__wrapper .sub-heading {
