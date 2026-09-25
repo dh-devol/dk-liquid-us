@@ -44,6 +44,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/ordering-online",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -58,6 +59,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/payments",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -72,6 +74,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/delivery",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -86,6 +89,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/returns",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -100,6 +104,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/flooring",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -114,6 +119,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/help-faqs",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -187,7 +193,7 @@
             "heading": "How much will I pay for delivery?",
             "sub_heading": "",
             "icon": "none",
-            "row_content": "<p>To find out exactly what you'll pay for delivery, please add your flooring items to a basket and proceed to the checkout, where the total fee will be calculated for your address.</p><p>Charges vary by state and are based on the number of pallets being sent. Ordering more than one full pallet will qualify you for a 30% discount on your shipping; this amount varies and is stated on each flooring product page.</p><p>Fixing & care products can fill additional space on flooring pallets; we therefore recommend ordering them with flooring to ensure your order remains cost-effective. Items ordered without flooring, up to 30kg, are charged at $80. Once these items exceed 30kg, they must be sent on pallets, and so the delivery cost from the UK can become prohibitive when ordered without flooring.</p>",
+            "row_content": "<p>To find out exactly what you'll pay for delivery, please add your flooring items to a basket and proceed to the checkout, where the total fee will be calculated for your address.</p><p>Charges vary by state and are based on the number of pallets being sent. Ordering more than one full pallet will qualify you for a 30% discount on your shipping; this amount varies and is stated on each flooring product page.</p><p>Fixing & care products can fill additional space on flooring pallets; we therefore recommend ordering them with flooring to ensure your order remains cost-effective. Items ordered without flooring, up to 30kg, are charged at $180. Once these items exceed 30kg, they must be sent on pallets, and so the delivery cost from the UK can become prohibitive when ordered without flooring.</p>",
             "url_title": "",
             "link_url": "",
             "page": ""
