@@ -229,7 +229,8 @@
   } else {
     if (!isNativeQuantityBtn(qtyPlusBtn)) bindButton(qtyPlusBtn, increaseQty);
     if (!isNativeQuantityBtn(qtyMinusBtn)) bindButton(qtyMinusBtn, decreaseQty);
-    if (tileBundle !== 'free length') {
+    const noCoverageControls = ['free length', 'variable pack'];
+    if (!noCoverageControls.includes(tileBundle)) {
       bindButton(covPlusBtn, increaseCoverage);
       bindButton(covMinusBtn, decreaseCoverage);
     }
