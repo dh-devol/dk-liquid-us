@@ -1928,27 +1928,6 @@
             "staff_url": ""
           }
         },
-        "column_HgWNAm": {
-          "type": "column",
-          "name": "Tom Morris",
-          "settings": {
-            "image": "shopify://shop_images/Tom_MorrisDSC_1767.jpg",
-            "custom_text_hover": "Tom Morris",
-            "custom_text_hover_position": "Metalware Workshop Manager",
-            "title": "",
-            "subtext": "",
-            "text": "",
-            "show_above_image": false,
-            "link_label": "",
-            "link": "",
-            "staff_name": "Tom Morris",
-            "staff_role": "Metalware Workshop Manager",
-            "staff_degree": "",
-            "staff_description": "<p>Tom studied and completed Level 2 NVQ in carpentry and joinery, as well as a Level 2 NVQ in maintenance. Throughout his studies, Tom worked as a baker at Morrisons, before starting his first full time job on a site.</p><p>He worked on site for a few years, working from the ground up, digging trenches, building walls, hanging doors and putting roofs on were all skills he gained whilst working there.</p><p>Since joining deVOL as a bench joiner in 2015, Tom has thoroughly enjoyed his new role. He developed quickly with a positive approach and a hunger to learn, which led to Tom becoming the Workshop Manager. He's enjoying managing his team and seeing the beautifully finished products go out to customers all over the country.</p><p>Tom is a family man with a young daughter, Olivia. In his spare time he enjoys watching sports and has a competitive streak when it comes to a game of table tennis!</p>",
-            "staff_url_title": "",
-            "staff_url": ""
-          }
-        },
         "column_qR4NDR": {
           "type": "column",
           "name": "Henry Teare",
@@ -2133,7 +2112,6 @@
         "column_3b3Vdz",
         "column_hh9FHP",
         "column_ipzfnB",
-        "column_HgWNAm",
         "column_qR4NDR",
         "column_LFkag3",
         "column_qXyN8D",
@@ -2304,10 +2282,32 @@
             "staff_url_title": "",
             "staff_url": ""
           }
+        },
+        "column_9ML4dF": {
+          "type": "column",
+          "name": "Tom Morris",
+          "settings": {
+            "image": "shopify://shop_images/Tom_MorrisDSC_1767.jpg",
+            "custom_text_hover": "Tom Morris",
+            "custom_text_hover_position": "Metalware Workshop Manager",
+            "title": "",
+            "subtext": "",
+            "text": "",
+            "show_above_image": false,
+            "link_label": "",
+            "link": "",
+            "staff_name": "Tom Morris",
+            "staff_role": "Metalware Workshop Manager",
+            "staff_degree": "",
+            "staff_description": "<p>Tom studied and completed Level 2 NVQ in carpentry and joinery, as well as a Level 2 NVQ in maintenance. Throughout his studies, Tom worked as a baker at Morrisons, before starting his first full time job on a site.</p><p>He worked on site for a few years, working from the ground up, digging trenches, building walls, hanging doors and putting roofs on were all skills he gained whilst working there.</p><p>Since joining deVOL as a bench joiner in 2015, Tom has thoroughly enjoyed his new role. He developed quickly with a positive approach and a hunger to learn, which led to Tom becoming the Workshop Manager. He's enjoying managing his team and seeing the beautifully finished products go out to customers all over the country.</p><p>Tom is a family man with a young daughter, Olivia. In his spare time he enjoys watching sports and has a competitive streak when it comes to a game of table tennis!</p>",
+            "staff_url_title": "",
+            "staff_url": ""
+          }
         }
       },
       "block_order": [
-        "column_QhFxd8"
+        "column_QhFxd8",
+        "column_9ML4dF"
       ],
       "custom_css": [],
       "name": "Metalware Production Team",
