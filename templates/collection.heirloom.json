@@ -222,6 +222,71 @@
         "sectionname": ""
       }
     },
+    "custom_product_list_tywiPM": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_pMnkcd": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-parisian-cafe-hook"
+          }
+        },
+        "product_item_KmhicM": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-parisian-cafe-hook"
+          }
+        },
+        "product_item_wFGmUd": {
+          "type": "product_item",
+          "settings": {
+            "product": "edwardian-coat-hook"
+          }
+        },
+        "product_item_9zkf9N": {
+          "type": "product_item",
+          "settings": {
+            "product": "twin-parisian-cafe-hook"
+          }
+        },
+        "product_item_mJcNXj": {
+          "type": "product_item",
+          "settings": {
+            "product": "twin-edwardian-coat-hook"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_pMnkcd",
+        "product_item_KmhicM",
+        "product_item_wFGmUd",
+        "product_item_9zkf9N",
+        "product_item_mJcNXj"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
     "custom_product_list_MdmRMh": {
       "type": "custom-product-list",
       "blocks": {
@@ -565,8 +630,9 @@
     "custom_product_list_qn8ryM",
     "custom_product_list_VVd3Jh",
     "custom_product_list_c3XW4f",
-    "custom_product_list_MdmRMh",
+    "custom_product_list_tywiPM",
     "custom_product_list_DNiLKw",
+    "custom_product_list_MdmRMh",
     "custom_product_list_Ywnr4J",
     "custom_product_list_AYBii8",
     "custom_product_list_YNjQat",
