@@ -287,57 +287,6 @@
         "sectionname": ""
       }
     },
-    "custom_product_list_MdmRMh": {
-      "type": "custom-product-list",
-      "blocks": {
-        "product_item_8Yh7GQ": {
-          "type": "product_item",
-          "settings": {
-            "product": "classic-bentwood-cafe-stool"
-          }
-        },
-        "product_item_AJ3cRe": {
-          "type": "product_item",
-          "settings": {
-            "product": "woven-top-bentwood-cafe-stool"
-          }
-        },
-        "product_item_CV38w6": {
-          "type": "product_item",
-          "settings": {
-            "product": "bentwood-cafe-chair"
-          }
-        }
-      },
-      "block_order": [
-        "product_item_8Yh7GQ",
-        "product_item_AJ3cRe",
-        "product_item_CV38w6"
-      ],
-      "name": "Custom product list",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "subtitle": "",
-        "hide_subtitle": false,
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "show_secondary_image": true,
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "shopify://collections/bathrooms",
-        "show_top_border": false,
-        "show_bottom_border": false,
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "sectionname": ""
-      }
-    },
     "custom_product_list_DNiLKw": {
       "type": "custom-product-list",
       "blocks": {
@@ -372,6 +321,71 @@
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_MdmRMh": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_8Yh7GQ": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-bentwood-cafe-stool"
+          }
+        },
+        "product_item_AJ3cRe": {
+          "type": "product_item",
+          "settings": {
+            "product": "woven-top-bentwood-cafe-stool"
+          }
+        },
+        "product_item_CV38w6": {
+          "type": "product_item",
+          "settings": {
+            "product": "bentwood-cafe-chair"
+          }
+        },
+        "product_item_f4XfqB": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-vineyard-table"
+          }
+        },
+        "product_item_eUbWjA": {
+          "type": "product_item",
+          "settings": {
+            "product": "vineyard-table"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_8Yh7GQ",
+        "product_item_AJ3cRe",
+        "product_item_CV38w6",
+        "product_item_f4XfqB",
+        "product_item_eUbWjA"
+      ],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/bathrooms",
         "show_top_border": false,
         "show_bottom_border": false,
         "color_scheme": "scheme-2",
