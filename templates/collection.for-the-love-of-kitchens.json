@@ -319,9 +319,7 @@
         "product_item_38WBTm",
         "product_item_A3hmCB"
       ],
-      "custom_css": [
-        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
-      ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
@@ -341,8 +339,8 @@
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "sectionname": ""
       }
     },
@@ -366,9 +364,7 @@
         "product_item_GeHJkz",
         "product_item_Y84FPJ"
       ],
-      "custom_css": [
-        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
-      ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
@@ -389,7 +385,7 @@
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,
-        "padding_bottom": 36,
+        "padding_bottom": 0,
         "sectionname": ""
       }
     },
