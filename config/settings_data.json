@@ -173,7 +173,7 @@
       },
       "9227748197609970840": {
         "type": "shopify://apps/pinterest-save-button/blocks/app-embed/b4ccbe83-a934-440a-a7cb-4c563c1a8dc3",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
