@@ -200,6 +200,51 @@
         "sectionname": ""
       }
     },
+    "custom_product_list_jXrX4i": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_d4npNh": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-heirloom-platters-antique-white"
+          }
+        },
+        "product_item_i7f3XT": {
+          "type": "product_item",
+          "settings": {
+            "product": "vineyard-table"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_d4npNh",
+        "product_item_i7f3XT"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
     "custom_product_list_bcG8XM": {
       "type": "custom-product-list",
       "blocks": {
@@ -655,6 +700,7 @@
     "custom_product_list_bUNrEF",
     "custom_product_list_cHX6zx",
     "custom_product_list_dyVHit",
+    "custom_product_list_jXrX4i",
     "custom_product_list_bcG8XM",
     "custom_product_list_grDdVE",
     "custom_product_list_Vj7p4m",
