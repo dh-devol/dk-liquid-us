@@ -130,9 +130,7 @@
         "product_item_gjAcf7",
         "product_item_hXVt3f"
       ],
-      "custom_css": [
-        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
-      ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
