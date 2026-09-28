@@ -622,9 +622,7 @@
         "product_item_CeppyN",
         "product_item_4pRen8"
       ],
-      "custom_css": [
-        ".product-listing-additional-information {max-width: 95%;}"
-      ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
