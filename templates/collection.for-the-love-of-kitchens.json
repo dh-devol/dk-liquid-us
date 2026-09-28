@@ -173,9 +173,7 @@
         "product_item_gBRcbr",
         "product_item_xU7VgM"
       ],
-      "custom_css": [
-        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
-      ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
