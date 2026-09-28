@@ -404,6 +404,11 @@
         }
       }
     </style>
+    {% unless template.name == 'article' %}
+      <style>
+        .rapi-button { display: none !important; }
+      </style>
+    {% endunless %}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}{% if template contains 'page' and page.metafields.custom.breakdown_costs != blank %} kitchen{% endif %}  {% if template contains 'product' %}
