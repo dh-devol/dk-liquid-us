@@ -204,7 +204,7 @@
     vertical-align: top;
 }
 .product-specification .specification-metafield .accordion__content.rte table tr td.fixed-width-160 {
-    width: 160px;
+    width: 160px !important;
 }
 .product-specification .class-details.product-specification .accordion__content.rte table tr td strong {
     color: #595959;
