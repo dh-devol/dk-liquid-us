@@ -286,7 +286,7 @@
           "type": "mega_menu",
           "name": "Wallpaper - Featured",
           "settings": {
-            "megatitle": "wallpaper-paint",
+            "megatitle": "wallpaper",
             "blocktitle": "FEATURED",
             "image1": "shopify://shop_images/Ditsy-Delft-Sepia-Grande-Scullery-63_3.jpg",
             "title1": "Grand Ditsy Delft",
@@ -302,7 +302,7 @@
           "type": "mega_menu",
           "name": "Flooring - Featured",
           "settings": {
-            "megatitle": "flooring by devol",
+            "megatitle": "flooring-by-devol",
             "blocktitle": "FEATURED",
             "image1": "shopify://shop_images/thumbnail-flooring-by-devol-parisian-chequer-marble-02.jpg",
             "title1": "Parisian Chequer Marble",
