@@ -126,7 +126,7 @@
           "type": "mega_menu",
           "name": "New Arrivals - New & Featured",
           "settings": {
-            "megatitle": "new-arrival",
+            "megatitle": "new-arrivals",
             "blocktitle": "FEATURED",
             "image1": "shopify://shop_images/thumbnail-lighting-the-mini-milk-glass-pendant-light-01.jpg",
             "title1": "The Mini Milk Glass Pendant",
