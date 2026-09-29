@@ -163,18 +163,6 @@
     "custom_collapsible_content_jx9WzK": {
       "type": "custom-collapsible-content",
       "blocks": {
-        "collapsible_row_a3dnXg": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Are any items excluded from returns?",
-            "sub_heading": "",
-            "icon": "none",
-            "row_content": "<p>We cannot accept returns of bespoke items, samples (including paint samples) or taps that have been plumbed in.</p><p>Please be aware that if we do receive any excluded items you will not be refunded the original amount and you may be charged a second delivery fee if you wish to have them returned to you.</p>",
-            "url_title": "",
-            "link_url": "",
-            "page": ""
-          }
-        },
         "collapsible_row_7rFf6m": {
           "type": "collapsible_row",
           "settings": {
@@ -194,6 +182,18 @@
             "sub_heading": "",
             "icon": "none",
             "row_content": "<p>All returns should be made to our UK workshop. We're not able to cover any return postage costs, or any loss or breakages that occur during the return process. We therefore recommend that returns are made using the original packaging with a tracked, insured and signed for service.</p><p>Please declare the shipment as a 'Return to Origin' to avoid any unnecessary customs charges. Any items declared otherwise will incur a charge and deVOL cannot be responsible for any outstanding import tariffs or duties. </p><p>Any items that reach the UK with outstanding charges will be held by customs for a period and ultimately sent back to you, which could mean you miss your 28 day return window.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_a3dnXg": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are any items excluded from returns?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>We cannot accept returns of bespoke items, samples (including paint samples) or taps that have been plumbed in.</p><p>Please be aware that if we do receive any excluded items you will not be refunded the original amount and you may be charged a second delivery fee if you wish to have them returned to you.</p>",
             "url_title": "",
             "link_url": "",
             "page": ""
@@ -286,9 +286,9 @@
         }
       },
       "block_order": [
-        "collapsible_row_a3dnXg",
         "collapsible_row_7rFf6m",
         "collapsible_row_dGWzjk",
+        "collapsible_row_a3dnXg",
         "collapsible_row_67URJU",
         "collapsible_row_jfqzme",
         "collapsible_row_J4H4yh",
