@@ -88,8 +88,8 @@
         "color_scheme": "scheme-2",
         "email_header": "Send us an email",
         "email_content": "<p><a href=\"mailto:websales@devolkitchens.co.uk\">websales@devolkitchens.co.uk</a></p><p>If you have already placed an order with us, please include your order number in the subject of your email. This will allow us to respond to your questions as soon as possible.</p><p>If you have questions before placing your order then please include your address in your email as your location may affect the answer to those questions.</p>",
-        "call_header": "Give us a call",
-        "call_content": "<p><a href=\"tel:646 347 0320\" title=\"tel:646 347 0320\">646 347 0320</a></p><p>Our UK-based customer service team is only available during the hours shown below (excluding bank holidays). Outside of these hours, we recommend using the contact form on this page or emailing our team directly.</p><p>Monday - Friday: 8:30am - 5pm (GMT) <br/>Saturday & Sunday: Closed</p>",
+        "call_header": "Call our UK-based customer service team",
+        "call_content": "<p><a href=\"tel:646 347 0320\" title=\"tel:646 347 0320\">646 347 0320</a></p><p>Our UK-based customer service team is only available during the hours shown below (excluding bank holidays). Outside of these hours, we recommend using the contact form on this page or emailing our team directly.</p><p>Monday - Friday: 6am - 12pm&nbsp;(EST)&nbsp;<br/>Saturday & Sunday: Closed</p>",
         "padding_top": 0,
         "padding_bottom": 0
       }
