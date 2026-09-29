@@ -152,16 +152,16 @@
             "product": "porcelain-pendant-light-plain-skullcap-large"
           }
         },
-        "product_item_bmej4j": {
-          "type": "product_item",
-          "settings": {
-            "product": "porcelain-pendant-light-chattered-skullcap-large"
-          }
-        },
         "product_item_iNbFhR": {
           "type": "product_item",
           "settings": {
             "product": "porcelain-pendant-light-plain-skullcap-small"
+          }
+        },
+        "product_item_bmej4j": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-skullcap-large"
           }
         },
         "product_item_cY7CcH": {
@@ -201,8 +201,8 @@
         "product_item_3pQPDC",
         "product_item_LWREdR",
         "product_item_B6Krd6",
-        "product_item_bmej4j",
         "product_item_iNbFhR",
+        "product_item_bmej4j",
         "product_item_cY7CcH",
         "product_item_GfyJHN",
         "product_item_HXkmWj",
