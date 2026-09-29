@@ -91,70 +91,11 @@
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "Hooks",
+        "subtitle": "Iron Hooks",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
-        "column_alignment": "left",
-        "show_secondary_image": true,
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "show_top_border": false,
-        "show_bottom_border": false,
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "sectionname": ""
-      }
-    },
-    "custom_product_list_Y63KQq": {
-      "type": "custom-product-list",
-      "blocks": {
-        "product_item_TTfWMX": {
-          "type": "product_item",
-          "settings": {
-            "product": "pot-hanger"
-          }
-        },
-        "product_item_FAt9JM": {
-          "type": "product_item",
-          "settings": {
-            "product": "iron-shelf-bracket-square-bar"
-          }
-        },
-        "product_item_7qmEbN": {
-          "type": "product_item",
-          "settings": {
-            "product": "iron-shelf-bracket-diamond-bar"
-          }
-        },
-        "product_item_T4BxTT": {
-          "type": "product_item",
-          "settings": {
-            "product": "scullery-shelf-bracket-cast-iron-large"
-          }
-        }
-      },
-      "block_order": [
-        "product_item_TTfWMX",
-        "product_item_FAt9JM",
-        "product_item_7qmEbN",
-        "product_item_T4BxTT"
-      ],
-      "custom_css": [],
-      "name": "Custom product list",
-      "settings": {
-        "title": "",
-        "heading_size": "hxl",
-        "subtitle": "Hangers & Brackets",
-        "hide_subtitle": false,
-        "image_width": "full",
-        "image_ratio": "portrait",
-        "columns_desktop": 4,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
@@ -221,6 +162,65 @@
         "button_link": "",
         "show_top_border": false,
         "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Y63KQq": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_TTfWMX": {
+          "type": "product_item",
+          "settings": {
+            "product": "pot-hanger"
+          }
+        },
+        "product_item_FAt9JM": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-shelf-bracket-square-bar"
+          }
+        },
+        "product_item_7qmEbN": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-shelf-bracket-diamond-bar"
+          }
+        },
+        "product_item_T4BxTT": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-cast-iron-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_TTfWMX",
+        "product_item_FAt9JM",
+        "product_item_7qmEbN",
+        "product_item_T4BxTT"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Iron Hangers & Brackets",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
