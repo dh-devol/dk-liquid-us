@@ -480,7 +480,7 @@
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
-        "button_label": "View all",
+        "button_label": "",
         "button_link": "shopify://collections/tableware",
         "show_top_border": true,
         "show_bottom_border": false,
