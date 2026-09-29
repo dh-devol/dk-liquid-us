@@ -16,6 +16,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/banner-desktop-the-grand-tour-collection.jpg",
+            "mobile_image": "shopify://shop_images/banner-mobile-the-grand-tour-collection.jpg",
             "desktop_focal_point": 50,
             "mobile_focal_point": 100,
             "heading": "",
