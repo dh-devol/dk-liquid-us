@@ -170,18 +170,6 @@
             "product": "porcelain-pendant-light-chattered-skullcap-small"
           }
         },
-        "product_item_GfyJHN": {
-          "type": "product_item",
-          "settings": {
-            "product": "porcelain-pendant-light-plain-rice-bowl"
-          }
-        },
-        "product_item_HXkmWj": {
-          "type": "product_item",
-          "settings": {
-            "product": "porcelain-pendant-light-chattered-rice-bowl"
-          }
-        },
         "product_item_LPd8jn": {
           "type": "product_item",
           "settings": {
@@ -192,6 +180,18 @@
           "type": "product_item",
           "settings": {
             "product": "porcelain-pendant-light-chattered-beaker-large"
+          }
+        },
+        "product_item_GfyJHN": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-plain-rice-bowl"
+          }
+        },
+        "product_item_HXkmWj": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-rice-bowl"
           }
         }
       },
@@ -204,10 +204,10 @@
         "product_item_iNbFhR",
         "product_item_bmej4j",
         "product_item_cY7CcH",
-        "product_item_GfyJHN",
-        "product_item_HXkmWj",
         "product_item_LPd8jn",
-        "product_item_zaexiT"
+        "product_item_zaexiT",
+        "product_item_GfyJHN",
+        "product_item_HXkmWj"
       ],
       "custom_css": [
         "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
