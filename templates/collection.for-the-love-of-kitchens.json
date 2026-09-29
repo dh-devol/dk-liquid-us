@@ -445,22 +445,20 @@
         },
         "product_item_CHDUVp": {
           "type": "product_item",
-          "disabled": true,
           "settings": {
             "product": "round-heirloom-platters-indigo-blue"
           }
         },
         "product_item_8tRRAm": {
           "type": "product_item",
-          "disabled": true,
           "settings": {
-            "product": "oval-heirloom-platters-antique-white"
+            "product": "oval-heirloom-platters-sea-green"
           }
         },
         "product_item_FxJD9W": {
           "type": "product_item",
           "settings": {
-            "product": "round-heirloom-platters-indigo-blue"
+            "product": "round-heirloom-platters-sea-green"
           }
         }
       },
