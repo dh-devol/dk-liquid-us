@@ -2369,7 +2369,7 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
 }
 .shop-tab-content .collapsible-content__wrapper .accordion__title{
  font-size:19px;
- line-height:19px;
+ line-height:1.4em;
  font-weight:500;
 }
 .shop-tab-content.custom-collapsible-content .title_arrow-wrapper{
