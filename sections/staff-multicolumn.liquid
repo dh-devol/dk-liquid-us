@@ -194,11 +194,6 @@
                         {{ block.settings.staff_role }}
                       </span>
                     {% endif %}
-                    {% if block.settings.staff_degree != blank %}
-                      <span class="staff-degree">
-                        {{ block.settings.staff_degree }}
-                      </span>
-                    {% endif %}
                   </div>
                   <div class="accordion__content-wrapper">
                     <div
@@ -207,6 +202,11 @@
                       role="region"
                       aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
                     >
+                      {% if block.settings.staff_degree != blank %}
+                        <p class="staff-degree">
+                          {{ block.settings.staff_degree }}
+                        </p>
+                      {% endif %}
                       {{ block.settings.staff_description }}
                       <div class="link-wrapper">
                         <a href="{{ block.settings.staff_url }}">{{ block.settings.staff_url_title }}</a>

@@ -56,6 +56,12 @@
 .custom-collapsible-content .class-summary.active[open] .dropdown-arrow {
     transform: rotate(180deg);
 }
+.page-our-staff .custom-collapsible-content .accordion__content-wrapper .rte>*:nth-child(2) {
+    margin-top: 29px;
+}
+.page-our-staff .custom-collapsible-content .accordion__content-wrapper .rte>*:first-child {
+    margin-top: 0;
+}
 .custom-collapsible-content .accordion__content-wrapper .rte>*:first-child {
     margin-top: 29px;
 }
@@ -113,6 +119,9 @@
 @media screen and (max-width:1025px){
   .support_custom_collapsible .collapsible-content-wrapper-narrow {
     max-width: 638px;
+}
+   .page-our-staff .accordion__content p + p {
+    margin-top:16px;
 }
 }
 @media screen and (max-width:991px){

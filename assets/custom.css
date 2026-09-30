@@ -1919,6 +1919,10 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 .custom-collapsible-content .grid__item > .accordion {
     margin-bottom: 0;
 }
+.page-our-staff .custom-collapsible-content .accordion .class-summary + .accordion__content-wrapper {
+    margin: 0;
+    max-width: 90%;
+}
 .custom-collapsible-content .accordion .class-summary + .accordion__content-wrapper {
     margin: 1em 0 0;
 }
