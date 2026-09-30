@@ -27,6 +27,12 @@
     margin-bottom: 12px;
     cursor: pointer;
 }
+@media screen and (max-width:767px){
+   .custom-collapsible-content .title_arrow-wrapper {
+    justify-content: space-between;
+    margin-right: 1em;
+}
+} 
 .kitchen .custom-collapsible-content .title_arrow-wrapper {
     gap: 1em;
 }
