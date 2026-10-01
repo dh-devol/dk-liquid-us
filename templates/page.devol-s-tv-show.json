@@ -226,6 +226,71 @@
         "padding_bottom": 0
       }
     },
+    "custom_multicolumns_MUAYHV": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_efzxBm": {
+          "type": "column",
+          "settings": {
+            "link": "",
+            "anchor": "",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/Hulu_logo__2018.svg",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
+        },
+        "column_qrWBci": {
+          "type": "column",
+          "settings": {
+            "link": "",
+            "anchor": "",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/Hulu_logo__2018.svg",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_efzxBm",
+        "column_qrWBci"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.multicolumn-list {padding: 0 12em; }}"
+      ],
+      "name": "Custom multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "sectionname": ""
+      }
+    },
     "multi_video_column_cU4Hfp": {
       "type": "multi-video-column",
       "blocks": {
@@ -658,6 +723,7 @@
     "title_with_rich_text_BjFMU6",
     "title_with_rich_text_yP7A6B",
     "rich_text_with_multi_image_mWtHkf",
+    "custom_multicolumns_MUAYHV",
     "multi_video_column_cU4Hfp",
     "multi_video_column_YE3nYc",
     "title_with_rich_text_bCDT46",
