@@ -280,10 +280,10 @@
         "column_WVPh3y": {
           "type": "column",
           "settings": {
-            "link": "https://www.discoveryplus.com/us/en/shows/for-the-love-of-kitchens/e8d18491-d65d-4b73-bfd9-4c6e1e40373a",
+            "link": "https://www.amazon.com/Love-Kitchens-Season-1/dp/B09BXVDHHR",
             "anchor": "",
             "dynamic_costs": "",
-            "image": "shopify://shop_images/Discovery_Plus_Logo_Vector.svg",
+            "image": "shopify://shop_images/Amazon_Prime_Video_logo.svg",
             "custom_text_hover": "",
             "title": "",
             "show_text_double_column": false,
