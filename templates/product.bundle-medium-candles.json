@@ -47,7 +47,7 @@
               "scented-candle-wild-fig-grape-medium",
               "scented-candle-wild-cranberry-medium"
             ],
-            "bundle_add_pricing": true,
+            "bundle_add_pricing": false,
             "item_label_styling": "per_dropdown",
             "item_label_prefix": "Scent",
             "first_option": "product",
