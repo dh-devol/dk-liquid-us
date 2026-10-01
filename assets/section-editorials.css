@@ -39,6 +39,8 @@
 
 .editorial-block.editorial-video {
   margin-bottom: 2.5em;
+  margin-left: -25px;
+  margin-right: -25px;
 }
 
 .images-container,
