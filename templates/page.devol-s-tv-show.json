@@ -232,7 +232,7 @@
         "column_efzxBm": {
           "type": "column",
           "settings": {
-            "link": "",
+            "link": "https://www.hulu.com/series/for-the-love-of-kitchens-94d67c5d-38ce-4287-9604-44c66aeda1b2",
             "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/Hulu_logo__2018.svg",
@@ -248,10 +248,10 @@
         "column_qrWBci": {
           "type": "column",
           "settings": {
-            "link": "",
+            "link": "https://www.discoveryplus.com/us/en/shows/for-the-love-of-kitchens/e8d18491-d65d-4b73-bfd9-4c6e1e40373a",
             "anchor": "",
             "dynamic_costs": "",
-            "image": "shopify://shop_images/Hulu_logo__2018.svg",
+            "image": "shopify://shop_images/Discovery_Plus_Logo_Vector.svg",
             "custom_text_hover": "",
             "title": "",
             "show_text_double_column": false,
@@ -277,7 +277,7 @@
         "image_width": "half",
         "image_ratio": "adapt",
         "columns_desktop": 3,
-        "column_alignment": "left",
+        "column_alignment": "center",
         "background_style": "primary",
         "button_label": "Button label",
         "button_link": "",
