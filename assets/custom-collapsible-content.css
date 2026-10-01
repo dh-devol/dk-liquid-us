@@ -305,7 +305,7 @@
 
 @media screen and (max-width:767px) {
     .product-specification.custom-collapsible-content {
-        padding-bottom: 4em;
+        padding-bottom: 2.5em;
         padding-top: 0;
     }
 }
