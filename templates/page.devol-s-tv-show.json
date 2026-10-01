@@ -260,11 +260,45 @@
             "link_label": "",
             "linked_product": ""
           }
+        },
+        "column_7mfPPV": {
+          "type": "column",
+          "settings": {
+            "link": "https://www.discoveryplus.com/us/en/shows/for-the-love-of-kitchens/e8d18491-d65d-4b73-bfd9-4c6e1e40373a",
+            "anchor": "",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/Discovery_Plus_Logo_Vector.svg",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
+        },
+        "column_kQGHjz": {
+          "type": "column",
+          "settings": {
+            "link": "https://www.discoveryplus.com/us/en/shows/for-the-love-of-kitchens/e8d18491-d65d-4b73-bfd9-4c6e1e40373a",
+            "anchor": "",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/Discovery_Plus_Logo_Vector.svg",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
         }
       },
       "block_order": [
         "column_efzxBm",
-        "column_qrWBci"
+        "column_qrWBci",
+        "column_7mfPPV",
+        "column_kQGHjz"
       ],
       "custom_css": [
         "@media (min-width: 768px) {.multicolumn-list {padding: 0 12em; }}"
@@ -278,7 +312,7 @@
         "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "center",
-        "background_style": "primary",
+        "background_style": "none",
         "button_label": "Button label",
         "button_link": "",
         "show_top_border": false,
