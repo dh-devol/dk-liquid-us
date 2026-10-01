@@ -264,6 +264,22 @@
         "column_7mfPPV": {
           "type": "column",
           "settings": {
+            "link": "https://www.hbomax.com/shows/for-the-love-of-kitchens/e8d18491-d65d-4b73-bfd9-4c6e1e40373a",
+            "anchor": "",
+            "dynamic_costs": "",
+            "image": "shopify://shop_images/HBO_Max_Logo.svg",
+            "custom_text_hover": "",
+            "title": "",
+            "show_text_double_column": false,
+            "text": "",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
+        },
+        "column_WVPh3y": {
+          "type": "column",
+          "settings": {
             "link": "https://www.discoveryplus.com/us/en/shows/for-the-love-of-kitchens/e8d18491-d65d-4b73-bfd9-4c6e1e40373a",
             "anchor": "",
             "dynamic_costs": "",
@@ -298,6 +314,7 @@
         "column_efzxBm",
         "column_qrWBci",
         "column_7mfPPV",
+        "column_WVPh3y",
         "column_kQGHjz"
       ],
       "custom_css": [
