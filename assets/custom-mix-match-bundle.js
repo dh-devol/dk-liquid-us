@@ -227,7 +227,7 @@ window.initMixMatchBundle = function(root) {
         let items = [];
 
         if (bundlePriceType == "variable") {
-            console.log("variable");
+            // console.log("variable");
 
             const parentProps = {
                 _group_id: group_id,
@@ -271,7 +271,7 @@ window.initMixMatchBundle = function(root) {
                 }
             });
         } else if (bundlePriceType == "fixed") {
-            console.log("fixed");
+            // console.log("fixed");
 
             const props = {
               _bundle_items: JSON.stringify(compressed),

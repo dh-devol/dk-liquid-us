@@ -1435,7 +1435,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // If element exists but shadowRoot not ready yet, wait a bit
     const waitForShadow = setInterval(() => {
       if (el.shadowRoot) {
-        console.log('Shadow root found:', el.shadowRoot);
+        // console.log('Shadow root found:', el.shadowRoot);
 
         // Inject CSS
         const style = document.createElement('style');

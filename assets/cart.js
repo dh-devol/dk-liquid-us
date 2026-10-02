@@ -8,7 +8,7 @@ class CartRemoveButton extends HTMLElement {
       const addonKeysStr = this.dataset.addonKeys || '';
       const mainKey = this.dataset.mainKey;
       const groupId = this.querySelector('a').dataset.groupId;
-      console.log('[CartRemoveButton]', this.id, '| addonKeys:', addonKeysStr || '(empty)', '| mainKey:', mainKey || '(missing)');
+      // console.log('[CartRemoveButton]', this.id, '| addonKeys:', addonKeysStr || '(empty)', '| mainKey:', mainKey || '(missing)');
       if (groupId && groupId.length > 14) {
         const qty = document.querySelector(
           `.quantity__input[data-group-id="${groupId}"]`
@@ -157,7 +157,7 @@ class CartItems extends HTMLElement {
     const available = Math.max(0, inventoryQty - (cartQty - currentLineQty));
 
     if (attemptedQty > available) {
-      console.log('[stockLimit] triggered — inventoryQty:', inventoryQty, 'cartQty:', cartQty, 'currentLineQty:', currentLineQty, 'available:', available, 'attemptedQty:', attemptedQty);
+      // console.log('[stockLimit] triggered — inventoryQty:', inventoryQty, 'cartQty:', cartQty, 'currentLineQty:', currentLineQty, 'available:', available, 'attemptedQty:', attemptedQty);
       return window.cartStrings.quantityError
         .replace('[attempted]', attemptedQty)
         .replace('[available]', available);
@@ -232,7 +232,7 @@ class CartItems extends HTMLElement {
       await this.updateBundleQuantity(groupId, newQty, diff, line);
     } else {
       const isAddon = input.hasAttribute('data-addon-lines');
-      console.log(isAddon);
+      // console.log(isAddon);
 
       if (!isAddon) {
         const updates = [];
@@ -391,7 +391,7 @@ class CartItems extends HTMLElement {
         const items = document.querySelectorAll('.cart-item');
 
         if (parsedState.errors) {
-          console.log('[cartError] parsedState.errors:', parsedState.errors);
+          // console.log('[cartError] parsedState.errors:', parsedState.errors);
           if (quantityElement) quantityElement.value = quantityElement.getAttribute('value');
           this.updateLiveRegions(line, parsedState.errors, { showNotification: true });
           return;
@@ -422,7 +422,7 @@ class CartItems extends HTMLElement {
         let message = '';
         let showNotification = false;
         if (quantity !== 0 && items.length === parsedState.items.length && updatedValue !== quantity) {
-          console.log('[updatedValueMismatch] attempted:', quantity, 'updatedValue:', updatedValue, 'items.length:', items.length, 'parsedState.items.length:', parsedState.items.length);
+          // console.log('[updatedValueMismatch] attempted:', quantity, 'updatedValue:', updatedValue, 'items.length:', items.length, 'parsedState.items.length:', parsedState.items.length);
           if (typeof updatedValue === 'undefined') {
             message = window.cartStrings.error;
           } else {

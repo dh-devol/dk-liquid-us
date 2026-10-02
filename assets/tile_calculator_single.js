@@ -8,7 +8,7 @@
     if (!qtyInput || !coverageInput || !totalEl) return;
     if (qtyInput.dataset.tcalcInit === 'true') return;
     qtyInput.dataset.tcalcInit = 'true';
-    console.log('[tile_calc] init', { qtyInput, coverageInput, totalEl });
+    // console.log('[tile_calc] init', { qtyInput, coverageInput, totalEl });
 
     const cfg = window.tileCalculator || {};
     const tileWidth = Number(cfg.tileWidth) || 0;
@@ -108,19 +108,19 @@
       if (allowBelowCoverageMin) {
         const coverageInt = Math.round(qty * tileAreaM2);
         coverageInput.value = coverageInt;
-        console.log('[tile_calc] updateCoverage no-type', { qty, coverage: coverageInput.value });
+        // console.log('[tile_calc] updateCoverage no-type', { qty, coverage: coverageInput.value });
         return;
       }
       const coverageInt = Math.round(qty * tileAreaM2);
       coverageInput.value = coverageInt;
       const adjustedQty = Math.round(coverageInt / tileAreaM2);
       if (adjustedQty !== qty) qtyInput.value = adjustedQty;
-      console.log('[tile_calc] updateCoverage no-type', { qty, coverageInt, adjustedQty });
+      // console.log('[tile_calc] updateCoverage no-type', { qty, coverageInt, adjustedQty });
       return;
     }
     const rawCov = qty * tileAreaM2;
     coverageInput.value = formatCoverage(rawCov);
-    console.log('[tile_calc] updateCoverage', { qty, coverage: coverageInput.value });
+    // console.log('[tile_calc] updateCoverage', { qty, coverage: coverageInput.value });
   }
 
   function updateQuantityFromCoverage(roundUp = true) {
@@ -136,14 +136,14 @@
       ? roundUpToStep(Math.ceil(qty - 1e-9), qtyStep)
       : roundUpToStep(Math.floor(qty + 1e-9), qtyStep);
     qtyInput.value = Math.max(floor, rounded);
-    console.log('[tile_calc] updateQuantityFromCoverage', { coverage, qty: qtyInput.value });
+    // console.log('[tile_calc] updateQuantityFromCoverage', { coverage, qty: qtyInput.value });
   }
 
   function updateTotal() {
     const qty = Number(qtyInput.value) || 1;
     const amount = priceCents * qty;
     totalEl.textContent = formatPrice(amount, moneyFormat);
-    console.log('[tile_calc] updateTotal', { isPerTile, isFreeLength, total: totalEl.textContent });
+    // console.log('[tile_calc] updateTotal', { isPerTile, isFreeLength, total: totalEl.textContent });
   }
 
   const qtyMinusBtn = scope.querySelector('.tcalc-btn--qty-minus') || qtyInput.closest('.quantity')?.querySelector('button[name="minus"]');
@@ -243,12 +243,12 @@
       qtyInput.value = val;
       coverageInput.value = formatCoverage(val * tileAreaM2);
       updateTotal();
-      console.log('[tile_calc] linear qty change', { qty: val, coverage: coverageInput.value });
+      // console.log('[tile_calc] linear qty change', { qty: val, coverage: coverageInput.value });
       return;
     }
     enableBelowMinCoverage();
     let val = Number(qtyInput.value) || 0;
-    console.log('[tile_calc] qty change start', { val });
+    // console.log('[tile_calc] qty change start', { val });
     const floor = isFixedTileOrPack ? minQtyFloor : (allowBelowCoverageMin ? minQtyFloor : minQty);
     if (val < floor) val = floor;
     if (qtyStep > 1) {
@@ -257,7 +257,7 @@
     qtyInput.value = val;
     updateCoverage();
     updateTotal();
-    console.log('[tile_calc] qty change end', { val: qtyInput.value, coverage: coverageInput.value });
+    // console.log('[tile_calc] qty change end', { val: qtyInput.value, coverage: coverageInput.value });
   });
 
   coverageInput.addEventListener('change', () => {
@@ -268,13 +268,13 @@
       qtyInput.value = qty;
       coverageInput.value = formatCoverage(qty * tileAreaM2);
       updateTotal();
-      console.log('[tile_calc] linear coverage change', { coverage: coverageInput.value, qty });
+      // console.log('[tile_calc] linear coverage change', { coverage: coverageInput.value, qty });
       return;
     }
     enableBelowMinCoverage();
     const minCov = getMinCoverage();
     let val = Number(coverageInput.value) || 0;
-    console.log('[tile_calc] coverage change start', { val });
+    // console.log('[tile_calc] coverage change start', { val });
     if (val < minCov) val = minCov;
     if (!hasType) {
       if (allowBelowCoverageMin) {
@@ -287,14 +287,14 @@
         qtyInput.value = Math.round(coverageInt / tileAreaM2);
       }
       updateTotal();
-      console.log('[tile_calc] coverage change end no-type', { coverage: coverageInput.value, qty: qtyInput.value });
+      // console.log('[tile_calc] coverage change end no-type', { coverage: coverageInput.value, qty: qtyInput.value });
       return;
     }
     coverageInput.value = formatCoverage(val);
     updateQuantityFromCoverage();
     updateCoverage();
     updateTotal();
-    console.log('[tile_calc] coverage change end', { coverage: coverageInput.value, qty: qtyInput.value });
+    // console.log('[tile_calc] coverage change end', { coverage: coverageInput.value, qty: qtyInput.value });
   });
 
   if (isLinearOrWall) {
@@ -324,7 +324,7 @@
         refreshLimits();
         updateCoverage();
         updateTotal();
-        console.log('[tile_calc] variant change sync', { qty: qtyInput.value, coverage: coverageInput.value });
+        // console.log('[tile_calc] variant change sync', { qty: qtyInput.value, coverage: coverageInput.value });
       });
     }
   }

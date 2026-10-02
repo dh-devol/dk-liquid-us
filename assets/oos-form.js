@@ -1,4 +1,4 @@
-console.log("oos-form.js connected");
+// console.log("oos-form.js connected");
 
 window.addEventListener('stoq:restock-modal:submitted', (event) => {
   const notification = document.getElementById('cart-notification');

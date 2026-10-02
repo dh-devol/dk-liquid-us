@@ -180,9 +180,9 @@ if (!customElements.get('product-form')) {
               debug[key] = [debug[key], value];
             }
           });
-          console.log('[product-form] submit formData', debug);
+          // console.log('[product-form] submit formData', debug);
         } catch (e) {
-          console.log('[product-form] submit formData error', e);
+          // console.log('[product-form] submit formData error', e);
         }
 
         /* ---------- NEW: guard the optional methods ---------- */

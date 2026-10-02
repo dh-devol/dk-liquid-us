@@ -1,6 +1,6 @@
 // dropdown accordion logic used on some bundles
 window.initAccordion = function(root) {
-    console.log("initAccordion triggered")
+    // console.log("initAccordion triggered")
     const accordionBtn = root.querySelector('.switch-dropdown-accordion');
     const selectDiv = root.querySelector('.switch-select');
     const mmBundle = root.querySelector('.mm-bundle');

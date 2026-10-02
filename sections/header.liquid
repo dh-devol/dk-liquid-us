@@ -384,7 +384,7 @@
 
     createObserver() {
       let observer = new IntersectionObserver((entries, observer) => {
-        console.log(entries);
+        // console.log(entries);
         this.headerBounds = entries[0].intersectionRect;
         observer.disconnect();
       });
@@ -404,7 +404,7 @@
       }
 
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
-      console.log(this.headerBounds);
+      // console.log(this.headerBounds);
       if (scrollTop > this.currentScrollTop && scrollTop > (this.headerBounds.bottom - this.headerBounds.height)) {
         this.headerInlineMenu.classList.add('sticky');
       }
