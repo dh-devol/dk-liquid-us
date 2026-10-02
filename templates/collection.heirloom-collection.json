@@ -471,26 +471,68 @@
         "product_item_VxQRCg": {
           "type": "product_item",
           "settings": {
-            "product": "grand-heirloom-platters-antique-white"
+            "product": "country-house-cup-handle"
           }
         },
         "product_item_RxDUfB": {
           "type": "product_item",
           "settings": {
-            "product": "oval-heirloom-platters-antique-white"
+            "product": "brass-ventilation-grille-double-sided"
           }
         },
         "product_item_mKrwB9": {
           "type": "product_item",
           "settings": {
-            "product": "round-heirloom-platters-antique-white"
+            "product": "rack-pinion-catch-heirloom-brass"
+          }
+        },
+        "product_item_imjbGp": {
+          "type": "product_item",
+          "settings": {
+            "product": "button-knob-heirloom-brass"
+          }
+        },
+        "product_item_FH8VGg": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-ring-pull-heirloom-brass"
+          }
+        },
+        "product_item_Q9ibNF": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-knob"
+          }
+        },
+        "product_item_y8Ehz9": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-handle-aged-brass"
+          }
+        },
+        "product_item_yWFrKD": {
+          "type": "product_item",
+          "settings": {
+            "product": "boho-handle-aged-brass"
+          }
+        },
+        "product_item_4qYjpw": {
+          "type": "product_item",
+          "settings": {
+            "product": "pull-handle-aged-brass-extra-large"
           }
         }
       },
       "block_order": [
         "product_item_VxQRCg",
         "product_item_RxDUfB",
-        "product_item_mKrwB9"
+        "product_item_mKrwB9",
+        "product_item_imjbGp",
+        "product_item_FH8VGg",
+        "product_item_Q9ibNF",
+        "product_item_y8Ehz9",
+        "product_item_yWFrKD",
+        "product_item_4qYjpw"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -505,8 +547,105 @@
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/cupboard-hardware",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Ucp7nD": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_97ydqA": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-knob-heirloom-brass-large"
+          }
+        },
+        "product_item_kUbwXi": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-knob-heirloom-brass-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_97ydqA",
+        "product_item_kUbwXi"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
         "button_label": "",
         "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_azMfjk": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_pMFAE3": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-toggle-switch-plate-2-gang"
+          }
+        },
+        "product_item_VkbNW4": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-decora-plate-2-gang"
+          }
+        },
+        "product_item_TpTXDR": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-duplex-outlet-plate-2-gang"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_pMFAE3",
+        "product_item_VkbNW4",
+        "product_item_TpTXDR"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Switches & Sockets",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/devol-switches",
         "show_top_border": true,
         "show_bottom_border": false,
         "color_scheme": "scheme-2",
@@ -530,6 +669,8 @@
     "custom_product_list_3VH3EY",
     "custom_product_list_hpGKwm",
     "custom_product_list_mUW3j3",
-    "custom_product_list_8hbXmf"
+    "custom_product_list_8hbXmf",
+    "custom_product_list_Ucp7nD",
+    "custom_product_list_azMfjk"
   ]
 }
