@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
           setTimeout(() => updateParentAccordions(accordion), 350); // wait for 300ms transition + buffer
         } else {
           // Open accordion
-          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.maxHeight = content.scrollHeight + 30 + "px";
           header.setAttribute("open", "");
 
           // Wait for 300ms CSS transition to finish before reading scrollHeight
