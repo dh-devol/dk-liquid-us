@@ -51,7 +51,6 @@
     },
     "banner": {
       "type": "main-collection-banner",
-      "disabled": true,
       "custom_css": [
         ".collection-hero__inner {margin-bottom: 60px;}",
         ".collection-hero__title {margin-bottom: 1em;}"
@@ -108,6 +107,7 @@
         "heading_YX8HyE",
         "text_xzJXBF"
       ],
+      "disabled": true,
       "name": "Title with richtext",
       "settings": {
         "desktop_content_position": "center",
