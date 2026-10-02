@@ -53,7 +53,6 @@
         "slide_tcYaQz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Bath-Showroom-Green-Room-62_1.jpg",
             "desktop_focal_point": 50,
             "mobile_focal_point": 50,
             "heading": "Our Heirloom kitchen in Bath",
@@ -453,6 +452,7 @@
     },
     "project_multicolumns_kP6HiL": {
       "type": "project-multicolumns",
+      "disabled": true,
       "name": "Project multicolumn",
       "settings": {
         "title": "",
@@ -527,6 +527,7 @@
         "product_item_EaxTKM",
         "product_item_AyxLWR"
       ],
+      "disabled": true,
       "name": "Custom product list",
       "settings": {
         "title": "",
