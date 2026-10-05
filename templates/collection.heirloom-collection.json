@@ -1,0 +1,676 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_WmCftj": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 400px; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_ermBbW": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_tFNDEe": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-task-light-small"
+          }
+        },
+        "product_item_hjEdYW": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-gaselier-light-tall"
+          }
+        },
+        "product_item_8K3DPV": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-creamware-shade"
+          }
+        },
+        "product_item_tbaWNt": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-aged-brass-large"
+          }
+        },
+        "product_item_4MFxtB": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-heirloom-brass-small"
+          }
+        },
+        "product_item_jTzq6L": {
+          "type": "product_item",
+          "settings": {
+            "product": "scullery-shelf-bracket-cast-iron-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_tFNDEe",
+        "product_item_hjEdYW",
+        "product_item_8K3DPV",
+        "product_item_tbaWNt",
+        "product_item_4MFxtB",
+        "product_item_jTzq6L"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_X4PbKx": {
+      "type": "custom-product-list",
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Hw6QiT": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_mpMDwT": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"
+          }
+        },
+        "product_item_FqTznE": {
+          "type": "product_item",
+          "settings": {
+            "product": "pot-hanger"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_mpMDwT",
+        "product_item_FqTznE"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_UDEJnE": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_fNJrFp": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-parisian-cafe-hook"
+          }
+        },
+        "product_item_VJbzzc": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-parisian-cafe-hook"
+          }
+        },
+        "product_item_wbMWdj": {
+          "type": "product_item",
+          "settings": {
+            "product": "edwardian-coat-hook"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_fNJrFp",
+        "product_item_VJbzzc",
+        "product_item_wbMWdj"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Q6MAH9": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_FC79dC": {
+          "type": "product_item",
+          "settings": {
+            "product": "twin-parisian-cafe-hook"
+          }
+        },
+        "product_item_jqDbtp": {
+          "type": "product_item",
+          "settings": {
+            "product": "twin-edwardian-coat-hook"
+          }
+        },
+        "product_item_wmEJji": {
+          "type": "product_item",
+          "settings": {
+            "product": "standard-single-polished-brass-sink"
+          }
+        },
+        "product_item_AEtWp8": {
+          "type": "product_item",
+          "settings": {
+            "product": "extra-large-single-polished-brass-sink"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_FC79dC",
+        "product_item_jqDbtp",
+        "product_item_wmEJji",
+        "product_item_AEtWp8"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_3VH3EY": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_kgdtYk": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-bentwood-cafe-stool"
+          }
+        },
+        "product_item_YHpjWV": {
+          "type": "product_item",
+          "settings": {
+            "product": "woven-top-bentwood-cafe-stool"
+          }
+        },
+        "product_item_TFFAKD": {
+          "type": "product_item",
+          "settings": {
+            "product": "bentwood-cafe-chair"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_kgdtYk",
+        "product_item_YHpjWV",
+        "product_item_TFFAKD"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_hpGKwm": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_bRUFct": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-vineyard-table"
+          }
+        },
+        "product_item_9Trbe9": {
+          "type": "product_item",
+          "settings": {
+            "product": "vineyard-table"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_bRUFct",
+        "product_item_9Trbe9"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_mUW3j3": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_bnBBbF": {
+          "type": "product_item",
+          "settings": {
+            "product": "grand-heirloom-platters-antique-white"
+          }
+        },
+        "product_item_Dwzemh": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-heirloom-platters-antique-white"
+          }
+        },
+        "product_item_yptriW": {
+          "type": "product_item",
+          "settings": {
+            "product": "round-heirloom-platters-antique-white"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_bnBBbF",
+        "product_item_Dwzemh",
+        "product_item_yptriW"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "&nbsp;Heirloom Platters&nbsp;",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/tableware",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_8hbXmf": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_VxQRCg": {
+          "type": "product_item",
+          "settings": {
+            "product": "country-house-cup-handle"
+          }
+        },
+        "product_item_RxDUfB": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-ventilation-grille-double-sided"
+          }
+        },
+        "product_item_mKrwB9": {
+          "type": "product_item",
+          "settings": {
+            "product": "rack-pinion-catch-heirloom-brass"
+          }
+        },
+        "product_item_imjbGp": {
+          "type": "product_item",
+          "settings": {
+            "product": "button-knob-heirloom-brass"
+          }
+        },
+        "product_item_FH8VGg": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-ring-pull-heirloom-brass"
+          }
+        },
+        "product_item_Q9ibNF": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-knob"
+          }
+        },
+        "product_item_y8Ehz9": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-handle-aged-brass"
+          }
+        },
+        "product_item_yWFrKD": {
+          "type": "product_item",
+          "settings": {
+            "product": "boho-handle-aged-brass"
+          }
+        },
+        "product_item_4qYjpw": {
+          "type": "product_item",
+          "settings": {
+            "product": "pull-handle-aged-brass-extra-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_VxQRCg",
+        "product_item_RxDUfB",
+        "product_item_mKrwB9",
+        "product_item_imjbGp",
+        "product_item_FH8VGg",
+        "product_item_Q9ibNF",
+        "product_item_y8Ehz9",
+        "product_item_yWFrKD",
+        "product_item_4qYjpw"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Cupboard Hardware",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/cupboard-hardware",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Ucp7nD": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_97ydqA": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-knob-heirloom-brass-large"
+          }
+        },
+        "product_item_kUbwXi": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-knob-heirloom-brass-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_97ydqA",
+        "product_item_kUbwXi"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_azMfjk": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_pMFAE3": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-toggle-switch-plate-2-gang"
+          }
+        },
+        "product_item_VkbNW4": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-decora-plate-2-gang"
+          }
+        },
+        "product_item_TpTXDR": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-heirloom-brass-duplex-outlet-plate-2-gang"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_pMFAE3",
+        "product_item_VkbNW4",
+        "product_item_TpTXDR"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "Switches & Sockets",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "View all",
+        "button_link": "shopify://collections/devol-switches",
+        "show_top_border": true,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_WmCftj",
+    "banner",
+    "product-grid",
+    "custom_product_list_ermBbW",
+    "custom_product_list_X4PbKx",
+    "custom_product_list_Hw6QiT",
+    "custom_product_list_UDEJnE",
+    "custom_product_list_Q6MAH9",
+    "custom_product_list_3VH3EY",
+    "custom_product_list_hpGKwm",
+    "custom_product_list_mUW3j3",
+    "custom_product_list_8hbXmf",
+    "custom_product_list_Ucp7nD",
+    "custom_product_list_azMfjk"
+  ]
+}

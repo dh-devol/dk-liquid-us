@@ -220,6 +220,10 @@ class QuantityInput extends HTMLElement {
     this.input = this.querySelector('input');
     this.changeEvent = new Event('change', { bubbles: true });
     this.input.addEventListener('change', this.onInputChange.bind(this));
+    // Only add blur rounding outside the cart
+    if (!this.closest('cart-items') && !this.closest('cart-drawer-items')) {
+      this.input.addEventListener('blur', this.onInputBlur.bind(this));
+    }
     this.querySelectorAll('button').forEach((button) =>
       button.addEventListener('click', this.onButtonClick.bind(this))
     );
@@ -240,6 +244,18 @@ class QuantityInput extends HTMLElement {
 
   onInputChange(event) {
     this.validateQtyRules();
+  }
+
+  onInputBlur(event) {
+    const rounded = Math.max(
+      Math.round(parseFloat(this.input.value) || 1),
+      parseInt(this.input.min) || 1
+    );
+    if (String(rounded) !== this.input.value) {
+      this.input.value = rounded;
+      this.input.dispatchEvent(new Event('input', { bubbles: true }));
+      this.input.dispatchEvent(this.changeEvent);
+    }
   }
 
   onButtonClick(event) {
@@ -589,8 +605,60 @@ class MenuDrawer extends HTMLElement {
 customElements.define('menu-drawer', MenuDrawer);
 
 class HeaderDrawer extends MenuDrawer {
+  static KITCHEN_HANDLES = new Set([
+    'shaker',
+    'classic',
+    'heirloom',
+    'sebastian',
+    'haberdashers',
+  ]);
+
   constructor() {
     super();
+  }
+
+  static normalizePath(path, hash = '') {
+    return (path.length > 1 ? path.replace(/\/$/, '') : path) + hash;
+  }
+
+  findCurrentMenuLink() {
+    const current = HeaderDrawer.normalizePath(window.location.pathname, window.location.hash);
+    if (current === '/') return null;
+
+    const links = this.querySelectorAll('a.list-menu__item');
+    for (const link of links) {
+      if (HeaderDrawer.normalizePath(link.pathname, link.hash) === current) return link;
+    }
+    return null;
+  }
+
+  findSectionByPath(targetPath) {
+    const wanted = HeaderDrawer.normalizePath(targetPath);
+    const links = this.querySelectorAll('a.list-menu__item, summary a, .list-menu__item');
+    for (const link of links) {
+      if (!link.pathname) continue;
+      if (HeaderDrawer.normalizePath(link.pathname) === wanted) {
+        return this.detailsChain(link)[0] || link.closest('details');
+      }
+    }
+    return null;
+  }
+
+  detailsChain(el) {
+    const stack = [];
+    for (let d = el?.closest('details'); d; d = d.parentElement?.closest('details')) {
+      stack.unshift(d);
+    }
+    return stack;
+  }
+
+  isKitchenPage() {
+    if (document.body.dataset.autoOpenMenu) {
+      return document.body.dataset.autoOpenMenu === 'kitchens';
+    }
+ 
+    const handle = window.location.pathname.replace(/\/$/, '').split('/').pop();
+    return HeaderDrawer.KITCHEN_HANDLES.has(handle);
   }
 
   openMenuDrawer(summaryElement) {
@@ -603,16 +671,6 @@ class HeaderDrawer extends MenuDrawer {
     );
     this.header.classList.add('menu-open');
 
-    const openDetailsWithoutAnimation = (detailsElement) => {
-      if (!detailsElement) return;
-      const summary = detailsElement.querySelector(':scope > summary');
-      const parentMenuElement = detailsElement.closest('.has-submenu');
-      detailsElement.setAttribute('open', '');
-      detailsElement.classList.add('menu-opening', 'no-transition');
-      if (summary) summary.setAttribute('aria-expanded', true);
-      if (parentMenuElement) parentMenuElement.classList.add('submenu-open');
-    };
-
     this.mainDetailsToggle.classList.add('no-transition');
     this.mainDetailsToggle.classList.add('menu-opening');
 
@@ -621,92 +679,63 @@ class HeaderDrawer extends MenuDrawer {
     trapFocus(this.mainDetailsToggle, summaryElement);
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
 
-    // Detect kitchen context synchronously so animation can start immediately
-    const kitchensDetails = document.querySelector('#HeaderDrawer-kitchens')?.closest('details');
-    const _path = window.location.pathname;
-    const _fullPath = _path + window.location.hash;
-    let kitchensToAnimate = null;
+    const chainToOpen = this.resolveChainToOpen();
 
-    if (kitchensDetails && _fullPath !== '/') {
-      // Walk DOM to check if any menu link for this page lives inside the Kitchens details
-      const menuLinks = document.querySelectorAll(`a.list-menu__item[href*="${_fullPath}"]`);
-      for (const link of menuLinks) {
-        let el = link.parentElement;
-        while (el) {
-          if (el === kitchensDetails) { kitchensToAnimate = kitchensDetails; break; }
-          el = el.parentElement;
-        }
-        if (kitchensToAnimate) break;
-      }
-      // Fallback: keyword-matched kitchen pages or pages with the gallery section
-      if (!kitchensToAnimate) {
-        if (
-          (_path.startsWith('/pages') && /kitchen|kitchens|shaker|heirloom|sebastian|haberdashers/.test(_path)) ||
-          document.querySelector('.page-metafield-gallery')
-        ) {
-          kitchensToAnimate = kitchensDetails;
-        }
-      }
-    }
-
-    if (kitchensToAnimate) {
-      // Animate immediately — 2 rAFs only, no 100ms wait
+    if (chainToOpen.length) {
       requestAnimationFrame(() => {
+        void this.mainDetailsToggle.offsetHeight;
+
         this.mainDetailsToggle.classList.remove('no-transition');
-        this.mainDetailsToggle.querySelectorAll('details.no-transition').forEach((d) => d.classList.remove('no-transition'));
-        kitchensToAnimate.setAttribute('open', '');
-        const ks = kitchensToAnimate.querySelector(':scope > summary');
-        if (ks) ks.setAttribute('aria-expanded', true);
-        const pm = kitchensToAnimate.closest('.has-submenu');
+        this.mainDetailsToggle
+          .querySelectorAll('details.no-transition')
+          .forEach((d) => d.classList.remove('no-transition'));
+
+        // Frame 1: reveal the content so it has a measurable closed state.
+        chainToOpen.forEach((details) => {
+          details.setAttribute('open', '');
+          const summary = details.querySelector(':scope > summary');
+          if (summary) summary.setAttribute('aria-expanded', true);
+        });
+
+        // Frame 2: add the class that the transition is keyed off.
         requestAnimationFrame(() => {
-          kitchensToAnimate.classList.add('menu-opening');
-          if (pm) pm.classList.add('submenu-open');
+          chainToOpen.forEach((details) => {
+            details.classList.add('menu-opening');
+            const parentMenuElement = details.closest('.has-submenu');
+            if (parentMenuElement) parentMenuElement.classList.add('submenu-open');
+          });
         });
       });
     } else {
-      // Original 100ms timeout for all non-kitchen pages
-      setTimeout(() => {
-        let opened = false;
-        const fullPath = window.location.pathname + window.location.hash;
-        const links = document.querySelectorAll(`a.list-menu__item[href*="${fullPath}"]`);
-        const path = window.location.pathname;
-        const forceShop =
-          path.startsWith('/products') ||
-          path.startsWith('/collections') ||
-          path === '/pages/shop' ||
-          path.startsWith('/pages/shop/');
-        if (forceShop) {
-          opened = true;
-          openDetailsWithoutAnimation(document.querySelector('#HeaderDrawer-shop')?.closest('details'));
-        } else if (fullPath !== '/') {
-          links.forEach(link => {
-            opened = true;
-            let detailsStack = [];
-            let parentDetails = link.closest('details');
-
-            while (parentDetails) {
-              detailsStack.unshift(parentDetails);
-              parentDetails = parentDetails.parentElement.closest('details');
-            }
-
-            detailsStack.forEach(openDetailsWithoutAnimation);
-          });
-        }
-
-        if (!opened) {
-          if (path.startsWith('/pages') && /kitchen|kitchens|shaker|heirloom|sebastian|haberdashers/.test(path)) {
-            openDetailsWithoutAnimation(document.querySelector('#HeaderDrawer-kitchens')?.closest('details'));
-          }
-        }
-
-        requestAnimationFrame(() => {
-          this.mainDetailsToggle.classList.remove('no-transition');
-          this.mainDetailsToggle.querySelectorAll('details.no-transition').forEach((details) => {
-            details.classList.remove('no-transition');
-          });
+      requestAnimationFrame(() => {
+        void this.mainDetailsToggle.offsetHeight;
+        this.mainDetailsToggle.classList.remove('no-transition');
+        this.mainDetailsToggle.querySelectorAll('details.no-transition').forEach((details) => {
+          details.classList.remove('no-transition');
         });
-      }, 100);
+      });
     }
+  }
+
+  resolveChainToOpen() {
+    const path = window.location.pathname;
+    const currentLink = this.findCurrentMenuLink();
+
+    const kitchensDetails = document.querySelector('#HeaderDrawer-kitchens')?.closest('details');
+    if (kitchensDetails) {
+      if (currentLink && kitchensDetails.contains(currentLink)) {
+        return this.detailsChain(currentLink);
+      }
+      if (this.isKitchenPage()) return [kitchensDetails];
+    }
+
+    if (/^\/(products|collections)/.test(path) || /^\/pages\/shop(\/|$)/.test(path)) {
+      const shop = document.querySelector('#HeaderDrawer-online-shop')?.closest('details');
+      return shop ? [shop] : [];
+    }
+
+    const top = this.detailsChain(currentLink)[0];
+    return top ? [top] : [];
   }
 
   closeMenuDrawer(event, elementToFocus) {
@@ -1395,6 +1424,78 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+document.addEventListener("DOMContentLoaded", async function () { 
+  // injecting css stylesheet into shadow form on accessory enquires page
+  const observer = new MutationObserver((mutations, obs) => {
+    const el = document.querySelector('shopify-forms-embed#app-embed');
+
+    if (!el) return;
+
+    // If element exists but shadowRoot not ready yet, wait a bit
+    const waitForShadow = setInterval(() => {
+      if (el.shadowRoot) {
+        // console.log('Shadow root found:', el.shadowRoot);
+
+        // Inject CSS
+        const style = document.createElement('style');
+        style.textContent = `
+          ._inline_1q1d2_47 section._formContainer_1q1d2_30 {
+            max-width: unset;
+            margin: 0;
+            color: var(--form-placeholder-color);
+          }
+          form label._formInputFieldLabel_1mxsl_38 {
+            position: static;
+            order: 1;
+            margin-bottom: 10px;
+            color: var(--body-text-color);
+          }
+          div._formFieldContainer_1mxsl_5:has(textarea)::before, div._formFieldContainer_1mxsl_5:has(textarea):focus-within::before {
+            position: static;
+            height: 0;
+          }
+          form input._formInputField_nag3b_7, form button._selectToggle_12thd_25 {
+            padding: 0 1em;
+            height: 34px;
+            border-radius: 0;
+            order: 2;
+          }
+          form textarea._textArea_17mgw_1 {
+            border-radius: 0;
+            order: 2;
+            padding: 10px 1em 0;
+          }
+          div._dropdownContainer_12thd_63{
+            border-radius: 0;
+          }
+          ._formFieldContainer_1mxsl_5:focus-within label._formInputFieldLabel_1mxsl_38 {
+            transform: none;
+          }
+          ._formFieldContainer_1mxsl_5:focus-within textarea._textArea_17mgw_1, ._formFieldContainer_1mxsl_5 ._inputFilled_1mxsl_74 textarea._textArea_17mgw_1 {
+            padding-top: 10px;
+          }
+          form button._formSubmitButton_cit2d_96 {
+            margin-top: 1.5em;
+            border-radius: 0;
+          }
+          ._textBody_2aowh_10, span._textBody_2aowh_10, p._textBody_2aowh_10 {
+            padding-bottom: 7px;
+          }  
+        `;
+        el.shadowRoot.appendChild(style);
+
+        clearInterval(waitForShadow);
+        obs.disconnect(); // stop observing once done
+      }
+    }, 100);
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+});
 
 class AccountIcon extends HTMLElement {
   constructor() {

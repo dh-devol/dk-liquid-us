@@ -104,7 +104,6 @@
         "enable_sticky_info": false,
         "color_scheme": "scheme-2",
         "not_for_sale_text": "<p>Please get in contact by calling 01509 261000 or send an email to <a href=\"mailto:enquiries@devolkitchens.co.uk\">enquiries@devolkitchens.co.uk</a> if you are interested in placing an order.</p>",
-        "out_of_stock_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\" title=\"usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order for delivery outside of the US.</p>",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",

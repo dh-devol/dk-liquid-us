@@ -1,0 +1,189 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_wg6Afq": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\n@media (max-width: 767px) {\n  .slideshow__text-wrapper.banner__content.banner__content--bottom-left.page-width.banner--desktop-transparent {\n    justify-content: center;\n    flex-direction: column;\n}\n.slideshow__text.banner__box.content-container.content-container--full-width-mobile.gradient.slideshow__text--left.slideshow__text-mobile--center {\n    align-items: center;\n    max-width: 100%;\n    width: 100%;\n}\n.banner__buttons {\n    text-align: center;\n}\n.slider-counter.slider-counter--dots {\n    left: auto;\n    right: 32% !important;\n}\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "metaobject_gallery_slider_JYdfMg": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "catalogue_title_with_richtext_mN3axD": {
+      "type": "catalogue-title-with-richtext",
+      "custom_css": [
+        "@media screen and (min-width: 768px) {.rich-text__blocks {max-width: 330px; }}"
+      ],
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "show_main_description": true,
+        "show_guide_price": false,
+        "border_title": false,
+        "heading_size": "hxxl",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "collection_multicolumn_EXUaqF": {
+      "type": "collection-multicolumn",
+      "blocks": {
+        "column_FYteEg": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "heirloom-accessories",
+            "show_text_double_column": false
+          }
+        },
+        "column_mG9May": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "for-the-love-of-kitchens",
+            "show_text_double_column": false
+          }
+        },
+        "column_fegyWg": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "cafe-collection",
+            "show_text_double_column": false
+          }
+        },
+        "column_FVpFna": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "grand-tour-collection",
+            "show_text_double_column": false
+          }
+        },
+        "column_4PFKLt": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "tableware",
+            "show_text_double_column": false
+          }
+        },
+        "column_nThYde": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "lace-market-tiles",
+            "show_text_double_column": false
+          }
+        },
+        "column_KHerBw": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "porcelain-pendant-lights",
+            "show_text_double_column": false
+          }
+        },
+        "column_iW3pqL": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "copper-brass-sinks",
+            "show_text_double_column": false
+          }
+        },
+        "column_kgimX4": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "ironmongery",
+            "show_text_double_column": false
+          }
+        },
+        "column_ANFnKA": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "",
+            "show_text_double_column": false
+          }
+        },
+        "column_MXJYac": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "",
+            "show_text_double_column": false
+          }
+        }
+      },
+      "block_order": [
+        "column_FYteEg",
+        "column_mG9May",
+        "column_fegyWg",
+        "column_FVpFna",
+        "column_4PFKLt",
+        "column_nThYde",
+        "column_KHerBw",
+        "column_iW3pqL",
+        "column_kgimX4",
+        "column_ANFnKA",
+        "column_MXJYac"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 768px) {.page-width {max-width: 1600px; }}",
+        "@media screen and (min-width: 1450px) {.custom-multicolumn .multicolumn-card__info .rte {max-width: 80%; }}"
+      ],
+      "name": "Collection multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_wg6Afq",
+    "metaobject_gallery_slider_JYdfMg",
+    "catalogue_title_with_richtext_mN3axD",
+    "collection_multicolumn_EXUaqF"
+  ]
+}

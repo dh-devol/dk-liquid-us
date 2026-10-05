@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -209,6 +218,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -223,6 +233,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -456,6 +467,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/st-johns-square-london",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "Take a look around our St John's Square Showroom",
             "title": "St John's Square, London",
@@ -470,6 +482,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/tysoe-street-london",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "Take a look around our Tysoe Street Showroom",
             "title": "Tysoe Street, London",
@@ -484,6 +497,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/george-street-bath",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "Take a look around our Bath showroom",
             "title": "George Street, Bath",
@@ -529,6 +543,7 @@
           "type": "column",
           "settings": {
             "link": "shopify://pages/bond-street-new-york",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "Take a look around our Manhattan Showroom",
             "title": "Bond Street, New York",
@@ -543,6 +558,7 @@
           "type": "column",
           "settings": {
             "link": "#",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/LA-Showroom-Mockup-Thumbnail-Use_jpg.webp",
             "custom_text_hover": "Take a look around our Los Angeles showroom",

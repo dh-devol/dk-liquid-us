@@ -1,11 +1,18 @@
 .article-template > *:first-child:not(.article-template__hero-container) {
-  margin-top: 5rem;
+  /*margin-top: 5rem;*/
+  display: flex;
+  margin: 0 auto -27px auto;
+  height: 35px;
+  max-width: 1100px;
+}
+@media (max-width:1350px){
+  .article-template > *:first-child:not(.article-template__hero-container) {
+  max-width: 88%;
+}
 }
 
-@media screen and (min-width: 750px) {
-  .article-template > *:first-child:not(.article-template__hero-container) {
-    margin-top: calc(5rem + var(--page-width-margin));
-  }
+.article-template > *:first-child:not(.article-template__hero-container) {
+  margin-top: 36px;
 }
 
 .article-template__hero-container {
@@ -179,40 +186,49 @@
   max-width:75rem;
 }
 .article-template *{
-  color:#4D4D4C;
+  color:#595959;
 }
 .article-template .article-template__title{
-  font-size:17.3px;
+  font-size:18px;
   text-transform:uppercase;
+  letter-spacing: 1.5px;
 }
 .article-template header.page-width {
-  margin-top: 2.4rem;
+  margin-top: 45px;
 }
 .article-template .blog__date{
   font-size:16.15px;
 }
 .article-template .blog__author{
-  font-size:15px;
+  font-size:16px;
   font-style:italic;
   margin-top: 5px;
+  margin-bottom: 35px;
 }
 .article-template .rte img{
-  margin: 20px 0px;
+  margin: 0.5em 0;
   width: 100%;
 }
 .article-template{
-  font-size:15px;
+  font-size:16px;
 }
 .article-template *{
-  font-size:15px;
+  /*font-size:16px;*/
+}
+/*.article-template .blog-caption {
+  font-size:28px;
+  margin: -5px 0 24px;
+}*/
+.article-template .brand__info-wrapper img {
+  width: 85%;
 }
 .main__blog--wrapper {
-    max-width: 960px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: end;
-    padding-bottom: 6.5px;
-    border-bottom: 1px solid #CCC;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
 }
 .blog__option-wrapper{
   position:relative;
@@ -221,7 +237,7 @@
 }
 .blog__title{
   font-size:18.2px;
-  color:#666668;
+  color:#595959;
   cursor: pointer;
   display: flex;
   gap: 7px;
@@ -230,28 +246,34 @@
 }
 .blog__options{
   position: absolute;
-  z-index: 1;
-  top: 38px;
+  z-index: 2;
+  top: 34px;
   right: 0;
-  padding: 10px 0;
+  padding: 0;
   background: #f2f2f2;
   display:none;
   width: 100%;
+  margin: 0;
 }
 .blog__option {
     list-style: none;
     display: block;
-    width: 90%;
-    padding: 0 5%;
+    width: 100%;
+    /*padding: 0 5%;*/
 }
 .blog__option a {
     text-decoration: none;
-    color: #666668;
+    color: #595959;
     display: block;
     letter-spacing: .03em;
     font-size: 1.1em;
     padding: 0 1.5em;
     line-height: 3em;
+}
+.blog__option-wrapper .blog__title .svg-wrapper{
+  width: 16px;
+  height: 16px;
+  opacity: 80%;
 }
 .blog__option-wrapper.active .blog__options{
   display:block;
@@ -260,52 +282,52 @@
   transform: rotate(180deg);
 }
 .blog__option a:hover{
-  background-color:#566167;
+  background-color:#27333f;
   color:#ffffff;
 }
 .article-template iframe{
   width:100%;
   max-width:100%;
 }
-@media (max-width:1024px){
+@media (max-width:1350px){
   .main__blog--wrapper{
-    padding: 0 20px 5px 20px;
+    max-width: 88% !important;
   }
 }
-@media (max-width:767px){
+@media (max-width:750px){
   .main__blog--wrapper{
     max-width:92%;
     justify-content: flex-start;
-    padding: 0 0px 32.5px 0px;
+    padding: 16px 0px 20px 0px;
     margin-top: 15px !important;
   }
   .main__blog--wrapper .blog__title {
     justify-content: flex-start;
   }
   .blog__option-wrapper.active .blog__options {
-    margin-top: 19px;
+    margin-top: 10px;
   }
   .blog__option-wrapper {
     max-width: 100%;
   }
   .article-template .page-width {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+    max-width: 88%;
+    margin: auto;
+    /*padding-left: 30px;
+    padding-right: 30px;*/
   }
   .article-template .brand__info-wrapper + .main__blog--wrapper {
-    max-width: inherit;
-    margin-left: 30px;
-    margin-right: 30px;
+    max-width: 88%;
+    margin: auto;
+    /*margin-left: 30px;
+    margin-right: 30px;*/
   }
   .article-template .brand__info-wrapper img {
-    margin-top: -43px;
-    margin-left: 20px;
     max-width: 300px;
   }
 }
-@media (min-width:768px){
+/*@media (min-width:768px){
   .blog__title {
       letter-spacing: 0.5px;
   }
-}
+}*/

@@ -27,6 +27,12 @@
     margin-bottom: 12px;
     cursor: pointer;
 }
+@media screen and (max-width:767px){
+   .custom-collapsible-content .title_arrow-wrapper {
+    justify-content: space-between;
+    margin-right: 1em;
+}
+} 
 .kitchen .custom-collapsible-content .title_arrow-wrapper {
     gap: 1em;
 }
@@ -55,6 +61,10 @@
 }
 .custom-collapsible-content .class-summary.active[open] .dropdown-arrow {
     transform: rotate(180deg);
+}
+.page-our-staff .custom-collapsible-content .accordion__content-wrapper .rte .staff-degree {
+    margin-top: 0;
+    margin-bottom: 29px;
 }
 .custom-collapsible-content .accordion__content-wrapper .rte>*:first-child {
     margin-top: 29px;
@@ -113,6 +123,9 @@
 @media screen and (max-width:1025px){
   .support_custom_collapsible .collapsible-content-wrapper-narrow {
     max-width: 638px;
+}
+   .page-our-staff .accordion__content p + p {
+    margin-top:16px;
 }
 }
 @media screen and (max-width:991px){
@@ -204,7 +217,7 @@
     vertical-align: top;
 }
 .product-specification .specification-metafield .accordion__content.rte table tr td.fixed-width-160 {
-    width: 160px;
+    width: 160px !important;
 }
 .product-specification .class-details.product-specification .accordion__content.rte table tr td strong {
     color: #595959;
@@ -221,6 +234,9 @@
     font-weight: 400;
     color: #595959;
     margin-top: 12px;
+}
+.product-specification .accordion__content.rte p:has(strong) {
+    margin-top: 0;
 }
 .product-specification .product-specification .accordion__content.rte p {
     margin:0;
@@ -287,10 +303,20 @@
         font-weight: 600;
 }
 
+@media screen and (max-width:767px) {
+    .product-specification.custom-collapsible-content {
+        padding-bottom: 2.5em;
+        padding-top: 0;
+    }
+}
+
 @media screen and (max-width: 750px) {
     .product-specification.custom-collapsible-content {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
+    }
+            .product-specification .accordion__content-wrapper .page-accordion .product-returns-column {
+        margin-top: 1.8em;
     }
     .product-specification .accordion__content-wrapper .page-accordion .product-delivery-column tbody {
         display: block;
@@ -308,7 +334,7 @@
         font-size: 16px;
     }
     .product-specification .product-delivery-column table tr td {
-        padding-bottom: 0;
+        padding: 0.4em 1.5em 1.2em 0;
         line-height: normal;
     }
     .delivery-returns.accordion .page-accordion.accordion__content.rte {

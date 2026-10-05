@@ -88,7 +88,7 @@
     margin-top: 0;
   }
 }
-@media (max-width:768px){
+@media (max-width:767px){
   .page-title-description .rich-text__wrapper .rich-text__blocks.center{
     text-align:left;
   }
@@ -98,9 +98,6 @@
     width:100%;
    /*max-width: 88%;*/
     padding: 0;
-  }
-  .page-press-coverage .title-with-rich-text .rich-text__wrapper{
-   max-width: 88%;
   }
   .title-with-rich-text .rich-text__text{
     max-width:100%;
@@ -127,6 +124,29 @@
     font-size: 1.2em;
     line-height: 1.2;
   }
+  .page-online-accessory-sales .title-with-rich-text .rich-text {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 620px;
+  }
+  .collection-heirloom-accessories .title-with-rich-text .rich-text,
+  .collection-porcelain-pendant-lights .title-with-rich-text .rich-text{
+    max-width: 92%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .collection-grand-tour-collection .title-with-rich-text .rich-text{
+    max-width: 88%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+@media (max-width:768px){
+  .collection-heirloom-accessories .title-with-rich-text .rich-text,
+  .collection-porcelain-pendant-lights .title-with-rich-text .rich-text
+  {
+    max-width: 88%;
+  }
 }
 @media (max-width:767px){
   .page-online-accessory-sales .contact-form-with-details-wrapper h2{
@@ -139,6 +159,9 @@
 @media screen and (max-width:575px){
 .title-with-rich-text .rich-text__text{
   width:100%;
+}
+.page-press-coverage .title-with-rich-text .rich-text__wrapper{
+  max-width: 88%;
 }
 }
 

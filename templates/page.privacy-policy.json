@@ -1,1 +1,122 @@
-{"sections":{"gallery_slideshow_jagtVb":{"type":"gallery-slideshow","blocks":{"slide_kntwLn":{"type":"slide","settings":{"image":"shopify:\/\/shop_images\/geese_1.jpg","desktop_focal_point":50,"mobile_focal_point":50,"heading":"","heading_size":"h1","subheading":"","button_label":"","link":"","button_style_secondary":false,"box_align":"middle-center","show_text_box":false,"text_alignment":"center","image_overlay_opacity":0,"color_scheme":"","text_alignment_mobile":"center"}}},"block_order":["slide_kntwLn"],"settings":{"layout":"full_bleed","show_mobile_banner":true,"slide_height":"adapt_image","slider_visual":"counter","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":false,"accessibility_info":"Slideshow about our brand"}},"page_title_description_KqxxGY":{"type":"page-title-description","name":"Page title & description","settings":{"show_title":true,"show_description":false,"description_columns":1,"color_scheme":"scheme-2","padding_top":40,"padding_bottom":40}},"title_with_rich_text_TfbFn7":{"type":"title-with-rich-text","blocks":{"heading_NUANDU":{"type":"heading","settings":{"heading":"Privacy Policy","heading_size":"hxxl"}},"text_kMwRRc":{"type":"text","settings":{"text":"<p>This privacy policy sets out how deVOL Kitchens uses and protects any information that you give deVOL Kitchens when you use this website.<\/p>"}}},"block_order":["heading_NUANDU","text_kMwRRc"],"settings":{"desktop_content_position":"center","content_alignment":"center","color_scheme":"scheme-2","full_width":true,"padding_top":60,"padding_bottom":60,"sectionname":""}},"custom_page_gBAHU8":{"type":"custom-page","settings":{"page":"privacy-policy","show_heading":false,"heading_size":"h1","two_column":true,"color_scheme":"scheme-2","padding_top":0,"padding_bottom":60}},"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}}},"order":["gallery_slideshow_jagtVb","page_title_description_KqxxGY","title_with_rich_text_TfbFn7","custom_page_gBAHU8","main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gallery_slideshow_jagtVb": {
+      "type": "gallery-slideshow",
+      "blocks": {
+        "slide_kntwLn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/geese_1.jpg",
+            "desktop_focal_point": 50,
+            "mobile_focal_point": 50,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_kntwLn"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "show_mobile_banner": true,
+        "slide_height": "adapt_image",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "page_title_description_KqxxGY": {
+      "type": "page-title-description",
+      "name": "Page title & description",
+      "settings": {
+        "show_title": true,
+        "show_description": false,
+        "description_columns": 1,
+        "color_scheme": "scheme-2",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "title_with_rich_text_TfbFn7": {
+      "type": "title-with-rich-text",
+      "blocks": {
+        "heading_NUANDU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Privacy Policy",
+            "heading_size": "hxxl"
+          }
+        },
+        "text_kMwRRc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This privacy policy sets out how deVOL Kitchens uses and protects any information that you give deVOL Kitchens when you use this website.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_NUANDU",
+        "text_kMwRRc"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "sectionname": ""
+      }
+    },
+    "custom_page_gBAHU8": {
+      "type": "custom-page",
+      "settings": {
+        "page": "privacy-policy",
+        "show_heading": false,
+        "heading_size": "h1",
+        "two_column": true,
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "gallery_slideshow_jagtVb",
+    "page_title_description_KqxxGY",
+    "title_with_rich_text_TfbFn7",
+    "custom_page_gBAHU8",
+    "main"
+  ]
+}

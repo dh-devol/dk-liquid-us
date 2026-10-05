@@ -13,10 +13,9 @@
       "type": "main-blog-search",
       "settings": {
         "option_title": "Categories",
-        "predictive_logo": "shopify://shop_images/devol-journal_cf28ab1a-49b4-4a66-bdff-f9d0c3aa4e09.svg",
         "layout": "grid",
         "show_image": true,
-        "image_height": "medium",
+        "image_height": "adapt",
         "show_date": true,
         "show_author": false,
         "padding_top": 36,

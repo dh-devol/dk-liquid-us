@@ -21,7 +21,7 @@ body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-w
   margin: 1.5em 0 0 0;
 }
 .kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
-  margin: 1em 0;
+  margin: 1em 0 0;
   line-height:36px;
 }
  .home-page .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
@@ -94,7 +94,11 @@ body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-w
   text-decoration:none;
   font-weight: 500;
   font-size: 18px;
-  margin-top:10px;
+  margin-top:14px;
+}
+.custom-multicolumn.project-multicolumns .sub_heading--link{
+  margin-top:7px;
+  margin-bottom: 17px;
 }
 .sub_heading--link:hover{
   text-decoration:underline;
@@ -304,6 +308,51 @@ body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-w
 }
 /* Support page css end */
 
+/* US Switches css start */
+#switches-menu .page-width {
+  max-width: 650px;
+}
+#switches-menu .multicolumn-card__info a.link.animate-arrow {
+  color: #595959;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.25em;
+}
+#switches-menu .multicolumn-card__info a.link.animate-arrow.active {
+  border-bottom: solid 1px #595959;
+  padding: 0 0.125em 0.35em 0.125em;
+}
+#switches-menu .multicolumn-list__item {
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 989px) {
+  #switches-menu .page-width {
+    max-width: 88%;
+  }
+  #switches-menu .multicolumn-list__item {
+    margin: 1em 0 0;
+  }
+  section:has(> #switches-menu) ~ section .custom-product-list .subtitle__wrapper h3.sub-heading.hxl {
+    margin-top: 0.8em;
+  }
+  .custom-multicolumn#switches-menu .multicolumn-list.grid--3-col-tablet-down {
+    justify-content: left;
+    gap: 45px;
+  }
+  .custom-multicolumn#switches-menu .multicolumn-list.grid--3-col-tablet-down .grid__item {
+    width: 100%;
+    max-width: fit-content;
+  }
+  #switches-menu .multicolumn-card__info a.link.animate-arrow {
+    font-size: 1.15em;
+  }
+  #switches-menu .multicolumn-card__info .link {
+    margin-top: 0;
+  }
+}
+/* US switches css end */
+
 /* project-multi-column metafield pages css start */
 .project-multi-column .multicolumn__title {
     justify-content: left;
@@ -372,7 +421,7 @@ body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-w
 
 @media (max-width: 991px){
 .kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title {
-  padding: 2em 0 1.5em;
+  /*padding: 2em 0 1.5em;*/
   margin: 1em 0 0 0;
 }
 #simple-furniture-beautifully-made.custom-multicolumn .subtitle__wrapper .sub-heading {
@@ -588,6 +637,11 @@ margin-bottom:0px !important
               font-size: 1.8em;
               margin-bottom:0px;
     }
+}
+@media screen and (max-width:750px){
+  .subtitle__wrapper{
+    padding-top:36px;
+  }
 }
 @media screen and (max-width:460px){
     .home-page .title-wrapper-with-link .title.inline-richtext {

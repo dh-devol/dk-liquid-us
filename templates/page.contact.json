@@ -1,1 +1,105 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":36,"padding_bottom":36}},"custom_multicolumns_36VG9n":{"type":"custom-multicolumns","blocks":{"column_fCn3Kx":{"type":"column","settings":{"link":"shopify:\/\/pages\/kitchen-enquiries","dynamic_costs":"kitchen-enquiries","custom_text_hover":"Contact details for all kitchen enquiries","title":"{{ block.settings.dynamic_costs.title }}","show_text_double_column":false,"text":"{{ block.settings.dynamic_costs.content }}","show_above_image":false,"link_label":"","linked_product":""}},"column_3caYDD":{"type":"column","settings":{"link":"shopify:\/\/pages\/online-accessory-sales","dynamic_costs":"online-accessory-sales","custom_text_hover":"Contact details for all online accessory sales","title":"{{ block.settings.dynamic_costs.title }}","show_text_double_column":false,"text":"{{ block.settings.dynamic_costs.content }}","show_above_image":false,"link_label":"","linked_product":""}},"column_nWWzVY":{"type":"column","settings":{"link":"shopify:\/\/pages\/showrooms","dynamic_costs":"showrooms","custom_text_hover":"Take a look around our six beautiful showrooms","title":"{{ block.settings.dynamic_costs.title }}","show_text_double_column":false,"text":"<p>{{ block.settings.dynamic_costs.metafields.custom.short_description.value }}<\/p>","show_above_image":false,"link_label":"","linked_product":""}}},"block_order":["column_fCn3Kx","column_3caYDD","column_nWWzVY"],"custom_css":["@media (min-width: 768px) {.multicolumn__title .title {margin: 0px; }}","@media (max-width: 768px) {.custom-multicolumn .multicolumn__title {padding-left: 0px; padding-right: 30px; margin: 0 0 4.5rem 0; font-size: 1.2em; }}",".multicolumn-card__info .inline-richtext {font-size: 1.8rem; padding-top: 9px; font-weight: 500;}",".multicolumn-card__info .rte {margin: 0;}",".custom__text--on-hover .inner__hover-shadow {line-height: 1.2; padding: 0 40px;}","@media (max-width: 768px) {.multicolumn__title .title {margin: 1.5em 0 0;}}"],"settings":{"title":"Contact","heading_size":"hxxl","subtitle":"","image_width":"full","image_ratio":"adapt","columns_desktop":3,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":"contact__section"}}},"order":["main","custom_multicolumns_36VG9n"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_multicolumns_36VG9n": {
+      "type": "custom-multicolumns",
+      "blocks": {
+        "column_fCn3Kx": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/kitchen-enquiries",
+            "dynamic_costs": "kitchen-enquiries",
+            "custom_text_hover": "Contact details for all kitchen enquiries",
+            "title": "{{ block.settings.dynamic_costs.title }}",
+            "show_text_double_column": false,
+            "text": "{{ block.settings.dynamic_costs.content }}",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
+        },
+        "column_3caYDD": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/online-accessory-sales",
+            "dynamic_costs": "online-accessory-sales",
+            "custom_text_hover": "Contact details for all online accessory sales",
+            "title": "{{ block.settings.dynamic_costs.title }}",
+            "show_text_double_column": false,
+            "text": "{{ block.settings.dynamic_costs.content }}",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
+        },
+        "column_nWWzVY": {
+          "type": "column",
+          "settings": {
+            "link": "shopify://pages/showrooms",
+            "dynamic_costs": "showrooms",
+            "custom_text_hover": "Take a look around our six beautiful showrooms",
+            "title": "{{ block.settings.dynamic_costs.title }}",
+            "show_text_double_column": false,
+            "text": "<p>{{ block.settings.dynamic_costs.metafields.custom.short_description.value }}</p>",
+            "show_above_image": false,
+            "link_label": "",
+            "linked_product": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_fCn3Kx",
+        "column_3caYDD",
+        "column_nWWzVY"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.multicolumn__title .title {margin: 0px; }}",
+        "@media (max-width: 768px) {.custom-multicolumn .multicolumn__title {padding-left: 0px; padding-right: 30px; margin: 0 0 4.5rem 0; font-size: 1.2em; }}",
+        ".multicolumn-card__info .inline-richtext {font-size: 1.8rem; padding-top: 9px; font-weight: 500;}",
+        ".multicolumn-card__info .rte {margin: 0;}",
+        ".custom__text--on-hover .inner__hover-shadow {line-height: 1.2; padding: 0 40px;}",
+        "@media (max-width: 768px) {.multicolumn__title .title {margin: 1.5em 0 0;}}"
+      ],
+      "settings": {
+        "title": "Contact",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": "contact__section"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_multicolumns_36VG9n"
+  ]
+}

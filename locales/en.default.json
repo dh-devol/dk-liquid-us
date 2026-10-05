@@ -297,17 +297,17 @@
       "new_estimated_total": "New estimated total",
       "note": "Order special instructions",
       "checkout": "Continue to checkout",
-      "empty": "Your shopping cart is empty.",
+      "empty": "Your basket is empty",
       "cart_error": "There was an error while updating your basket. Please try again.",
       "cart_quantity_error_html": "Sorry, we could not add {{ attempted }} to your basket because it exceeds our current stock levels. We currently have {{ available }} available to order, please try again or get in touch if you require more than this.",
-      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Duties and taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+      "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Delivery charges are calculated in the checkout",
       "duties_and_taxes_included_shipping_at_checkout_without_policy": "Delivery charges are calculated in the checkout",
       "taxes_included_shipping_at_checkout_with_policy_html": "Taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
       "taxes_included_shipping_at_checkout_without_policy": "Delivery charges are calculated in the checkout",
       "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Duties included. Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
       "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Duties included. Taxes, discounts and shipping calculated at checkout.",
-      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
-      "taxes_at_checkout_shipping_at_checkout_without_policy": "Taxes, discounts and shipping calculated at checkout.",
+      "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Delivery charges are calculated in the checkout",
+      "taxes_at_checkout_shipping_at_checkout_without_policy": "Delivery charges are calculated in the checkout",
       "headings": {
         "product": "Your basket\t",
         "price": "Price",
@@ -543,6 +543,13 @@
           "all_products_one": "These flooring products cannot be shipped to your location. Please contact our flooring team for assistance.",
           "all_products_other": "These flooring products cannot be shipped to your location. Please contact our flooring team for assistance."
         }
+      },
+      "marketing": {
+        "accept_marketing_checkbox_label": "I’d like to receive interiors inspiration and design stories"
+      },
+      "order_summary": {
+        "total_savings": "Your saving",
+        "confirmation_number_label": "Order confirmed"
       }
     }
   }

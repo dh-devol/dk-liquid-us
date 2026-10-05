@@ -5,23 +5,21 @@ class CartRemoveButton extends HTMLElement {
     this.addEventListener('click', (event) => {
       event.preventDefault();
       const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
+      const addonKeysStr = this.dataset.addonKeys || '';
+      const mainKey = this.dataset.mainKey;
       const groupId = this.querySelector('a').dataset.groupId;
-      if (groupId) {
+      // console.log('[CartRemoveButton]', this.id, '| addonKeys:', addonKeysStr || '(empty)', '| mainKey:', mainKey || '(missing)');
+      if (groupId && groupId.length > 14) {
         const qty = document.querySelector(
           `.quantity__input[data-group-id="${groupId}"]`
         ).value;
         const qtyDiff = 0 - qty;
         cartItems.updateBundleQuantity(groupId, qty, qtyDiff, this.dataset.index);
+      } else if (addonKeysStr && mainKey) {
+        const addonKeys = addonKeysStr.split(',').filter(Boolean);
+        cartItems.removeWithAddons(this.dataset.index, mainKey, addonKeys);
       } else {
-        const addonKeysStr = this.dataset.addonKeys || '';
-        const mainKey = this.dataset.mainKey;
-        console.log('[CartRemoveButton]', this.id, '| addonKeys:', addonKeysStr || '(empty)', '| mainKey:', mainKey || '(missing)');
-        if (addonKeysStr && mainKey) {
-          const addonKeys = addonKeysStr.split(',').filter(Boolean);
-          cartItems.removeWithAddons(this.dataset.index, mainKey, addonKeys);
-        } else {
-          cartItems.updateQuantity(this.dataset.index, 0);
-        }
+        cartItems.updateQuantity(this.dataset.index, 0);
       }
     });
   }
@@ -159,7 +157,7 @@ class CartItems extends HTMLElement {
     const available = Math.max(0, inventoryQty - (cartQty - currentLineQty));
 
     if (attemptedQty > available) {
-      console.log('[stockLimit] triggered — inventoryQty:', inventoryQty, 'cartQty:', cartQty, 'currentLineQty:', currentLineQty, 'available:', available, 'attemptedQty:', attemptedQty);
+      // console.log('[stockLimit] triggered — inventoryQty:', inventoryQty, 'cartQty:', cartQty, 'currentLineQty:', currentLineQty, 'available:', available, 'attemptedQty:', attemptedQty);
       return window.cartStrings.quantityError
         .replace('[attempted]', attemptedQty)
         .replace('[available]', available);
@@ -234,7 +232,7 @@ class CartItems extends HTMLElement {
       await this.updateBundleQuantity(groupId, newQty, diff, line);
     } else {
       const isAddon = input.hasAttribute('data-addon-lines');
-      console.log(isAddon);
+      // console.log(isAddon);
 
       if (!isAddon) {
         const updates = [];
@@ -328,6 +326,23 @@ class CartItems extends HTMLElement {
     ];
   }
 
+  // Cart AJAX (/cart/change.js, /cart/update.js) sometimes returns `sections: null` — e.g. while
+  // the store is password-protected / pre-launch — which makes the section redraw throw and the
+  // cart silently fail to update. Backfill from the GET Section Rendering API (unaffected). No-op
+  // once Shopify returns sections normally.
+  async ensureSections(parsedState) {
+    if (parsedState && !parsedState.sections) {
+      try {
+        const apiIds = [...new Set(this.getSectionsToRender().map((s) => s.section).filter(Boolean))];
+        const base = typeof routes !== 'undefined' && routes.cart_url ? routes.cart_url : '/cart';
+        parsedState.sections = await fetch(`${base}?sections=${encodeURIComponent(apiIds.join(','))}`).then((r) => r.json());
+      } catch (e) {
+        /* silent — the caller's catch handles a hard failure */
+      }
+    }
+    return parsedState;
+  }
+
   updateQuantity(line, quantity, name, variantId, bundle) {
     this.enableLoading(line);
 
@@ -369,14 +384,14 @@ class CartItems extends HTMLElement {
       .then((response) => {
         return response.text();
       })
-      .then((state) => {
+      .then(async (state) => {
         const parsedState = JSON.parse(state);
         const quantityElement =
           document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
         const items = document.querySelectorAll('.cart-item');
 
         if (parsedState.errors) {
-          console.log('[cartError] parsedState.errors:', parsedState.errors);
+          // console.log('[cartError] parsedState.errors:', parsedState.errors);
           if (quantityElement) quantityElement.value = quantityElement.getAttribute('value');
           this.updateLiveRegions(line, parsedState.errors, { showNotification: true });
           return;
@@ -391,11 +406,14 @@ class CartItems extends HTMLElement {
         if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
         if (mainContent) mainContent.classList.toggle('is-empty', parsedState.item_count === 0);
 
+        // Backfill sections if the cart AJAX response omitted them (see ensureSections).
+        await this.ensureSections(parsedState);
+
         this.getSectionsToRender().forEach((section) => {
           const elementToReplace =
             document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
           elementToReplace.innerHTML = this.getSectionInnerHTML(
-            parsedState.sections[section.section],
+            parsedState.sections && parsedState.sections[section.section],
             section.selector
           );
         });
@@ -404,7 +422,7 @@ class CartItems extends HTMLElement {
         let message = '';
         let showNotification = false;
         if (quantity !== 0 && items.length === parsedState.items.length && updatedValue !== quantity) {
-          console.log('[updatedValueMismatch] attempted:', quantity, 'updatedValue:', updatedValue, 'items.length:', items.length, 'parsedState.items.length:', parsedState.items.length);
+          // console.log('[updatedValueMismatch] attempted:', quantity, 'updatedValue:', updatedValue, 'items.length:', items.length, 'parsedState.items.length:', parsedState.items.length);
           if (typeof updatedValue === 'undefined') {
             message = window.cartStrings.error;
           } else {
@@ -510,7 +528,8 @@ class CartItems extends HTMLElement {
       }),
     })
       .then((r) => r.json())
-      .then((parsedState) => {
+      .then(async (parsedState) => {
+        await this.ensureSections(parsedState);
         this.classList.toggle('is-empty', parsedState.item_count === 0);
         const cartDrawerWrapper = document.querySelector('cart-drawer');
         const cartFooter = document.getElementById('main-cart-footer');
@@ -522,49 +541,7 @@ class CartItems extends HTMLElement {
         this.getSectionsToRender().forEach((section) => {
           const elementToReplace =
             document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-          elementToReplace.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
-        });
-
-        publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState });
-      })
-      .catch(() => {
-        const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
-        if (errors) errors.textContent = window.cartStrings.error;
-      })
-      .finally(() => {
-        this.disableLoading(line);
-      });
-  }
-
-  removeWithAddons(line, mainKey, addonKeys) {
-    this.enableLoading(line);
-    const updates = {};
-    addonKeys.forEach((key) => { updates[key] = 0; });
-    updates[mainKey] = 0;
-
-    fetch('/cart/update.js', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        updates,
-        sections: this.getSectionsToRender().map((s) => s.section),
-        sections_url: window.location.pathname,
-      }),
-    })
-      .then((r) => r.json())
-      .then((parsedState) => {
-        this.classList.toggle('is-empty', parsedState.item_count === 0);
-        const cartDrawerWrapper = document.querySelector('cart-drawer');
-        const cartFooter = document.getElementById('main-cart-footer');
-        const mainContent = document.getElementById('MainContent');
-        if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
-        if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-        if (mainContent) mainContent.classList.toggle('is-empty', parsedState.item_count === 0);
-
-        this.getSectionsToRender().forEach((section) => {
-          const elementToReplace =
-            document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
-          elementToReplace.innerHTML = this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
+          elementToReplace.innerHTML = this.getSectionInnerHTML(parsedState.sections && parsedState.sections[section.section], section.selector);
         });
 
         publish(PUB_SUB_EVENTS.cartUpdate, { source: 'cart-items', cartData: parsedState });

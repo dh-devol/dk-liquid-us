@@ -61,14 +61,14 @@
             endif
           -%}
           <div
-            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
           >
             {%- for block in section.blocks -%}
               <div
-                class="footer-block footer-{{ block.type }} grid__item{% if block.type == 'brand_information' %} footer-block--brand-info{% endif %}{% if block.type == 'text' %} footer-block--text{% endif %}{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="footer-block footer-{{ block.type }} grid__item{% if block.type == 'brand_information' %} footer-block--brand-info{% endif %}{% if block.type == 'text' %} footer-block--text{% endif %}{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -120,20 +120,22 @@
                         {%- assign brand_image_height = settings.brand_image_width
                           | divided_by: settings.brand_image.aspect_ratio
                         -%}
-                        <div
-                          class="footer-block__image-wrapper"
-                          style="max-width: min(100%, {{ settings.brand_image_width }}px);"
-                        >
-                          {{
-                            settings.brand_image
-                            | image_url: width: 1100
-                            | image_tag:
-                              loading: 'lazy',
-                              widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
-                              height: brand_image_height,
-                              width: settings.brand_image_width
-                          }}
-                        </div>
+                        <a href="{{ routes.root_url }}">
+                          <div
+                            class="footer-block__image-wrapper"
+                            style="max-width: min(100%, {{ settings.brand_image_width }}px);"
+                          >
+                            {{
+                              settings.brand_image
+                              | image_url: width: 1100
+                              | image_tag:
+                                loading: 'lazy',
+                                widths: '50, 100, 150, 200, 300, 400, 550, 800, 1100',
+                                height: brand_image_height,
+                                width: settings.brand_image_width
+                            }}
+                          </div>
+                        </a>
                       {%- endif -%}
                       {%- if settings.brand_headline != blank -%}
                         <h2 class="footer-block__heading rte">{{ settings.brand_headline }}</h2>
@@ -300,11 +302,16 @@
     <div class="footer__content-bottom-wrapper copyright_footer page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
         <small class="copyright__content"
-          >&copy; {{ shop.name | link_to: routes.root_url -}} &nbsp;{{ 'now' | date: '%Y' }}
+          >&copy; {{ shop.name }} &nbsp;{{ 'now' | date: '%Y' }}
         </small>
         <!-- <small class="copyright__content">{{ powered_by_link }}</small> -->
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled test">
+            <li>
+              <small class="copyright__content cky-banner-element">
+                <a href="javascript:void(0)">Manage Cookies</a>
+              </small>
+            </li>
              {%- if section.settings.policy_menu != blank -%}
                {% for link in section.settings.policy_menu.links %}
                <li>

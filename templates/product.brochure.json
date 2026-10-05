@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -6,6 +15,7 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
+        "not_for_sale_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order.</p>",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -22,6 +32,8 @@
     "brochure_header": {
       "type": "brochure-product-header",
       "settings": {
+        "heading": "Order your deVOL Brochure",
+        "sub_text": "Every page of our brochure has an inspiring image and uniqueness that you only find at deVOL.",
         "heading_size": "hxxl",
         "color_scheme": "scheme-2",
         "padding_top": 60,
@@ -31,8 +43,7 @@
     "flipbook_brochure": {
       "type": "flipbook-brochure",
       "settings": {
-        "account_name": "devol-kitchens",
-        "catalog_name": "the-devol-brochure-summer-2025",
+        "embed_code": "<div id=\"publitas-embed-daju7plgwqt\"></div><script data-cfasync=\"false\" data-height=\"\" data-publication=\"https://view.publitas.com/devol-kitchens/the-devol-brochure-spring-2026/\" data-publication-aspect-ratio=\"1.4143007360672977\" data-publication-title=\"The deVOL Brochure - Spring 2026\" data-responsive=\"true\" data-width=\"\" data-wrapper-id=\"publitas-embed-daju7plgwqt\" publitas-embed=\"\" src=\"https://view.publitas.com/embed.js\" type=\"text/javascript\"></script>",
         "color_scheme": "scheme-2",
         "padding_top": 0,
         "padding_bottom": 0
@@ -41,10 +52,10 @@
     "brochure_buy_button": {
       "type": "brochure-product-form",
       "settings": {
-        "heading_prefix": "Order your printed brochure for",
+        "heading_prefix": "Order your printed brochure",
         "subtext": "Free delivery to US  |  $35 delivery to Canada",
         "button_label": "Add to basket",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-cf9846db-d066-4e46-8334-ad7abe871963",
         "padding_top": 40,
         "padding_bottom": 60
       }

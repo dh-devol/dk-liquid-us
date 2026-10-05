@@ -9,51 +9,27 @@
  */
 {
   "sections": {
-    "gallery_slideshow_ECnaGy": {
-      "type": "gallery-slideshow",
-      "blocks": {
-        "slide_JyTkQR": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/banner-desktop-the-grand-tour-collection.jpg",
-            "desktop_focal_point": 50,
-            "mobile_focal_point": 100,
-            "heading": "",
-            "heading_size": "h0",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "bottom-left",
-            "show_text_box": true,
-            "text_alignment": "left",
-            "image_overlay_opacity": 0,
-            "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_JyTkQR"
-      ],
-      "name": "Gallery slideshow",
+    "metaobject_gallery_slider_rFkp34": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
       "settings": {
         "layout": "full_bleed",
-        "show_mobile_banner": true,
         "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
         "slider_visual": "dots",
-        "auto_rotate": true,
+        "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": false,
+        "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
     },
     "banner": {
       "type": "main-collection-banner",
-      "disabled": true,
       "custom_css": [
-        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__inner {margin-bottom: 50px;}",
         ".collection-hero__title {margin-bottom: 1em;}"
       ],
       "settings": {
@@ -61,6 +37,18 @@
         "show_collection_image": false,
         "color_scheme": "scheme-2"
       }
+    },
+    "editorials_KMGKiV": {
+      "type": "editorials",
+      "custom_css": [
+        ".editorials-page-separator {display: none;}",
+        ".editorials-title {display: none;}",
+        ".editorials-section {margin-bottom: 3em; max-width: 1100px;}",
+        ".editorials-section .editorials-content {padding-bottom: 0; border-bottom: none;}",
+        "@media (max-width: 768px) {.editorials-section {max-width: 88%; }}"
+      ],
+      "name": "Editorials",
+      "settings": {}
     },
     "product-grid": {
       "type": "main-collection-product-grid",
@@ -108,6 +96,7 @@
         "heading_cLxhDn",
         "text_BmyFqd"
       ],
+      "disabled": true,
       "name": "Title with richtext",
       "settings": {
         "desktop_content_position": "center",
@@ -145,6 +134,7 @@
         "column_iGK4pc",
         "column_Q7dGPP"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
         "title": "",
@@ -190,14 +180,13 @@
         "product_item_keT9qC",
         "product_item_GfyJHN"
       ],
-      "custom_css": [
-        "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
-      ],
+      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
         "heading_size": "hxl",
         "subtitle": "",
+        "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -218,8 +207,9 @@
     }
   },
   "order": [
-    "gallery_slideshow_ECnaGy",
+    "metaobject_gallery_slider_rFkp34",
     "banner",
+    "editorials_KMGKiV",
     "product-grid",
     "title_with_rich_text_4UtAQQ",
     "multicolumn_MAXVEG",

@@ -24,8 +24,6 @@
 >
   <div class="page-width">
     <div class="cart__footer isolate section-{{ section.id }}-padding">
-     
-
       <div class="cart__blocks">
         {% for block in section.blocks %}
           {%- case block.type -%}
@@ -33,7 +31,7 @@
               {% render block %}
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
-                <div>
+                {% comment %} <div>
                   {%- if cart.cart_level_discount_applications.size > 0 -%}
                     <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                       {%- for discount in cart.cart_level_discount_applications -%}
@@ -45,7 +43,7 @@
                       {%- endfor -%}
                     </ul>
                   {%- endif -%}
-                </div>
+                </div> {% endcomment %}
 
                 <div class="totals">
                   <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
@@ -110,10 +108,18 @@
                 {%- endif -%}
               {%- endfor -%}
               {%- assign has_flooring = false -%}
-              {%- if has_flooring_products or flooring_support_weight_g > _weight_threshold_g -%}
+              {%- if has_flooring_products or flooring_support_weight_g >= _weight_threshold_g -%}
                 {%- assign has_flooring = true -%}
               {%- endif -%}
                <div class="cart_custom-descrption-wrapper {% unless has_flooring %}no_flooring{% endunless %}">
+                  <div class="cart_title">
+                    {% if block.settings.title %}
+                      <h2 class="hxxl cart_description_title">{{ block.settings.title }}</h2>
+                    {% endif %}
+                    {% if block.settings.text %}
+                      {{ block.settings.text }}
+                    {% endif %}
+                  </div>
                  <div class="cart_custom-description-inner">
                   {% if block.settings.show_datepicker %}
                     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -144,7 +150,10 @@
                         data-leadtimes="{{ flooring_lead_times | strip_newlines | strip }}"
                         data-disable-weekends="{{ block.settings.disable_weekends }}"
                         data-count-weekends="{{ block.settings.count_weekends_in_lead_time }}"
-                        data-max-days="{{ block.settings.max_days_ahead }}">
+                        data-max-days="{{ block.settings.max_days_ahead }}"
+                        data-flooring-type="{{  _flooring_type }}"
+                        data-support-type="{{ _support_type }}"
+                        data-weight-threshold="{{ _weight_threshold_g }}">
                       </div>
                     <div class="flatpickr_date-wrapper">
                       <input id="date_select" type="text" placeholder="Select Date">
@@ -156,6 +165,7 @@
                     </div>
                     <input type="hidden" name="attributes[Flooring Delivery Date]" id="hidden-delivery-date" form="cart">
                     <input type="hidden" name="attributes[_Promise Date]" id="hidden-promise-date" form="cart">
+                    <input type="hidden" name="attributes[_Days]" id="hidden-days" form="cart">
                     </div>
                   {% endif %}
 
@@ -269,10 +279,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
 
-      const defaultDate = addBusinessDays(today, minLeadTime, countWeekends);
+      {% comment %} const defaultDate = addBusinessDays(today, minLeadTime, countWeekends);
       const defaultDateStr = defaultDate.getDate().toString().padStart(2, '0') + '-' +
                              (defaultDate.getMonth() + 1).toString().padStart(2, '0') + '-' +
-                             defaultDate.getFullYear();
+                             defaultDate.getFullYear(); {% endcomment %}
 
       var wrapperEl = document.querySelector('.flatpickr_date-wrapper');
       var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -371,50 +381,125 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateOrderPromiseDate();
 
-  // Layer 2: Recalculate _Promise Date on all line items and order attribute on cart page load
+  // Layer 2: Recalculate lead times from the latest rendered cart items and keep cart properties in sync
   (function refreshPromiseDates() {
     fetch('/cart.js')
       .then(function(r) { return r.json(); })
       .then(function(cart) {
+        var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
         var maxLeadDays = 0;
         var lineUpdates = [];
+        
+        function pushLineUpdate(id, quantity, propsPatch) {
+          var existing = lineUpdates.find(function(u) { return u.id === id; });
+          if (existing) {
+            Object.assign(existing.properties, propsPatch);
+          } else {
+            lineUpdates.push({ id: id, quantity: quantity, properties: propsPatch });
+          }
+        }
 
-        (cart.items || []).forEach(function(item) {
-          if (!item.properties || !item.properties['_lead_time_days']) return;
-          var leadDays = parseInt(item.properties['_lead_time_days'], 10);
-          if (!leadDays) return;
+        // NOTE: Availability/_lead_time_days/_Promise Date are intentionally
+        // NOT written to line properties here. Writing them
+        // (before checkout) causes future adds of the same variant to fail
+        // to merge into this line, since Shopify only merges lines whose
+        // properties match exactly. These are written once, at checkout
+        // time, by the cart form's submit handler instead.
+        spans.forEach(function(span) {
+          var key = span.getAttribute('data-line-key');
+          var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
+          if (!key || !leadDays) return;
           if (leadDays > maxLeadDays) maxLeadDays = leadDays;
-          var expected = formatPromiseDate(leadDays);
-          if (item.properties['_Promise Date'] !== expected) {
-            lineUpdates.push(item);
+        });
+
+        // Clear Flooring attributes if no flooring/qualifying-support items remain
+        var leadTimesEl = document.getElementById('lead-time-data');
+        var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
+        var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
+        var weightThresholdForClear = leadTimesEl ? parseFloat(leadTimesEl.getAttribute('data-weight-threshold')) : 30000;
+
+        var hasFlooringForClear = (cart.items || []).some(function(item) {
+          return item.product_type === flooringTypeForClear;
+        });
+        var supportWeightForClear = 0;
+        (cart.items || []).forEach(function(item) {
+          if (item.product_type === supportTypeForClear) {
+            supportWeightForClear += (item.grams || 0) * item.quantity;
+          }
+        });
+        var stillHasFlooring = cart.items.some(function(item) {
+          return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
+        });
+
+        if (!stillHasFlooring && cart.attributes && cart.attributes['Access Restrictions']) {
+          fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              attributes: { 
+                'Access Restrictions': '',
+              } 
+            })
+          }).catch(function() { /* silent */ });
+        }
+
+        // Sync Coverage from flooring summary (only the visible responsive variant)
+        var seenKeys = {};
+        document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
+          var key = el.getAttribute('data-line-key');
+          if (!key || seenKeys[key]) return;
+          if (el.offsetParent === null) return;
+          seenKeys[key] = true;
+
+          var text = el.textContent.trim();
+          var match = text.match(/[\d.]+/);
+          if (!match) return;
+          var coverage = match[0];
+          var coverageDisplay = coverage + ' ft²';
+
+          var cartItem = (cart.items || []).find(function(item) {
+            return item.key === key;
+          });
+          if (!cartItem) return;
+
+          var props = cartItem.properties || {};
+          var hasStaleKeys = ('_lead_time_days' in props) || ('_Promise Date' in props);
+
+          if (props['Coverage'] !== coverageDisplay || hasStaleKeys) {
+            var mergedProps = Object.assign({}, props, { 'Coverage': coverageDisplay });
+            delete mergedProps['_lead_time_days'];
+            delete mergedProps['_Promise Date'];
+            pushLineUpdate(key, cartItem.quantity, mergedProps);
           }
         });
 
-        // Always set order-level _Promise Date from cart data
+        // Always set order-level _Promise Date from the latest rendered lead times
+        var orderPromiseWrite = Promise.resolve();
         if (maxLeadDays > 0) {
           var orderPromise = formatPromiseDate(maxLeadDays);
           var promiseDateInput = document.getElementById('hidden-promise-date');
           if (promiseDateInput) promiseDateInput.value = orderPromise;
-          fetch('/cart/update.js', {
+
+          orderPromiseWrite = fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ attributes: { '_Promise Date': orderPromise } })
+            body: JSON.stringify({ 
+              attributes: { 
+                '_Promise Date': orderPromise,
+                '_Days': String(maxLeadDays)
+              } 
+            })
           }).catch(function() { /* silent */ });
         }
 
-        // Update stale line item promise dates
         if (lineUpdates.length === 0) return;
         function doUpdate(i) {
           if (i >= lineUpdates.length) return;
-          var item = lineUpdates[i];
-          var leadDays = parseInt(item.properties['_lead_time_days'], 10);
-          var merged = Object.assign({}, item.properties, {
-            '_Promise Date': formatPromiseDate(leadDays)
-          });
+          var update = lineUpdates[i];
           fetch('/cart/change.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id: item.key, quantity: item.quantity, properties: merged })
+            body: JSON.stringify(update)
           })
           .then(function() { doUpdate(i + 1); })
           .catch(function() { doUpdate(i + 1); });
@@ -424,16 +509,19 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(function() { /* silent */ });
   })();
 
-  // Before checkout: update line item _Promise Date properties via AJAX
+  // Before checkout: update line item and order-level promise date properties via AJAX
   var cartForm = document.getElementById('cart');
   if (cartForm) {
     cartForm.addEventListener('submit', function(e) {
-      // Check if any items have lead time data (via DOM spans or cart data)
       var spans = document.querySelectorAll('.lead-time-span[data-line-key]');
       if (spans.length === 0) return;
 
       e.preventDefault();
       updateOrderPromiseDate();
+
+      function extractVariantId(lineKey) {
+        return lineKey ? lineKey.split(':')[0] : null;
+      }
 
       fetch('/cart.js', {
         method: 'GET',
@@ -441,51 +529,183 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(function(r) { return r.json(); })
       .then(function(cart) {
-        var promiseDateMap = {};
+        // Build lookup by variant_id, not line key — the line key can
+        // change between when spans were rendered and now (e.g. a
+        // flooring delivery-date selection mutates the property hash),
+        // so matching on key can silently miss the item entirely.
+        var leadDataByVariant = {};
+        var maxLeadDays = 0;
+
         spans.forEach(function(span) {
           var key = span.getAttribute('data-line-key');
-          var leadTime = parseInt(span.getAttribute('data-leadtime'), 10);
-          if (key && leadTime) {
-            promiseDateMap[key] = formatPromiseDate(leadTime);
-          }
+          var leadDays = parseInt(span.getAttribute('data-leadtime'), 10);
+          var leadText = span.getAttribute('data-leadtext');
+          var variantId = extractVariantId(key);
+          if (!variantId || !leadDays) return;
+
+          leadDataByVariant[variantId] = {
+            days: leadDays,
+            text: leadText,
+            promise: formatPromiseDate(leadDays)
+          };
+          if (leadDays > maxLeadDays) maxLeadDays = leadDays;
         });
 
-        var itemsToUpdate = cart.items.filter(function(item) {
-          return promiseDateMap[item.key];
+        // Coverage elements are also DOM-rendered with the OLD line key,
+        // so also index those by variant_id for the same reason.
+        var coverageByVariant = {};
+        document.querySelectorAll('.cart-item__flooring-summary[data-line-key]').forEach(function(el) {
+          if (el.offsetParent === null) return; // skip hidden responsive duplicate
+          var key = el.getAttribute('data-line-key');
+          var variantId = extractVariantId(key);
+          if (!variantId) return;
+          var match = el.textContent.trim().match(/[\d.]+/);
+          if (match) coverageByVariant[variantId] = match[0] + ' ft²';
         });
 
-        function processUpdates(index) {
-          if (index >= itemsToUpdate.length) {
-            if (!cartForm.querySelector('input[name="checkout"]')) {
-              var ci = document.createElement('input');
-              ci.type = 'hidden';
-              ci.name = 'checkout';
-              ci.value = '';
-              cartForm.appendChild(ci);
-            }
-            cartForm.submit();
-            return;
+        var leadTimesEl = document.getElementById('lead-time-data');
+        var flooringTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-flooring-type') : 'Flooring';
+        var supportTypeForClear = leadTimesEl ? leadTimesEl.getAttribute('data-support-type') : 'Flooring Support';
+        var weightThresholdForClear = leadTimesEl ? parseFloat(leadTimesEl.getAttribute('data-weight-threshold')) : 30000;
+
+        var supportWeightForClear = 0;
+        cart.items.forEach(function(item) {
+          if (item.product_type === supportTypeForClear) {
+            supportWeightForClear += (item.grams || 0) * item.quantity;
           }
-          var item = itemsToUpdate[index];
-          var mergedProps = Object.assign({}, item.properties || {}, {
-            '_Promise Date': promiseDateMap[item.key]
-          });
-          fetch('/cart/change.js', {
+        });
+        var hasFlooringForClear = cart.items.some(function(item) {
+          return item.product_type === flooringTypeForClear;
+        });
+        var stillHasFlooring = cart.items.some(function(item) {
+          return item.product_type === flooringTypeForClear || (item.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear));
+        });
+
+        var deliveryDateClearWrite = Promise.resolve();
+        if (!stillHasFlooring && cart.attributes && cart.attributes['Access Restrictions']) {
+          deliveryDateClearWrite = fetch('/cart/update.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              id: item.key,
-              quantity: item.quantity,
-              properties: mergedProps
+            body: JSON.stringify({ 
+              attributes: { 
+                'Access Restrictions': '',
+              } 
             })
-          }).then(function() {
-            processUpdates(index + 1);
-          }).catch(function() {
-            processUpdates(index + 1);
-          });
+          }).catch(function() { /* silent */ });
         }
 
-        processUpdates(0);
+        var orderPromiseWrite = Promise.resolve();
+        if (maxLeadDays > 0) {
+          var orderPromise = formatPromiseDate(maxLeadDays);
+          var promiseDateInput = document.getElementById('hidden-promise-date');
+          if (promiseDateInput) promiseDateInput.value = orderPromise;
+
+          orderPromiseWrite = fetch('/cart/update.js', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              attributes: { 
+                '_Promise Date': orderPromise,
+                '_Days': String(maxLeadDays)
+              }
+            })
+          }).catch(function() { /* silent */ });
+        }
+
+        var itemsToUpdate = cart.items.filter(function(item) {
+          return leadDataByVariant[String(item.variant_id)];
+        });
+
+        var groupedByVariant = {};
+        itemsToUpdate.forEach(function(item) {
+          var props = item.properties || {};
+          var groupKey;
+
+          // Bundle parents and add-on children must never be merged. Two bundles
+          // of the same parent variant with different children are indistinguishable
+          // by properties alone (_group_id identifies the parent, not the
+          // configuration), so any bundle-related line gets a unique key.
+          if (props['_group_id'] || props['_bundle_parent'] || props['_Added as add-on']) {
+            groupKey = 'nomerge:' + item.key;
+          } else {
+            groupKey = String(item.variant_id);
+          }
+
+          if (!groupedByVariant[groupKey]) groupedByVariant[groupKey] = [];
+          groupedByVariant[groupKey].push(item);
+        });
+
+        var groupKeys = Object.keys(groupedByVariant);
+
+        function processVariant(index) {
+          if (index >= groupKeys.length) {
+            Promise.all([orderPromiseWrite, deliveryDateClearWrite]).then(function() {
+              if (!cartForm.querySelector('input[name="checkout"]')) {
+                var ci = document.createElement('input');
+                ci.type = 'hidden';
+                ci.name = 'checkout';
+                ci.value = '';
+                cartForm.appendChild(ci);
+              }
+              cartForm.submit();
+            });
+            return;
+          }
+
+          var groupKey = groupKeys[index];
+          var lines = groupedByVariant[groupKey];
+          var vid = String(lines[0].variant_id);
+          var leadData = leadDataByVariant[vid];
+          var totalQty = lines.reduce(function(sum, l) { return sum + l.quantity; }, 0);
+
+          var keepLine = lines[0];
+          var mergedProps = Object.assign({}, keepLine.properties || {});
+          delete mergedProps['_lead_time_days'];
+          delete mergedProps['_Promise Date'];
+          if (leadData.text) mergedProps['Availability'] = leadData.text;
+
+          var liveCoverage = coverageByVariant[vid];
+          if (liveCoverage) mergedProps['Coverage'] = liveCoverage;
+
+          var isFlooringItem = keepLine.product_type === flooringTypeForClear;
+          var isQualifyingSupportItem = keepLine.product_type === supportTypeForClear && (hasFlooringForClear || supportWeightForClear >= weightThresholdForClear);
+          if (!isFlooringItem && !isQualifyingSupportItem) {
+            delete mergedProps['Flooring Delivery Date'];
+          }
+
+          // Remove extra duplicate lines FIRST, then set the survivor's combined
+          // quantity + properties. Removing first avoids writing to keys that a
+          // prior write in this same sequence may have invalidated.
+          var removals = lines.slice(1);
+
+          function removeNext(i) {
+            if (i >= removals.length) {
+              fetch('/cart/change.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  id: keepLine.key,
+                  quantity: totalQty,
+                  properties: mergedProps
+                })
+              })
+              .then(function() { processVariant(index + 1); })
+              .catch(function() { processVariant(index + 1); });
+              return;
+            }
+            fetch('/cart/change.js', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id: removals[i].key, quantity: 0 })
+            })
+            .then(function() { removeNext(i + 1); })
+            .catch(function() { removeNext(i + 1); });
+          }
+
+          removeNext(0);
+        }
+
+        processVariant(0);
       })
       .catch(function() {
         if (!cartForm.querySelector('input[name="checkout"]')) {
@@ -542,8 +762,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (deliveryDate && deliveryDate.value) attrs['Flooring Delivery Date'] = deliveryDate.value;
     var accessRestrictions = document.getElementById('access-restrictions');
     if (accessRestrictions && accessRestrictions.value.trim()) attrs['Access Restrictions'] = accessRestrictions.value.trim();
-    var termsCheckbox = document.getElementById('terms_agreed');
-    if (termsCheckbox) attrs['terms agreed'] = termsCheckbox.checked ? 'Yes' : '';
     if (Object.keys(attrs).length > 0) {
       fetch('/cart/update.js', {
         method: 'POST',
@@ -613,6 +831,12 @@ document.addEventListener('DOMContentLoaded', function () {
                  <div class="rte">
                    {{ block.settings.custom_text }}
                  </div>
+               </div>
+             {% endif %}
+             {% when 'delivery' %}
+             {% if block.settings.delivery_text != blank %}
+               <div class="delivery__text">
+                   {{ block.settings.delivery_text }}
                </div>
              {% endif %}
           {%- endcase -%}
@@ -689,6 +913,18 @@ document.addEventListener('DOMContentLoaded', function () {
           "id": "custom_text",
           "label": "Custom Text"
         }
+      ]
+    },
+    {
+      "type": "delivery",
+      "name": "Delivery",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "delivery_text",
+          "label": "Delivery text"
+        },
       ]
     },
     {

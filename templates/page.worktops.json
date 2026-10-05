@@ -1,1 +1,708 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"padding_top":28,"padding_bottom":28}},"catalogue_title_with_richtext_BU9bBR":{"type":"catalogue-title-with-richtext","custom_css":[".page-width {padding-top: 0;}"],"settings":{"show_title":true,"show_description":true,"show_main_description":true,"show_guide_price":false,"border_title":true,"heading_size":"h1","desktop_content_position":"left","content_alignment":"left","color_scheme":"scheme-2","custom_class":"","padding_top":0,"padding_bottom":24,"padding_left":0,"padding_right":0}},"image_banner_c44JFt":{"type":"image-banner","custom_css":[],"name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Carrara_Marble_-_Catalogue_1.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_YBHtxc":{"type":"catalogue-multicolumn","blocks":{"column_8XAHjQ":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>Our favourite and most popular worktop, this natural beauty is so much better than any manmade recreations. It has its nuances and is definitely not for fastidious people who demand perfection. This is a living stone with the same requirements as any natural product, it needs to be treated with care and the marks and scratches that will inevitably form over time need to be welcomed as aging and patina rather than faults.<\/p><p>Marble is softer and more porous than granite so it is easier to mark, but the surface is treated with a sealer to help ease any marking. Due to the way marble is formed, there is a degree of variation in the colour and veining of every slab. We buy the best quality slabs from the quarry in Carrara, Italy, and are very selective but we cannot determine exactly how each piece will look. This naturally occurring pattern and colour make each piece of marble completely unique.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_8XAHjQ"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Carrara Marble (Polished or Honed)","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_NCM498":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Arabescato_Marble_-_Catalogue_1.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_RKVqMG":{"type":"catalogue-multicolumn","blocks":{"column_7UKAWe":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>Arabescato marble is quarried in Tuscany, Italy, and is a highly figured natural stone that has prominent veining that can vary dramatically. It is bold and striking, which is what makes it such a special stone. The beauty of this crazy stone is the natural variation of the colours and shapes, each slab is totally unique and has its own character so it is recommended that you choose your slab prior to purchase - we can, of course, help with this.<\/p><p>Arabescato is a dense marble, but as with all marbles it will scratch with use and due to its porosity it can be stained. Care must be taken to use non-acidic cleaners as all marbles are prone to being damaged by acidic substances. An amount of protection can be given to the stone by applying an impregnating sealer, this will be done prior to the installation of the stone but will require periodic reapplication over the life of the worktops.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_7UKAWe"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Arabescato Marble","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_MNa8Dd":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Silestone_-_Catalogue_1.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_irPCBk":{"type":"catalogue-multicolumn","blocks":{"column_kHTAJw":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>Silestone is a wonderful manmade material and our favourite option for people who prefer a more practical and uniform finish. Its interpretation of marble is excellent and people of an anxious disposition when it comes to worktops will be greatly relieved to know this Silestone option is available.<\/p><p>It is not totally indestructible and of course it needs to be looked after but it is less trouble than its natural equivalent. We favour the light colours but are able to supply any of Silestone's options. There will be plenty of advice on cleaning and care when your worktops are installed.<\/p><p><\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_kHTAJw"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Silestone (Suede or Polished)","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_UdfrXr":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/San_Simone_Quartzite_-_Catalogue_1.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_bVpfDi":{"type":"catalogue-multicolumn","blocks":{"column_Vtjwxj":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>San Simone quartzite is quarried in Brazil and is a highly figured stone with prominent black and gold or rust veining. Each slab has its own unique character and the stone can vary dramatically from batch to batch. Quartzite is similar to granite and consequently has a much higher resistance to scratching and staining than limestone or marble. Supplied with a polished surface, San Simone quartzite is easy to live with and requires very little in the way of maintenance.<\/p><p>Unfortunately, San Simone is quite a rare stone and it's currently unavailable from any stonemasons. We hope it's not long before a new source for this stone is found so we can offer it to our customers again. For now, you may be able to source something similar, the nearest we currently have and love is Arabescato marble.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_Vtjwxj"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"San Simone Quartzite (Currently unavailable)","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_4hnjAF":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Black_Granite_-_Catalogue_1.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_FHfnYf":{"type":"catalogue-multicolumn","blocks":{"column_NdDz4a":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>Polished granite is the most durable natural work surface, it is not indestructible and can be scratched or marked, but its properties are still much more desirable than any similar manmade product, you just have to remember to take care. It has always been a go-to favourite for deVOL customers and recently we introduced a decorative ogee edging (shown in the image) which has a wonderfully tactile and glamorous feel, making us fall back in love with this classic black worktop.<\/p><p>Honed black granite uses the same material as the polished black but, due to the finish, a greater degree of colour variation can be expected and some worktops may have more visible crystals. Honed black granite is treated with an impregnating sealer as it is not as forgiving without a polished surface but people love it for its slate-like appearance and matt beauty. Unlike slate, granite is extremely hard so it is much less liable to scratch or chip.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_NdDz4a"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Black Granite (Polished or Honed)","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_tEtKq3":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Belgian_Blue_Limestone_Worktop_-_Regents_Park.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_aNX4Nz":{"type":"catalogue-multicolumn","blocks":{"column_xUrdp6":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>Belgian Blue is a sedimentary stone quarried from the Hainaut province of Belgium. Whilst predominantly dark grey in colour, the stone features subtle veining and if you look closely you can often see fossils embedded in the stone, which generally show themselves up as light flecks on the surface. The stone is honed to give a matt finish, which gives a natural feel to the surface.<\/p><p>As with other limestones, Belgian Blue is porous and an impregnating sealer is used to seal the surface and provide some protection from staining. The beauty of the material is that unlike a granite, which in general is consistent and doesn't mark or scratch, Belgian Blue will age with use and will gain character. The material is denser than slate but, as with a slate, it will reflect the way that it is used. Our honed black granite will give a similar appearance from the outset but it is the wear with use that makes the limestone stand out and have its own unique character.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_xUrdp6"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Belgian Blue Limestone","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_pPa4GK":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Copper_-_Catalogue_1_0.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_YGbCcc":{"type":"catalogue-multicolumn","blocks":{"column_4CV3BX":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>The newest addition to our worktop options here at deVOL, 'Aged Copper', a wonderfully toned material, this worktop is suitable for glamorous or very understated kitchens due to its subtle and natural ageing. It is so exciting for us to be able to offer this new material and service, as it allows our customers even more choices of unique and extremely stylish options for their new kitchen. Copper has a long history of being used for worktops and has amazing inherent antibacterial properties, although we do not recommend food preparation directly on the copper as it can taint the taste of food. We also recommend that you don't cut directly onto copper as it is soft and will scratch. <\/p><p>deVOL's copper worktops are all bespoke and made to order to ensure a completely sealed unit, fabricated from 1\/16\" thick copper and then hand-welded or soldered at the corners. We also offer an option with integral copper sink, giving a fully sealed surface that is beyond beautiful. We also create a very distinctive draining section for all copper worktops used around sink areas, a tactile arrangement of tiny raised domes created from hammering the underside of the copper.<\/p><p>Copper naturally tarnishes over time but to speed up this process, we age the surface. The ageing is done using products that are designed for human consumption, so there are no nasty chemicals on the surface. The finish on the copper is the copper oxide itself and, as would happen naturally, the oxide will change according to what comes into contact with it, either becoming darker and more highly figured or becoming brighter and polished. The patinated surface should not be considered as a finish, rather the natural character of the copper itself. The patina will be removed if anything abrasive is used on the surface but unlike a traditional finish, the patina will return over time and the surface will reflect the way that it is used.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_4CV3BX"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Bespoke Aged Copper","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_Bt9HAH":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Oak_-_Catalogue_1_0.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_c7D6Wh":{"type":"catalogue-multicolumn","blocks":{"column_Qcx9Ny":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>These solid 1 5\/8\" thick oak worktops are all made here in our workshops. We use broad planks for a traditional look and each plank is biscuit jointed to create a really strong and solid worktop and finished with a high quality oil, which feeds and keeps the wood supple. Wood is beautifully warm and tactile and when it is looked after and oiled fairly regularly it will last a lifetime, but left to dry out it will begin to discolour and crack. So, if you love the natural beauty and tones of wood then, with a little care, it will reward you with an amazing patina that just gets better and better over time.<\/p><p>We recommend using the Rustic option (shown in the image) on islands and prep tables as it has a wonderful array of knots and grooves and natural patterning that gives it fascinating character. For areas around sinks and water we recommend the Classic finish which is less rugged, it has a smoother finish which repels water more efficiently.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_Qcx9Ny"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Oak (Classic or Rustic)","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_bw4CTa":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Sapele_-_Catalogue_1.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_zDkeUq":{"type":"catalogue-multicolumn","blocks":{"column_bFnBtf":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>This dark wood finish is new to our worktop range, a handmade sapele worktop that is stained and oiled to give a really rich deep colour and a high gloss finish.<\/p><p>This look is authentic and a little bit glamorous, it's a lovely change from stone and we think it works particularly well with our marble sinks, giving a really simple but special look. As with other woods, care is required on a fairly regular basis but its rewards are definitely worth it.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_bFnBtf"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Polished Sapele","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":24,"sectionname":""}},"image_banner_AfxzMf":{"type":"image-banner","name":"t:sections.image-banner.presets.name","settings":{"image":"shopify:\/\/shop_images\/Stave_-_Catalogue_1.jpg","image_overlay_opacity":0,"image_height":"adapt","desktop_content_position":"middle-center","show_text_box":true,"desktop_content_alignment":"center","color_scheme":"","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":true,"show_text_below":true}},"catalogue_multicolumn_aCrNEt":{"type":"catalogue-multicolumn","blocks":{"column_iJMGR9":{"type":"column","settings":{"custom_text_hover":"","title":"","subtext":"","text":"<p>A premium hardwood worktop that comes in set sizes and is ready for cutting to fit on site by your installation team. The most popular option is stave oak, but sustainably sourced iroko worktops are also available, both great choices for our Shaker Kitchens. These worktops are not made by deVOL so they are a great option for people trying to be a little more economical.<\/p><p>They are high quality, durable, easy to fit and easy to live with and have an impressive track record of being exceptionally straight and unlikely to warp. We recommend these worktops for use in all areas of your kitchen and our only stipulation is to try and avoid locating your taps directly into the wood. We offer a stone tap insert which not only sorts the water problems out but it is a beautiful and functional feature that many customers choose to have.<\/p>","show_above_image":true,"link_label":"","link":""}}},"block_order":["column_iJMGR9"],"custom_css":[".page-width {padding-top: 0;}",".multicolumn-list__item {margin-bottom: 17px;}",".rte {columns: 2; column-gap: 20px;}","@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"],"settings":{"title":"","heading_size":"h1","subtitle":"Stave Hardwood Worktop","image_width":"full","image_ratio":"adapt","columns_desktop":2,"column_alignment":"left","background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["main","catalogue_title_with_richtext_BU9bBR","image_banner_c44JFt","catalogue_multicolumn_YBHtxc","image_banner_NCM498","catalogue_multicolumn_RKVqMG","image_banner_MNa8Dd","catalogue_multicolumn_irPCBk","image_banner_UdfrXr","catalogue_multicolumn_bVpfDi","image_banner_4hnjAF","catalogue_multicolumn_FHfnYf","image_banner_tEtKq3","catalogue_multicolumn_aNX4Nz","image_banner_pPa4GK","catalogue_multicolumn_YGbCcc","image_banner_Bt9HAH","catalogue_multicolumn_c7D6Wh","image_banner_bw4CTa","catalogue_multicolumn_zDkeUq","image_banner_AfxzMf","catalogue_multicolumn_aCrNEt"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "catalogue_title_with_richtext_BU9bBR": {
+      "type": "catalogue-title-with-richtext",
+      "custom_css": [
+        ".page-width {padding-top: 0;}"
+      ],
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "show_main_description": true,
+        "show_guide_price": false,
+        "border_title": true,
+        "heading_size": "h1",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-2",
+        "custom_class": "",
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "padding_left": 0,
+        "padding_right": 0
+      }
+    },
+    "image_banner_c44JFt": {
+      "type": "image-banner",
+      "custom_css": [],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Carrara_Marble_-_Catalogue_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_YBHtxc": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_8XAHjQ": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>Our favourite and most popular worktop, this natural beauty is so much better than any manmade recreations. It has its nuances and is definitely not for fastidious people who demand perfection. This is a living stone with the same requirements as any natural product, it needs to be treated with care and the marks and scratches that will inevitably form over time need to be welcomed as aging and patina rather than faults.</p><p>Marble is softer and more porous than granite so it is easier to mark, but the surface is treated with a sealer to help ease any marking. Due to the way marble is formed, there is a degree of variation in the colour and veining of every slab. We buy the best quality slabs from the quarry in Carrara, Italy, and are very selective but we cannot determine exactly how each piece will look. This naturally occurring pattern and colour make each piece of marble completely unique.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_8XAHjQ"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Carrara Marble (Polished or Honed)",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_NCM498": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Arabescato_Marble_-_Catalogue_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_RKVqMG": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_7UKAWe": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>Arabescato marble is quarried in Tuscany, Italy, and is a highly figured natural stone that has prominent veining that can vary dramatically. It is bold and striking, which is what makes it such a special stone. The beauty of this crazy stone is the natural variation of the colours and shapes, each slab is totally unique and has its own character so it is recommended that you choose your slab prior to purchase - we can, of course, help with this.</p><p>Arabescato is a dense marble, but as with all marbles it will scratch with use and due to its porosity it can be stained. Care must be taken to use non-acidic cleaners as all marbles are prone to being damaged by acidic substances. An amount of protection can be given to the stone by applying an impregnating sealer, this will be done prior to the installation of the stone but will require periodic reapplication over the life of the worktops.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_7UKAWe"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Arabescato Marble",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_MNa8Dd": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Silestone_-_Catalogue_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_irPCBk": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_kHTAJw": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>Silestone is a wonderful manmade material and our favourite option for people who prefer a more practical and uniform finish. Its interpretation of marble is excellent and people of an anxious disposition when it comes to worktops will be greatly relieved to know this Silestone option is available.</p><p>It is not totally indestructible and of course it needs to be looked after but it is less trouble than its natural equivalent. We favour the light colours but are able to supply any of Silestone's options. There will be plenty of advice on cleaning and care when your worktops are installed.</p><p></p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_kHTAJw"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Silestone (Suede or Polished)",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_UdfrXr": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/San_Simone_Quartzite_-_Catalogue_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_bVpfDi": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_Vtjwxj": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>San Simone quartzite is quarried in Brazil and is a highly figured stone with prominent black and gold or rust veining. Each slab has its own unique character and the stone can vary dramatically from batch to batch. Quartzite is similar to granite and consequently has a much higher resistance to scratching and staining than limestone or marble. Supplied with a polished surface, San Simone quartzite is easy to live with and requires very little in the way of maintenance.</p><p>Unfortunately, San Simone is quite a rare stone and it's currently unavailable from any stonemasons. We hope it's not long before a new source for this stone is found so we can offer it to our customers again. For now, you may be able to source something similar, the nearest we currently have and love is Arabescato marble.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Vtjwxj"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "San Simone Quartzite (Currently unavailable)",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_4hnjAF": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Black_Granite_-_Catalogue_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_FHfnYf": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_NdDz4a": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>Polished granite is the most durable natural work surface, it is not indestructible and can be scratched or marked, but its properties are still much more desirable than any similar manmade product, you just have to remember to take care. It has always been a go-to favourite for deVOL customers and recently we introduced a decorative ogee edging (shown in the image) which has a wonderfully tactile and glamorous feel, making us fall back in love with this classic black worktop.</p><p>Honed black granite uses the same material as the polished black but, due to the finish, a greater degree of colour variation can be expected and some worktops may have more visible crystals. Honed black granite is treated with an impregnating sealer as it is not as forgiving without a polished surface but people love it for its slate-like appearance and matt beauty. Unlike slate, granite is extremely hard so it is much less liable to scratch or chip.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_NdDz4a"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Black Granite (Polished or Honed)",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_tEtKq3": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Belgian_Blue_Limestone_Worktop_-_Regents_Park.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_aNX4Nz": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_xUrdp6": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>Belgian Blue is a sedimentary stone quarried from the Hainaut province of Belgium. Whilst predominantly dark grey in colour, the stone features subtle veining and if you look closely you can often see fossils embedded in the stone, which generally show themselves up as light flecks on the surface. The stone is honed to give a matt finish, which gives a natural feel to the surface.</p><p>As with other limestones, Belgian Blue is porous and an impregnating sealer is used to seal the surface and provide some protection from staining. The beauty of the material is that unlike a granite, which in general is consistent and doesn't mark or scratch, Belgian Blue will age with use and will gain character. The material is denser than slate but, as with a slate, it will reflect the way that it is used. Our honed black granite will give a similar appearance from the outset but it is the wear with use that makes the limestone stand out and have its own unique character.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_xUrdp6"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Belgian Blue Limestone",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_pPa4GK": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Copper_-_Catalogue_1_0.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_YGbCcc": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_4CV3BX": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>The newest addition to our worktop options here at deVOL, 'Aged Copper', a wonderfully toned material, this worktop is suitable for glamorous or very understated kitchens due to its subtle and natural ageing. It is so exciting for us to be able to offer this new material and service, as it allows our customers even more choices of unique and extremely stylish options for their new kitchen. Copper has a long history of being used for worktops and has amazing inherent antibacterial properties, although we do not recommend food preparation directly on the copper as it can taint the taste of food. We also recommend that you don't cut directly onto copper as it is soft and will scratch. </p><p>deVOL's copper worktops are all bespoke and made to order to ensure a completely sealed unit, fabricated from 1/16\" thick copper and then hand-welded or soldered at the corners. We also offer an option with integral copper sink, giving a fully sealed surface that is beyond beautiful. We also create a very distinctive draining section for all copper worktops used around sink areas, a tactile arrangement of tiny raised domes created from hammering the underside of the copper.</p><p>Copper naturally tarnishes over time but to speed up this process, we age the surface. The ageing is done using products that are designed for human consumption, so there are no nasty chemicals on the surface. The finish on the copper is the copper oxide itself and, as would happen naturally, the oxide will change according to what comes into contact with it, either becoming darker and more highly figured or becoming brighter and polished. The patinated surface should not be considered as a finish, rather the natural character of the copper itself. The patina will be removed if anything abrasive is used on the surface but unlike a traditional finish, the patina will return over time and the surface will reflect the way that it is used.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_4CV3BX"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Bespoke Aged Copper",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_Bt9HAH": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Oak_-_Catalogue_1_0.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_c7D6Wh": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_Qcx9Ny": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>These solid 1 5/8\" thick oak worktops are all made here in our workshops. We use broad planks for a traditional look and each plank is biscuit jointed to create a really strong and solid worktop and finished with a high quality oil, which feeds and keeps the wood supple. Wood is beautifully warm and tactile and when it is looked after and oiled fairly regularly it will last a lifetime, but left to dry out it will begin to discolour and crack. So, if you love the natural beauty and tones of wood then, with a little care, it will reward you with an amazing patina that just gets better and better over time.</p><p>We recommend using the Rustic option (shown in the image) on islands and prep tables as it has a wonderful array of knots and grooves and natural patterning that gives it fascinating character. For areas around sinks and water we recommend the Classic finish which is less rugged, it has a smoother finish which repels water more efficiently.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_Qcx9Ny"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Oak (Classic or Rustic)",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_bw4CTa": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Sapele_-_Catalogue_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_zDkeUq": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_bFnBtf": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>This dark wood finish is new to our worktop range, a handmade sapele worktop that is stained and oiled to give a really rich deep colour and a high gloss finish.</p><p>This look is authentic and a little bit glamorous, it's a lovely change from stone and we think it works particularly well with our marble sinks, giving a really simple but special look. As with other woods, care is required on a fairly regular basis but its rewards are definitely worth it.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_bFnBtf"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Polished Sapele",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "sectionname": ""
+      }
+    },
+    "image_banner_AfxzMf": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Stave_-_Catalogue_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "catalogue_multicolumn_aCrNEt": {
+      "type": "catalogue-multicolumn",
+      "blocks": {
+        "column_iJMGR9": {
+          "type": "column",
+          "settings": {
+            "custom_text_hover": "",
+            "title": "",
+            "subtext": "",
+            "text": "<p>A premium hardwood worktop that comes in set sizes and is ready for cutting to fit on site by your installation team. The most popular option is stave oak, but sustainably sourced iroko worktops are also available, both great choices for our Shaker Kitchens. These worktops are not made by deVOL so they are a great option for people trying to be a little more economical.</p><p>They are high quality, durable, easy to fit and easy to live with and have an impressive track record of being exceptionally straight and unlikely to warp. We recommend these worktops for use in all areas of your kitchen and our only stipulation is to try and avoid locating your taps directly into the wood. We offer a stone tap insert which not only sorts the water problems out but it is a beautiful and functional feature that many customers choose to have.</p>",
+            "show_above_image": true,
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_iJMGR9"
+      ],
+      "custom_css": [
+        ".page-width {padding-top: 0;}",
+        ".multicolumn-list__item {margin-bottom: 17px;}",
+        ".rte {columns: 2; column-gap: 20px;}",
+        "@media (max-width: 768px) {.rte {columns: 1; column-gap: 0; }}",
+        ".multicolumn-list h3,.multicolumn-list p {margin: 0 0 1em;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Stave Hardwood Worktop",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "catalogue_title_with_richtext_BU9bBR",
+    "image_banner_c44JFt",
+    "catalogue_multicolumn_YBHtxc",
+    "image_banner_NCM498",
+    "catalogue_multicolumn_RKVqMG",
+    "image_banner_MNa8Dd",
+    "catalogue_multicolumn_irPCBk",
+    "image_banner_UdfrXr",
+    "catalogue_multicolumn_bVpfDi",
+    "image_banner_4hnjAF",
+    "catalogue_multicolumn_FHfnYf",
+    "image_banner_tEtKq3",
+    "catalogue_multicolumn_aNX4Nz",
+    "image_banner_pPa4GK",
+    "catalogue_multicolumn_YGbCcc",
+    "image_banner_Bt9HAH",
+    "catalogue_multicolumn_c7D6Wh",
+    "image_banner_bw4CTa",
+    "catalogue_multicolumn_zDkeUq",
+    "image_banner_AfxzMf",
+    "catalogue_multicolumn_aCrNEt"
+  ]
+}

@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
           setTimeout(() => updateParentAccordions(accordion), 350); // wait for 300ms transition + buffer
         } else {
           // Open accordion
-          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.maxHeight = content.scrollHeight + 30 + "px";
           header.setAttribute("open", "");
 
           // Wait for 300ms CSS transition to finish before reading scrollHeight
@@ -90,7 +90,7 @@ function updateParentAccordions(element) {
     while (parent) {
       if (parent.classList.contains("accordion__content")) {
         // Dynamically adjust the max-height to include new child content
-        parent.style.maxHeight = parent.scrollHeight + "px";
+        parent.style.maxHeight = parent.scrollHeight + 30 + "px";
       }
       parent = parent.parentElement;
     }
@@ -185,12 +185,13 @@ if (!staffRows.length) return;
 
             if (name) staffName.textContent = name;
             if (role) staffRole.textContent = role;
-            if (degree) staffDegree.textContent = degree;
+            staffDegree.textContent = degree || '';
             if (description) staffDescription.innerHTML = description;
             if (personImagesrc) staffImage.src = personImagesrc;
             if (personImagealt) staffImage.alt = personImagealt;
-            if (urlText) staffurl.textContent = urlText;
-            if (urlPath) staffurl.href = urlPath;
+            staffurl.textContent = urlText || urlPath || '';
+            staffurl.href = urlPath || '';
+            staffurl.hidden = !urlPath;
           
 
             staffDetail.classList.add("active");

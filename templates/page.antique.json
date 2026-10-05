@@ -31,6 +31,7 @@
       "blocks": {
         "collapsible_row_p4ypVC": {
           "type": "collapsible_row",
+          "disabled": true,
           "settings": {
             "heading": "Collapsible row",
             "sub_heading": "",
@@ -57,11 +58,95 @@
         "padding_bottom": 84,
         "sectionname": ""
       }
+    },
+    "project_multicolumns_x9fCMn": {
+      "type": "project-multicolumns",
+      "blocks": {
+        "column_yYfckn": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "real-shaker-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_kkKztG": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "classic-english-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_QLtrqX": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "heirloom-collection",
+            "custom_text_hover": ""
+          }
+        },
+        "column_pEdQ6e": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "haberdashers-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_G7HFdR": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "sebastian-cox-kitchen",
+            "custom_text_hover": ""
+          }
+        },
+        "column_Y3p3mj": {
+          "type": "column",
+          "settings": {
+            "dynamic_costs": "design-service",
+            "custom_text_hover": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_yYfckn",
+        "column_kkKztG",
+        "column_QLtrqX",
+        "column_pEdQ6e",
+        "column_G7HFdR",
+        "column_Y3p3mj"
+      ],
+      "custom_css": [
+        "@media screen and (min-width: 768px) {.page-width {max-width: 1600px; }}"
+      ],
+      "name": "Project multicolumn",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Our Kitchens",
+        "show_subtitle": true,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "show_hover_image": false,
+        "show_secondary_image_hover": false,
+        "show_hover_text": true,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "Button label",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 26,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
     }
   },
   "order": [
     "main",
     "page_metafield_gallery_Qr4Taj",
-    "page_metafield_content_BYdAMp"
+    "page_metafield_content_BYdAMp",
+    "project_multicolumns_x9fCMn"
   ]
 }

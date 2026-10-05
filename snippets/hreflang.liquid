@@ -1,0 +1,70 @@
+{%- comment -%}
+  hreflang for two separate Shopify stores (.co.uk + .com)
+
+  Optional per-item override: create a single-line text metafield
+  "custom.hreflang_alt" on products, collections, pages and articles.
+    - Leave empty  -> assumes the same handle exists on the other store
+    - Full URL     -> uses that URL for the other store (handles differ)
+    - "none"       -> item only exists on this store, so no tags are output
+{%- endcomment -%}
+
+{%- liquid
+  assign uk_base = 'https://test.devolkitchens.co.uk'
+  assign com_base = 'https://devol-kitchens-us.myshopify.com'
+
+  assign on_uk = false
+  if request.host contains '.co.uk'
+    assign on_uk = true
+  endif
+
+  assign skip = false
+  if request.page_type == 'search' or request.page_type == 'cart' or request.page_type == '404' or request.page_type == 'password' or request.page_type == 'gift_card'
+    assign skip = true
+  endif
+  if request.page_type contains 'customers'
+    assign skip = true
+  endif
+
+  assign alt = blank
+  case request.page_type
+    when 'product'
+      assign alt = product.metafields.custom.hreflang_alt.value
+    when 'collection'
+      assign alt = collection.metafields.custom.hreflang_alt.value
+    when 'page'
+      assign alt = page.metafields.custom.hreflang_alt.value
+    when 'article'
+      assign alt = article.metafields.custom.hreflang_alt.value
+  endcase
+
+  if alt == 'none'
+    assign skip = true
+  endif
+
+  assign uk_url = uk_base | append: request.path
+  assign com_url = com_base | append: request.path
+
+  if alt != blank and alt_check != 'none'
+    assign alt_url = alt
+    assign first_char = alt | slice: 0
+    if first_char == '/'
+      if on_uk
+        assign alt_url = com_base | append: alt
+      else
+        assign alt_url = uk_base | append: alt
+      endif
+    endif
+    if on_uk
+      assign com_url = alt_url
+    else
+      assign uk_url = alt_url
+    endif
+  endif
+-%}
+
+{%- unless skip -%}
+  <link rel="alternate" hreflang="en-gb" href="{{ uk_url }}">
+  <link rel="alternate" hreflang="en-us" href="{{ com_url }}">
+  <link rel="alternate" hreflang="en" href="{{ uk_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ uk_url }}">
+{%- endunless -%}

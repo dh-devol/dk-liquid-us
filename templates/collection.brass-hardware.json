@@ -1,1 +1,241 @@
-{"sections":{"metaobject_gallery_slider_CXL7db":{"type":"metaobject-gallery-slider","name":"Page Metaobject slideshow","settings":{"layout":"full_bleed","slide_height":"large","box_align":"bottom-left","text_alignment":"left","color_scheme":"scheme-80dfd562-a882-4b8a-9fc2-765a9c906881","slider_visual":"dots","auto_rotate":false,"change_slides_speed":5,"image_behavior":"none","show_text_below":true,"accessibility_info":"Slideshow about our brand"}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__inner {margin-bottom: 60px;}",".collection-hero__title {margin-bottom: 1em;}","@media screen and (min-width: 768px) {.collection-hero__description {max-width: 450px; }}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"scheme-2"}},"product-grid":{"type":"main-collection-product-grid","disabled":true,"settings":{"products_per_page":36,"columns_desktop":4,"color_scheme":"scheme-2","image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":false,"show_rating":false,"quick_add":"none","enable_filtering":false,"filter_type":"drawer","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"custom_product_list_mJJtHt":{"type":"custom-product-list","blocks":{"product_item_LtKgCy":{"type":"product_item","settings":{"product":"pull-handle-heirloom-brass-extra-large"}},"product_item_WpfxpA":{"type":"product_item","settings":{"product":"classic-handle-heirloom-brass"}},"product_item_6mN8Gk":{"type":"product_item","settings":{"product":"boho-handle-heirloom-brass"}},"product_item_FkkVYY":{"type":"product_item","settings":{"product":"georgian-swing-handle-heirloom-brass-large"}},"product_item_Knp9nY":{"type":"product_item","settings":{"product":"classic-knob-heirloom-brass-large"}},"product_item_3QEBBQ":{"type":"product_item","settings":{"product":"oval-knob-heirloom-brass-large"}},"product_item_YJLExd":{"type":"product_item","settings":{"product":"butlers-knob"}},"product_item_GmVTdT":{"type":"product_item","settings":{"product":"button-knob-heirloom-brass"}},"product_item_ayePrG":{"type":"product_item","settings":{"product":"butlers-ring-pull-heirloom-brass"}},"product_item_d8rt7J":{"type":"product_item","settings":{"product":"country-house-cup-handle"}},"product_item_Y3dWzk":{"type":"product_item","settings":{"product":"little-label-holder-heirloom-brass"}},"product_item_WAkmQA":{"type":"product_item","settings":{"product":"devol-classic-cupboard-catch-heirloom-brass"}},"product_item_PrWPtW":{"type":"product_item","settings":{"product":"rack-pinion-catch-heirloom-brass"}},"product_item_HkJE47":{"type":"product_item","settings":{"product":"brass-ventilation-grille-double-sided"}},"product_item_y8Jg7C":{"type":"product_item","settings":{"product":"vent-cover-aged-brass-large"}},"product_item_LGQXHf":{"type":"product_item","settings":{"product":"aged-brass-hanging-rail-22-2-brackets-5-hooks"}},"product_item_NdeqD7":{"type":"product_item","settings":{"product":"aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"}},"product_item_PkNfTH":{"type":"product_item","settings":{"product":"aged-brass-ionian-tap"}},"product_item_U7Y9RT":{"type":"product_item","settings":{"product":"aged-brass-mayan-taps"}},"product_item_TQVKge":{"type":"product_item","settings":{"product":"aged-brass-pot-filler-tap"}}},"block_order":["product_item_LtKgCy","product_item_WpfxpA","product_item_6mN8Gk","product_item_FkkVYY","product_item_Knp9nY","product_item_3QEBBQ","product_item_YJLExd","product_item_GmVTdT","product_item_ayePrG","product_item_d8rt7J","product_item_Y3dWzk","product_item_WAkmQA","product_item_PrWPtW","product_item_HkJE47","product_item_y8Jg7C","product_item_LGQXHf","product_item_NdeqD7","product_item_PkNfTH","product_item_U7Y9RT","product_item_TQVKge"],"custom_css":[],"name":"Custom product list","settings":{"title":"","heading_size":"hxl","subtitle":"","hide_subtitle":false,"image_width":"full","image_ratio":"portrait","columns_desktop":4,"column_alignment":"left","show_secondary_image":true,"background_style":"none","button_label":"","button_link":"","show_top_border":false,"show_bottom_border":false,"color_scheme":"scheme-2","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":0,"sectionname":""}}},"order":["metaobject_gallery_slider_CXL7db","banner","product-grid","custom_product_list_mJJtHt"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "metaobject_gallery_slider_CXL7db": {
+      "type": "metaobject-gallery-slider",
+      "name": "Page Metaobject slideshow",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "box_align": "bottom-left",
+        "text_alignment": "left",
+        "color_scheme": "scheme-80dfd562-a882-4b8a-9fc2-765a9c906881",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 450px; }}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 36,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "drawer",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_product_list_mJJtHt": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_LtKgCy": {
+          "type": "product_item",
+          "settings": {
+            "product": "pull-handle-heirloom-brass-extra-large"
+          }
+        },
+        "product_item_WpfxpA": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-handle-heirloom-brass"
+          }
+        },
+        "product_item_6mN8Gk": {
+          "type": "product_item",
+          "settings": {
+            "product": "boho-handle-heirloom-brass"
+          }
+        },
+        "product_item_FkkVYY": {
+          "type": "product_item",
+          "settings": {
+            "product": "georgian-swing-handle-heirloom-brass-large"
+          }
+        },
+        "product_item_Knp9nY": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-knob-heirloom-brass-large"
+          }
+        },
+        "product_item_3QEBBQ": {
+          "type": "product_item",
+          "settings": {
+            "product": "oval-knob-heirloom-brass-large"
+          }
+        },
+        "product_item_YJLExd": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-knob"
+          }
+        },
+        "product_item_GmVTdT": {
+          "type": "product_item",
+          "settings": {
+            "product": "button-knob-heirloom-brass"
+          }
+        },
+        "product_item_ayePrG": {
+          "type": "product_item",
+          "settings": {
+            "product": "butlers-ring-pull-heirloom-brass"
+          }
+        },
+        "product_item_d8rt7J": {
+          "type": "product_item",
+          "settings": {
+            "product": "country-house-cup-handle"
+          }
+        },
+        "product_item_Y3dWzk": {
+          "type": "product_item",
+          "settings": {
+            "product": "little-label-holder-heirloom-brass"
+          }
+        },
+        "product_item_WAkmQA": {
+          "type": "product_item",
+          "settings": {
+            "product": "devol-classic-cupboard-catch-heirloom-brass"
+          }
+        },
+        "product_item_PrWPtW": {
+          "type": "product_item",
+          "settings": {
+            "product": "rack-pinion-catch-heirloom-brass"
+          }
+        },
+        "product_item_HkJE47": {
+          "type": "product_item",
+          "settings": {
+            "product": "brass-ventilation-grille-double-sided"
+          }
+        },
+        "product_item_y8Jg7C": {
+          "type": "product_item",
+          "settings": {
+            "product": "vent-cover-aged-brass-large"
+          }
+        },
+        "product_item_LGQXHf": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-hanging-rail-22-2-brackets-5-hooks"
+          }
+        },
+        "product_item_NdeqD7": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"
+          }
+        },
+        "product_item_PkNfTH": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-ionian-tap"
+          }
+        },
+        "product_item_U7Y9RT": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-mayan-taps"
+          }
+        },
+        "product_item_TQVKge": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-pot-filler-tap"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_LtKgCy",
+        "product_item_WpfxpA",
+        "product_item_6mN8Gk",
+        "product_item_FkkVYY",
+        "product_item_Knp9nY",
+        "product_item_3QEBBQ",
+        "product_item_YJLExd",
+        "product_item_GmVTdT",
+        "product_item_ayePrG",
+        "product_item_d8rt7J",
+        "product_item_Y3dWzk",
+        "product_item_WAkmQA",
+        "product_item_PrWPtW",
+        "product_item_HkJE47",
+        "product_item_y8Jg7C",
+        "product_item_LGQXHf",
+        "product_item_NdeqD7",
+        "product_item_PkNfTH",
+        "product_item_U7Y9RT",
+        "product_item_TQVKge"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    }
+  },
+  "order": [
+    "metaobject_gallery_slider_CXL7db",
+    "banner",
+    "product-grid",
+    "custom_product_list_mJJtHt"
+  ]
+}

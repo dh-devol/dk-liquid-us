@@ -1,0 +1,47 @@
+{%- comment -%}
+  Renders lead time data for a product, accounting for backorder status.
+
+  Params:
+    product  - required, product object
+    variant  - required, variant to check inventory_policy against
+    quantity - optional, quantity being ordered/requested (default 1)
+    field    - optional: 'lead_time' (default), 'lead_time_days',
+               'is_backorder', or 'available'
+{%- endcomment -%}
+
+{%- assign lt_field = field | default: 'lead_time' -%}
+{%- assign lt_quantity = quantity | default: 1 -%}
+
+{%- case lt_field -%}
+  {%- when 'lead_time_days' -%}
+    {%- assign lt_primary = product.metafields.custom.lead_time_days.value -%}
+    {%- assign lt_secondary = product.metafields.custom.secondary_lead_time_days.value -%}
+  {%- else -%}
+    {%- assign lt_primary = product.metafields.custom.lead_time.value -%}
+    {%- assign lt_secondary = product.metafields.custom.secondary_lead_time.value -%}
+{%- endcase -%}
+
+{%- assign lt_total_inventory = 0 -%}
+{%- for lt_variant in product.variants -%}
+  {%- assign lt_total_inventory = lt_total_inventory | plus: lt_variant.inventory_quantity -%}
+{%- endfor -%}
+
+{%- assign lt_remaining_after_order = lt_total_inventory | minus: lt_quantity -%}
+
+{%- assign lt_use_secondary = false -%}
+{%- if variant.inventory_management == 'shopify'
+  and variant.inventory_policy == 'continue'
+  and lt_remaining_after_order < 0
+  and lt_secondary != blank
+-%}
+  {%- assign lt_use_secondary = true -%}
+{%- endif -%}
+
+{%- case lt_field -%}
+  {%- when 'is_backorder' -%}
+    {{ lt_use_secondary }}
+  {%- when 'available' -%}
+    {{ lt_total_inventory }}
+  {%- else -%}
+    {%- if lt_use_secondary -%}{{ lt_secondary }}{%- else -%}{{ lt_primary }}{%- endif -%}
+{%- endcase -%}

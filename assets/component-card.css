@@ -190,6 +190,10 @@
   text-align: left;
 }
 
+.card__content .card__heading {
+  font-weight: 400;
+}
+
 @media screen and (min-width: 990px) {
   .grid--6-col-desktop .card__content quick-add-bulk .quantity {
     width: auto;
@@ -569,6 +573,7 @@
     padding:0;
 }
 .collection-page .custom-product-list .card__heading {
+  font-weight: 400;
   margin-top: 0.5em;
 }
 .product-card-wrapper {
@@ -598,7 +603,8 @@
 }
 .product-page .related-section .related-products-grid .card__heading {
   margin-top: 0.5em;
-  font-size: 20px
+  font-size: 20px;
+  font-weight: 400;
 }
 .product-page .related-section .related-products-grid .card-wrapper .card__information .price {
     margin-top: 2px;

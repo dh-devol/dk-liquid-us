@@ -70,6 +70,9 @@
 .page-press-coverage .card__slider-gallery .swiper-button-prev{
   left:-30px;
 }
+  .page-press-coverage .swiper-button-next, .page-press-coverage .swiper-button-prev {
+    z-index: 1;
+  }
 
 #shopify-section-template--25460481589582__custom_card_slider_R9Farq .card__slider-gallery .card_swiper__slider-wrapper,
 #shopify-section-template--25460481589582__custom_card_slider_ighPbX .card__slider-gallery .card_swiper__slider-wrapper{

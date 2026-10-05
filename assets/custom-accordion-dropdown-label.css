@@ -1,0 +1,54 @@
+.select-switch .one-label {
+    margin: 0 0 10px;
+}
+.switch-dropdown-accordion {
+    background-color: inherit;
+    color: #898989;
+    cursor: pointer;
+    padding: 0 0 0.5rem;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-top: 0.55em;
+}
+.switch-dropdown-accordion span.dropdown-arrow {
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 8px solid #898989;
+    transition: 0.3s;
+    margin-top: 0.3em;
+    display: inline-block;
+}
+.switch-dropdown-accordion p {
+    display: inline;
+    font-family: var(--font-body-family);
+    font-size: 14.4px;
+    font-weight: 600;
+    padding-bottom: 0.35em;
+}
+.switch-dropdown-accordion p {
+    border-bottom: solid 1px rgba(0,0,0,0.2);
+}
+.switch-dropdown-accordion[open] p {
+    border-bottom: none;
+}
+.switch-dropdown-accordion[open] span.dropdown-arrow {
+    transform: rotate(180deg);
+}
+.switch-select[aria-expanded] {
+    margin: 10px 0;
+}
+.switch-dropdown-accordion[open] {
+    margin-bottom: 0;
+} 
+#custom-select-wrapper:has(.switch-select) {
+    margin-bottom: 1.25em;
+}
+#custom-select-wrapper:has(~ .mm-bundle) {
+    margin-bottom: -20px;
+}
+#custom-select-wrapper .switch-select[aria-expanded] > select {
+    margin: 0;
+}

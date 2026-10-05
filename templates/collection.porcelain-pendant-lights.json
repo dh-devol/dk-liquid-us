@@ -51,10 +51,10 @@
     },
     "banner": {
       "type": "main-collection-banner",
-      "disabled": true,
       "custom_css": [
         ".collection-hero__inner {margin-bottom: 60px;}",
-        ".collection-hero__title {margin-bottom: 1em;}"
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 380px; }}"
       ],
       "settings": {
         "show_collection_description": true,
@@ -108,6 +108,7 @@
         "heading_YX8HyE",
         "text_xzJXBF"
       ],
+      "disabled": true,
       "name": "Title with richtext",
       "settings": {
         "desktop_content_position": "center",
@@ -152,34 +153,22 @@
             "product": "porcelain-pendant-light-plain-skullcap-large"
           }
         },
-        "product_item_bmej4j": {
-          "type": "product_item",
-          "settings": {
-            "product": "porcelain-pendant-light-chattered-skullcap-large"
-          }
-        },
         "product_item_iNbFhR": {
           "type": "product_item",
           "settings": {
             "product": "porcelain-pendant-light-plain-skullcap-small"
           }
         },
+        "product_item_bmej4j": {
+          "type": "product_item",
+          "settings": {
+            "product": "porcelain-pendant-light-chattered-skullcap-large"
+          }
+        },
         "product_item_cY7CcH": {
           "type": "product_item",
           "settings": {
             "product": "porcelain-pendant-light-chattered-skullcap-small"
-          }
-        },
-        "product_item_GfyJHN": {
-          "type": "product_item",
-          "settings": {
-            "product": "porcelain-pendant-light-plain-rice-bowl"
-          }
-        },
-        "product_item_HXkmWj": {
-          "type": "product_item",
-          "settings": {
-            "product": "porcelain-pendant-light-chattered-rice-bowl"
           }
         },
         "product_item_LPd8jn": {
@@ -194,16 +183,16 @@
             "product": "porcelain-pendant-light-chattered-beaker-large"
           }
         },
-        "product_item_HRjEdb": {
+        "product_item_GfyJHN": {
           "type": "product_item",
           "settings": {
-            "product": "porcelain-pendant-light-plain-beaker-small"
+            "product": "porcelain-pendant-light-plain-rice-bowl"
           }
         },
-        "product_item_xmCqCA": {
+        "product_item_HXkmWj": {
           "type": "product_item",
           "settings": {
-            "product": "porcelain-pendant-light-chattered-beaker-small"
+            "product": "porcelain-pendant-light-chattered-rice-bowl"
           }
         }
       },
@@ -213,15 +202,13 @@
         "product_item_3pQPDC",
         "product_item_LWREdR",
         "product_item_B6Krd6",
-        "product_item_bmej4j",
         "product_item_iNbFhR",
+        "product_item_bmej4j",
         "product_item_cY7CcH",
-        "product_item_GfyJHN",
-        "product_item_HXkmWj",
         "product_item_LPd8jn",
         "product_item_zaexiT",
-        "product_item_HRjEdb",
-        "product_item_xmCqCA"
+        "product_item_GfyJHN",
+        "product_item_HXkmWj"
       ],
       "custom_css": [
         "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
@@ -231,9 +218,10 @@
         "title": "",
         "heading_size": "hxl",
         "subtitle": "",
+        "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "columns_desktop": 4,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
@@ -297,6 +285,7 @@
         "product_item_bJWfRC",
         "product_item_8784At"
       ],
+      "disabled": true,
       "custom_css": [
         "@media (max-width: 590px) {.custom-product-list {padding-top: 36px; padding-bottom: 54px; }}"
       ],
@@ -305,9 +294,10 @@
         "title": "",
         "heading_size": "hxl",
         "subtitle": "More Pendant Lights",
+        "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",

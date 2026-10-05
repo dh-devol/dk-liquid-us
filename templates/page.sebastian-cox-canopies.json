@@ -41,7 +41,7 @@
         "border_bottom": false,
         "image_ratio": "adapt",
         "custom_image_padding_bottom": 50,
-        "hide_price": true,
+        "hide_price": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,

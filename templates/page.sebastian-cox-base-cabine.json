@@ -20,8 +20,9 @@
     "catalogue_products_entWrK": {
       "type": "catalogue-products",
       "custom_css": [
-        ".page-width {padding-bottom: 42px;}",
-        "@media (max-width: 768px) {.page-width {padding-bottom: 36px; padding-top: 4px; }}"
+        ".catalogue-text-content {padding-bottom: 0;}",
+        ".multicolumn-list {justify-content: left;}",
+        ".catalogue-text-content {padding-bottom: 24px;}"
       ],
       "name": "Catalogue products",
       "settings": {

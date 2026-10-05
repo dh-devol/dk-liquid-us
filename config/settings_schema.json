@@ -1534,6 +1534,13 @@
         "info": "Products with this product type are grouped as flooring in the cart"
       },
       {
+        "type": "richtext",
+        "id": "international_oos_text",
+        "label": "International out of stock message",
+        "default": "<p>This product is not available in your region. Please send an email to <a href=\"mailto:websales@devolkitchens.com\">websales@devolkitchens.com</a> if you are interested in placing an order.</p>",
+        "info": "Shown on Flooring products to visitors outside the UK and US, where the product is not available to purchase"
+      },
+      {
         "type": "text",
         "id": "flooring_support_product_type",
         "label": "Flooring support product type",

@@ -21,6 +21,9 @@
 .contact-form-with-details h2.title {
     margin-bottom: 22px;
 }
+.contact-form-with-details .contact p {
+    margin-bottom: 10px;
+}
 .contact-form-with-details .contact__fields {
     display: flex;
     flex-direction: column;

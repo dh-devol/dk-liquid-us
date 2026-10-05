@@ -99,11 +99,14 @@
     text-align: left;
     font-size: 28px;
   }
+    .collection-hero .collection-hero__text-wrapper .collection-hero__title {
+    margin-top: -5px !important;
+}
   .collection-page .collection-hero .collection-hero__description .mainTitle {
     text-align: left;
   }
   .collection-page .collection-hero .collection-hero__inner .collection-hero__text-wrapper .collection-hero__description.rte {
-    margin-bottom: -18px;
+    margin-bottom: -8px;
   }
   .collection-page .custom-product-list .multicolumn-list {
     row-gap: 22px;
@@ -115,6 +118,7 @@
     max-width: 100%;
     text-align: left;
     margin: 0;
+    width: 90%;
   }
   /* custom css for collection page */
 }

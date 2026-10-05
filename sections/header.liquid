@@ -82,9 +82,11 @@
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .nav-container {
-    /*height: 50px;*/
-    grid-area: navigation;
+  @media screen and (min-width: 990px) {
+    .nav-container {
+      height: 48px;
+      grid-area: navigation;
+    }
   }
 
   .header-sticky-nav {
@@ -302,7 +304,7 @@
           {%- liquid
             assign display_count = 0
             for item in cart.items
-              if item.properties["_bundle_child"] == "true" or item.properties["_Added as add-on"] == "true"
+              if item.properties["_group_id"] and item.properties["_Added as add-on"] == "true"
                 assign display_count = display_count | plus: 0
               elsif item.product.metafields.custom.unit_area_m2 != blank
                 assign display_count = display_count | plus: 1
@@ -382,7 +384,7 @@
 
     createObserver() {
       let observer = new IntersectionObserver((entries, observer) => {
-        console.log(entries);
+        // console.log(entries);
         this.headerBounds = entries[0].intersectionRect;
         observer.disconnect();
       });
@@ -402,7 +404,7 @@
       }
 
       if (this.predictiveSearch && this.predictiveSearch.isOpen) return;
-      console.log(this.headerBounds);
+      // console.log(this.headerBounds);
       if (scrollTop > this.currentScrollTop && scrollTop > (this.headerBounds.bottom - this.headerBounds.height)) {
         this.headerInlineMenu.classList.add('sticky');
       }

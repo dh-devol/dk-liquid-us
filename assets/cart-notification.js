@@ -31,7 +31,8 @@ class CartNotification extends HTMLElement {
    */
   renderContents(parsedState) {
     /* 1. Update popup message */
-    const title = parsedState?.items?.[0]?.title || parsedState?.product_title || 'Product';
+    const item = parsedState?.items?.[0] || parsedState;
+    const title = item?.title || parsedState?.product_title || 'Product';
     const messageEl = this.notification.querySelector('.added-message');
     if (messageEl) messageEl.textContent = `${title} has been added to your basket.`;
   
@@ -49,7 +50,56 @@ class CartNotification extends HTMLElement {
     });
   
     /* 3. Show popup */
+    this.updateBackorderMessage(item);
     this.open();
+  }
+
+  updateBackorderMessage(item) {
+    if (!item) return;
+
+    const dataEl = document.getElementById('lead-time-calc-data');
+    if (!dataEl) return;
+
+    const available = parseInt(dataEl.getAttribute('data-available'), 10) || 0;
+    const inventoryPolicy = dataEl.getAttribute('data-inventory-policy');
+    const inventoryManagement = dataEl.getAttribute('data-inventory-management');
+    const secondaryText = dataEl.getAttribute('data-secondary-text');
+
+    if (inventoryManagement !== 'shopify' || inventoryPolicy !== 'continue' || !secondaryText) {
+      return;
+    }
+    if (available <= 0) return;
+
+    fetch('/cart.js')
+      .then((r) => r.json())
+      .then((cart) => {
+        const totalQuantity = (cart.items || [])
+          .filter((line) => line.variant_id === item.variant_id)
+          .reduce((sum, line) => sum + line.quantity, 0);
+
+        const isBackorder = (available - totalQuantity) < 0;
+        if (!isBackorder) return;
+
+        const title = item.title || 'Product';
+        const messageEl = document.querySelector('.added-message');
+        const notification = document.querySelector('.cart-notification');
+        if (!messageEl) return;
+
+        messageEl.textContent = '';
+        if (notification) notification.classList.add('secondary-message');
+
+        const line1 = document.createElement('p');
+        line1.textContent = `${title} has been added to your basket.`;
+
+        const line2 = document.createElement('p');
+        line2.append(`The quantity you have added will take longer to arrive: ${secondaryText}.`);
+
+        const line3 = document.createElement('p');
+        line3.append(`If you would like your items sooner, you can purchase up to ${available} with the original lead time.`);
+
+        messageEl.append(line1, line2, line3);
+      })
+      .catch(() => { /* silent */ });
   }
 
   /**

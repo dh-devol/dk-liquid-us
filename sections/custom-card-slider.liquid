@@ -31,80 +31,81 @@
      <div class="swiper mySwiper mySwiper-{{ section.id }}">
 
       {% assign online_features = metaobjects.press_online_features.values %}
-
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const onlineFeatures = [
-            {% for feature in online_features %}
-              {
-                title: {{ feature.title | json }},
-                url: "{{ feature.url }}",
-                date: {{ feature.date | json }},
-                sort_by_date: "{{ feature.sort_by_date }}",
-                image: {{ feature.image | image_url | json }}
-              }{% unless forloop.last %},{% endunless %}
-            {% endfor %}
-          ];
-          
-          function formatDateAsMonthYear(dateString) {
-            const date = new Date(dateString);
-            const options = { year: 'numeric', month: 'long' };
-            return date.toLocaleDateString('en-US', options);
-          }
-          
-          onlineFeatures.sort((a, b) => 
-            new Date(b.sort_by_date) - new Date(a.sort_by_date)
-          );
-
-          const swiperWrapper = document.querySelector('.card__slider-gallery .swiper-wrapper.custom-swiper-wrapper');
-          
-          if (!swiperWrapper) {
-            console.error('Swiper wrapper not found');
-            return;
-          }
-
-          onlineFeatures.forEach(feature => {
-            console.log(feature);
-
-            const slide = document.createElement('div');
-            slide.classList.add('swiper-slide', 'slide__content');
+      {% paginate online_features by 250 %}
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const onlineFeatures = [
+              {% for feature in online_features %}
+                {
+                  title: {{ feature.title | json }},
+                  url: "{{ feature.url }}",
+                  date: {{ feature.date | json }},
+                  sort_by_date: "{{ feature.sort_by_date }}",
+                  image: {{ feature.image | image_url | json }}
+                }{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ];
             
-            const formattedDate = feature.sort_by_date ? formatDateAsMonthYear(feature.sort_by_date) : feature.date;
+            function formatDateAsMonthYear(dateString) {
+              const date = new Date(dateString);
+              const options = { year: 'numeric', month: 'long' };
+              return date.toLocaleDateString('en-US', options);
+            }
+            
+            onlineFeatures.sort((a, b) => 
+              new Date(b.sort_by_date) - new Date(a.sort_by_date)
+            );
 
-            slide.innerHTML = `
-              ${feature.title ? `
-                <h4 class="h1 w-five">
-                  ${feature.url 
-                    ? `<a href="${feature.url}" target="_blank">${feature.title}</a>` 
-                    : feature.title}
-                </h4>
-              ` : ''}
+            const swiperWrapper = document.querySelector('.card__slider-gallery .swiper-wrapper.custom-swiper-wrapper');
+            
+            if (!swiperWrapper) {
+              console.error('Swiper wrapper not found');
+              return;
+            }
 
-              ${feature.image ? `
-                <a href="${feature.url || '#'}" 
-                  class="card__image-wrapper" 
-                  target="_blank">
-                  <img 
-                    src="${feature.image}" 
-                    class="card__image"
-                    alt="${feature.title || ''}"
-                    height="100%" 
-                    width="100%"
-                  >
-                </a>
-              ` : ''}
+            onlineFeatures.forEach(feature => {
+              {% comment %} console.log(feature); {% endcomment %}
 
-              ${formattedDate ? `
-                <div class="card__text w-five">
-                  ${formattedDate}
-                </div>
-              ` : ''}
-            `;
+              const slide = document.createElement('div');
+              slide.classList.add('swiper-slide', 'slide__content');
+              
+              const formattedDate = feature.sort_by_date ? formatDateAsMonthYear(feature.sort_by_date) : feature.date;
 
-            swiperWrapper.appendChild(slide);
+              slide.innerHTML = `
+                ${feature.title ? `
+                  <h4 class="h1 w-five">
+                    ${feature.url 
+                      ? `<a href="${feature.url}" target="_blank">${feature.title}</a>` 
+                      : feature.title}
+                  </h4>
+                ` : ''}
+
+                ${feature.image ? `
+                  <a href="${feature.url || '#'}" 
+                    class="card__image-wrapper" 
+                    target="_blank">
+                    <img 
+                      src="${feature.image}" 
+                      class="card__image"
+                      alt="${feature.title || ''}"
+                      height="100%" 
+                      width="100%"
+                    >
+                  </a>
+                ` : ''}
+
+                ${formattedDate ? `
+                  <div class="card__text w-five">
+                    ${formattedDate}
+                  </div>
+                ` : ''}
+              `;
+
+              swiperWrapper.appendChild(slide);
+            });
           });
-        });
-      </script>
+        </script>
+      {% endpaginate %}
 
       {% if online_features != blank %}
         <div class="swiper-wrapper custom-swiper-wrapper">

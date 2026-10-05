@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -20,6 +29,7 @@
         "desktop_content_position": "left",
         "content_alignment": "left",
         "color_scheme": "scheme-2",
+        "custom_class": "",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_left": 0,
@@ -35,7 +45,7 @@
             "custom_text_hover": "",
             "title": "",
             "subtext": "",
-            "text": "<p>A selection of full height cupboards that come fully constructed and hand-painted. These cupboards can be used as pantries or to house appliances like integrated fridge/freezers, ovens, washer/dryers or American-style fridge/freezers. Every appliance is different so many often require bespoke cabinets. End panels, priced at \u00a3500 each, are required for any exposed sides.</p>",
+            "text": "<p>A selection of full height cupboards that come fully constructed and hand-painted. These cupboards can be used as pantries or to house appliances like integrated fridge/freezers, ovens, washer/dryers or American-style fridge/freezers. Every appliance is different so many often require bespoke cabinets. End panels, priced at £500 each, are required for any exposed sides.</p>",
             "show_above_image": true,
             "link_label": "",
             "link": ""
@@ -64,7 +74,7 @@
         ".catalogue__multicolumn {padding-bottom: 0;}",
         ".multicolumn-list__item {margin-bottom: 21px;}",
         "@media screen and (max-width: 768px) {.multicolumn-list {flex-direction: column; row-gap: 0; margin-bottom: 43px; } .multicolumn-list__item {margin-bottom: 0px; max-width: 90%; } .description_above--image {margin-bottom: 0; }}",
-        "@media (min-width:769px){.description_above--image p{column-count: 2; }}",
+        "@media (min-width: 769px) {.description_above--image p {column-count: 2; }}",
         "@media screen and (max-width: 750px) {.page-width {padding-top: 13px; }}"
       ],
       "settings": {
@@ -112,7 +122,7 @@
         "border_bottom": false,
         "image_ratio": "adapt",
         "custom_image_padding_bottom": 50,
-        "hide_price": true,
+        "hide_price": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 0,

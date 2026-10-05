@@ -23,7 +23,7 @@
         "blog_slider_WyXyiB": {
           "type": "blog_slider",
           "settings": {
-            "article": "front-page-kitchens/why-everyone-wants-a-pantry",
+            "article": "devol-journal/devols-la-showroom-is-now-open",
             "show_date": true,
             "show_author": true,
             "show_title": true
@@ -32,7 +32,7 @@
         "blog_slider_CgFUki": {
           "type": "blog_slider",
           "settings": {
-            "article": "front-page-kitchens/do-i-need-a-kitchen-island",
+            "article": "devol-journal/getting-to-know-bovina-farm-and-fermentory",
             "show_date": true,
             "show_author": true,
             "show_title": true
@@ -41,7 +41,7 @@
         "blog_slider_GH4N4X": {
           "type": "blog_slider",
           "settings": {
-            "article": "design-make-front-page/the-best-bathroom-washstand-chosen-by-industry-experts",
+            "article": "devol-journal/get-to-know-devols-creative-director-helen-parker",
             "show_date": true,
             "show_author": true,
             "show_title": true
@@ -50,14 +50,14 @@
         "blog_78NHyk": {
           "type": "blog",
           "settings": {
-            "blog": "front-page-kitchens"
+            "blog": "devol-journal"
           }
         },
         "brand_info_DdkKrH": {
           "type": "brand_info",
           "settings": {
             "title": "",
-            "image": "shopify://shop_images/devol-journal.svg",
+            "image": "shopify://shop_images/devol-journal_a54d97d4-acde-4214-a387-4a4dbc47c01f.svg",
             "text": "<p>Welcome to our journal. Here you’ll find a rich collection of short stories, design tips and curious bits of insight and inspiration - all photographed and put together by our team of designers and makers.</p><p>We hope that you enjoy exploring our vast archive of entries and continue to keep up to date with our ever-growing new content.</p>",
             "show_social": true
           }
