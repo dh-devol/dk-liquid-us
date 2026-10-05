@@ -638,6 +638,11 @@ margin-bottom:0px !important
               margin-bottom:0px;
     }
 }
+@media screen and (max-width:750px){
+  .subtitle__wrapper{
+    padding-top:36px;
+  }
+}
 @media screen and (max-width:460px){
     .home-page .title-wrapper-with-link .title.inline-richtext {
     margin: 0 auto;
