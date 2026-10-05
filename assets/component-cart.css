@@ -906,6 +906,9 @@ flatpickr-months .flatpickr-prev-month:hover svg,
   .page-title-description:not(.catalogues__page-wrapper .page-title-description) {
     margin-top: 0;
 }
+  #main-cart-footer .delivery__text {
+    display: none;
+  }
 
 }
 @media (max-width:430px){
