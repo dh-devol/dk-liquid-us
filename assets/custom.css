@@ -566,7 +566,7 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 }
 .header.header--top-center .mega-menu__list {
     padding: 40px 32px 40px 44px;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 }
 .header.header--top-center .mega-menu__list ul{
   padding-top:8px;
