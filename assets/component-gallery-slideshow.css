@@ -279,7 +279,7 @@ slideshow-component.gallery-slideshow:not([data-gallery-ready="true"]) .slidesho
 }
   .gallery-slideshow .slideshow__text.banner__box {
     justify-content: flex-end;
-    max-width: 70%;
+    max-width: 85%;
     text-align: start;
     align-items: flex-start;
     padding-bottom: 5px;
