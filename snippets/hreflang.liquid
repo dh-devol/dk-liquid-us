@@ -44,11 +44,20 @@
   assign uk_url = uk_base | append: request.path
   assign com_url = com_base | append: request.path
 
-  if alt != blank and alt != 'none'
+  if alt != blank and alt_check != 'none'
+    assign alt_url = alt
+    assign first_char = alt | slice: 0
+    if first_char == '/'
+      if on_uk
+        assign alt_url = com_base | append: alt
+      else
+        assign alt_url = uk_base | append: alt
+      endif
+    endif
     if on_uk
-      assign com_url = alt
+      assign com_url = alt_url
     else
-      assign uk_url = alt
+      assign uk_url = alt_url
     endif
   endif
 -%}
