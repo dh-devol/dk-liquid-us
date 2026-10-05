@@ -107,7 +107,7 @@ form:has(.form-success-container:not(:empty)) .contact__fields, form:has(.form-s
 
 @media screen and (max-width:991px){
   .contact-form-with-details .page-width {
-    max-width: 100%;
+    max-width: 88%;
     padding-left: 0;
     padding-right: 0;
 }
