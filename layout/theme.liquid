@@ -654,5 +654,55 @@
         });
       })();
     </script> {% endcomment %}
+
+    
+        <script>
+      (() => {
+        const sectionSelector = '[id$="__custom_contact_accessory_8i6CKa"]';
+        const marker = 'data-devol-form-width-fix';
+        const css = `@media screen and (max-width: 490px) {
+          [data-testid="app-router"] {
+            justify-content: stretch !important;
+          }
+        }`;
+        let timer;
+
+        function inspect(root) {
+          if (root instanceof ShadowRoot &&
+              root.querySelector('[data-testid="app-router"]') &&
+              !root.querySelector(`style[${marker}]`)) {
+            const style = document.createElement('style');
+            style.setAttribute(marker, '');
+            style.textContent = css;
+            root.appendChild(style);
+          }
+          root.querySelectorAll('*').forEach(element => {
+            if (element.shadowRoot) inspect(element.shadowRoot);
+          });
+        }
+
+        function start() {
+          clearInterval(timer);
+          let attempts = 0;
+          const apply = () => {
+            const section = document.querySelector(sectionSelector);
+            if (section) inspect(section);
+            if (++attempts >= 120) clearInterval(timer);
+          };
+          timer = setInterval(apply, 500);
+          apply();
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', start, { once: true });
+        } else {
+          start();
+        }
+
+        document.addEventListener('shopify:section:load', start);
+      })();
+    </script>
+
+    
   </body>
 </html>
