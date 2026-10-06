@@ -640,7 +640,7 @@ margin-bottom:0px !important
 }
 @media screen and (max-width:750px){
   .subtitle__wrapper{
-    padding-top:36px;
+    /*padding-top:36px;*/
   }
 }
 @media screen and (max-width:460px){
