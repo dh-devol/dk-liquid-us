@@ -706,7 +706,7 @@
           {%- endif -%}
           <quantity-input class="quantity cart-quantity">
             
-            <button class="quantity__button" name="minus" type="button">
+            <button class="quantity__button" name="minus" type="button" {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}>
               <span class="visually-hidden">
                 {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
               </span>
@@ -748,9 +748,10 @@
               id="Quantity-{{ item.index | plus: 1 }}"
               data-index="{{ item.index | plus: 1 }}"
               data-group-id="{{ item.properties._group_id }}"
+              {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}
             >
 
-            <button class="quantity__button" name="plus" type="button">
+            <button class="quantity__button" name="plus" type="button" {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}>
               <span class="visually-hidden">
                 {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
               </span>
