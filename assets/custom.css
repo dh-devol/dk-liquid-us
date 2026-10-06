@@ -1767,7 +1767,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
     margin:0 auto;
   }
   .product-page .related-section .related-title{
-    padding-top: 20px;
+    /*padding-top: 20px;*/
   }
 }
 
