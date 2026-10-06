@@ -659,9 +659,9 @@ cart-remove-button .icon-remove {
     .cart_page-container .cart-item__totals {
         gap: 5px;
     }
-        .cart_page-container .quantity {
+        /* .cart_page-container .quantity {
         width: 65px;
-    }
+    } */
         .cart_page-container .cart-item__media {
         width: 9rem !important;
     }
