@@ -51,7 +51,6 @@
         "slide_tcYaQz": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Bath-Showroom-Green-Room-62_1.jpg",
             "mobile_image": "shopify://shop_images/Bath-Showroom-Green-Room-47-1800x2700.jpg",
             "desktop_focal_point": 60,
             "mobile_focal_point": 100,
@@ -92,7 +91,6 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Harborough_House-72_0.jpg",
-            "mobile_image": "shopify://shop_images/Harborough_House-141.jpg",
             "desktop_focal_point": 60,
             "mobile_focal_point": 100,
             "heading": "The Heirloom Collection in",
@@ -198,7 +196,8 @@
       "type": "catalogue-title-with-richtext",
       "custom_css": [
         ".page-title-description {margin-bottom: 24px;}",
-        "@media screen and (min-width: 768px) {.page-title-description p {max-width: 480px; }}"
+        "@media screen and (min-width: 768px) {.page-title-description p {max-width: 480px; }}",
+        "@media screen and (max-width: 767px) {.page-title-description {margin-bottom: 12px; }}"
       ],
       "name": "Page information",
       "settings": {
