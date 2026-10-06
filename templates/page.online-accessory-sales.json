@@ -30,7 +30,7 @@
         "text_i3rmXj": {
           "type": "text",
           "settings": {
-            "text": "<p>If you have any questions about our accessories or ordering online please visit our <a href=\"/pages/ordering-online\" title=\"Ordering online\">Shop Support</a> pages for helpful FAQs. Or if you wish to speak directly to our customer services team, please get in contact via one of the following methods:</p>"
+            "text": "<p>If you have any questions about our accessories or ordering online please visit our&nbsp;<a href=\"/pages/ordering-online\" title=\"Ordering online\">Shop Support</a>&nbsp;pages for helpful FAQs. Or if you wish to speak directly to our customer services team, please get in contact via one of the following methods:</p>"
           }
         }
       },
@@ -40,7 +40,7 @@
       ],
       "custom_css": [
         "@media (max-width: 590px) {.rich-text__text.rte.scroll-trigger.animate--slide-in {width: 100%; }}",
-        "@media screen and (max-width: 991px) {.title-with-rich-text .rich-text__wrapper {max-width: 88%; }}",
+        "@media screen and (max-width: 767px) {.title-with-rich-text .rich-text__wrapper {max-width: 88%; }}",
         ".rte a {color: #898989 !important; text-decoration: underline;}"
       ],
       "settings": {
