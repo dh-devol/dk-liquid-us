@@ -654,6 +654,95 @@
         });
       })();
     </script> {% endcomment %}
+    <script>
+      // stoq app - intercept popup when preorder limit reached
+      (function () {
+        var ID = 'restock-rocket-preorder-container';
+        var lastProductSubmit = 0;
+
+        // Remember when an add-to-cart was submitted from a product form
+        document.addEventListener('submit', function (e) {
+          if (e.target.closest && e.target.closest('product-form')) {
+            lastProductSubmit = Date.now();
+          }
+        }, true);
+
+        var holdObserver = null;
+
+        // Your own message UI - replace with your theme's toast/modal
+        function showMyMessage(text) {
+          var popup = document.getElementById('cart-popup-container');
+          if (!popup) return;
+
+          function apply() {
+            var popupDiv = popup.querySelector('#cart-notification');
+            var target = popup.querySelector('.added-message') || popup;
+
+            if (target.textContent.trim() !== text) target.textContent = text;
+            if (popup.style.display !== 'block') popup.style.display = 'block';
+            if (popup.hasAttribute('hidden')) popup.removeAttribute('hidden');
+            if (!popup.classList.contains('show')) popup.classList.add('show');
+            if (popupDiv) {
+              if (!popupDiv.classList.contains('animate')) popupDiv.classList.add('animate');
+              if (!popupDiv.classList.contains('active')) popupDiv.classList.add('active');
+            }
+            if (popup.getAttribute('aria-hidden') !== 'false') popup.setAttribute('aria-hidden', 'false');
+          }
+          apply();
+          if (holdObserver) holdObserver.disconnect();
+          holdObserver = new MutationObserver(apply);
+          holdObserver.observe(popup, {
+            childList: true, subtree: true, characterData: true, attributes: true
+          });
+          setTimeout(function () {
+            if (holdObserver) holdObserver.disconnect();
+          }, 6000);
+        }
+
+        // Hide Stoq's modal the moment it is inserted (avoids a flash)
+        new MutationObserver(function (mutations) {
+          mutations.forEach(function (m) {
+            m.addedNodes.forEach(function (n) {
+              if (n.id === ID) {
+                n.style.visibility = 'hidden';
+                setTimeout(function () { n.style.visibility = ''; }, 800); // safety net
+              }
+            });
+          });
+        }).observe(document.body, { childList: true });
+
+        // Once the modal opens, check whether it is the limit error
+        window.addEventListener('stoq:preorder-modal:opened', function () {
+          var tries = 0;
+
+          (function check() {
+            var box = document.getElementById(ID);
+            if (!box) return;
+
+            var banner = box.querySelector('.preorder-error-banner');
+            var text = banner ? banner.textContent.trim() : '';
+            var match = text.match(/^You can only preorder (\d+) unit/);
+            var none = text === 'No units available for preorder';
+
+            if (match || none) {
+              var left = match ? parseInt(match[1], 10) : 0;
+
+              showMyMessage(left > 0
+                ? "Sorry, we're unable to add this quantity to your basket; we have " + left + " available to order at this time. Please contact our customer service team for more information about availability."
+                : "Sorry, this item is no longer available for order."
+              );
+
+              var cancel = box.querySelector('#preorder-reject-button');
+              if (cancel) cancel.click();
+              return;
+            }
+
+            if (++tries < 6) { setTimeout(check, 50); return; }
+            box.style.visibility = '';   // no limit error: show the normal modal
+          })();
+        });
+      })();
+    </script>
 
     
         <script>
