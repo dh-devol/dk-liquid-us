@@ -275,7 +275,7 @@
         "button_label": "",
         "button_link": "shopify://collections/switches-sockets-heirloom-brass",
         "show_top_border": false,
-        "show_bottom_border": true,
+        "show_bottom_border": false,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
