@@ -259,7 +259,7 @@
         {%- endif -%} {% endcomment %}
       </dl>
       {% comment %} Fallback {%- assign item_lead_time_days = item_product_lead_time_days | default: item.properties["_lead_time_days"] -%} {% endcomment %}
-      <p class="product-option">{{ item.selling_plan_allocation.selling_plan.name }}</p>
+      <p class="product-option" style="display: none;">{{ item.selling_plan_allocation.selling_plan.name }}</p>
       {%- comment -%}
         Render related add-on line items that reference this product via properties.group_id
         Add-ons are identified by properties['Added as add-on'] == 'true' and properties.group_id == item.product_id
@@ -706,7 +706,7 @@
           {%- endif -%}
           <quantity-input class="quantity cart-quantity">
             
-            <button class="quantity__button" name="minus" type="button">
+            <button class="quantity__button" name="minus" type="button" {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}>
               <span class="visually-hidden">
                 {{- 'products.product.quantity.decrease' | t: product: item.product.title | escape -}}
               </span>
@@ -748,9 +748,10 @@
               id="Quantity-{{ item.index | plus: 1 }}"
               data-index="{{ item.index | plus: 1 }}"
               data-group-id="{{ item.properties._group_id }}"
+              {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}
             >
 
-            <button class="quantity__button" name="plus" type="button">
+            <button class="quantity__button" name="plus" type="button" {% if item.properties['_disable_qty'] == 'true' %}disabled{% endif %}>
               <span class="visually-hidden">
                 {{- 'products.product.quantity.increase' | t: product: item.product.title | escape -}}
               </span>
