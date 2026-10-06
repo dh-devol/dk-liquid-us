@@ -1811,6 +1811,11 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
     border-right: 1px solid #9f9f9f4d;
   }
 }
+@media screen and (min-width:750px){
+.kitchen .sub-heading.hxl{
+  margin-top: 2px;
+}
+}
 
 .showroom__title {
   margin: 0.8em auto 1.4em;
@@ -1883,7 +1888,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
     margin-bottom: 3em;
 }
 .kitchen .sub-heading.hxl{
-  margin-top: 2px;
+  /*margin-top: 2px;*/
 }
 .kitchen .multicolumn-list__item {
   margin-bottom:2em;
