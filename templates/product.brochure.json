@@ -16,6 +16,7 @@
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "not_for_sale_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order.</p>",
+        "out_of_stock_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order for delivery outside of the US.</p>",
         "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -51,6 +52,9 @@
     },
     "brochure_buy_button": {
       "type": "brochure-product-form",
+      "custom_css": [
+        ".button,.button-label,.shopify-challenge__button,.customer button {letter-spacing: 0;}"
+      ],
       "settings": {
         "heading_prefix": "Order your printed brochure",
         "subtext": "Free delivery to US  |  $35 delivery to Canada",
