@@ -183,7 +183,7 @@ a {
 #MainContent.page-letters-from-devol {
   padding-bottom: 0;
 }
-main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enquiries {
+main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enquiries, main.default-template {
   padding-bottom: 0 !important;
 }
 

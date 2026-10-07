@@ -435,7 +435,7 @@
     {% sections 'header-group' %}
     <div id="cart-popup-container" style="display: none;"></div>
 
-    <main id="MainContent" class="{% if template.name contains 'cart' %}{% if cart == empty %}is-empty{% endif %}{% endif %} page-{{ page.handle }} {{ template.name }}--page content-for-layout focus-none" role="main" tabindex="-1">
+    <main id="MainContent" class="{% if template.name contains 'cart' %}{% if cart == empty %}is-empty{% endif %}{% endif %} page-{{ page.handle }} {{ template.name }}--page content-for-layout focus-none {% if template.name == 'product' and template.suffix == blank %}default-template{% endif %}" role="main" tabindex="-1">
       {% if page.metafields.custom.catalogue_detail != blank %}
         <div class="catalogues__page-wrapper page-width">
           <div class="catalogue__list-wrapper">
