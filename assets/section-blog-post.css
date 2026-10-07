@@ -205,6 +205,10 @@
   margin-top: 5px;
   margin-bottom: 35px;
 }
+.article-template .rte a{
+  text-decoration: underline;
+  color: #898989;
+}
 .article-template .rte img{
   margin: 0.5em 0;
   width: 100%;
