@@ -205,8 +205,8 @@
   margin-top: 5px;
   margin-bottom: 35px;
 }
-.article-template .article-template__content .rte a{
-  text-decoration: underline;
+.article-template .rte a{
+  text-decoration: underline !important;
   color: #898989;
 }
 .article-template .rte img{
