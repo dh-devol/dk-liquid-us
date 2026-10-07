@@ -190,6 +190,9 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 #MainContent.article--page {
   -webkit-font-smoothing: auto;
 }
+.article--page .rte a {
+  text-decoration: underline;
+}
 .page-blog #MainContent {
   -webkit-font-smoothing: auto;
 }
