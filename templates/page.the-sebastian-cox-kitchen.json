@@ -99,6 +99,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 2,
@@ -201,6 +202,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
+        "show_subtitle": true,
         "image_width": "full",
         "image_ratio": "portrait",
         "columns_desktop": 3,
@@ -238,6 +240,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -252,6 +255,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "custom_text_hover": "",
             "title": "",
@@ -301,8 +305,8 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
-            "image": "shopify://shop_images/SebCox-Editorial-01.jpg",
             "custom_text_hover": "",
             "title": "",
             "show_text_double_column": false,
@@ -345,6 +349,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/SebCox-Editorial-02_1.jpg",
             "custom_text_hover": "",
@@ -360,6 +365,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/SebCox-Editorial-02_2.jpg",
             "custom_text_hover": "",
@@ -375,6 +381,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/SebCox-Editorial-03_1.jpg",
             "custom_text_hover": "",
@@ -390,6 +397,7 @@
           "type": "column",
           "settings": {
             "link": "",
+            "anchor": "",
             "dynamic_costs": "",
             "image": "shopify://shop_images/SebCox-Editorial-03_2.jpg",
             "custom_text_hover": "",
@@ -489,7 +497,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "dynamic_section_link": "shopify://pages/brochure",
+        "dynamic_section_link": "shopify://products/devol-brochure",
         "color_scheme": "scheme-2",
         "full_width": true,
         "padding_top": 32,
