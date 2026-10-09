@@ -46,11 +46,6 @@ menu-drawer > details[open] > summary::before {
   );
 }
 
-.js .menu-drawer {
-  height: calc(100vh - 100%);
-  height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
-}
-
 .js details[open] > .menu-drawer,
 .js details[open] > .menu-drawer__submenu {
   transition: transform var(--duration-default) ease, visibility var(--duration-default) ease;
@@ -111,46 +106,86 @@ menu-drawer > details[open] > summary::before {
   overflow-x: hidden;
 }
 
+.js .menu-drawer {
+  height: calc(100vh - var(--header-bottom-position, 0px));
+  height: calc(100dvh - var(--header-bottom-position, 0px));
+  overflow-x: hidden;
+}
+
 @media screen and (max-width: 989px) {
-  .menu-drawer__navigation {
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  .js .menu-drawer__menu.has-submenu,
-  .js .menu-drawer__submenu.has-submenu,
-  .js .menu-drawer__navigation .secondary__menu {
-    transition: transform 0.5s;
-    will-change: transform;
-  }
-
-  .js details[open] > .menu-drawer__submenu {
-    transition: transform 0.5s, visibility 0.5s;
-  }
-
-  /* Keep submenus positioned to the right; parent shift reveals them */
-  details[open].menu-opening > .menu-drawer__submenu:not(.submenu-open),
-  .js details[open].menu-opening > .menu-drawer__submenu:not(.submenu-open) {
+  /* ---------- Submenus: each one slides itself in and out ---------- */
+  .js .menu-drawer__submenu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: rgb(var(--color-background));
     transform: translateX(100%);
-    visibility: visible;
+    visibility: hidden;
   }
-
-  .js .menu-drawer__menu.has-submenu.submenu-open {
-    transform: translateX(-100%);
+ 
+  /* Transition stays on while [open] is kept during the close, so it slides back out */
+  .js details[open] > .menu-drawer__submenu {
+    transition: transform 0.5s ease, visibility 0.5s ease;
   }
-
-  .js .menu-drawer__submenu.has-submenu.submenu-open {
+ 
+  .js details[open].menu-opening > .menu-drawer__submenu {
     transform: translateX(0);
     visibility: visible;
   }
-
-  .js .menu-drawer__menu.has-submenu.submenu-open ~ .secondary__menu {
+ 
+  /* ---------- The level underneath: its contents push off to the left ----------
+     The items move instead of their container, so the submenu is never carried
+     by a moving parent (that was what Safari failed to paint). */
+  .js .menu-drawer__menu > li > a,
+  .js .menu-drawer__menu > li > details > summary,
+  .js .menu-drawer__close-button,
+  .js .mega__image-menu,
+  .js .menu-drawer__navigation .secondary__menu {
+    transition: transform 0.5s ease;
+  }
+ 
+  /* Top level */
+  .js .menu-drawer__menu.has-submenu.submenu-open > li > a,
+  .js .menu-drawer__menu.has-submenu.submenu-open > li > details > summary,
+  .js .menu-drawer__menu.has-submenu.submenu-open ~ .secondary__menu,
+  /* Level 1 and 2 submenus (content inside .menu-drawer__inner-submenu) */
+  .js .menu-drawer__submenu.submenu-open > .menu-drawer__close-button,
+  .js .menu-drawer__submenu.submenu-open > .menu-drawer__menu > li > a,
+  .js .menu-drawer__submenu.submenu-open > .menu-drawer__menu > li > details > summary,
+  .js .menu-drawer__submenu.submenu-open > .mega__image-menu,
+  .js .menu-drawer__submenu.submenu-open > .menu-drawer__inner-submenu > .menu-drawer__close-button,
+  .js .menu-drawer__submenu.submenu-open > .menu-drawer__inner-submenu > .menu-drawer__menu > li > a,
+  .js .menu-drawer__submenu.submenu-open > .menu-drawer__inner-submenu > .menu-drawer__menu > li > details > summary,
+  .js .menu-drawer__submenu.submenu-open > .menu-drawer__inner-submenu > .mega__image-menu {
     transform: translateX(-100%);
+  }
+ 
+  /* ---------- Scrolling ---------- */
+  .js .menu-drawer__inner-submenu {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+ 
+  /* Keep the last top-level items clear of the iPhone home bar */
+  .js .menu-drawer__navigation-container {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
 
 .js .menu-drawer__menu li {
   margin-bottom: 0.2rem;
+}
+
+.js .menu-drawer__menu li #Details-menu-drawer-online-shop-support,
+.js .menu-drawer__menu li #HeaderDrawer-kitchens-order-a-brochure,
+.js .menu-drawer__menu li #Details-menu-drawer-about-contact {
+  margin-bottom: 4rem;
 }
 
 .js .menu-drawer__menu li.grid__item {
