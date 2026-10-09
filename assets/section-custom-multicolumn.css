@@ -18,7 +18,7 @@ body.kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wr
 }
 }
 body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
-  margin: 1.8em 0 0 0;
+  margin: 1.5em 0 0 0;
 }
 .kitchen .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
   margin: 1em 0 0;

@@ -835,22 +835,10 @@ document.addEventListener('DOMContentLoaded', function () {
              {% endif %}
              {% when 'delivery' %}
              {% if block.settings.delivery_text != blank %}
-              <div class="delivery__text" data-delivery-accordion>
-                <button
-                  type="button"
-                  class="delivery__toggle"
-                  aria-expanded="false"
-                  aria-controls="delivery-text-{{ block.id }}"
-                >
-                  When will my items arrive?
-                  <span class="dropdown-arrow" aria-hidden="true"></span>
-                </button>
-                <div id="delivery-text-{{ block.id }}" class="delivery__content">
-                  {{ block.settings.delivery_text }}
-                </div>
-              </div>
-              <script src="{{ 'delivery-accordion.js' | asset_url }}" defer></script>
-            {% endif %}
+               <div class="delivery__text">
+                   {{ block.settings.delivery_text }}
+               </div>
+             {% endif %}
           {%- endcase -%}
         {% endfor %}
 
