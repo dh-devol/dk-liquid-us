@@ -112,7 +112,7 @@
       ],
       "custom_css": [
         ".custom-multicolumn .multicolumn__title {justify-content: left;}",
-        "@media (max-width: 575px) {.custom-multicolumn .multicolumn__title {padding: 0px; } .title {font-size: 1.125em; }}",
+        "@media (max-width: 575px) {.custom-multicolumn .multicolumn__title {padding: 0px; } .title {font-size: 1.2em; }}",
         "@media (max-width: 575px) {.multicolumn-list {padding: 0px; padding-bottom: 32px; }}",
         ".multicolumn-card__info h3 {padding-top: 12px;}",
         "@media (max-width: 768px) {.title-wrapper-with-link {margin-bottom: 15px !important; }}",
