@@ -31,6 +31,10 @@ window.initMixMatchBundle = function(root) {
     const accordionBtn = root.querySelector('.dropdown-accordion');
     const selectDiv = root.querySelector('.mm-grid');
     const qtyWrapper = root.querySelector('.quantity__input');
+    const getQuantity = () => {
+    const q = parseInt(qtyWrapper?.value, 10);
+        return Number.isFinite(q) && q > 0 ? q : 1;
+    };
 
     const normalizeTitle = (raw) => {
         const str = String(raw || '');
@@ -204,7 +208,7 @@ window.initMixMatchBundle = function(root) {
             return;
         }
 
-        const quantity = Number(qtyWrapper?.value || 1);
+        const quantity = getQuantity();
 
         const compressed = collectSelections();
         const addon = collectAddons();
@@ -265,7 +269,7 @@ window.initMixMatchBundle = function(root) {
 
                     items.push({
                         id: c.variant_id,
-                        quantity: c.qty,
+                        quantity: c.qty * quantity,
                         properties: childProps
                     });
                 }

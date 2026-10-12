@@ -326,6 +326,29 @@ We include all variants of each child product, disabling sold-out ones.
       data-inventory-management="{{ variant.inventory_management }}"
       style="display:none"
     ></div>
+    <div class="mm-quantity">
+      <label class="form__label" for="MMQuantity-{{ section.id }}">{{ 'products.product.quantity.label' | t }}</label>
+      <quantity-input class="quantity">
+        <button class="quantity__button" name="minus" type="button">
+          <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+          <span class="svg-wrapper">{{- 'icon-minus.svg' | inline_asset_content -}}</span>
+        </button>
+        <input
+          class="quantity__input"
+          type="number"
+          id="MMQuantity-{{ section.id }}"
+          value="1"
+          min="1"
+          step="1"
+          data-min="1"
+          aria-label="{{ 'products.product.quantity.input_label' | t: product: product.title | escape }}"
+        >
+        <button class="quantity__button" name="plus" type="button">
+          <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+          <span class="svg-wrapper">{{- 'icon-plus.svg' | inline_asset_content -}}</span>
+        </button>
+      </quantity-input>
+    </div>
     <button class="mm-add-btn product-form__submit button button--full-width button--primary" type="button" data-add disabled>
       <span>{{ _btn }}</span>
       {%- render 'loading-spinner' -%}
@@ -353,7 +376,9 @@ We include all variants of each child product, disabling sold-out ones.
       padding: 0;
     }
     #{{ root_id }}.mm-bundle .mm-select label { font-weight: 600; }
-    #{{ root_id }}.mm-bundle .mm-footer { display:flex; align-items:center; gap:16px; margin-top: 1.5em; }
+    #{{ root_id }}.mm-bundle .mm-footer { display:flex; align-items:flex-end; gap:18px; }
+    #custom-select-wrapper { margin: 50px 0 -32px }
+    #{{ root_id }}.mm-bundle .mm-footer .product-form__submit { margin-bottom: 0; }
     #{{ root_id }}.mm-bundle .mm-add-btn { padding: 10px 16px; border: none; background: #27333f; color:#fff; cursor:pointer; }
     #{{ root_id }}.mm-bundle .mm-add-btn[disabled] { opacity:.5; cursor:not-allowed; }
     
