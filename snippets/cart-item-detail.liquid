@@ -157,6 +157,13 @@
       or item.properties.size != 0
       or item.selling_plan_allocation != null
     -%}
+    {%- assign item_variant_total_qty = 0 -%}
+    {%- for cart_line in cart.items -%}
+      {%- if cart_line.variant_id == item.variant_id -%}
+        {%- assign item_variant_total_qty = item_variant_total_qty | plus: cart_line.quantity -%}
+      {%- endif -%}
+    {%- endfor -%}
+
     {%- capture item_lead_time_text -%}
       {%- render 'lead-time-text', product: item.product, variant: item.variant, quantity: item_variant_total_qty -%}
     {%- endcapture -%}
@@ -179,13 +186,6 @@
             </div>
           {%- endfor -%}
         {%- endif -%}
-
-        {%- assign item_variant_total_qty = 0 -%}
-        {%- for cart_line in cart.items -%}
-          {%- if cart_line.variant_id == item.variant_id -%}
-            {%- assign item_variant_total_qty = item_variant_total_qty | plus: cart_line.quantity -%}
-          {%- endif -%}
-        {%- endfor -%}
 
         {%- assign last_matching_key = "" -%}
         {%- for property in item.properties -%}
