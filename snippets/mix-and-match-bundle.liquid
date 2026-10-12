@@ -306,6 +306,26 @@ We include all variants of each child product, disabling sold-out ones.
         {%- endif -%}
       </div>
     {% endif %}
+    {%- assign variant = product.selected_or_first_available_variant -%}
+
+    {%- capture pdp_available -%}
+      {%- render 'lead-time-text', product: product, variant: variant, quantity: 1, field: 'available' -%}
+    {%- endcapture -%}
+    {%- assign pdp_available = pdp_available | strip -%}
+
+    {%- capture pdp_secondary_lead_time -%}
+      {{ product.metafields.custom.secondary_lead_time.value }}
+    {%- endcapture -%}
+    {%- assign pdp_secondary_lead_time = pdp_secondary_lead_time | strip -%}
+
+    <div
+      id="lead-time-calc-data"
+      data-available="{{ pdp_available }}"
+      data-secondary-text="{{ pdp_secondary_lead_time | escape }}"
+      data-inventory-policy="{{ variant.inventory_policy }}"
+      data-inventory-management="{{ variant.inventory_management }}"
+      style="display:none"
+    ></div>
     <button class="mm-add-btn product-form__submit button button--full-width button--primary" type="button" data-add disabled>
       <span>{{ _btn }}</span>
       {%- render 'loading-spinner' -%}

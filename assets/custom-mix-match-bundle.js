@@ -394,9 +394,13 @@ window.initMixMatchBundle = function(root) {
     /* ---------- HELPERS ---------- */
 
     function updateCartPopupTitle(items) {
-        if (!items) return;
+        if (!items || !items.items || !items.items.length) return;
 
-        const item = items.items[0];
+        // Use the main product line, not an add-on, if several lines were added together
+        const item =
+            items.items.find(i => i.properties?.['_Added as add-on'] !== 'true') ||
+            items.items[0];
+
         const title = item.product_title || item.title || '';
         const msg = document.querySelector('#cart-notification .added-message');
         if (!msg) return;
@@ -408,6 +412,12 @@ window.initMixMatchBundle = function(root) {
         const suffix = msg.textContent.match(/has been added.*$/)?.[0] || 'has been added.';
 
         msg.innerHTML = `${esc(title)} has been added`;
+
+        // Swap in the backorder message if this add pushes the variant past available stock
+        const notificationEl = document.querySelector('cart-notification');
+        if (notificationEl && typeof notificationEl.updateBackorderMessage === 'function') {
+            notificationEl.updateBackorderMessage(item);
+        }
     }
 
     async function refreshMiniCart() {
