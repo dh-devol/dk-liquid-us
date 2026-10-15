@@ -15,6 +15,15 @@ body{
 .quantity_coverage-wrapper.linear .quantity__input {
   padding-left: 0.75em;
 }
+.quantity-submit-container {
+  display: inline-flex;
+  align-items: end;
+  gap: 15px;
+  width: 100%;
+}
+.quantity-submit-container .product-form__buttons {
+  width: stretch;
+}
 html {
   scroll-behavior: none;
 }
