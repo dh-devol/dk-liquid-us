@@ -316,7 +316,7 @@
       "settings": {
         "title": "",
         "heading_size": "hxxl",
-        "subtitle": "Milk Glass Lights",
+        "subtitle": "Mini Milk Glass Lights",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
@@ -327,7 +327,7 @@
         "button_label": "",
         "button_link": "shopify://collections/switches-sockets-heirloom-brass",
         "show_top_border": false,
-        "show_bottom_border": false,
+        "show_bottom_border": true,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
