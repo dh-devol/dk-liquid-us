@@ -208,9 +208,11 @@
                         </p>
                       {% endif %}
                       {{ block.settings.staff_description }}
-                      <div class="link-wrapper">
-                        <a href="{{ block.settings.staff_url }}">{{ block.settings.staff_url_title }}</a>
-                      </div>
+                      {% if block.settings.staff_url %}
+                        <div class="link-wrapper">
+                          <a href="{{ block.settings.staff_url }}">{{ block.settings.staff_url_title }}</a>
+                        </div>
+                      {% endif %}
                     </div>
                   </div>
                 </div>
@@ -254,12 +256,12 @@
              <img class="staff__image" src="" alt="">
            </div> 
            <div class="staff__detail-wrapper"> 
-            <h2 class="staff-name hxl"></h2>
+            <h2 class="staff-name hxl" aria-label="{{ block.settings.staff_name }} - filled when staff details expanded"></h2>
             <p class="staff-role"></p>
             <span class="staff-degree"></span>
             <div class="rte staff-description"></div>
             <div class="staff-url__wrapper">
-              <a class="staff-url" href=""></a>
+              <a class="staff-url" href="" aria-label="{{ block.settings.staff_url_title }}"></a>
             </div> 
            </div>  
           </div>

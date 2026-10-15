@@ -105,9 +105,11 @@
                     >
                       {{ block.settings.row_content }}
                       {{ block.settings.page.content }}
-                      <div class="link-wrapper">
-                        <a href="{{ block.settings.link_url }}" target="_blank">{{ block.settings.url_title }}</a>
-                      </div>
+                      {% if block.settings.link_url %}
+                        <div class="link-wrapper">
+                          <a href="{{ block.settings.link_url }}" target="_blank">{{ block.settings.url_title }}</a>
+                        </div>
+                      {% endif %}
                     </div>
                   </div>
                 </div>

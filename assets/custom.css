@@ -368,7 +368,7 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 }
 .header__menu-item {
     padding:14px 23px 13.5px 23px;
-    color: rgba(var(--color-foreground));
+    color: #494949;
 }
 .mega-menu_active-link{
   color: rgba(var(--color-foreground));
@@ -741,7 +741,7 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
     align-items: center;
     font-size:11px;
     font-family: "EB Garamond", "garamond-premier-pro-display", sans-serif;
-    color: #5e6671ba;
+    color: #6d6d6d;
     padding-top: 21.4px;
     border-top: 1px solid #9f9f9f4d;
 }
@@ -818,7 +818,7 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 }
 .footer .currency--wrapper .disclosure__button,
 .footer .region--wrapper a {
-    color: #5e6671ba;
+    color: #6d6d6d;
     font-family: "gill-sans-nova", sans-serif;
     font-size: 12px;
 }
