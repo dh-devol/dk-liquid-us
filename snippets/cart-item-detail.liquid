@@ -103,8 +103,8 @@
   <td class="cart-item__media">
     {% if item.image %}
       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-      <a href="{{ cart_item_url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
       <div class="cart-item__image-container gradient global-media-settings">
+      <a href="{{ cart_item_url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> 
         <img
           src="{{ item.image | image_url: width: 300 }}"
           class="cart-item__image"
@@ -113,6 +113,7 @@
           width="150"
           height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
         >
+        </a>
       </div>
     {% endif %}
   </td>

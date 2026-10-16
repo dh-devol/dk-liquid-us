@@ -63,13 +63,18 @@ cart-items .title-wrapper-with-link {
 
 .cart-item__media {
   position: relative;
+  /* display: block; */
 }
-
-.cart-item__link {
+.cart-item__image-container {
   display: block;
+}
+.cart-item__link {
+  /* display: block;
+  position: absolute; */
+  position: static;
+  display: inline-block;
   bottom: 0;
   left: 0;
-  position: absolute;
   right: 0;
   top: 0;
   width: 100%;
