@@ -3326,8 +3326,8 @@ details-disclosure > details {
 }
 
 .rte a {
-  color: #595959;
-  text-decoration: none;
+  color: #757575;
+  text-decoration: underline;
   /* color: rgba(var(--color-link), var(--alpha-link));
   text-underline-offset: 0.3rem;
   text-decoration-thickness: 0.1rem;
@@ -3337,7 +3337,7 @@ details-disclosure > details {
 .rte a:hover {
   /*color: rgb(var(--color-link));
   text-decoration-thickness: 0.2rem;*/
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .rte blockquote {
