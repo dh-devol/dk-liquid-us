@@ -188,11 +188,13 @@
                 {% endif %}
               {%- endif -%}
               <div class="multicolumn-card__info">
+                {% if block.settings.title != blank %}
                   <h3 class="inline-richtext">
-                    <a href="{{ card_link }}">
+                    <a href="{{ card_link }}" {% if block.settings.link_label_hide %} aria-label="{{ block.settings.link_label }}" {% endif %}>
                       {{ block.settings.title | default: selected_page.title }}
                     </a>
                   </h3>
+                {% endif %}
                 {% if selected_page %}
                   {% assign selected_products_1 = selected_page.metafields.custom.product_1.value %}
                   {% assign quantities_1 = selected_page.metafields.custom.quantity_1.value %}
@@ -284,7 +286,7 @@
                   >
                     {{- block.settings.link_label | default: 'Order' | escape }} {{ block.settings.linked_product.price | money -}}
                   </a>
-                {%- elsif block.settings.link_label != blank -%}
+                {%- elsif block.settings.link_label != blank and block.settings.link_label_hide == false -%}
                   <a
                     class="link animate-arrow{% if block.settings.link contains page.handle or block.settings.link contains collection.handle  %} active{% endif %}"
                     {% if block.settings.link == blank %}
@@ -627,6 +629,12 @@
           "type": "text",
           "id": "link_label",
           "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "link_label_hide",
+          "label": "Hide link label",
+          "default": false
         },
         {
           "type": "product",

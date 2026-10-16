@@ -119,8 +119,8 @@
           <div class="custom-search-block">
           <p class="custom-search-label">{{ block.settings.blog_search_title }}</p>
           <form action="/search" method="get" class="search-form" role="search">
-          <input type="hidden" name="type" value="article">
-          <input type="search" name="q" placeholder="Search" class="custom-search-input" required>
+            <input type="hidden" name="type" value="article">
+            <input type="search" name="q" placeholder="Search" class="custom-search-input" required aria-label="Search blog posts">
           </form>
           </div>
           {% endif %}
