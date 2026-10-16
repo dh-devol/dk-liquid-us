@@ -118,7 +118,7 @@ cart-items {
   border-bottom-right-radius: 0;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 989px) {
   .cart__items {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -207,7 +207,7 @@ cart-items {
 .section-template--25481902850382__custom_multicolumns_ifjapz-padding .title-wrapper-with-link .title{
       margin-bottom: 36px;
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 989px) {
   .cart-note {
     max-width: 35rem;
   }
@@ -250,6 +250,7 @@ cart-items {
 #main-cart-footer .totals__total-value {
     font-size: 20px;
     font-weight: 500;
+    margin-top:5px;
 }
 #main-cart-footer .cart__footer .cart__blocks {
     margin-left: auto;
@@ -675,10 +676,10 @@ flatpickr-months .flatpickr-prev-month:hover svg,
     width: 100%;
 }
 }
-@media screen and (max-width:991px){
-   .cart--page .main_cart-footer-wrapper {
-  max-width: 230px;
-}
+@media screen and (max-width:989px){
+  .cart--page .main_cart-footer-wrapper {
+    max-width: 230px;
+  }
   #main-cart-footer .totals>h2 {
     font-size: 16px;
 }
@@ -724,7 +725,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
 }  
 }
 
-@media screen and (max-width:749px){
+@media screen and (max-width:989px){
   #main-cart-footer .cart__ctas button {
     max-width: 100%;
 }
@@ -750,7 +751,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
   left: 0;
   right: 0;
   width: auto;
-  padding: 0 3rem;
+  padding: 0;
   border-bottom: solid 1px #f7f7f7;
   margin: 0;
 }
@@ -778,13 +779,17 @@ flatpickr-months .flatpickr-prev-month:hover svg,
 }
 
 }
-@media (min-width:768px) and (max-width:1024px){
-  #main-cart-footer .totals>h2 {
+@media (min-width:768px) and (max-width:1075px){
+  #main-cart-footer .totals>h2, .cart_page-container .cart-items thead th:first-child {
     font-size: 18px;
 }
+.cart-items .cart-items__heading--quantity, .cart-item .cart-item__quantity, .cart-item__quantity--info, .cart-items *.right{
+  font-size:16px;
 }
 
-@media (min-width:768px){
+}
+
+@media (min-width:990px){
   .cart--page{
     display: grid;
     grid-template-columns: 62% 34%;
@@ -824,7 +829,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
   }
 }
 
-@media (max-width:767px){
+@media (max-width:989px){
   .cart--page{
     padding: 0 2.5rem !important;
     flex-direction: column;
@@ -916,7 +921,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
     margin-top: 0 !important;
   }
 }
-@media (max-width:575px){
+@media (max-width:989px){
   .cart--page #main-cart-footer .page-width {
       max-width: 100%;
       width: 100%;
