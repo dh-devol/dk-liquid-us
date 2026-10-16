@@ -114,7 +114,7 @@
             {% assign selected_page = collections[block.settings.selected_collection]  %}
             {% assign feature_image = selected_page.metafields.custom.feature_image_1.value %}
             <div class="multicolumn-card content-container {% if block.settings.show_text_double_column %} show_text_double_column {% endif %}">
-              <a href="{{ selected_page.url }}"
+              <a href="{{ selected_page.url }}" aria-label="link to {{ selected_page.title }}"
                   class="multicolumn-card__image-wrapper hover__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width"
                 >
               {%- if feature_image -%}

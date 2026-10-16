@@ -94,6 +94,7 @@
                 {% endif %}
                   <a href="{{ selected_page.url }}"
                     class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
+                    aria-label="link to {{ selected_page.title }}"
                   >
                   <div
                     class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
