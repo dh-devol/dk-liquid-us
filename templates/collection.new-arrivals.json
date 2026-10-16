@@ -41,29 +41,22 @@
     "custom_product_list_tDfCBP": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_HtLJQc": {
-          "type": "product_item",
-          "settings": {
-            "product": "petite-gaselier-light-milk-glass-shades-tall"
-          }
-        },
-        "product_item_bD9QhP": {
-          "type": "product_item",
-          "settings": {
-            "product": "milk-glass-gaselier-light-tall"
-          }
-        },
         "product_item_KU7xCk": {
           "type": "product_item",
           "settings": {
             "product": "regency-ceiling-ring"
           }
+        },
+        "product_item_bD9QhP": {
+          "type": "product_item",
+          "settings": {
+            "product": "kentish-brown-skirting-tiles"
+          }
         }
       },
       "block_order": [
-        "product_item_HtLJQc",
-        "product_item_bD9QhP",
-        "product_item_KU7xCk"
+        "product_item_KU7xCk",
+        "product_item_bD9QhP"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -74,7 +67,7 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "primary",
@@ -287,28 +280,28 @@
     "custom_product_list_X3TY6B": {
       "type": "custom-product-list",
       "blocks": {
+        "product_item_Qcx3Hp": {
+          "type": "product_item",
+          "settings": {
+            "product": "petite-gaselier-light-milk-glass-shades-tall"
+          }
+        },
         "product_item_qbH63h": {
           "type": "product_item",
           "settings": {
             "product": "mini-milk-glass-pendant-light"
           }
         },
-        "product_item_Qcx3Hp": {
-          "type": "product_item",
-          "settings": {
-            "product": "heirloom-wall-light-milk-glass-shade"
-          }
-        },
         "product_item_Y8pPjz": {
           "type": "product_item",
           "settings": {
-            "product": "mini-milk-glass-wall-light"
+            "product": "milk-glass-gaselier-light-tall"
           }
         }
       },
       "block_order": [
-        "product_item_qbH63h",
         "product_item_Qcx3Hp",
+        "product_item_qbH63h",
         "product_item_Y8pPjz"
       ],
       "custom_css": [],
@@ -316,11 +309,56 @@
       "settings": {
         "title": "",
         "heading_size": "hxxl",
-        "subtitle": "Mini Milk Glass Lights",
+        "subtitle": "Milk Glass Lights",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_JxY3y7": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_B3UAUj": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-wall-light-milk-glass-shade"
+          }
+        },
+        "product_item_9weUgX": {
+          "type": "product_item",
+          "settings": {
+            "product": "mini-milk-glass-wall-light"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_B3UAUj",
+        "product_item_9weUgX"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "primary",
@@ -934,6 +972,7 @@
     "custom_product_list_eMeUfM",
     "custom_product_list_f4APjn",
     "custom_product_list_X3TY6B",
+    "custom_product_list_JxY3y7",
     "custom_product_list_LCkT4W",
     "custom_product_list_UXz3XX",
     "custom_product_list_JzdtdG",
