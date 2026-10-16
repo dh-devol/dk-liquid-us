@@ -30,6 +30,7 @@ cart-items .title-wrapper-with-link {
 .cart-item__image-container {
   display: inline-flex;
   align-items: flex-start;
+  border:none;
 }
 
 .cart-item__image-container:after {
@@ -41,7 +42,7 @@ cart-items .title-wrapper-with-link {
   max-width: calc(10rem / var(--font-body-scale));
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 989px) {
   .cart-item__image {
     max-width: 100%;
   }
@@ -63,13 +64,18 @@ cart-items .title-wrapper-with-link {
 
 .cart-item__media {
   position: relative;
+  /* display: block; */
 }
-
-.cart-item__link {
+.cart-item__image-container {
   display: block;
+}
+.cart-item__link {
+  /* display: block;
+  position: absolute; */
+  position: static;
+  display: inline-block;
   bottom: 0;
   left: 0;
-  position: absolute;
   right: 0;
   top: 0;
   width: 100%;
@@ -148,7 +154,7 @@ cart-remove-button .button:not([disabled]):hover {
   color: rgb(var(--color-foreground));
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 989px) {
   cart-remove-button .button {
     min-width: 3.5rem;
     min-height: 3.5rem;
@@ -168,7 +174,7 @@ cart-remove-button .icon-remove {
   padding: 0;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 989px) {
   .cart-item .loading__spinner {
     top: 68px;
     right: 0;
@@ -221,7 +227,7 @@ cart-remove-button .icon-remove {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 989px) {
   .cart-items,
   .cart-items thead,
   .cart-items tbody {
@@ -268,7 +274,7 @@ cart-remove-button .icon-remove {
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 990px) {
   .cart-items {
     border-spacing: 0;
     border-collapse: separate;
@@ -320,7 +326,7 @@ cart-remove-button .icon-remove {
   }
 }
 
-@media screen and (min-width: 1140px) {
+@media screen and (min-width: 990px) {
   .cart_item-remove-price__wrapper{
     position: absolute;
     bottom: 7px;
@@ -342,7 +348,7 @@ cart-remove-button .icon-remove {
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 989px) {
   .cart-items .cart-items__heading--quantity,
   .cart-item .cart-item__quantity,
   .cart-item__quantity--info quantity-popover > * {
@@ -476,7 +482,7 @@ cart-remove-button .icon-remove {
   }
 }
 
-@media screen and (max-width:991px){
+@media screen and (max-width:989px){
 .cart_page-container .title-wrapper-with-link {
     margin-bottom: 0px;
     padding-bottom: 10px;
@@ -535,7 +541,7 @@ cart-remove-button .icon-remove {
         width: 12rem;
 }
 }
-@media screen and (min-width:768px){
+@media screen and (min-width:990px){
    .cart_page-container table tbody tr:first-child td {
     padding-top: 2em;
    }
@@ -559,7 +565,7 @@ cart-remove-button .icon-remove {
   } */
   
 }
-@media screen and (max-width:767px){
+@media screen and (max-width:989px){
    .cart-item__details {
     grid-column: 2 / 5;
   }
@@ -591,8 +597,8 @@ cart-remove-button .icon-remove {
         width: 12rem !important;
     }
     .cart_page-container .cart-item__image{
-      width:95px;
-      height:125px !important;
+      height:130px !important;
+      width:auto;
     }
     .cart--page .main_cart-footer-wrapper {
       margin-top: 35px;
@@ -617,7 +623,14 @@ cart-remove-button .icon-remove {
   
 }
 
-@media screen and (max-width:749px){
+@media screen and (max-width:990px) and (min-width:375px) {
+.cart_page-container .cart-item {
+  column-gap:0px;
+  grid-template-columns: 130px auto auto auto;
+}
+}
+
+@media screen and (max-width:989px){
    .cart-item .loading__spinner {
     top: 0 !important;
   }
@@ -666,8 +679,8 @@ cart-remove-button .icon-remove {
         width: 9rem !important;
     }
         .cart_page-container .cart-item__image {
-        width: 75px;
-        height: 120px !important;
+        width: 70px;
+        height: 95px !important;
     }
     .main_cart-footer-wrapper .tax-note{
       font-size:15px;
@@ -687,7 +700,14 @@ cart-remove-button .icon-remove {
     font-size: 16px;
     letter-spacing: 0px;
 }
-
+ @media (min-width:990px){
+ .cart-item__details dl:has(> .product-option.scent) {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: baseline;
+  padding-bottom:4rem;
+}
+ }
 /* Bundle cart lines: put the stock label ("In Stock") on its own line ABOVE the
    "Inc. …" child items, instead of inline after them. Scoped to bundle lines only
    (a dl that contains .scent children) so normal cart items are unaffected. */
