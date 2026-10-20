@@ -443,7 +443,7 @@ cart-remove-button .icon-remove {
 }
 .cart_page-container .cart-item__price-wrapper>*:only-child:not(.cart-item__discounted-prices) {
     margin-top: 0;
-    margin-bottom:20px;
+    margin-bottom:10px;
 }
 .cart_page-container .cart-item .loading__spinner {
   right: 11px;
