@@ -269,7 +269,7 @@ cart-items {
     margin-top: 30px;
 }
 #main-cart-footer .delivery__text {
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 .cart--page{
   display: flex; 
@@ -780,15 +780,13 @@ flatpickr-months .flatpickr-prev-month:hover svg,
 
 }
 @media (min-width:768px) and (max-width:1075px){
-  #main-cart-footer .totals>h2, .cart_page-container .cart-items thead th:first-child {
+  #main-cart-footer .totals>h2, .cart_page-container .cart-items thead th:first-child, #main-cart-footer .totals__total-value {
     font-size: 18px;
 }
 .cart-items .cart-items__heading--quantity, .cart-item .cart-item__quantity, .cart-item__quantity--info, .cart-items *.right{
   font-size:16px;
 }
-
 }
-
 @media (min-width:990px){
   .cart--page{
     display: grid;
@@ -815,12 +813,17 @@ flatpickr-months .flatpickr-prev-month:hover svg,
   position: sticky;
   top: 50px;
   overflow: hidden;
+  padding-top:25px;
 }
 .cart--page{ .multicolumn__title {
         padding-left: 0;
         padding-right: 0;
     } 
 }
+}
+
+.cart-item__flooring-summary{
+  font-size: 14px;
 }
 
 @media (max-width:990px){
@@ -896,8 +899,8 @@ flatpickr-months .flatpickr-prev-month:hover svg,
         font-weight: 500; 
         font-size: 1.25em;
     }
-    .main_cart-footer-wrapper .cart__footer {
-    padding-top: 5px;
+  .main_cart-footer-wrapper .cart__footer {
+    padding-top: 20px;
     padding-bottom: 10px;
 }
   #main-cart-footer .cart__footer {
