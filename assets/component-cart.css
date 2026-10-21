@@ -294,6 +294,12 @@ cart-items {
   padding-right: 0;
   margin: 0;
 }
+
+@media (max-width:989px) {
+  .cart--page #main-cart-footer .page-width{
+    width: 100%;
+  }
+}
 .cart_page-container.page-width {
   margin: 0;
   width: 100%;
@@ -664,7 +670,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
     font-size: 14px;
 }
 
-@media screen and (max-width:1025px){
+/* @media screen and (max-width:1025px){
   .cart--page #main-cart-footer .page-width {
     padding-left: 2rem;
   }
@@ -678,7 +684,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
     display: inline-flex;
     width: 100%;
 }
-}
+} */
 @media screen and (max-width:989px){
   .cart--page .main_cart-footer-wrapper {
     max-width: 230px;
@@ -828,13 +834,32 @@ flatpickr-months .flatpickr-prev-month:hover svg,
   font-size: 14px;
 }
 
-@media (max-width:990px){
-  .cart--page .main_cart-footer-wrapper #main-cart-footer {
-    top: 110px;
+@media (max-width:989px) and (min-width:575px){
+  .cart--page:has(.cart_custom-descrption-wrapper:not(.no_flooring)) {
+    .main_cart-footer-wrapper .cart__footer {
+        padding-top: 5px;
+        padding-bottom: 10px;
+        margin:0;
+        width:100%;
+        max-width:100%;
+    }
+      #main-cart-footer .cart__footer {
+        padding-bottom: 15px !important;
+        margin:0;
+        width:100%;
+    }
   }
 }
 
 @media (max-width:989px){
+  .cart--page .main_cart-footer-wrapper #main-cart-footer {
+    top: 110px;
+  }
+  .page-cart .multicolumn .page-width, #shopify-section-template--21483003871329__collection_multicolumn_ifjapz .page-width{
+    width:100%;
+    max-width: 100%;
+    margin:0;
+  }
   .cart--page{
     padding: 0 2.5rem !important;
     flex-direction: column;
@@ -901,13 +926,6 @@ flatpickr-months .flatpickr-prev-month:hover svg,
         font-weight: 500; 
         font-size: 1.25em;
     }
-  .main_cart-footer-wrapper .cart__footer {
-    padding-top: 5px;
-    padding-bottom: 10px;
-}
-  #main-cart-footer .cart__footer {
-    padding-bottom: 15px !important;
-}
 #main-cart-footer .cart__ctas button {
     min-height: 3.5rem;
     font-size:15px;
