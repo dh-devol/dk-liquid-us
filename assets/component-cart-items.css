@@ -443,7 +443,7 @@ cart-remove-button .icon-remove {
 }
 .cart_page-container .cart-item__price-wrapper>*:only-child:not(.cart-item__discounted-prices) {
     margin-top: 0;
-    margin-bottom:10px;
+    margin-bottom:20px;
 }
 .cart_page-container .cart-item .loading__spinner {
   right: 11px;
@@ -619,6 +619,9 @@ cart-remove-button .icon-remove {
   .quantity:after {
     box-shadow: 0 0 0 var(--inputs-border-width) #59595959;
     border:none;
+  }
+  .cart_page-container table tbody tr td:last-child, .cart_page-container table tbody tr td:nth-last-child(2) {
+    vertical-align: middle;
   }
 }
 

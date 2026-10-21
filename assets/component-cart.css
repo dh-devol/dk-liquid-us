@@ -590,12 +590,15 @@ flatpickr-months .flatpickr-prev-month:hover svg,
 .cart_custom-descrption-wrapper .cart__note .text-area{
   min-height: auto;
 }
-/* .cart_custom-descrption-wrapper {
+@media  (min-width: 989px){
+  .cart_custom-descrption-wrapper {
     margin-top: 25px;
-} */
+} 
 .cart_custom-descrption-wrapper.no_flooring {
   margin-top: 20px;
 }
+}
+
 .date_picker-wrapper {
     margin-top: 0;
 }
@@ -813,7 +816,6 @@ flatpickr-months .flatpickr-prev-month:hover svg,
   position: sticky;
   top: 50px;
   overflow: hidden;
-  padding-top:25px;
 }
 .cart--page{ .multicolumn__title {
         padding-left: 0;
@@ -900,7 +902,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
         font-size: 1.25em;
     }
   .main_cart-footer-wrapper .cart__footer {
-    padding-top: 20px;
+    padding-top: 5px;
     padding-bottom: 10px;
 }
   #main-cart-footer .cart__footer {
