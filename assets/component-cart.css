@@ -926,7 +926,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
     margin-top: 0 !important;
   }
 }
-@media (max-width:989px){
+@media (max-width:575px){
   .cart--page #main-cart-footer .page-width {
       max-width: 100%;
       width: 100%;
