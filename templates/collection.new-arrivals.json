@@ -41,6 +41,12 @@
     "custom_product_list_tDfCBP": {
       "type": "custom-product-list",
       "blocks": {
+        "product_item_9VjLaW": {
+          "type": "product_item",
+          "settings": {
+            "product": "amelie-doorknob-romilly-backplate"
+          }
+        },
         "product_item_KU7xCk": {
           "type": "product_item",
           "settings": {
@@ -55,6 +61,7 @@
         }
       },
       "block_order": [
+        "product_item_9VjLaW",
         "product_item_KU7xCk",
         "product_item_bD9QhP"
       ],
@@ -67,7 +74,7 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 2,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "primary",
