@@ -106,10 +106,105 @@
       {%- when 'content' -%}
         <div
           class="article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+          data-pin-article
+          data-pin-url="{{ shop.url }}{{ article.url }}"
+          data-pin-title="{{ article.title | escape }}"
           {{ block.shopify_attributes }}
         >
           {{ article.content }}
         </div>
+
+        <style type="text/css">
+          [data-pin-article] .pin-wrap {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+          }
+
+          [data-pin-article] .pin-wrap > img { 
+            display: block;
+          }
+
+          [data-pin-article] .pin-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 2px;
+            z-index: 2;
+            display: block;
+            line-height: 0;
+            opacity: 0;
+            {% comment %} transform: translateY(-4px); {% endcomment %}
+            transition: opacity .2s ease, transform .2s ease;
+            cursor: pointer;
+          }
+          
+          [data-pin-article] .pin-wrap:hover .pin-btn,
+          [data-pin-article] .pin-btn:focus-visible {
+            opacity: 1; transform: none;
+          }
+
+          [data-pin-article] .pin-wrap .pin-btn:hover { 
+            opacity:.9 
+          }
+
+          [data-pin-article] .pin-btn .pin-logo {
+            width: 50px;
+            height: 50px;
+            max-width: none;
+            margin: 0;
+            border: 0;
+            {% comment %} box-shadow: 0 2px 8px rgba(0,0,0,.25); {% endcomment %}
+          }
+
+          @media (max-width: 768px) {
+            [data-pin-article] .pin-btn { 
+              display: none; 
+            }
+          }
+        </style>
+
+        <script type="text/javascript">
+          document.querySelectorAll('[data-pin-article]').forEach(function (article) {
+            var pageUrl = article.dataset.pinUrl;
+            var title = article.dataset.pinTitle;
+
+            article.querySelectorAll('img').forEach(function (img) {
+              if (img.closest('.pin-wrap')) return;
+
+              var wrap = document.createElement('span');
+              wrap.className = 'pin-wrap';
+              img.parentNode.insertBefore(wrap, img);
+              wrap.appendChild(img);
+
+              var btn = document.createElement('a');
+              btn.className = 'pin-btn';
+              btn.href = '#';
+
+              var pinterestLogo = document.createElement('img');
+              pinterestLogo.src = '{{ "/pinterest-icon-2026.svg" | asset_url }}';
+              pinterestLogo.alt = '';
+              pinterestLogo.className = 'pin-logo';
+              btn.append(pinterestLogo);
+              btn.setAttribute('aria-label', 'Save image to Pinterest');
+              btn.target = '_blank';
+              btn.rel = 'noopener';
+
+              btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var media = img.currentSrc || img.src;
+                var desc = img.alt || title;
+                var href = 'https://www.pinterest.com/pin/create/button/'
+                  + '?url=' + encodeURIComponent(pageUrl)
+                  + '&media=' + encodeURIComponent(media)
+                  + '&description=' + encodeURIComponent(desc);
+                window.open(href, 'pinterest');
+              });
+
+              wrap.appendChild(btn);
+            });
+          });
+        </script>
 
       {%- when 'share' -%}
         <div

@@ -152,74 +152,149 @@
           "settings": {
             "product": "milk-glass-pendant-light"
           }
-        },
-        "product_item_mCqctm": {
+        }
+      },
+      "block_order": [
+        "product_item_KiRxUB",
+        "product_item_gRWCax",
+        "product_item_r8CGrw"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_GrEPKw": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_fFXLwM": {
           "type": "product_item",
           "settings": {
             "product": "petite-gaselier-light-milk-glass-shades-tall"
           }
         },
-        "product_item_QGXmPC": {
+        "product_item_kapPGg": {
           "type": "product_item",
           "settings": {
             "product": "heirloom-gaselier-light-tall"
           }
         },
-        "product_item_P9nDWB": {
+        "product_item_BGB8EF": {
           "type": "product_item",
           "settings": {
             "product": "milk-glass-gaselier-light-tall"
           }
         },
-        "product_item_8BR7M4": {
+        "product_item_zEVnwj": {
+          "type": "product_item",
+          "settings": {
+            "product": "regency-ceiling-ring"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_fFXLwM",
+        "product_item_kapPGg",
+        "product_item_BGB8EF",
+        "product_item_zEVnwj"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_BdJAcz": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_9EqzfB": {
           "type": "product_item",
           "settings": {
             "product": "heirloom-wall-light-creamware-shade"
           }
         },
-        "product_item_RWB97c": {
+        "product_item_VEjwNX": {
           "type": "product_item",
           "settings": {
             "product": "heirloom-task-light-small"
           }
         },
-        "product_item_3epTmE": {
+        "product_item_XUYRP8": {
           "type": "product_item",
           "settings": {
             "product": "mini-creamware-wall-light"
           }
         },
-        "product_item_m8mCdC": {
+        "product_item_Bix4Bp": {
           "type": "product_item",
           "settings": {
             "product": "heirloom-wall-light-milk-glass-shade"
           }
         },
-        "product_item_dDmxp3": {
+        "product_item_BEqaNf": {
           "type": "product_item",
           "settings": {
             "product": "milk-glass-task-light-small"
           }
         },
-        "product_item_99yw3t": {
+        "product_item_rfYMKR": {
           "type": "product_item",
           "settings": {
             "product": "mini-milk-glass-wall-light"
           }
         },
-        "product_item_73dT39": {
+        "product_item_AcXwbW": {
           "type": "product_item",
           "settings": {
             "product": "grand-tour-desk-lamp"
           }
         },
-        "product_item_tbjpxn": {
+        "product_item_z8R9cC": {
           "type": "product_item",
           "settings": {
             "product": "grand-tour-library-lamp"
           }
         },
-        "product_item_ACfRHp": {
+        "product_item_Eg6xQj": {
           "type": "product_item",
           "settings": {
             "product": "grand-tour-reading-lamp"
@@ -227,21 +302,15 @@
         }
       },
       "block_order": [
-        "product_item_KiRxUB",
-        "product_item_gRWCax",
-        "product_item_r8CGrw",
-        "product_item_mCqctm",
-        "product_item_QGXmPC",
-        "product_item_P9nDWB",
-        "product_item_8BR7M4",
-        "product_item_RWB97c",
-        "product_item_3epTmE",
-        "product_item_m8mCdC",
-        "product_item_dDmxp3",
-        "product_item_99yw3t",
-        "product_item_73dT39",
-        "product_item_tbjpxn",
-        "product_item_ACfRHp"
+        "product_item_9EqzfB",
+        "product_item_VEjwNX",
+        "product_item_XUYRP8",
+        "product_item_Bix4Bp",
+        "product_item_BEqaNf",
+        "product_item_rfYMKR",
+        "product_item_AcXwbW",
+        "product_item_z8R9cC",
+        "product_item_Eg6xQj"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -492,6 +561,8 @@
     "product-grid",
     "custom_product_list_4WY4Ny",
     "custom_product_list_HNdz7R",
+    "custom_product_list_GrEPKw",
+    "custom_product_list_BdJAcz",
     "custom_product_list_Ygct7m",
     "custom_product_list_PPngfA",
     "custom_product_list_Fwd4bf"

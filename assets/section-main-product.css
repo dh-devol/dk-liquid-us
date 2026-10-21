@@ -1620,17 +1620,21 @@ p.checbox-addon-heading {
   pointer-events: none;
 }
 .product .checkbox-products-wrapper label {
-        display: inline-flex;
+    display: inline-flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 18px;
     justify-content: center;
 }
-.product .checkbox-products-wrapper {
-    margin-bottom: 1em;
-    display: inline-flex;
-    gap: 32px;
+.product .addon-products-wrapper {
+  display: block;
 }
-
+.product .checkbox-products-wrapper {
+  display: inline-flex;
+  gap: 32px;
+}
+.product__info-container > .quantity_buy_button-wrapper {
+  margin-top: 0;
+}
 .product .quantity_buy_button-wrapper:not(:has(.checkbox-products-wrapper)) {
     display: flex;
     gap: 18px;
@@ -1716,6 +1720,8 @@ p.checbox-addon-heading {
 }
 .quantity_coverage-wrapper.fixed.pack .coverage__input,
 .quantity_coverage-wrapper.fixed.tile .coverage__input,
+.quantity_coverage-wrapper.free.length .coverage__input,
+.quantity_coverage-wrapper.variable.pack .coverage__input,
 .quantity_coverage-wrapper.linear .coverage__input,
 .quantity_coverage-wrapper.wall .coverage__input {
   -moz-appearance: textfield;
@@ -1725,6 +1731,10 @@ p.checbox-addon-heading {
 .quantity_coverage-wrapper.fixed.pack .coverage__input::-webkit-inner-spin-button,
 .quantity_coverage-wrapper.fixed.tile .coverage__input::-webkit-outer-spin-button,
 .quantity_coverage-wrapper.fixed.tile .coverage__input::-webkit-inner-spin-button,
+.quantity_coverage-wrapper.variable.pack .coverage__input::-webkit-outer-spin-button,
+.quantity_coverage-wrapper.variable.pack .coverage__input::-webkit-inner-spin-button,
+.quantity_coverage-wrapper.free.length .coverage__input::-webkit-outer-spin-button,
+.quantity_coverage-wrapper.free.length .coverage__input::-webkit-inner-spin-button,
 .quantity_coverage-wrapper.linear .coverage__input::-webkit-outer-spin-button,
 .quantity_coverage-wrapper.linear .coverage__input::-webkit-inner-spin-button,
 .quantity_coverage-wrapper.wall .coverage__input::-webkit-outer-spin-button,

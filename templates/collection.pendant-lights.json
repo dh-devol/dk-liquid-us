@@ -60,45 +60,82 @@
         "padding_bottom": 36
       }
     },
-    "custom_product_list_Yrq8fi": {
+    "custom_product_list_CB7q9r": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_RhLndh": {
+        "product_item_RGjXf6": {
           "type": "product_item",
           "settings": {
             "product": "petite-frilly-chartreuse-glass-light"
           }
         },
-        "product_item_FLHnma": {
+        "product_item_YfCicx": {
           "type": "product_item",
           "settings": {
             "product": "petite-frilly-cranberry-glass-light"
           }
         },
-        "product_item_A9h9CX": {
+        "product_item_GCiBnn": {
           "type": "product_item",
           "settings": {
             "product": "petite-frilly-amber-glass-light"
           }
         },
-        "product_item_HatRpR": {
+        "product_item_TFFgnV": {
           "type": "product_item",
           "settings": {
             "product": "creamware-rise-fall-pendant-light-small"
           }
         },
-        "product_item_wg4nWY": {
+        "product_item_BWXpLk": {
           "type": "product_item",
           "settings": {
             "product": "mini-milk-glass-pendant-light"
           }
         },
-        "product_item_QkcYET": {
+        "product_item_aD3cUV": {
           "type": "product_item",
           "settings": {
             "product": "milk-glass-pendant-light"
           }
-        },
+        }
+      },
+      "block_order": [
+        "product_item_RGjXf6",
+        "product_item_YfCicx",
+        "product_item_GCiBnn",
+        "product_item_TFFgnV",
+        "product_item_BWXpLk",
+        "product_item_aD3cUV"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Yrq8fi": {
+      "type": "custom-product-list",
+      "blocks": {
         "product_item_VAmfgt": {
           "type": "product_item",
           "settings": {
@@ -116,18 +153,19 @@
           "settings": {
             "product": "milk-glass-gaselier-light-tall"
           }
+        },
+        "product_item_7T8yYG": {
+          "type": "product_item",
+          "settings": {
+            "product": "regency-ceiling-ring"
+          }
         }
       },
       "block_order": [
-        "product_item_RhLndh",
-        "product_item_FLHnma",
-        "product_item_A9h9CX",
-        "product_item_HatRpR",
-        "product_item_wg4nWY",
-        "product_item_QkcYET",
         "product_item_VAmfgt",
         "product_item_hUX8VH",
-        "product_item_CQPcgj"
+        "product_item_CQPcgj",
+        "product_item_7T8yYG"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -138,7 +176,7 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
@@ -332,6 +370,7 @@
     "metaobject_gallery_slider_YEz4qm",
     "banner",
     "product-grid",
+    "custom_product_list_CB7q9r",
     "custom_product_list_Yrq8fi",
     "custom_product_list_MjDPix",
     "custom_product_list_XtbUtD"
