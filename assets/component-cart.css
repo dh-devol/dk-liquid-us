@@ -945,6 +945,10 @@ flatpickr-months .flatpickr-prev-month:hover svg,
   }
 }
 @media (max-width:575px){
+  .page-cart .multicolumn .page-width, #shopify-section-template--21483003871329__collection_multicolumn_ifjapz .page-width{
+    width:88%;
+    margin: 0 auto;
+  }
   .cart--page #main-cart-footer .page-width {
       max-width: 100%;
       width: 100%;

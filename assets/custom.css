@@ -2150,7 +2150,7 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
   }
   .main_cart-footer-wrapper .cart__footer {
     width: 100%;
-    max-width: 92%;
+    max-width: 95%;
     margin:0 auto;
    }
    .page-cart .multicolumn .page-width, #shopify-section-template--21483003871329__collection_multicolumn_ifjapz .page-width{
@@ -2175,6 +2175,11 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
   }
 }
 @media screen and (max-width: 749px) {
+  .main_cart-footer-wrapper .cart__footer {
+    width: 100%;
+    max-width: 92%;
+    margin:0 auto;
+   }
   .page-our-brochure-book .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
     margin: 0;
   }
