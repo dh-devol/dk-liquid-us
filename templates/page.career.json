@@ -76,6 +76,7 @@
       "block_order": [
         "collapsible_row_67URJU"
       ],
+      "disabled": true,
       "custom_css": [
         "h2.collapsible-content__heading.inline-richtext.h0 {margin-bottom: -20px;}",
         ".accordion {border-bottom: 1px solid rgb(219 219 219);}"
@@ -96,12 +97,39 @@
         "padding_bottom": 0,
         "sectionname": ""
       }
+    },
+    "rich_text_3GaKkn": {
+      "type": "rich-text",
+      "blocks": {
+        "text_MU7mUa": {
+          "type": "text",
+          "settings": {
+            "text": "<p>There are currently no open positions that we are actively recruiting for.</p><p>Please check back soon.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_MU7mUa"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.rich-text__text p {text-align: left; }}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
     "metaobject_gallery_slider_RadjP6",
     "catalogue_title_with_richtext_8a3RRj",
-    "custom_collapsible_content_jx9WzK"
+    "custom_collapsible_content_jx9WzK",
+    "rich_text_3GaKkn"
   ]
 }
