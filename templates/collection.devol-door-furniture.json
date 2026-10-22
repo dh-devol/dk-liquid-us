@@ -87,6 +87,12 @@
             "product": "clothilde-doorknob-romilly-backplate"
           }
         },
+        "product_item_xTaNfh": {
+          "type": "product_item",
+          "settings": {
+            "product": "amelie-doorknob-romilly-backplate"
+          }
+        },
         "product_item_VkXUEj": {
           "type": "product_item",
           "settings": {
@@ -129,6 +135,7 @@
         "product_item_TYPRAh",
         "product_item_9iiwNx",
         "product_item_FdqUPP",
+        "product_item_xTaNfh",
         "product_item_VkXUEj",
         "product_item_n6UWii",
         "product_item_EmQaKw",
