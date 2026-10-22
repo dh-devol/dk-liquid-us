@@ -19,285 +19,221 @@
     }
   }
 {%- endstyle -%}
+{%- assign staff_entries = page.metafields.custom.staff.value -%}
+{%- paginate page.metafields.custom.staff.value by 250 -%}
 
-{%- liquid
-  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
-  assign show_mobile_slider = false
-  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
-    assign show_mobile_slider = true
-  endif
--%}
+  {%- liquid
+    assign section_heading = section.settings.subtitle | strip_html | strip | downcase
+    assign columns_desktop = section.settings.columns_desktop | plus: 0
+    assign matching_staff_count = 0
+    assign visible_staff_index = 0
+    assign highest_ratio = 0
 
-<div class="custom-collapsible-content staff-multicolumn custom-multicolumn {{ section.settings.sectionname }} multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
-  <div
-    class="page-width section-{{ section.id }}-padding {% if section.settings.show_bottom_border %}bottom__section-border{% endif %}{% if section.settings.show_top_border %} top__section-border{% endif %} isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
-    {% if settings.animations_reveal_on_scroll %}
-      data-cascade
-    {% endif %}
-  >
-    {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
-        </h2>
-      </div> 
-    {%- endunless -%}
-    {% if section.settings.subtitle != blank %}
-      <div class="subtitle__wrapper {% if section.settings.title != blank %}above__margin{% endif %}">
-        <h3 class="sub-heading hxl">{{ section.settings.subtitle }}</h3>
-        {%- if section.settings.button_label != blank -%} 
-          <a href="{{ section.settings.button_link }}" class="sub_heading--link">
-            {{- section.settings.button_label | escape -}}<span> ></span>
-          </a>
-        {%- endif -%}
-      </div>
-    {% endif %}
-    <slider-component class="slider-mobile-gutter">
-      <ul
-        class="multicolumn-list contains-content-container"
-        id="Slider-{{ section.id }}"
-        role="list"
-      >
-        {%- liquid
-          assign highest_ratio = 0
-          for block in section.blocks
-            if block.settings.image.aspect_ratio > highest_ratio
-              assign highest_ratio = block.settings.image.aspect_ratio
-            endif
-          endfor
-        -%}
-        {% assign columns_desktop = section.settings.columns_desktop %}
-      {%- for block in section.blocks -%}
-          
-          {% assign modulo_result = forloop.index0 | modulo: columns_desktop %}
-          {% assign last_column_index = columns_desktop | minus: 1 %}
+    for person in staff_entries
+      assign person_heading = person.heading.value | strip | downcase
 
-          {% if forloop.index0 == 0 %}
-            <div class="staff-row first grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}">
-          {% elsif modulo_result == 0 %}
-            </div> <!-- Close previous .staff-row -->
-            <div class="staff-row last grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}">
+      if section_heading != blank and person_heading == section_heading
+        assign matching_staff_count = matching_staff_count | plus: 1
+        assign person_image = person.image.value
+
+        if person_image.aspect_ratio > highest_ratio
+          assign highest_ratio = person_image.aspect_ratio
+        endif
+      endif
+    endfor
+
+    assign highest_ratio = highest_ratio | default: 1
+  -%}
+
+  <div class="custom-collapsible-content staff-multicolumn custom-multicolumn {{ section.settings.sectionname }} multicolumn color-{{ section.settings.color_scheme }} gradient background-{{ section.settings.background_style }}{% if section.settings.title == blank %} no-heading{% endif %}">
+    <div class="page-width section-{{ section.id }}-padding isolate{% if section.settings.show_bottom_border %} bottom__section-border{% endif %}{% if section.settings.show_top_border %} top__section-border{% endif %}">
+
+      {% if section.settings.title != blank %}
+        <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
+          <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+            {{ section.settings.title }}
+          </h2>
+        </div>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <div class="subtitle__wrapper{% if section.settings.title != blank %} above__margin{% endif %}">
+          <h3 class="sub-heading hxl">{{ section.settings.subtitle }}</h3>
+
+          {% if section.settings.button_label != blank %}
+            <a href="{{ section.settings.button_link }}" class="sub_heading--link">
+              {{ section.settings.button_label | escape }}<span> &gt;</span>
+            </a>
           {% endif %}
-          {%- assign empty_column = '' -%}
-          {%- if block.settings.image == blank
-            and block.settings.title == blank
-            and block.settings.text == blank
-            and block.settings.link_label == blank
-          -%}
-            {%- assign empty_column = ' multicolumn-list__item--empty' -%}
-          {%- endif -%}
+        </div>
+      {% endif %}
 
-          <li
-            id="Slide-{{ section.id }}-{{ forloop.index }}"
-            class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
-            {{ block.shopify_attributes }}
-            {% if settings.animations_reveal_on_scroll %}
-              data-cascade
-              style="--animation-order: {{ forloop.index }};"
-            {% endif %}
+      <div class="multicolumn-list contains-content-container">
+        {% for person in staff_entries %}
+          {%- liquid
+            assign person_heading = person.heading.value | strip | downcase
+
+            if section_heading == blank or person_heading != section_heading
+              continue
+            endif
+
+            assign staff_image = person.image.value
+            assign staff_name = person.name.value
+            assign staff_role = person.role.value
+            assign staff_degree = person.degree.value
+            assign staff_url = person.link.value
+            assign staff_url_title = person.link_title.value
+            assign modulo_result = visible_staff_index | modulo: columns_desktop
+            assign spaced_image = false
+
+            if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle'
+              assign spaced_image = true
+            endif
+          -%}
+
+          {% capture staff_description %}
+            {{ person.description | metafield_tag }}
+          {% endcapture %}
+
+          {% if modulo_result == 0 %}
+            <div class="staff-row {% if visible_staff_index == 0 %}first{% else %}last{% endif %} grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop">
+          {% endif %}
+
+          <div
+            id="Staff-{{ section.id }}-{{ person.system.id }}"
+            class="multicolumn-list__item grid__item{% if section.settings.column_alignment == 'center' %} center{% endif %}"
           >
             <div class="multicolumn-card content-container">
-          {% if block.settings.show_above_image %}
-              {%- if block.settings.text != blank -%}
-                <div class="description_above--image">
-                  <div class="rte">{{ block.settings.text }}</div>
-                </div>
-                  {% endif %}  
-              {%- endif -%}
-              {%- if block.settings.image != blank -%}
-                {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
-                  {% assign spaced_image = true %}
-                {% endif %}
-                <a href="{{ block.settings.link }}" class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
-                  data-name="{{ block.settings.staff_name }}" 
-                  data-role="{{ block.settings.staff_role }}" 
-                  data-degree="{{ block.settings.staff_degree }}"
-                  data-description="{{ block.settings.staff_description }}"
-                  data-image-src="{{ block.settings.image | image_url }}"
-                  data-image-alt="{{ block.settings.image.alt }}"
-                  data-url-path="{{ block.settings.staff_url }}"
-                  data-url-title="{{ block.settings.staff_url_title }}"
-                  >
+              {% if staff_image != blank %}
+                <a
+                  href="#StaffDetails-{{ section.id }}-{{ visible_staff_index | divided_by: columns_desktop }}"
+                  class="multicolumn-card__image-wrapper text__hover hover__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
+                  aria-label="{{ staff_name | escape }}"
+                  data-name="{{ staff_name | escape }}"
+                  data-role="{{ staff_role | escape }}"
+                  data-degree="{{ staff_degree | escape }}"
+                  data-description="{{ staff_description | strip | escape }}"
+                  data-image-src="{{ staff_image | image_url: width: 1600 | escape }}"
+                  data-image-alt="{{ staff_image.alt | default: staff_name | escape }}"
+                  data-url-path="{{ staff_url | escape }}"
+                  data-url-title="{{ staff_url_title | escape }}"
+                >
                   <div
-                    class="media media--transparent media--{{ section.settings.image_ratio }}" 
-                    {% if section.settings.image_ratio == 'adapt' %}
-                      style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                    class="media media--transparent media--{{ section.settings.image_ratio }}"
+                    {% if section.settings.image_ratio == 'adapt' and highest_ratio > 0 %}
+                      style="padding-bottom: {{ 1.0 | divided_by: highest_ratio | times: 100 }}%;"
                     {% endif %}
                   >
-                    {%- liquid
-                      assign number_of_columns = section.settings.columns_desktop
-                      assign number_of_columns_mobile = section.settings.columns_mobile
-                      assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
-                      assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
-                      assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
-                      if section.settings.image_width == 'half'
-                        assign image_width = 0.5
-                      elsif section.settings.image_width == 'third'
-                        assign image_width = 0.33
-                      else
-                        assign image_width = 1
-                      endif
-                    -%}
-                    {% capture sizes %}
-                      (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
-                      (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
-                      (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
-                      calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
-                    {% endcapture %}
                     {{
-                      block.settings.image
+                      staff_image
                       | image_url: width: 3200
                       | image_tag:
-                        widths: '900, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                        sizes: sizes,
-                        class: 'multicolumn-card__image standard__image'
+                        widths: '375, 550, 750, 900, 1100, 1500, 2000, 3200',
+                        sizes: '(min-width: 990px) 33vw, (min-width: 750px) 50vw, 100vw',
+                        class: 'multicolumn-card__image standard__image',
+                        loading: 'lazy'
                     }}
-                    {% unless block.settings.custom_text_hover != blank %}
-                     {% if block.settings.image_hover != blank %} 
-                    {{
-                      block.settings.image_hover
-                      | image_url: width: 3200
-                      | image_tag:
-                        widths: '900, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                        sizes: sizes,
-                        class: 'multicolumn-card__image hover__image'
-                    }}
-                       {% endif %}
-                    {% else %}
+
                     <div class="multicolumn-card__image hover__image custom__text--on-hover">
                       <div class="inner__hover-shadow">
-                      <h3 class="hxl staff_hover-title">{{ block.settings.custom_text_hover }}</h3>
-                      <span>{{ block.settings.custom_text_hover_position }}</span>
+                        {% if staff_name != blank %}
+                          <h3 class="hxl staff_hover-title">
+                            {{ staff_name | escape }}
+                          </h3>
+                        {% endif %}
+
+                        {% if staff_role != blank %}
+                          <span class="staff_hover-role">
+                            {{ staff_role | escape }}
+                          </span>
+                        {% endif %}
                       </div>
                     </div>
-                    {% endunless %}
                   </div>
                 </a>
-              {%- endif -%}
-              <div
-                class="large-up-hide accordion"
-                {{ block.shopify_attributes }}
-              >
+              {% endif %}
+
+              <div class="large-up-hide accordion">
                 <div
                   class="class-details"
-                  id="Details-{{ block.id }}-{{ section.id }}"
+                  id="Details-{{ section.id }}-{{ person.system.id }}"
                 >
-                  <div class="class-summary" id="Summary-{{ block.id }}-{{ section.id }}">
+                  <div
+                    class="class-summary"
+                    id="Summary-{{ section.id }}-{{ person.system.id }}"
+                  >
                     <div class="title_arrow-wrapper">
                       <h3 class="accordion__title inline-richtext hxl">
-                        {{ block.settings.staff_name }}
+                        {{ staff_name | escape }}
                       </h3>
                       <span class="dropdown-arrow"></span>
                     </div>
-                    {% if block.settings.staff_role != blank %}
+
+                    {% if staff_role != blank %}
                       <span class="accordion_sub_heading gill-sans-nova">
-                        {{ block.settings.staff_role }}
+                        {{ staff_role | escape }}
                       </span>
                     {% endif %}
                   </div>
+
                   <div class="accordion__content-wrapper">
                     <div
                       class="accordion__content rte"
-                      id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
+                      id="CollapsibleAccordion-{{ section.id }}-{{ person.system.id }}"
                       role="region"
-                      aria-labelledby="Summary-{{ block.id }}-{{ section.id }}"
+                      aria-labelledby="Summary-{{ section.id }}-{{ person.system.id }}"
                     >
-                      {% if block.settings.staff_degree != blank %}
-                        <p class="staff-degree">
-                          {{ block.settings.staff_degree }}
-                        </p>
+                      {% if staff_degree != blank %}
+                        <p class="staff-degree">{{ staff_degree | escape }}</p>
                       {% endif %}
-                      {{ block.settings.staff_description }}
-                      {% if block.settings.staff_url %}
+
+                      {{ staff_description }}
+
+                      {% if staff_url != blank %}
                         <div class="link-wrapper">
-                          <a href="{{ block.settings.staff_url }}">{{ block.settings.staff_url_title }}</a>
+                          <a href="{{ staff_url | escape }}">
+                            {{ staff_url_title | default: staff_name | escape }}
+                          </a>
                         </div>
                       {% endif %}
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="multicolumn-card__info">
-                {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">
-                    <a href="{{ block.settings.link }}">{{ block.settings.title }}</a>
-                  </h3>
-                {%- endif -%}
-                {%- if block.settings.subtext != blank -%}
-                  <p class="inline-richtext sub-text">
-                    <a href="{{ block.settings.link }}">{{ block.settings.subtext }}
-                    </a>
-                  </p>
-                {%- endif -%}
-                {%- if block.settings.text != blank -%}
-                  {%- unless block.settings.show_above_image -%}
-                  <div class="rte">{{ block.settings.text }}</div>
-                  {%- endunless -%}  
-                {%- endif -%}
-                {%- if block.settings.link_label != blank -%}
-                  <a
-                    class="link animate-arrow"
-                    {% if block.settings.link == blank %}
-                      role="link" aria-disabled="true"
-                    {% else %}
-                      href="{{ block.settings.link }}"
-                    {% endif %}
-                  >
-                    {{- block.settings.link_label | escape -}}
-                  </a>
-                {%- endif -%}
+            </div>
+          </div>
+
+          {% assign visible_staff_index = visible_staff_index | plus: 1 %}
+          {% assign row_remainder = visible_staff_index | modulo: columns_desktop %}
+
+          {% if row_remainder == 0 or visible_staff_index == matching_staff_count %}
+            <div
+              class="staff-detail"
+              id="StaffDetails-{{ section.id }}-{{ visible_staff_index | minus: 1 | divided_by: columns_desktop }}"
+            >
+              <div class="staff__image-wrapper">
+                <img class="staff__image" alt="" hidden>
+              </div>
+
+              <div class="staff__detail-wrapper">
+                <h2 class="staff-name hxl"></h2>
+                <p class="staff-role"></p>
+                <span class="staff-degree"></span>
+                <div class="rte staff-description"></div>
+                <div class="staff-url__wrapper">
+                  <a class="staff-url" hidden></a>
+                </div>
               </div>
             </div>
-          </li>
-
-        {% if modulo_result == last_column_index or forloop.last %}
-          <div class="staff-detail">
-           <div class="staff__image-wrapper">
-             <img class="staff__image" src="" alt="">
-           </div> 
-           <div class="staff__detail-wrapper"> 
-            <h2 class="staff-name hxl" aria-label="{{ block.settings.staff_name }} - filled when staff details expanded"></h2>
-            <p class="staff-role"></p>
-            <span class="staff-degree"></span>
-            <div class="rte staff-description"></div>
-            <div class="staff-url__wrapper">
-              <a class="staff-url" href="" aria-label="{{ block.settings.staff_url_title }}"></a>
-            </div> 
-           </div>  
-          </div>
-        {% endif %}
-      {%- endfor -%}
-    </ul>
-
-      {%- if show_mobile_slider -%}
-        <div class="slider-buttons large-up-hide">
-          <button
-            type="button"
-            class="slider-button slider-button--prev"
-            name="previous"
-            aria-label="{{ 'general.slider.previous_slide' | t }}"
-          >
-            <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
-          </button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.blocks.size }}</span>
-          </div>
-          <button
-            type="button"
-            class="slider-button slider-button--next"
-            name="next"
-            aria-label="{{ 'general.slider.next_slide' | t }}"
-          >
-            <span class="svg-wrapper">{{ 'icon-caret.svg' | inline_asset_content }}</span>
-          </button>
-        </div>
-      {%- endif -%}
-    </slider-component>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
   </div>
-</div>
+{%- endpaginate -%}
+
+<script src="{{ 'staff.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
@@ -517,101 +453,52 @@
   ],
   "blocks": [
     {
-      "type": "column",
-      "name": "t:sections.multicolumn.blocks.column.name",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
-        },
-        {
-          "type": "image_picker",
-          "id": "image_hover",
-          "label": "Image",
-          "info": "Appear on hover with an animation"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "custom_text_hover",
-          "label": "Hover title",
-          "info": "If it's not blank, it appears on hover"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "custom_text_hover_position",
-          "label": "Hover text",
-        },
-        {
-          "type": "inline_richtext",
-          "id": "title",
-          "default": "t:sections.multicolumn.blocks.column.settings.title.default",
-          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "subtext",
-          "label": "Subtext"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "default": "t:sections.multicolumn.blocks.column.settings.text.default",
-          "label": "t:sections.multicolumn.blocks.column.settings.text.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_above_image",
-          "label": "Show description above image",
-          "default": false
-        },
-        {
-          "type": "text",
-          "id": "link_label",
-          "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
-        },
-        {
-          "type": "header",
-          "content": "Staff profile"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "staff_name",
-          "label": "Staff name"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "staff_role",
-          "label": "Staff role"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "staff_degree",
-          "label": "Staff degree"
-        },
-        {
-          "type": "richtext",
-          "id": "staff_description",
-          "label": "Staff description"
-        },
-        {
-          "type": "text",
-          "id": "staff_url_title",
-          "label": "Link title"
-        },
-        {
-          "type": "url",
-          "id": "staff_url",
-          "label": "Link"
-        }
-      ]
-    }
-  ],
+    "type": "column",
+    "name": "Staff column",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "staff_name",
+        "label": "Name"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "staff_role",
+        "label": "Role"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "staff_degree",
+        "label": "Degree"
+      },
+      {
+        "type": "richtext",
+        "id": "staff_description",
+        "label": "Description"
+      },
+      {
+        "type": "text",
+        "id": "staff_url_title",
+        "label": "Link title"
+      },
+      {
+        "type": "url",
+        "id": "staff_url",
+        "label": "Link"
+      }
+    ]
+  }
+],
   "presets": [
     {
       "name": "Staff multicolumn",
