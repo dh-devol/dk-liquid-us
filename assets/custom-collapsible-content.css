@@ -178,6 +178,17 @@
 .product-specification table:not([class]) td, table:not([class]) th {
   border: none;
 }
+.product-specification button.title_arrow-wrapper {
+  appearance: none;
+  background-color: unset;
+  border: none;
+  color: rgba(var(--color-foreground));
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  line-height: 24px;
+  width: stretch;
+  padding: 0;
+}
 .product-specification .specification-title.accordion__title {
     font-size: 1.07em;
     font-weight: 500;

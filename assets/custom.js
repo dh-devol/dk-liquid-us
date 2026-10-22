@@ -8,37 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } 
 
-  document.querySelectorAll(".custom-collapsible-content .accordion").forEach(function (accordion) {
-    const header = accordion.querySelector(".class-summary");
-  
-    if (header) {
-      header.addEventListener("click", function (e) {
-        e.stopPropagation();
-  
-        const content = accordion.querySelector(".accordion__content");
-        const isOpen = content.style.maxHeight;
-  
-        header.classList.toggle("active");
-  
-        if (isOpen) {
-          // Close accordion
-          content.style.maxHeight = null;
-          header.removeAttribute("open");
-  
-          // Also shrink parent accordions after child is closed
-          setTimeout(() => updateParentAccordions(accordion), 350); // wait for 300ms transition + buffer
-        } else {
-          // Open accordion
-          content.style.maxHeight = content.scrollHeight + 30 + "px";
-          header.setAttribute("open", "");
-
-          // Wait for 300ms CSS transition to finish before reading scrollHeight
-          setTimeout(() => updateParentAccordions(accordion), 350);
-        }
-      });
-    }
-  });
-
 // Script for add class on category details page inside product list for mobile
 document.querySelectorAll(
   '.page-metafield-gallery.slideshow-thumbnail-gallery.small-hide'
