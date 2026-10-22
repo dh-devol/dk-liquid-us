@@ -67,7 +67,10 @@
             "heading": "{{ block.repeater.job_title.value }}",
             "sub_heading": "{{ block.repeater.site.value }}",
             "location": "{{ block.repeater.location.value }}",
-            "row_content": "{{ block.repeater.description | metafield_tag }}"
+            "row_content": "{{ block.repeater.description | metafield_tag }}",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
           }
         }
       },
@@ -102,7 +105,10 @@
             "heading": "{{ block.repeater.job_title.value }}",
             "sub_heading": "{{ block.repeater.site.value }}",
             "location": "{{ block.repeater.location.value }}",
-            "row_content": "{{ block.repeater.description | metafield_tag }}"
+            "row_content": "{{ block.repeater.description | metafield_tag }}",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
           }
         }
       },
@@ -126,6 +132,29 @@
         "padding_bottom": 36,
         "sectionname": ""
       }
+    },
+    "empty_careers_PznzLJ": {
+      "type": "empty-careers",
+      "blocks": {
+        "text_7phFa9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>There are currently no open positions that we are actively recruiting for.&nbsp;</p><p>Please check back soon.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_7phFa9"
+      ],
+      "name": "Careers empty state",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -133,6 +162,7 @@
     "metaobject_gallery_slider_RadjP6",
     "catalogue_title_with_richtext_8a3RRj",
     "custom_career_content_cecKyt",
-    "custom_career_content_m9HiNE"
+    "custom_career_content_m9HiNE",
+    "empty_careers_PznzLJ"
   ]
 }
