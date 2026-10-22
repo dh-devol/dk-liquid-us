@@ -485,7 +485,6 @@ cart-remove-button .icon-remove {
 @media screen and (max-width:989px){
 .cart_page-container .title-wrapper-with-link {
     margin-bottom: 0px;
-    padding-bottom: 10px;
     border-bottom: solid 1px #e5e5e5;
     justify-content: flex-start;
   }
@@ -686,10 +685,6 @@ cart-remove-button .icon-remove {
     }
     .main_cart-footer-wrapper .tax-note{
       font-size:15px;
-    }
-        .main_cart-footer-wrapper .cart__footer {
-        padding-top: 20px !important;
-        padding-bottom: 10px !important;
     }
 }
 .cart-item__error {

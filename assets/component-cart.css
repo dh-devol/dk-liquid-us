@@ -256,6 +256,7 @@ cart-items {
     margin-left: auto;
     max-width: 100%;
     width: 100%;
+    padding-bottom:10px;
 }
 #main-cart-footer .cart__ctas {
     justify-content: center;
@@ -305,7 +306,7 @@ cart-items {
   width: 100%;
 }
 .cart--page .js-contents {
-    margin-top: 12px;
+    margin-top: 2rem;
 }
 .main_cart-items-wrapper {
     display: inline-flex;
@@ -746,9 +747,6 @@ flatpickr-months .flatpickr-prev-month:hover svg,
     width: 100%;
     padding-top: 35px
 }
-.cart_page-container .title-wrapper-with-link {
-    padding-bottom: 10px;
-}
 .cart--page .main_cart-footer-wrapper {
   width: 100%;
   max-width: 100%;
@@ -873,7 +871,7 @@ flatpickr-months .flatpickr-prev-month:hover svg,
     position: static;
     order: 0;
     top: auto;
-    padding: 15px 0 0;
+    padding: 30px 0 0;
     border-bottom: none;
     margin-top: 30px;
     width: 100%;
