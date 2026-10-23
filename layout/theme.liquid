@@ -481,9 +481,9 @@
     {% if template.name == 'index' %}
       {% sections 'footer-group-index' %}
     {% elsif template.name == 'page' and template.suffix == 'kitchens' %}
-      {% sections 'footer-group-page-kitchens' %}
+      {% sections 'footer-group-index' %}
     {% elsif template.name == 'page' and template.suffix == 'about-us' %}
-      {% sections 'footer-group-page-about-us' %}
+      {% sections 'footer-group-index' %}
     {% else %}
       {% sections 'footer-group' %}
     {% endif %}
