@@ -1,7 +1,7 @@
 {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 {{ 'custom-collapsible-content.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'product-specification.js' | asset_url }}" defer></script>
+{% comment %} <script src="{{ 'product-specification.js' | asset_url }}" defer></script> {% endcomment %}
 
 <div class="product-specification custom-collapsible-content page-width">
   <div class="collapsible-content">
@@ -289,6 +289,24 @@
     }
   </style>
 {% endif %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var wrapper = document.querySelector('.child-accordion-wrapper');
+    if (!wrapper) return;
+
+    var firstAccordion = wrapper.querySelector('.accordion');
+    if (!firstAccordion) return;
+
+    var header = firstAccordion.querySelector('.class-summary');
+    var content = firstAccordion.querySelector('.accordion__content');
+    if (!header || !content) return;
+
+    content.style.maxHeight = content.scrollHeight + 'px';
+    header.classList.add('active');
+    header.setAttribute('open', '');
+  }
+</script>
 
 {% schema %}
 {
