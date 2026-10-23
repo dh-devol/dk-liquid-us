@@ -178,7 +178,8 @@
 .product-specification table:not([class]) td, table:not([class]) th {
   border: none;
 }
-.product-specification button.title_arrow-wrapper {
+.product-specification button.title_arrow-wrapper,
+.custom-collapsible-content button.title_arrow-wrapper {
   appearance: none;
   background-color: unset;
   border: none;
