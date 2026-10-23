@@ -849,6 +849,12 @@ flatpickr-months .flatpickr-prev-month:hover svg,
   }
 }
 
+@media (max-width:575px){
+  .page-cart .multicolumn .page-width, .cart--page .custom-multicolumn .page-width{
+    max-width:88%;
+  }
+}
+
 @media (max-width:989px){
   .cart--page .main_cart-footer-wrapper #main-cart-footer {
     top: 110px;
