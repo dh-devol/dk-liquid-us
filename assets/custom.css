@@ -2153,9 +2153,6 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
     max-width: 95%;
     margin:0 auto;
    }
-   .page-cart .multicolumn .page-width, #shopify-section-template--21483003871329__collection_multicolumn_ifjapz .page-width{
-    max-width: 88%;
-  }
 }
 @media screen and (min-width: 750px) {
   .page-our-brochure-book .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title .title {
