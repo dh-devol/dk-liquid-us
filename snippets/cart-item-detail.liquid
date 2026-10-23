@@ -124,13 +124,13 @@
     {%- endif -%}
 
     <a href="{{ cart_item_url }}" class="cart-item__name h4 break">
-      {% if item.properties._group_id != blank and item.product.title contains "Plate" %}
+      {% comment %} {% if item.properties._group_id != blank and item.product.title contains "Plate" %}
         {{ item.product.title | escape }}
       {% elsif item.properties._group_id != blank and item.product.metafields.custom.custom_product_title %}
-        {{ item.product.metafields.custom.custom_product_title }}
-      {% else %}
         {{ item.product.title | escape }}
-      {% endif %}
+      {% else %} {% endcomment %}
+        {{ item.product.title | escape }}
+      {% comment %} {% endif %} {% endcomment %}
     </a>
   {% comment %}
     {%- if item.original_price != item.final_price -%}
