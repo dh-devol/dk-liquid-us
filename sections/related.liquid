@@ -6,6 +6,8 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 
+<script src="{{ 'project-multicolumn-flow.js' | asset_url }}" defer></script>
+
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
@@ -104,7 +106,7 @@
 
 {% comment %} If collection targeting is set, do not render anything {% endcomment %}
 {% if show_section %}
-  <div class="related-section related-section--columns-{{ section.settings.columns | default: 4 }} page-width section-{{ section.id }}-padding {% if section.settings.show_bottom_border %}bottom__section-border{% endif %}{% if section.settings.show_top_border %} top__section-border{% endif %} color-{{ section.settings.color_scheme }} gradient" > 
+  <div data-project-flow class="related-section related-section--columns-{{ section.settings.columns | default: 4 }} page-width section-{{ section.id }}-padding {% if section.settings.show_bottom_border %}bottom__section-border{% endif %}{% if section.settings.show_top_border %} top__section-border{% endif %} color-{{ section.settings.color_scheme }} gradient" > 
     {% if section.settings.section_title != blank %}
       <h2 class="related-title {{ section.settings.heading_size }}">{{ section.settings.section_title }}</h2>
     {% endif %}
@@ -278,7 +280,20 @@
   }
   .related-section .related-title {
     margin: 1em 0 2em 0;
+  
+  .related-section[data-project-flow] .related-products-grid.project-flow-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--grid-desktop-horizontal-spacing);
   }
+
+  .related-section[data-project-flow] .related-products-grid.project-flow-list > .product-card-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
 }
 
 @media (max-width: 590px) {

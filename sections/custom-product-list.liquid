@@ -5,6 +5,7 @@
 
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'project-multicolumn-flow.js' | asset_url }}" defer></script>
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -65,7 +66,7 @@
   endif
 -%}
 
-<div{% if section_name_id != blank %} id="{{ section_name_id }}"{% endif %} class="custom-product-list custom-product-list--columns-{{ section.settings.columns_desktop }} section-{{ section.id }} section-{{ section.id }}-padding {{ section.settings.sectionname }} multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+<div data-project-flow {% if section_name_id != blank %} id="{{ section_name_id }}"{% endif %} class="custom-product-list custom-product-list--columns-{{ section.settings.columns_desktop }} section-{{ section.id }} section-{{ section.id }}-padding {{ section.settings.sectionname }} multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div
     class="page-width {% if section.settings.show_bottom_border %}bottom__section-border{% endif %}{% if section.settings.show_top_border %} top__section-border{% endif %} isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
