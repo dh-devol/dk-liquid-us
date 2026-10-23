@@ -1,50 +1,72 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var wrapper = document.querySelector('.child-accordion-wrapper');
-    if (!wrapper) return;
+function updateParentAccordions(accordion) {
+  var parentContent = accordion.parentElement && accordion.parentElement.closest('.accordion__content');
+  while (parentContent) {
+    if (parentContent.style.maxHeight) {
+      parentContent.style.maxHeight = parentContent.scrollHeight + 30 + 'px';
+    }
+    parentContent = parentContent.parentElement && parentContent.parentElement.closest('.accordion__content');
+  }
+}
 
-    var firstAccordion = wrapper.querySelector('.accordion');
-    if (!firstAccordion) return;
+function initAccordions() {
+  // set all accordions to inert
+  document.querySelectorAll('.custom-collapsible-content .accordion').forEach(function (acc) {
+    var c = acc.querySelector('.accordion__content');
+    if (c) c.inert = true;
+  });
 
-    var header = firstAccordion.querySelector('.class-summary');
-    var content = firstAccordion.querySelector('.accordion__content');
+  // Open the first child accordion (no early returns)
+  var wrapper = document.querySelector('.child-accordion-wrapper');
+  var firstAccordion = wrapper && wrapper.querySelector('.accordion');
+  if (firstAccordion) {
+    var firstHeader = firstAccordion.querySelector('.class-summary');
+    var firstContent = firstAccordion.querySelector('.accordion__content');
+    if (firstHeader && firstContent) {
+      firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
+      firstContent.inert = false;
+      firstHeader.classList.add('active');
+      firstHeader.setAttribute('open', '');
+      var firstButton = firstHeader.querySelector('button.title_arrow-wrapper');
+      if (firstButton) firstButton.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  // Click handlers
+  document.querySelectorAll('.custom-collapsible-content .accordion').forEach(function (accordion) {
+    var header = accordion.querySelector('.class-summary');
+    var content = accordion.querySelector('.accordion__content');
     if (!header || !content) return;
 
-    content.style.maxHeight = content.scrollHeight + 'px';
-    header.classList.add('active');
-    header.setAttribute('open', '');
+    var button = header.querySelector('button.title_arrow-wrapper');
 
-    document.querySelectorAll(".custom-collapsible-content .accordion").forEach(function (accordion) {
-    const header = accordion.querySelector(".class-summary");
-    const button = header.querySelector("button.title_arrow-wrapper");
-  
-    if (header) {
-      header.addEventListener("click", function (e) {
-        e.stopPropagation();
-  
-        const content = accordion.querySelector(".accordion__content");
-        const isOpen = content.style.maxHeight;
-  
-        header.classList.toggle("active");
-        button.setAttribute("aria-expanded", button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-        
-        if (isOpen) {
-          // Close accordion
-          content.style.maxHeight = null;
-          header.removeAttribute("open");
-          
-  
-          // Also shrink parent accordions after child is closed
-          setTimeout(() => updateParentAccordions(accordion), 200); // wait for animation
-        } else {
-          // Open accordion
-          content.style.maxHeight = content.scrollHeight + 30 + "px";
-          header.setAttribute("open", "");
-          // button.setAttribute("aria-expanded", "true");
-  
-          // Delay ensures child has expanded before updating parent
-          setTimeout(() => updateParentAccordions(accordion), 200); // match your CSS transition
-        }
-      });
-    }
+    header.addEventListener('click', function (e) {
+      e.stopPropagation();
+      e.preventDefault(); // only needed if header is a <summary>
+
+      var isOpen = !!content.style.maxHeight;
+
+      header.classList.toggle('active');
+      if (button) {
+        button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      }
+
+      if (isOpen) {
+        content.style.maxHeight = null;
+        content.inert = true;
+        header.removeAttribute('open');
+      } else {
+        content.style.maxHeight = content.scrollHeight + 30 + 'px';
+        content.inert = false;
+        header.setAttribute('open', '');
+      }
+
+      setTimeout(function () { updateParentAccordions(accordion); }, 200);
+    });
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAccordions);
+} else {
+  initAccordions();
+}

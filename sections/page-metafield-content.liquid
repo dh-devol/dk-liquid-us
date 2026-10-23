@@ -2,7 +2,7 @@
 {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 {{ 'custom-collapsible-content.css' | asset_url | stylesheet_tag }}
-
+<script src="{{ 'product-specification.js' | asset_url }}" defer></script>
 
 {% assign selected_products_1 = page.metafields.custom.product_1.value %}
     {% assign quantities_1 = page.metafields.custom.quantity_1.value %}
@@ -182,12 +182,12 @@
             {% if page.metafields.custom.breakdown_costs.value != blank %}
               <div class="class-summary" id="Summary-{{ block.id }}-{{ section.id }}">
                 {% render 'icon-accordion', icon: block.settings.icon %}
-                <div class="title_arrow-wrapper">
+                <button class="title_arrow-wrapper" type="button" aria-expanded="false}" aria-controls="accordion">
                   <h3 class="accordion__title inline-richtext hxl">
                     {{ page.metafields.custom.breakdown_costs.value | escape }}
                   </h3>
                   <span class="dropdown-arrow"></span>
-                </div>
+                </button>
                 {% if block.settings.sub_heading != blank %}
                   <span class="accordion_sub_heading gill-sans-nova">
                     {{ block.settings.sub_heading | default: block.settings.page.title | escape }}

@@ -1,6 +1,7 @@
 {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
 {{ 'custom-collapsible-content.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-specification.js' | asset_url }}" defer></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -103,12 +104,12 @@
                   {% endif %}
                 >
                   <div class="class-summary" id="Summary-{{ block.id }}-{{ section.id }}">
-                    <div class="title_arrow-wrapper">
+                    <button class="title_arrow-wrapper"  type="button" aria-expanded="false" aria-controls="accordion">
                       <h3 class="accordion__title inline-richtext hxl">
                         {{ block.settings.heading | default: block.settings.page.title | escape }}
                       </h3>
                       <span class="dropdown-arrow"></span>
-                    </div>
+                    </button>
                     {% if block.settings.sub_heading != blank %}
                       <span class="accordion_sub_heading gill-sans-nova">
                         {{ block.settings.sub_heading | default: block.settings.page.title | escape }}
