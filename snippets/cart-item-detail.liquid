@@ -103,8 +103,8 @@
   <td class="cart-item__media">
     {% if item.image %}
       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-      <a href="{{ cart_item_url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
       <div class="cart-item__image-container gradient global-media-settings">
+      <a href="{{ cart_item_url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> 
         <img
           src="{{ item.image | image_url: width: 300 }}"
           class="cart-item__image"
@@ -113,6 +113,7 @@
           width="150"
           height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
         >
+        </a>
       </div>
     {% endif %}
   </td>
@@ -354,7 +355,7 @@
       <span class="product__inventory cart-item-stock">{{ item.product.metafields.custom.lead_time.value }}</span>
     {% endif %} {% endcomment %}
     {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
-      <p class="cart-item__flooring-summary small-hide medium-hide" data-line-key="{{ item.key }}">{{ _item_ft2_display }} ft²</p>
+      <p class="cart-item__flooring-summary" data-line-key="{{ item.key }}">{{ _item_ft2_display }} ft²</p>
     {%- endif -%}
     <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
       {%- for discount in item.line_level_discount_allocations -%}
@@ -687,9 +688,9 @@
 
   <td class="cart-item__totals right" {%- if display_original_line_price != display_final_line_price -%}style="padding-bottom: 3rem;"{% endif %}>
     <quantity-popover>
-      {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
+      {% comment %} {%- if item.product.type == _cart_flooring_type and _item_show_m2 -%}
         <p class="cart-item__flooring-summary large-up-hide" data-line-key="{{ item.key }}">{{ _item_ft2_display }} ft²</p>
-      {%- endif -%}
+      {%- endif -%} {% endcomment %}
       <div class="cart-item__quantity-wrapper quantity-popover-wrapper large-up-hide">
         <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
           {{ 'products.product.quantity.label' | t }}
