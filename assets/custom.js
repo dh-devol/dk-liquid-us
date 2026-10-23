@@ -8,6 +8,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } 
 
+  document.querySelectorAll(".custom-collapsible-content .accordion").forEach(function (accordion) {
+    const header = accordion.querySelector(".class-summary");
+    const button = header.querySelector("button.title_arrow-wrapper");
+  
+    if (header) {
+      header.addEventListener("click", function (e) {
+        e.stopPropagation();
+  
+        const content = accordion.querySelector(".accordion__content");
+        const isOpen = content.style.maxHeight;
+  
+        header.classList.toggle("active");
+        button.setAttribute("aria-expanded", button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        
+        if (isOpen) {
+          // Close accordion
+          content.style.maxHeight = null;
+          header.removeAttribute("open");
+          
+  
+          // Also shrink parent accordions after child is closed
+          setTimeout(() => updateParentAccordions(accordion), 200); // wait for animation
+        } else {
+          // Open accordion
+          content.style.maxHeight = content.scrollHeight + 30 + "px";
+          header.setAttribute("open", "");
+          // button.setAttribute("aria-expanded", "true");
+  
+          // Delay ensures child has expanded before updating parent
+          setTimeout(() => updateParentAccordions(accordion), 200); // match your CSS transition
+        }
+      });
+    }
+  });
+
 // Script for add class on category details page inside product list for mobile
 document.querySelectorAll(
   '.page-metafield-gallery.slideshow-thumbnail-gallery.small-hide'
@@ -107,5 +142,5 @@ if (window.matchMedia('(max-width: 991px)').matches) {
     true // CAPTURE phase (important for iOS)
   );
 }
-
+ 
 });
