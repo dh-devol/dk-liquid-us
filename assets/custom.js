@@ -8,6 +8,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } 
 
+  document.querySelectorAll(".custom-collapsible-content .accordion").forEach(function (accordion) {
+    const header = accordion.querySelector(".class-summary");
+    const button = header.querySelector("button.title_arrow-wrapper");
+  
+    if (header) {
+      header.addEventListener("click", function (e) {
+        e.stopPropagation();
+  
+        const content = accordion.querySelector(".accordion__content");
+        const isOpen = content.style.maxHeight;
+  
+        header.classList.toggle("active");
+        button.setAttribute("aria-expanded", button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+        
+        if (isOpen) {
+          // Close accordion
+          content.style.maxHeight = null;
+          header.removeAttribute("open");
+          
+  
+          // Also shrink parent accordions after child is closed
+          setTimeout(() => updateParentAccordions(accordion), 200); // wait for animation
+        } else {
+          // Open accordion
+          content.style.maxHeight = content.scrollHeight + 30 + "px";
+          header.setAttribute("open", "");
+          // button.setAttribute("aria-expanded", "true");
+  
+          // Delay ensures child has expanded before updating parent
+          setTimeout(() => updateParentAccordions(accordion), 200); // match your CSS transition
+        }
+      });
+    }
+  });
+
 // Script for add class on category details page inside product list for mobile
 document.querySelectorAll(
   '.page-metafield-gallery.slideshow-thumbnail-gallery.small-hide'
@@ -108,4 +143,74 @@ if (window.matchMedia('(max-width: 991px)').matches) {
   );
 }
 
+if (window.innerWidth <= 991) return;
+
+const staffRows = document.querySelectorAll(".staff-multicolumn .staff-row");
+if (!staffRows.length) return;
+
+  staffRows.forEach((row) => {
+    const staffImages = row.querySelectorAll(".multicolumn-card__image-wrapper");
+    const staffDetail = row.querySelector(".staff-detail"); 
+    const staffName = staffDetail.querySelector(".staff-name");
+    const staffRole = staffDetail.querySelector(".staff-role");
+    const staffDegree = staffDetail.querySelector(".staff-degree");
+    const staffDescription = staffDetail.querySelector(".staff-description");
+    const staffImage = staffDetail.querySelector(".staff__image");
+    const staffurl = staffDetail.querySelector(".staff-url");
+
+    if (!staffImages.length || !staffDetail) return;
+
+    staffImages.forEach((image) => {
+        image.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const isActive = this.classList.contains("active");
+
+            document.querySelectorAll(".staff-detail").forEach((detail) => {
+                detail.classList.remove("active");
+            });
+
+            document.querySelectorAll(".multicolumn-card__image-wrapper").forEach((img) => {
+                img.classList.remove("active");
+            });
+
+            if (isActive) {
+                return;
+            }
+
+            const name = this.getAttribute("data-name");
+            const role = this.getAttribute("data-role");
+            const degree = this.getAttribute("data-degree");
+            const description = this.getAttribute("data-description");
+            const personImagesrc = this.getAttribute("data-image-src");
+            const personImagealt = this.getAttribute("data-image-alt");
+            const urlText = this.getAttribute("data-url-title");
+            const urlPath = this.getAttribute("data-url-path");
+
+            if (name) staffName.textContent = name;
+            if (role) staffRole.textContent = role;
+            staffDegree.textContent = degree || '';
+            if (description) staffDescription.innerHTML = description;
+            if (personImagesrc) staffImage.src = personImagesrc;
+            if (personImagealt) staffImage.alt = personImagealt;
+            staffurl.textContent = urlText || urlPath || '';
+            staffurl.href = urlPath || '';
+            staffurl.hidden = !urlPath;
+          
+
+            staffDetail.classList.add("active");
+            this.classList.add("active");
+
+            // Scroll into view smoothly after short delay
+            setTimeout(() => {
+              const topOffset = staffDetail.getBoundingClientRect().top + window.pageYOffset - 100;
+              window.scrollTo({
+                top: topOffset,
+                behavior: 'smooth'
+              });
+            }, 200);
+        });
+    });
+  });
+ 
 });
