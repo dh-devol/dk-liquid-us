@@ -2192,12 +2192,12 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
   .page-online-accessory-sales .contact-form-with-details {
     margin-bottom: 80px;
   }
-  .article-template .brand__info-wrapper + .main__blog--wrapper {
+  /*.article-template .brand__info-wrapper + .main__blog--wrapper {
     margin-top: -30px !important;
   }
   .article-template .brand__info-wrapper img {
     margin-top: -40px;
-  }
+  }*/
 }
 #socialbar {
     display: flex;
