@@ -1146,7 +1146,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   }
 }
 
-@media (max-width:991px){
+@media (max-width:989px){
 .header-menu-wrapper{
   position: relative;
   display: flex;
@@ -1432,7 +1432,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 990px) {
   .header__heading-logo {
     margin: 8px 0 20px;
   }
