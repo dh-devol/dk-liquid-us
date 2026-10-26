@@ -52,18 +52,11 @@
           "settings": {
             "product": "regency-ceiling-ring"
           }
-        },
-        "product_item_bD9QhP": {
-          "type": "product_item",
-          "settings": {
-            "product": "kentish-brown-skirting-tiles"
-          }
         }
       },
       "block_order": [
         "product_item_9VjLaW",
-        "product_item_KU7xCk",
-        "product_item_bD9QhP"
+        "product_item_KU7xCk"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -74,7 +67,52 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_nmPTWn": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_waPhw9": {
+          "type": "product_item",
+          "settings": {
+            "product": "cream-skirting-tiles"
+          }
+        },
+        "product_item_wcUBmU": {
+          "type": "product_item",
+          "settings": {
+            "product": "kentish-brown-skirting-tiles"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_waPhw9",
+        "product_item_wcUBmU"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "Skirting Tiles",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "primary",
@@ -780,6 +818,7 @@
     "metaobject_gallery_slider_8CfynF",
     "banner",
     "custom_product_list_tDfCBP",
+    "custom_product_list_nmPTWn",
     "custom_product_list_zBPUp4",
     "custom_product_list_MpDtJy",
     "custom_product_list_eMeUfM",
