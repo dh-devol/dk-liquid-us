@@ -193,6 +193,12 @@
   text-transform:uppercase;
   letter-spacing: 1.5px;
 }
+@media (max-width:768px) {
+.article-template .article-template__title{
+  width: 94%;
+  margin-bottom: 0.8em;
+}
+}
 .article-template header.page-width {
   margin-top: 45px;
 }
