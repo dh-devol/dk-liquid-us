@@ -61,59 +61,48 @@
     if (!first || !next) return false;
     if (getType(first) !== getType(next)) return false;
 
-    const matchingProductBackgrounds =
-    getType(first) === 'products' &&
-    (
-        (
-        first.classList.contains('background-none') &&
-        next.classList.contains('background-none')
-        ) ||
-        (
-        first.classList.contains('background-primary') &&
-        next.classList.contains('background-primary')
-        )
-    );
-
-    const matchingOriginalBackgrounds =
-    first.classList.contains('background-none') &&
-    next.classList.contains('background-none');
-
-    if (
-    !(matchingProductBackgrounds || matchingOriginalBackgrounds) ||
-    colourClasses(first) !== colourClasses(next)
-    ) {
-    return false;
-    }
-
-
     if (getType(first) === 'products') {
-      // A group may start with a heading or subtitle.
-      // Incoming headings, subtitles or top borders start a new group.
       if (
         first.querySelector('.multicolumn-list.slider') ||
         next.querySelector(
-          '.multicolumn__title, .subtitle__wrapper, ' +
           '.top__section-border, .multicolumn-list.slider'
         )
       ) {
         return false;
       }
 
-      return true;
+      const nextHasHeading = Array.from(
+        next.querySelectorAll(
+          '.multicolumn__title, .subtitle__wrapper'
+        )
+      ).some(element => element.textContent.trim() !== '');
+
+      return !nextHasHeading;
     }
 
-    // Preserve the original safeguards for Project and About sections.
-    const excluded = [
-      '.multicolumn__title',
-      '.subtitle__wrapper',
-      '.top__section-border',
-      '.bottom__section-border',
-      '.multicolumn-list.slider'
-    ].join(',');
 
-    return !first.querySelector(excluded) &&
-      !next.querySelector(excluded);
+  if (
+    first.querySelector('.multicolumn-list.slider') ||
+    next.querySelector('.multicolumn-list.slider')
+  ) {
+    return false;
   }
+
+  if (
+    first.querySelector('.bottom__section-border') ||
+    next.querySelector('.top__section-border')
+  ) {
+    return false;
+  }
+
+  const nextHasHeading = Array.from(
+    next.querySelectorAll(
+      '.multicolumn__title, .subtitle__wrapper'
+    )
+  ).some(element => element.textContent.trim() !== '');
+
+  return !nextHasHeading;
+}
 
   function flowRelatedSections() {
   function getRelatedSection(wrapper) {
@@ -261,7 +250,6 @@
         hiddenSections.push(nextWrapper);
 
         if (closesGroup) {
-          // Put the closing border beneath the combined list.
           hostPageWidth.classList.add('bottom__section-border');
           addedBorders.push(hostPageWidth);
           break;
