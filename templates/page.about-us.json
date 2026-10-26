@@ -153,6 +153,50 @@
         "padding_bottom": 0,
         "sectionname": ""
       }
+    },
+    "custom_rich_text_EKp347": {
+      "type": "custom-rich-text",
+      "blocks": {
+        "heading_EzBKbX": {
+          "type": "heading",
+          "settings": {
+            "heading": "LET'S KEEP IN TOUCH",
+            "heading_size": "h1"
+          }
+        },
+        "text_7tDHFJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Only ever beautiful, useful and inspirational things, sent straight to you.</p>"
+          }
+        },
+        "button_8Rei8a": {
+          "type": "button",
+          "settings": {
+            "button_label": "Sign me up",
+            "button_link": "shopify://pages/letters-from-devol",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_EzBKbX",
+        "text_7tDHFJ",
+        "button_8Rei8a"
+      ],
+      "disabled": false,
+      "name": "Custom richtext",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 76,
+        "padding_bottom": 72
+      }
     }
   },
   "order": [
@@ -160,6 +204,7 @@
     "metaobject_gallery_slider_GiCdYK",
     "catalogue_title_with_richtext_tkErJM",
     "about_multicolumn_qRnh3q",
-    "about_multicolumn_UGjxfC"
+    "about_multicolumn_UGjxfC",
+    "custom_rich_text_EKp347"
   ]
 }

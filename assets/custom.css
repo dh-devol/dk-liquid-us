@@ -189,6 +189,13 @@ a {
 #MainContent {
   padding-bottom:4em;
 }
+#MainContent:has(.custom__rich-text) {
+  padding-bottom: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+#MainContent .custom__rich-text {
+  margin-top: 4em;
+}
 #MainContent.page-letters-from-devol {
   padding-bottom: 0;
 }
@@ -704,7 +711,7 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
   padding-top:8px;
 }
 .hide_title{
-  opacity:0;
+  visibility: hidden;
 }
 .second_footer-block__details-content.footer-block__details-content {
     margin-top: 2.25em;
