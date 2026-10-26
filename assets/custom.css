@@ -2171,6 +2171,9 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
     margin: 1em 0 0 0;
   }
 }
+  .article-template .article-template__title {
+    font-weight: 300;
+  }
 @media screen and (max-width: 749px) {
   .main_cart-footer-wrapper .cart__footer {
     width: 100%;
