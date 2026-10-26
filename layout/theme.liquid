@@ -478,15 +478,7 @@
       {% endif %}
     </main>
 
-    {% if template.name == 'index' %}
-      {% sections 'footer-group-index' %}
-    {% elsif template.name == 'page' and template.suffix == 'kitchens' %}
-      {% sections 'footer-group-page-kitchens' %}
-    {% elsif template.name == 'page' and template.suffix == 'about-us' %}
-      {% sections 'footer-group-page-about-us' %}
-    {% else %}
-      {% sections 'footer-group' %}
-    {% endif %}
+    {% sections 'footer-group' %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

@@ -563,7 +563,7 @@
         "text_8yFmxL",
         "button_bekkfV"
       ],
-      "disabled": true,
+      "disabled": false,
       "name": "Custom richtext",
       "settings": {
         "desktop_content_position": "center",
