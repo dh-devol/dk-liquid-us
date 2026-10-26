@@ -1,6 +1,6 @@
 // Mobile-only accordion for delivery text (this template only)
 (function () {
-  const mq = window.matchMedia('(max-width: 749px)');
+  const mq = window.matchMedia('(max-width: 989px)');
 
   function init(root) {
     root.querySelectorAll('[data-delivery-accordion]').forEach((wrapper) => {

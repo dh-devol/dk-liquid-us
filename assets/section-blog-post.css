@@ -193,6 +193,12 @@
   text-transform:uppercase;
   letter-spacing: 1.5px;
 }
+@media (max-width:768px) {
+.article-template .article-template__title{
+  width: 94%;
+  margin-bottom: 0.8em;
+}
+}
 .article-template header.page-width {
   margin-top: 45px;
 }
@@ -331,3 +337,11 @@
       letter-spacing: 0.5px;
   }
 }*/
+.article-template__content figure {
+  margin: 0 0 2.5em 0;
+  font-size: 0.85em;
+}
+.article-template__content figurecaption em {
+  letter-spacing: 0.02rem;
+  margin-right: 1em;
+}
