@@ -92,7 +92,12 @@
 
     assign display_title = teaser_title | default: teaser_obj.teaser_title | default: card_product.title
     assign display_subtitle = teaser_subtitle | default: teaser_obj.subtitle_teaser
-    assign display_price = teaser_price | default: teaser_obj.price_teaser
+    assign price_product = teaser_obj.dynamic_price.value
+      if price_product != blank
+        assign display_price = price_product.price_min | money
+      else
+        assign display_price = teaser_obj.price_teaser.value
+      endif
     assign override_primary = teaser_primary | default: teaser_obj.thumbnail_image_1
     assign override_secondary = teaser_secondary | default: teaser_obj.thumbnail_image_2
   -%}
@@ -355,10 +360,15 @@
 
             {% if display_price != blank %}
               <div class="price price--teaser">
-                <span class="price-item price-item--regular">{{ display_price }}</span>
+                <span class="price-item price-item--regular">
+                  {{ display_price }}
+                  {% if teaser_obj.price_suffix.value != blank %}
+                    {{ teaser_obj.price_suffix.value | escape }}
+                  {% endif %}
+                </span>
               </div>
             {% else %}
-              {% render 'price', product: card_product, price_class: '',force_plp: true, show_compare_at_price: true %}
+              {% render 'price', product: card_product, price_class: '', force_plp: true, show_compare_at_price: true %}
             {% endif %}
             {%- comment -%}
               Subtitle / availability text now lives directly under the price.
