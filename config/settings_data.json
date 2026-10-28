@@ -133,6 +133,7 @@
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
     "matching_tag": "Flooring",
+    "cart_qty_limit_max_2": 9999,
     "sec_menu": "mobile-secondary-menu",
     "mobilemenu": "dropdown-mobile-menu",
     "sections": {
@@ -169,11 +170,6 @@
       "6251270934270006384": {
         "type": "shopify://apps/stape-conversion-tracking/blocks/gtm/7e13c847-7971-409d-8fe0-29ec14d5f048",
         "disabled": false,
-        "settings": {}
-      },
-      "9227748197609970840": {
-        "type": "shopify://apps/pinterest-save-button/blocks/app-embed/b4ccbe83-a934-440a-a7cb-4c563c1a8dc3",
-        "disabled": true,
         "settings": {}
       }
     },
