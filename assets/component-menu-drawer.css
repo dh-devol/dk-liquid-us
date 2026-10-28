@@ -425,6 +425,9 @@ menu-drawer > details[open] > summary::before {
 .mega-menu_block-wrapper {
     position: relative;
 }
+.mega-menu_block-wrapper::after{
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.4));
+}
 .mega-menu_content-wrapper {
     position: absolute;
     z-index: 1;
