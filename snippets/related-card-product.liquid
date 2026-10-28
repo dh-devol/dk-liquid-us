@@ -358,17 +358,24 @@
               </p>
             {%- endif -%}
 
+            {% if teaser_obj.price_prefix.value != blank %}
+              <span class="price-item price-item--prefix">
+                {{ teaser_obj.price_prefix.value | escape }}
+              </span>
+            {% endif %}
+
             {% if display_price != blank %}
-              <div class="price price--teaser">
-                <span class="price-item price-item--regular">
-                  {{ display_price }}
-                  {% if teaser_obj.price_suffix.value != blank %}
-                    {{ teaser_obj.price_suffix.value | escape }}
-                  {% endif %}
-                </span>
-              </div>
+              <span class="price-item price-item--regular">
+                {{ display_price }}
+              </span>
             {% else %}
               {% render 'price', product: card_product, price_class: '', force_plp: true, show_compare_at_price: true %}
+            {% endif %}
+
+            {% if teaser_obj.price_suffix.value != blank %}
+              <span class="price-item price-item--suffix">
+                {{ teaser_obj.price_suffix.value | escape }}
+              </span>
             {% endif %}
             {%- comment -%}
               Subtitle / availability text now lives directly under the price.
