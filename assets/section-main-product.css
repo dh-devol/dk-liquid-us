@@ -1574,7 +1574,7 @@ a.product__text {
     display: none;
 }
 .product .product__inventory {
-    color: #898989;
+    color: #757575;
     font-family: "EB Garamond", "garamond-premier-pro-display";
     margin-top: -3px;
 }
@@ -1583,14 +1583,18 @@ button.sample-pack-btn.button.button--secondary {
   height: 37px;
   font-size: 0.9em;
   opacity: 0.9;
-  background-color: #848484;
+  background-color: #fff;
   padding: 0.5em 0.75em;
-  color: #fff;
+  color: #595959;
   margin: 2em 0 0.5em 0;
   text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+button.sample-pack-btn.button.button--secondary:hover{
+  border-color: #595959;
 }
 p.checbox-addon-heading {
-    color: #898989;
+    color: #757575;
     font-size: 0.9em;
     font-weight: 400;
     margin: 18px 0 5px 0;
@@ -1665,7 +1669,7 @@ p.checbox-addon-heading {
 }
 .product .quantity_buy_button-wrapper .quantity__label {
   white-space: nowrap;
-  color: rgb(137, 137, 137);
+  color: #757575;
 }
 .product-form__error-message-wrapper {
   display: none !important;
@@ -1897,7 +1901,7 @@ span#TotalPrice {
 #custom-select-wrapper label {
     font-size: 0.9em ;
     font-weight: 400;
-    color: #898989;
+    color: #757575;
 }
 #custom-select-wrapper select:focus-visible {
     outline: 0;
@@ -1978,7 +1982,7 @@ span#TotalPrice {
 }
 .product-page .price-suffix {
     display: inline-block;
-    color: rgba(137, 137, 137, 1);
+    color: #757575;
     font-size: 0.9em;
     white-space: pre-wrap;
 }
@@ -2143,7 +2147,7 @@ margin-top:32px !important;
 
 .quantity_coverage-main-wrapper .offcut {
   width: 100%;
-  color: #898989;
+  color: #757575;
   font-size: 0.9em;
   margin: 0 0 0.8em 0;
   font-weight: 400;
