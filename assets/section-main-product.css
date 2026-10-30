@@ -1575,6 +1575,10 @@ a.product__text {
 .product .product-form__buttons .product-form__submit {
     background: #27333f;
     color: #fff;
+    transition: all 0.3s ease;
+}
+.product .product-form__buttons .product-form__submit:hover {
+  opacity: 95%;
 }
 .product .product__tax {
     display: none;
