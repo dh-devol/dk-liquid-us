@@ -176,8 +176,10 @@
       {% if title != blank or content != blank or link != blank %}
         {% assign has_overlay_text = true %}
       {% endif %}
+      {% assign video = slide.slide_1_video.value %}
+      {% assign mobile_video = slide.slide_1_video_mobile.value %}
 
-      {% if title != blank or image != blank %}
+      {% if title != blank or image != blank or video != blank  %}
         <div
           class="slideshow__slide grid__item grid--1-col slider__slide{% if has_overlay_text %} has-overlay-text banner--has-overlay-content{% endif %}"
           id="Slide-{{ section.id }}-{{ forloop.index }}"
@@ -196,37 +198,75 @@
           {% endif %}
 
           <div class="slideshow__media banner__media media">
-            <picture>
-              {% if mobile_image != blank %}
-                <source
-                  media="(max-width: 749px)"
-                  srcset="{{ mobile_image | image_url: width: 750 }}"
-                  sizes="100vw"
+            {% if video == blank %}
+              <picture>
+                {% if mobile_image != blank %}
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="{{ mobile_image | image_url: width: 750 }}"
+                    sizes="100vw"
+                  >
+                {% endif %}
+                {%- if forloop.first -%}
+                  {{
+                    image
+                    | image_url: width: 3840
+                    | image_tag:
+                      loading: 'eager',
+                      fetchpriority: 'high',
+                      sizes: '100vw',
+                      widths: '375, 550, 750, 1100, 1500, 2000, 3000, 3840',
+                      class: 'slideshow__image'
+                  }}
+                {%- else -%}
+                  {{
+                    image
+                    | image_url: width: 3840
+                    | image_tag:
+                      loading: 'lazy',
+                      sizes: '100vw',
+                      widths: '375, 550, 750, 1100, 1500, 2000, 3000, 3840',
+                      class: 'slideshow__image'
+                  }}
+                {%- endif -%}
+              </picture>
+            {% else %}
+              <div class="banner-video-wrap">
+                <video
+                  loop
+                  muted
+                  playsinline
+                  preload="metadata"
+                  class="banner-media-video"
                 >
-              {% endif %}
-              {%- if forloop.first -%}
-                {{
-                  image
-                  | image_url: width: 3840
-                  | image_tag:
-                    loading: 'eager',
-                    fetchpriority: 'high',
-                    sizes: '100vw',
-                    widths: '375, 550, 750, 1100, 1500, 2000, 3000, 3840',
-                    class: 'slideshow__image'
-                }}
-              {%- else -%}
-                {{
-                  image
-                  | image_url: width: 3840
-                  | image_tag:
-                    loading: 'lazy',
-                    sizes: '100vw',
-                    widths: '375, 550, 750, 1100, 1500, 2000, 3000, 3840',
-                    class: 'slideshow__image'
-                }}
-              {%- endif -%}
-            </picture>
+                  {% if mobile_video != blank %}
+                    {% for source in mobile_video.sources %}
+                      <source
+                        media="(max-width: 767px)"
+                        src="{{ source.url }}"
+                        type="{{ source.mime_type }}"
+                      >
+                    {% endfor %}
+                  {% endif %}
+
+                  {% for source in video.sources %}
+                    <source
+                      media="(min-width: 767px)"
+                      src="{{ source.url }}"
+                      type="{{ source.mime_type }}"
+                    >
+                  {% endfor %}
+                </video>
+
+                <button
+                  type="button"
+                  class="banner-video-toggle"
+                  aria-label="Play video"
+                >
+                  <span aria-hidden="true">▶</span>
+                </button>
+              </div>
+            {% endif %}
           </div>
 
           <div class="slideshow__text-wrapper banner__content banner__content--{{ section.settings.box_align }} {% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">

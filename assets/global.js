@@ -1245,6 +1245,83 @@ class SlideshowComponent extends SliderComponent {
     }
   }
 
+  setupBannerVideos() {
+    this.querySelectorAll('.banner-video-wrap').forEach((wrap) => {
+      if (wrap.dataset.videoReady === 'true') return;
+
+      const video = wrap.querySelector('video');
+      const button = wrap.querySelector('.banner-video-toggle');
+      const icon = button?.querySelector('span');
+
+      if (!video || !button || !icon) return;
+
+      wrap.dataset.videoReady = 'true';
+      video.muted = true;
+      video.playsInline = true;
+
+      const updateButton = () => {
+        const paused = video.paused || video.ended;
+
+        button.setAttribute(
+          'aria-label',
+          paused ? 'Play video' : 'Pause video'
+        );
+
+        icon.innerHTML = paused
+          ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>'
+          : '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+      };
+
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (video.paused || video.ended) {
+          video.play().catch(updateButton);
+        } else {
+          video.pause();
+        }
+      });
+
+      video.addEventListener('play', updateButton);
+      video.addEventListener('pause', updateButton);
+      video.addEventListener('ended', updateButton);
+
+      updateButton();
+    });
+  }
+
+  syncBannerVideos() {
+    this.setupBannerVideos();
+
+    this.querySelectorAll('.banner-video-wrap').forEach((wrap) => {
+      const video = wrap.querySelector('video');
+      const button = wrap.querySelector('.banner-video-toggle');
+      const slide = wrap.closest('.slideshow__slide');
+
+      if (!video || !slide) return;
+
+      const isActive = slide.getAttribute('aria-hidden') === 'false';
+
+      if (button) button.tabIndex = isActive ? 0 : -1;
+
+      // Only act when the slide changes state. This preserves
+      // a visitor's manual pause while that slide stays active.
+      const activeState = isActive ? 'true' : 'false';
+      if (wrap.dataset.videoActive === activeState) return;
+      wrap.dataset.videoActive = activeState;
+
+      if (isActive) {
+        video.muted = true;
+        video.loop = true;
+        video.play().catch(() => {
+        });
+      } else {
+        video.pause();
+      }
+    });
+  }
+
   setSlideVisibility(event) {
     this.sliderItemsToShow.forEach((item, index) => {
       const linkElements = item.querySelectorAll('a');
@@ -1266,6 +1343,7 @@ class SlideshowComponent extends SliderComponent {
     });
     this.wasClicked = false;
     this.preloadNearbySlides();
+    this.syncBannerVideos();
   }
 
   applyAnimationToAnnouncementBar(button = 'next') {

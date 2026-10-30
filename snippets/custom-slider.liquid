@@ -52,6 +52,54 @@
     height: 100%;
     object-fit: cover;
   }
+   .product .product-gallery-swiper .product-media-video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+  }
+  .product .product-gallery-swiper .product-video-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .product .product-gallery-swiper .product-video-wrap video {
+    display:block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .product-video-toggle {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    appearance: none;
+    filter: drop-shadow(-1px 0px 40px #6a6a6a) drop-shadow(0px 0px 25px #656565) drop-shadow(0px 0px 10px #a9a9a9);
+  }
+  .product-video-toggle:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    filter: drop-shadow(-1px 0px 40px #6a6a6a) drop-shadow(0px 0px 25px #656565) drop-shadow(0px 0px 10px #a9a9a9);
+  }
+
   /* Hide non-first slides before Swiper initialises to prevent flash of stacked images */
   .product .product-gallery-swiper:not(.swiper-initialized) .swiper-slide:not(:first-child) {
     display: none !important;
@@ -75,7 +123,6 @@
   <div class="swiper-wrapper">
     {% if product.media.size > 0 %}
       {% for media in product.media %}
-        {% if media.media_type == 'image' %}
           {% liquid
             assign alt_raw = media.alt | default: media.preview_image.alt | default: ''
             assign parts = alt_raw | split: '|'
@@ -90,23 +137,44 @@
               assign loading_attr = 'lazy'
             endif
           %}
+
           <div class="swiper-slide">
             <div class="product-media">
-              {{ media.preview_image
-                | image_url: width: 1440, height: 1800, crop: 'center'
-                | image_tag:
+              {% if media.media_type == 'image' %}
+                {{ media.preview_image
+                  | image_url: width: 1440, height: 1800, crop: 'center'
+                  | image_tag:
                     class: 'product-media-image',
                     loading: loading_attr,
                     widths: '1440',
                     alt: alt_text
-              }}
+                }}
+              {% elsif media.media_type == 'video' %}
+                <div class="product-video-wrap">
+                  {{ media | video_tag:
+                    controls: false,
+                    autoplay: false,
+                    loop: section.settings.enable_video_looping,
+                    muted: true,
+                    playsinline: true,
+                    preload: 'metadata',
+                    class: 'product-media-video'
+                  }}
 
+                  <button
+                    type="button"
+                    class="product-video-toggle swiper-no-swiping"
+                    aria-label="Play video"
+                  >
+                    <span aria-hidden="true">▶</span>
+                  </button>
+                </div>
+              {% endif %}
               {% if caption_text != blank %}
                 <div class="media-caption">{{ caption_text }}</div>
               {% endif %}
             </div>
           </div>
-        {% endif %}
       {% endfor %}
     {% else %}
       <img class="placeholder-img" src="https://cdn.shopify.com/s/files/1/0898/4012/4238/files/placeholder_660x660.jpg?v=1768830010" />

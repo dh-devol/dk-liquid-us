@@ -811,6 +811,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       // Desktop: fade transition with navigation buttons
       options.effect = 'fade';
+      options.fadeEffect = {
+        crossFade: true
+      };
       options.speed = 1000;
       options.spaceBetween = 10;
       options.navigation = {
@@ -818,7 +821,62 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: '.swiper-button-prev',
       };
     }
+function syncSlideVideos(swiper) {
+      swiper.el.querySelectorAll('video').forEach((video) => {
+        const slide = video.closest('.swiper-slide');
+        const isActive = slide === swiper.slides[swiper.activeIndex];
 
+        if (isActive) {
+          video.muted = true;
+          video.loop = true;
+          video.play().catch(() => {
+          });
+        } else {
+          video.pause();
+        }
+      });
+    }
+      options.on = {
+        init: function () {
+          syncSlideVideos(this);
+        },
+        slideChangeTransitionEnd: function () {
+          syncSlideVideos(this);
+        }
+      };
+      swiperEl.querySelectorAll('.product-video-wrap').forEach((wrap) => {
+    const video = wrap.querySelector('video');
+    const button = wrap.querySelector('.product-video-toggle');
+    const icon = button.querySelector('span');
+
+    function updateButton() {
+      const paused = video.paused || video.ended;
+
+      button.setAttribute(
+        'aria-label',
+        paused ? 'Play video' : 'Pause video'
+      );
+
+      icon.innerHTML = paused
+      ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>'
+      : '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+    }
+
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+
+      if (video.paused || video.ended) {
+        video.play().catch(updateButton);
+      } else {
+        video.pause();
+      }
+    });
+
+    video.addEventListener('play', updateButton);
+    video.addEventListener('pause', updateButton);
+    video.addEventListener('ended', updateButton);
+    updateButton();
+  });
     new Swiper(swiperEl, options);
   }
 
