@@ -243,6 +243,10 @@ cart-items {
     letter-spacing: 0px;
     font-weight: 500;
     min-height: 4rem;
+    transition: all 0.3s ease;
+}
+#main-cart-footer .cart__ctas button:hover {
+  opacity: 95%;
 }
 #main-cart-footer .totals>h2 {
     font-size: 20px;
