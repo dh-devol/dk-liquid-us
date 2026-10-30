@@ -144,14 +144,14 @@
           "settings": {
             "megatitle": "taps-sinks",
             "blocktitle": "FEATURED",
-            "image1": "shopify://shop_images/Antique_Silver_Tap_Ionian__4019-4000px.jpg",
-            "title1": "Antique Silver Ionian Tap",
+            "image1": "shopify://shop_images/tap-ionian-aged-brass-rinse-01.jpg",
+            "title1": "Aged Brass Ionian Tap",
             "text1": "SHOP NOW",
-            "link1": "shopify://products/antique-silver-ionian-tap",
-            "image2": "shopify://shop_images/Aged-Brass-Ionian-Tap-_0003_deVOL_St_Johns-DSC_7132_4.jpg",
-            "title2": "Aged Brass Ionian Tap",
+            "link1": "shopify://products/aged-brass-ionian-tap",
+            "image2": "shopify://shop_images/thumbnail-taps-and-sinks-tuscan-farmhouse-1000-single-fluted-arabescato-marble-sink-01.jpg",
+            "title2": "Arabescato Marble Sinks",
             "text2": "SHOP NOW",
-            "link2": "shopify://products/aged-brass-ionian-tap"
+            "link2": "shopify://products/tuscan-farmhouse-extra-large-single-fluted-arabescato-marble-sink"
           }
         },
         "mega_menu_W6mJx9": {
@@ -160,14 +160,14 @@
           "settings": {
             "megatitle": "cupboard-hardware",
             "blocktitle": "FEATURED",
-            "image1": "shopify://shop_images/thumbnail-cupboard-hardware-georgian-swing-handle-01.jpg",
-            "title1": "The Georgian Swing Handle",
+            "image1": "shopify://shop_images/thumbnail-cupboard-hardware-devol-pull-handles-01.jpg",
+            "title1": "deVOL Pull Handles",
             "text1": "SHOP NOW",
-            "link1": "shopify://products/georgian-swing-handle-heirloom-brass-large",
-            "image2": "shopify://shop_images/The-Country-House-Cup-Handle-11371-Thumbnail-1_0.jpg",
-            "title2": "The Country House Cup Handle",
+            "link1": "shopify://products/pull-handle-heirloom-brass-extra-large",
+            "image2": "shopify://shop_images/thumbnail-cupboard-hardware-georgian-swing-handle-01.jpg",
+            "title2": "The Georgian Swing Handle",
             "text2": "SHOP NOW",
-            "link2": "shopify://products/country-house-cup-handle"
+            "link2": "shopify://products/georgian-swing-handle-heirloom-brass-large"
           }
         },
         "mega_menu_K4rUii": {
@@ -176,14 +176,14 @@
           "settings": {
             "megatitle": "architectural-hardware",
             "blocktitle": "FEATURED",
-            "image1": "shopify://shop_images/thumbnail-hardware-hooks-edwardian-coat-hook-rack-01.jpg",
-            "title1": "deVOL Brass Hooks",
+            "image1": "shopify://shop_images/7a89c079-78ae-409d-a990-636538c679f2.jpg",
+            "title1": "deVOL Door Furniture",
             "text1": "SHOP NOW",
-            "link1": "shopify://collections/hooks",
-            "image2": "shopify://shop_images/9edc01c5-d258-44d4-819f-a6aff469cb7e.jpg",
-            "title2": "deVOL Door Furniture",
+            "link1": "shopify://collections/door-furniture",
+            "image2": "shopify://shop_images/thumbnail-hardware-hooks-edwardian-coat-hook-rack-01.jpg",
+            "title2": "deVOL Brass Hooks",
             "text2": "SHOP NOW",
-            "link2": "shopify://collections/door-furniture"
+            "link2": "shopify://collections/hooks"
           }
         },
         "mega_menu_HCVpWt": {
@@ -260,10 +260,10 @@
             "title1": "Grand Heirloom Platters",
             "text1": "SHOP NOW",
             "link1": "shopify://products/grand-heirloom-platters-antique-white",
-            "image2": "shopify://shop_images/HelenVictorian-32_crop_1.jpg",
-            "title2": "deVOL Jigsaw Puzzles",
+            "image2": "shopify://shop_images/candle-scented-medium-02-8.jpg",
+            "title2": "deVOL Scented Candles",
             "text2": "SHOP NOW",
-            "link2": "shopify://products/jigsaw-puzzles-peckham-rye"
+            "link2": "shopify://collections/scented-candles"
           }
         },
         "mega_menu_j8YtQC": {
@@ -276,7 +276,7 @@
             "title1": "Ditsy Delft Tiles",
             "text1": "SHOP NOW",
             "link1": "shopify://products/ditsy-delft-tiles-ditsy-sepia",
-            "image2": "shopify://shop_images/paint-furniture-wilkes-green-02.jpg",
+            "image2": "shopify://shop_images/38694878-ff3d-49dd-a52e-828de63e6d4d.jpg",
             "title2": "Cream Subway Tiles",
             "text2": "SHOP NOW",
             "link2": "shopify://products/cream-subway-tiles"
@@ -304,14 +304,14 @@
           "settings": {
             "megatitle": "flooring-by-devol",
             "blocktitle": "FEATURED",
-            "image1": "shopify://shop_images/thumbnail-flooring-by-devol-parisian-chequer-marble-02.jpg",
-            "title1": "Parisian Chequer Marble",
+            "image1": "shopify://shop_images/Square_Terracotta_-_01.jpg",
+            "title1": "Square Terracotta",
             "text1": "SHOP NOW",
-            "link1": "shopify://products/parisian-chequer-marble-406x406",
-            "image2": "shopify://shop_images/flooring-wood-parquet-chatsworth-oak-02.jpg",
-            "title2": "Chatsworth Oak Parquet",
+            "link1": "shopify://products/square-terracotta-200x200x20",
+            "image2": "shopify://shop_images/flooring-marble-parisian-chequer-02.jpg",
+            "title2": "Parisian Chequer Marble",
             "text2": "SHOP NOW",
-            "link2": "shopify://products/chatsworth-oak-parquet-70x280"
+            "link2": "shopify://products/parisian-chequer-marble-406x406"
           }
         },
         "mega_menu_jfEy9N": {
