@@ -334,7 +334,8 @@ We include all variants of each child product, disabling sold-out ones.
     }
     #{{ root_id }}.mm-bundle .mm-select label { font-weight: 600; }
     #{{ root_id }}.mm-bundle .mm-footer { display:flex; align-items:center; gap:16px; margin-top: 1.5em; }
-    #{{ root_id }}.mm-bundle .mm-add-btn { padding: 10px 16px; border: none; background: #27333f; color:#fff; cursor:pointer; }
+    #{{ root_id }}.mm-bundle .mm-add-btn { padding: 10px 16px; border: none; background: #27333f; color:#fff; cursor:pointer; transition: all 0.3s ease;}
+    #{{ root_id }}.mm-bundle .mm-add-btn:hover { opacity: 95%; }
     #{{ root_id }}.mm-bundle .mm-add-btn[disabled] { opacity:.5; cursor:not-allowed; }
     
     .product__info-container #mm-bundle-.mm-bundle .mm-select label {
