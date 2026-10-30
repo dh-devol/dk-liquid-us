@@ -161,9 +161,9 @@
         "product_2": "emerald-green-london-tiles",
         "product_3": "furniture-paint-clerkenwell-blue-sample",
         "product_4": "aged-brass-basin-mixer-tap",
-        "product_5": "iron-hook-rack-3-hooks",
-        "product_6": "iron-hook-rack-4-hooks",
-        "product_7": "iron-hook-rack-6-hooks",
+        "product_5": "13-iron-hook-rack",
+        "product_6": "17-iron-hook-rack",
+        "product_7": "27-iron-hook-rack",
         "product_8": "boho-handle-aged-brass",
         "product_9": "",
         "product_10": "",
@@ -184,7 +184,7 @@
         "product_selector_hxFhCV": {
           "type": "product_selector",
           "settings": {
-            "product": "iron-hook-rack-3-hooks"
+            "product": "13-iron-hook-rack"
           }
         },
         "product_selector_QVFALn": {
