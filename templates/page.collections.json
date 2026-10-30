@@ -83,17 +83,17 @@
             "show_text_double_column": false
           }
         },
+        "column_4PFKLt": {
+          "type": "column",
+          "settings": {
+            "selected_collection": "hooks",
+            "show_text_double_column": false
+          }
+        },
         "column_FVpFna": {
           "type": "column",
           "settings": {
             "selected_collection": "grand-tour-collection",
-            "show_text_double_column": false
-          }
-        },
-        "column_4PFKLt": {
-          "type": "column",
-          "settings": {
-            "selected_collection": "tableware",
             "show_text_double_column": false
           }
         },
@@ -144,8 +144,8 @@
         "column_FYteEg",
         "column_mG9May",
         "column_fegyWg",
-        "column_FVpFna",
         "column_4PFKLt",
+        "column_FVpFna",
         "column_nThYde",
         "column_KHerBw",
         "column_iW3pqL",
