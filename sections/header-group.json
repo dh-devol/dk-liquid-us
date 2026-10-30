@@ -320,14 +320,14 @@
           "settings": {
             "megatitle": "collections",
             "blocktitle": "FEATURED",
-            "image1": "shopify://shop_images/DVHC-UK-GTLL-0919-4000px_0.jpg",
-            "title1": "The Grand Tour Collection",
+            "image1": "shopify://shop_images/thumbnail-handmade-tiles-emerald-green-london-tiles-01.jpg",
+            "title1": "For the Love of Kitchens",
             "text1": "SHOP NOW",
-            "link1": "shopify://collections/grand-tour-collection",
-            "image2": "shopify://shop_images/thumbnail-lighting-chattered-skullcap-porcelain-light-02.jpg",
-            "title2": "Porcelain Pendant Lights",
+            "link1": "shopify://collections/for-the-love-of-kitchens",
+            "image2": "shopify://shop_images/97490acd-2136-49eb-81d6-565b4ed60353.jpg",
+            "title2": "The Café Collection",
             "text2": "SHOP NOW",
-            "link2": "shopify://collections/porcelain-pendant-lights"
+            "link2": "shopify://collections/cafe-collection"
           }
         }
       },
