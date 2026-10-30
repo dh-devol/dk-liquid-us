@@ -41,10 +41,10 @@
     "custom_product_list_tDfCBP": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_9VjLaW": {
+        "product_item_xfVcmd": {
           "type": "product_item",
           "settings": {
-            "product": "amelie-doorknob-romilly-backplate"
+            "product": "fancy-boudoir-mirror"
           }
         },
         "product_item_KU7xCk": {
@@ -52,11 +52,25 @@
           "settings": {
             "product": "regency-ceiling-ring"
           }
+        },
+        "product_item_9VjLaW": {
+          "type": "product_item",
+          "settings": {
+            "product": "amelie-doorknob-romilly-backplate"
+          }
+        },
+        "product_item_c7qp8E": {
+          "type": "product_item",
+          "settings": {
+            "product": "shutter-dog"
+          }
         }
       },
       "block_order": [
+        "product_item_xfVcmd",
+        "product_item_KU7xCk",
         "product_item_9VjLaW",
-        "product_item_KU7xCk"
+        "product_item_c7qp8E"
       ],
       "custom_css": [],
       "name": "Custom product list",
