@@ -38,6 +38,58 @@
         "color_scheme": "scheme-2"
       }
     },
+    "custom_product_list_hD9GDD": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_49BnXC": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-basin-pillar-taps"
+          }
+        },
+        "product_item_NKtAGW": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-basin-mixer-tap"
+          }
+        },
+        "product_item_UNRHbX": {
+          "type": "product_item",
+          "settings": {
+            "product": "fancy-boudoir-mirror"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_49BnXC",
+        "product_item_NKtAGW",
+        "product_item_UNRHbX"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "disabled": true,
@@ -117,34 +169,26 @@
         "sectionname": ""
       }
     },
-    "custom_product_list_hD9GDD": {
+    "custom_product_list_ERwEq4": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_49BnXC": {
-          "type": "product_item",
-          "settings": {
-            "product": "aged-brass-basin-pillar-taps"
-          }
-        },
-        "product_item_NKtAGW": {
-          "type": "product_item",
-          "settings": {
-            "product": "aged-brass-basin-mixer-tap"
-          }
-        },
-        "product_item_UNRHbX": {
+        "product_item_Aj6cLA": {
           "type": "product_item",
           "settings": {
             "product": "clothes-horse"
           }
+        },
+        "product_item_mb9QAf": {
+          "type": "product_item",
+          "settings": {
+            "product": "laundry-maid"
+          }
         }
       },
       "block_order": [
-        "product_item_49BnXC",
-        "product_item_NKtAGW",
-        "product_item_UNRHbX"
+        "product_item_Aj6cLA",
+        "product_item_mb9QAf"
       ],
-      "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
@@ -153,7 +197,7 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
@@ -173,8 +217,9 @@
   "order": [
     "metaobject_gallery_slider_rbBYVY",
     "banner",
+    "custom_product_list_hD9GDD",
     "product-grid",
     "custom_product_list_qaVMLT",
-    "custom_product_list_hD9GDD"
+    "custom_product_list_ERwEq4"
   ]
 }
