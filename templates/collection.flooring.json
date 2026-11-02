@@ -80,54 +80,12 @@
           "settings": {
             "product": "brushed-charcoal-limestone-600xflx22"
           }
-        },
-        "product_item_LWREdR": {
-          "type": "product_item",
-          "settings": {
-            "product": "dijon-tumbled-limestone-600x900x15"
-          }
-        },
-        "product_item_B6Krd6": {
-          "type": "product_item",
-          "settings": {
-            "product": "umbrian-limestone-560xfl"
-          }
-        },
-        "product_item_bmej4j": {
-          "type": "product_item",
-          "settings": {
-            "product": "seagrass-tumbled-limestone-610x406x10"
-          }
-        },
-        "product_item_rBAGe3": {
-          "type": "product_item",
-          "settings": {
-            "product": "light-jerusalem-tumbled-limestone-600x900x15"
-          }
-        },
-        "product_item_9i9iXB": {
-          "type": "product_item",
-          "settings": {
-            "product": "jaipur-brushed-limestone-500xfl"
-          }
-        },
-        "product_item_WXyDkM": {
-          "type": "product_item",
-          "settings": {
-            "product": "zafar-etched-limestone-600xflx20"
-          }
         }
       },
       "block_order": [
         "product_item_JU6JWP",
         "product_item_keT9qC",
-        "product_item_3pQPDC",
-        "product_item_LWREdR",
-        "product_item_B6Krd6",
-        "product_item_bmej4j",
-        "product_item_rBAGe3",
-        "product_item_9i9iXB",
-        "product_item_WXyDkM"
+        "product_item_3pQPDC"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -135,6 +93,117 @@
         "title": "",
         "heading_size": "hxl",
         "subtitle": "Natural Stone",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_Wr8EUf": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_R4LKTL": {
+          "type": "product_item",
+          "settings": {
+            "product": "dijon-tumbled-limestone-600x900x15"
+          }
+        },
+        "product_item_QXY84F": {
+          "type": "product_item",
+          "settings": {
+            "product": "vintage-bronze-limestone-600xflx20"
+          }
+        },
+        "product_item_Ck98WJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "umbrian-limestone-560xfl"
+          }
+        },
+        "product_item_LxJmDa": {
+          "type": "product_item",
+          "settings": {
+            "product": "seagrass-tumbled-limestone-610x406x10"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_R4LKTL",
+        "product_item_QXY84F",
+        "product_item_Ck98WJ",
+        "product_item_LxJmDa"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_fmzGMK": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_zFWNRt": {
+          "type": "product_item",
+          "settings": {
+            "product": "light-jerusalem-tumbled-limestone-600x900x15"
+          }
+        },
+        "product_item_47kDAT": {
+          "type": "product_item",
+          "settings": {
+            "product": "jaipur-brushed-limestone-500xfl"
+          }
+        },
+        "product_item_C7yFkU": {
+          "type": "product_item",
+          "settings": {
+            "product": "zafar-etched-limestone-600xflx20"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_zFWNRt",
+        "product_item_47kDAT",
+        "product_item_C7yFkU"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
@@ -453,6 +522,8 @@
     "banner",
     "product-grid",
     "custom_product_list_Miirec",
+    "custom_product_list_Wr8EUf",
+    "custom_product_list_fmzGMK",
     "custom_product_list_PnMQj3",
     "custom_product_list_mFybnN",
     "custom_product_list_VU8wkP"
