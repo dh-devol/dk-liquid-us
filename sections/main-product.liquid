@@ -803,6 +803,17 @@ document.addEventListener("DOMContentLoaded", () => {
         el: '.product-gallery-swiper .swiper-pagination',
         clickable: true,
       },
+      on: {
+      init(swiper) {
+        syncSlideVideos(swiper, true);
+      },
+      slideChange(swiper) {
+        syncSlideVideos(swiper);
+      },
+      transitionEnd(swiper) {
+        syncSlideVideos(swiper, true);
+      }
+    }
     };
 
     if (isMobile) {
@@ -821,29 +832,23 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: '.swiper-button-prev',
       };
     }
-function syncSlideVideos(swiper) {
+function syncSlideVideos(swiper, pauseInactive = false) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
       swiper.el.querySelectorAll('video').forEach((video) => {
         const slide = video.closest('.swiper-slide');
-        const isActive = slide === swiper.slides[swiper.activeIndex];
+        const isActive = slide === activeSlide;
 
         if (isActive) {
           video.muted = true;
           video.loop = true;
           video.play().catch(() => {
           });
-        } else {
+        } else if (pauseInactive){
           video.pause();
         }
       });
     }
-      options.on = {
-        init: function () {
-          syncSlideVideos(this);
-        },
-        slideChangeTransitionEnd: function () {
-          syncSlideVideos(this);
-        }
-      };
+      
       swiperEl.querySelectorAll('.product-video-wrap').forEach((wrap) => {
     const video = wrap.querySelector('video');
     const button = wrap.querySelector('.product-video-toggle');

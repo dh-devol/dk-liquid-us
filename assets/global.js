@@ -1301,23 +1301,51 @@ class SlideshowComponent extends SliderComponent {
 
       if (!video || !slide) return;
 
+      const viewport = slide.closest('.slideshow');
+      if (!viewport) return;
+
       const isActive = slide.getAttribute('aria-hidden') === 'false';
 
       if (button) button.tabIndex = isActive ? 0 : -1;
 
-      // Only act when the slide changes state. This preserves
-      // a visitor's manual pause while that slide stays active.
       const activeState = isActive ? 'true' : 'false';
       if (wrap.dataset.videoActive === activeState) return;
+
       wrap.dataset.videoActive = activeState;
+      cancelAnimationFrame(wrap.videoPauseFrame);
 
       if (isActive) {
         video.muted = true;
         video.loop = true;
-        video.play().catch(() => {
-        });
+        video.play().catch(() => {});
       } else {
-        video.pause();
+        const pauseWhenOutOfFrame = () => {
+          if (!slide.isConnected) {
+            video.pause();
+            return;
+          }
+
+          if (slide.getAttribute('aria-hidden') === 'false') return;
+
+          const slideRect = slide.getBoundingClientRect();
+          const viewportRect = viewport.getBoundingClientRect();
+
+          const isOutOfFrame =
+            slideRect.right <= viewportRect.left ||
+            slideRect.left >= viewportRect.right ||
+            slideRect.bottom <= viewportRect.top ||
+            slideRect.top >= viewportRect.bottom;
+
+          if (isOutOfFrame) {
+            video.pause();
+          } else {
+            wrap.videoPauseFrame =
+              requestAnimationFrame(pauseWhenOutOfFrame);
+          }
+        };
+
+        wrap.videoPauseFrame =
+          requestAnimationFrame(pauseWhenOutOfFrame);
       }
     });
   }
@@ -1325,22 +1353,25 @@ class SlideshowComponent extends SliderComponent {
   setSlideVisibility(event) {
     this.sliderItemsToShow.forEach((item, index) => {
       const linkElements = item.querySelectorAll('a');
-      if (index === this.currentPage - 1) {
-        if (linkElements.length)
-          linkElements.forEach((button) => {
-            button.removeAttribute('tabindex');
-          });
+      const isActive = index === this.currentPage - 1;
+
+      if (isActive) {
+        linkElements.forEach((link) => {
+          link.removeAttribute('tabindex');
+        });
+
         item.setAttribute('aria-hidden', 'false');
         item.removeAttribute('tabindex');
       } else {
-        if (linkElements.length)
-          linkElements.forEach((button) => {
-            button.setAttribute('tabindex', '-1');
-          });
+        linkElements.forEach((link) => {
+          link.setAttribute('tabindex', '-1');
+        });
+
         item.setAttribute('aria-hidden', 'true');
         item.setAttribute('tabindex', '-1');
       }
     });
+
     this.wasClicked = false;
     this.preloadNearbySlides();
     this.syncBannerVideos();
