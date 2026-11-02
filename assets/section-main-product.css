@@ -1595,10 +1595,10 @@ button.sample-pack-btn.button.button--secondary {
   clear: both;
   height: 37px;
   font-size: 0.9em;
-  opacity: 0.9;
+  opacity: 1;
   background-color: #fff;
   padding: 0.5em 0.75em;
-  color: #746f74;
+  color: #757575;
   margin: 2em 0 0.5em 0;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -1606,7 +1606,7 @@ button.sample-pack-btn.button.button--secondary {
 }
 button.sample-pack-btn.button.button--secondary:hover{
   border-color: #595959;
-  color: #595959;
+  color: #2C2C2C;
 }
 p.checbox-addon-heading {
     color: #757575;

@@ -1492,7 +1492,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             transition: all 0.3s ease;
           }
           form button[type="submit"]:hover {
-            opacity: 95%;
+            filter: opacity(0.95);
           }
           p[id="custom#country-selector-label"], p._textBody_2aowh_10 {
             padding-bottom: 7px;
