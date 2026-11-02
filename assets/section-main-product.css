@@ -1575,6 +1575,10 @@ a.product__text {
 .product .product-form__buttons .product-form__submit {
     background: #27333f;
     color: #fff;
+    transition: all 0.3s ease;
+}
+.product .product-form__buttons .product-form__submit:hover {
+  opacity: 95%;
 }
 .product .product__tax {
     display: none;
@@ -1591,16 +1595,18 @@ button.sample-pack-btn.button.button--secondary {
   clear: both;
   height: 37px;
   font-size: 0.9em;
-  opacity: 0.9;
+  opacity: 1;
   background-color: #fff;
   padding: 0.5em 0.75em;
-  color: #595959;
+  color: #757575;
   margin: 2em 0 0.5em 0;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 button.sample-pack-btn.button.button--secondary:hover{
   border-color: #595959;
+  color: #2C2C2C;
 }
 p.checbox-addon-heading {
     color: #757575;

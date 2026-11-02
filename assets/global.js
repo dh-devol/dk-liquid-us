@@ -1489,6 +1489,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             margin-top: 1.5em;
             display: block;
             text-align: center;
+            transition: all 0.3s ease;
+          }
+          form button[type="submit"]:hover {
+            filter: opacity(0.95);
           }
           p[id="custom#country-selector-label"], p._textBody_2aowh_10 {
             padding-bottom: 7px;

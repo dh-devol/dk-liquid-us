@@ -3749,3 +3749,39 @@ details-disclosure > details {
     transform: translateX(100%) scaleX(0);
   }
 }
+
+/* Letter from deVOL CSS */
+.page-width:has(.image-with-text) {
+  max-width: unset;
+  width: 100%;
+}
+.image-with-text__media {
+  border: unset;
+}
+@media screen and (min-width: 990px) {
+  .klaviyo-form-WGgbcs {
+    max-width: 476px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+}
+.klaviyo-form-WGgbcs h1,
+.klaviyo-form-WGgbcs p {
+  text-align: left;
+  font-family: "EB Garamond", serif !important;
+  color: rgb(89, 89, 89) !important;
+  line-height: 1.5;
+}
+.klaviyo-form-WGgbcs label {
+  font-weight: 300 !important;
+}
+.klaviyo-form-WGgbcs button {
+  padding: 0 1.8em !important;
+  transition: all 0.3s ease !important;
+}
+.klaviyo-form-WGgbcs button:hover {
+  opacity: 95% !important;
+}
+.klaviyo-form-WGgbcs input + button {
+  padding-inline: 0 !important;
+}
