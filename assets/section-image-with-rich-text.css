@@ -20,7 +20,7 @@
 .image-with-richtext .button__custom{
   letter-spacing: 0;
   font-size: 16px;
-  color: #898989;
+  color: #757575;
   text-decoration: underline;
 }
 @media screen and (max-width:991px){

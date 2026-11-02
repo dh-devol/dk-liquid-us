@@ -1,9 +1,19 @@
 {{ 'section-editorials.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
 {% comment %}
   Editorials section
   Source: product/page metafields.custom.editorial (metaobject)
 {% endcomment %}
+<style>
+  .editorial-video .video-wrapper > deferred-media {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 
 {% assign editorial = blank %}
 {% if product and product.metafields.custom.editorial != blank %}
@@ -42,37 +52,101 @@
         {% assign image     = editorial[image_key] %}
         {% assign text      = editorial[text_key] %}
         {% assign video_url = editorial[link_key] %}
-
         {%- if video_url != blank -%}
+          {% assign video_url_string = video_url.value | strip %}
+          {% assign poster = image.value %}
+          {% assign video_title = editorial.title.value | default: 'Editorial video' %}
+
           <div class="editorial-block editorial-video">
             <div class="video-container">
               <div class="video-wrapper">
 
-                {% if video_url contains 'vimeo' %}
+                {% if video_url_string contains 'youtube.com' or video_url_string contains 'youtu.be' %}
+                  {% assign youtube_id = blank %}
+
+                  {% if video_url_string contains 'youtu.be/' %}
+                    {% assign youtube_id = video_url_string | split: 'youtu.be/' | last %}
+                  {% elsif video_url_string contains '/embed/' %}
+                    {% assign youtube_id = video_url_string | split: '/embed/' | last %}
+                  {% elsif video_url_string contains '/shorts/' %}
+                    {% assign youtube_id = video_url_string | split: '/shorts/' | last %}
+                  {% elsif video_url_string contains 'v=' %}
+                    {% assign youtube_id = video_url_string | split: 'v=' | last %}
+                  {% endif %}
+
+                  {% assign youtube_id = youtube_id | split: '&' | first | split: '?' | first | split: '#' | first | split: '/' | first %}
+
+                  {% if youtube_id != blank %}
+                    <deferred-media
+                      class="deferred-media"
+                      data-media-id="{{ youtube_id | escape }}"
+                    >
+                      <button
+                        id="Deferred-Poster-Editorial-{{ section.id }}-{{ i }}"
+                        class="media deferred-media__poster media--landscape"
+                        type="button"
+                        aria-label="Play {{ video_title | escape }}"
+                      >
+                        {% if poster != blank %}
+                          {{
+                            poster
+                            | image_url: width: 2136
+                            | image_tag:
+                              loading: 'lazy',
+                              widths: '375, 750, 1100, 1500, 2136',
+                              alt: video_title
+                          }}
+                        {% else %}
+                          <img
+                            src="https://i.ytimg.com/vi/{{ youtube_id | escape }}/hqdefault.jpg"
+                            alt="{{ video_title | escape }}"
+                            loading="lazy"
+                            width="480"
+                            height="360"
+                          >
+                        {% endif %}
+
+                        <span class="deferred-media__poster-button motion-reduce">
+                          <span class="svg-wrapper">
+                            {{- 'icon-play.svg' | inline_asset_content -}}
+                          </span>
+                        </span>
+                      </button>
+
+                      <template>
+                        <iframe
+                          src="https://www.youtube.com/embed/{{ youtube_id | escape }}?enablejsapi=1&autoplay=1"
+                          class="js-youtube"
+                          allow="autoplay; encrypted-media"
+                          allowfullscreen
+                          title="{{ video_title | escape }}"
+                        ></iframe>
+                      </template>
+                    </deferred-media>
+                  {% endif %}
+
+                {% elsif video_url_string contains 'vimeo' %}
                   <iframe
-                    src="{{ video_url }}"
+                    src="{{ video_url_string | escape }}"
                     frameborder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen>
-                  </iframe>
-
-                {% elsif video_url contains 'youtube' or video_url contains 'youtu.be' %}
-                  <iframe
-                    src="{{ video_url | replace: 'watch?v=', 'embed/' }}"
-                    frameborder="0"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen>
-                  </iframe>
+                    allowfullscreen
+                    title="{{ video_title | escape }}"
+                  ></iframe>
 
                 {% else %}
                   <video controls>
-                    <source src="{{ video_url }}" type="video/mp4">
+                    <source
+                      src="{{ video_url_string | escape }}"
+                      type="video/mp4"
+                    >
                   </video>
                 {% endif %}
 
               </div>
             </div>
           </div>
+
         {%- elsif image != blank -%}
           <div class="editorial-block editorial-images">
             <div class="images-container one-column">

@@ -20,6 +20,15 @@
           "type": "title",
           "settings": {}
         },
+        "text_ErwNWW": {
+          "type": "text",
+          "name": "Appliance",
+          "settings": 
+            {
+              "text": "{{ product.metafields.custom.appliance.value }}",
+              "text_style": "body"
+            }
+        },
         "price": {
           "type": "price",
           "settings": {}
@@ -74,6 +83,7 @@
       "block_order": [
         "breadcrumb_PY8FH4",
         "title",
+        "text_ErwNWW",
         "price",
         "inventory_DNJrea",
         "metafield_product_VgECqt",

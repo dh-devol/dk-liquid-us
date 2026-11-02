@@ -62,9 +62,9 @@
                       <span class="author">by {{ article.author }}</span>
                     {% endif %}
                   </div>
-                  {% if article.image %}
+                  {% if article.metafields.custom.thumbnail.value %}
                     <a href="{{ article.url }}" class="article_image-wrapper">
-                      <img src="{{ article | image_url }}" height="auto" width="auto" alt="{{ article.image.alt }}">
+                      <img src="{{ article.metafields.custom.thumbnail.value | image_url }}" height="auto" width="auto" alt="{{ article.metafields.custom.thumbnail.value.alt }}">
                     </a>
                   {% endif %}
                   {% if block.settings.show_title %}
@@ -119,8 +119,8 @@
           <div class="custom-search-block">
           <p class="custom-search-label">{{ block.settings.blog_search_title }}</p>
           <form action="/search" method="get" class="search-form" role="search">
-          <input type="hidden" name="type" value="article">
-          <input type="search" name="q" placeholder="Search" class="custom-search-input" required>
+            <input type="hidden" name="type" value="article">
+            <input type="search" name="q" placeholder="Search" class="custom-search-input" required aria-label="Search blog posts">
           </form>
           </div>
           {% endif %}
@@ -229,13 +229,14 @@
           const imageWrap = document.createElement('div');
           imageWrap.className = 'post_article-image';
 
-          if (article.image) {
+          const imgSrc = article.thumbnail;
+          if (imgSrc) {
             const imageInner = document.createElement('div');
             imageInner.className = 'post_article_image-wrapper';
             const img = document.createElement('img');
             img.loading = 'lazy';
-            img.src = article.image;
-            img.alt = article.image_alt || article.title || '';
+            img.src = imgSrc;
+            img.alt = article.thumbnail_alt || article.title || '';
             imageInner.appendChild(img);
             imageWrap.appendChild(imageInner);
           }

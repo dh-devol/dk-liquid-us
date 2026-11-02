@@ -12,7 +12,9 @@
           "published_at": {{ item.published_at | date: "%Y-%m-%dT%H:%M:%S%z" | json }},
           "excerpt": {{ item.excerpt_or_content | strip_html | truncatewords: 30 | json }},
           "image": {%- if item.image -%}{{ item.image | image_url: width: 900 | json }}{%- else -%}null{%- endif -%},
-          "image_alt": {%- if item.image and item.image.alt != blank -%}{{ item.image.alt | escape | json }}{%- else -%}null{%- endif -%}
+          "image_alt": {%- if item.image and item.image.alt != blank -%}{{ item.image.alt | escape | json }}{%- else -%}null{%- endif -%},
+          "thumbnail": {%- if item.metafields.custom.thumbnail.value -%}{{ item.metafields.custom.thumbnail.value | image_url: width: 900 | json }}{%- else -%}null{%- endif -%},
+          "thumbnail_alt": {%- if item.metafields.custom.thumbnail.value and item.metafields.custom.thumbnail.value.alt != blank -%}{{ item.metafields.custom.thumbnail.value.alt | escape | json }}{%- else -%}null{%- endif -%}
         }{%- unless forloop.last -%},{%- endunless -%}
       {%- endif -%}
     {%- endfor -%}

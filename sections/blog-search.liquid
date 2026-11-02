@@ -303,7 +303,7 @@
                     <div class="post_article-image">
                       {% if item.image %}
                           <div class="post_article_image-wrapper">
-                            <img loading="lazy" src="{{ item.image | image_url }}" height="auto" width="auto" alt="{{ item.image.alt }}">
+                            <img loading="lazy" src="{{ item.metafields.custom.thumbnail.value | image_url }}" height="auto" width="auto" alt="{{ item.metafields.custom.thumbnail.value.alt }}">
                           </div>
                       {% endif %}
                     </div>

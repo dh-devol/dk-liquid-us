@@ -99,3 +99,26 @@
   text-transform: uppercase;
   color: rgba(var(--color-foreground), 0.7);
 }
+
+.price.price--teaser {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25em;
+}
+
+.price.price--teaser > .price-item {
+  margin: 0;
+}
+
+.price.price--teaser > .price {
+  margin: 0;
+}
+
+.price.price--teaser > .price-item--suffix {
+  white-space: nowrap;
+}
+
+.price-item--suffix, .price-item--prefix, .price-item--regular{
+  color: rgb(89, 89, 89)
+}

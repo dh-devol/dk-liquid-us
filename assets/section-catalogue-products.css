@@ -562,6 +562,11 @@ padding:1em 0 4px 0;
 .page-haberdashers-base-cabinets .custom-catalogue-products .multicolumn-list{
   row-gap:38px;
 }
+.page-sebastian-cox-prep-tables-sideboards .multicolumn-card__info ,
+.page-haberdashers-prep-tables .multicolumn-card__info {
+  margin: auto;
+}
+
  @media screen and (max-width: 768px){
  .page-shaker-kitchen-canopies .custom-catalogue-products .multicolumn-list{
   row-gap:47px;

@@ -483,7 +483,10 @@ class MenuDrawer extends HTMLElement {
     const isOpen = detailsElement.hasAttribute('open');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+    let focusTrapped = false;
     function addTrapFocus() {
+      if (focusTrapped) return;
+      focusTrapped = true;
       trapFocus(summaryElement.nextElementSibling, detailsElement.querySelector('button'));
       summaryElement.nextElementSibling.removeEventListener('transitionend', addTrapFocus);
     }
@@ -492,7 +495,7 @@ class MenuDrawer extends HTMLElement {
       if (isOpen) event.preventDefault();
       isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
 
-      if (window.matchMedia('(max-width: 990px)')) {
+      if (window.matchMedia('(max-width: 990px)').matches) {
         document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
       }
     } else {
@@ -500,9 +503,13 @@ class MenuDrawer extends HTMLElement {
         detailsElement.classList.add('menu-opening');
         summaryElement.setAttribute('aria-expanded', true);
         parentMenuElement && parentMenuElement.classList.add('submenu-open');
-        !reducedMotion || reducedMotion.matches
-          ? addTrapFocus()
-          : summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
+
+        if (!reducedMotion || reducedMotion.matches) {
+          addTrapFocus();
+        } else {
+          summaryElement.nextElementSibling.addEventListener('transitionend', addTrapFocus);
+          setTimeout(addTrapFocus, 600);
+        }
       }, 100);
     }
   }
@@ -571,30 +578,28 @@ class MenuDrawer extends HTMLElement {
     this.closeAnimation(detailsElement);
   }
 
-  closeAnimation(detailsElement) {
-    if (detailsElement.classList.contains('no-transition') || window.matchMedia('(max-width: 989px)').matches) {
+    closeAnimation(detailsElement) {
+    const finish = () => {
+      // Skip if the submenu was reopened during the slide-out
+      if (detailsElement.classList.contains('menu-opening')) return;
       detailsElement.removeAttribute('open');
       if (detailsElement.closest('details[open]')) {
         trapFocus(detailsElement.closest('details[open]'), detailsElement.querySelector('summary'));
       }
+    };
+
+    if (detailsElement.classList.contains('no-transition')) {
+      finish();
       return;
     }
+
     let animationStart;
-
     const handleAnimation = (time) => {
-      if (animationStart === undefined) {
-        animationStart = time;
-      }
-
-      const elapsedTime = time - animationStart;
-
-      if (elapsedTime < 400) {
+      if (animationStart === undefined) animationStart = time;
+      if (time - animationStart < 500) {
         window.requestAnimationFrame(handleAnimation);
       } else {
-        detailsElement.removeAttribute('open');
-        if (detailsElement.closest('details[open]')) {
-          trapFocus(detailsElement.closest('details[open]'), detailsElement.querySelector('summary'));
-        }
+        finish();
       }
     };
 
@@ -676,6 +681,8 @@ class HeaderDrawer extends MenuDrawer {
 
     summaryElement.setAttribute('aria-expanded', true);
     window.addEventListener('resize', this.onResize);
+    window.visualViewport?.addEventListener('resize', this.onResize);
+    requestAnimationFrame(this.setDrawerTop);
     trapFocus(this.mainDetailsToggle, summaryElement);
     document.body.classList.add(`overflow-hidden-${this.dataset.breakpoint}`);
 
@@ -743,15 +750,18 @@ class HeaderDrawer extends MenuDrawer {
     super.closeMenuDrawer(event, elementToFocus);
     this.header.classList.remove('menu-open');
     window.removeEventListener('resize', this.onResize);
+    window.visualViewport?.removeEventListener('resize', this.onResize);
   }
 
+  setDrawerTop = () => {
+    const drawer = this.querySelector('.menu-drawer');
+    if (!drawer) return;
+    const top = Math.max(0, Math.round(drawer.getBoundingClientRect().top));
+    document.documentElement.style.setProperty('--header-bottom-position', `${top}px`);
+  };
+
   onResize = () => {
-    this.header &&
-      document.documentElement.style.setProperty(
-        '--header-bottom-position',
-        `${parseInt(this.header.getBoundingClientRect().bottom - this.borderOffset)}px`
-      );
-    document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
+    this.setDrawerTop();
   };
 }
 
@@ -1440,12 +1450,12 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Inject CSS
         const style = document.createElement('style');
         style.textContent = `
-          ._inline_1q1d2_47 section._formContainer_1q1d2_30 {
+          #app-embed #form-container-ref section[data-sizing="form-wrapper"] {
             max-width: unset;
             margin: 0;
             color: var(--form-placeholder-color);
           }
-          form label._formInputFieldLabel_1mxsl_38 {
+          form[data-testid="form"] label {
             position: static;
             order: 1;
             margin-bottom: 10px;
@@ -1455,13 +1465,13 @@ document.addEventListener("DOMContentLoaded", async function () {
             position: static;
             height: 0;
           }
-          form input._formInputField_nag3b_7, form button._selectToggle_12thd_25 {
+          form input[type="text"], form button[type="button"], form button[type="submit"] {
             padding: 0 1em;
             height: 34px;
             border-radius: 0;
             order: 2;
           }
-          form textarea._textArea_17mgw_1 {
+          form textarea[id="custom#message"] {
             border-radius: 0;
             order: 2;
             padding: 10px 1em 0;
@@ -1472,16 +1482,17 @@ document.addEventListener("DOMContentLoaded", async function () {
           ._formFieldContainer_1mxsl_5:focus-within label._formInputFieldLabel_1mxsl_38 {
             transform: none;
           }
-          ._formFieldContainer_1mxsl_5:focus-within textarea._textArea_17mgw_1, ._formFieldContainer_1mxsl_5 ._inputFilled_1mxsl_74 textarea._textArea_17mgw_1 {
+          ._formFieldContainer_1mxsl_5:focus-within textarea[id="custom#message"], ._formFieldContainer_1mxsl_5 textarea[id="custom#message"] {
             padding-top: 10px;
           }
-          form button._formSubmitButton_cit2d_96 {
+          form button[type="submit"] {
             margin-top: 1.5em;
-            border-radius: 0;
+            display: block;
+            text-align: center;
           }
-          ._textBody_2aowh_10, span._textBody_2aowh_10, p._textBody_2aowh_10 {
+          p[id="custom#country-selector-label"], p._textBody_2aowh_10 {
             padding-bottom: 7px;
-          }  
+          }
         `;
         el.shadowRoot.appendChild(style);
 

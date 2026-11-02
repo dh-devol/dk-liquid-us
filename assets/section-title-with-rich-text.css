@@ -88,11 +88,6 @@
     margin-top: 0;
   }
 }
-@media (max-width:767px){
-  .page-title-description .rich-text__wrapper .rich-text__blocks.center{
-    text-align:left;
-  }
-}
 @media screen and (max-width:991px){
   .title-with-rich-text .rich-text__wrapper{
     width:100%;
@@ -104,21 +99,14 @@
     width:100%;
   }
   .title-with-rich-text .rich-text__blocks{
-    text-align:left;
-  }
-  .title-with-rich-text .rich-text__blocks{
     max-width:100%;
   }
   .title-with-rich-text .rich-text__buttons {
     display: inline-flex;
     justify-content: flex-start;
   }
-  .title-with-rich-text.content-center .rich-text__blocks {
+  .title-with-rich-text.content-centers .rich-text__blocks {
     text-align: center;
-  }
-  main:not(.page-type-showroom main) .title-with-rich-text .rich-text__blocks .rich-text__heading {
-    font-size: 1.8em;
-    line-height: 1.2;
   }
   main:not(.page-type-showroom main) .catalogues__page-wrapper .title-with-rich-text .rich-text__blocks .rich-text__heading {
     font-size: 1.2em;
@@ -154,6 +142,28 @@
   }
   .showroom-description-page .custom-multicolumn.background-none .multicolumn-card__image-wrapper+.multicolumn-card__info h3 {
     padding-top: 0;
+  }
+   .page-title-description .rich-text__wrapper .rich-text__blocks.center{
+    text-align:left;
+  }
+  .title-with-rich-text .rich-text__blocks{
+    text-align:left;
+  }
+   main:not(.page-type-showroom main) .title-with-rich-text .rich-text__blocks .rich-text__heading {
+    font-size: 1.8em;
+    line-height: 1.2;
+  }
+  .page-online-accessory-sales .title-with-rich-text .rich-text {
+    max-width:none;
+  }
+  .page-online-accessory-sales .title-with-rich-text .rich-text__text{
+    max-width:none;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 750px) {
+  .page-online-accessory-sales .section-template--21380907991137__title_with_rich_text_a4eJWn-margin{
+    margin-top:45px;
+    margin-bottom:30px;
   }
 }
 @media screen and (max-width:575px){
@@ -318,19 +328,6 @@ line-height:1;
     }
   }
 
-@media screen and (max-width: 767px) {
-    .page-shaker-kitchen-prep-tables .catalogues__page-wrapper.page-width, 
-    .page-shaker-kitchen-paint-colours .catalogues__page-wrapper.page-width,
-    .page-shaker-kitchen-full-height-cabinets .catalogues__page-wrapper.page-width,
-    .page-haberdashers-prep-tables .catalogues__page-wrapper.page-width,
-    .page-sebastian-cox-prep-tables-sideboards .catalogues__page-wrapper.page-width,
-    .page-sebastian-cox-wall-cupboards .catalogues__page-wrapper.page-width,
-    .page-shaker-kitchen-base-cabinets .catalogues__page-wrapper.page-width,
-    .page-shaker-kitchen-worktops  .catalogues__page-wrapper.page-width ,
-    .page-sebastian-cox-countertop-cupboards .catalogues__page-wrapper.page-width   {
-    /*padding:0 28px;*/
-    }
-}
 
 @media screen and (min-width: 590px) {
 
@@ -375,6 +372,23 @@ line-height:1;
   }
 
 }
+@media screen and (max-width: 768px) {
+    .page-haberdashers-prep-tables .custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card,
+    .page-sebastian-cox-prep-tables-sideboards .custom-catalogue-products .catalogue-card-text-image-separated .multicolumn-card{
+      flex-direction: column !important;
+    }
+    .page-haberdashers-freestanding-pantries .catalogues__page-wrapper .custom-catalogue-products .multicolumn-list .grid__item,
+    .page-haberdashers-counters-islands .catalogues__page-wrapper .custom-catalogue-products .multicolumn-list .grid__item,
+    .page-haberdashers-prep-tables .catalogues__page-wrapper .custom-catalogue-products .multicolumn-list .grid__item,
+    .page-sebastian-cox-prep-tables-sideboards .catalogues__page-wrapper .custom-catalogue-products .multicolumn-list .grid__item{
+      max-width:100%;
+      flex:auto;
+    }
+    .page-haberdashers-prep-tables .catalogues__page-wrapper .catalogue__content-wrapper .page-width, 
+    .page-sebastian-cox-prep-tables-sideboards .catalogues__page-wrapper .catalogue__content-wrapper .custom-catalogue-products .section-template--21380906647649__catalogue_products_G8z83B-padding {
+      padding-top:0px;
+    }
+}
 
 /* custom css 20 november */
 
@@ -384,6 +398,17 @@ line-height:1;
 .page-the-haberdashers-kitchen .title-with-rich-text .rich-text__heading+.rich-text__text
 {
     margin-top: 11px;
+}
+
+.page-haberdashers-fittings .rich-text__blocks,
+.page-haberdashers-wall-cupboards .rich-text__blocks,
+.page-sebastian-cox-countertop-cupboards .rich-text__blocks {
+  padding-bottom: 24px;
+}
+
+.page-haberdashers-wall-cupboards #shopify-section-template--21380911628385__catalogue_products_4cQk34 .catalogue_supporting_information,
+.page-sebastian-cox-countertop-cupboards .custom-catalogue-products .catalogue_supporting_information {
+  margin-top:20px;
 }
 
 @media (max-width: 768px) {

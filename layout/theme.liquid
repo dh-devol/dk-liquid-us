@@ -1,6 +1,12 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
+    {% if template == 'collections' %}
+      <meta name="robots" content="noindex">
+    {% endif %}
+    {% if template == 'products' %}
+      <meta name="robots" content="noindex, follow">
+    {% endif %}
     <script src="https://cdn-cookieyes.com/common/shopify.js" defer></script>
     
     <meta charset="utf-8">
@@ -29,6 +35,7 @@
     {% endif %}
 
     {% render 'meta-tags' %}
+    <meta name="pinterest-rich-pin" content="false" />
 
     <link
       rel="stylesheet"
@@ -435,7 +442,7 @@
     {% sections 'header-group' %}
     <div id="cart-popup-container" style="display: none;"></div>
 
-    <main id="MainContent" class="{% if template.name contains 'cart' %}{% if cart == empty %}is-empty{% endif %}{% endif %} page-{{ page.handle }} {{ template.name }}--page content-for-layout focus-none" role="main" tabindex="-1">
+    <main id="MainContent" class="{% if template.name contains 'cart' %}{% if cart == empty %}is-empty{% endif %}{% endif %} page-{{ page.handle }} {{ template.name }}--page content-for-layout focus-none {% if template.name == 'product' and template.suffix == blank %}default-template{% endif %}" role="main" tabindex="-1">
       {% if page.metafields.custom.catalogue_detail != blank %}
         <div class="catalogues__page-wrapper page-width">
           <div class="catalogue__list-wrapper">
@@ -472,15 +479,7 @@
       {% endif %}
     </main>
 
-    {% if template.name == 'index' %}
-      {% sections 'footer-group-index' %}
-    {% elsif template.name == 'page' and template.suffix == 'kitchens' %}
-      {% sections 'footer-group-page-kitchens' %}
-    {% elsif template.name == 'page' and template.suffix == 'about-us' %}
-      {% sections 'footer-group-page-about-us' %}
-    {% else %}
-      {% sections 'footer-group' %}
-    {% endif %}
+    {% sections 'footer-group' %}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
@@ -654,5 +653,144 @@
         });
       })();
     </script> {% endcomment %}
+    <script>
+      // stoq app - intercept popup when preorder limit reached
+      (function () {
+        var ID = 'restock-rocket-preorder-container';
+        var lastProductSubmit = 0;
+
+        // Remember when an add-to-cart was submitted from a product form
+        document.addEventListener('submit', function (e) {
+          if (e.target.closest && e.target.closest('product-form')) {
+            lastProductSubmit = Date.now();
+          }
+        }, true);
+
+        var holdObserver = null;
+
+        // Your own message UI - replace with your theme's toast/modal
+        function showMyMessage(text) {
+          var popup = document.getElementById('cart-popup-container');
+          if (!popup) return;
+
+          function apply() {
+            var popupDiv = popup.querySelector('#cart-notification');
+            var target = popup.querySelector('.added-message') || popup;
+
+            if (target.textContent.trim() !== text) target.textContent = text;
+            if (popup.style.display !== 'block') popup.style.display = 'block';
+            if (popup.hasAttribute('hidden')) popup.removeAttribute('hidden');
+            if (!popup.classList.contains('show')) popup.classList.add('show');
+            if (popupDiv) {
+              if (!popupDiv.classList.contains('animate')) popupDiv.classList.add('animate');
+              if (!popupDiv.classList.contains('active')) popupDiv.classList.add('active');
+            }
+            if (popup.getAttribute('aria-hidden') !== 'false') popup.setAttribute('aria-hidden', 'false');
+          }
+          apply();
+          if (holdObserver) holdObserver.disconnect();
+          holdObserver = new MutationObserver(apply);
+          holdObserver.observe(popup, {
+            childList: true, subtree: true, characterData: true, attributes: true
+          });
+          setTimeout(function () {
+            if (holdObserver) holdObserver.disconnect();
+          }, 6000);
+        }
+
+        // Hide Stoq's modal the moment it is inserted (avoids a flash)
+        new MutationObserver(function (mutations) {
+          mutations.forEach(function (m) {
+            m.addedNodes.forEach(function (n) {
+              if (n.id === ID) {
+                n.style.visibility = 'hidden';
+                setTimeout(function () { n.style.visibility = ''; }, 800); // safety net
+              }
+            });
+          });
+        }).observe(document.body, { childList: true });
+
+        // Once the modal opens, check whether it is the limit error
+        window.addEventListener('stoq:preorder-modal:opened', function () {
+          var tries = 0;
+
+          (function check() {
+            var box = document.getElementById(ID);
+            if (!box) return;
+
+            var banner = box.querySelector('.preorder-error-banner');
+            var text = banner ? banner.textContent.trim() : '';
+            var match = text.match(/^You can only preorder (\d+) unit/);
+            var none = text === 'No units available for preorder';
+
+            if (match || none) {
+              var left = match ? parseInt(match[1], 10) : 0;
+
+              showMyMessage(left > 0
+                ? "Sorry, we're unable to add this quantity to your basket; we have " + left + " available to order at this time. Please contact our customer service team for more information about availability."
+                : "Sorry, this item is no longer available for order."
+              );
+
+              var cancel = box.querySelector('#preorder-reject-button');
+              if (cancel) cancel.click();
+              return;
+            }
+
+            if (++tries < 6) { setTimeout(check, 50); return; }
+            box.style.visibility = '';   // no limit error: show the normal modal
+          })();
+        });
+      })();
+    </script>
+
+    
+        <script>
+      (() => {
+        const sectionSelector = '[id$="__custom_contact_accessory_8i6CKa"]';
+        const marker = 'data-devol-form-width-fix';
+        const css = `@media screen and (max-width: 490px) {
+          [data-testid="app-router"] {
+            justify-content: stretch !important;
+          }
+        }`;
+        let timer;
+
+        function inspect(root) {
+          if (root instanceof ShadowRoot &&
+              root.querySelector('[data-testid="app-router"]') &&
+              !root.querySelector(`style[${marker}]`)) {
+            const style = document.createElement('style');
+            style.setAttribute(marker, '');
+            style.textContent = css;
+            root.appendChild(style);
+          }
+          root.querySelectorAll('*').forEach(element => {
+            if (element.shadowRoot) inspect(element.shadowRoot);
+          });
+        }
+
+        function start() {
+          clearInterval(timer);
+          let attempts = 0;
+          const apply = () => {
+            const section = document.querySelector(sectionSelector);
+            if (section) inspect(section);
+            if (++attempts >= 120) clearInterval(timer);
+          };
+          timer = setInterval(apply, 500);
+          apply();
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', start, { once: true });
+        } else {
+          start();
+        }
+
+        document.addEventListener('shopify:section:load', start);
+      })();
+    </script>
+
+    
   </body>
 </html>

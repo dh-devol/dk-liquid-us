@@ -66,16 +66,16 @@
                     </h4>
                   {%- endif -%}
 
-                  {%- if article.image != blank -%}
+                  {%- if article.metafields.custom.thumbnail.value != blank -%}
                     <a
                       href="{{ article.url }}"
                       class="card__image-wrapper"
                       {% if section.settings.redirect_to_new_page %}target="_blank"{% endif %}
                     >
                       <img
-                        src="{{ article.image | image_url: width: 200 }}"
+                        src="{{ article.metafields.custom.thumbnail.value | image_url: width: 200 }}"
                         class="card__image"
-                        alt="{{ article.image.alt | default: article.title }}"
+                        alt="{{ article.metafields.custom.thumbnail.value.alt | default: article.title }}"
                         loading="lazy"
                         width="175"
                         height="233"
