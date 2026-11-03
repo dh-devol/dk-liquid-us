@@ -99,7 +99,7 @@
                           >
                             <span class="button-text">
                               {% if sample_in_cart %}
-                                Sample pack already in cart
+                                Sample already in cart
                               {% else %}
                                 {% if sample_variant.price > 0 %}
                                   {{ block.settings.label }} for {{ sample_variant.price | money}}
@@ -132,7 +132,7 @@
                         function disableButton() {
                           button.disabled = true;
                           button.classList.add('disabled');
-                          buttonText.textContent = 'Sample pack already in cart';
+                          buttonText.textContent = 'Sample already in cart';
                         }
 
                         async function packInCart() {
