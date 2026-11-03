@@ -315,6 +315,114 @@
                       {% render 'product-quantity-buy-button', block: block, product: product, product_form_id: product_form_id %}
                     {% endif %}
                   {%- endunless -%}
+                {% when 'select_options' %}
+                  {{ 'component-select-options.css' | asset_url | stylesheet_tag }}
+                  <span hidden data-main-availability="{{ product.metafields.custom.lead_time.value | escape }}"></span>
+                  <div class="addon-groups" {{ block.shopify_attributes }}>
+                    {%- assign group = block.settings.addon_group -%}
+                    {%- if group != blank -%}
+                      {%- liquid
+                        assign group_key = block.id
+                        assign group_heading = group.text.value
+                        assign group_style = group.option.value
+                        assign group_multiple = group.select_multiple.value
+                        assign group_link = group.add_link.value
+                        assign group_products = group.products.value
+                      -%}
+
+                      {% case group_style %}
+                        {% when 'Dropdown' %}
+                          <div class="addon--dropdown">
+                            <label for="AddonDropdown-{{ group_key }}">{{ group_heading }}</label>
+                            <select id="AddonDropdown-{{ group_key }}" name="addons-{{ group_key }}" data-addon-input data-addon-separate>
+                              {% comment %} <option value="">None</option> {% endcomment %}
+                              {% for addon in group_products %}
+                                {% assign variant = addon.selected_or_first_available_variant %}
+                                <option
+                                  value="{{ variant.id }}"
+                                  data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                  {% unless variant.available %}disabled{% endunless %}
+                                >
+                                  {{ addon.metafields.custom.addon_title.value | default: addon.title }}
+                                </option>
+                              {% endfor %}
+                            </select>
+                          </div>
+
+                        {% when 'Image' %}
+                          <div class="addon-accordion">
+                            <button
+                              type="button"
+                              class="dropdown-accordion"
+                              aria-expanded="false"
+                              aria-controls="AddonSelect-{{ group_key }}"
+                            >
+                              <p>{{ group_heading }}</p>
+                              <span class="dropdown-arrow" aria-hidden="true"></span>
+                            </button>
+                            <div class="addon-select" id="AddonSelect-{{ group_key }}" hidden>
+                              <div class="addon-list">
+                                {% for addon in group_products %}
+                                  {% assign variant = addon.selected_or_first_available_variant %}
+                                  {% assign addon_title = addon.metafields.custom.addon_title.value | default: addon.title %}
+                                  <label class="addon-container">
+                                    <input
+                                      type="{% if group_multiple %}checkbox{% else %}radio{% endif %}"
+                                      class="addon-container__input"
+                                      name="addons-{{ group_key }}"
+                                      value="{{ variant.id }}"
+                                      data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                      data-addon-input
+                                      data-addon-separate
+                                      {% unless variant.available %}disabled{% endunless %}
+                                    >
+                                    <div class="addon-item">
+                                      {{ addon.featured_image | image_url: width: 150 | image_tag: width: 75, height: 75, loading: 'lazy', alt: addon.title }}
+                                      <div class="addon-item__content">
+                                        {% if group_link %}
+                                          <a href="{{ addon.url }}" class="addon-item__link">{{ addon_title }}</a>
+                                        {% else %}
+                                          <p class="addon-item__title">{{ addon_title }}</p>
+                                        {% endif %}
+                                        <p class="addon-item__price">{{ variant.price | money }}</p>
+                                        {%- if addon.available -%}
+                                          <p class="addon-item__lead-time">{{ addon.metafields.custom.lead_time.value }}</p>
+                                        {%- else -%}
+                                          <p class="addon-item__lead-time">{{- 'products.product.inventory_out_of_stock' | t -}}</p>
+                                        {%- endif -%}
+                                      </div>
+                                    </div>
+                                    <span class="addon-tick__box" aria-hidden="true"></span>
+                                  </label>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+
+                        {% when 'Tickbox' %}
+                          <div class="addon--tickbox">
+                            <p class="addon--tickbox__heading">{{ group_heading }}:</p>
+                            {% for addon in group_products %}
+                              {% assign variant = addon.selected_or_first_available_variant %}
+                              <div class="addon--tickbox__wrapper">
+                                <label class="addon--tickbox__wrapper-item">
+                                  <input
+                                    type="checkbox"
+                                    class="addon--tickbox__wrapper-item-option"
+                                    name="addons-{{ group_key }}"
+                                    value="{{ variant.id }}"
+                                    data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                    data-addon-input
+                                    {% unless variant.available %}disabled{% endunless %}
+                                  >
+                                  <span>{{ addon.metafields.custom.addon_title.value | default: addon.title }} (+{{ variant.price | money }})</span>
+                                </label>
+                              </div>
+                            {% endfor %}
+                          </div>
+                      {% endcase %}
+                    {% endif %}
+                  </div>
                 {%- when 'quantity_selector' -%}
                   {%- unless show_international_oos -%}
                     {% if product.metafields.custom.unit_area_m2.value != blank %}
@@ -503,6 +611,176 @@
   </product-info>
 </div>
 
+<script>
+  (function () {
+    function initAccordions(root) {
+      // Accordion
+      root.querySelectorAll('.addon-accordion').forEach(function (wrapper) {
+        if (wrapper.dataset.accordionInit) return; // avoid double-binding
+        wrapper.dataset.accordionInit = 'true';
+
+        var btn = wrapper.querySelector('.dropdown-accordion');
+        var panel = wrapper.querySelector('.addon-select');
+        if (!btn || !panel) return;
+
+        btn.addEventListener('click', function () {
+          var isOpen = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          btn.toggleAttribute('open', !isOpen);
+          panel.hidden = isOpen;
+        });
+      });
+
+      // Single-select addons: click the selected one again to deselect
+      root.querySelectorAll('.addon-list').forEach(function (list) {
+        if (list.dataset.addonInit) return;
+        list.dataset.addonInit = 'true';
+
+        list.addEventListener('click', function (e) {
+          if (e.target.closest('a')) return;
+
+          var label = e.target.closest('.addon-container');
+          if (!label) return;
+
+          var input = label.querySelector('input[type="radio"]');
+          if (!input || input.disabled) return;
+
+          // Ignore the second click the browser forwards from the label to the input
+          if (e.target === input) return;
+
+          // Still the pre-click state here
+          if (input.checked) {
+            e.preventDefault(); // stop the browser re-selecting it
+            input.checked = false;
+            input.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () { initAccordions(document); });
+    } else {
+      initAccordions(document);
+    }
+
+    // Re-run when a section is reloaded in the theme editor
+    document.addEventListener('shopify:section:load', function (e) { initAccordions(e.target); });
+
+    window.initAccordion = initAccordions; // keep your existing global for other bundles
+  })();
+
+  (function () {
+    const INJECTED_CLASS = 'addon-injected-prop';
+
+    function setFormProperty(form, key, value) {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'properties[' + key + ']';
+      input.value = value;
+      input.className = INJECTED_CLASS;
+      form.appendChild(input);
+    }
+
+    function clearInjected(form) {
+      form.querySelectorAll('.' + INJECTED_CLASS).forEach(function (el) { el.remove(); });
+    }
+
+    document.addEventListener('submit', async function (e) {
+      const form = e.target;
+      if (!form.matches('form[action*="/cart/add"]')) return;
+
+      // Second pass: addons already added, let the theme add the main product
+      if (form.dataset.addonsAdded === 'true') {
+        delete form.dataset.addonsAdded;
+        return;
+      }
+
+      // Remove properties left over from a previous add
+      clearInjected(form);
+
+      const scope = form.closest('.shopify-section') || document;
+      const selected = Array.from(scope.querySelectorAll('[data-addon-input]')).filter(function (el) {
+        if (el.disabled || !el.value) return false;
+        if (el.type === 'checkbox' || el.type === 'radio') return el.checked;
+        return true; // <select>
+      });
+
+      if (!selected.length) return; // no addons: normal add-to-cart
+
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      const qtyInput = form.querySelector('[name="quantity"]') || scope.querySelector('[name="quantity"]');
+      const quantity = qtyInput ? parseInt(qtyInput.value, 10) || 1 : 1;
+
+      // 13 characters: keeps cart.js on the addon path (not the >14 bundle path)
+      const groupId = String(Date.now());
+
+      let groupedCount = 0;  // tickbox addons (existing convention, grouped in cart)
+      let linkedCount = 0;   // image/dropdown addons (own line items)
+
+      const items = selected.map(function (el) {
+        const source = el.tagName === 'SELECT' ? el.options[el.selectedIndex] : el;
+        const properties = {
+          'Availability': source.dataset.availability || 'In Stock'
+        };
+
+        if (el.hasAttribute('data-addon-separate')) {
+          // Image / dropdown: unique properties the existing cart logic ignores
+          properties['_linked_addon'] = 'true';
+          properties['_linked_group'] = groupId;
+          linkedCount++;
+        } else {
+          // Tickbox: existing addon convention, grouped under the main product
+          properties['_Added as add-on'] = 'true';
+          properties['_group_id'] = groupId;
+          properties['_addon_sort'] = String(groupedCount);
+          groupedCount++;
+        }
+
+        return { id: Number(el.value), quantity: quantity, properties: properties };
+      });
+
+      const mainAvailabilityEl = scope.querySelector('[data-main-availability]');
+      const mainAvailability = (mainAvailabilityEl && mainAvailabilityEl.dataset.mainAvailability) || 'In Stock';
+
+      const submitBtn = e.submitter || form.querySelector('[type="submit"]');
+      if (submitBtn) submitBtn.setAttribute('aria-disabled', 'true');
+
+      try {
+        const root = (window.Shopify && window.Shopify.routes && window.Shopify.routes.root) || '/';
+        const res = await fetch(root + 'cart/add.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({ items: items })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          if (submitBtn) submitBtn.removeAttribute('aria-disabled');
+          alert(err.description || 'Sorry, one of the add-ons could not be added.');
+          return;
+        }
+
+        // Main product properties, sent by the theme's own add-to-cart
+        if (groupedCount > 0) setFormProperty(form, '_group_id', groupId);
+        if (linkedCount > 0) setFormProperty(form, '_linked_group', groupId);
+        setFormProperty(form, 'Availability', mainAvailability);
+
+        // Re-enable BEFORE re-submitting, or the theme's handler bails out
+        if (submitBtn) submitBtn.removeAttribute('aria-disabled');
+
+        form.dataset.addonsAdded = 'true';
+        form.requestSubmit(submitBtn || undefined);
+      } catch (err) {
+        console.error(err);
+        if (submitBtn) submitBtn.removeAttribute('aria-disabled');
+        alert('Sorry, something went wrong adding the add-ons.');
+      }
+    }, true);
+  })();
+</script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -1195,6 +1473,18 @@ document.addEventListener("DOMContentLoaded", () => {
           "default": "choose" 
         },
         { "type": "checkbox", "id": "bundle_qty", "label": "Show quantity field?", "default": false },
+      ]
+    },
+    {
+      "type": "select_options",
+      "name": "Select options",
+      "settings": [
+        {
+          "type": "metaobject",
+          "id": "addon_group",
+          "label": "Add-on group",
+          "metaobject_type": "addon_select"
+        }
       ]
     },
     {
