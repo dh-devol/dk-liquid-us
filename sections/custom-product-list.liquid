@@ -84,7 +84,7 @@
       <div class="subtitle__wrapper {% if section.settings.title != blank %}above__margin{% endif %}"{% if section.settings.hide_subtitle %} style="display:none;"{% endif %}>
         <h3 class="sub-heading hxl">{{ section.settings.subtitle }}</h3>
         {%- if section.settings.button_label != blank -%}
-          <a href="{{ section.settings.button_link }}" class="sub_heading--link">
+          <a href="{{ section.settings.button_link }}" class="sub_heading--link" aria-label="Link to view all {{ section.settings.subtitle }}">
             {{- section.settings.button_label | escape -}}
             <span> ></span>
           </a>

@@ -62,6 +62,9 @@
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
+                {% if block.settings.button_label == "Sign me up" %}
+                  aria-label="Link to newsletter sign up form"
+                {% endif %}
               >
                 {%- if block.settings.button_label != blank -%}
                   <a
