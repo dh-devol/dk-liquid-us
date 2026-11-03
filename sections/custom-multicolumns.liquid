@@ -105,6 +105,7 @@
                 {%- if card_link != blank -%}
                   <a href="{{ card_link }}"
                     class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank or product_hover_image != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
+                    {%- if block.settings.link_label != blank and block.settings.link_label_hide == true  -%}aria-label="{{ block.settings.link_label }}" target="_blank"{% endif %}
                   >
                    {%- else -%}
                   <div

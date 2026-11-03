@@ -12,7 +12,7 @@
 <ul class="list-unstyled list-social{% if class %} {{ class}}{% endif %}" role="list">
   {%- if settings.social_instagram_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_instagram_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_instagram_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's Instagram page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-instagram.svg' | inline_asset_content -}}
         </span>
@@ -22,7 +22,7 @@
   {%- endif -%}
   {%- if settings.social_pinterest_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_pinterest_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_pinterest_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's Pinterest page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-pinterest.svg' | inline_asset_content -}}
         </span>
@@ -32,7 +32,7 @@
   {%- endif -%}
   {%- if settings.social_facebook_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_facebook_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_facebook_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's Facebook page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-facebook.svg' | inline_asset_content -}}
         </span>
@@ -42,7 +42,7 @@
   {%- endif -%}
   {%- if settings.social_twitter_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_twitter_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_twitter_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's Twitter page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-twitter.svg' | inline_asset_content -}}
         </span>
@@ -52,17 +52,17 @@
   {%- endif -%}
   {%- if settings.social_youtube_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_youtube_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_youtube_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's Youtube page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-youtube.svg' | inline_asset_content -}}
         </span>
         <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
       </a>
     </li>
-  {%- endif -%}
+  {%- endif -%} {% comment %} {% endcomment %}
   {%- if settings.social_tiktok_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_tiktok_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_tiktok_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's TikTok page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-tiktok.svg' | inline_asset_content -}}
         </span>
@@ -72,7 +72,7 @@
   {%- endif -%}
   {%- if settings.social_snapchat_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_snapchat_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_snapchat_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's Snapchat page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-snapchat.svg' | inline_asset_content -}}
         </span>
@@ -82,7 +82,7 @@
   {%- endif -%}
   {%- if settings.social_tumblr_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_tumblr_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_tumblr_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's Tumblr page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-tumblr.svg' | inline_asset_content -}}
         </span>
@@ -92,7 +92,7 @@
   {%- endif -%}
   {%- if settings.social_vimeo_link != blank -%}
     <li class="list-social__item">
-      <a href="{{ settings.social_vimeo_link }}" target="_blank" class="link list-social__link">
+      <a href="{{ settings.social_vimeo_link }}" target="_blank" class="link list-social__link" aria-label="Link to deVOL's Vimeo page, opens in a new tab">
         <span class="svg-wrapper">
           {{- 'icon-vimeo.svg' | inline_asset_content -}}
         </span>
