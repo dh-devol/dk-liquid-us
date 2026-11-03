@@ -242,7 +242,8 @@
             "show_text_double_column": false,
             "text": "",
             "show_above_image": false,
-            "link_label": "",
+            "link_label": "Link to 'For the Love of Kitchens' TV show on hulu. Opens in a new tab.",
+            "link_label_hide": true,
             "linked_product": ""
           }
         },
@@ -258,7 +259,8 @@
             "show_text_double_column": false,
             "text": "",
             "show_above_image": false,
-            "link_label": "",
+            "link_label": "Link to 'For the Love of Kitchens' TV show on discovery+. Opens in a new tab.",
+            "link_label_hide": true,
             "linked_product": ""
           }
         },
@@ -275,6 +277,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "",
+            "link_label_hide": false,
             "linked_product": ""
           }
         },
@@ -291,6 +294,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "",
+            "link_label_hide": false,
             "linked_product": ""
           }
         },
@@ -307,6 +311,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "",
+            "link_label_hide": false,
             "linked_product": ""
           }
         }
