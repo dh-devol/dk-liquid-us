@@ -231,32 +231,23 @@
                 {%- endif -%}
               </picture>
             {% else %}
+              {% assign desktop_source = video.sources | where: 'mime_type', 'video/mp4' | first %}
+              {% assign mobile_source = mobile_video.sources | where: 'mime_type', 'video/mp4' | first %}
+
               <div class="banner-video-wrap">
                 <video
                   loop
                   muted
                   playsinline
+                  webkit-playsinline
                   preload="auto"
-                  class="banner-media-video"
-                >
-                  {% if mobile_video != blank %}
-                    {% for source in mobile_video.sources %}
-                      <source
-                        media="(max-width: 767px)"
-                        src="{{ source.url }}"
-                        type="{{ source.mime_type }}"
-                      >
-                    {% endfor %}
+                  fetchpriority="high"
+                  data-desktop-src="{{ desktop_source.url }}"
+                  {% if mobile_source != blank %}
+                    data-mobile-src="{{ mobile_source.url }}"
                   {% endif %}
-
-                  {% for source in video.sources %}
-                    <source
-                      media="(min-width: 767px)"
-                      src="{{ source.url }}"
-                      type="{{ source.mime_type }}"
-                    >
-                  {% endfor %}
-                </video>
+                  class="banner-media-video"
+                ></video>
 
                 <button
                   type="button"

@@ -1258,6 +1258,18 @@ class SlideshowComponent extends SliderComponent {
       wrap.dataset.videoReady = 'true';
       video.muted = true;
       video.playsInline = true;
+      video.preload = 'auto';
+
+      const mobile = window.matchMedia('(max-width: 767px)').matches;
+
+      const videoSrc = mobile
+        ? video.dataset.mobileSrc || video.dataset.desktopSrc
+        : video.dataset.desktopSrc;
+
+      if (videoSrc) {
+        video.src = videoSrc;
+        video.load();
+      }
 
       const updateButton = () => {
         const paused = video.paused || video.ended;

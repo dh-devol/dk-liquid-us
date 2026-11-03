@@ -790,6 +790,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+    function preloadGalleryVideos() {
+    const videos = document.querySelectorAll(
+      '.product-gallery-swiper video'
+    );
+    videos.forEach((video, index) => {
+      video.preload = index === 0 ? 'auto' : 'metadata';
+      video.removeAttribute('loading');
+      video.load();
+    });
+  }
+  preloadGalleryVideos();
+  new Swiper(swiperEl, options);
+  
   function initSwiperGallery() {
     const swiperEl = document.querySelector('.product-gallery-swiper');
     if (!swiperEl) return;
