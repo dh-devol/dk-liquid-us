@@ -25,6 +25,14 @@ class CartNotification extends HTMLElement {
     }];
   }
 
+  /** screen reader notification */ 
+  announce(text) {
+    const sr = document.getElementById('sr-message');
+    if(!sr || !text) return;
+    sr.textContent = '';
+    setTimeout(() => { sr.textContent = text; }, 100);
+  }
+
   /**
    * Called from product‑form.js after a successful add‑to‑cart
    * @param {Object} parsedState – JSON response from /cart/add.js
@@ -33,8 +41,10 @@ class CartNotification extends HTMLElement {
     /* 1. Update popup message */
     const item = parsedState?.items?.[0] || parsedState;
     const title = item?.title || parsedState?.product_title || 'Product';
+    const text = `${title} has been added to your basket.`;
     const messageEl = this.notification.querySelector('.added-message');
-    if (messageEl) messageEl.textContent = `${title} has been added to your basket.`;
+    if (messageEl) messageEl.textContent = text;
+    this.announce(text);
   
     /* 2. Refresh ONLY the cart count (not the whole bubble) */
     this.getSectionsToRender().forEach((section) => {
@@ -109,6 +119,7 @@ class CartNotification extends HTMLElement {
   showError(message) {
     const messageEl = this.notification.querySelector('.added-message');
     if (messageEl) messageEl.textContent = message;
+    this.announce(message);
     this.notification.setAttribute('aria-label', message || 'Error');
     this.open();
   }
@@ -117,26 +128,9 @@ class CartNotification extends HTMLElement {
 
   open() {
     const wrapper = document.getElementById('cart-popup-container');
-    if (wrapper) {
-      wrapper.classList.add('show');
-  
-      // Scroll into view after short delay
-      // setTimeout(() => {
-      //   wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // }, 100); // wait for class to apply before scrolling
-    }
+    if (wrapper) wrapper.classList.add('show');
   
     this.notification.classList.add('animate', 'active');
-  
-    this.notification.addEventListener(
-      'transitionend',
-      () => {
-        this.notification.focus();
-        trapFocus(this.notification);
-      },
-      { once: true }
-    );
-  
   }
 
   close() {
