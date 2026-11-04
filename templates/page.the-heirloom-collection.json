@@ -217,6 +217,32 @@
         "padding_right": 0
       }
     },
+    "custom_product_list_kqa7ze": {
+      "type": "custom-product-list",
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Projects",
+        "hide_subtitle": true,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
     "project_multicolumns_UGjxfC": {
       "type": "project-multicolumns",
       "blocks": {
@@ -868,6 +894,7 @@
     "metaobject_gallery_slider_XVcnnR",
     "gallery_slideshow_xKtB9f",
     "catalogue_title_with_richtext_Vbtd9X",
+    "custom_product_list_kqa7ze",
     "project_multicolumns_UGjxfC",
     "project_multicolumns_znXjyg",
     "custom_product_list_CPB4B7",
