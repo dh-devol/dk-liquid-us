@@ -396,18 +396,10 @@ window.initMixMatchBundle = function(root) {
     function updateCartPopupTitle(items) {
         if (!items) return;
 
-        const item = items.items[0];
-        const title = item.product_title || item.title || '';
-        const msg = document.querySelector('#cart-notification .added-message');
-        if (!msg) return;
-
-        const esc = s => String(s).replace(/[&<>"']/g, m => (
-            {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]
-        ));
-
-        const suffix = msg.textContent.match(/has been added.*$/)?.[0] || 'has been added.';
-
-        msg.innerHTML = `${esc(title)} has been added`;
+        const cart = document.querySelector('cart-notification');
+        if (cart && typeof cart.renderContents === 'function') {
+            cart.renderContents(items);
+        }
     }
 
     async function refreshMiniCart() {
