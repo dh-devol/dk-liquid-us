@@ -62,6 +62,12 @@
     "custom_product_list_yzmBwH": {
       "type": "custom-product-list",
       "blocks": {
+        "product_item_QmLY6T": {
+          "type": "product_item",
+          "settings": {
+            "product": "shutter-dog"
+          }
+        },
         "product_item_ir8xqq": {
           "type": "product_item",
           "settings": {
@@ -71,17 +77,18 @@
         "product_item_kNfqxw": {
           "type": "product_item",
           "settings": {
-            "product": "straight-iron-hook-rack-4-hooks"
+            "product": "curly-iron-hook-rack-6-hooks"
           }
         },
         "product_item_wHwhak": {
           "type": "product_item",
           "settings": {
-            "product": "straight-iron-hook-rack-6-hooks"
+            "product": "iron-wall-hook-large"
           }
         }
       },
       "block_order": [
+        "product_item_QmLY6T",
         "product_item_ir8xqq",
         "product_item_kNfqxw",
         "product_item_wHwhak"
@@ -91,11 +98,11 @@
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "Iron Hooks",
+        "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 3,
+        "columns_desktop": 4,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
@@ -120,12 +127,6 @@
             "product": "iron-beam-hook-large"
           }
         },
-        "product_item_NNJPMd": {
-          "type": "product_item",
-          "settings": {
-            "product": "iron-wall-hook-large"
-          }
-        },
         "product_item_LndYWU": {
           "type": "product_item",
           "settings": {
@@ -141,7 +142,6 @@
       },
       "block_order": [
         "product_item_AdmHzi",
-        "product_item_NNJPMd",
         "product_item_LndYWU",
         "product_item_BmM7AC"
       ],
@@ -154,14 +154,14 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
         "button_label": "",
         "button_link": "",
         "show_top_border": false,
-        "show_bottom_border": true,
+        "show_bottom_border": false,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
@@ -209,7 +209,7 @@
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "Iron Hangers & Brackets",
+        "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
