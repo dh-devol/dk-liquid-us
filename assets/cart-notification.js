@@ -25,6 +25,14 @@ class CartNotification extends HTMLElement {
     }];
   }
 
+  /** screen reader notification */
+  announce(text) {
+    const sr = document.getElementById('sr-message');
+    if (!sr || !text) return;
+    sr.textContent = '';
+    setTimeout(() => { sr.textContent = text; }, 100);
+  }
+
   /**
    * Called from product‑form.js after a successful add‑to‑cart
    * @param {Object} parsedState – JSON response from /cart/add.js
@@ -33,9 +41,24 @@ class CartNotification extends HTMLElement {
     /* 1. Update popup message */
     const item = parsedState?.items?.[0] || parsedState;
     const title = item?.title || parsedState?.product_title || 'Product';
+
+    // Addons added just before this by product-select-options.js
+    const addons = Array.isArray(window.addonCartLastAdded) ? window.addonCartLastAdded : [];
+    window.addonCartLastAdded = null; // use once
+
+    const names = [title].concat(
+      addons.map((a) => a.title || a.product_title).filter(Boolean)
+    );
+    const nameList = names.length > 1
+      ? names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1]
+      : names[0];
+
+    const text = `${nameList} ${names.length > 1 ? 'have' : 'has'} been added to your basket.`;
+
     const messageEl = this.notification.querySelector('.added-message');
-    if (messageEl) messageEl.textContent = `${title} has been added to your basket.`;
-  
+    if (messageEl) messageEl.textContent = text;
+    this.announce(text);
+
     /* 2. Refresh ONLY the cart count (not the whole bubble) */
     this.getSectionsToRender().forEach((section) => {
       const container = document.getElementById(section.id);

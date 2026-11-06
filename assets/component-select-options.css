@@ -1,6 +1,6 @@
 .dropdown-accordion {
   background-color: inherit;
-  color: #898989;
+  color: #757575;
   cursor: pointer;
   padding: 0 0 0.5rem;
   margin-top: 1rem;
@@ -42,6 +42,9 @@
   gap: 1.5rem;
   padding: 0.8rem 0;
   cursor: pointer;
+}
+.addon-container.addon-container--tickbox {
+  justify-content: flex-start;
 }
 .addon-container .addon-item {
   display: flex;
@@ -158,7 +161,7 @@
   line-height: 1.4;
   font-size: 0.9em;
   font-weight: 400;
-  color: #898989;
+  color: #757575;
 }
 
 .addon--dropdown select {
@@ -186,49 +189,13 @@
   box-shadow: none;
 }
 
-.addon--tickbox {
-
+.addon--dropdown option:disabled {
+  color: #A9A9A9;
 }
 
 .addon--tickbox .addon--tickbox__heading {
-  color: #898989;
+  color: #757575;
   font-size: 0.9em;
   font-weight: 400;
   margin: 18px 0 5px 0;
-}
-
-.addon--tickbox .addon--tickbox__wrapper {
-  display: inline-flex;
-  gap: 32px;
-}
-
-.addon--tickbox .addon--tickbox__wrapper label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.addon--tickbox .addon--tickbox__wrapper label span:first-of-type {
-  margin-right: .5rem;
-}
-
-.addon--tickbox .addon--tickbox__wrapper label input[type="checkbox"] {
-  background-image: url(https://cdn.shopify.com/s/files/1/0898/4012/4238/files/dk-check.svg?v=1757940020);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 0px auto;
-  margin-right: 1em;
-  margin-left: 0px;
-  cursor: pointer;
-  border-radius: 0px;
-  padding: 9px;
-  appearance: none;
-  border: 1px solid rgb(191, 191, 191);
-  font-size: 15px;
-  font-family: inherit;
-  color: rgb(89, 89, 89);
-}
-
-.addon--tickbox .addon--tickbox__wrapper label input[type="checkbox"]:checked {
-  background-size: 10px auto;
 }
