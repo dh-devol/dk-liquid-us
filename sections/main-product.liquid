@@ -315,6 +315,116 @@
                       {% render 'product-quantity-buy-button', block: block, product: product, product_form_id: product_form_id %}
                     {% endif %}
                   {%- endunless -%}
+                {% when 'select_options' %}
+                  {{ 'component-select-options.css' | asset_url | stylesheet_tag }}
+                  <span hidden data-main-availability="{{ product.metafields.custom.lead_time.value | escape }}"></span>
+
+                  <div class="addon-groups" {{ block.shopify_attributes }}>
+                    {%- assign group =product.metafields.custom.addon_select_metaobject.value -%}
+                    {%- if group != blank -%}
+                      {%- liquid
+                        assign group_key = block.id
+                        assign group_heading = group.addon_text.value
+                        assign group_style = group.option.value
+                        assign group_multiple = group.select_multiple.value
+                        assign group_link = group.add_link.value
+                        assign group_products = group.products.value
+                      -%}
+
+                      {% case group_style %}
+                        {% when 'Dropdown' %}
+                          <div class="addon--dropdown">
+                            <label for="AddonDropdown-{{ group_key }}">{{ group_heading }}</label>
+                            <select id="AddonDropdown-{{ group_key }}" name="addons-{{ group_key }}" data-addon-input data-addon-separate>
+                              <option value="">None</option>
+                              {% for addon in group_products %}
+                                {% assign variant = addon.selected_or_first_available_variant %}
+                                <option
+                                  value="{{ variant.id }}"
+                                  data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                  {% unless variant.available %}disabled{% endunless %}
+                                >
+                                  {{ addon.metafields.custom.addon_title.value | default: addon.title }} {% unless variant.available %}(OOS){% endunless %}
+                                </option>
+                              {% endfor %}
+                            </select>
+                          </div>
+
+                        {% when 'Image' %}
+                          <div class="addon-accordion">
+                            <button
+                              type="button"
+                              class="dropdown-accordion"
+                              aria-expanded="false"
+                              aria-controls="AddonSelect-{{ group_key }}"
+                            >
+                              <p>{{ group_heading }}</p>
+                              <span class="dropdown-arrow" aria-hidden="true"></span>
+                            </button>
+                            <div class="addon-select" id="AddonSelect-{{ group_key }}" hidden>
+                              <div class="addon-list">
+                                {% for addon in group_products %}
+                                  {% assign variant = addon.selected_or_first_available_variant %}
+                                  {% assign addon_title = addon.metafields.custom.addon_title.value | default: addon.title %}
+                                  <label class="addon-container">
+                                    <input
+                                      type="{% if group_multiple %}checkbox{% else %}radio{% endif %}"
+                                      class="addon-container__input"
+                                      name="addons-{{ group_key }}"
+                                      value="{{ variant.id }}"
+                                      data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                      data-addon-input
+                                      data-addon-separate
+                                      {% unless variant.available %}disabled{% endunless %}
+                                    >
+                                    <div class="addon-item">
+                                      {{ addon.featured_image | image_url: width: 150 | image_tag: width: 75, height: 75, loading: 'lazy', alt: addon.title }}
+                                      <div class="addon-item__content">
+                                        {% if group_link %}
+                                          <a href="{{ addon.url }}" class="addon-item__link">{{ addon_title }}</a>
+                                        {% else %}
+                                          <p class="addon-item__title">{{ addon_title }}</p>
+                                        {% endif %}
+                                        <p class="addon-item__price">{{ variant.price | money }}</p>
+                                        {%- if addon.available -%}
+                                          <p class="addon-item__lead-time">{{ addon.metafields.custom.lead_time.value }}</p>
+                                        {%- else -%}
+                                          <p class="addon-item__lead-time">{{- 'products.product.inventory_out_of_stock' | t -}}</p>
+                                        {%- endif -%}
+                                      </div>
+                                    </div>
+                                    <span class="addon-tick__box" aria-hidden="true"></span>
+                                  </label>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+
+                        {% when 'Tickbox' %}
+                          <div class="addon--tickbox addon-list">
+                            <p class="addon--tickbox__heading">{{ group_heading }}:</p>
+                            {% for addon in group_products %}
+                              {% assign variant = addon.selected_or_first_available_variant %}
+                              <div class="addon--tickbox__wrapper">
+                                <label class="addon-container addon-container--tickbox">
+                                  <input
+                                    type="checkbox"
+                                    class="addon-container__input addon--tickbox__wrapper-item-option"
+                                    name="addons-{{ group_key }}"
+                                    value="{{ variant.id }}"
+                                    data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                    data-addon-input
+                                    {% unless variant.available %}disabled{% endunless %}
+                                  >
+                                  <span class="addon-tick__box" aria-hidden="true"></span>
+                                  <span>{{ addon.metafields.custom.addon_title.value | default: addon.title }} (+{{ variant.price | money }}) {% unless variant.available %}- Out of Stock{% endunless %}</span>
+                                </label>
+                              </div>
+                            {% endfor %}
+                          </div>
+                      {% endcase %}
+                    {% endif %}
+                  </div>
                 {%- when 'quantity_selector' -%}
                   {%- unless show_international_oos -%}
                     {% if product.metafields.custom.unit_area_m2.value != blank %}
@@ -503,6 +613,10 @@
   </product-info>
 </div>
 
+{%- assign select_option_blocks = section.blocks | where: 'type', 'select_options' -%}
+{%- if select_option_blocks.size > 0 and product.metafields.custom.addon_select_metaobject.value != blank -%}
+  <script src="{{ 'product-select-options.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -1196,6 +1310,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         { "type": "checkbox", "id": "bundle_qty", "label": "Show quantity field?", "default": false },
       ]
+    },
+    {
+      "type": "select_options",
+      "name": "Select options",
+      "limit": 1,
+      "settings": []
     },
     {
       "type": "sku",

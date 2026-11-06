@@ -1,0 +1,201 @@
+.dropdown-accordion {
+  background-color: inherit;
+  color: #757575;
+  cursor: pointer;
+  padding: 0 0 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+}
+.dropdown-accordion:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+.dropdown-accordion p {
+  display: inline;
+  font-family: var(--font-body-family);
+  font-size: 14.4px;
+  font-weight: 500;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.dropdown-accordion[open] p {
+  border-bottom: none;
+}
+.dropdown-accordion .dropdown-arrow {
+  display: inline-block;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 8px solid #898989;
+  margin-top: 0.3rem;
+  transition: transform 0.3s;
+}
+.dropdown-accordion[open] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+.addon-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.8rem 0;
+  cursor: pointer;
+}
+.addon-container.addon-container--tickbox {
+  justify-content: flex-start;
+}
+.addon-container .addon-item {
+  display: flex;
+  gap: 1.2rem;
+}
+.addon-container .addon-item__content {
+  line-height: 20px;
+}
+.addon-container .addon-item img {
+  object-fit: cover;
+}
+.addon-container .addon-item .addon-item__content .addon-item__link {
+  text-decoration: none;
+}
+.addon-container .addon-item .addon-item__content .addon-item__link:hover {
+  text-decoration: underline;
+}
+.addon-container .addon-item .addon-item__content .addon-item__title {
+  margin: 0;
+}
+.addon-container .addon-item .addon-item__content .addon-item__price {
+  margin: 0;
+  font-size: 14px;
+}
+
+.addon-container .addon-item .addon-item__content .addon-item__lead-time {
+  margin: 0;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+/* hide native checkbox, keep it focusable */
+.addon-container__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+/* DEFAULT: white box, grey plus */
+.addon-tick__box {
+  position: relative;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  /* border-radius: 2px; */
+  background: #fff;
+  border: 1px solid #898989;
+  box-sizing: border-box;
+  /* transition: background 0.2s, border-color 0.2s; */
+}
+.addon-tick__box::before,
+.addon-tick__box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #898989;
+  transform: translate(-50%, -50%);
+  /* transition: opacity 0.2s, background 0.2s; */
+}
+.addon-tick__box::before { width: 8px; height: .5px; }
+.addon-tick__box::after  { width: .5px; height: 8px; }
+
+/* .addon-container:hover .addon-tick__box { border-color: #1f2a3c; } */
+
+/* OTHERS GREYED: once anything is selected, unselected boxes go grey */
+.addon-list:has(input:checked) .addon-container:not(:has(input:checked)) .addon-tick__box {
+  background: #c4c4c4;
+  border-color: #c4c4c4;
+}
+.addon-list:has(input:checked) .addon-container:not(:has(input:checked)) .addon-tick__box::before,
+.addon-list:has(input:checked) .addon-container:not(:has(input:checked)) .addon-tick__box::after {
+  background: #fff;
+}
+
+/* SELECTED: dark box, white tick */
+.addon-container:has(input:checked) .addon-tick__box {
+  background: #1f2a3c;
+  border-color: #1f2a3c;
+}
+.addon-container:has(input:checked) .addon-tick__box::before { opacity: 0; }
+.addon-container:has(input:checked) .addon-tick__box::after {
+  width: 5px;
+  height: 9px;
+  background: none;
+  border: solid #fff;
+  border-width: 0 1.5px 1.5px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+/* keyboard focus */
+.addon-container:has(input:focus-visible) .addon-tick__box {
+  outline: 2px solid #1f2a3c;
+  outline-offset: 2px;
+}
+
+/* sold out */
+.addon-container:has(input:disabled) .addon-tick__box {
+  background: #c4c4c4;
+  border-color: #c4c4c4;
+}
+
+.addon-container:has(input:disabled) .addon-tick__box::before,
+.addon-container:has(input:disabled) .addon-tick__box::after {
+  background: #fff;
+}
+
+.product__info-container .addon--dropdown {
+  margin: 1.5rem 0 0;
+}
+
+.addon--dropdown label{
+  line-height: 1.4;
+  font-size: 0.9em;
+  font-weight: 400;
+  color: #757575;
+}
+
+.addon--dropdown select {
+  margin: 5px 0 10px 0;
+  text-transform: inherit;
+  background-image: url(/cdn/shop/files/select-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 6px auto;
+  background-position: center right 1em;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 300;
+  font-size: 1em;
+  color: #595959;
+  letter-spacing: 0.3px;
+  background-color: #fff;
+  padding: 0.5em 0.8em;
+  border-radius: 0;
+  border: solid 1px #bfbfbf;
+  appearance: none;
+}
+
+.addon--dropdown select:focus-visible {
+  outline: 0;
+  box-shadow: none;
+}
+
+.addon--dropdown option:disabled {
+  color: #A9A9A9;
+}
+
+.addon--tickbox .addon--tickbox__heading {
+  color: #757575;
+  font-size: 0.9em;
+  font-weight: 400;
+  margin: 18px 0 5px 0;
+}
