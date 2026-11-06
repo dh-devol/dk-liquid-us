@@ -29,8 +29,9 @@
     "banner": {
       "type": "main-collection-banner",
       "custom_css": [
-        ".collection-hero__inner {margin-bottom: 24px;}",
-        ".collection-hero__title {margin-bottom: 1em;}"
+        ".collection-hero__inner {margin-bottom: 60px;}",
+        ".collection-hero__title {margin-bottom: 1em;}",
+        "@media screen and (min-width: 768px) {.collection-hero__description {max-width: 380px; }}"
       ],
       "settings": {
         "show_collection_description": true,
@@ -62,36 +63,81 @@
     "custom_product_list_yzmBwH": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_ir8xqq": {
+        "product_item_QmLY6T": {
           "type": "product_item",
           "settings": {
-            "product": "iron-hook-rack-3-hooks"
+            "product": "shutter-dog"
           }
         },
-        "product_item_kNfqxw": {
+        "product_item_UUizmT": {
           "type": "product_item",
           "settings": {
-            "product": "iron-hook-rack-4-hooks"
-          }
-        },
-        "product_item_wHwhak": {
-          "type": "product_item",
-          "settings": {
-            "product": "iron-hook-rack-6-hooks"
+            "product": "pot-hanger"
           }
         }
       },
       "block_order": [
-        "product_item_ir8xqq",
-        "product_item_kNfqxw",
-        "product_item_wHwhak"
+        "product_item_QmLY6T",
+        "product_item_UUizmT"
       ],
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "Iron Hooks",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_jUYdVW": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_7Ar3P4": {
+          "type": "product_item",
+          "settings": {
+            "product": "straight-iron-hook-rack-3-hooks"
+          }
+        },
+        "product_item_bjqkAD": {
+          "type": "product_item",
+          "settings": {
+            "product": "curly-iron-hook-rack-6-hooks"
+          }
+        },
+        "product_item_jRa9RJ": {
+          "type": "product_item",
+          "settings": {
+            "product": "iron-wall-hook-large"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_7Ar3P4",
+        "product_item_bjqkAD",
+        "product_item_jRa9RJ"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxl",
+        "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
@@ -120,12 +166,6 @@
             "product": "iron-beam-hook-large"
           }
         },
-        "product_item_NNJPMd": {
-          "type": "product_item",
-          "settings": {
-            "product": "iron-wall-hook-large"
-          }
-        },
         "product_item_LndYWU": {
           "type": "product_item",
           "settings": {
@@ -141,7 +181,6 @@
       },
       "block_order": [
         "product_item_AdmHzi",
-        "product_item_NNJPMd",
         "product_item_LndYWU",
         "product_item_BmM7AC"
       ],
@@ -154,14 +193,14 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
         "button_label": "",
         "button_link": "",
         "show_top_border": false,
-        "show_bottom_border": true,
+        "show_bottom_border": false,
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
@@ -173,12 +212,6 @@
     "custom_product_list_Y63KQq": {
       "type": "custom-product-list",
       "blocks": {
-        "product_item_TTfWMX": {
-          "type": "product_item",
-          "settings": {
-            "product": "pot-hanger"
-          }
-        },
         "product_item_FAt9JM": {
           "type": "product_item",
           "settings": {
@@ -199,7 +232,6 @@
         }
       },
       "block_order": [
-        "product_item_TTfWMX",
         "product_item_FAt9JM",
         "product_item_7qmEbN",
         "product_item_T4BxTT"
@@ -209,11 +241,11 @@
       "settings": {
         "title": "",
         "heading_size": "hxl",
-        "subtitle": "Iron Hangers & Brackets",
+        "subtitle": "",
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "portrait",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
@@ -235,6 +267,7 @@
     "banner",
     "product-grid",
     "custom_product_list_yzmBwH",
+    "custom_product_list_jUYdVW",
     "custom_product_list_HnUj3d",
     "custom_product_list_Y63KQq"
   ]

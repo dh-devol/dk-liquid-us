@@ -223,26 +223,26 @@
         "product_item_wHQXRc": {
           "type": "product_item",
           "settings": {
-            "product": "iron-hook-rack-3-hooks"
+            "product": "straight-iron-hook-rack-3-hooks"
           }
         },
         "product_item_eayifJ": {
           "type": "product_item",
           "settings": {
-            "product": "iron-hook-rack-4-hooks"
+            "product": "curly-iron-hook-rack-6-hooks"
           }
         },
-        "product_item_QDregg": {
+        "product_item_DnYHzX": {
           "type": "product_item",
           "settings": {
-            "product": "iron-hook-rack-6-hooks"
+            "product": "iron-wall-hook-large"
           }
         }
       },
       "block_order": [
         "product_item_wHQXRc",
         "product_item_eayifJ",
-        "product_item_QDregg"
+        "product_item_DnYHzX"
       ],
       "name": "Custom product list",
       "settings": {
@@ -277,12 +277,6 @@
             "product": "iron-beam-hook-large"
           }
         },
-        "product_item_6DYQzD": {
-          "type": "product_item",
-          "settings": {
-            "product": "iron-wall-hook-large"
-          }
-        },
         "product_item_ERzYGV": {
           "type": "product_item",
           "settings": {
@@ -298,7 +292,6 @@
       },
       "block_order": [
         "product_item_b8gat4",
-        "product_item_6DYQzD",
         "product_item_ERzYGV",
         "product_item_eCaMxi"
       ],
@@ -311,7 +304,7 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",

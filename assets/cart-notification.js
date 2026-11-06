@@ -132,6 +132,7 @@ class CartNotification extends HTMLElement {
   showError(message) {
     const messageEl = this.notification.querySelector('.added-message');
     if (messageEl) messageEl.textContent = message;
+    this.announce(message);
     this.notification.setAttribute('aria-label', message || 'Error');
     this.open();
   }
@@ -140,26 +141,9 @@ class CartNotification extends HTMLElement {
 
   open() {
     const wrapper = document.getElementById('cart-popup-container');
-    if (wrapper) {
-      wrapper.classList.add('show');
-  
-      // Scroll into view after short delay
-      // setTimeout(() => {
-      //   wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // }, 100); // wait for class to apply before scrolling
-    }
+    if (wrapper) wrapper.classList.add('show');
   
     this.notification.classList.add('animate', 'active');
-  
-    this.notification.addEventListener(
-      'transitionend',
-      () => {
-        this.notification.focus();
-        trapFocus(this.notification);
-      },
-      { once: true }
-    );
-  
   }
 
   close() {

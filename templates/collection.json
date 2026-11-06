@@ -9,6 +9,60 @@
  */
 {
   "sections": {
+    "blocks_9ixJFG": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_32a9a79_3btAcK": {
+          "type": "ai_gen_block_32a9a79",
+          "settings": {
+            "image": "shopify://shop_images/Stepney-Townhouse-45-Lores-1800x1200.jpg",
+            "min_height": 800,
+            "heading": "Page unavailable",
+            "text": "<p>Really sorry, we couldn't find the page you were looking for. Visiting the below pages might help you get back on track!</p>",
+            "content_padding": 0,
+            "button_1_text": "See our kitchens",
+            "button_1_link": "shopify://pages/kitchens",
+            "button_2_text": "Visit our shop",
+            "button_2_link": "shopify://pages/shop",
+            "button_gap": 20,
+            "content_background_color": "#ffffff",
+            "heading_color": "#595959",
+            "text_color": "#595959",
+            "primary_button_bg_color": "#ffffff",
+            "primary_button_text_color": "#595959",
+            "primary_button_hover_bg_color": "#ffffff",
+            "primary_button_hover_text_color": "#ffffff",
+            "primary_button_hover_border_color": "#2c2c2c",
+            "secondary_button_bg_color": "rgba(0,0,0,0)",
+            "secondary_button_text_color": "#595959",
+            "secondary_button_border_color": "#000000",
+            "secondary_button_hover_bg_color": "#ffffff",
+            "secondary_button_hover_text_color": "#2c2c2c",
+            "secondary_button_hover_border_color": "#595959",
+            "heading_size": 26,
+            "text_size": 16,
+            "button_text_size": 16,
+            "heading_margin": 30,
+            "text_margin": 60,
+            "button_padding_vertical": 8,
+            "button_padding_horizontal": 15,
+            "button_border_radius": 0,
+            "mobile_layout": "image_first",
+            "mobile_button_layout": "stacked",
+            "mobile_image_height": 300,
+            "mobile_content_padding": 25,
+            "mobile_heading_size": 28,
+            "mobile_text_size": 14
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_32a9a79_3btAcK"
+      ],
+      "name": "Image with content",
+      "settings": {}
+    },
     "gallery_slideshow_ECnaGy": {
       "type": "gallery-slideshow",
       "blocks": {
@@ -36,6 +90,7 @@
       "block_order": [
         "slide_JyTkQR"
       ],
+      "disabled": true,
       "name": "Gallery slideshow",
       "settings": {
         "layout": "full_bleed",
@@ -51,6 +106,7 @@
     },
     "banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "custom_css": [
         ".collection-hero__inner {margin-bottom: 60px;}",
         ".collection-hero__title {margin-bottom: 1em;}"
@@ -63,6 +119,7 @@
     },
     "editorials_cDH6VD": {
       "type": "editorials",
+      "disabled": true,
       "custom_css": [],
       "name": "Editorials",
       "settings": {}
@@ -73,19 +130,19 @@
         "product_item_JhX9XH": {
           "type": "product_item",
           "settings": {
-            "product": "iron-hook-rack-3-hooks"
+            "product": "straight-iron-hook-rack-3-hooks"
           }
         },
         "product_item_jLEreL": {
           "type": "product_item",
           "settings": {
-            "product": "iron-hook-rack-4-hooks"
+            "product": "straight-iron-hook-rack-4-hooks"
           }
         },
         "product_item_pHp6te": {
           "type": "product_item",
           "settings": {
-            "product": "iron-hook-rack-6-hooks"
+            "product": "straight-iron-hook-rack-6-hooks"
           }
         }
       },
@@ -94,6 +151,7 @@
         "product_item_jLEreL",
         "product_item_pHp6te"
       ],
+      "disabled": true,
       "name": "Custom product list",
       "settings": {
         "title": "",
@@ -152,6 +210,7 @@
         "product_item_ch4VQt",
         "product_item_yxxmLm"
       ],
+      "disabled": true,
       "name": "Custom product list",
       "settings": {
         "title": "",
@@ -203,6 +262,7 @@
     }
   },
   "order": [
+    "blocks_9ixJFG",
     "gallery_slideshow_ECnaGy",
     "banner",
     "editorials_cDH6VD",
