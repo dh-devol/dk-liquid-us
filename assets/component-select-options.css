@@ -87,9 +87,9 @@
 /* DEFAULT: white box, grey plus */
 .addon-tick__box {
   position: relative;
-  flex: 0 0 18px;
-  width: 18px;
-  height: 18px;
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
   /* border-radius: 2px; */
   background: #fff;
   border: 1px solid #898989;
@@ -100,14 +100,18 @@
 .addon-tick__box::after {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 0;
+  margin: auto;          /* centres without sub-pixel transforms */
   background: #898989;
-  transform: translate(-50%, -50%);
-  /* transition: opacity 0.2s, background 0.2s; */
 }
-.addon-tick__box::before { width: 8px; height: .5px; }
-.addon-tick__box::after  { width: .5px; height: 8px; }
+.addon-tick__box::before {
+  width: 9px;
+  height: 1px;
+}
+.addon-tick__box::after {
+  width: 1px;
+  height: 9px;
+}
 
 /* .addon-container:hover .addon-tick__box { border-color: #1f2a3c; } */
 
@@ -133,7 +137,7 @@
   background: none;
   border: solid #fff;
   border-width: 0 1.5px 1.5px 0;
-  transform: translate(-50%, -60%) rotate(45deg);
+  transform: translateY(-1px) rotate(45deg); /* nudge up slightly, then rotate */
 }
 
 /* keyboard focus */
