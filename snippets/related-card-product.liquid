@@ -113,14 +113,15 @@
   {%- comment -%} Primary image selection {%- endcomment -%}
   {%- if mf1 != blank -%}
     {%- assign primary_img = mf1 -%}
-    {%- assign primary_alt = display_title -%}
   {%- elsif card_product.featured_media != blank -%}
     {%- assign primary_img = card_product.featured_media -%}
-    {%- assign primary_alt = card_product.featured_media.alt -%}
   {%- else -%}
     {%- assign primary_img = nil -%}
-    {%- assign primary_alt = display_title -%}
   {%- endif -%}
+  {%- assign primary_alt = primary_img.alt -%}
+  {%- if primary_alt == blank -%}
+    {%- assign primary_alt = display_title -%}
+  {% endif %}
 
   {%- comment -%} Secondary (hover) image selection {%- endcomment -%}
   {%- if mf2 != blank -%}
@@ -130,6 +131,10 @@
   {%- else -%}
     {%- assign secondary_img = primary_img -%}
   {%- endif -%}
+  {%- assign secondary_alt = secondary_img.alt -%}
+  {%- if secondary_alt == blank -%}
+    {%- assign secondary_alt = display_title -%}
+  {% endif %}
 
   {% if image_size == 1 %}
     <style>
@@ -225,7 +230,7 @@
                             (min-width: 750px) calc((100vw - 120px) / 3),
                             calc((100vw - 35px) / 2)"
 
-                      alt=""
+                      alt="{{ secondary_alt | escape }}"
                       class="motion-reduce"
                       loading="lazy"
 
@@ -244,7 +249,7 @@
                       "
                       src="{{ secondary_img | image_url: width: 533 }}"
                       sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
-                      alt=""
+                      alt="{{ secondary_alt | escape }}"
                       class="motion-reduce"
                       loading="lazy"
                       {%- if secondary_img.width %} width="{{ secondary_img.width }}" {% endif -%}

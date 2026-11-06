@@ -95,35 +95,19 @@
             {% assign featured_image_2 = selected_page.metafields.custom.featured_image_2.value %}
             <div class="multicolumn-card content-container">
               {%- if feature_image -%}
-                {%- if selected_page.url != blank -%}
-                  <a href="{{ selected_page.url }}"
-                    class="multicolumn-card__image-wrapper
-                      {% if section.settings.show_hover_text and is_kitchens_page == false %}
-                        text__hover
-                      {% endif %}
-                      {% if section.settings.show_hover_image and is_kitchens_page == false %}
-                        hover__image-wrapper
-                      {% endif %}
-                      multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width
-                      {% if section.settings.image_width != 'full' or spaced_image %}
-                        multicolumn-card-spacing
-                      {% endif %}"
-                  >
-                   {%- else -%}
-                  <div
-                    class="multicolumn-card__image-wrapper
-                    {% if section.settings.show_hover_text %}
-                      text__hover
-                    {% endif %}
-                    {% if section.settings.show_hover_image %}
-                      hover__image-wrapper
-                    {% endif %}
-                    multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width
-                    {% if section.settings.image_width != 'full' or spaced_image %}
-                      multicolumn-card-spacing
-                    {% endif %}"
-                  >
+                <div
+                  class="multicolumn-card__image-wrapper
+                  {% if section.settings.show_hover_text %}
+                    text__hover
                   {% endif %}
+                  {% if section.settings.show_hover_image %}
+                    hover__image-wrapper
+                  {% endif %}
+                  multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width
+                  {% if section.settings.image_width != 'full' or spaced_image %}
+                    multicolumn-card-spacing
+                  {% endif %}"
+                >
                   {% if feature_image %}
                     {% assign highest_ratio = feature_image.aspect_ratio %}
                   {% endif %}
@@ -180,15 +164,11 @@
                       }}
                     {% endif %}
                   </div>
-                {%- if selected_page.url != blank -%}
-                  </a>
-                {%- else -%}
-                  </div>
-                {% endif %}
+                </div>
               {%- endif -%}
               <div class="multicolumn-card__info">
                   <h3 class="inline-richtext">
-                    <a href="{{ selected_page.url }}">
+                    <a href="{{ selected_page.url }}" class="multicolumn-card__link">
                       {{ block.settings.title | default: selected_page.title }}
                     </a>
                   </h3>
@@ -277,9 +257,7 @@
 
                   {% if selected_page != blank and grand_total > 0  %}
                     <p class="inline-richtext sub-text">
-                      <a href="{{ selected_page.url }}"
-                        >Cupboard costs: {{ grand_total | money -}}
-                      </a>
+                      Cupboard costs: {{ grand_total | money -}}
                     </p>
                   {% endif %}
                 {% else %}
