@@ -224,11 +224,11 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
   width: 100%;
   height: 100%;
 }
-.hover__image-wrapper:not(.text__hover):hover .standard__image{
+.multicolumn-card:hover .hover__image-wrapper:not(.text__hover) .standard__image{
   opacity:0;
 }
-.hover__image-wrapper:hover .hover__image,
-.text__hover:hover .hover__image{
+.multicolumn-card:hover .hover__image-wrapper .hover__image,
+.multicolumn-card:hover .text__hover .hover__image {
   opacity:1;
   transition: visibility 0s, opacity 0.5s linear;
   transition-delay: 0.1s;
