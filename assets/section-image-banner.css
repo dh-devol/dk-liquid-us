@@ -92,11 +92,11 @@
   }
 }
 
-@media screen and (min-width: 601px) and (max-width: 768px) {
+/* @media screen and (min-width: 601px) and (max-width: 768px) {
   .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
     height: 480px;
   }
-}
+} */
 
 @media screen and (min-width: 750px) {
   .banner {

@@ -904,6 +904,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+    function preloadGalleryVideos() {
+    const videos = document.querySelectorAll(
+      '.product-gallery-swiper video'
+    );
+    videos.forEach((video, index) => {
+      video.preload = index === 0 ? 'auto' : 'metadata';
+      video.removeAttribute('loading');
+      video.load();
+    });
+  }
+  preloadGalleryVideos();
+  new Swiper(swiperEl, options);
+  
   function initSwiperGallery() {
     const swiperEl = document.querySelector('.product-gallery-swiper');
     if (!swiperEl) return;
@@ -917,6 +930,17 @@ document.addEventListener("DOMContentLoaded", () => {
         el: '.product-gallery-swiper .swiper-pagination',
         clickable: true,
       },
+      on: {
+      init(swiper) {
+        syncSlideVideos(swiper, true);
+      },
+      slideChange(swiper) {
+        syncSlideVideos(swiper);
+      },
+      transitionEnd(swiper) {
+        syncSlideVideos(swiper, true);
+      }
+    }
     };
 
     if (isMobile) {
@@ -925,6 +949,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       // Desktop: fade transition with navigation buttons
       options.effect = 'fade';
+      options.fadeEffect = {
+        crossFade: true
+      };
       options.speed = 1000;
       options.spaceBetween = 10;
       options.navigation = {
@@ -932,7 +959,56 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: '.swiper-button-prev',
       };
     }
+function syncSlideVideos(swiper, pauseInactive = false) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      swiper.el.querySelectorAll('video').forEach((video) => {
+        const slide = video.closest('.swiper-slide');
+        const isActive = slide === activeSlide;
 
+        if (isActive) {
+          video.muted = true;
+          video.loop = true;
+          video.play().catch(() => {
+          });
+        } else if (pauseInactive){
+          video.pause();
+        }
+      });
+    }
+      
+      swiperEl.querySelectorAll('.product-video-wrap').forEach((wrap) => {
+    const video = wrap.querySelector('video');
+    const button = wrap.querySelector('.product-video-toggle');
+    const icon = button.querySelector('span');
+
+    function updateButton() {
+      const paused = video.paused || video.ended;
+
+      button.setAttribute(
+        'aria-label',
+        paused ? 'Play video' : 'Pause video'
+      );
+
+      icon.innerHTML = paused
+      ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>'
+      : '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+    }
+
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+
+      if (video.paused || video.ended) {
+        video.play().catch(updateButton);
+      } else {
+        video.pause();
+      }
+    });
+
+    video.addEventListener('play', updateButton);
+    video.addEventListener('pause', updateButton);
+    video.addEventListener('ended', updateButton);
+    updateButton();
+  });
     new Swiper(swiperEl, options);
   }
 

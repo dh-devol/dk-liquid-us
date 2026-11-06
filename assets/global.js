@@ -1245,27 +1245,148 @@ class SlideshowComponent extends SliderComponent {
     }
   }
 
+  setupBannerVideos() {
+    this.querySelectorAll('.banner-video-wrap').forEach((wrap) => {
+      if (wrap.dataset.videoReady === 'true') return;
+
+      const video = wrap.querySelector('video');
+      const button = wrap.querySelector('.banner-video-toggle');
+      const icon = button?.querySelector('span');
+
+      if (!video || !button || !icon) return;
+
+      wrap.dataset.videoReady = 'true';
+      video.muted = true;
+      video.playsInline = true;
+      video.preload = 'auto';
+
+      const mobile = window.matchMedia('(max-width: 767px)').matches;
+
+      const videoSrc = mobile
+        ? video.dataset.mobileSrc || video.dataset.desktopSrc
+        : video.dataset.desktopSrc;
+
+      if (videoSrc) {
+        video.src = videoSrc;
+        video.load();
+      }
+
+      const updateButton = () => {
+        const paused = video.paused || video.ended;
+
+        button.setAttribute(
+          'aria-label',
+          paused ? 'Play video' : 'Pause video'
+        );
+
+        icon.innerHTML = paused
+          ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>'
+          : '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+      };
+
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (video.paused || video.ended) {
+          video.play().catch(updateButton);
+        } else {
+          video.pause();
+        }
+      });
+
+      video.addEventListener('play', updateButton);
+      video.addEventListener('pause', updateButton);
+      video.addEventListener('ended', updateButton);
+
+      updateButton();
+    });
+  }
+
+  syncBannerVideos() {
+    this.setupBannerVideos();
+
+    this.querySelectorAll('.banner-video-wrap').forEach((wrap) => {
+      const video = wrap.querySelector('video');
+      const button = wrap.querySelector('.banner-video-toggle');
+      const slide = wrap.closest('.slideshow__slide');
+
+      if (!video || !slide) return;
+
+      const viewport = slide.closest('.slideshow');
+      if (!viewport) return;
+
+      const isActive = slide.getAttribute('aria-hidden') === 'false';
+
+      if (button) button.tabIndex = isActive ? 0 : -1;
+
+      const activeState = isActive ? 'true' : 'false';
+      if (wrap.dataset.videoActive === activeState) return;
+
+      wrap.dataset.videoActive = activeState;
+      cancelAnimationFrame(wrap.videoPauseFrame);
+
+      if (isActive) {
+        video.muted = true;
+        video.loop = true;
+        video.play().catch(() => {});
+      } else {
+        const pauseWhenOutOfFrame = () => {
+          if (!slide.isConnected) {
+            video.pause();
+            return;
+          }
+
+          if (slide.getAttribute('aria-hidden') === 'false') return;
+
+          const slideRect = slide.getBoundingClientRect();
+          const viewportRect = viewport.getBoundingClientRect();
+
+          const isOutOfFrame =
+            slideRect.right <= viewportRect.left ||
+            slideRect.left >= viewportRect.right ||
+            slideRect.bottom <= viewportRect.top ||
+            slideRect.top >= viewportRect.bottom;
+
+          if (isOutOfFrame) {
+            video.pause();
+          } else {
+            wrap.videoPauseFrame =
+              requestAnimationFrame(pauseWhenOutOfFrame);
+          }
+        };
+
+        wrap.videoPauseFrame =
+          requestAnimationFrame(pauseWhenOutOfFrame);
+      }
+    });
+  }
+
   setSlideVisibility(event) {
     this.sliderItemsToShow.forEach((item, index) => {
       const linkElements = item.querySelectorAll('a');
-      if (index === this.currentPage - 1) {
-        if (linkElements.length)
-          linkElements.forEach((button) => {
-            button.removeAttribute('tabindex');
-          });
+      const isActive = index === this.currentPage - 1;
+
+      if (isActive) {
+        linkElements.forEach((link) => {
+          link.removeAttribute('tabindex');
+        });
+
         item.setAttribute('aria-hidden', 'false');
         item.removeAttribute('tabindex');
       } else {
-        if (linkElements.length)
-          linkElements.forEach((button) => {
-            button.setAttribute('tabindex', '-1');
-          });
+        linkElements.forEach((link) => {
+          link.setAttribute('tabindex', '-1');
+        });
+
         item.setAttribute('aria-hidden', 'true');
         item.setAttribute('tabindex', '-1');
       }
     });
+
     this.wasClicked = false;
     this.preloadNearbySlides();
+    this.syncBannerVideos();
   }
 
   applyAnimationToAnnouncementBar(button = 'next') {
