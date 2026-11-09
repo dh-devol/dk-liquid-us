@@ -50,7 +50,7 @@
         "text_Q8fNDQ": {
           "type": "text",
           "settings": {
-            "text": "Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\" title=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order.",
+            "text": "Please send an email to&nbsp;<a href=\"mailto:usa.enquiries@devolkitchens.com\" target=\"_blank\" title=\"Email our team. Opens in a new tab.\">usa.enquiries@devolkitchens.com</a>&nbsp;if you are interested in placing an order.",
             "text_style": "body"
           }
         },
@@ -126,8 +126,8 @@
       "settings": {
         "enable_sticky_info": false,
         "color_scheme": "scheme-2",
-        "not_for_sale_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com \">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order.</p>",
-        "out_of_stock_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order for delivery outside of the US.</p>",
+        "not_for_sale_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com \" target=\"_blank\" title=\"Email our team. Opens in a new tab.\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order.</p>",
+        "out_of_stock_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\" target=\"_blank\" title=\"Email our team. Opens in a new tab.\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order for delivery outside of the US.</p>",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
