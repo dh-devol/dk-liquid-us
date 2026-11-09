@@ -50,9 +50,9 @@
           "settings": {
             "heading": "<a href=\"/pages/contact\" title=\"Contact\">CONTACT</a>",
             "hidetitle": false,
-            "subtext": "<p><a href=\"/pages/bond-street-new-york\">Bond Street, New York</a></p><p><a href=\"tel:           212 210 6269\">212 210 6269</a></p><p><a href=\"mailto:           usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a></p>",
-            "subtext_2": "<p><a href=\"/pages/cotes-mill-leicestershire\">Cotes Mill, Leicestershire</a></p><p><a href=\"tel:           +44 1509 261000\">+44 1509 261000</a></p><p><a href=\"mailto:           enquiries@devolkitchens.co.uk\">enquiries@devolkitchens.co.uk</a></p>",
-            "subtext_3": "<p><a href=\"/pages/tysoe-street-london\">Tysoe Street, London</a></p><p><a href=\"tel:           +44 20 3837 5900\">+44 20 3837 5900</a></p><p><a href=\"mailto:           london.enquiries@devolkitchens.co.uk\">london.enquiries@devolkitchens.co.uk</a></p>"
+            "subtext": "<p><a href=\"/pages/bond-street-new-york\">Bond Street, New York</a></p><p><a href=\"tel:           212 210 6269\">212 210 6269</a></p><p><a href=\"mailto:usa.enquiries@devolkitchens.com\" title=\"Email our Bond Street New York showroom. Opens in a new tab.\">usa.enquiries@devolkitchens.com</a></p>",
+            "subtext_2": "<p><a href=\"/pages/cotes-mill-leicestershire\">Cotes Mill, Leicestershire</a></p><p><a href=\"tel:           +44 1509 261000\">+44 1509 261000</a></p><p><a href=\"mailto:enquiries@devolkitchens.co.uk\" target=\"_blank\" title=\"Email our Cotes Mill showroom. Opens in a new tab.\">enquiries@devolkitchens.co.uk</a></p>",
+            "subtext_3": "<p><a href=\"/pages/tysoe-street-london\">Tysoe Street, London</a></p><p><a href=\"tel:           +44 20 3837 5900\">+44 20 3837 5900</a></p><p><a href=\"mailto:london.enquiries@devolkitchens.co.uk\" target=\"_blank\" title=\"Email our Tysoe Street London showroom. Opens in a new tab.\">london.enquiries@devolkitchens.co.uk</a></p>"
           }
         },
         "tablet_view_xbAP3A": {
