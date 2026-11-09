@@ -88,7 +88,7 @@
         "text_pREcGd": {
           "type": "text",
           "settings": {
-            "text": "<p>If you have a press enquiry or would like to access to our high-resolution images please contact our lovely deVOL PR team who will be very happy to help.<br/> </p><p><a href=\"mailto:pr@devolkitchens.co.uk\">pr@devolkitchens.co.uk</a><br/><a href=\"tel:+44020 3837 5909\" title=\"tel:+44 (0) 20 3837 5909\">+44 (0) 20 3837 5909</a></p>"
+            "text": "<p>If you have a press enquiry or would like to access to our high-resolution images please contact our lovely deVOL PR team who will be very happy to help.<br/>&nbsp;</p><p><a href=\"mailto:pr@devolkitchens.co.uk\" target=\"_blank\" title=\"Email our PR team. Opens in a new tab.\">pr@devolkitchens.co.uk</a><br/><a href=\"tel:+44020 3837 5909\" title=\"tel:+44 (0) 20 3837 5909\">+44 (0) 20 3837 5909</a></p>"
           }
         }
       },
