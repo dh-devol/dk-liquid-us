@@ -338,10 +338,10 @@
   }
 }*/
 .article-template__content figure {
-  margin: 0 0 2.5em 0;
-  font-size: 0.85em;
+  margin: 0;
 }
-.article-template__content figurecaption em {
+.article-template__content figcaption {
   letter-spacing: 0.02rem;
-  margin-right: 1em;
+  margin: 0 1em 2.5em 0;
+  font-size: 0.85em;
 }
