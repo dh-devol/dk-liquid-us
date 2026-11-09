@@ -33,7 +33,7 @@
           "settings": {
             "heading": "<a href=\"/pages/ordering-online\" title=\"Shop Support\">SUPPORT</a>",
             "hidetitle": false,
-            "subtext": "<p><a href=\"/pages/online-accessory-sales\" title=\"Online Accessory Sales\">Online Accessory Sales</a></p><p><a href=\"tel:646 347 0320\" title=\"tel:646 347 0320\">646 347 0320</a></p><p><a href=\"mailto:websales@devolkitchens.co.uk\" title=\"mailto:websales@devolkitchens.co.uk\">websales@devolkitchens.co.uk</a></p><ol><li><a href=\"/pages/delivery\">Delivery</a></li><li><a href=\"/pages/returns\">Returns</a></li><li><a href=\"/pages/help-faqs\">Help & FAQs</a></li></ol>",
+            "subtext": "<p><a href=\"/pages/online-accessory-sales\" title=\"Online Accessory Sales\">Online Accessory Sales</a></p><p><a href=\"tel:646 347 0320\" title=\"tel:646 347 0320\">646 347 0320</a></p><p><a href=\"mailto:websales@devolkitchens.co.uk\" target=\"_blank\" title=\"Email our Online Accessory Sales. Opens in a new tab.\">websales@devolkitchens.co.uk</a></p><ol><li><a href=\"/pages/delivery\">Delivery</a></li><li><a href=\"/pages/returns\">Returns</a></li><li><a href=\"/pages/help-faqs\">Help & FAQs</a></li></ol>",
             "subtext_two": ""
           }
         },
