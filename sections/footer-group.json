@@ -70,7 +70,7 @@
           "settings": {
             "heading": "<a href=\"/pages/contact\" title=\"Contact\">CONTACT</a>",
             "hidetitle": false,
-            "subtext": "<p><a href=\"/pages/bond-street-new-york\" title=\"Bond Street, New York\">Bond Street, New York</a></p><p><a href=\"tel:212 210 6269\" title=\"tel:212 210 6269\">212 210 6269</a></p><p><a href=\"mailto:usa.enquiries@devolkitchens.com\" title=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a></p>",
+            "subtext": "<p><a href=\"/pages/bond-street-new-york\" title=\"Bond Street, New York\">Bond Street, New York</a></p><p><a href=\"tel:212 210 6269\" title=\"tel:212 210 6269\">212 210 6269</a></p><p><a href=\"mailto:usa.enquiries@devolkitchens.com\" target=\"_blank\" title=\"Email our Bond Street New York showroom. Opens in a new tab.\">usa.enquiries@devolkitchens.com</a></p>",
             "subtext_two": "<p><a href=\"/pages/st-johns-square-london\" title=\"St John's Square London\">St John's Square, London</a></p><p><a href=\"tel:+44 20 3879 7900\" title=\"tel:+44 20 3879 7900\">+44 20 3879 7900</a></p><p><a href=\"mailto:london.enquiries@devolkitchens.co.uk\" title=\"mailto:london.enquiries@devolkitchens.co.uk\">london.enquiries@devolkitchens.co.uk</a></p>"
           }
         },
