@@ -2,6 +2,8 @@
 {{ 'section-custom-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+<script src="{{ 'section-multicolumn-flow.js' | asset_url }}" defer></script>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -90,7 +92,7 @@
                 {% assign product_hover_image = block.settings.linked_product.images[1] %}
               {% endif %}
             {% endif %}
-            <div class="multicolumn-card content-container {% if block.settings.show_text_double_column %} show_text_double_column {% endif %}">
+            <div class="multicolumn-card content-container {% if block.settings.show_text_double_column %}show_text_double_column{% endif %}">
               {% if block.settings.show_above_image %}
                 {%- if block.settings.text != blank -%}
                   <div class="description_above--image">
@@ -102,16 +104,16 @@
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                {%- if card_link != blank -%}
-                  <a href="{{ card_link }}"
+                {%- if block.settings.title == blank and block.settings.link != blank -%}
+                  <a href="{{ block.settings.link }}"
                     class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank or product_hover_image != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
                     {%- if block.settings.link_label != blank and block.settings.link_label_hide == true  -%}aria-label="{{ block.settings.link_label }}" target="_blank"{% endif %}
                   >
-                   {%- else -%}
+                {%- else -%}
                   <div
                     class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank or product_hover_image != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
                   >
-                  {% endif %}
+                {% endif %}
                   {% if feature_image %}
                     {% assign highest_ratio = feature_image.aspect_ratio %}
                   {% endif %}
@@ -178,11 +180,11 @@
                       {% endif %}
                     {% else %}
                       <div class="multicolumn-card__image hover__image custom__text--on-hover">
-                        <p class="inner__hover-shadow">{{ block.settings.custom_text_hover }}</p>
+                        <p class="inner__hover-shadow" aria-label="Hover text on image">{{ block.settings.custom_text_hover }}</p>
                       </div>
                     {% endunless %}
                   </div>
-                {%- if card_link != blank -%}
+                {%- if block.settings.title == blank and block.settings.link != blank -%}
                   </a>
                 {%- else -%}
                   </div>
