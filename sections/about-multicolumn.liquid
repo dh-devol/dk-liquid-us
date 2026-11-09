@@ -1,7 +1,10 @@
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'section-custom-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
 <script src="{{ 'project-multicolumn-flow.js' | asset_url }}" defer></script>
+<script src="{{ 'section-multicolumn-flow.js' | asset_url }}" defer></script>
+
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -93,13 +96,9 @@
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                  <a href="{{ selected_page.url }}"
-                    class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
-                    aria-label="link to {{ selected_page.title }}"
-                  >
-                  <div
-                    class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
-                  >
+                <div
+                  class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}"
+                >
                   <div
                     class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
@@ -158,12 +157,11 @@
                       </div>
                     {% endunless %}
                   </div>
-                  </a>
-                  </div>
+                </div>
               {%- endif -%}
               <div class="multicolumn-card__info">
                   <h3 class="inline-richtext">
-                    <a href="{{ selected_page.url }}">
+                    <a href="{{ selected_page.url }}" class="multicolumn-card__link">
                       {{ block.settings.title | default: selected_page.title }}
                     </a>
                   </h3>

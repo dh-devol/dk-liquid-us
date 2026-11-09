@@ -301,6 +301,15 @@
   z-index: 1;
 }
 
+.multicolumn-card__image-wrapper,
+.showroom__phone,
+.showroom__email {
+  position: relative;
+  z-index: 2;
+  display: block;
+  cursor: pointer;
+}
+
 .multicolumn-card:focus-within {
   outline: 2px solid currentColor;
   outline-offset: 4px;

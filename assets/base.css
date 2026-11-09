@@ -3118,7 +3118,7 @@ details-disclosure > details {
   position: relative;
 }
 
-.content-container:after {
+/* .content-container:after {
   content: '';
   position: absolute;
   top: calc(var(--text-boxes-border-width) * -1);
@@ -3129,7 +3129,7 @@ details-disclosure > details {
   box-shadow: var(--text-boxes-shadow-horizontal-offset) var(--text-boxes-shadow-vertical-offset)
     var(--text-boxes-shadow-blur-radius) rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
   z-index: -1;
-}
+} */
 
 .content-container--full-width:after {
   left: 0;

@@ -2,6 +2,8 @@
 {{ 'section-custom-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+<script src="{{ 'section-multicolumn-flow.js' | asset_url }}" defer></script>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -163,7 +165,7 @@
               {%- endif -%}
               <div class="multicolumn-card__info">
                   <h3 class="inline-richtext">
-                    <a href="{{ selected_page.url }}">
+                    <a href="{{ selected_page.url }}" class="multicolumn-card__link">
                       {{ selected_page.title }}
                     </a>
                   </h3>

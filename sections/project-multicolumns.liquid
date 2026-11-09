@@ -1,7 +1,9 @@
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'section-custom-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
 <script src="{{ 'project-multicolumn-flow.js' | asset_url }}" defer></script>
+<script src="{{ 'section-multicolumn-flow.js' | asset_url }}" defer></script>
 
 {%- style -%}
   .section-{{ section.id }}-padding {

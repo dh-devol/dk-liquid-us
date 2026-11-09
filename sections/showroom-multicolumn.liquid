@@ -2,6 +2,8 @@
 {{ 'section-custom-multicolumn.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 
+<script src="{{ 'section-multicolumn-flow.js' | asset_url }}" defer></script>
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -153,7 +155,7 @@
                     </div>
                   {%- endif -%}
                   {% if page.handle contains "showrooms" %}
-                    <p class="lght">___</p>
+                    <p class="lght" aria-hidden="true">___</p>
                   {% endif %}
                   {%- assign order_raw = section.settings.showroom_order | default: 'additional,address,timing' -%}
                   {%- assign order_list = order_raw | split: ',' -%}
@@ -162,7 +164,6 @@
                     {%- assign part_key = part | strip -%}
 
                     {%- case part_key -%}
-
                       {%- when 'additional' -%}
                         {%- if selected_page.metafields.custom.showroom_additional_note != blank -%}
                           <div class="showroom__note rte">
@@ -174,9 +175,19 @@
                         {%- unless template contains 'kitchen-enquiries' -%}
                           {%- if selected_page.metafields.custom.showroom_address != blank -%}
                             <div class="showroom_list_item showroom__address rte">
-                              {{ selected_page.metafields.custom.showroom_address | metafield_tag }}
-                              {{ selected_page.metafields.custom.showroom_phone | metafield_tag }}
-                              {{ selected_page.metafields.custom.showroom_email | metafield_tag }}
+                              <div class="showroom__address-text">
+                                {{ selected_page.metafields.custom.showroom_address | metafield_tag }}
+                              </div>
+                              {% if selected_page.metafields.custom.showroom_phone != blank %}
+                                <div class="showroom__phone">
+                                  {{ selected_page.metafields.custom.showroom_phone | metafield_tag }}
+                                </div>
+                              {% endif %}
+                              {% if selected_page.metafields.custom.showroom_email != blank %}
+                                <div class="showroom__email">
+                                  {{ selected_page.metafields.custom.showroom_email | metafield_tag }}
+                                </div>
+                              {% endif %}
                             </div>
                           {%- endif -%}
                         {%- else -%}
@@ -190,16 +201,13 @@
                               {{ selected_page.metafields.custom.showroom_email | metafield_tag }}
                             </div>
                           {%- endif -%}
-                          <p class="lght">___</p>
+                          <p class="lght" aria-hidden="true">___</p>
                           {%- if selected_page.metafields.custom.showroom_address != blank -%}
                             <div class="showroom__address rte">
                               {{ selected_page.metafields.custom.showroom_address | metafield_tag }}
                             </div>
                           {%- endif -%}
-                        {%- endunless -%}
-                        
-
-                        
+                        {%- endunless -%}                        
 
                       {%- when 'timing' -%}
                         {%- if selected_page.metafields.custom.showroom_timing != blank -%}
@@ -207,7 +215,6 @@
                             {{ selected_page.metafields.custom.showroom_timing | metafield_tag }}
                           </div>
                         {%- endif -%}
-
                     {%- endcase -%}
                   {%- endfor -%}
                 {% endif %}
@@ -230,59 +237,59 @@
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                <a href="{{ block.settings.link }}" class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
-                  <div
-                    class="media media--transparent media--{{ section.settings.image_ratio }}" 
-                    {% if section.settings.image_ratio == 'adapt' and highest_ratio > 0 %}
-                      style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
-                    {% endif %}
-                  >
-                    {%- liquid
-                      assign number_of_columns = section.settings.columns_desktop
-                      assign number_of_columns_mobile = section.settings.columns_mobile
-                      assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
-                      assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
-                      assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
-                      if section.settings.image_width == 'half'
-                        assign image_width = 0.5
-                      elsif section.settings.image_width == 'third'
-                        assign image_width = 0.33
-                      else
-                        assign image_width = 1
-                      endif
-                    -%}
-                    {% capture sizes %}
-                      (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
-                      (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
-                      (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
-                      calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
-                    {% endcapture %}
-                    {{
-                      selected_image
-                      | image_url: width: 3200
-                      | image_tag:
-                        widths: '900, 1000, 1250, 1550, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                        sizes: sizes,
-                        class: 'multicolumn-card__image standard__image'
-                    }}
-                    {% unless block.settings.custom_text_hover != blank %}
-                      {% if block.settings.image_hover != blank %} 
-                        {{
-                          block.settings.image_hover
-                          | image_url: width: 3200
-                          | image_tag:
-                            widths: '900, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
-                            sizes: sizes,
-                            class: 'multicolumn-card__image hover__image'
-                        }}
-                      {% endif %}
-                    {% else %}
-                      <div class="multicolumn-card__image hover__image custom__text--on-hover">
-                        <div class="inner__hover-shadow">{{ block.settings.custom_text_hover }}</div>
-                      </div>
-                    {% endunless %}
-                  </div>
-                </a>
+                <div class="multicolumn-card__image-wrapper {% if block.settings.custom_text_hover != blank %}text__hover{% endif %} {% if block.settings.image_hover != blank or block.settings.custom_text_hover != blank %}hover__image-wrapper{% endif %} multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
+                  {% if block.settings.hide_image == false %}
+                    <div
+                      class="media media--transparent media--{{ section.settings.image_ratio }}" 
+                      {% if section.settings.image_ratio == 'adapt' and highest_ratio > 0 %} style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"{% endif %}
+                    >
+                      {%- liquid
+                        assign number_of_columns = section.settings.columns_desktop
+                        assign number_of_columns_mobile = section.settings.columns_mobile
+                        assign grid_space_desktop = number_of_columns | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                        assign grid_space_tablet = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | plus: 100 | append: 'px'
+                        assign grid_space_mobile = number_of_columns_mobile | minus: 1 | times: settings.spacing_grid_horizontal | divided_by: 2 | plus: 30 | append: 'px'
+                        if section.settings.image_width == 'half'
+                          assign image_width = 0.5
+                        elsif section.settings.image_width == 'third'
+                          assign image_width = 0.33
+                        else
+                          assign image_width = 1
+                        endif
+                      -%}
+                      {% capture sizes %}
+                        (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - {{ grid_space_desktop }}) * {{ image_width }} /  {{ number_of_columns }}),
+                        (min-width: 990px) calc((100vw - {{ grid_space_desktop }}) * {{ image_width }} / {{ number_of_columns }}),
+                        (min-width: 750px) calc((100vw - {{ grid_space_tablet }}) * {{ image_width }} / {{ number_of_columns_mobile }}),
+                        calc((100vw - {{ grid_space_mobile }}) * {{ image_width }} / {{ number_of_columns_mobile }})
+                      {% endcapture %}
+                      {{
+                        selected_image
+                        | image_url: width: 3200
+                        | image_tag:
+                          widths: '900, 1000, 1250, 1550, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+                          sizes: sizes,
+                          class: 'multicolumn-card__image standard__image'
+                      }}
+                      {% unless block.settings.custom_text_hover != blank %}
+                        {% if block.settings.image_hover != blank %} 
+                          {{
+                            block.settings.image_hover
+                            | image_url: width: 3200
+                            | image_tag:
+                              widths: '900, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+                              sizes: sizes,
+                              class: 'multicolumn-card__image hover__image'
+                          }}
+                        {% endif %}
+                      {% else %}
+                        <div class="multicolumn-card__image hover__image custom__text--on-hover">
+                          <div class="inner__hover-shadow" aria-hidden="true">{{ block.settings.custom_text_hover }}</div>
+                        </div>
+                      {% endunless %}
+                    </div>
+                  {% endif %}
+                </div>
               {%- endif -%}
 
               <div class="multicolumn-card__info">
@@ -297,7 +304,7 @@
 
                 {%- if card_title != blank -%}
                   <h3 class="inline-richtext">
-                    <a href="{{ block.settings.link }}">{{ card_title }}</a>
+                    <a href="{{ block.settings.link }}" {% if block.settings.hide_image == false %}class="multicolumn-card__link"{% endif %}>{{ card_title }}</a>
                   </h3>
                 {%- endif -%}
 
@@ -625,6 +632,12 @@
           "id": "image_hover",
           "label": "Image",
           "info": "Appear on hover with an animation"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_image",
+          "label": "Hide images",
+          "default": false
         },
         {
           "type": "richtext",
