@@ -193,7 +193,7 @@
               <div class="multicolumn-card__info">
                 {% if block.settings.title != blank %}
                   <h3 class="inline-richtext">
-                    <a href="{{ card_link }}" {% if block.settings.link_label_hide %} aria-label="{{ block.settings.link_label }}" {% endif %}>
+                    <a href="{{ block.settings.link }}" {% if block.settings.link_label_hide %} aria-label="{{ block.settings.link_label }}" {% endif %} class="multicolumn-card__link">
                       {{ block.settings.title | default: selected_page.title }}
                     </a>
                   </h3>
@@ -282,7 +282,7 @@
 
                 {%- endunless -%}
 
-                {%- if block.settings.linked_product != blank -%}
+                {%- if block.settings.link_label != blank and block.settings.link_label_hide == false -%}
                   <a
                     class="link animate-arrow"
                     href="{{ block.settings.linked_product.url }}"
