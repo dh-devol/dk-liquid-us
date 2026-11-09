@@ -60,9 +60,9 @@
           "settings": {
             "heading": "Heading",
             "hidetitle": true,
-            "subtext": "<p><a href=\"/pages/la-cienega-blvd-los-angeles\">La Cienega Blvd, Los Angeles</a></p><p><a href=\"tel:           310 744 6000\">310 744 6000</a></p><p><a href=\"mailto:           usa.west.enquiries@devolkitchens.com\">usa.west.enquiries@devolkitchens.com</a></p>",
-            "subtext_2": "<p><a href=\"/pages/st-johns-square-london\">St John's Square, London</a></p><p><a href=\"tel:           +44 20 3879 7900\">+44 20 3879 7900</a></p><p><a href=\"mailto:           london.enquiries@devolkitchens.co.uk\">london.enquiries@devolkitchens.co.uk</a></p>",
-            "subtext_3": "<p><a href=\"/pages/george-street-bath\">George Street, Bath</a></p><p><a href=\"tel:           +44 1225 308803\">+44 1225 308803</a></p><p><a href=\"mailto:           bath.enquiries@devolkitchens.co.uk\">bath.enquiries@devolkitchens.co.uk</a></p>"
+            "subtext": "<p><a href=\"/pages/la-cienega-blvd-los-angeles\">La Cienega Blvd, Los Angeles</a></p><p><a href=\"tel:           310 744 6000\">310 744 6000</a></p><p><a href=\"mailto:usa.west.enquiries@devolkitchens.com\" title=\"Email our La Cienega Blvd Los Angeles showroom. Opens in a new tab.\">usa.west.enquiries@devolkitchens.com</a></p>",
+            "subtext_2": "<p><a href=\"/pages/st-johns-square-london\">St John's Square, London</a></p><p><a href=\"tel:           +44 20 3879 7900\">+44 20 3879 7900</a></p><p><a href=\"mailto:london.enquiries@devolkitchens.co.uk\" target=\"_blank\" title=\"Email our St John's Square London showroom. Opens in a new tab.\">london.enquiries@devolkitchens.co.uk</a></p>",
+            "subtext_3": "<p><a href=\"/pages/george-street-bath\">George Street, Bath</a></p><p><a href=\"tel:           +44 1225 308803\">+44 1225 308803</a></p><p><a href=\"mailto:bath.enquiries@devolkitchens.co.uk\" target=\"_blank\" title=\"Email our George Street Bath showroom. Opens in a new tab.\">bath.enquiries@devolkitchens.co.uk</a></p>"
           }
         },
         "text_WpPJUL": {
