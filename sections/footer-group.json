@@ -88,7 +88,7 @@
           "settings": {
             "heading": "CONTACT",
             "hidetitle": true,
-            "subtext": "<p><a href=\"/pages/cotes-mill-leicestershire\" title=\"Cotes Mill, Leicestershire\">Cotes Mill, Leicestershire</a></p><p><a href=\"tel:+44 1509 261000\" title=\"tel:+44 1509 261000\">+44 1509 261000</a></p><p><a href=\"mailto:enquiries@devolkitchens.co.uk\" title=\"mailto:enquiries@devolkitchens.co.uk\">enquiries@devolkitchens.co.uk</a></p>",
+            "subtext": "<p><a href=\"/pages/cotes-mill-leicestershire\" title=\"Cotes Mill, Leicestershire\">Cotes Mill, Leicestershire</a></p><p><a href=\"tel:+44 1509 261000\" title=\"tel:+44 1509 261000\">+44 1509 261000</a></p><p><a href=\"mailto:enquiries@devolkitchens.co.uk\" target=\"_blank\" title=\"Email our Cotes Mill showroom. Opens in a new tab.\">enquiries@devolkitchens.co.uk</a></p>",
             "subtext_two": "<p><a href=\"/pages/george-street-bath\" title=\"George Street, Bath\">George Street, Bath</a></p><p><a href=\"tel:+44 1225 308803\" title=\"tel:+44 1225 308803\">+44 1225 308803</a></p><p><a href=\"mailto:bath.enquiries@devolkitchens.co.uk\" title=\"mailto:bath.enquiries@devolkitchens.co.uk\">bath.enquiries@devolkitchens.co.uk</a></p>"
           }
         }
