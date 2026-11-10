@@ -82,9 +82,6 @@ body:not(.home-page):not(.kitchen):not(.page-our-brochure-book) .title-wrapper-w
 .custom-multicolumn .multicolumn-card__info a{
   text-decoration:none;
 }
-.custom-multicolumn .multicolumn-card__info a:hover{
-  color:currentcolor;
-}
 
 /* .showroom__listing-wrapper .top__section-border:before, .showroom__listing-wrapper .top__section-border:after{
   max-width:1600px;

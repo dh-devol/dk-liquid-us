@@ -304,7 +304,13 @@
 
                 {%- if card_title != blank -%}
                   <h3 class="inline-richtext">
-                    <a href="{{ block.settings.link }}" {% if block.settings.hide_image == false %}class="multicolumn-card__link"{% endif %}>{{ card_title }}</a>
+                    {%- if block.settings.link_label == blank -%}
+                      <a href="{{ block.settings.link }}" {% if block.settings.hide_image == false %}class="multicolumn-card__link"{% endif %}>
+                    {% endif %}
+                        {{ card_title }}
+                    {%- if block.settings.link_label == blank -%}
+                      </a>
+                    {% endif %}
                   </h3>
                 {%- endif -%}
 
@@ -325,7 +331,7 @@
 
                 {%- if block.settings.link_label != blank -%}
                   <a
-                    class="link animate-arrow"
+                    class="link animate-arrow multicolumn-card__link"
                     {% if block.settings.link == blank %}
                       role="link" aria-disabled="true"
                     {% else %}
