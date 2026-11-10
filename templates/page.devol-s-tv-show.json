@@ -331,7 +331,7 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "",
-        "image_width": "half",
+        "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "center",
