@@ -185,7 +185,7 @@
                               {% endif %}
                               {% if selected_page.metafields.custom.showroom_email != blank %}
                                 <div class="showroom__email">
-                                  {{ selected_page.metafields.custom.showroom_email | metafield_tag }}
+                                  {% render 'mailto-email', field: selected_page.metafields.custom.showroom_email %}
                                 </div>
                               {% endif %}
                             </div>
@@ -198,7 +198,7 @@
                           {%- endif -%}
                           {%- if selected_page.metafields.custom.showroom_email != blank -%}
                             <div class="showroom__email rte">
-                              {{ selected_page.metafields.custom.showroom_email | metafield_tag }}
+                              {% render 'mailto-email', field: selected_page.metafields.custom.showroom_email %}
                             </div>
                           {%- endif -%}
                           <p class="lght" aria-hidden="true">___</p>

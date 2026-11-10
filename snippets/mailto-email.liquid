@@ -1,0 +1,11 @@
+{% comment %}
+  Renders email link.
+  Accepts:
+  - field: {metafield} Richtext link
+
+  Usage:
+  {% render 'mailto-email' %}
+{% endcomment %}
+
+{% capture email_html %}{{ field | metafield_tag }}{% endcapture %}
+{{ email_html | replace: 'title="', 'aria-label="' }}
