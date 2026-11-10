@@ -193,9 +193,13 @@
               <div class="multicolumn-card__info">
                 {% if block.settings.title != blank %}
                   <h3 class="inline-richtext">
-                    <a href="{{ block.settings.link }}" {% if block.settings.link_label_hide %} aria-label="{{ block.settings.link_label }}" {% endif %} class="multicolumn-card__link">
+                    {% if block.settings.link_label == blank and block.settings.link_label_hide == false  -%}
+                      <a href="{{ block.settings.link }}" {% if block.settings.link_label_hide %} aria-label="{{ block.settings.link_label }}" {% endif %} class="multicolumn-card__link">
+                    {% endif %}
                       {{ block.settings.title | default: selected_page.title }}
-                    </a>
+                    {% if block.settings.link_label == blank and block.settings.link_label_hide == false  -%}
+                      </a> 
+                    {% endif %}
                   </h3>
                 {% endif %}
                 {% if selected_page %}
@@ -284,7 +288,7 @@
 
                 {%- if block.settings.link_label != blank and block.settings.link_label_hide == false -%}
                   <a
-                    class="link animate-arrow"
+                    class="link animate-arrow{% if section.settings.sectionname == 'brochure__book-section' %} multicolumn-card__link{% endif %}"
                     href="{{ block.settings.linked_product.url }}"
                   >
                     {{- block.settings.link_label | default: 'Order' | escape }} {{ block.settings.linked_product.price | money -}}
