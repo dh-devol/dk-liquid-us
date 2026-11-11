@@ -1739,7 +1739,7 @@
         ]
       },
       {
-        "type": "richtext",
+        "type": "html",
         "id": "banner_text",
         "label": "Text"
       },
