@@ -1745,8 +1745,8 @@
       },
       {
         "type": "textarea",
-        "id": "url_ex",
-        "label": "Hide banner on these pages",
+        "id": "url_add",
+        "label": "Add banner on these pages",
         "info": "One path per line"
       },
     ]
