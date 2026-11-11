@@ -1,0 +1,68 @@
+<style type="text/css">
+    .custom__banner {
+        background-color: #27333f;
+        color: #fff;
+    }
+    .custom__banner .custom__banner--content .custom__banner--content-text a {
+        color: #fff;
+    }
+    .custom__banner .custom__banner--content {
+        max-width: var(--banner-width);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        text-align: center;
+        padding: 4rem 0;
+    }
+    .custom__banner .custom__banner--content .custom__banner--content-text p:first-of-type,
+    .custom__banner .custom__banner--content .custom__banner--content-text p:last-of-type {
+        margin: 0;
+    }
+    .custom__banner .custom__banner--content .custom__banner--close { 
+        background: none;
+        color: #fff;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+</style>
+
+<section id="CustomBanner" class="custom__banner">
+    <div class="custom__banner--content">
+        <div class="custom__banner--content-text">
+            {{ settings.banner_text }}
+        </div>
+        {% if settings.select_type == 'temporary' %}
+             <button type="button" class="custom__banner--close svg-wrapper" aria-label="Dismiss banner">
+                {{ 'icon-close-small.svg' | inline_asset_content }}
+            </button>
+        {% endif %}
+    </div>
+</section>
+
+{% if settings.select_type == 'temporary' %}
+    <script type="text/javascript">
+        (function () {
+            var banner = document.getElementById('CustomBanner');
+            if (!banner) return;
+
+            var key = 'customBannerDismissed';
+
+            // Stay hidden if already dismissed this session
+            try {
+                if (sessionStorage.getItem(key)) {
+                    banner.remove();
+                    return;
+                }
+            } catch (e) {}
+
+            banner.querySelector('.custom__banner--close').addEventListener('click', function () {
+                banner.remove();
+                try { 
+                    sessionStorage.setItem(key, '1'); 
+                } catch (e) {}
+            });
+        })();
+    </script>
+{% endif %}

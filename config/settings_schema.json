@@ -1698,5 +1698,57 @@
         "info": "Max quantity of each individual product (0 = no per-item limit)"
       }
     ]
+  },
+  {
+    "name": "Custom banner",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Set custom banners"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_banner",
+        "label": "Enable",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "banner_width",
+        "min": 1000,
+        "max": 1600,
+        "step": 100,
+        "default": 1100,
+        "unit": "px",
+        "label": "Width"
+      },
+      {
+        "type": "select",
+        "id": "select_type",
+        "label": "Select type",
+        "default": "temporary",
+        "options": [
+          {
+            "value": "permanent",
+            "label": "Permanent"
+          },
+          {
+            "value": "temporary",
+            "label": "Temporary"
+          },
+        ]
+      },
+      {
+        "type": "richtext",
+        "id": "banner_text",
+        "label": "Text"
+      },
+      {
+        "type": "textarea",
+        "id": "url_ex",
+        "label": "Hide banner on these pages",
+        "info": "One path per line"
+      },
+    ]
   }
 ]
