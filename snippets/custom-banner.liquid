@@ -26,6 +26,18 @@
         padding: 0;
         cursor: pointer;
     }
+    @media (max-width:576px){
+        .custom__banner .custom__banner--content {
+            max-width: 88%;
+            width: 92%;
+        }
+        .custom__banner .custom__banner--content .custom__banner--close {
+            width: 40px;
+        }
+        .custom__banner .custom__banner--content .custom__banner--content-text p:not(:nth-of-type(3)) br {
+            display: none;
+        }
+    }
 </style>
 
 <section id="CustomBanner" class="custom__banner">
