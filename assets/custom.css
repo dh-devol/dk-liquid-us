@@ -1768,6 +1768,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   }
    .press-catalogue .press-catalogue-wrapper .iframe__catalogue-wrapper{
     min-height: 260px;
+    height: 30vh;
    }
    .page-careers .collapsible-content__wrapper{
     padding-top:0px;
