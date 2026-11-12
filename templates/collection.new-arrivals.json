@@ -58,6 +58,7 @@
         "product_item_xfVcmd",
         "product_item_KU7xCk"
       ],
+      "disabled": true,
       "custom_css": [],
       "name": "Custom product list",
       "settings": {
@@ -86,6 +87,24 @@
     "custom_product_list_9TAYE8": {
       "type": "custom-product-list",
       "blocks": {
+        "product_item_gtykUa": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-fruitwood-table-6ft"
+          }
+        },
+        "product_item_xwGgQN": {
+          "type": "product_item",
+          "settings": {
+            "product": "fancy-boudoir-mirror"
+          }
+        },
+        "product_item_eLkjX6": {
+          "type": "product_item",
+          "settings": {
+            "product": "regency-ceiling-ring"
+          }
+        },
         "product_item_7DJ4px": {
           "type": "product_item",
           "settings": {
@@ -106,6 +125,9 @@
         }
       },
       "block_order": [
+        "product_item_gtykUa",
+        "product_item_xwGgQN",
+        "product_item_eLkjX6",
         "product_item_7DJ4px",
         "product_item_AXzP7A",
         "product_item_iAaEU9"
@@ -119,7 +141,7 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 3,
+        "columns_desktop": 2,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "primary",
