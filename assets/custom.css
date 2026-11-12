@@ -199,7 +199,7 @@ a {
 #MainContent.page-letters-from-devol {
   padding-bottom: 0;
 }
-main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enquiries, main.default-template {
+main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enquiries, main.default-template, main[class~="list-collections--page"] {  
   padding-bottom: 0 !important;
 }
 

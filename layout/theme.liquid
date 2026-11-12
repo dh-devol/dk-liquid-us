@@ -539,6 +539,14 @@
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
+    {% if request.path == '/collections/all' %}
+      <style>
+        main.collection--page {
+          padding-bottom: 0 !important;
+        }
+      </style>
+    {% endif %}
+
     {% comment %} <script>
     document.addEventListener("DOMContentLoaded", () => {
       let offset = 35;
