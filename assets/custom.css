@@ -27,9 +27,9 @@ body{
 html {
   scroll-behavior: none;
 }
-[id] {
+/* [id] {
   scroll-margin-top: 35px;
-}
+} */
 
 /* ── Fast Bundles Add-on restyle (inline checkboxes) ── */
 #rbr-container-element-addOn [class*="style_header_"] {
