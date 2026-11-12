@@ -18,19 +18,6 @@
     text-decoration:none;
     font-weight:500;
   }
-  .press-catalogue__title {
-    text-align: center;
-    margin-top: 50px;
-    color: #595959;
-    font-size: 19.2px;
-    font-weight: 500;
-    line-height: 28.8px;
-  }
-  @media screen and (max-width: 749px) {
-    .press-catalogue__title {
-      margin-top: 30px;
-    }
-  }
   @media screen and (max-width:767px){
     .press-catalogue iframe{
       height:100%;
@@ -45,54 +32,14 @@
       data-cascade
     {% endif %}>
     {% if article.metafields.custom.your_catalogue != blank %}
-    <div class="iframe__catalogue-wrapper" style="aspect-ratio: 3 / 2;">
-      <iframe
-          id="publitas-iframe-{{ article.id }}"
-          src="https://view.publitas.com/devol-kitchens/{{ article.metafields.custom.your_catalogue }}/?publitas_embed=embedded"
-          title="{{ article.title | escape }}"
-          width="100%"
-          height="100%"
-          frameborder="0"
-          allowfullscreen="true"
-          style="display: block; border: none;">
+    <div class="iframe__catalogue-wrapper">
+      <iframe 
+          src="https://view.publitas.com/devol-kitchens/{{ article.metafields.custom.your_catalogue }}" 
+          width="100%" 
+          height="600px" 
+          style="border: none;">
       </iframe>
     </div>
-    <script>
-      (function() {
-        var catalogueSlug = {{ article.metafields.custom.your_catalogue | json }};
-        var baseUrl = 'https://view.publitas.com/devol-kitchens/' + catalogueSlug;
-
-        window.addEventListener('message', function(event) {
-          if (event.origin.indexOf('publitas.com') === -1) return;
-          var data = event.data;
-          if (typeof data === 'string') {
-            try { data = JSON.parse(data); } catch(e) { return; }
-          }
-          if (!data || data.embed !== 'enlarge') return;
-
-          var overlay = document.createElement('div');
-          overlay.setAttribute('role', 'dialog');
-          overlay.setAttribute('aria-modal', 'true');
-          overlay.setAttribute('aria-label', {{ article.title | json }});
-          overlay.style.cssText = 'position:fixed;inset:0;z-index:999999;background:rgb(255,255,255);';
-
-          var close = document.createElement('button');
-          close.setAttribute('aria-label', 'Close');
-          close.textContent = '\u00D7';
-          close.style.cssText = 'position:absolute;top:4px;right:4px;z-index:1000000;background:none;border:none;color:#333;font-size:35px;width:35px;height:35px;cursor:pointer;line-height:1;';
-          close.addEventListener('click', function() { overlay.remove(); });
-
-          var maxIframe = document.createElement('iframe');
-          maxIframe.src = baseUrl + '?publitas_embed=maximized&didEnlarge=true';
-          maxIframe.style.cssText = 'width:100%;height:100%;border:none;';
-          maxIframe.allowFullscreen = true;
-
-          overlay.appendChild(close);
-          overlay.appendChild(maxIframe);
-          document.body.appendChild(overlay);
-        });
-      })();
-    </script>
     {% endif %}
     {% assign catalogue_meta = article.metafields.custom.catalogue_link_metaobject.value %}
     {% assign catalogue_link = blank %}
@@ -112,9 +59,6 @@
       <div class="catalogue__content-wrapper center">
         <a target="_blank" class="hxl" href="{{ catalogue_link }}">{{ catalogue_text }}</a>
       </div>
-    {% endif %}
-    {% if article.title != blank %}
-      <p class="press-catalogue__title">{{ article.title }}</p>
     {% endif %}
   </div>
 </div>
