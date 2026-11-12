@@ -250,11 +250,11 @@
 .product-specification .accordion__content.rte p:has(strong) {
     margin-top: 0;
 }
-.product-specification .product-specification .accordion__content.rte p {
+/* .product-specification .product-specification .accordion__content.rte p {
     margin:0;
     padding: 0.3em 0;
     line-height: 1.2;
-}
+} */
 .product-specification .accordion__content.rte p strong {
     font-weight: 500;
     /* font-family: gill-sans-nova, sans-serif; */
