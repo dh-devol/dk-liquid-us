@@ -134,6 +134,9 @@
     "cart_color_scheme": "scheme-1",
     "matching_tag": "Flooring",
     "cart_qty_limit_max_2": 9999,
+    "enable_banner": false,
+    "banner_text": "<p><strong>Christmas Shopping</strong></p>\n<p>Please place your order before the dates shown below to<br class=\"aesth\"> make sure you get your little piece of deVOL in time for Christmas</p>\n<p>USA: 14th December<br>Canada: 8th December<br></p>\n<p>For items on a lead time, please order well in advance of these dates.<br class=\"aesth\"> The next dispatch will be on 3rd January when our workshops reopen.</p>",
+    "url_add": "/collections/\n/products/\n/pages/shop\n/pages/collections\n/pages/delivery",
     "sec_menu": "mobile-secondary-menu",
     "mobilemenu": "dropdown-mobile-menu",
     "sections": {
