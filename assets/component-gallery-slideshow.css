@@ -382,3 +382,16 @@ slideshow-component.gallery-slideshow:not([data-gallery-ready="true"]) .slidesho
       display: none;
   }
 }
+
+/* Mobile infinite-loop clones */
+.gallery-slideshow .gallery-loop-clone {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Clones should never be visible in the desktop crossfade gallery. */
+@media screen and (min-width: 601px) {
+  .gallery-slideshow .gallery-loop-clone {
+    display: none !important;
+  }
+}
