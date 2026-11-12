@@ -443,6 +443,41 @@
     <div id="cart-popup-container" style="display: none;"></div>
 
     <main id="MainContent" class="{% if template.name contains 'cart' %}{% if cart == empty %}is-empty{% endif %}{% endif %} page-{{ page.handle }} {{ template.name }}--page content-for-layout focus-none {% if template.name == 'product' and template.suffix == blank %}default-template{% endif %}" role="main" tabindex="-1">
+      {%- liquid
+        assign show_banner = false
+        assign current_path = request.path
+        if routes.root_url != '/'
+          assign current_path = request.path | remove_first: routes.root_url
+        endif
+        if current_path == blank
+          assign current_path = '/'
+        endif
+
+        assign included = settings.url_add | newline_to_br | replace: '<br />', ',' | split: ','
+        for path in included
+          assign p = path | strip | remove: request.origin
+          if p == blank
+            continue
+          endif
+
+          assign last_char = p | slice: -1
+          if last_char == '/' and p != '/'
+            assign current_start = current_path | slice: 0, p.size
+            if current_start == p
+              assign show_banner = true
+              break
+            endif
+          elsif p == current_path
+            assign show_banner = true
+            break
+          endif
+        endfor
+      -%}
+
+      {% if settings.banner_text != blank and settings.enable_banner and show_banner %}
+        <style>:root { --banner-width: {{ settings.banner_width }}px; }</style>
+        {% render 'custom-banner' %}
+      {% endif %}
       {% if page.metafields.custom.catalogue_detail != blank %}
         <div class="catalogues__page-wrapper page-width">
           <div class="catalogue__list-wrapper">
