@@ -259,22 +259,22 @@
     "custom_product_list_nebHrX": {
       "type": "custom-product-list",
       "blocks": {
+        "product_item_xP8tNm": {
+          "type": "product_item",
+          "settings": {
+            "product": "classic-fruitwood-table-6ft"
+          }
+        },
         "product_item_Ezmrc3": {
           "type": "product_item",
           "settings": {
             "product": "petite-vineyard-table"
           }
-        },
-        "product_item_xP8tNm": {
-          "type": "product_item",
-          "settings": {
-            "product": "vineyard-table"
-          }
         }
       },
       "block_order": [
-        "product_item_Ezmrc3",
-        "product_item_xP8tNm"
+        "product_item_xP8tNm",
+        "product_item_Ezmrc3"
       ],
       "name": "Custom product list",
       "settings": {
