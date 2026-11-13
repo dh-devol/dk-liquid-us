@@ -10,8 +10,9 @@
   outline: none;
 }
 .dropdown-accordion:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+  outline: var(--focused-base-outline);
+  outline-offset: var(--focused-base-outline-offset);
+  box-shadow: var(--focused-base-box-shadow);
 }
 .dropdown-accordion p {
   display: inline;
@@ -41,10 +42,43 @@
   justify-content: space-between;
   gap: 1.5rem;
   padding: 0.8rem 0;
+  cursor: default;
+}
+.addon-container .addon-item--link {
+  color: inherit;
+  text-decoration: none;
+}
+.addon-container .addon-item--link:hover .addon-item__title {
+  text-decoration: underline;
+}
+.addon-container .addon-item--link:focus-visible {
+  outline: var(--focused-base-outline);
+  outline-offset: var(--focused-base-outline-offset);
+  box-shadow: var(--focused-base-box-shadow);
+}
+.addon--dropdown select:focus-visible {
+  outline: var(--focused-base-outline);
+  outline-offset: var(--focused-base-outline-offset);
+  box-shadow: var(--focused-base-box-shadow);
+}
+.addon-container .addon-tick {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin: -12px;
   cursor: pointer;
 }
+.addon-tick:has(input:disabled) {
+  cursor: not-allowed;
+}
 .addon-container.addon-container--tickbox {
+  position: relative;
   justify-content: flex-start;
+  gap: 0.6em;
+  padding: 0.25em 0;
+  cursor: pointer;
 }
 .addon-container .addon-item {
   display: flex;
@@ -55,12 +89,7 @@
 }
 .addon-container .addon-item img {
   object-fit: cover;
-}
-.addon-container .addon-item .addon-item__content .addon-item__link {
-  text-decoration: none;
-}
-.addon-container .addon-item .addon-item__content .addon-item__link:hover {
-  text-decoration: underline;
+  flex-shrink: 0;
 }
 .addon-container .addon-item .addon-item__content .addon-item__title {
   margin: 0;
@@ -142,8 +171,9 @@
 
 /* keyboard focus */
 .addon-container:has(input:focus-visible) .addon-tick__box {
-  outline: 2px solid #1f2a3c;
-  outline-offset: 2px;
+  outline: var(--focused-base-outline);
+  outline-offset: var(--focused-base-outline-offset);
+  box-shadow: var(--focused-base-box-shadow);
 }
 
 /* sold out */
@@ -186,11 +216,6 @@
   border-radius: 0;
   border: solid 1px #bfbfbf;
   appearance: none;
-}
-
-.addon--dropdown select:focus-visible {
-  outline: 0;
-  box-shadow: none;
 }
 
 .addon--dropdown option:disabled {
