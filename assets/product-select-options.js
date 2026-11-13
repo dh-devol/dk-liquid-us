@@ -28,7 +28,7 @@
       list.addEventListener('click', function (e) {
         if (e.target.closest('a')) return;
 
-        var label = e.target.closest('.addon-container');
+        var label = e.target.closest('.addon-tick');
         if (!label) return;
 
         var input = label.querySelector('input[type="radio"]');
