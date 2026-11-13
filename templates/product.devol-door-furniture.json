@@ -43,6 +43,10 @@
             "swatch_shape": "circle"
           }
         },
+        "select_options_67nKit": {
+          "type": "select_options",
+          "settings": {}
+        },
         "quantity_buy_button_fKpjca": {
           "type": "quantity_buy_button",
           "settings": {}
@@ -78,6 +82,7 @@
         "inventory_DNJrea",
         "metafield_product_VgECqt",
         "variant_picker",
+        "select_options_67nKit",
         "quantity_buy_button_fKpjca",
         "quantity_selector",
         "buy_buttons",
