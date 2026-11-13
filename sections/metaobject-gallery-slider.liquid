@@ -148,6 +148,13 @@
       {% assign content = slide.slide_1_content %}
       {% assign image = slide.slide_1_image %}
       {% assign mobile_image = slide.slide_1_image_mobile | default: image %}
+            {% liquid
+        assign mobile_focal_point = mobile_image.presentation.focal_point
+        if mobile_focal_point == blank
+          assign mobile_focal_point = image.presentation.focal_point
+        endif
+        assign mobile_focal_point = mobile_focal_point
+      %}
       {% assign link = slide.slide_1_link %}
       {% assign slide_link = link.value | default: link %}
       {% liquid
@@ -196,7 +203,13 @@
               aria-label="link to {{ content }}">
             </a>
           {% endif %}
-
+          <style>
+            @media screen and (max-width: 749px) {
+              #Slide-{{ section.id }}-{{ forloop.index }} .slideshow__media img {
+                object-position: {{ mobile_focal_point }} !important;
+              }
+            }
+          </style>
           <div class="slideshow__media banner__media media">
             {% if video == blank %}
               <picture>

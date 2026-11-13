@@ -395,3 +395,19 @@ slideshow-component.gallery-slideshow:not([data-gallery-ready="true"]) .slidesho
     display: none !important;
   }
 }
+
+.gallery-slideshow .slideshow__media > .slideshow__images {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-slideshow .slideshow__images > img.slideshow__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+}
