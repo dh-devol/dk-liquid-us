@@ -288,14 +288,7 @@
 
                 {%- if block.settings.link_label != blank and block.settings.link_label_hide == false -%}
                   <a
-                    class="link animate-arrow{% if section.settings.sectionname == 'brochure__book-section' %} multicolumn-card__link{% endif %}"
-                    href="{{ block.settings.linked_product.url }}"
-                  >
-                    {{- block.settings.link_label | default: 'Order' | escape }} {{ block.settings.linked_product.price | money -}}
-                  </a>
-                {%- elsif block.settings.link_label != blank and block.settings.link_label_hide == false -%}
-                  <a
-                    class="link animate-arrow{% if block.settings.link contains page.handle or block.settings.link contains collection.handle  %} active{% endif %}"
+                    class="link animate-arrow{% if block.settings.link contains page.handle %} active{% endif %}{% if section.settings.sectionname == 'brochure__book-section' %} multicolumn-card__link{% endif %}"
                     {% if block.settings.link == blank %}
                       role="link" aria-disabled="true"
                     {% elsif block.settings.anchor != blank %}
