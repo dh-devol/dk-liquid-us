@@ -20,6 +20,9 @@
 {%- endfor -%}
 
 <div id="custom-select-wrapper" class="liquid-rendered-selects">
+  <p id="product-switch-hint" class="visually-hidden">
+    You are about to enter product selection. You will be given some options which you can change, this will change the selected product and change the URL.
+  </p>
   {% assign option_pairs = all_options | split: ',' %}
   {% assign option_names = '' %}
   {% for pair in option_pairs %}
@@ -71,13 +74,16 @@
       {% endfor %}
 
       {% assign value_array = values | split: ',' %}
-      {% if option_name == "Select your switch module" %}
-        <button class="switch-dropdown-accordion"><p>{{ option_name }}</p><span class="dropdown-arrow"></span></button>
-        <div class="switch-select" style="display: none;" aria-expanded="false">
+      {% if option_name == "Select your switch module" or bundle_accordion == true %}
+        <button type="button" class="switch-dropdown-accordion" aria-expanded="false" aria-controls="switch-select-panel">
+          <p id="{{ option_name | handleize }}-label">{{ option_name }}</p>
+          <span class="dropdown-arrow" aria-hidden="true"></span>
+        </button>
+        <div class="switch-select" style="display: none;">
       {% else %}
         <label id="{{ option_name | handleize }}-label" for="{{ option_name | handleize }}">{{ option_name | capitalize }}</label>
       {% endif %}
-      <select name="{{ option_name | handleize }}" id="{{ option_name | handleize }}" {% if option_name == "Select your switch module" %}class="one-label"{% endif %} aria-labelledby="{{ option_name | handleize }}-label">
+      <select name="{{ option_name | handleize }}" id="{{ option_name | handleize }}" aria-describedby="product-switch-hint" {% if option_name == "Select your switch module" %}class="one-label"{% endif %} aria-labelledby="{{ option_name | handleize }}-label">
         {% for val in value_array %}
           {% if val != '' %}
             {% assign tag_to_check = option_name | append: '_' | append: val %}

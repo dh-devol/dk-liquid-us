@@ -145,7 +145,7 @@
                   {% render 'breadcrumb' %}
                 {%- when 'title' -%}
                   <div class="product__title" {{ block.shopify_attributes }}>
-                    <h1>
+                    <h1 data-product-title="{{ product.title }}">
                       {% if product.metafields.custom.custom_product_title.value != blank %}
                         {{ product.metafields.custom.custom_product_title.value }}
                       {% else %}
@@ -199,7 +199,7 @@
                     {%- endform -%}
                   </div>
                 {% when 'mix_and_match_bundle' %}
-                  {% render 'mix-and-match-bundle', root_id: 'mm-bundle-', append: block.id, limit: block.settings.limit, bundle_product: block.settings.bundle_product, fast_bundle_id: block.settings.fast_bundle_id, item_label_prefix: block.settings.item_label_prefix, products_list: block.settings.bundle_products, bundle_first_option: block.settings.first_option, item_label_styling: block.settings.item_label_styling, bundle_price: block.settings.bundle_add_pricing, add_on_styling: block.settings.add_on_style, bundle_qty: block.settings.bundle_qty %}
+                  {% render 'mix-and-match-bundle', root_id: 'mm-bundle-', append: block.id, limit: block.settings.limit, bundle_product: block.settings.bundle_product, fast_bundle_id: block.settings.fast_bundle_id, item_label_prefix: block.settings.item_label_prefix, products_list: block.settings.bundle_products, bundle_first_option: block.settings.first_option, item_label_styling: block.settings.item_label_styling, bundle_price: block.settings.bundle_add_pricing, add_on_styling: block.settings.add_on_style, bundle_qty: block.settings.bundle_qty bundle_accordion: block.settings.bundle_accordion %}
                 {%- when 'inventory' -%}
                   {%- if show_international_oos and settings.international_oos_text != blank -%}
                     <div class="not-for-sale not-for-sale--oos" id="Inventory-{{ section.id }}">
@@ -628,12 +628,28 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  getLiveRegion();
   initProductSwitcher();
   initSwiperGallery();
   initCoverageCalculators(document);
+
+  if (sessionStorage.getItem("productSwitched")) {
+    sessionStorage.removeItem("productSwitched");
+    const focusName = sessionStorage.getItem("productSwitchedFocus");
+    sessionStorage.removeItem("productSwitchedFocus");
+
+    const h1 = document.querySelector("product-info h1");
+    let target = focusName ? document.querySelector(`#custom-select-wrapper select[name="${focusName}"]`) : null;
+
+    if (target && target.offsetParent !== null) {
+      target.focus();
+    }
+
+    if (h1) announce(`Now showing ${h1.dataset.productTitle || h1.textContent.trim()}`, 2500);
+  }
   
   {% if product.metafields.custom.read_more.value %}
-  readmoreDescription();
+    readmoreDescription();
   {%  endif %}
 
   function restyleBrassAddons() {
@@ -823,36 +839,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // If we can't resolve the current section id, do a hard navigation
       if (!sectionId || bundle || targetPattress != currentPattress) {
-        window.location.assign(targetPath);
+        hardNavigation(targetPath);
         return;
       }
 
       // AJAX swap: replace just this section's HTML, then re-init behaviors
-      fetch(`${targetPath}?section_id=${encodeURIComponent(sectionId)}`)
+      fetch(targetPath)
         .then((res) => res.text())
         .then((html) => {
           const doc = new DOMParser().parseFromString(html, "text/html");
           const newProductWrapper = doc.querySelector("[data-product-wrapper]");
           const curProductWrapper = document.querySelector("[data-product-wrapper]");
+          const newSpecWrapper = doc.querySelector(".specification-metafield .accordion__content-wrapper");
+          const curSpecWrapper = document.querySelector(".specification-metafield .accordion__content-wrapper");
 
-          if (!newProductWrapper || !curProductWrapper || !newSpecWrapper || !curSpecWrapper) {
-            window.location.assign(targetPath);
+          if (!newProductWrapper || !curProductWrapper) {
+            hardNavigation(targetPath);
             return;
           }
 
           // reload page if new product is OOS, so stoq form can be loaded
-          const newOOS = newProductWrapper.querySelector(".product__inventory").innerHTML;
-
-          if (newOOS != "Out of stock") {
-            curProductWrapper.innerHTML = newProductWrapper.innerHTML;
+          const newInventory = newProductWrapper.querySelector(".product__inventory");
+          if (newInventory && newInventory.textContent.trim() === "Out of stock") {
+            hardNavigation(targetPath);
+            return;
           }
 
+          // remember which select had focus
+          const focusedName = document.activeElement && document.activeElement.name;
+
           // update specification information
-          const newSpecWrapper = doc.querySelector(".specification-metafield .accordion__content-wrapper");
-          const curSpecWrapper = document.querySelector(".specification-metafield .accordion__content-wrapper");
-          curSpecWrapper.innerHTML = newSpecWrapper.innerHTML;
+          curProductWrapper.innerHTML = newProductWrapper.innerHTML;
+          if (curSpecWrapper != newSpecWrapper) {
+            curSpecWrapper.innerHTML = newSpecWrapper.innerHTML;
+          }
 
           history.replaceState(null, "", targetPath);
+          document.title = doc.title;
 
           // Clean up addon state when switching to a non-addon product
           var qtyWrapper = document.querySelector('.product .quantity_buy_button-wrapper');
@@ -861,11 +884,24 @@ document.addEventListener("DOMContentLoaded", () => {
           // Re-init for newly injected DOM
           initProductSwitcher();
           initSwiperGallery();
-          initCoverageCalculators(curWrapper);
-          initAccordionScript(curWrapper);
+          initCoverageCalculators(curProductWrapper);
+          initAccordionScript(curProductWrapper);
+          initSpecScript();
           readmoreDescription();
+
+          // Put focus back where the user was
+          if (focusedName) {
+            const sel = document.querySelector(
+              `#custom-select-wrapper select[name="${focusedName}"]`
+            );
+            if (sel) sel.focus();
+          }
+
+          const heading = curProductWrapper.querySelector("h1");
+          const title = heading ? (heading.dataset.productTitle || heading.textContent.trim()) : doc.title;
+          announce(`Now showing ${title}`);
         })
-        .catch(() => window.location.assign(targetPath));
+        .catch(() => hardNavigation(targetPath));
     });
   }
 
@@ -1018,6 +1054,36 @@ function syncSlideVideos(swiper, pauseInactive = false) {
     updateButton();
   });
     new Swiper(swiperEl, options);
+  }
+
+  function initAccordionScript(root) {
+    const scope = root || document;
+    const accordionScript = scope.querySelector("#dropdown-accordion-script");
+    const accordionScriptSrc = {{ 'accordion-script.js' | asset_url | json }};
+    if (!accordionScript) return;
+
+    loadScriptOnce(accordionScriptSrc, "accordion-script", () => {
+      if (typeof window.initAccordion === "function") {
+        window.initAccordion(scope);
+      } else {
+        console.warn("initAccordion() is not available");
+      }
+    });
+    return;
+  }
+
+  function initSpecScript() {
+    const specRoot = document.querySelector(".specification-metafield");
+    if (!specRoot) return;
+
+    if (typeof window.initAccordions === "function") {
+      window.initAccordions(specRoot);
+      return;
+    }
+
+    loadScriptOnce({{ 'product-specification.js' | asset_url | json }}, "product-specification-script", () => {
+      if (typeof window.initSpec === "function") window.initSpec(specRoot);
+    });
   }
 
   function readmoreDescription() {
@@ -1255,6 +1321,37 @@ function syncSlideVideos(swiper, pauseInactive = false) {
     });
   }
 
+
+  function hardNavigation(path) {
+    sessionStorage.setItem("productSwitched", "1");
+    const name = document.activeElement && document.activeElement.name;
+    if (name) sessionStorage.setItem("productSwitchedFocus", name);
+    window.location.assign(path);
+  }
+
+  function getLiveRegion() {
+    let region = document.getElementById("sr-message");
+    if(!region) {
+      region = document.createElement('div');
+      region.id = "sr-message";
+      region.className = "visually-hidden";
+      region.setAttribute("role", "status");
+      region.setAttribute("aria-live", "polite");
+      region.setAttribute("aria-atomic", "true");
+      document.body.prepend(region);
+    }
+    return region;
+  }
+
+  function announce(message, delay) {
+    const region = getLiveRegion();
+    clearTimeout(announce.timer);
+    region.textContent = "";
+    announce.timer = setTimeout(() => { 
+      region.textContent = message;
+    }, delay === undefined ? 1200 : delay);
+  }
+
   // stoq app - show pop up notification on submit:
   setTimeout(function stoqSuccess() {
     const stoqBtn = document.getElementById('form-Button');
@@ -1392,6 +1489,7 @@ function syncSlideVideos(swiper, pauseInactive = false) {
           ],
           "default": "choose" 
         },
+        { "type": "checkbox", "id": "bundle_accordion", "label": "Label is an accordion?", "default": false },
         { "type": "checkbox", "id": "bundle_qty", "label": "Show quantity field?", "default": false },
       ]
     },
