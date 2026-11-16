@@ -143,23 +143,54 @@
   }
 
    @media screen and (max-width: 900px) {
-    .ai-image-content-block__image-{{ ai_gen_id }} {
+    {% comment %} .ai-image-content-block__image-{{ ai_gen_id }} {
       display: none;
-    }
+    } {% endcomment %}
     .ai-image-content-block-{{ ai_gen_id }} {
       flex-direction: {% if block.settings.mobile_layout == 'image_first' %}column{% else %}column-reverse{% endif %};
       min-height: auto;
     }
-    .ai-image-content-block__content-{{ ai_gen_id }} {
+    {% comment %} .ai-image-content-block__content-{{ ai_gen_id }} {
       padding: {{ block.settings.mobile_content_padding }}px;
-    }
+    } {% endcomment %}
+      
+  .ai-image-content-block__content-{{ ai_gen_id }} {
+    padding: 40px;
+  }
    }
 
-  @media screen and (max-width: 749px) {
-
-    .ai-image-content-block__image-{{ ai_gen_id }} {
-      min-height: {{ block.settings.mobile_image_height }}px;
+  @media screen and (max-width: 500px) {
+    a.accessory-btn {
+      padding: 0.25em 2em; 
+      min-width: 0; 
+      text-align: center;
     }
+  }
+  @media screen and (max-width: 440px) {
+    a.accessory-btn {
+      padding: 0.25em 1.5em; 
+      min-width: 0; 
+      text-align: center;
+    }
+  }
+  @media screen and (max-width:400px){
+    .ai-image-content-block__buttons-{{ ai_gen_id }} {
+      gap:20px;
+    }
+    .ai-image-content-block__content-{{ ai_gen_id }}{
+      padding:40px !important
+    }
+  }
+  @media screen and (max-width:355px){
+    .ai-image-content-block__buttons-{{ ai_gen_id }} {
+      gap:15px;
+    }
+    .ai-image-content-block__content-{{ ai_gen_id }}{
+      padding:30px !important
+    }
+  }
+
+  @media screen and (max-width: 749px) {
 
     .ai-image-content-block__heading-{{ ai_gen_id }} {
       font-size: {{ block.settings.mobile_heading_size }}px;
@@ -170,7 +201,7 @@
     }
 
     .ai-image-content-block__buttons-{{ ai_gen_id }} {
-      flex-direction: {% if block.settings.mobile_button_layout == 'stacked' %}column{% else %}row{% endif %};
+      flex-direction: row;
     }
   }
 {% endstyle %}
@@ -178,14 +209,27 @@
 <div class="ai-image-content-block-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
   <div class="ai-image-content-block__image-{{ ai_gen_id }}">
     <div class="ai-image-content-block__image-wrapper-{{ ai_gen_id }}">
-      {% if block.settings.image %}
-        <img
-          src="{{ block.settings.image | image_url: width: 1000 }}"
-          alt="{{ block.settings.image.alt | escape }}"
-          loading="lazy"
-          width="{{ block.settings.image.width }}"
-          height="{{ block.settings.image.height }}"
-        >
+      {% assign fallback_image = block.settings.image | default: block.settings.image_mobile %}
+
+      {% if fallback_image %}
+        <picture>
+          {% if block.settings.image_mobile %}
+            <source
+              media="(max-width: 749px)"
+              srcset="{{ block.settings.image_mobile | image_url: width: 1000 }}"
+              width="{{ block.settings.image_mobile.width }}"
+              height="{{ block.settings.image_mobile.height }}"
+            >
+          {% endif %}
+
+          <img
+            src="{{ fallback_image | image_url: width: 1000 }}"
+            alt="{{ fallback_image.alt | escape }}"
+            loading="lazy"
+            width="{{ fallback_image.width }}"
+            height="{{ fallback_image.height }}"
+          >
+        </picture>
       {% else %}
         <div class="ai-image-content-block__placeholder-{{ ai_gen_id }}">
           {{ 'image' | placeholder_svg_tag }}
@@ -257,6 +301,11 @@
       "unit": "px",
       "label": "Minimum height",
       "default": 500
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Image"
     },
     {
       "type": "header",
@@ -546,7 +595,7 @@
       "type": "range",
       "id": "mobile_content_padding",
       "min": 15,
-      "max": 40,
+      "max": 80,
       "step": 5,
       "unit": "px",
       "label": "Mobile content padding",
