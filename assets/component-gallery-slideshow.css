@@ -73,10 +73,10 @@
   scroll-snap-stop: always;
   scroll-snap-align: start;
 }
-.gallery-slideshow .slideshow__media picture:after {
+.gallery-slideshow .slideshow__media .slideshow__images:after {
   opacity: 0;
 }
-.gallery-slideshow .slideshow__slide.has-overlay-text .slideshow__media picture:after {
+.gallery-slideshow .slideshow__slide.has-overlay-text .slideshow__media .slideshow__images:after {
   opacity: 1;
 }
 .gallery-slideshow .slideshow__slide{
