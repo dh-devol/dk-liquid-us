@@ -520,7 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let target = focusName ? document.querySelector(`#custom-select-wrapper select[name="${focusName}"]`) : null;
 
     if (target && target.offsetParent !== null) {
-      if (focusName) restoreSelectFocus(focusName);
+      target.focus();
     }
 
     if (h1) announce(`Now showing ${h1.dataset.productTitle || h1.textContent.trim()}`, 2500);
@@ -1143,49 +1143,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.prepend(region);
     }
     return region;
-  }
-
-  function restoreSelectFocus(name) {
-    let userMoved = false;
-    const onKey = (e) => { 
-      if (["Control", "Alt", "Shift", "Meta"].includes(e.key)) return;
-      userMoved = true;
-    };
-    window.addEventListener("keydown", onKey, true);
-    window.addEventListener("pointerdown", () => { userMoved = true; }, { once: true, capture: true });
-
-    const getSelect = () => {
-      const t = document.querySelector(`#custom-select-wrapper select[name="${name}"]`);
-      return t && t.offsetParent !== null ? t : null;
-    };
-
-    const isDefaultStop = (el) => 
-      !el ||
-      el === document.body ||
-      el.tagName === "MAIN" ||
-      el.matches(".skip-to-content-link, a[href='#MainContent']");
-
-    const refocus = () => {
-      const t = getSelect();
-      if (t && !userMoved && document.activeElement !== t && isDefaultStop(document.activeElement)) {
-        t.focus();
-      }
-    };
-
-    // moving back to focus in select
-    const onFocusIn = (e) => {
-      if (isDefaultStop(e.target)) setTimeout(refocus, 0);
-    };
-    document.addEventListener("focusin", onFocusIn, true);
-
-    refocus();
-    setTimeout(refocus, 800);
-    setTimeout(refocus, 2000);
-
-    setTimeout(() => {
-      document.removeEventListener("focusin", onFocusIn, true);
-      window.removeEventListener("keydown", onKey, true);
-    }, 5000);
   }
 
   function announce(message, delay) {
