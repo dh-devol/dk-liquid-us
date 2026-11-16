@@ -44,6 +44,13 @@ window.initMixMatchBundle = function(root) {
         if (choiceStyling.dataset?.styling != 'choose') {
             select.innerHTML = '';
         }
+        if (choiceStyling.dataset?.styling == 'none') {
+            const none = document.createElement('option');
+            none.value = 'none';
+            none.textContent = 'None';
+            none.dataset.price = 0;
+            select.appendChild(none);
+        }
         OPTIONS.forEach(opt => {
             const o = document.createElement('option');
             o.value = String(opt.variant_id);
@@ -61,13 +68,6 @@ window.initMixMatchBundle = function(root) {
             o.dataset.price = price;
             select.appendChild(o);
         });
-        if (choiceStyling.dataset?.styling == 'none') {
-            const none = document.createElement('option');
-            none.value = 'none';
-            none.textContent = 'None';
-            none.dataset.price = 0;
-            select.appendChild(none);
-        }
     }
     choiceEls.forEach(renderOptions);
 
