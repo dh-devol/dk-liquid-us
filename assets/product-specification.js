@@ -8,65 +8,86 @@ function updateParentAccordions(accordion) {
   }
 }
 
-function initAccordions() {
-  // set all accordions to inert
-  document.querySelectorAll('.custom-collapsible-content .accordion').forEach(function (acc) {
-    var c = acc.querySelector('.accordion__content');
-    if (c) c.inert = true;
-  });
+function setAccordionState(accordion, open) {
+  var header = accordion.querySelector('.class-summary');
+  var content = accordion.querySelector('.accordion__content');
+  if (!header || !content) return;
 
-  // Open the first child accordion (no early returns)
-  var wrapper = document.querySelector('.child-accordion-wrapper');
-  var firstAccordion = wrapper && wrapper.querySelector('.accordion');
-  if (firstAccordion) {
-    var firstHeader = firstAccordion.querySelector('.class-summary');
-    var firstContent = firstAccordion.querySelector('.accordion__content');
-    if (firstHeader && firstContent) {
-      firstContent.style.maxHeight = firstContent.scrollHeight + 'px';
-      firstContent.inert = false;
-      firstHeader.classList.add('active');
-      firstHeader.setAttribute('open', '');
-      var firstButton = firstHeader.querySelector('button.title_arrow-wrapper');
-      if (firstButton) firstButton.setAttribute('aria-expanded', 'true');
-    }
+  var button = header.querySelector('button.title_arrow-wrapper');
+
+  header.classList.toggle('active', open);
+  if (button) button.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+  if (open) {
+    header.setAttribute('open', '');
+    content.inert = false;
+    content.style.maxHeight = content.scrollHeight + 30 + 'px';
+  } else {
+    header.removeAttribute('open');
+    content.inert = true;
+    content.style.maxHeight = null;
   }
+}
 
-  // Click handlers
-  document.querySelectorAll('.custom-collapsible-content .accordion').forEach(function (accordion) {
-    var header = accordion.querySelector('.class-summary');
-    var content = accordion.querySelector('.accordion__content');
-    if (!header || !content) return;
+// One delegated click handler, bound once for the life of the page
+if (!window.__accordionDelegateBound) {
+  window.__accordionDelegateBound = true;
 
-    var button = header.querySelector('button.title_arrow-wrapper');
+  document.addEventListener('click', function (e) {
+    var header = e.target.closest('.custom-collapsible-content .class-summary');
+    if (!header) return;
 
-    header.addEventListener('click', function (e) {
-      e.stopPropagation();
-      e.preventDefault(); // only needed if header is a <summary>
+    var accordion = header.closest('.accordion');
+    if (!accordion) return;
 
-      var isOpen = !!content.style.maxHeight;
+    e.preventDefault();
+    var isOpen = header.hasAttribute('open');
+    setAccordionState(accordion, !isOpen);
 
-      header.classList.toggle('active');
-      if (button) {
-        button.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      }
-
-      if (isOpen) {
-        content.style.maxHeight = null;
-        content.inert = true;
-        header.removeAttribute('open');
-      } else {
-        content.style.maxHeight = content.scrollHeight + 30 + 'px';
-        content.inert = false;
-        header.setAttribute('open', '');
-      }
-
-      setTimeout(function () { updateParentAccordions(accordion); }, 200);
-    });
+    setTimeout(function () { updateParentAccordions(accordion); }, 200);
   });
 }
 
+// Apply the open state.
+function syncAccordions() {
+  var accs = Array.prototype.slice.call(
+    document.querySelectorAll('.custom-collapsible-content .accordion')
+  );
+
+  //Children first, so parents measure the expanded children
+  accs.reverse().forEach(function (acc) {
+    var header = acc.querySelector('.class-summary');
+    if (!header) return;
+
+    var isOpen = header.hasAttribute('open') || header.classList.contains('active');
+    setAccordionState(acc, isOpen);
+  });
+}
+
+function initAccordions() {
+  //open the first child accordion on first load only
+  var wrapper = document.querySelector('.child-accordion-wrapper');
+  var firstAccordion = wrapper && wrapper.querySelector('.accordion');
+  if (firstAccordion && !firstAccordion.dataset.firstOpened) {
+    firstAccordion.dataset.firstOpened = 'true';
+    var h = firstAccordion.querySelector('.class-summary');
+    if (h) h.setAttribute('open', '');
+  }
+
+  requestAnimationFrame(function () {
+    syncAccordions();
+    // re-measure once images and fonts have settled
+    setTimeout(syncAccordions, 300);
+  })
+}
+
+// Called after the spec section is swapped via AJAX
+window.initSpec = function () {
+  initAccordions();
+};
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initAccordions);
+  document.addEventListener('DOMContentLoaded', initAccordions());
 } else {
   initAccordions();
 }
