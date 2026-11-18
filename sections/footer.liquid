@@ -365,13 +365,13 @@
             </div>
           {%- endif -%}
 
-          {%- if section.settings.region != blank -%}
+          {% comment %} {%- if section.settings.region != blank -%}
             <div class="region--wrapper">
               <a href="{{ section.settings.region_link }}">
                 {{ section.settings.region }}
               </a>
             </div>
-          {%- endif -%}
+          {%- endif -%} {% endcomment %}
         </div>
       </div>
     </div>

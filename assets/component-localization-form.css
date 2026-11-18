@@ -31,7 +31,7 @@
   .localization-form:only-child {
     justify-content: start;
     width: auto;
-    margin: 0 1rem 0 0;
+    margin: 0;
   }
 
   .localization-form:only-child .button,
