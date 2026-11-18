@@ -96,7 +96,8 @@
         "heading_PyrbiA": {
           "type": "heading",
           "settings": {
-            "heading": "For the Love of Kitchens, </br>a show all about deVOL",
+            "heading": "For the Love of Kitchens, a show all about deVOL",
+            "h1_tag": true,
             "heading_size": "hxxl"
           }
         },
@@ -172,6 +173,7 @@
           "type": "heading",
           "settings": {
             "heading": "Click on the streaming channels below to find out how to watch.",
+            "h1_tag": false,
             "heading_size": "h0"
           }
         }
@@ -329,6 +331,7 @@
       "name": "Custom multicolumn",
       "settings": {
         "title": "",
+        "h1_tag": false,
         "heading_size": "h1",
         "subtitle": "",
         "image_width": "full",
@@ -635,6 +638,7 @@
           "type": "heading",
           "settings": {
             "heading": "deVOL Films",
+            "h1_tag": false,
             "heading_size": "hxxl"
           }
         },
