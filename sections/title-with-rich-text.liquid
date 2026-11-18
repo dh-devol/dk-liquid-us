@@ -46,7 +46,11 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'heading' -%} 
+              {% if block.settings.h1_tag %}
+              <h1 
+              {% else %}
               <h2
+              {% endif %}
                 class="rich-text__heading rte inline-richtext {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
@@ -55,7 +59,11 @@
                 {% endif %}
               >
                 {{ block.settings.heading }}
+              {% if block.settings.h1_tag %}
+              </h1> 
+              {% else %}
               </h2>
+              {% endif %}
             {%- when 'caption' -%}
               <p
                 class="rich-text__caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
@@ -256,6 +264,12 @@
           "id": "heading",
           "default": "t:sections.rich-text.blocks.heading.settings.heading.default",
           "label": "t:sections.rich-text.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "h1_tag",
+          "label": "Title is level 1 header",
+          "default": false
         },
         {
           "type": "select",
