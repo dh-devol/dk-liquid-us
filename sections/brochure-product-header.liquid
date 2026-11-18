@@ -22,9 +22,9 @@
   <div class="page-width section-{{ section.id }}-padding">
     <div class="rich-text__wrapper rich-text__wrapper--center">
       <div class="rich-text__blocks center">
-        <h2 class="rich-text__heading rte inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        <h1 class="rich-text__heading rte inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
           {{ section.settings.heading }}
-        </h2>
+        </h1>
         {% if section.settings.sub_text != blank %}
           <div class="rich-text__text rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
             {{ section.settings.sub_text }}

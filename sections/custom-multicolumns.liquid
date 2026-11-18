@@ -38,9 +38,18 @@
   >
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+        {% if section.settings.h1_tag %}
+        <h1 
+        {% else %}
+        <h2
+        {% endif %}
+          class="title inline-richtext {{ section.settings.heading_size }}">
             {{ section.settings.title }}
+        {% if h1_tag %}
+        </h1> 
+        {% else %}
         </h2>
+        {% endif %}
       </div>
     {%- endunless -%}
     {% if section.settings.subtitle != blank %}
@@ -350,6 +359,12 @@
       "id": "title",
       "default": "t:sections.multicolumn.settings.title.default",
       "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "h1_tag",
+      "label": "Title is level 1 header",
+      "default": false
     },
     {
       "type": "select",
