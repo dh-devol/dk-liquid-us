@@ -24,6 +24,7 @@
           "type": "heading",
           "settings": {
             "heading": "Online Accessory Sales",
+            "h1_tag": true,
             "heading_size": "hxxl"
           }
         },
