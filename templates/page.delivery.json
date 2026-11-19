@@ -52,6 +52,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "Ordering Online",
+            "link_label_hide": false,
             "linked_product": ""
           }
         },
@@ -67,6 +68,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "Payments",
+            "link_label_hide": false,
             "linked_product": ""
           }
         },
@@ -82,6 +84,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "Delivery",
+            "link_label_hide": false,
             "linked_product": ""
           }
         },
@@ -97,6 +100,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "Returns",
+            "link_label_hide": false,
             "linked_product": ""
           }
         },
@@ -112,6 +116,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "Flooring",
+            "link_label_hide": false,
             "linked_product": ""
           }
         },
@@ -127,6 +132,7 @@
             "text": "",
             "show_above_image": false,
             "link_label": "Help & FAQs",
+            "link_label_hide": false,
             "linked_product": ""
           }
         }
@@ -141,6 +147,7 @@
       ],
       "settings": {
         "title": "",
+        "h1_tag": false,
         "heading_size": "h1",
         "subtitle": "",
         "image_width": "full",
@@ -163,6 +170,18 @@
     "custom_collapsible_content_jx9WzK": {
       "type": "custom-collapsible-content",
       "blocks": {
+        "collapsible_row_n8fnYy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will my order arrive for Christmas?",
+            "sub_heading": "",
+            "icon": "none",
+            "row_content": "<p>Please place your order before 15th December to get your little piece of deVOL in time for Christmas.</p><p>Please order well in advance, especially for items on a lead time, as delivery is not guaranteed. Items will continue to be dispatched right up until our workshops close on the 24th. The next dispatch will be when we return on January 4th.</p>",
+            "url_title": "",
+            "link_url": "",
+            "page": ""
+          }
+        },
         "collapsible_row_67URJU": {
           "type": "collapsible_row",
           "settings": {
@@ -312,6 +331,7 @@
         }
       },
       "block_order": [
+        "collapsible_row_n8fnYy",
         "collapsible_row_67URJU",
         "collapsible_row_J4H4yh",
         "collapsible_row_Xh7T7e",
