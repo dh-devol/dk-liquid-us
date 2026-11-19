@@ -1045,7 +1045,7 @@ text-decoration: underline;
   padding-inline: 10em;
   padding-bottom: 3em;
   width: 92%;
-  max-width:1100px;
+  max-width:1100px !important;
 }
 .page-design-service .multi-textcolumn .multicolumn-card__info .inline-richtext{
   margin-bottom: 28px;
