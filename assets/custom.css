@@ -810,9 +810,12 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 .footer .currency--wrapper .disclosure__button {
     padding-left: 0;
 }
-}
 .footer .currency--wrapper .disclosure__list-wrapper {
     left: 0;
+}
+}
+.footer .currency--wrapper .disclosure__list-wrapper {
+    right: 0;
     min-width: 240px;
 }
 .footer .currency--wrapper .disclosure__list {
