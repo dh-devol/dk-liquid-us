@@ -1041,11 +1041,30 @@ text-decoration: underline;
   width: 92%;
   max-width:1100px;
 }
-.page-ordering-online .collapsible-content-wrapper-narrow, .page-payments .collapsible-content-wrapper-narrow, .page-delivery .collapsible-content-wrapper-narrow, .page-returns .collapsible-content-wrapper-narrow, .page-flooring-support .collapsible-content-wrapper-narrow, .page-help-faqs .collapsible-content-wrapper-narrow {
+.page-ordering-online .collapsible-content-wrapper-narrow, 
+.page-payments .collapsible-content-wrapper-narrow, 
+.page-delivery .collapsible-content-wrapper-narrow, 
+.page-returns .collapsible-content-wrapper-narrow, 
+.page-flooring .collapsible-content-wrapper-narrow, 
+.page-help-faqs .collapsible-content-wrapper-narrow {
   padding-inline: 10em;
   padding-bottom: 3em;
   width: 92%;
-  max-width:1100px;
+  max-width:1100px !important;
+}
+@media (max-width:1200px){
+  .page-ordering-online .collapsible-content-wrapper-narrow, 
+  .page-payments .collapsible-content-wrapper-narrow, 
+  .page-delivery .collapsible-content-wrapper-narrow, 
+  .page-returns .collapsible-content-wrapper-narrow, 
+  .page-flooring .collapsible-content-wrapper-narrow, 
+  .page-help-faqs .collapsible-content-wrapper-narrow {
+    padding:0 6% 0 6% !important;
+    margin: 0 auto !important;
+    width:88% !important;
+    max-width:100%;
+    padding-inline:0;
+  }  
 }
 .page-design-service .multi-textcolumn .multicolumn-card__info .inline-richtext{
   margin-bottom: 28px;
@@ -1754,7 +1773,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   .page-payments .support_custom_collapsible .collapsible-content__heading,
   .page-delivery .support_custom_collapsible .collapsible-content__heading,
   .page-returns .support_custom_collapsible .collapsible-content__heading,
-  .page-flooring-support .support_custom_collapsible .collapsible-content__heading,
+  .page-flooring .support_custom_collapsible .collapsible-content__heading,
   .page-help-faqs .support_custom_collapsible .collapsible-content__heading{
         margin-bottom: 0;
   }
@@ -1762,7 +1781,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   .page-payments .collapsible-content__wrapper,
   .page-delivery .collapsible-content__wrapper,
   .page-returns .collapsible-content__wrapper,
-  .page-flooring-support .collapsible-content__wrapper,
+  .page-flooring .collapsible-content__wrapper,
   .page-help-faqs .collapsible-content__wrapper {
         padding-top:0 !important;
   }
@@ -2148,7 +2167,14 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
   );
   pointer-events: none;
 }
-
+.page-ordering-online .shop-tab-content .collapsible-content__wrapper .accordion__title,
+.page-payments .shop-tab-content .collapsible-content__wrapper .accordion__title,
+.page-delivery .shop-tab-content .collapsible-content__wrapper .accordion__title,
+.page-returns .shop-tab-content .collapsible-content__wrapper .accordion__title,
+.page-flooring .shop-tab-content .collapsible-content__wrapper .accordion__title,
+.page-help-faqs .shop-tab-content .collapsible-content__wrapper .accordion__title {
+  text-align:left;
+}
 @media screen and (max-width: 989px) {
   .shopify-section-header-hidden {
     top: 0 !important;
@@ -2334,6 +2360,49 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
   .support-heading .rich-text__heading {
     font-size: 29px;
     line-height: 35px;
+  }
+  .page-ordering-online .shop-tab-content .collapsible-content__wrapper .page-width,
+  .page-payments .shop-tab-content .collapsible-content__wrapper .page-width,
+  .page-delivery .shop-tab-content .collapsible-content__wrapper .page-width,
+  .page-returns .shop-tab-content .collapsible-content__wrapper .page-width,
+  .page-flooring .shop-tab-content .collapsible-content__wrapper .page-width,
+  .page-help-faqs .shop-tab-content .collapsible-content__wrapper .page-width,   
+  .page-ordering-online .shop-tabs .page-width,
+  .page-payments .shop-tabs .page-width,
+  .page-delivery .shop-tabs .page-width,
+  .page-returns .shop-tabs .page-width,
+  .page-flooring .shop-tabs .page-width,
+  .page-help-faqs .shop-tabs .page-width{
+	  padding:0 0 2em 0 !important; 
+    margin-bottom:2em;
+	}
+  .page-ordering-online .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-payments .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-delivery .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-returns .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-flooring .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-help-faqs .custom-multicolumn.support_tabs--wrapper .multicolumn-list {
+    row-gap:30px;
+    column-gap:60px;
+    justify-content:flex-start;
+  }
+  .page-ordering-online .custom-multicolumn .multicolumn-list .grid__item,
+  .page-payments .custom-multicolumn .multicolumn-list .grid__item,
+  .page-delivery .custom-multicolumn .multicolumn-list .grid__item,
+  .page-returns .custom-multicolumn .multicolumn-list .grid__item,
+  .page-flooring .custom-multicolumn .multicolumn-list .grid__item,
+  .page-help-faqs .custom-multicolumn .multicolumn-list .grid__item{
+    padding-bottom:0px !important;
+  }
+}
+@media (max-width:632px){
+  .page-ordering-online .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-payments .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-delivery .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-returns .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-flooring .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
+  .page-help-faqs .custom-multicolumn.support_tabs--wrapper .multicolumn-list {
+    gap: 40px;
   }
 }
 
