@@ -230,12 +230,12 @@
       "name": "Related Products",
       "settings": {
         "color_scheme": "",
-        "section_title": "",
+        "section_title": "Natural Stone",
         "heading_size": "hxxl",
-        "subtitle": "Flooring by deVOL",
+        "subtitle": "",
         "section_page_width": 1600,
-        "button_label": "View all",
-        "button_link": "shopify://collections/flooring",
+        "button_label": "",
+        "button_link": "",
         "show_top_border": false,
         "show_bottom_border": false,
         "padding_top": 0,
@@ -245,9 +245,9 @@
         "product_1": "parisian-chequer-marble-406x406",
         "product_2": "grey-tumbled-slate-600xflx13",
         "product_3": "brushed-charcoal-limestone-600xflx22",
-        "product_4": "dijon-tumbled-limestone-600x900x15",
-        "product_5": "umbrian-limestone-560xfl",
-        "product_6": "seagrass-tumbled-limestone-610x406x10",
+        "product_4": "",
+        "product_5": "",
+        "product_6": "",
         "product_7": "",
         "product_8": "",
         "product_9": "",
@@ -275,6 +275,55 @@
       },
       "block_order": [
         "product_selector_tLwnb4"
+      ],
+      "name": "Related Products",
+      "settings": {
+        "color_scheme": "",
+        "section_title": "",
+        "heading_size": "h1",
+        "subtitle": "",
+        "section_page_width": 1600,
+        "button_label": "View All >",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "target_all_products": true,
+        "columns": 4,
+        "product_1": "dijon-tumbled-limestone-600x900x15",
+        "product_2": "vintage-bronze-limestone-600xflx20",
+        "product_3": "umbrian-limestone-560xfl",
+        "product_4": "seagrass-tumbled-limestone-610x406x10",
+        "product_5": "",
+        "product_6": "",
+        "product_7": "",
+        "product_8": "",
+        "product_9": "",
+        "product_10": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_badge": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "target_collection": ""
+      }
+    },
+    "related_TQYtHR": {
+      "type": "related",
+      "blocks": {
+        "product_selector_rrQfHA": {
+          "type": "product_selector",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_selector_rrQfHA"
       ],
       "name": "Related Products",
       "settings": {
@@ -320,6 +369,7 @@
     "related_YGmFb4",
     "related_gmHWnQ",
     "related_dy9inQ",
-    "related_cFzhUE"
+    "related_cFzhUE",
+    "related_TQYtHR"
   ]
 }

@@ -315,6 +315,124 @@
                       {% render 'product-quantity-buy-button', block: block, product: product, product_form_id: product_form_id %}
                     {% endif %}
                   {%- endunless -%}
+                {% when 'select_options' %}
+                  {{ 'component-select-options.css' | asset_url | stylesheet_tag }}
+                  <span hidden data-main-availability="{{ product.metafields.custom.lead_time.value | escape }}"></span>
+
+                  <div class="addon-groups" {{ block.shopify_attributes }}>
+                    {%- assign group =product.metafields.custom.addon_select_metaobject.value -%}
+                    {%- if group != blank -%}
+                      {%- liquid
+                        assign group_key = block.id
+                        assign group_heading = group.addon_text.value
+                        assign group_style = group.option.value
+                        assign group_multiple = group.select_multiple.value
+                        assign group_link = group.add_link.value
+                        assign group_products = group.products.value
+                      -%}
+
+                      {% case group_style %}
+                        {% when 'Dropdown' %}
+                          <div class="addon--dropdown">
+                            <label for="AddonDropdown-{{ group_key }}">{{ group_heading }}</label>
+                            <select id="AddonDropdown-{{ group_key }}" name="addons-{{ group_key }}" data-addon-input data-addon-separate>
+                              <option value="">None</option>
+                              {% for addon in group_products %}
+                                {% assign variant = addon.selected_or_first_available_variant %}
+                                <option
+                                  value="{{ variant.id }}"
+                                  data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                  {% unless variant.available %}disabled{% endunless %}
+                                >
+                                  {{ addon.metafields.custom.addon_title.value | default: addon.title }} {% unless variant.available %}(OOS){% endunless %}
+                                </option>
+                              {% endfor %}
+                            </select>
+                          </div>
+
+                        {% when 'Image' %}
+                          <div class="addon-accordion">
+                            <button
+                              type="button"
+                              class="dropdown-accordion"
+                              aria-expanded="false"
+                              aria-controls="AddonSelect-{{ group_key }}"
+                            >
+                              <p>{{ group_heading }}</p>
+                              <span class="dropdown-arrow" aria-hidden="true"></span>
+                            </button>
+                            <div class="addon-select" id="AddonSelect-{{ group_key }}" hidden>
+                              <div class="addon-list">
+                                {% for addon in group_products %}
+                                  {% assign variant = addon.selected_or_first_available_variant %}
+                                  {% assign addon_title = addon.metafields.custom.addon_title.value | default: addon.title %}
+                                  <div class="addon-container">
+                                    {% if group_link %}
+                                      <a href="{{ addon.url }}" class="addon-item addon-item--link">
+                                    {% else %}
+                                      <div class="addon-item">
+                                    {% endif %}
+                                    {{ addon.featured_image | image_url: width: 150 | image_tag: width: 75, height: 75, loading: 'lazy', alt: '' }}
+                                    <div class="addon-item__content">
+                                      <p class="addon-item__title">{{ addon_title }}</p>
+                                      <p class="addon-item__price">{{ variant.price | money }}</p>
+                                      {%- if addon.available -%}
+                                        <p class="addon-item__lead-time">{{ addon.metafields.custom.lead_time.value }}</p>
+                                      {%- else -%}
+                                        <p class="addon-item__lead-time">{{- 'products.product.inventory_out_of_stock' | t -}}</p>
+                                      {%- endif -%}
+                                    </div>
+                                    {% if group_link %}
+                                      </a>
+                                    {% else %}
+                                      </div>
+                                    {% endif %}
+
+                                    <label class="addon-tick">
+                                      <input
+                                        type="{% if group_multiple %}checkbox{% else %}radio{% endif %}"
+                                        class="addon-container__input"
+                                        name="addons-{{ group_key }}"
+                                        value="{{ variant.id }}"
+                                        data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                        data-addon-input
+                                        data-addon-separate
+                                        aria-label="Add {{ addon_title | escape }}"
+                                        {% unless variant.available %}disabled{% endunless %}
+                                      >
+                                      <span class="addon-tick__box" aria-hidden="true"></span>
+                                    </label>
+                                  </div>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+
+                        {% when 'Tickbox' %}
+                          <div class="addon--tickbox addon-list">
+                            <p class="addon--tickbox__heading">{{ group_heading }}:</p>
+                            {% for addon in group_products %}
+                              {% assign variant = addon.selected_or_first_available_variant %}
+                              <div class="addon--tickbox__wrapper">
+                                <label class="addon-container addon-container--tickbox">
+                                  <input
+                                    type="checkbox"
+                                    class="addon-container__input addon--tickbox__wrapper-item-option"
+                                    name="addons-{{ group_key }}"
+                                    value="{{ variant.id }}"
+                                    data-availability="{{ addon.metafields.custom.lead_time.value | escape }}"
+                                    data-addon-input
+                                    {% unless variant.available %}disabled{% endunless %}
+                                  >
+                                  <span class="addon-tick__box" aria-hidden="true"></span>
+                                  <span>{{ addon.metafields.custom.addon_title.value | default: addon.title }} (+{{ variant.price | money }}) {% unless variant.available %}- Out of Stock{% endunless %}</span>
+                                </label>
+                              </div>
+                            {% endfor %}
+                          </div>
+                      {% endcase %}
+                    {% endif %}
+                  </div>
                 {%- when 'quantity_selector' -%}
                   {%- unless show_international_oos -%}
                     {% if product.metafields.custom.unit_area_m2.value != blank %}
@@ -503,6 +621,10 @@
   </product-info>
 </div>
 
+{%- assign select_option_blocks = section.blocks | where: 'type', 'select_options' -%}
+{%- if select_option_blocks.size > 0 and product.metafields.custom.addon_select_metaobject.value != blank -%}
+  <script src="{{ 'product-select-options.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -826,6 +948,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+    function preloadGalleryVideos() {
+    const videos = document.querySelectorAll(
+      '.product-gallery-swiper video'
+    );
+    videos.forEach((video, index) => {
+      video.preload = index === 0 ? 'auto' : 'metadata';
+      video.removeAttribute('loading');
+      video.load();
+    });
+  }
+  preloadGalleryVideos();
+  new Swiper(swiperEl, options);
+  
   function initSwiperGallery() {
     const swiperEl = document.querySelector('.product-gallery-swiper');
     if (!swiperEl) return;
@@ -839,6 +974,17 @@ document.addEventListener("DOMContentLoaded", () => {
         el: '.product-gallery-swiper .swiper-pagination',
         clickable: true,
       },
+      on: {
+      init(swiper) {
+        syncSlideVideos(swiper, true);
+      },
+      slideChange(swiper) {
+        syncSlideVideos(swiper);
+      },
+      transitionEnd(swiper) {
+        syncSlideVideos(swiper, true);
+      }
+    }
     };
 
     if (isMobile) {
@@ -847,6 +993,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       // Desktop: fade transition with navigation buttons
       options.effect = 'fade';
+      options.fadeEffect = {
+        crossFade: true
+      };
       options.speed = 1000;
       options.spaceBetween = 10;
       options.navigation = {
@@ -854,7 +1003,56 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: '.swiper-button-prev',
       };
     }
+function syncSlideVideos(swiper, pauseInactive = false) {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      swiper.el.querySelectorAll('video').forEach((video) => {
+        const slide = video.closest('.swiper-slide');
+        const isActive = slide === activeSlide;
 
+        if (isActive) {
+          video.muted = true;
+          video.loop = true;
+          video.play().catch(() => {
+          });
+        } else if (pauseInactive){
+          video.pause();
+        }
+      });
+    }
+      
+      swiperEl.querySelectorAll('.product-video-wrap').forEach((wrap) => {
+    const video = wrap.querySelector('video');
+    const button = wrap.querySelector('.product-video-toggle');
+    const icon = button.querySelector('span');
+
+    function updateButton() {
+      const paused = video.paused || video.ended;
+
+      button.setAttribute(
+        'aria-label',
+        paused ? 'Play video' : 'Pause video'
+      );
+
+      icon.innerHTML = paused
+      ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>'
+      : '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+    }
+
+    button.addEventListener('click', (event) => {
+      event.stopPropagation();
+
+      if (video.paused || video.ended) {
+        video.play().catch(updateButton);
+      } else {
+        video.pause();
+      }
+    });
+
+    video.addEventListener('play', updateButton);
+    video.addEventListener('pause', updateButton);
+    video.addEventListener('ended', updateButton);
+    updateButton();
+  });
     new Swiper(swiperEl, options);
   }
 
@@ -1294,6 +1492,12 @@ document.addEventListener("DOMContentLoaded", () => {
         { "type": "checkbox", "id": "bundle_accordion", "label": "Label is an accordion?", "default": false },
         { "type": "checkbox", "id": "bundle_qty", "label": "Show quantity field?", "default": false },
       ]
+    },
+    {
+      "type": "select_options",
+      "name": "Select options",
+      "limit": 1,
+      "settings": []
     },
     {
       "type": "sku",

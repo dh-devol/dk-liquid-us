@@ -88,6 +88,7 @@
         "enable_sticky_info": false,
         "color_scheme": "scheme-2",
         "not_for_sale_text": "<p>Please get in contact by calling 01509 261000 or send an email to <a href=\"mailto:enquiries@devolkitchens.co.uk\">enquiries@devolkitchens.co.uk</a> if you are interested in placing an order.</p>",
+        "out_of_stock_text": "<p>Please send an email to <a href=\"mailto:usa.enquiries@devolkitchens.com\">usa.enquiries@devolkitchens.com</a> if you are interested in placing an order for delivery outside of the US.</p>",
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
@@ -106,6 +107,44 @@
       "custom_css": [],
       "name": "Product specification",
       "settings": {}
+    },
+    "related_BEFHAW": {
+      "type": "related",
+      "name": "Related Products",
+      "settings": {
+        "color_scheme": "",
+        "section_title": "Bathrooms",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "section_page_width": 1100,
+        "button_label": "View All >",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "target_all_products": true,
+        "columns": 3,
+        "product_1": "aged-brass-basin-pillar-taps",
+        "product_2": "aged-brass-basin-mixer-tap",
+        "product_3": "fancy-boudoir-mirror",
+        "product_4": "",
+        "product_5": "",
+        "product_6": "",
+        "product_7": "",
+        "product_8": "",
+        "product_9": "",
+        "product_10": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "show_badge": false,
+        "quick_add": "none",
+        "columns_mobile": "1",
+        "target_collection": ""
+      }
     },
     "related-products": {
       "type": "related-products",
@@ -131,7 +170,7 @@
       "name": "Related Products",
       "settings": {
         "color_scheme": "",
-        "section_title": "Bathrooms",
+        "section_title": "",
         "heading_size": "hxxl",
         "subtitle": "",
         "section_page_width": 1100,
@@ -164,13 +203,13 @@
         "target_collection": ""
       }
     },
-    "related_BEFHAW": {
+    "related_Ef7TaE": {
       "type": "related",
       "name": "Related Products",
       "settings": {
         "color_scheme": "",
         "section_title": "",
-        "heading_size": "h1",
+        "heading_size": "hxxl",
         "subtitle": "",
         "section_page_width": 1100,
         "button_label": "View All >",
@@ -180,10 +219,10 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "target_all_products": true,
-        "columns": 3,
-        "product_1": "aged-brass-basin-pillar-taps",
-        "product_2": "aged-brass-basin-mixer-tap",
-        "product_3": "clothes-horse",
+        "columns": 2,
+        "product_1": "clothes-horse",
+        "product_2": "laundry-maid",
+        "product_3": "",
         "product_4": "",
         "product_5": "",
         "product_6": "",
@@ -206,8 +245,9 @@
   "order": [
     "main",
     "product_specification_3eHTJm",
+    "related_BEFHAW",
     "related-products",
     "related_M8DHA9",
-    "related_BEFHAW"
+    "related_Ef7TaE"
   ]
 }

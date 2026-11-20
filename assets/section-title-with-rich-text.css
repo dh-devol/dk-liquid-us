@@ -128,6 +128,10 @@
     margin-right: auto;
     margin-left: auto;
   }
+  .page-help-faqs .title-with-rich-text .rich-text__wrapper {
+    max-width:88% !important;
+    margin: 0 auto;
+  }
 }
 @media (max-width:768px){
   .collection-heirloom-accessories .title-with-rich-text .rich-text,

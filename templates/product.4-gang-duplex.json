@@ -54,7 +54,8 @@
             "item_label_styling": "one_label",
             "item_label_prefix": "Select your modules",
             "first_option": "none",
-            "bundle_qty": false
+            "bundle_accordion": false,
+            "bundle_qty": true
           }
         },
         "quantity_selector": {

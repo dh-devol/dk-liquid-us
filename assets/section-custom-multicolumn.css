@@ -709,7 +709,7 @@ margin-bottom:0px !important
   }
   .custom-multicolumn.support_tabs--wrapper .multicolumn-list {
         justify-content: flex-start;
-        gap: 30px;
+        gap: 30px !important;
         row-gap: 0;
       padding:0;
   }

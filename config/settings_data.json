@@ -134,6 +134,9 @@
     "cart_color_scheme": "scheme-1",
     "matching_tag": "Flooring",
     "cart_qty_limit_max_2": 9999,
+    "enable_banner": true,
+    "banner_text": "<p><a href=\"/pages/delivery\">For Christmas deliveries, please place your order by 15th December.</a></p>",
+    "url_add": "/collections/\n/products/\n/pages/shop\n/pages/collections\n/pages/ordering-online\n/pages/payments\n/pages/delivery\n/pages/returns\n/pages/help-faqs\n/pages/flooring\n/pages/online-accessory-sales\n/pages/our-brochure-book",
     "sec_menu": "mobile-secondary-menu",
     "mobilemenu": "dropdown-mobile-menu",
     "sections": {

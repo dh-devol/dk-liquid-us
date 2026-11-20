@@ -1,6 +1,17 @@
 <!doctype html>
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
+    <script>
+      (function(g,e,o,t,a,r,ge,tl,y,s){
+      g.getElementsByTagName(o)[0].insertAdjacentHTML('afterbegin','<style id="georedirect1794927547934style">body{opacity:0.0 !important;}</style>');
+      s=function(){g.getElementById('georedirect1794927547934style').innerHTML='body{opacity:1.0 !important;}';};
+      t=g.getElementsByTagName(o)[0];y=g.createElement(e);y.async=true;
+      y.src='https://g10498469755.co/gr?id=-P6e0C7ic0d8BpvXkdyY&refurl='+g.referrer+'&winurl='+encodeURIComponent(window.location);
+      t.parentNode.insertBefore(y,t);y.onerror=function(){s()};
+      georedirect1794927547934loaded=function(redirect){var to=0;if(redirect){to=5000};
+      setTimeout(function(){s();},to)};
+      })(document,'script','head');
+    </script>
     {% if template == 'collections' %}
       <meta name="robots" content="noindex">
     {% endif %}
@@ -443,6 +454,41 @@
     <div id="cart-popup-container" style="display: none;"></div>
 
     <main id="MainContent" class="{% if template.name contains 'cart' %}{% if cart == empty %}is-empty{% endif %}{% endif %} page-{{ page.handle }} {{ template.name }}--page content-for-layout focus-none {% if template.name == 'product' and template.suffix == blank %}default-template{% endif %}" role="main" tabindex="-1">
+      {%- liquid
+        assign show_banner = false
+        assign current_path = request.path
+        if routes.root_url != '/'
+          assign current_path = request.path | remove_first: routes.root_url
+        endif
+        if current_path == blank
+          assign current_path = '/'
+        endif
+
+        assign included = settings.url_add | newline_to_br | replace: '<br />', ',' | split: ','
+        for path in included
+          assign p = path | strip | remove: request.origin
+          if p == blank
+            continue
+          endif
+
+          assign last_char = p | slice: -1
+          if last_char == '/' and p != '/'
+            assign current_start = current_path | slice: 0, p.size
+            if current_start == p
+              assign show_banner = true
+              break
+            endif
+          elsif p == current_path
+            assign show_banner = true
+            break
+          endif
+        endfor
+      -%}
+
+      {% if settings.banner_text != blank and settings.enable_banner and show_banner %}
+        <style>:root { --banner-width: {{ settings.banner_width }}px; }</style>
+        {% render 'custom-banner' %}
+      {% endif %}
       {% if page.metafields.custom.catalogue_detail != blank %}
         <div class="catalogues__page-wrapper page-width">
           <div class="catalogue__list-wrapper">
@@ -538,6 +584,14 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {% if request.path == '/collections/all' %}
+      <style>
+        main.collection--page {
+          padding-bottom: 0 !important;
+        }
+      </style>
+    {% endif %}
 
     {% comment %} <script>
     document.addEventListener("DOMContentLoaded", () => {

@@ -96,7 +96,8 @@
         "heading_PyrbiA": {
           "type": "heading",
           "settings": {
-            "heading": "For the Love of Kitchens, </br>a show all about deVOL",
+            "heading": "For the Love of Kitchens, a show all about deVOL",
+            "h1_tag": true,
             "heading_size": "hxxl"
           }
         },
@@ -172,6 +173,7 @@
           "type": "heading",
           "settings": {
             "heading": "Click on the streaming channels below to find out how to watch.",
+            "h1_tag": false,
             "heading_size": "h0"
           }
         }
@@ -242,7 +244,8 @@
             "show_text_double_column": false,
             "text": "",
             "show_above_image": false,
-            "link_label": "",
+            "link_label": "Link to 'For the Love of Kitchens' TV show on hulu. Opens in a new tab.",
+            "link_label_hide": true,
             "linked_product": ""
           }
         },
@@ -258,7 +261,8 @@
             "show_text_double_column": false,
             "text": "",
             "show_above_image": false,
-            "link_label": "",
+            "link_label": "Link to 'For the Love of Kitchens' TV show on discovery+. Opens in a new tab.",
+            "link_label_hide": true,
             "linked_product": ""
           }
         },
@@ -274,7 +278,8 @@
             "show_text_double_column": false,
             "text": "",
             "show_above_image": false,
-            "link_label": "",
+            "link_label": "Link to 'For the Love of Kitchens' TV show on HBO max. Opens in a new tab.",
+            "link_label_hide": true,
             "linked_product": ""
           }
         },
@@ -290,7 +295,8 @@
             "show_text_double_column": false,
             "text": "",
             "show_above_image": false,
-            "link_label": "",
+            "link_label": "Link to 'For the Love of Kitchens' TV show on prime video. Opens in a new tab.",
+            "link_label_hide": true,
             "linked_product": ""
           }
         },
@@ -306,7 +312,8 @@
             "show_text_double_column": false,
             "text": "",
             "show_above_image": false,
-            "link_label": "",
+            "link_label": "Link to 'For the Love of Kitchens' TV show on appleTV. Opens in a new tab.",
+            "link_label_hide": true,
             "linked_product": ""
           }
         }
@@ -324,9 +331,10 @@
       "name": "Custom multicolumn",
       "settings": {
         "title": "",
+        "h1_tag": false,
         "heading_size": "h1",
         "subtitle": "",
-        "image_width": "half",
+        "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "center",
@@ -630,6 +638,7 @@
           "type": "heading",
           "settings": {
             "heading": "deVOL Films",
+            "h1_tag": false,
             "heading_size": "hxxl"
           }
         },

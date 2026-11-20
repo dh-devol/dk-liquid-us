@@ -70,6 +70,34 @@
       padding-top: 0.5rem;
     }
   }
+
+  @media (min-width: 990px) {
+    [id] {
+      scroll-margin-top: 35px;
+    }
+
+    #projects {
+      scroll-margin-top: 80px;
+    }
+
+    main:has(.project-multicolumns .subtitle__wrapper h3:not(:empty)) #projects {
+      scroll-margin-top: 0;
+    }
+  }
+
+  @media (max-width: 989px) {
+    [id] {
+      scroll-margin-top: 100px;
+    }
+
+    #projects {
+      scroll-margin-top: 135px;
+    }
+
+    main:has(.project-multicolumns .subtitle__wrapper h3:not(:empty)) #projects {
+      scroll-margin-top: 100px;
+    }
+  }
 </style>
 
 {%- style -%}

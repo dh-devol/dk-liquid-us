@@ -49,6 +49,7 @@
           "settings": {
             "link": "shopify://pages/la-cienega-blvd-los-angeles",
             "link_label": "",
+            "hide_image": true,
             "custom_text_hover": "",
             "title": "",
             "subtext": "",
@@ -61,6 +62,7 @@
           "settings": {
             "link": "shopify://pages/bond-street-new-york",
             "link_label": "",
+            "hide_image": true,
             "custom_text_hover": "",
             "title": "",
             "subtext": "",
@@ -73,6 +75,7 @@
           "settings": {
             "link": "shopify://pages/cotes-mill-leicestershire",
             "link_label": "",
+            "hide_image": true,
             "custom_text_hover": "",
             "title": "",
             "subtext": "",
@@ -85,6 +88,7 @@
           "settings": {
             "link": "shopify://pages/st-johns-square-london",
             "link_label": "",
+            "hide_image": true,
             "custom_text_hover": "",
             "title": "",
             "subtext": "",
@@ -97,6 +101,7 @@
           "settings": {
             "link": "shopify://pages/tysoe-street-london",
             "link_label": "",
+            "hide_image": true,
             "custom_text_hover": "",
             "title": "",
             "subtext": "",
@@ -109,6 +114,7 @@
           "settings": {
             "link": "shopify://pages/george-street-bath",
             "link_label": "",
+            "hide_image": true,
             "custom_text_hover": "",
             "title": "",
             "subtext": "",
