@@ -82,16 +82,6 @@ function updateParentAccordions(element) {
     observer.observe(bubble, { childList: true, subtree: true, characterData: true });
   }
 
-  document.querySelectorAll('.mega-menu').forEach(menu => {
-    menu.addEventListener('mouseenter', () => {
-      menu.setAttribute('open', '');
-    });
-
-    menu.addEventListener('mouseleave', () => {
-      menu.removeAttribute('open');
-    });
-  });
-
 
 // Disable image click on mobile (iOS + Android safe)
 if (window.matchMedia('(max-width: 991px)').matches) {

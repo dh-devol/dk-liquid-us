@@ -68,20 +68,70 @@ class HTMLUpdateUtility {
   }
 }
 
-document.querySelectorAll('[id^="Details-"] summary').forEach((summary) => {
-  summary.setAttribute('role', 'button');
-  summary.setAttribute('aria-expanded', summary.parentNode.hasAttribute('open'));
+const megaMenus = Array.from(document.querySelectorAll('header-menu'))
+  .map((menu) => {
+    const details = menu.querySelector('details.mega-menu');
+    return details
+      ? {menu, details, summary: details.querySelector('summary') , pinned: false }
+      : null;
+    })
+  .filter(Boolean);
 
-  if (summary.nextElementSibling.getAttribute('id')) {
-    summary.setAttribute('aria-controls', summary.nextElementSibling.id);
-  }
+function closeMenu(entry) {
+  entry.pinned = false;
+  entry.details.removeAttribute('open');
+}
 
-  summary.addEventListener('click', (event) => {
-    event.currentTarget.setAttribute('aria-expanded', !event.currentTarget.closest('details').hasAttribute('open'));
+function openMenu(entry) {
+  megaMenus.forEach((other) => { if (other !== entry) closeMenu(other); });
+  entry.details.setAttribute('open', '');
+}
+
+megaMenus.forEach ((entry) => {
+  const { menu, details, summary} = entry;
+  let closeTimer;
+
+  menu.addEventListener('mouseenter', () => {
+    clearTimeout(closeTimer);
+    if (!details.open) openMenu(entry);
+  });
+  menu.addEventListener('mouseleave', () => {
+    if (entry.pinned) return;
+    closeTimer = setTimeout(() => closeMenu(entry), 150);
   });
 
-  if (summary.closest('header-drawer, menu-drawer')) return;
-  summary.parentElement.addEventListener('keyup', onKeyUpEscape);
+  summary.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    clearTimeout(closeTimer);
+    if (details.open && entry.pinned) {
+      closeMenu(entry);
+    } else {
+      openMenu(entry);
+      entry.pinned = true;
+    }
+  }, true);
+
+  details.addEventListener('toggle', () => {
+    summary.setAttribute('aria-expanded', String(details.open));
+  });
+
+  menu.addEventListener('keyup', (e) => {
+    if (e.key !== "Escape"|| !details.open) return;
+    const focusWasInside = details.contains(document.activeElement);
+    closeMenu(entry);
+    if (focusWasInside) summary.focus();
+  });
+
+  menu.addEventListener('focusout', (e) => {
+    if (entry.pinned && e.relatedTarget && !menu.contains(e.relatedTarget)) closeMenu(entry);
+  });
+});
+
+document.addEventListener('click', (e) => {
+  megaMenus.forEach((entry) => {
+    if (entry.pinned && !entry.menu.contains(e.target)) closeMenu(entry);
+  });
 });
 
 const trapFocusHandlers = {};

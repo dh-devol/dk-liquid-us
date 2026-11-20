@@ -399,6 +399,44 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 .header:not(.header--middle-left,.header--middle-center) .header__inline-menu{
   margin-top:0;
 }
+header-menu {
+  display: flex;
+  align-items: center;
+}
+.mega-menu__toggle {
+  list-style: none;
+  cursor: pointer;
+}
+.mega-menu__toggle::-webkit-details-marker { display: none; }
+
+/* Hidden visually, still reachable by keyboard and VoiceOver */
+.mega-menu__toggle:not(:focus-visible) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.mega-menu__toggle:focus-visible {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+@supports selector(:has(*)) {
+  header-menu:has(> a:focus-visible),
+  header-menu:has(> details > summary:focus-visible) {
+    outline:  2px solid rgb(var(--color-foreground));
+    outline-offset: -2px;
+    border-radius: 2px
+  }
+  header-menu > a:focus-visible,
+  header-menu > details > summary:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+}
 .header__icon--cart{
   text-decoration:none;
   margin-right: 6.6rem;
@@ -621,6 +659,8 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 }
 .header .mega-menu.not__childlink{
   position:relative;
+  top: 23.75px;
+  right: 100%;
 }
 .header .mega-menu.not__childlink .mega-menu__content{
   width:220px;
@@ -1166,97 +1206,90 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 }
 
 @media (max-width:989px){
-.header-menu-wrapper{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 1em;
-  cursor: pointer !important;
-  transition: all 0.3s ease-in-out;
-}
-
-.header-menu-wrapper .header-menu-icon{
-  width: 30px;
-  height: 1px;
-  background-color: #595959;
-  transition: all 0.3s ease-in-out;
-}
-.header-menu-wrapper .header-menu-icon:before, .header-menu-wrapper .header-menu-icon:after{
-  content: "";
-  position: absolute;
-  width: 30px;
-  height: 1px;
-  background-color: #595959;
-  transition: all 0.3s ease-in-out;
-}
-.header-menu-wrapper .header-menu-icon:after{
-  transform: translate(0, 7px);
-}
-.header-menu-wrapper .header-menu-icon:before{
-  transform: translate(0, -7px);
-}
-.section-header.menu-open .header-menu-wrapper .header-menu-icon {
-  background-color: transparent;
-}
-.section-header.menu-open .header-menu-wrapper .header-menu-icon:before {
-  transform: rotate(45deg);
-  opacity: 1;
-}
-.section-header.menu-open .header-menu-wrapper .header-menu-icon:after {
-  transform: rotate(-45deg);
-  opacity: 1;
-}
-.header-wrapper .header__icon--menu{
-  height: 13px;
-  width: 30px;
-}
-.header--top-center header-drawer{
-  margin-left: 0;
-}
-.section-header .header-wrapper .header{
-  padding: 0.25em 7%;
-  width: 100%;
-}
-.header__icons .header__icon--cart{
-  margin-right: -2.9rem;
-}
-.footer .footer__content-top {
+  .header-menu-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 1em;
+    cursor: pointer !important;
+    transition: all 0.3s ease-in-out;
+  }
+  .header-menu-wrapper .header-menu-icon{
+    width: 30px;
+    height: 1px;
+    background-color: #595959;
+    transition: all 0.3s ease-in-out;
+  }
+  .header-menu-wrapper .header-menu-icon:before, .header-menu-wrapper .header-menu-icon:after{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background-color: #595959;
+    transition: all 0.3s ease-in-out;
+  }
+  .header-menu-wrapper .header-menu-icon:after{
+    transform: translate(0, 7px);
+  }
+  .header-menu-wrapper .header-menu-icon:before{
+    transform: translate(0, -7px);
+  }
+  .section-header.menu-open .header-menu-wrapper .header-menu-icon {
+    background-color: transparent;
+  }
+  .section-header.menu-open .header-menu-wrapper .header-menu-icon:before {
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+  .section-header.menu-open .header-menu-wrapper .header-menu-icon:after {
+    transform: rotate(-45deg);
+    opacity: 1;
+  }
+  .header-wrapper .header__icon--menu{
+    height: 13px;
+    width: 30px;
+  }
+  .header--top-center header-drawer{
+    margin-left: 0;
+  }
+  .section-header .header-wrapper .header{
+    padding: 0.25em 7%;
+    width: 100%;
+  }
+  .header__icons .header__icon--cart{
+    margin-right: -2.9rem;
+  }
+  .footer .footer__content-top {
     padding-bottom: 1.8em;
+  }
+  .shopify-section-group-footer-group .footer{
+    padding-bottom: 25px !important;
+  }
+  .devol-tv-show-page .gallery-slideshow .banner--large:not(.banner--adapt){
+    min-height: 36.5rem;
+  }
+  .page-careers .title-with-rich-text .rich-text__blocks .rich-text__heading{
+    text-align: center;
+    font-size: 1.5em;
+  }
+  .page-careers .title-with-rich-text .rich-text__heading+.rich-text__text{
+    text-align: center;
+    width: 82%;
+  }
+  .page-type-showroom .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title,.page-type-showroom .page-title-description:not(.catalogues__page-wrapper .page-title-description) {
+    margin: 3.8em 0 0 0;
+  }
+  /* Block image hover rollover for tablet and lower */
+  .hover__image-wrapper:hover .hover__image,
+  .text__hover:hover .hover__image{
+    opacity:0;
+  }
+  .hover__image-wrapper:not(.text__hover):hover .standard__image{
+    opacity:1;
+  }
 }
-.shopify-section-group-footer-group .footer{
-  padding-bottom: 25px !important;
-}
-.devol-tv-show-page .gallery-slideshow .banner--large:not(.banner--adapt){
-        min-height: 36.5rem;
-}
-.page-careers .title-with-rich-text .rich-text__blocks .rich-text__heading{
-  text-align: center;
-  font-size: 1.5em;
-}
-.page-careers .title-with-rich-text .rich-text__heading+.rich-text__text{
-  text-align: center;
-  width: 82%;
-}
-.page-type-showroom .title-wrapper-with-link.title-wrapper--self-padded-mobile.title-wrapper--no-top-margin.multicolumn__title,.page-type-showroom .page-title-description:not(.catalogues__page-wrapper .page-title-description) {
-  margin: 3.8em 0 0 0;
-}
-
-/* Block image hover rollover for tablet and lower */
-.hover__image-wrapper:hover .hover__image,
-.text__hover:hover .hover__image{
-  opacity:0;
-}
-.hover__image-wrapper:not(.text__hover):hover .standard__image{
-  opacity:1;
-}
-
-
-}
-
-
-
 @media (max-width: 768px){
   .page-careers .gallery-slideshow .banner--large:not(.banner--adapt) {
     min-height: 48rem;
