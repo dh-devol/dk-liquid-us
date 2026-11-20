@@ -1773,7 +1773,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   .page-payments .support_custom_collapsible .collapsible-content__heading,
   .page-delivery .support_custom_collapsible .collapsible-content__heading,
   .page-returns .support_custom_collapsible .collapsible-content__heading,
-  .page-flooring-support .support_custom_collapsible .collapsible-content__heading,
+  .page-flooring .support_custom_collapsible .collapsible-content__heading,
   .page-help-faqs .support_custom_collapsible .collapsible-content__heading{
         margin-bottom: 0;
   }
@@ -1781,7 +1781,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   .page-payments .collapsible-content__wrapper,
   .page-delivery .collapsible-content__wrapper,
   .page-returns .collapsible-content__wrapper,
-  .page-flooring-support .collapsible-content__wrapper,
+  .page-flooring .collapsible-content__wrapper,
   .page-help-faqs .collapsible-content__wrapper {
         padding-top:0 !important;
   }
@@ -2402,7 +2402,7 @@ main:not(.press-page) .card__slider-gallery .card__slider-gallery-wrapper.page-w
   .page-returns .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
   .page-flooring .custom-multicolumn.support_tabs--wrapper .multicolumn-list,
   .page-help-faqs .custom-multicolumn.support_tabs--wrapper .multicolumn-list {
-    gap: 40px !important;
+    gap: 40px;
   }
 }
 
