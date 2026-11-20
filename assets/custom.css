@@ -748,7 +748,8 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
 } 
 .footer .footer__content-bottom-wrapper.copyright_footer {
     display: flex;
-    width: 100%;
+    width:92%;
+    margin: 0 auto;
 }
 .footer .footer__copyright.caption {
     display: flex;
@@ -760,6 +761,28 @@ main.page-letters-from-devol, main[class~="404--page"], main.page-accessory-enqu
     color: #5e6671ba;
     padding-top: 21.4px;
     border-top: 1px solid #9f9f9f4d;
+}
+@media(max-width:1560px){
+  .footer .footer__copyright.caption{
+    width:92%;
+    margin: 0 auto;
+  }
+  .footer .footer__content-bottom-wrapper.copyright_footer {
+    display: flex;
+    width:100%;
+    margin: 0 auto;
+}
+}
+@media(max-width:1440px){
+  .footer .footer__copyright.caption{
+    width:100%;
+    margin: 0;
+  }
+  .footer .footer__content-bottom-wrapper.copyright_footer {
+    display: flex;
+    width:92%;
+    margin: 0 auto;
+  }
 }
 .footer .copyright__content {
     font-size: 12px;
@@ -1371,10 +1394,10 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 .header__icon--cart {
     margin-right: 12.6rem;
 }
-.footer .page-width {
+/* .footer .page-width {
     padding-left: 96px;
     padding-right: 96px;
-}
+} */
 .footer__content-top .grid {
     column-gap: 35px;
 }
@@ -1396,12 +1419,12 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
         column-gap: 20px;
     }
 }
-@media screen and (max-width:1280px){
+/* @media screen and (max-width:1280px){
 .footer .page-width {
     padding-left: 48px;
     padding-right: 48px;
 }
-}
+} */
 @media screen and (max-width:1200px){
   .header__menu-item {
     padding: 14px 15px 15px;
@@ -1513,13 +1536,13 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
     z-index: 1;
     border-top: 1px solid #f7f7f7;
   }
+  .footer-block.footer-block--text {
+    display: none;
+  }
 }
 @media screen and (max-width:991px){
 .header-wrapper .header__icon--menu {
     padding-left: 0px;
-}
-.footer-block.footer-block--text {
-    display: none;
 }
 /* .footer-block.grid__item.footer-block--menu {
     max-width: 47%;
@@ -1800,7 +1823,7 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 .footer-block.footer-tablet_view {
     display: none;
 }
-@media (min-width: 1001px) and (max-width: 1560px) {
+@media (min-width: 990px) and (max-width: 1560px) {
   .footer-block.footer-tablet_view {
       display: block;
   }
