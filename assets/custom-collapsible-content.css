@@ -28,8 +28,15 @@
     cursor: pointer;
 }
 .custom-collapsible-content .title_arrow-wrapper {
-    justify-content: space-between;
     margin-right: 1em;
+}
+.page-ordering-online .custom-collapsible-content .title_arrow-wrapper,
+.page-payments .custom-collapsible-content .title_arrow-wrapper,
+.page-delivery .custom-collapsible-content .title_arrow-wrapper,
+.page-returns .custom-collapsible-content .title_arrow-wrapper,
+.page-flooring .custom-collapsible-content .title_arrow-wrapper,
+.page-help-faqs .custom-collapsible-content .title_arrow-wrapper {
+    justify-content: space-between;
 }
 .kitchen .custom-collapsible-content .title_arrow-wrapper {
     gap: 1em;
