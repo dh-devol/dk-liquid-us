@@ -3758,13 +3758,36 @@ details-disclosure > details {
 .image-with-text__media {
   border: unset;
 }
-@media screen and (min-width: 990px) {
+
+@media screen and (min-width: 1200px) {
   .klaviyo-form-WGgbcs {
     max-width: 476px;
     margin: 0 auto;
     padding: 0 48px;
   }
 }
+@media screen and (max-width: 1200px) {
+  .klaviyo-form-WGgbcs {
+    max-width:100%;
+    width:100%;
+    margin: 0 auto;
+    /* padding: 0 48px; */
+  }
+}
+@media screen and (min-width: 650px) {
+  .klaviyo-form-WGgbcs {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .klaviyo-form-WGgbcs {
+    max-width:100%;
+    margin: 0 auto;
+    /* padding: 0 48px; */
+  }
+}
+
 .klaviyo-form-WGgbcs h1,
 .klaviyo-form-WGgbcs p {
   text-align: left;
@@ -3776,7 +3799,7 @@ details-disclosure > details {
   font-weight: 300 !important;
 }
 .klaviyo-form-WGgbcs button {
-  padding: 0 1.8em !important;
+  /* padding: 0 1.8em !important; */
   transition: all 0.3s ease !important;
 }
 .klaviyo-form-WGgbcs button:hover {
