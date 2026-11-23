@@ -195,6 +195,12 @@
             "product": "aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"
           }
         },
+        "product_item_WKBfkc": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-pot-hanger"
+          }
+        },
         "product_item_XAbWit": {
           "type": "product_item",
           "settings": {
@@ -206,6 +212,7 @@
         "product_item_JtdmUD",
         "product_item_NKaiQn",
         "product_item_BR3ENW",
+        "product_item_WKBfkc",
         "product_item_XAbWit"
       ],
       "name": "Custom product list",
@@ -216,7 +223,7 @@
         "hide_subtitle": false,
         "image_width": "full",
         "image_ratio": "adapt",
-        "columns_desktop": 4,
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "none",
