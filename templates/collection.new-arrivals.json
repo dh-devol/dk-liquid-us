@@ -87,6 +87,12 @@
     "custom_product_list_9TAYE8": {
       "type": "custom-product-list",
       "blocks": {
+        "product_item_nmxPrG": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-pot-hanger"
+          }
+        },
         "product_item_gtykUa": {
           "type": "product_item",
           "settings": {
@@ -104,33 +110,13 @@
           "settings": {
             "product": "regency-ceiling-ring"
           }
-        },
-        "product_item_7DJ4px": {
-          "type": "product_item",
-          "settings": {
-            "product": "amelie-doorknob-romilly-backplate"
-          }
-        },
-        "product_item_AXzP7A": {
-          "type": "product_item",
-          "settings": {
-            "product": "shutter-dog"
-          }
-        },
-        "product_item_iAaEU9": {
-          "type": "product_item",
-          "settings": {
-            "product": "vintage-bronze-limestone-600xflx20"
-          }
         }
       },
       "block_order": [
+        "product_item_nmxPrG",
         "product_item_gtykUa",
         "product_item_xwGgQN",
-        "product_item_eLkjX6",
-        "product_item_7DJ4px",
-        "product_item_AXzP7A",
-        "product_item_iAaEU9"
+        "product_item_eLkjX6"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -142,6 +128,58 @@
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 2,
+        "column_alignment": "left",
+        "show_secondary_image": true,
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "shopify://collections/switches-sockets-heirloom-brass",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "sectionname": ""
+      }
+    },
+    "custom_product_list_bLCCXc": {
+      "type": "custom-product-list",
+      "blocks": {
+        "product_item_dC6TVN": {
+          "type": "product_item",
+          "settings": {
+            "product": "amelie-doorknob-romilly-backplate"
+          }
+        },
+        "product_item_8hjByD": {
+          "type": "product_item",
+          "settings": {
+            "product": "shutter-dog"
+          }
+        },
+        "product_item_3Hi79z": {
+          "type": "product_item",
+          "settings": {
+            "product": "vintage-bronze-limestone-600xflx20"
+          }
+        }
+      },
+      "block_order": [
+        "product_item_dC6TVN",
+        "product_item_8hjByD",
+        "product_item_3Hi79z"
+      ],
+      "custom_css": [],
+      "name": "Custom product list",
+      "settings": {
+        "title": "",
+        "heading_size": "hxxl",
+        "subtitle": "",
+        "hide_subtitle": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
         "column_alignment": "left",
         "show_secondary_image": true,
         "background_style": "primary",
@@ -938,6 +976,7 @@
     "banner",
     "custom_product_list_tDfCBP",
     "custom_product_list_9TAYE8",
+    "custom_product_list_bLCCXc",
     "custom_product_list_nmPTWn",
     "custom_product_list_WyiikV",
     "custom_product_list_zBPUp4",
