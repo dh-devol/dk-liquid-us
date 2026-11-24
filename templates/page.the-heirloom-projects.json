@@ -53,8 +53,6 @@
         "slide_tcYaQz": {
           "type": "slide",
           "settings": {
-            "desktop_focal_point": 50,
-            "mobile_focal_point": 50,
             "heading": "Our Heirloom kitchen in Bath",
             "heading_size": "h0",
             "subheading": "The Green Room",
@@ -73,8 +71,6 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Harborough_House-72_0.jpg",
-            "desktop_focal_point": 50,
-            "mobile_focal_point": 50,
             "heading": "The Heirloom Collection in",
             "heading_size": "h0",
             "subheading": "Harborough House",
@@ -93,8 +89,6 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Heirloom_Showroom_7263_1-Edit-darker.jpg",
-            "desktop_focal_point": 50,
-            "mobile_focal_point": 50,
             "heading": "The Heirloom Collection in",
             "heading_size": "h0",
             "subheading": "Our Cotes Mill Showroom",
@@ -113,8 +107,6 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/Cafe_Curtain_Rail6840_5.jpg",
-            "desktop_focal_point": 50,
-            "mobile_focal_point": 50,
             "heading": "Beautifully simple",
             "heading_size": "h0",
             "subheading": "Café Curtain Rails",
@@ -133,8 +125,6 @@
           "type": "slide",
           "settings": {
             "image": "shopify://shop_images/HeirloomTaskLight01_3-2.jpg",
-            "desktop_focal_point": 50,
-            "mobile_focal_point": 50,
             "heading": "Simple elegance",
             "heading_size": "h0",
             "subheading": "The Heirloom Task Light",
@@ -564,7 +554,7 @@
         "product_item_W6Eagp": {
           "type": "product_item",
           "settings": {
-            "product": "pot-hanger"
+            "product": "iron-pot-hanger"
           }
         }
       },
