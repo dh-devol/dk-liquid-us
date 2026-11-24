@@ -16,7 +16,7 @@
   transform: perspective(0);
 }
 
-.slideshow__media picture:after {
+.slideshow__media .slideshow__images:after {
   content: "";
   height: 100%;
   position: absolute;
