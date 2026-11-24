@@ -177,16 +177,16 @@
     "custom_product_list_TrfrHb": {
       "type": "custom-product-list",
       "blocks": {
+        "product_item_WKBfkc": {
+          "type": "product_item",
+          "settings": {
+            "product": "heirloom-pot-hanger"
+          }
+        },
         "product_item_JtdmUD": {
           "type": "product_item",
           "settings": {
             "product": "aged-brass-hanging-rail-22-2-brackets-5-hooks"
-          }
-        },
-        "product_item_NKaiQn": {
-          "type": "product_item",
-          "settings": {
-            "product": "aged-brass-s-hook"
           }
         },
         "product_item_BR3ENW": {
@@ -195,25 +195,32 @@
             "product": "aged-brass-cafe-curtain-rail-2ft-2-brackets-8-clips"
           }
         },
-        "product_item_WKBfkc": {
-          "type": "product_item",
-          "settings": {
-            "product": "heirloom-pot-hanger"
-          }
-        },
         "product_item_XAbWit": {
           "type": "product_item",
           "settings": {
             "product": "iron-pot-hanger"
           }
+        },
+        "product_item_NKaiQn": {
+          "type": "product_item",
+          "settings": {
+            "product": "aged-brass-s-hook"
+          }
+        },
+        "product_item_zDjYPC": {
+          "type": "product_item",
+          "settings": {
+            "product": "oxidised-brass-s-hook"
+          }
         }
       },
       "block_order": [
-        "product_item_JtdmUD",
-        "product_item_NKaiQn",
-        "product_item_BR3ENW",
         "product_item_WKBfkc",
-        "product_item_XAbWit"
+        "product_item_JtdmUD",
+        "product_item_BR3ENW",
+        "product_item_XAbWit",
+        "product_item_NKaiQn",
+        "product_item_zDjYPC"
       ],
       "name": "Custom product list",
       "settings": {
