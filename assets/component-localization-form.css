@@ -31,7 +31,7 @@
   .localization-form:only-child {
     justify-content: start;
     width: auto;
-    margin: 0 1rem 0 0;
+    margin: 0;
   }
 
   .localization-form:only-child .button,
@@ -80,7 +80,7 @@
   position: absolute;
   content: '';
   height: 0.6rem;
-  right: calc(var(--inputs-border-width) + 1.5rem);
+  right: calc(var(--inputs-border-width));
   top: calc(50% - 0.2rem);
 }
 
@@ -91,7 +91,7 @@
   -moz-appearance: none;
   color: rgb(var(--color-foreground));
   width: 100%;
-  padding-right: 4rem;
+  /* padding-right: 4rem; */
   padding-bottom: 1.5rem;
 }
 
