@@ -39,15 +39,12 @@
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin multicolumn__title">
         {% if section.settings.h1_tag %}
-        <h1 
-        {% else %}
-        <h2
-        {% endif %}
-          class="title inline-richtext {{ section.settings.heading_size }}">
+        <h1 class="title inline-richtext {{ section.settings.heading_size }}">
             {{ section.settings.title }}
-        {% if h1_tag %}
-        </h1> 
+        </h1>
         {% else %}
+        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
+            {{ section.settings.title }}
         </h2>
         {% endif %}
       </div>
@@ -201,13 +198,19 @@
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {% if block.settings.title != blank %}
+                  {%- liquid
+                    assign title_is_link = false
+                    if block.settings.link_label == blank and block.settings.link_label_hide == false and block.settings.link != blank
+                      assign title_is_link = true
+                    endif
+                  -%}
                   <h3 class="inline-richtext">
-                    {% if block.settings.link_label == blank and block.settings.link_label_hide == false  -%}
-                      <a href="{{ block.settings.link }}" {% if block.settings.link_label_hide %} aria-label="{{ block.settings.link_label }}" {% endif %} class="multicolumn-card__link">
+                    {% if title_is_link %}
+                      <a href="{{ block.settings.link }}" class="multicolumn-card__link">
                     {% endif %}
-                      {{ block.settings.title | default: selected_page.title }}
-                    {% if block.settings.link_label == blank and block.settings.link_label_hide == false  -%}
-                      </a> 
+                        {{ block.settings.title | default: selected_page.title }}
+                    {% if title_is_link %}
+                      </a>
                     {% endif %}
                   </h3>
                 {% endif %}
