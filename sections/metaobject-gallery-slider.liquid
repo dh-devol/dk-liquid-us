@@ -212,7 +212,7 @@
           </style>
           <div class="slideshow__media banner__media media">
             {% if video == blank %}
-               <div class="slideshow__images">
+               <picture class="slideshow__images">
                 {% if mobile_image != blank %}
                   <source
                     media="(max-width: 767px)"
@@ -242,7 +242,7 @@
                       class: 'slideshow__image'
                   }}
                 {%- endif -%}
-              </div>
+              </picture>
             {% else %}
               {% assign desktop_source = video.sources | where: 'mime_type', 'video/mp4' | first %}
               {% assign mobile_source = mobile_video.sources | where: 'mime_type', 'video/mp4' | first %}
