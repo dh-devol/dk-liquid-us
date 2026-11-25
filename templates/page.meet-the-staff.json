@@ -79,6 +79,48 @@
         "sectionname": ""
       }
     },
+    "staff_multicolumn_zNd9wf": {
+      "type": "staff-multicolumn",
+      "blocks": {
+        "column_k7n7wi": {
+          "type": "column",
+          "name": "Bond Street",
+          "settings": {
+            "title": "",
+            "staff_name": "",
+            "staff_role": "",
+            "staff_degree": "",
+            "staff_description": "",
+            "staff_url_title": "",
+            "staff_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_k7n7wi"
+      ],
+      "custom_css": [],
+      "name": "Bond Street, Manhattan",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "subtitle": "Bond Street, Manhattan",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "show_top_border": false,
+        "show_bottom_border": true,
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "padding_top": 0,
+        "padding_bottom": 10,
+        "sectionname": ""
+      }
+    },
     "staff_multicolumn_tPTyiR": {
       "type": "staff-multicolumn",
       "blocks": {
@@ -231,48 +273,6 @@
         "title": "",
         "heading_size": "h1",
         "subtitle": "George Street, Bath",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "show_top_border": false,
-        "show_bottom_border": true,
-        "color_scheme": "scheme-2",
-        "columns_mobile": "1",
-        "padding_top": 0,
-        "padding_bottom": 10,
-        "sectionname": ""
-      }
-    },
-    "staff_multicolumn_zNd9wf": {
-      "type": "staff-multicolumn",
-      "blocks": {
-        "column_k7n7wi": {
-          "type": "column",
-          "name": "Bond Street",
-          "settings": {
-            "title": "",
-            "staff_name": "",
-            "staff_role": "",
-            "staff_degree": "",
-            "staff_description": "",
-            "staff_url_title": "",
-            "staff_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_k7n7wi"
-      ],
-      "custom_css": [],
-      "name": "Bond Street, Manhattan",
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "subtitle": "Bond Street, Manhattan",
         "image_width": "full",
         "image_ratio": "adapt",
         "columns_desktop": 4,
@@ -755,12 +755,12 @@
     "main",
     "title_with_rich_text_zr3xxL",
     "staff_multicolumn_YECd46",
+    "staff_multicolumn_zNd9wf",
+    "staff_multicolumn_paf4tQ",
     "staff_multicolumn_tPTyiR",
     "staff_multicolumn_j8fV7Q",
     "staff_multicolumn_wFGCcD",
     "staff_multicolumn_JretYR",
-    "staff_multicolumn_zNd9wf",
-    "staff_multicolumn_paf4tQ",
     "staff_multicolumn_CMMmhB",
     "staff_multicolumn_qDaArT",
     "staff_multicolumn_j6rDmT",
