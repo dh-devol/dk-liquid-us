@@ -1787,6 +1787,32 @@ document.addEventListener("DOMContentLoaded", async function () {
     }, 100);
   });
 
+  (() => {
+    const styleId = 'global-form-label-override';
+
+    function applyLabelOverride() {
+      document.querySelectorAll('shopify-forms-embed').forEach((embed) => {
+        const root = embed.shadowRoot;
+
+        if (!root || root.getElementById(styleId)) return;
+
+        const style = document.createElement('style');
+        style.id = styleId;
+        style.textContent = `
+          label[class*="formInputFieldLabel"] {
+            transform: none !important;
+          }
+        `;
+
+        root.appendChild(style);
+      });
+    }
+
+    applyLabelOverride();
+
+    window.setInterval(applyLabelOverride, 500);
+  })();
+
   observer.observe(document.body, {
     childList: true,
     subtree: true

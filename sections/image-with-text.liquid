@@ -6,7 +6,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 990px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -106,6 +106,18 @@
                     </div>
               {%- endcase -%}
             {%- endfor -%}
+
+            {% if page.handle == 'letters-from-devol' %}
+              <style>
+                @media screen and (min-width: 750px) and (max-width: 990px) {
+                  #shopify-section-{{ section.id }}
+                  .image-with-text__grid > .grid__item {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                  }
+                }
+              </style>
+            {% endif %}
           </div>
         </div>
       </div>
