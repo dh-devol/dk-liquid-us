@@ -865,6 +865,13 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
           }
 
+          // Inline <script> tags inserted via innerHTML don't run, so window.tileCalculator
+          // would be stale. Reload for any product with a quantity/coverage calculator.
+          if (newProductWrapper.querySelector(".quantity_coverage-main-wrapper")) {
+            hardNavigation(targetPath);
+            return;
+          }
+
           // remember which select had focus
           const focusedName = document.activeElement && document.activeElement.name;
 
