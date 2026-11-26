@@ -134,8 +134,10 @@
             endif
             if forloop.first
               assign loading_attr = 'eager'
+              assign fetch_attr = 'high'
             else
               assign loading_attr = 'lazy'
+              assign fetch_attr = 'auto'
             endif
           %}
 
@@ -147,7 +149,9 @@
                   | image_tag:
                     class: 'product-media-image',
                     loading: loading_attr,
-                    widths: '1440',
+                    fetchpriority: fetch_attr,
+                    widths: '540, 720, 900, 1080, 1440, 1600',
+                    sizes: '(min-width: 2000px) 792px, (min-width: 768px) min(56vw, 660px), 50vw',
                     alt: alt_text
                 }}
               {% elsif media.media_type == 'video' %}
