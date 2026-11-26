@@ -15,7 +15,10 @@
   .footer .grid {
     display: block;
   }
-
+  footer {
+    padding-top: 15px !important;
+    padding-bottom: 25px !important;
+  }
   .footer-block.grid__item {
     padding: 0;
     margin: 4rem 0;

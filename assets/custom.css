@@ -1179,14 +1179,14 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   margin-bottom: 1em;
 }
 
-@media (min-width: 1440px) and (max-width: 1544px){
+/* @media (min-width: 1440px) and (max-width: 1544px){
   .footer-block.footer-block--text {
     max-width: 200px;
   }
   .footer .footer__content-top .grid {
     column-gap: 20px;
   }
-}
+} 
 @media (min-width: 1200px) and (max-width: 1368px){
   .footer-block.footer-block--text {
     max-width: 220px;
@@ -1201,6 +1201,16 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   }
   .footer .footer__content-top .grid {
     column-gap: 20px;
+  }
+}*/
+
+@media (max-width:1560px) {
+    .footer-block.footer-block--text {
+    max-width: 25%;
+    width: 25%;
+  }
+  .footer .footer__content-top .grid {
+    column-gap: 0;
   }
 }
 
@@ -1505,9 +1515,6 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 .footer-block.grid__item.footer-block--menu {
     max-width: 35%;
 }
-  .footer-block.footer-block--text {
-    max-width: 32%;
-}
 }
 
 @media (min-width: 990px) {
@@ -1526,6 +1533,13 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 }
 
 @media screen and (max-width:989px){
+  .footer-block.footer-block--text {
+    max-width: 32%;
+  }
+  .footer__content-top .grid {
+    column-gap: 150px !important;
+    justify-content:flex-start;
+  }
   .header-wrapper .header{
     padding-top: 28px;
     padding-bottom: 28px;
@@ -1691,6 +1705,10 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
 }
 
 @media screen and (max-width:767px){
+  .footer__content-top .grid {
+    column-gap: 50px !important;
+    flex-wrap:unset;
+  }
   .collection-page .title-with-rich-text .rich-text__wrapper.rich-text__wrapper--center {
     padding:0!important;
   }
@@ -1736,10 +1754,6 @@ main:not(:has(.showroom-description-page)) .rich-text__blocks .hxxl {
   }
   .region-currency_wrapper span {
       display: inline;
-  }
-  footer {
-    padding-top: 15px !important;
-    padding-bottom: 25px !important;
   }
   .product-specification .page-accordion.accordion__content.rte {
       column-gap: 20px;
