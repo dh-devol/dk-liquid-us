@@ -148,24 +148,24 @@
             "product": "milk-glass-gaselier-light-tall"
           }
         },
-        "product_item_jQqbUq": {
-          "type": "product_item",
-          "settings": {
-            "product": "mini-milk-glass-pendant-light"
-          }
-        },
         "product_item_6RDtUB": {
           "type": "product_item",
           "settings": {
             "product": "milk-glass-pendant-light"
+          }
+        },
+        "product_item_jQqbUq": {
+          "type": "product_item",
+          "settings": {
+            "product": "pearl-moonstone-pendant-light"
           }
         }
       },
       "block_order": [
         "product_item_3nQ8Jd",
         "product_item_Pc76NF",
-        "product_item_jQqbUq",
-        "product_item_6RDtUB"
+        "product_item_6RDtUB",
+        "product_item_jQqbUq"
       ],
       "custom_css": [],
       "name": "Custom product list",
