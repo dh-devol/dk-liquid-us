@@ -87,16 +87,16 @@
             "product": "creamware-rise-fall-pendant-light-small"
           }
         },
-        "product_item_BWXpLk": {
-          "type": "product_item",
-          "settings": {
-            "product": "mini-milk-glass-pendant-light"
-          }
-        },
         "product_item_aD3cUV": {
           "type": "product_item",
           "settings": {
             "product": "milk-glass-pendant-light"
+          }
+        },
+        "product_item_BWXpLk": {
+          "type": "product_item",
+          "settings": {
+            "product": "pearl-moonstone-pendant-light"
           }
         }
       },
@@ -105,8 +105,8 @@
         "product_item_YfCicx",
         "product_item_GCiBnn",
         "product_item_TFFgnV",
-        "product_item_BWXpLk",
-        "product_item_aD3cUV"
+        "product_item_aD3cUV",
+        "product_item_BWXpLk"
       ],
       "custom_css": [],
       "name": "Custom product list",
