@@ -87,6 +87,12 @@
     "custom_product_list_9TAYE8": {
       "type": "custom-product-list",
       "blocks": {
+        "product_item_eLkjX6": {
+          "type": "product_item",
+          "settings": {
+            "product": "pearl-moonstone-pendant-light"
+          }
+        },
         "product_item_nmxPrG": {
           "type": "product_item",
           "settings": {
@@ -104,19 +110,13 @@
           "settings": {
             "product": "fancy-boudoir-mirror"
           }
-        },
-        "product_item_eLkjX6": {
-          "type": "product_item",
-          "settings": {
-            "product": "regency-ceiling-ring"
-          }
         }
       },
       "block_order": [
+        "product_item_eLkjX6",
         "product_item_nmxPrG",
         "product_item_gtykUa",
-        "product_item_xwGgQN",
-        "product_item_eLkjX6"
+        "product_item_xwGgQN"
       ],
       "custom_css": [],
       "name": "Custom product list",
@@ -152,23 +152,23 @@
             "product": "amelie-doorknob-romilly-backplate"
           }
         },
+        "product_item_3Hi79z": {
+          "type": "product_item",
+          "settings": {
+            "product": "regency-ceiling-ring"
+          }
+        },
         "product_item_8hjByD": {
           "type": "product_item",
           "settings": {
             "product": "shutter-dog"
           }
-        },
-        "product_item_3Hi79z": {
-          "type": "product_item",
-          "settings": {
-            "product": "vintage-bronze-limestone-600xflx20"
-          }
         }
       },
       "block_order": [
         "product_item_dC6TVN",
-        "product_item_8hjByD",
-        "product_item_3Hi79z"
+        "product_item_3Hi79z",
+        "product_item_8hjByD"
       ],
       "custom_css": [],
       "name": "Custom product list",
