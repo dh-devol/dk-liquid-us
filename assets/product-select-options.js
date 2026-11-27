@@ -1,62 +1,46 @@
+/* Accordion + single-select deselect (delegated: survives the theme swapping the DOM) */
 (function () {
-  if (window.addonAccordionInitialised) return; // only bind global listeners once
+  if (window.addonAccordionInitialised) return;
   window.addonAccordionInitialised = true;
 
-  function initAccordions(root) {
-    // Accordion
-    root.querySelectorAll('.addon-accordion').forEach(function (wrapper) {
-      if (wrapper.dataset.accordionInit) return; // avoid double-binding
-      wrapper.dataset.accordionInit = 'true';
+  // Accordion open/close
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.dropdown-accordion');
+    if (!btn) return;
 
-      var btn = wrapper.querySelector('.dropdown-accordion');
-      var panel = wrapper.querySelector('.addon-select');
-      if (!btn || !panel) return;
+    var wrapper = btn.closest('.addon-accordion');
+    var panel = wrapper && wrapper.querySelector('.addon-select');
+    if (!panel) return;
 
-      btn.addEventListener('click', function () {
-        var isOpen = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!isOpen));
-        btn.toggleAttribute('open', !isOpen);
-        panel.hidden = isOpen;
-      });
-    });
+    var isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!isOpen));
+    btn.toggleAttribute('open', !isOpen);
+    panel.hidden = isOpen;
+  });
 
-    // Single-select addons: click the selected one again to deselect
-    root.querySelectorAll('.addon-list').forEach(function (list) {
-      if (list.dataset.addonInit) return;
-      list.dataset.addonInit = 'true';
+  // Single-select: click the ticked radio again to deselect
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a')) return;
 
-      list.addEventListener('click', function (e) {
-        if (e.target.closest('a')) return;
+    var label = e.target.closest('.addon-list .addon-tick');
+    if (!label) return;
 
-        var label = e.target.closest('.addon-tick');
-        if (!label) return;
+    var input = label.querySelector('input[type="radio"]');
+    if (!input || input.disabled) return;
 
-        var input = label.querySelector('input[type="radio"]');
-        if (!input || input.disabled) return;
+    // Ignore the second click the browser forwards from the label to the input
+    if (e.target === input) return;
 
-        // Ignore the second click the browser forwards from the label to the input
-        if (e.target === input) return;
+    // Still the pre-click state here
+    if (input.checked) {
+      e.preventDefault(); // stop the browser re-selecting it
+      input.checked = false;
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
 
-        // Still the pre-click state here
-        if (input.checked) {
-          e.preventDefault(); // stop the browser re-selecting it
-          input.checked = false;
-          input.dispatchEvent(new Event('change', { bubbles: true }));
-        }
-      });
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { initAccordions(document); });
-  } else {
-    initAccordions(document);
-  }
-
-  // Re-run when a section is reloaded in the theme editor
-  document.addEventListener('shopify:section:load', function (e) { initAccordions(e.target); });
-
-  window.initAccordion = initAccordions; // keep your existing global for other bundles
+  // Kept so any other code calling it doesn't error; delegation makes it unnecessary
+  window.initAccordion = function () {};
 })();
 
 /* Add addons to cart alongside the main product */

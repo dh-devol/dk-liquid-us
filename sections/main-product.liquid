@@ -372,7 +372,14 @@
                                     {% else %}
                                       <div class="addon-item">
                                     {% endif %}
-                                    {{ addon.featured_image | image_url: width: 150 | image_tag: width: 75, height: 75, loading: 'lazy', alt: '' }}
+                                    {% assign addon_custom_image = addon.metafields.custom.addon_custom_thumbnail.value %}
+                                    {% if addon_custom_image %}
+                                      {% assign thumb_alt = addon_custom_image.alt | default: addon.title %}
+                                      {{ addon_custom_image | image_url: width: 150 | image_tag: width: 75, height: 75, loading: 'lazy', alt: thumb_alt }}
+                                    {% else %}
+                                      {% assign thumb_alt = addon.featured_image.alt | default: addon.title %}
+                                      {{ addon.featured_image | image_url: width: 150 | image_tag: width: 75, height: 75, loading: 'lazy', alt: thumb_alt }}
+                                    {% endif %}
                                     <div class="addon-item__content">
                                       <p class="addon-item__title">{{ addon_title }}</p>
                                       <p class="addon-item__price">{{ variant.price | money }}</p>
